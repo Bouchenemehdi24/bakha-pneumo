@@ -1,13 +1,8 @@
 /* Base Styles */
+
 body {
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.8;
-    margin: 0;
-    padding: 0;
-    color: #333;
-    background-color: #f4f4f8;
-    direction: rtl;
-    text-align: right;
+    font-size: 1rem;
+    line-height: 1.6;
 }
 
 header {
