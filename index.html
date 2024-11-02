@@ -79,7 +79,13 @@
     <main role="main">
         <section id="accueil" data-aos="fade-up">
             <h2>مرحباً بكم في عيادتنا</h2>
-            <img src="cabinet.png"  alt="صورة العيادة" loading="lazy">
+            <img src="cabinet.png" 
+     srcset="cabinet-small.png 500w, cabinet-medium.png 1000w, cabinet-large.png 1500w" 
+     sizes="(max-width: 600px) 480px, (max-width: 1200px) 800px, 1200px" 
+     alt="صورة العيادة" 
+     class="cabinet-photo" 
+     loading="lazy">
+
 
             <p>تعلن الدكتورة بخة س عن افتتاح عيادة جديدة متخصصة في الأمراض الصدرية والحساسية وانقطاع التنفس للأطفال والكبار.</p>
             <div class="highlight">
