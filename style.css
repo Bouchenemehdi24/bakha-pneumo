@@ -1,0 +1,506 @@
+/* Enhanced Typography */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #2c3e50;
+    background-color: #f8f9fa;
+}
+
+/* Enhanced Header Styles */
+header {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: white;
+    text-align: center;
+    padding: 2.5rem 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.75rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    letter-spacing: 0.5px;
+}
+
+.subheader-text {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-top: 1rem;
+    opacity: 0.9;
+}
+
+/* Enhanced Navigation Bar */
+nav {
+    background: linear-gradient(to right, #2980b9, #3498db);
+    padding: 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0;
+    position: relative;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 1rem 1.5rem;
+    display: block;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* Hover Effect for Navigation Links */
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background-color: #f1c40f;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+nav ul li a:hover::after {
+    width: 80%;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Active Navigation Link */
+nav ul li a.active {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+nav ul li a.active::after {
+    width: 80%;
+}
+
+/* Responsive Navigation Bar */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li a {
+        padding: 0.75rem 1rem;
+        text-align: center;
+    }
+
+    nav ul li a::after {
+        display: none;
+    }
+}
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 1rem 1.5rem;
+    display: block;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* Hover Effect for Navigation Links */
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background-color: #f1c40f;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+nav ul li a:hover::after {
+    width: 80%;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Active Navigation Link */
+nav ul li a.active {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+nav ul li a.active::after {
+    width: 80%;
+}
+
+/* Enhanced Section Styles */
+section {
+    margin-bottom: 2.5rem;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Enhanced Headings */
+h2 {
+    color: #2980b9;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid #3498db;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: #f1c40f;
+}
+
+/* Enhanced Highlight Box */
+.highlight {
+    background: linear-gradient(135deg, #f1c40f, #f39c12);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.highlight h3 {
+    color: #2c3e50;
+    margin-top: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+/* Enhanced Lists */
+section ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+section ul li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #ecf0f1;
+    transition: padding-left 0.3s ease;
+}
+
+section ul li:hover {
+    padding-left: 1rem;
+    color: #2980b9;
+}
+
+section ul li:last-child {
+    border-bottom: none;
+}
+
+/* Enhanced Contact Links */
+section#contact a {
+    color: #3498db;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+section#contact a:hover {
+    color: #2980b9;
+    transform: translateX(5px);
+}
+
+/* Enhanced Form Styles */
+form {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+    font-weight: 500;
+}
+
+form input,
+form select {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+form input:focus,
+form select:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+form button {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+form button:hover {
+    background: linear-gradient(135deg, #2980b9, #1a5276);
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Success Message Animation */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.success-message {
+    animation: slideIn 0.5s ease forwards;
+    background-color: #2ecc71;
+    color: white;
+    padding: 1rem;
+    border-radius: 6px;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+/* Enhanced Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+    
+    nav ul li a {
+        padding: 0.75rem 1rem;
+        text-align: center;
+    }
+    
+    nav ul li a::after {
+        display: none;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .subheader-text {
+        font-size: 1.25rem;
+    }
+    
+    section {
+        padding: 1.5rem;
+    }
+}
+
+/* RTL Support Enhancements */
+[dir="rtl"] section ul li {
+    padding-right: 0;
+    transition: padding-right 0.3s ease;
+}
+
+[dir="rtl"] section ul li:hover {
+    padding-right: 1rem;
+    padding-left: 0;
+}
+
+[dir="rtl"] section#contact a:hover {
+    transform: translateX(-5px);
+}
+
+[dir="rtl"] h2::after {
+    right: 0;
+    left: auto;
+}
+
+/* Image Container and Sizing */
+.cabinet-photo {
+    width: 100%;
+    max-width: 600px; /* Limit maximum width */
+    height: auto;
+    max-height: 400px; /* Limit maximum height */
+    object-fit: cover; /* Maintains aspect ratio while covering container */
+    border-radius: 10px;
+    margin: 20px auto; /* Center the image */
+    display: block; /* Helps with centering */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+/* Optional hover effect */
+.cabinet-photo:hover {
+    transform: scale(1.02);
+}
+
+/* Responsive image adjustments */
+@media (max-width: 768px) {
+    .cabinet-photo {
+        max-width: 100%;
+        max-height: 300px; /* Smaller height on mobile */
+    }
+}
+
+/* Image container for better control */
+.image-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Optional loading placeholder */
+.cabinet-photo.loading {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+.clinic-status-box {
+    border: 2px solid #3498db; /* Border color */
+    background-color: #3498db; /* Blue background for contrast with white text */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px;
+    width: 80%;
+    max-width: 400px;
+    margin: 20px auto;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+    color: #ffffff; /* White text color for all text inside the box */
+}
+
+#status-message {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+#status-message.open {
+    color: #2ecc71; /* Light green for "Open" */
+}
+
+#status-message.closed {
+    color: #e74c3c; /* Light red for "Closed" */
+}
+
+#next-opening {
+    font-size: 1em;
+    color: #ecf0f1; /* Light gray for the next opening info */
+    margin-top: 5px;
+}
+
+input:invalid, select:invalid {
+    border: 1px solid #e74c3c; /* Red border for invalid inputs */
+    background-color: #fce4e4; /* Light red background for visibility */
+}
+
+input, select {
+    margin-bottom: 5px;
+}
+
+.error-message {
+    color: #e74c3c; /* Red color for error messages */
+    font-size: 0.9em;
+    display: none;
+}
+
+.success-message {
+    color: #27ae60; /* Green color for success */
+    font-weight: bold;
+    display: none;
+    text-align: center;
+    margin-top: 10px;
+}
+
+input:focus, select:focus {
+    outline: 2px solid #3498db; /* Blue focus outline for accessibility */
+}
+
+
+/* Success and error styles */
+input, select {
+    border: 2px solid #ccc;
+    padding: 8px;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+}
+
+input.success, select.success {
+    border-color: #27ae60; /* Green for valid input */
+}
+
+input.error, select.error {
+    border-color: #e74c3c; /* Red for invalid input */
+}
+
+.inline-error {
+    color: #e74c3c; /* Red text for error messages */
+    font-size: 0.9em;
+    margin-top: 4px;
+    display: block;
+}
+
+.success-message {
+    color: #27ae60;
+    font-size: 1.2em;
+    text-align: center;
+    margin-top: 20px;
+}
+
