@@ -3,110 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="keywords" content="Pulmonary specialist, allergy clinic, asthma treatment, lung cancer diagnosis, sleep apnea, respiratory therapy, pediatric pulmonology, smoking cessation, Guelma doctor, chest X-ray, Algeria medical center, عيادة الحساسية, علاج الربو, طبيب مختص في ڨالمة, respiratory diseases, modern clinic, continuous airway treatment, emergency respiratory care, allergy diagnosis, family health, Dr. Bakha S, medical appointments in Guelma">
+    <meta name="keywords" content="عيادة الحساسية, علاج الربو, أمراض صدرية, ڨالمة, الجزائر, ربو, سرطان الرئة, انقطاع التنفس أثناء النوم, طبيب مختص, عيادة طبية, مواعيد طبية">
+    <meta name="author" content="عيادة الدكتورة بخة س">
 
     <title>عيادة الدكتورة بخة س - اختصاصية في الأمراض الصدرية والحساسية</title>
     <meta name="description" content="عيادة الدكتورة بخة س، اختصاصية في الأمراض الصدرية والحساسية للأطفال والكبار في ڨالمة، الجزائر.">
-    <meta name="keywords" content="دكتورة بخة, حساسية, أمراض صدرية, ڨالمة, الجزائر, ربو, سرطان الرئة, انقطاع التنفس أثناء النوم">
-    <meta name="author" content="عيادة الدكتورة بخة س">
-	
     
-    <meta name="description" content="Clinique du Dr Bakha S, spécialiste des maladies pulmonaires et des allergies pour enfants et adultes à Guelma, Algérie.">
-    <meta name="keywords" content="Dr Bakha, allergies, maladies pulmonaires, Guelma, Algérie, asthme, cancer du poumon, apnée du sommeil, médecin spécialiste, clinique médicale, rendez-vous médical">
-    <meta name="author" content="Clinique du Dr Bakha S">
-  
     <link rel="stylesheet" href="style.css">
-	<link rel="stylesheet" href="enhanced-styles.css">
+    <link rel="stylesheet" href="enhanced-styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <script src="enhanced-features.js" defer></script>
-
-
-   <link rel="stylesheet" href="clinic-status.css">
-
-       <!-- Link to form validation script -->
+    <link rel="stylesheet" href="clinic-status.css">
     <script src="form-validation.js" defer></script>
-   <link rel="stylesheet" href="appointment-form.css">
-<script src="date-features.js" defer></script>
-<script src="clinic-status.js" defer></script>
-
-
+    <link rel="stylesheet" href="appointment-form.css">
+    <script src="date-features.js" defer></script>
+    <script src="clinic-status.js" defer></script>
 </head>
 <body>
-    <!-- Language Toggle -->
-    <div class="language-toggle">
-        <button onclick="setLanguage('ar')">العربية</button>
-        <button onclick="setLanguage('fr')">Français</button>
-    </div>
-
-    <!-- Arabic Content (Default) -->
+    <!-- Arabic Content -->
     <div id="content-ar" lang="ar" dir="rtl">
-	<div class="datetime-display" data-aos="fade-down">
-    <p class="current-time" id="arabic-time"></p>
-    </div>
+        <div class="datetime-display" data-aos="fade-down">
+            <p class="current-time" id="arabic-time"></p>
+        </div>
         <header role="banner">
             <h1>عيادة الدكتورة بخة س</h1>
-						<p class="subheader-text">اختصاصية في الأمراض الصدرية والحساسية - ڨالمة</p>
-						<div id="clinic-status" class="clinic-status" data-aos="fade-down">
-    <p id="status-message"></p>
-    <p id="next-opening"></p>
-</div>
-
+            <p class="subheader-text">اختصاصية في الأمراض الصدرية والحساسية - ڨالمة</p>
+            <div id="clinic-status" class="clinic-status" data-aos="fade-down">
+                <p id="status-message"></p>
+                <p id="next-opening"></p>
+            </div>
         </header>
-		
+        
         <nav>
             <ul>
                 <li><a href="#accueil">الرئيسية</a></li>
                 <li><a href="#services">الخدمات</a></li>
                 <li><a href="#apropos">عن الدكتورة</a></li>
-				<li><a href="#appointment">احجز موعداً</a></li> <!-- New menu item -->
-				<li><a href="#contact">التواصل</a></li>
+                <li><a href="#appointment">احجز موعداً</a></li>
+                <li><a href="#contact">التواصل</a></li>
             </ul>
         </nav>
-		
-	
-</div>
+
         <main>
             <section id="accueil" data-aos="fade-up">
                 <h2>مرحباً بكم في عيادتنا</h2>
-
-<div class="image-container">
-    <img src="cabinet.png" alt="صورة العيادة" class="cabinet-photo" loading="lazy">
-</div>
+                <div class="image-container">
+                    <img src="cabinet.png" alt="صورة العيادة" class="cabinet-photo" loading="lazy">
+                </div>
                 <p>تعلن الدكتورة بخة س عن افتتاح عيادة جديدة متخصصة في الأمراض الصدرية والحساسية وانقطاع التنفس للأطفال والكبار.</p>
                 <div class="highlight">
                     <h3>مواقيت العمل</h3>
                     <p>من السبت إلى الخميس، من 8 صباحاً إلى 4 مساءً</p>
                 </div>
             </section>
-			
-					<section id="appointment" data-aos="fade-up">
-        <h2>احجز موعداً</h2>
-     <!-- Arabic Form -->
-<form action="https://formspree.io/f/xnnqdaka" method="POST" id="appointmentForm-ar" onsubmit="submitForm(event, 'appointmentForm-ar')">
-    <label for="name-ar">الاسم الكامل:</label>
-    <input type="text" id="name-ar" name="name" required>
 
-    <label for="sex-ar">الجنس:</label>
-    <select id="sex-ar" name="sex" required>
-        <option value="">اختر جنساً</option>
-        <option value="male">ذكر</option>
-        <option value="female">أنثى</option>
-    </select>
+            <section id="appointment" data-aos="fade-up">
+                <h2>احجز موعداً</h2>
+                <form action="https://formspree.io/f/xnnqdaka" method="POST" id="appointmentForm-ar" onsubmit="submitForm(event, 'appointmentForm-ar')">
+                    <label for="name-ar">الاسم الكامل:</label>
+                    <input type="text" id="name-ar" name="name" required>
 
-    <label for="phone-ar">رقم الهاتف:</label>
-    <input type="tel" id="phone-ar" name="phone" pattern="[0-9]{10}" required>
+                    <label for="sex-ar">الجنس:</label>
+                    <select id="sex-ar" name="sex" required>
+                        <option value="">اختر جنساً</option>
+                        <option value="male">ذكر</option>
+                        <option value="female">أنثى</option>
+                    </select>
 
-    <label for="appointmentDate-ar">تاريخ الموعد:</label>
-    <input type="date" id="appointmentDate-ar" name="appointmentDate" required>
+                    <label for="phone-ar">رقم الهاتف:</label>
+                    <input type="tel" id="phone-ar" name="phone" pattern="[0-9]{10}" required>
 
-    <button type="submit">إرسال</button>
-</form>
+                    <label for="appointmentDate-ar">تاريخ الموعد:</label>
+                    <input type="date" id="appointmentDate-ar" name="appointmentDate" required>
 
-<div id="success-message-ar" class="success-message" style="display: none;">تم حجز موعدك بنجاح</div>
+                    <button type="submit">إرسال</button>
+                </form>
 
-    </section>
-	
+                <div id="success-message-ar" class="success-message" style="display: none;">تم حجز موعدك بنجاح</div>
+            </section>
+
             <section id="services" data-aos="fade-right">
                 <h2>خدماتنا</h2>
                 <ul>
@@ -122,11 +98,13 @@
                     <li>فحوصات طبية عامة</li>
                 </ul>
             </section>
+
             <section id="apropos" data-aos="fade-left">
                 <h2>عن الدكتورة بخة س</h2>
                 <p>الدكتورة بخة س حاصلة على شهادة الدراسات الطبية المتخصصة من المستشفى الجامعي قسنطينة والمستشفى العسكري قسنطينة.</p>
                 <p>لديها خبرة واسعة وشاركت في مؤتمرات علمية وطنية ودولية، وحصلت على دورات تدريبية عالية الجودة في مجالات أمراض الحساسية وانقطاع التنفس.</p>
             </section>
+
             <section id="contact" data-aos="fade-up">
                 <h2>التواصل</h2>
                 <p><strong>العنوان:</strong> حي 19 جوان، خلف مستشفى الحكيم عقبي، ڨالمة.</p>
@@ -140,131 +118,15 @@
                     <i class="fab fa-facebook" style="font-size: 1.5rem; color: #3498db; margin-top: 10px;"></i> تابعنا على الفيسبوك
                 </a></p>
             </section>
-	
         </main>
+
         <footer>
             <p>&copy; 2024 عيادة الدكتورة بخة س - جميع الحقوق محفوظة</p>
         </footer>
     </div>
 
-    <!-- French Content -->
-    <div id="content-fr" lang="fr" dir="ltr" style="display:none;">
-	<div class="datetime-display" data-aos="fade-down">
-    <p class="current-time" id="french-time"></p>
-</div>
-        <header role="banner">
-            <h1>Clinique de Dr. Bakha S</h1>
-            <p class="subheader-text">Spécialiste des maladies pulmonaires et des allergies - Guelma, Algérie</p>
-        </header>
-        <nav>
-            <ul>
-                <li><a href="#accueil">Accueil</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#apropos">À propos</a></li>
-				 <li><a href="#appointment">Prendre un rendez-vous</a></li> <!-- New menu item -->
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-        <main>
-            <section id="accueil" data-aos="fade-up">
-                <h2>Bienvenue dans notre clinique</h2>
-                <img src="cabinet.png" alt="Photo de la clinique" class="cabinet-photo" loading="lazy">
-                <p>Le Dr Bakha S annonce l'ouverture d'une nouvelle clinique spécialisée dans les maladies pulmonaires et les allergies pour enfants et adultes.</p>
-                <div class="highlight">
-                    <h3>Horaires d'ouverture</h3>
-                    <p>Du samedi au jeudi, de 8h à 16h</p>
-                </div>
-            </section>
-			<section id="appointment" data-aos="fade-up">
-        <h2>Prendre un rendez-vous</h2>
-      <!-- French Form -->
-<form action="https://formspree.io/f/xnnqdaka" method="POST" id="appointmentForm-fr" onsubmit="submitForm(event, 'appointmentForm-fr')">
-    <label for="name-fr">Nom complet :</label>
-    <input type="text" id="name-fr" name="name" required>
-
-    <label for="sex-fr">Sexe :</label>
-    <select id="sex-fr" name="sex" required>
-        <option value="">Sélectionnez un sexe</option>
-        <option value="male">Homme</option>
-        <option value="female">Femme</option>
-    </select>
-
-    <label for="phone-fr">Numéro de téléphone :</label>
-    <input type="tel" id="phone-fr" name="phone" pattern="[0-9]{10}" required>
-
-    <label for="appointmentDate-fr">Date du rendez-vous :</label>
-    <input type="date" id="appointmentDate-fr" name="appointmentDate" required>
-
-    <button type="submit">Envoyer</button>
-</form>
-
-<div id="success-message-fr" class="success-message" style="display: none;">Votre rendez-vous a été pris avec succès</div>
-
-    </section>
-            <section id="services" data-aos="fade-right">
-                <h2>Nos Services</h2>
-                <ul>
-                    <li>Diagnostic et traitement des maladies pulmonaires, asthme, et cancer du poumon</li>
-                    <li>Radiographie numérique (capteur plan)</li>
-                    <li>Évaluation de la fonction respiratoire (EFR)</li>
-                    <li>Traitement des maladies pulmonaires chez les enfants</li>
-                    <li>Tests d'allergie</li>
-                    <li>Diagnostic de l'apnée du sommeil</li>
-                    <li>Urgences respiratoires</li>
-                    <li>Traitement du pneumothorax et biopsie pleurale</li>
-                    <li>Soutien au sevrage tabagique</li>
-                    <li>Examens médicaux généraux</li>
-                </ul>
-            </section>
-            <section id="apropos" data-aos="fade-left">
-                <h2>À propos du Dr Bakha S</h2>
-                <p>Le Dr Bakha S est titulaire d'un diplôme en médecine spécialisée de l'hôpital universitaire de Constantine et de l'hôpital militaire de Constantine.</p>
-                <p>Elle a une vaste expérience et a participé à des conférences scientifiques nationales et internationales, avec une formation avancée dans les domaines des allergies et de l'apnée du sommeil.</p>
-            </section>
-            <section id="contact" data-aos="fade-up">
-                <h2>Contact</h2>
-                <p><strong>Adresse :</strong> Quartier 19 Juin, derrière l'Hôpital Hakim Akabi, Guelma.</p>
-                <p><strong>Pour réservation et informations :</strong></p>
-                <ul>
-                    <li><a href="tel:0796222597"><i class="fas fa-phone"></i> 0796222597</a></li>
-                    <li><a href="tel:0663755584"><i class="fas fa-phone"></i> 0663755584</a></li>
-                </ul>
-                <p><a href="https://g.page/r/CUUGiOIOMg-BEBM/review" target="_blank" rel="noopener noreferrer">Ouvrir sur Google Maps</a></p>
-                <p><a href="https://www.facebook.com/profile.php?id=61560422818675" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-facebook" style="font-size: 1.5rem; color: #3498db; margin-top: 10px;"></i> Suivez-nous sur Facebook
-                </a></p>
-            </section>
-        </main>
-       
-<footer>
-    <p>&copy; 2024 عيادة الدكتورة بخة س - جميع الحقوق محفوظة</p>
-    <div id="visitor-counter">عدد الزوار: <span id="visitor-count">0</span></div>
-    <div id="country-info">الدولة: <span id="visitor-country">جاري التحميل...</span></div>
-</footer>
-
-
-
-
-    <!-- Language Toggle Script -->
     <script>
-        function setLanguage(lang) {
-            if (lang === 'ar') {
-                document.getElementById('content-ar').style.display = 'block';
-                document.getElementById('content-fr').style.display = 'none';
-            } else if (lang === 'fr') {
-                document.getElementById('content-ar').style.display = 'none';
-                document.getElementById('content-fr').style.display = 'block';
-            }
-        }
         AOS.init();
     </script>
-	
-	
-	 
-
-
-</body>
-</html>
-
 </body>
 </html>
