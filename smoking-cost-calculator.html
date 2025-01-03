@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="حاسبة تكلفة التدخين, تكلفة التدخين, تكلفة السجائر, تكلفة التدخين السنوية, تكلفة التدخين الشهرية, تكلفة التدخين اليومية, الإقلاع عن التدخين, صحة الرئة, نصائح الإقلاع عن التدخين, أضرار التدخين">
+    <meta name="description" content="حاسبة تكلفة التدخين تساعدك على حساب التكلفة الإجمالية للتدخين بناءً على عدد العلب التي تدخنها يومياً وعدد سنوات التدخين. اكتشف التكلفة المالية للتدخين واتخذ خطوة نحو الإقلاع عنه.">
+    <meta name="author" content="عيادة الدكتورة بخة س - اختصاصية في الأمراض الصدرية والحساسية">
+    <meta http-equiv="Content-Language" content="ar">
+    <title>حاسبة تكلفة التدخين</title>
+    <link rel="icon" href="cabinet.png" type="image/png">
+    <link rel="canonical" href="https://bakha-pneumo.netlify.app/smoking-cost-calculator.html">
+    <link rel="stylesheet" href="style.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "حاسبة تكلفة التدخين",
+        "description": "حاسبة تكلفة التدخين تساعدك على حساب التكلفة الإجمالية للتدخين بناءً على عدد العلب التي تدخنها يومياً وعدد سنوات التدخين.",
+        "author": {
+            "@type": "Person",
+            "name": "الدكتورة بخة س"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "عيادة الدكتورة بخة س",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://bakha-pneumo.netlify.app/cabinet.png"
+            }
+        },
+        "url": "https://bakha-pneumo.netlify.app/smoking-cost-calculator.html",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://bakha-pneumo.netlify.app/smoking-cost-calculator.html"
+        }
+    }
+    </script>
+    <style>
+        /* Basic styling for the calculator */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        nav {
+            background-color: #333;
+            padding: 1rem;
+            text-align: center;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 1rem;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        main {
+            padding: 2rem;
+        }
+        .calculator {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .calculator label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+        .calculator input {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .calculator button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        .calculator button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+        .disclaimer {
+            margin-top: 2rem;
+            padding: 1rem;
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            border-radius: 4px;
+            color: #856404;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>حاسبة تكلفة التدخين</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="smoking-cost-calculator.html">حاسبة تكلفة التدخين</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section class="calculator">
+            <h2>حاسبة تكلفة التدخين</h2>
+            <form id="smoking-cost-form">
+                <label for="cost-per-pack">تكلفة العلبة الواحدة (دينار):</label>
+                <input type="number" id="cost-per-pack" name="cost-per-pack" required>
+
+                <label for="packs-per-day">عدد العلب في اليوم:</label>
+                <input type="number" id="packs-per-day" name="packs-per-day" required>
+
+                <label for="smoking-years">عدد سنوات التدخين:</label>
+                <input type="number" id="smoking-years" name="smoking-years" required>
+
+                <button type="button" onclick="calculateSmokingCost()">احسب</button>
+            </form>
+            <div class="result" id="smoking-cost-result"></div>
+        </section>
+
+        <!-- Disclaimer Section -->
+        <section class="disclaimer">
+            <h3>تنويه هام</h3>
+            <p>
+                هذه الحاسبة تقدم تقديرات عامة للتكلفة المالية للتدخين بناءً على عدد العلب التي تدخنها يومياً وعدد سنوات التدخين. ومع ذلك، قد تختلف التكلفة الفعلية حسب التغيرات في أسعار السجائر وعادات التدخين.
+            </p>
+            <p>
+                <strong>يجب استشارة طبيبك أو أخصائي الرعاية الصحية</strong> للحصول على تقييم دقيق لتأثير التدخين على صحتك، خاصة إذا كنت تعاني من أي حالات صحية مثل أمراض الرئة، القلب، أو السرطان.
+            </p>
+            <p>
+                هذه الحاسبة لا تغني عن الاستشارة الطبية المهنية.
+            </p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 عيادة الدكتورة بخة س - جميع الحقوق محفوظة</p>
+    </footer>
+
+    <script>
+        function calculateSmokingCost() {
+            // Get user inputs
+            const costPerPack = parseFloat(document.getElementById('cost-per-pack').value);
+            const packsPerDay = parseFloat(document.getElementById('packs-per-day').value);
+            const smokingYears = parseFloat(document.getElementById('smoking-years').value);
+
+            // Input validation
+            if (isNaN(costPerPack) || isNaN(packsPerDay) || isNaN(smokingYears) || costPerPack <= 0 || packsPerDay <= 0 || smokingYears <= 0) {
+                document.getElementById('smoking-cost-result').innerHTML = `
+                    <p class="error">الرجاء إدخال قيم صحيحة لتكلفة العلبة وعدد العلب وسنوات التدخين.</p>
+                `;
+                return;
+            }
+
+            // Calculate total cost
+            const totalCost = (costPerPack * packsPerDay * 365 * smokingYears).toFixed(2);
+
+            // Display the result
+            document.getElementById('smoking-cost-result').innerHTML = `
+                <p>التكلفة الإجمالية للتدخين: <strong>${totalCost}</strong> دينار.</p>
+            `;
+        }
+    </script>
+</body>
+</html>

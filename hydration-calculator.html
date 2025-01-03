@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="حاسبة الترطيب اليومي, حساب الماء اليومي, كمية الماء اليومية, الترطيب الصحي, كمية الماء حسب الوزن, كمية الماء حسب النشاط, كمية الماء حسب العمر, كمية الماء حسب الجنس, كمية الماء حسب المناخ, كمية الماء للحامل, كمية الماء للمرضع, كمية الماء لأمراض الكلى, كمية الماء لأمراض القلب, صحة الترطيب, نصائح الترطيب, أهمية شرب الماء">
+    <meta name="description" content="حاسبة الترطيب اليومي العلمية تساعدك على حساب كمية الماء التي يحتاجها جسمك يومياً بناءً على وزنك، عمرك، جنسك، مستوى نشاطك، المناخ، وحالتك الصحية. احصل على توصيات مخصصة لتحسين صحتك.">
+    <meta name="author" content="عيادة الدكتورة بخة س - اختصاصية في الأمراض الصدرية والحساسية">
+    <meta http-equiv="Content-Language" content="ar">
+    <title>حاسبة الترطيب اليومي العلمية</title>
+    <link rel="icon" href="cabinet.png" type="image/png">
+    <link rel="canonical" href="https://bakha-pneumo.netlify.app/hydration-calculator.html">
+    <link rel="stylesheet" href="style.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "حاسبة الترطيب اليومي العلمية",
+        "description": "حاسبة الترطيب اليومي العلمية تساعدك على حساب كمية الماء التي يحتاجها جسمك يومياً بناءً على وزنك، عمرك، جنسك، مستوى نشاطك، المناخ، وحالتك الصحية.",
+        "author": {
+            "@type": "Person",
+            "name": "الدكتورة بخة س"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "عيادة الدكتورة بخة س",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://bakha-pneumo.netlify.app/cabinet.png"
+            }
+        },
+        "url": "https://bakha-pneumo.netlify.app/hydration-calculator.html",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://bakha-pneumo.netlify.app/hydration-calculator.html"
+        }
+    }
+    </script>
+    <style>
+        /* Basic styling for the calculator */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        nav {
+            background-color: #333;
+            padding: 1rem;
+            text-align: center;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 1rem;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        main {
+            padding: 2rem;
+        }
+        .calculator {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .calculator label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+        .calculator input,
+        .calculator select {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .calculator button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        .calculator button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+        .disclaimer {
+            margin-top: 2rem;
+            padding: 1rem;
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            border-radius: 4px;
+            color: #856404;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>حاسبة الترطيب اليومي العلمية</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="hydration-calculator.html">حاسبة الترطيب اليومي</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section class="calculator">
+            <h2>حاسبة الترطيب اليومي</h2>
+            <form id="hydration-form">
+                <label for="hydration-weight">الوزن (كجم):</label>
+                <input type="number" id="hydration-weight" name="hydration-weight" step="0.1" required>
+
+                <label for="age">العمر:</label>
+                <select id="age" name="age" required>
+                    <option value="40">14-18 سنة</option>
+                    <option value="35">19-30 سنة</option>
+                    <option value="35">31-50 سنة</option>
+                    <option value="30">51-70 سنة</option>
+                    <option value="25">أكثر من 70 سنة</option>
+                </select>
+
+                <label for="gender">الجنس:</label>
+                <select id="gender" name="gender" required>
+                    <option value="male">ذكر</option>
+                    <option value="female">أنثى</option>
+                </select>
+
+                <label for="activity-level">مستوى النشاط:</label>
+                <select id="activity-level" name="activity-level" required>
+                    <option value="0">مستقر (معظم الوقت جالس)</option>
+                    <option value="0.3">نشاط خفيف (30-60 دقيقة تمارين خفيفة)</option>
+                    <option value="0.5">نشاط متوسط (60-90 دقيقة تمارين متوسطة)</option>
+                    <option value="0.7">نشاط عالي (90+ دقيقة تمارين قوية)</option>
+                    <option value="1.0">رياضي محترف</option>
+                </select>
+
+                <label for="temperature">درجة الحرارة المحيطة:</label>
+                <select id="temperature" name="temperature" required>
+                    <option value="1.0">معتدل (15-25°C)</option>
+                    <option value="1.2">حار (26-35°C)</option>
+                    <option value="1.4">حار جداً (>35°C)</option>
+                </select>
+
+                <label for="humidity">الرطوبة النسبية:</label>
+                <select id="humidity" name="humidity" required>
+                    <option value="1.0">منخفضة (<30%)</option>
+                    <option value="1.1">متوسطة (30-60%)</option>
+                    <option value="1.2">عالية (>60%)</option>
+                </select>
+
+                <label for="health-condition">الحالة الصحية:</label>
+                <select id="health-condition" name="health-condition" required>
+                    <option value="1.0">صحة جيدة</option>
+                    <option value="1.3">حامل</option>
+                    <option value="1.5">مرضع</option>
+                    <option value="1.2">أمراض كلى</option>
+                    <option value="1.2">أمراض قلب</option>
+                </select>
+
+                <button type="button" onclick="calculateHydration()">احسب</button>
+            </form>
+            <div class="result" id="hydration-result"></div>
+        </section>
+
+        <!-- Disclaimer Section -->
+        <section class="disclaimer">
+            <h3>تنويه هام</h3>
+            <p>
+                هذه الحاسبة تقدم تقديرات عامة لكمية الماء التي يحتاجها جسمك يومياً بناءً على المعطيات المدخلة. ومع ذلك، قد تختلف الاحتياجات الفعلية من شخص لآخر حسب الحالة الصحية، النشاط البدني، والعوامل البيئية.
+            </p>
+            <p>
+                <strong>يجب استشارة طبيبك أو أخصائي الرعاية الصحية</strong> للحصول على توصيات مخصصة، خاصة إذا كنت تعاني من أي حالات صحية مثل أمراض الكلى أو القلب، أو إذا كنت حاملاً أو مرضعاً.
+            </p>
+            <p>
+                هذه الحاسبة لا تغني عن الاستشارة الطبية المهنية.
+            </p>
+        </section>
+    </main>
+     <footer>
+        <p>© 2025 الدكتورة بخة س - اختصاصية في الأمراض الصدرية والحساسية ولاية قالمة</p>
+        <p><a href="index.html">العودة إلى الصفحة الرئيسية</a></p>
+    </footer>
+    <script>
+        function calculateHydration() {
+            // Get user inputs
+            const weight = parseFloat(document.getElementById('hydration-weight').value);
+            const age = parseFloat(document.getElementById('age').value);
+            const gender = document.getElementById('gender').value;
+            const activityLevel = parseFloat(document.getElementById('activity-level').value);
+            const temperature = parseFloat(document.getElementById('temperature').value);
+            const humidity = parseFloat(document.getElementById('humidity').value);
+            const healthCondition = parseFloat(document.getElementById('health-condition').value);
+
+            // Input validation
+            if (isNaN(weight) || weight <= 0) {
+                document.getElementById('hydration-result').innerHTML = `<p class="error">الرجاء إدخال قيمة صحيحة للوزن.</p>`;
+                return;
+            }
+
+            // Base hydration calculation using evidence-based formulas
+            let baseHydration;
+
+            // Calculate base needs using IOM guidelines
+            if (gender === 'male') {
+                baseHydration = (weight * age) / 30; // Male formula
+            } else {
+                baseHydration = (weight * age) / 35; // Female formula
+            }
+
+            // Apply environmental factors
+            let environmentalFactor = temperature * humidity;
+
+            // Apply activity adjustment
+            let activityAdjustment = 1 + activityLevel;
+
+            // Calculate sweat loss compensation for activity
+            let sweatLossCompensation = (activityLevel > 0) ?
+                (weight * activityLevel * 15) : 0; // 15ml per kg for every activity level
+
+            // Apply health condition modifier
+            let healthAdjustment = healthCondition;
+
+            // Calculate total daily water needs
+            let totalHydration = (baseHydration * environmentalFactor * activityAdjustment * healthAdjustment + sweatLossCompensation) / 1000;
+
+            // Display the result with recommendations
+            const resultHTML = `
+                <p>احتياجك اليومي من الماء هو: <strong>${totalHydration.toFixed(2)}</strong> لتر/يوم.</p>
+                <p>ملاحظات:</p>
+                <ul>
+                    <li>يجب توزيع هذه الكمية على مدار اليوم</li>
+                    <li>راقب لون البول - يجب أن يكون أصفر فاتح</li>
+                    <li>زد الكمية في حالة التعرق الشديد</li>
+                </ul>
+            `;
+
+            document.getElementById('hydration-result').innerHTML = resultHTML;
+        }
+    </script>
+</body>
+</html>

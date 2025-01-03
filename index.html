@@ -21,8 +21,92 @@
     <link rel="stylesheet" href="appointment-form.css">
     <script src="date-features.js" defer></script>
     <script src="clinic-status.js" defer></script>
+    <script src="calculators.js" defer></script>
+    <style>
+        /* Dropdown Menu Enhancements */
+        .dropdown-menu {
+            display: none;
+            opacity: 0;
+            position: absolute;
+            background-color: #f9f9f9;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            z-index: 1001;
+            right: 0;
+            min-width: 200px;
+            max-height: 300px;
+            overflow-y: auto;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            transform: translateY(-10px);
+        }
+
+        .dropdown-menu.show {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .dropdown-menu li {
+            padding: 0.5rem 1rem;
+        }
+
+        .dropdown-menu li:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown-menu a {
+            color: #333;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown a i.fa-caret-down {
+            transition: transform 0.3s ease;
+        }
+
+        .dropdown a[aria-expanded="true"] i.fa-caret-down {
+            transform: rotate(180deg);
+        }
+
+        /* Dropdown Backdrop */
+        .dropdown-backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            display: none;
+        }
+
+        .dropdown-backdrop.active {
+            display: block;
+        }
+
+        /* Watermark Styles */
+        .watermark {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            font-size: 3rem;
+            color: rgba(0, 0, 0, 0.1);
+            pointer-events: none;
+            z-index: 1000;
+            white-space: nowrap;
+            font-weight: bold;
+            user-select: none;
+        }
+    </style>
 </head>
 <body>
+    <!-- Dark Mode Toggle Button -->
+    <button id="theme-toggle" aria-label="Toggle Dark Mode">
+        <i class="fas fa-moon"></i>
+    </button>
+
     <!-- Arabic Content -->
     <div id="content-ar" lang="ar" dir="rtl">
         <div class="datetime-display" data-aos="fade-down">
@@ -30,22 +114,68 @@
         </div>
         <header role="banner">
             <h1> عيادة الدكتورة بخة س - اختصاصية في الأمراض الصدرية والحساسية ولاية قالمة </h1>
-            <p class="subheader-text">عيادة متخصصة في الأمراض الصدرية والحساسية ڨالمة</p>
             <div id="clinic-status" class="clinic-status" data-aos="fade-down">
                 <p id="status-message"></p>
                 <p id="next-opening"></p>
             </div>
         </header>
-        
+
         <nav>
             <ul>
                 <li><a href="#accueil">الرئيسية</a></li>
+                <li class="dropdown" aria-haspopup="true">
+                    <a href="#" onclick="toggleDropdown('diseases-dropdown')" role="button" aria-expanded="false" aria-controls="diseases-dropdown">
+                        أمراض الصدر <i class="fas fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu" id="diseases-dropdown" role="menu">
+                        <li role="menuitem"><a href="asthma.html"><i class="fas fa-lungs"></i> الربو (Asthme)</a></li>
+                        <li role="menuitem"><a href="copd.html"><i class="fas fa-lungs"></i> مرض الانسداد الرئوي المزمن (BPCO)</a></li>
+                        <li role="menuitem"><a href="lung-cancer.html"><i class="fas fa-lungs"></i> سرطان الرئة (Cancer du poumon)</a></li>
+                        <li role="menuitem"><a href="pulmonary-fibrosis.html"><i class="fas fa-lungs"></i> التليف الرئوي (Fibrose pulmonaire)</a></li>
+                        <li role="menuitem"><a href="bronchitis.html"><i class="fas fa-lungs"></i> التهاب الشعب الهوائية (Bronchite)</a></li>
+                        <li role="menuitem"><a href="pneumonia.html"><i class="fas fa-lungs"></i> التهاب الرئة (Pneumonie)</a></li>
+                        <li role="menuitem"><a href="tuberculosis.html"><i class="fas fa-lungs"></i> السل (Tuberculose)</a></li>
+                        <li role="menuitem"><a href="covid-19.html"><i class="fas fa-lungs"></i> كوفيد-19 (COVID-19)</a></li>
+                        <li role="menuitem"><a href="influenza.html"><i class="fas fa-lungs"></i> الإنفلونزا (Influenza)</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown" aria-haspopup="true">
+                    <a href="#" onclick="toggleDropdown('allergic-dropdown')" role="button" aria-expanded="false" aria-controls="allergic-dropdown">
+                        أمراض الحساسية <i class="fas fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu" id="allergic-dropdown" role="menu">
+                        <li role="menuitem"><a href="allergic-rhinitis.html"><i class="fas fa-lungs"></i> التهاب الأنف التحسسي (Rhinite allergique)</a></li>
+                        <li role="menuitem"><a href="allergic-asthma.html"><i class="fas fa-lungs"></i> الربو التحسسي (Asthme allergique)</a></li>
+                        <li role="menuitem"><a href="allergic-bronchitis.html"><i class="fas fa-lungs"></i> التهاب الشعب الهوائية التحسسي (Bronchite allergique)</a></li>
+                        <li role="menuitem"><a href="hypersensitivity-pneumonitis.html"><i class="fas fa-lungs"></i> التهاب الرئة التحسسي (Pneumopathie d'hypersensibilité)</a></li>
+                        <li role="menuitem"><a href="eczema.html"><i class="fas fa-lungs"></i> الإكزيما (Eczéma)</a></li>
+                        <li role="menuitem"><a href="urticaria.html"><i class="fas fa-lungs"></i> الشرى (Urticaire)</a></li>
+                        <li role="menuitem"><a href="food-allergy.html"><i class="fas fa-lungs"></i> حساسية الطعام (Allergie alimentaire)</a></li>
+                        <li role="menuitem"><a href="drug-allergy.html"><i class="fas fa-lungs"></i> حساسية الأدوية (Allergie médicamenteuse)</a></li>
+                    </ul>
+                </li>
+                <li><a href="sleep-apnea.html">انقطاع التنفس أثناء النوم (Apnée du sommeil)</a></li>
+                <li class="dropdown" aria-haspopup="true">
+                    <a href="#" onclick="toggleDropdown('calculators-dropdown')" role="button" aria-expanded="false" aria-controls="calculators-dropdown">
+                        حاسبات صحية <i class="fas fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu" id="calculators-dropdown" role="menu">
+                        <li role="menuitem"><a href="bmi-calculator.html">حاسبة مؤشر كتلة الجسم (BMI)</a></li>
+                        <li role="menuitem"><a href="bmr-calculator.html">حاسبة معدل الأيض الأساسي (BMR)</a></li>
+                        <li role="menuitem"><a href="calorie-calculator.html">حاسبة السعرات الحرارية اليومية</a></li>
+                        <li role="menuitem"><a href="whr-calculator.html">حاسبة نسبة الخصر إلى الورك (WHR)</a></li>
+                        <li role="menuitem"><a href="smoking-cost-calculator.html">حاسبة تكلفة التدخين</a></li>
+                        <li role="menuitem"><a href="lung-age-calculator.html">حاسبة عمر الرئة</a></li>
+                        <li role="menuitem"><a href="hydration-calculator.html">حاسبة الترطيب اليومي</a></li>
+                    </ul>
+                </li>
                 <li><a href="#services">الخدمات</a></li>
                 <li><a href="#apropos">عن الدكتورة</a></li>
                 <li><a href="#appointment">احجز موعداً</a></li>
                 <li><a href="#contact">التواصل</a></li>
             </ul>
         </nav>
+        <div class="dropdown-backdrop"></div>
 
         <main>
             <section id="accueil" data-aos="fade-up">
@@ -107,32 +237,30 @@
                 <p>لديها خبرة واسعة وشاركت في مؤتمرات علمية وطنية ودولية، وحصلت على دورات تدريبية عالية الجودة في مجالات أمراض الحساسية وانقطاع التنفس.</p>
             </section>
 
-         <section id="contact" data-aos="fade-up">
-    <h2>التواصل</h2>
-    <p><strong>العنوان:</strong> حي 19 جوان، خلف مستشفى الحكيم عقبي، ڨالمة.</p>
-    <p><strong>للحجز والاستفسار:</strong></p>
-    <ul>
-        <li><a href="tel:0796222597"><i class="fas fa-phone"></i> 0796222597</a></li>
-        <li><a href="tel:0663755584"><i class="fas fa-phone"></i> 0663755584</a></li>
-    </ul>
-    
-    <div class="map-container">
-        <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3209.1007271838494!2d7.436598084719768!3d36.455121980020934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1scabinet%20de%20pneumologie%20allergologie%20Dr.%20Bakha%20S!5e0!3m2!1sar!2sdz!4v1735734049065!5m2!1sar!2sdz" 
-            width="100%" 
-            height="450" 
-            style="border:0;" 
-            allowfullscreen="" 
-            loading="lazy" 
-            referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
-    </div>
-    
-    <p><a href="https://g.page/r/CUUGiOIOMg-BEBM/review" target="_blank" rel="noopener noreferrer">افتح الموقع على خرائط جوجل</a></p>
-    <p><a href="https://www.facebook.com/profile.php?id=61560422818675" target="_blank" rel="noopener noreferrer">
-        <i class="fab fa-facebook" style="font-size: 1.5rem; color: #3498db; margin-top: 10px;"></i> تابعنا على الفيسبوك
-    </a></p>
-</section>
+            <section id="contact" data-aos="fade-up">
+                <h2>التواصل</h2>
+                <p><strong>العنوان:</strong> حي 19 جوان، خلف مستشفى الحكيم عقبي، ڨالمة.</p>
+                <p><strong>للحجز والاستفسار:</strong></p>
+                <ul>
+                    <li><a href="tel:0796222597"><i class="fas fa-phone"></i> 0796222597</a></li>
+                    <li><a href="tel:0663755584"><i class="fas fa-phone"></i> 0663755584</a></li>
+                </ul>
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3209.1007271838494!2d7.436598084719768!3d36.455121980020934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1scabinet%20de%20pneumologie%20allergologie%20Dr.%20Bakha%20S!5e0!3m2!1sar!2sdz!4v1735734049065!5m2!1sar!2sdz" 
+                        width="100%" 
+                        height="450" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                <p><a href="https://g.page/r/CUUGiOIOMg-BEBM/review" target="_blank" rel="noopener noreferrer">افتح الموقع على خرائط جوجل</a></p>
+                <p><a href="https://www.facebook.com/profile.php?id=61560422818675" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-facebook" style="font-size: 1.5rem; color: #3498db; margin-top: 10px;"></i> تابعنا على الفيسبوك
+                </a></p>
+            </section>
         </main>
 
         <footer>
@@ -140,7 +268,88 @@
         </footer>
     </div>
 
+    <!-- Watermark -->
+    <div class="watermark">Dr. Bakha</div>
+
     <script>
+        // Dark Mode Toggle Script
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        // Check for saved theme in localStorage
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            body.setAttribute('data-theme', savedTheme);
+            updateToggleIcon(savedTheme);
+        }
+
+        // Toggle theme on button click
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateToggleIcon(newTheme);
+        });
+
+        // Update the toggle button icon
+        function updateToggleIcon(theme) {
+            const icon = themeToggle.querySelector('i');
+            if (theme === 'dark') {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            }
+        }
+
+        // Function to toggle dropdown menu
+        function toggleDropdown(id) {
+            event.preventDefault(); // Prevent the default link behavior
+            const dropdown = document.getElementById(id);
+            const backdrop = document.querySelector('.dropdown-backdrop');
+
+            // Close all other dropdowns
+            document.querySelectorAll('.dropdown-menu.show').forEach(menu => {
+                if (menu.id !== id) {
+                    menu.classList.remove('show');
+                    menu.previousElementSibling.setAttribute('aria-expanded', false);
+                }
+            });
+
+            // Toggle the clicked dropdown
+            dropdown.classList.toggle('show');
+            backdrop.classList.toggle('active');
+            const button = dropdown.previousElementSibling;
+            button.setAttribute('aria-expanded', dropdown.classList.contains('show'));
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function (event) {
+            const dropdowns = document.querySelectorAll('.dropdown-menu');
+            const backdrop = document.querySelector('.dropdown-backdrop');
+
+            // Check if the click is outside any dropdown
+            if (!event.target.closest('.dropdown')) {
+                dropdowns.forEach(menu => {
+                    menu.classList.remove('show');
+                    menu.previousElementSibling.setAttribute('aria-expanded', false);
+                });
+                backdrop.classList.remove('active');
+            }
+        });
+
+        // Close dropdown when a link is clicked
+        document.querySelectorAll('.dropdown-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                const dropdown = link.closest('.dropdown-menu');
+                dropdown.classList.remove('show');
+                document.querySelector('.dropdown-backdrop').classList.remove('active');
+                dropdown.previousElementSibling.setAttribute('aria-expanded', false);
+            });
+        });
+
         AOS.init();
     </script>
 </body>
