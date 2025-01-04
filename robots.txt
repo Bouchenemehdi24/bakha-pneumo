@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://bakha-pneumo.netlify.app/sitemap.xml
