@@ -24,16 +24,16 @@
     <script src="calculators.js" defer></script>
     <!-- Load Google Translate API -->
     <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-    <!-- Load Google Programmable Search Engine -->
-    <script async src="https://cse.google.com/cse.js?cx=d7a4485b23bff44a3"></script>
+
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BCT8GP6LZT"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-BCT8GP6LZT');
-    </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BCT8GP6LZT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-BCT8GP6LZT');
+</script>
     <style>
         /* Dropdown Menu Enhancements */
         .dropdown-menu {
@@ -111,38 +111,6 @@
             font-weight: bold;
             user-select: none;
         }
-
-        /* Search Bar Styles */
-        .search-bar {
-            position: absolute;
-            top: 10px;
-            left: 10px; /* Adjust the position as needed */
-            z-index: 1000;
-        }
-
-        .gsc-control-cse {
-            background-color: transparent !important;
-            border: none !important;
-            padding: 0 !important;
-        }
-
-        .gsc-input-box {
-            border: 1px solid #ccc !important;
-            border-radius: 4px !important;
-        }
-
-        .gsc-search-button {
-            background-color: #3498db !important;
-            border: none !important;
-            border-radius: 4px !important;
-            color: white !important;
-            padding: 8px 12px !important;
-            cursor: pointer !important;
-        }
-
-        .gsc-search-button:hover {
-            background-color: #2980b9 !important;
-        }
     </style>
 </head>
 <body>
@@ -162,17 +130,12 @@
                 <p id="status-message"></p>
                 <p id="next-opening"></p>
             </div>
-            <!-- Google Translate Widget -->
             <div id="google_translate_element"></div>
-            <script>
-              function googleTranslateElementInit() {
-                new google.translate.TranslateElement({pageLanguage: 'ar'}, 'google_translate_element');
-              }
-            </script>
-            <!-- Google-Powered Search Bar -->
-            <div class="search-bar">
-                <div class="gcse-search"></div>
-            </div>
+        <script>
+          function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'ar'}, 'google_translate_element');
+          }
+        </script>
         </header>
 
         <nav>
