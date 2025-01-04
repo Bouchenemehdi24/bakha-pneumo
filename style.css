@@ -406,12 +406,6 @@ form button:hover {
   transition: color 0.3s ease;
 }
 
-#google_translate_element {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    z-index: 1000;
-}
 
 #theme-toggle:hover {
   color: var(--link-hover-color);
@@ -436,3 +430,11 @@ form button:hover {
     color: red;
     font-weight: bold;
 }
+
+#google_translate_element {
+    position: absolute;
+    top: 10px; /* Adjust the top position as needed */
+    left: 10px; /* Adjust the left position as needed */
+    z-index: 1000; /* Ensure it stays above other elements */
+}
+
