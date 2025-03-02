@@ -481,3 +481,24 @@ form button:hover {
     font-size: 16px !important;
   }
 }
+
+/* Add to your CSS */
+.dropdown-menu.show {
+  display: block !important;
+}
+
+#appointmentForm-ar:focus-within ~ nav,
+#appointmentForm-ar:focus-within ~ header nav {
+  display: none !important;
+}
+
+@media (max-width: 768px) {
+  .dropdown-menu {
+    transition: opacity 0.3s ease;
+  }
+  
+  #appointmentForm-ar:focus-within .dropdown-menu {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
