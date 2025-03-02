@@ -334,6 +334,17 @@
         submitButton.innerHTML = 'إرسال';
     }
 }
+// Close popup when clicking the X
+document.querySelector('.close-popup').addEventListener('click', function() {
+    document.getElementById('success-popup').style.display = 'none';
+});
+
+// Close popup when clicking outside of it
+document.getElementById('success-popup').addEventListener('click', function(event) {
+    if (event.target === this) {
+        this.style.display = 'none';
+    }
+});
 </script>
 
             <!-- Keep all existing scripts below -->
