@@ -351,3 +351,80 @@ form button:hover {
     color: #4CAF50;
     margin-top: 1rem;
 }
+
+       /* Dropdown Menu Enhancements */
+        .dropdown-menu {
+            display: none;
+            opacity: 0;
+            position: absolute;
+            background-color: #f9f9f9;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            z-index: 1001;
+            right: 0;
+            min-width: 200px;
+            max-height: 300px;
+            overflow-y: auto;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            transform: translateY(-10px);
+        }
+
+        .dropdown-menu.show {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .dropdown-menu li {
+            padding: 0.5rem 1rem;
+        }
+
+        .dropdown-menu li:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown-menu a {
+            color: #333;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown a i.fa-caret-down {
+            transition: transform 0.3s ease;
+        }
+
+        .dropdown a[aria-expanded="true"] i.fa-caret-down {
+            transform: rotate(180deg);
+        }
+
+        /* Dropdown Backdrop */
+        .dropdown-backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            display: none;
+        }
+
+        .dropdown-backdrop.active {
+            display: block;
+        }
+
+        /* Watermark Styles */
+        .watermark {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            font-size: 3rem;
+            color: rgba(0, 0, 0, 0.1);
+            pointer-events: none;
+            z-index: 1000;
+            white-space: nowrap;
+            font-weight: bold;
+            user-select: none;
+        }
