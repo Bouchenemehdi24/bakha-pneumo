@@ -335,50 +335,51 @@
             <!-- Rest of your sections remain unchanged -->
             
             <!-- Add Supabase integration script -->
-            <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-            <script>
-                // Supabase Initialization
-                const SUPABASE_URL = 'https://nwdxzkmpugzkcxkocder.supabase.co';
-                const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im53ZHh6a21wdWd6a2N4a29jZGVyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDA5MTM0MDYsImV4cCI6MjA1NjQ4OTQwNn0.J9Ot3uUY3zLxbFpEppcgCVLyEUjwd3Pw2r5yQsqLhTo';
-                const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+            <!-- Add Supabase integration script -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.38.0/dist/umd/supabase.min.js"></script>
+<script>
+    // Supabase Initialization
+    const SUPABASE_URL = 'https://nwdxzkmpugzkcxkocder.supabase.co';
+    const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im53ZHh6a21wdWd6a2N4a29jZGVyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDA5MTM0MDYsImV4cCI6MjA1NjQ4OTQwNn0.J9Ot3uUY3zLxbFpEppcgCVLyEUjwd3Pw2r5yQsqLhTo';
+    const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
-                async function submitToSupabase(event) {
-                    event.preventDefault();
-                    const form = event.target;
-                    const submitButton = form.querySelector('button[type="submit"]');
-                    const successMessage = document.getElementById('success-message-ar');
+    async function submitToSupabase(event) {
+        event.preventDefault();
+        const form = event.target;
+        const submitButton = form.querySelector('button[type="submit"]');
+        const successMessage = document.getElementById('success-message-ar');
 
-                    const formData = new FormData(form);
-                    const data = {
-                        name: formData.get('name'),
-                        sex: formData.get('sex'),
-                        phone: formData.get('phone'),
-                        appointment_date: formData.get('appointment_date')
-                    };
+        const formData = new FormData(form);
+        const data = {
+            name: formData.get('name'),
+            sex: formData.get('sex'),
+            phone: formData.get('phone'),
+            appointment_date: formData.get('appointment_date')
+        };
 
-                    submitButton.disabled = true;
-                    submitButton.innerHTML = 'جاري الإرسال...';
+        submitButton.disabled = true;
+        submitButton.innerHTML = 'جاري الإرسال...';
 
-                    try {
-                        const { error } = await supabase
-                            .from('appointments')
-                            .insert([data]);
+        try {
+            const { error } = await supabaseClient
+                .from('appointments')
+                .insert([data]);
 
-                        if (error) throw error;
+            if (error) throw error;
 
-                        form.reset();
-                        successMessage.style.display = 'block';
-                        setTimeout(() => {
-                            successMessage.style.display = 'none';
-                        }, 3000);
-                    } catch (error) {
-                        alert('حدث خطأ: ' + error.message);
-                    } finally {
-                        submitButton.disabled = false;
-                        submitButton.innerHTML = 'إرسال';
-                    }
-                }
-            </script>
+            form.reset();
+            successMessage.style.display = 'block';
+            setTimeout(() => {
+                successMessage.style.display = 'none';
+            }, 3000);
+        } catch (error) {
+            alert('حدث خطأ: ' + error.message);
+        } finally {
+            submitButton.disabled = false;
+            submitButton.innerHTML = 'إرسال';
+        }
+    }
+</script>
 
             <!-- Keep all existing scripts below -->
             <script>
