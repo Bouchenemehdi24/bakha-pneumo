@@ -428,3 +428,42 @@ form button:hover {
             font-weight: bold;
             user-select: none;
         }
+
+/* style.css - Add these rules */
+
+/* RTL Form Element Base Styles */
+[dir="rtl"] input,
+[dir="rtl"] select,
+[dir="rtl"] textarea,
+[dir="rtl"] button {
+  text-align: right;
+  direction: rtl;
+  font-family: 'Your Arabic Font', sans-serif; /* Add if using custom font */
+}
+
+/* Mobile RTL Form Optimization */
+@media (max-width: 768px) {
+  [dir="rtl"] form {
+    padding: 0 8px;
+  }
+
+  /* Date Input Fixes */
+  [dir="rtl"] input[type="date"] {
+    -webkit-padding-start: 12px;
+    padding-inline-start: 12px;
+  }
+
+  /* Select Dropdown Arrows */
+  [dir="rtl"] select {
+    background-position: left 0.75rem center;
+    padding-left: 2.5rem;
+  }
+}
+
+/* Add this for better mobile touch targets */
+@media (hover: none) {
+  input, select, textarea, button {
+    min-height: 44px !important;
+    font-size: 16px !important;
+  }
+}
