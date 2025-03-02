@@ -1,32 +1,63 @@
-// Dropdown functionality
-function toggleDropdown(dropdownId) {
+// dropdown.js - Revised Version
+document.addEventListener('DOMContentLoaded', () => {
+  // Dropdown toggle function
+  function toggleDropdown(dropdownId) {
+    const formFocused = document.querySelector('#appointmentForm-ar:focus-within');
+    if (formFocused) return;
+    
     const dropdown = document.getElementById(dropdownId);
-    dropdown.classList.toggle('show');
-}
-
-// Close dropdowns when clicking outside
-window.onclick = function(event) {
-    if (!event.target.matches('.dropdown a')) {
-        const dropdowns = document.getElementsByClassName('dropdown-menu');
-        for (let i = 0; i < dropdowns.length; i++) {
-            const openDropdown = dropdowns[i];
-            if (openDropdown.classList.contains('show')) {
-                openDropdown.classList.remove('show');
-            }
-        }
-    }
-}
-
-// Close menu on form interaction
-document.querySelectorAll('#appointmentForm-ar input, #appointmentForm-ar select, #appointmentForm-ar textarea').forEach(element => {
-  element.addEventListener('focus', () => {
-    document.querySelectorAll('nav, .dropdown-menu').forEach(navElement => {
-      navElement.style.display = 'none';
+    const isVisible = dropdown.classList.contains('show');
+    
+    // Close all dropdowns first
+    document.querySelectorAll('.dropdown-menu').forEach(menu => {
+      menu.classList.remove('show');
     });
+    
+    // Toggle current dropdown if not in form
+    if (!isVisible) {
+      dropdown.classList.add('show');
+    }
+  }
+
+  // Close dropdowns when clicking outside
+  document.addEventListener('click', (event) => {
+    const isFormClick = event.target.closest('#appointmentForm-ar');
+    const isDropdownClick = event.target.closest('.dropdown');
+    
+    if (!isDropdownClick && !isFormClick) {
+      document.querySelectorAll('.dropdown-menu').forEach(menu => {
+        menu.classList.remove('show');
+      });
+    }
+  });
+
+  // Form interaction handlers
+  const formElements = document.querySelectorAll('#appointmentForm-ar input, #appointmentForm-ar select, #appointmentForm-ar textarea');
+  
+  formElements.forEach(element => {
+    element.addEventListener('focus', () => {
+      document.querySelectorAll('nav, .dropdown-menu').forEach(navElement => {
+        navElement.classList.remove('show');
+        navElement.style.display = 'none';
+      });
+    });
+
+    element.addEventListener('click', (e) => {
+      e.stopPropagation();
+    });
+  });
+
+  // Prevent form from closing dropdowns on mobile
+  document.querySelector('#appointmentForm-ar').addEventListener('touchstart', (e) => {
+    e.stopPropagation();
   });
 });
 
-// Prevent menu opening while form is focused
-document.querySelector('#appointmentForm-ar').addEventListener('click', (e) => {
-  e.stopPropagation();
+// Initialize dropdown buttons
+document.querySelectorAll('.dropdown a').forEach(button => {
+  button.addEventListener('click', (e) => {
+    e.preventDefault();
+    const dropdownId = e.target.closest('.dropdown').querySelector('.dropdown-menu').id;
+    toggleDropdown(dropdownId);
+  });
 });
