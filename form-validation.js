@@ -17,7 +17,7 @@ function submitForm(event, formId) {
     params.append('timestamp', new Date().toISOString());
     
     // Replace with your Google Apps Script Web App URL
-    fetch('https://script.google.com/macros/s/AKfycbwEw1fkIw7dLI7JYZRgqfkbNKWNiQy3Id5YWYzt-m_sl8fsUZY0Pp34TPirRqYE4AqXUw/exec', {
+    fetch('https://script.google.com/macros/s/AKfycbx_uhZp4TYZRokgpHU9Newli9iPgRrfjsQMg9owrtKQDhtdu_SklGsUXUU5PJtZnSEvPg/exec', {
         method: "POST",
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
