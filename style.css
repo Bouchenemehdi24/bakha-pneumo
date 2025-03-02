@@ -447,6 +447,20 @@ form button:hover {
     padding: 0 8px;
   }
 
+
+/* Hide nav when form is focused */
+#appointmentForm-ar:focus-within ~ nav,
+#appointmentForm-ar:focus-within ~ header nav {
+  display: none !important;
+}
+
+/* Hide dropdowns specifically */
+#appointmentForm-ar:focus-within .dropdown-menu {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
   /* Date Input Fixes */
   [dir="rtl"] input[type="date"] {
     -webkit-padding-start: 12px;
