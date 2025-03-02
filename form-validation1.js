@@ -1,121 +1,117 @@
-// Function to format date as YYYY-MM-DD
-function formatDate(date) {
-    return date.toISOString().split('T')[0];
-}
+// form-validation.js
 
-// Function to get today's date at midnight for comparison
-function getTodayAtMidnight() {
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
-    return today;
-}
-
-// Function to initialize date input restrictions
-function initializeDateInputs() {
-    const dateInputs = [
-        document.getElementById('appointmentDate-ar'),
-        document.getElementById('appointmentDate-fr')
-    ];
-
-    const today = formatDate(new Date());
-
-    dateInputs.forEach(input => {
-        if (input) {
-            input.min = today;
+document.addEventListener('DOMContentLoaded', () => {
+    // Get the appointment form
+    const appointmentForm = document.getElementById('appointmentForm-ar');
+    
+    // Get form inputs
+    const nameInput = document.getElementById('name-ar');
+    const sexSelect = document.getElementById('sex-ar');
+    const phoneInput = document.getElementById('phone-ar');
+    const dateInput = document.getElementById('appointmentDate-ar');
+    
+    // Add validation functions
+    function validateName(name) {
+        return name.trim().length >= 3;
+    }
+    
+    function validatePhone(phone) {
+        return /^[0-9]{10}$/.test(phone);
+    }
+    
+    function validateDate(date) {
+        const selectedDate = new Date(date);
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+        
+        // Check if date is in the future
+        if (selectedDate < today) {
+            return false;
         }
-    });
-}
-
-// Validate form fields
-function validateForm(formId) {
-    const form = document.getElementById(formId);
-    const name = form.querySelector('input[name="name"]');
-    const sex = form.querySelector('select[name="sex"]');
-    const phone = form.querySelector('input[name="phone"]');
-    const appointmentDate = form.querySelector('input[name="appointmentDate"]');
-
-    // Validate name
-    if (!name.value.trim()) {
-        alert(formId.includes('-ar') ? 'الرجاء إدخال الاسم الكامل' : 'Veuillez entrer votre nom complet');
-        name.focus();
-        return false;
+        
+        // Check if date is not more than 3 months in the future
+        const threeMonthsLater = new Date();
+        threeMonthsLater.setMonth(threeMonthsLater.getMonth() + 3);
+        if (selectedDate > threeMonthsLater) {
+            return false;
+        }
+        
+        // Check if it's not a Friday (Friday = 5)
+        return selectedDate.getDay() !== 5;
     }
-
-    // Validate gender
-    if (!sex.value) {
-        alert(formId.includes('-ar') ? 'الرجاء اختيار الجنس' : 'Veuillez sélectionner votre sexe');
-        sex.focus();
-        return false;
-    }
-
-    // Validate phone number (10 digits)
-    if (!phone.value.trim() || !/^[0-9]{10}$/.test(phone.value)) {
-        alert(formId.includes('-ar') ? 'الرجاء إدخال رقم هاتف صحيح من 10 أرقام' : 'Veuillez entrer un numéro de téléphone valide à 10 chiffres');
-        phone.focus();
-        return false;
-    }
-
-    // Validate appointment date
-    if (!appointmentDate.value) {
-        alert(formId.includes('-ar') ? 'الرجاء اختيار تاريخ الموعد' : 'Veuillez sélectionner une date de rendez-vous');
-        appointmentDate.focus();
-        return false;
-    }
-
-    // Check if appointment date is not in the past
-    const selectedDate = new Date(appointmentDate.value);
-    selectedDate.setHours(0, 0, 0, 0);
-    const today = getTodayAtMidnight();
-
-    if (selectedDate < today) {
-        alert(formId.includes('-ar') ? 'الرجاء اختيار تاريخ من اليوم فصاعداً' : 'Veuillez sélectionner une date à partir d\'aujourd\'hui');
-        appointmentDate.focus();
-        return false;
-    }
-
-    return true;
-}
-
-// Handle form submission
-function submitForm(event, formId) {
-    event.preventDefault();
-
-    if (!validateForm(formId)) return;
-
-    const form = document.getElementById(formId);
-    const formData = new FormData(form);
-    const successMessageId = formId === "appointmentForm-ar" ? "success-message-ar" : "success-message-fr";
-    const successMessage = document.getElementById(successMessageId);
-
-    fetch("https://formspree.io/f/xnnqdaka", {
-        method: "POST",
-        headers: {
-            'Accept': 'application/json'
-        },
-        body: formData
-    })
-    .then(response => {
-        if (response.ok) {
-            form.reset();
-            form.style.display = "none"; // Hide the form after successful submission
-            successMessage.style.display = "block";
-            // Hide success message after 5 seconds (optional)
-            setTimeout(() => {
-                successMessage.style.display = "none";
-            }, 5000);
+    
+    // Add input event listeners for real-time validation
+    nameInput.addEventListener('input', () => {
+        if (!validateName(nameInput.value)) {
+            nameInput.setCustomValidity('الاسم يجب أن يحتوي على 3 أحرف على الأقل');
         } else {
-            alert(formId.includes('-ar') ? 
-                'حدث خطأ. يرجى المحاولة مرة أخرى.' : 
-                'Une erreur s\'est produite. Veuillez réessayer.');
+            nameInput.setCustomValidity('');
         }
-    })
-    .catch(error => {
-        alert(formId.includes('-ar') ? 
-            'خطأ في الشبكة. تأكد من الاتصال بالإنترنت وحاول مجددًا.' : 
-            'Erreur réseau. Vérifiez votre connexion et réessayez.');
     });
-}
-
-
-// Initialize date inputs when the document is loaded
-document.addEventListener('DOMContentLoaded', initializeDateInputs);
+    
+    phoneInput.addEventListener('input', () => {
+        if (!validatePhone(phoneInput.value)) {
+            phoneInput.setCustomValidity('يرجى إدخال رقم هاتف صحيح مكون من 10 أرقام');
+        } else {
+            phoneInput.setCustomValidity('');
+        }
+    });
+    
+    dateInput.addEventListener('change', () => {
+        if (!validateDate(dateInput.value)) {
+            const selectedDay = new Date(dateInput.value).getDay();
+            if (selectedDay === 5) {
+                dateInput.setCustomValidity('العيادة مغلقة يوم الجمعة، يرجى اختيار يوم آخر');
+            } else {
+                dateInput.setCustomValidity('يرجى اختيار تاريخ صحيح (من اليوم وحتى 3 أشهر في المستقبل)');
+            }
+        } else {
+            dateInput.setCustomValidity('');
+        }
+    });
+    
+    // Disable past dates in the date picker
+    function disablePastDates() {
+        const today = new Date().toISOString().split('T')[0];
+        dateInput.min = today;
+        
+        // Set max date to 3 months from now
+        const maxDate = new Date();
+        maxDate.setMonth(maxDate.getMonth() + 3);
+        dateInput.max = maxDate.toISOString().split('T')[0];
+    }
+    
+    // Call the function to disable past dates
+    disablePastDates();
+    
+    // Form submission validation
+    appointmentForm.addEventListener('submit', (event) => {
+        // Prevent submission if any validation fails
+        if (!validateName(nameInput.value)) {
+            nameInput.setCustomValidity('الاسم يجب أن يحتوي على 3 أحرف على الأقل');
+            event.preventDefault();
+            return;
+        }
+        
+        if (sexSelect.value === '') {
+            sexSelect.setCustomValidity('يرجى اختيار الجنس');
+            event.preventDefault();
+            return;
+        }
+        
+        if (!validatePhone(phoneInput.value)) {
+            phoneInput.setCustomValidity('يرجى إدخال رقم هاتف صحيح مكون من 10 أرقام');
+            event.preventDefault();
+            return;
+        }
+        
+        if (!validateDate(dateInput.value)) {
+            dateInput.setCustomValidity('يرجى اختيار تاريخ صحيح');
+            event.preventDefault();
+            return;
+        }
+        
+        // If we reach here, validation passed
+        // The form will now submit or the submitToSupabase function will handle it
+    });
+});
