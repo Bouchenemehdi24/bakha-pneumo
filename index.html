@@ -81,6 +81,65 @@
       gtag('config', 'G-BCT8GP6LZT');
     </script>
 
+    <!-- Form submission script -->
+    <script>
+        function submitForm(event, formId) {
+            event.preventDefault();
+            
+            const form = document.getElementById(formId);
+            const formData = new FormData(form);
+            const submitButton = form.querySelector('button[type="submit"]');
+            const successMessage = document.getElementById('success-message-ar');
+            
+            // Disable the submit button and show loading state
+            submitButton.disabled = true;
+            submitButton.innerHTML = 'جاري الإرسال...';
+            
+            // Convert FormData to JSON object
+            const formJson = {};
+            formData.forEach((value, key) => {
+                formJson[key] = value;
+            });
+            
+            // Add timestamp
+            formJson['timestamp'] = new Date().toISOString();
+            
+            // Send data to Google Apps Script
+            fetch('https://script.google.com/macros/s/AKfycbz68_mTDpaUqtidsgcJwp_ZMLMC68TaT65Eh8eavkzmZpZT8S_g-jOh02DUsXVA0LfX4Q/exec', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formJson)
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                // Show success message
+                form.reset();
+                successMessage.style.display = 'block';
+                
+                // Hide success message after 3 seconds
+                setTimeout(() => {
+                    successMessage.style.display = 'none';
+                }, 3000);
+            })
+            .catch(error => {
+                alert('حدث خطأ في إرسال البيانات. يرجى المحاولة مرة أخرى.');
+                console.error('Error:', error);
+            })
+            .finally(() => {
+                // Re-enable the submit button
+                submitButton.disabled = false;
+                submitButton.innerHTML = 'إرسال';
+            });
+        }
+    </script>
+
     <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
     {
@@ -311,7 +370,7 @@
 
             <section id="appointment" data-aos="fade-up">
                 <h2>احجز موعداً</h2>
-                <form action="https://formspree.io/f/xnnqdaka" method="POST" id="appointmentForm-ar" onsubmit="submitForm(event, 'appointmentForm-ar')">
+                <form id="appointmentForm-ar" onsubmit="submitForm(event, 'appointmentForm-ar')">
                     <label for="name-ar">الاسم الكامل:</label>
                     <input type="text" id="name-ar" name="name" required>
 
@@ -387,6 +446,7 @@
         </footer>
     </div>
 
+ 
     <!-- Watermark -->
     <div class="watermark">Dr. Bakha</div>
 
