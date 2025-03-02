@@ -132,85 +132,7 @@
     }
     </script>
 
-    <!-- Inline Styles -->
-    <style>
-        /* Dropdown Menu Enhancements */
-        .dropdown-menu {
-            display: none;
-            opacity: 0;
-            position: absolute;
-            background-color: #f9f9f9;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            z-index: 1001;
-            right: 0;
-            min-width: 200px;
-            max-height: 300px;
-            overflow-y: auto;
-            transition: opacity 0.3s ease, transform 0.3s ease;
-            transform: translateY(-10px);
-        }
 
-        .dropdown-menu.show {
-            display: block;
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .dropdown-menu li {
-            padding: 0.5rem 1rem;
-        }
-
-        .dropdown-menu li:hover {
-            background-color: #f1f1f1;
-        }
-
-        .dropdown-menu a {
-            color: #333;
-            text-decoration: none;
-            display: block;
-        }
-
-        .dropdown a i.fa-caret-down {
-            transition: transform 0.3s ease;
-        }
-
-        .dropdown a[aria-expanded="true"] i.fa-caret-down {
-            transform: rotate(180deg);
-        }
-
-        /* Dropdown Backdrop */
-        .dropdown-backdrop {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 999;
-            display: none;
-        }
-
-        .dropdown-backdrop.active {
-            display: block;
-        }
-
-        /* Watermark Styles */
-        .watermark {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) rotate(-45deg);
-            font-size: 3rem;
-            color: rgba(0, 0, 0, 0.1);
-            pointer-events: none;
-            z-index: 1000;
-            white-space: nowrap;
-            font-weight: bold;
-            user-select: none;
-        }
-    </style>
 </head>
 <body>
     <!-- Dark Mode Toggle Button -->
@@ -360,42 +282,58 @@
     const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im53ZHh6a21wdWd6a2N4a29jZGVyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDA5MTM0MDYsImV4cCI6MjA1NjQ4OTQwNn0.J9Ot3uUY3zLxbFpEppcgCVLyEUjwd3Pw2r5yQsqLhTo';
     const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
-    async function submitToSupabase(event) {
-        event.preventDefault();
-        const form = event.target;
-        const submitButton = form.querySelector('button[type="submit"]');
-        const successMessage = document.getElementById('success-message-ar');
+   async function submitToSupabase(event) {
+    event.preventDefault();
+    const form = event.target;
+    const submitButton = form.querySelector('button[type="submit"]');
+    const successMessage = document.getElementById('success-message-ar');
+    const successPopup = document.getElementById('success-popup');
 
-        const formData = new FormData(form);
-        const data = {
-            name: formData.get('name'),
-            sex: formData.get('sex'),
-            phone: formData.get('phone'),
-            appointment_date: formData.get('appointment_date')
-        };
+    const formData = new FormData(form);
+    const data = {
+        name: formData.get('name'),
+        sex: formData.get('sex'),
+        phone: formData.get('phone'),
+        appointment_date: formData.get('appointment_date')
+    };
 
-        submitButton.disabled = true;
-        submitButton.innerHTML = 'جاري الإرسال...';
+    submitButton.disabled = true;
+    submitButton.innerHTML = 'جاري الإرسال...';
 
-        try {
-            const { error } = await supabaseClient
-                .from('appointments')
-                .insert([data]);
+    try {
+        const { error } = await supabaseClient
+            .from('appointments')
+            .insert([data]);
 
-            if (error) throw error;
+        if (error) throw error;
 
-            form.reset();
-            successMessage.style.display = 'block';
-            setTimeout(() => {
-                successMessage.style.display = 'none';
-            }, 3000);
-        } catch (error) {
-            alert('حدث خطأ: ' + error.message);
-        } finally {
-            submitButton.disabled = false;
-            submitButton.innerHTML = 'إرسال';
-        }
+        // Fill the popup with user details
+        document.getElementById('popup-name').textContent = data.name;
+        document.getElementById('popup-phone').textContent = data.phone;
+        
+        // Format date for display
+        const appointmentDate = new Date(data.appointment_date);
+        const formattedDate = appointmentDate.toLocaleDateString('ar-DZ', {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+        document.getElementById('popup-date').textContent = formattedDate;
+        
+        // Show the popup
+        successPopup.style.display = 'flex';
+        
+        // Reset the form
+        form.reset();
+        
+    } catch (error) {
+        alert('حدث خطأ: ' + error.message);
+    } finally {
+        submitButton.disabled = false;
+        submitButton.innerHTML = 'إرسال';
     }
+}
 </script>
 
             <!-- Keep all existing scripts below -->
