@@ -16,3 +16,17 @@ window.onclick = function(event) {
         }
     }
 }
+
+// Close menu on form interaction
+document.querySelectorAll('#appointmentForm-ar input, #appointmentForm-ar select, #appointmentForm-ar textarea').forEach(element => {
+  element.addEventListener('focus', () => {
+    document.querySelectorAll('nav, .dropdown-menu').forEach(navElement => {
+      navElement.style.display = 'none';
+    });
+  });
+});
+
+// Prevent menu opening while form is focused
+document.querySelector('#appointmentForm-ar').addEventListener('click', (e) => {
+  e.stopPropagation();
+});
