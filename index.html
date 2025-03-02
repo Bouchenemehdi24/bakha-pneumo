@@ -128,10 +128,11 @@
                     successMessage.style.display = 'none';
                 }, 3000);
             })
-            .catch(error => {
-                alert('حدث خطأ في إرسال البيانات. يرجى المحاولة مرة أخرى.');
-                console.error('Error:', error);
-            })
+           .catch(error => {
+    alert('Error: ' + error.toString());
+    console.error('Error details:', error);
+    console.log('Form data being sent:', formJson);
+})
             .finally(() => {
                 // Re-enable the submit button
                 submitButton.disabled = false;
