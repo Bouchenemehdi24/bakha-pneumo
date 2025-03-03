@@ -688,3 +688,82 @@ footer::before {
   margin: 1rem auto;
   max-width: 200px;
 }
+
+/* Add these additional media queries for better mobile support */
+@media (max-width: 576px) {
+  section {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  header h1 {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+  }
+  
+  .container {
+    width: 96%;
+    padding: 0 0.5rem;
+  }
+  
+  form input,
+  form select,
+  form textarea {
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+  }
+  
+  .popup-content {
+    padding: 1.5rem 1rem;
+    width: 95%;
+  }
+  
+  .highlight {
+    padding: 1rem;
+  }
+}
+
+/* Mobile menu button */
+.mobile-menu-btn {
+  display: none;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .mobile-menu-btn {
+    display: block;
+    position: absolute;
+    right: 1rem;
+    top: 0.5rem;
+  }
+  
+  nav ul {
+    display: none;
+    width: 100%;
+  }
+  
+  nav ul.show {
+    display: flex;
+  }
+  
+  /* Adjust theme toggle for mobile */
+  #theme-toggle {
+    top: 10px;
+    right: 10px;
+    width: 35px;
+    height: 35px;
+  }
+  
+  /* Improve spacing on mobile */
+  section:hover {
+    transform: none;
+  }
+  
+  .cabinet-photo:hover {
+    transform: none;
+  }
+}
