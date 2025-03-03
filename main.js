@@ -1,8 +1,22 @@
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
     // Mobile Menu Toggle Script
-    document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
-        document.querySelector('#main-menu').classList.toggle('show');
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const mainMenu = document.querySelector('#main-menu');
+    
+    if (mobileMenuBtn && mainMenu) {
+        mobileMenuBtn.addEventListener('click', function() {
+            mainMenu.classList.toggle('show');
+        });
+    }
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(event) {
+        if (mainMenu && mainMenu.classList.contains('show') && 
+            !mainMenu.contains(event.target) && 
+            event.target !== mobileMenuBtn) {
+            mainMenu.classList.remove('show');
+        }
     });
 
     // Dark Mode Toggle Script
