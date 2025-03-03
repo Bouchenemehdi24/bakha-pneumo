@@ -245,6 +245,104 @@ form button {
   font-size: 1rem;
 }
 
+/* Enhanced Popup Styles */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it's above everything */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.popup-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.popup-content {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  padding: 25px;
+  width: 90%;
+  max-width: 450px;
+  position: relative;
+  animation: popup-appear 0.4s ease-out;
+  direction: rtl;
+  text-align: right;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+@media (prefers-color-scheme: dark), .dark-mode {
+  .popup-content {
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #555;
+  }
+}
+
+.close-popup {
+  position: absolute;
+  top: 10px;
+  left: 15px; /* Left in RTL layout */
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #888;
+  transition: color 0.2s;
+}
+
+.close-popup:hover {
+  color: #e74c3c;
+}
+
+#appointment-details {
+  margin: 20px 0;
+  padding: 15px;
+  background-color: rgba(0, 128, 128, 0.1);
+  border-radius: 8px;
+  border-right: 4px solid teal;
+}
+
+.thank-you-message {
+  font-size: 1.1em;
+  text-align: center;
+  margin-top: 20px;
+  color: #2ecc71;
+  font-weight: bold;
+}
+
+@keyframes popup-appear {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Success message improvements */
+.success-message {
+  padding: 15px;
+  margin: 15px 0;
+  background-color: rgba(46, 204, 113, 0.2);
+  border-right: 4px solid #2ecc71;
+  border-radius: 5px;
+  font-weight: bold;
+  text-align: center;
+}
+
 /* Mobile-specific dropdown styling */
 .dropdown-menu {
   display: none;
