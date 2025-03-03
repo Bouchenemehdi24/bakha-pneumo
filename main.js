@@ -5,10 +5,45 @@ document.addEventListener('DOMContentLoaded', function() {
     const mainMenu = document.querySelector('#main-menu');
     
     if (mobileMenuBtn && mainMenu) {
-        mobileMenuBtn.addEventListener('click', function() {
+        mobileMenuBtn.addEventListener('click', function(e) {
+            e.stopPropagation(); // Prevent event from bubbling up
             mainMenu.classList.toggle('show');
         });
     }
+
+    // Handle Mobile Dropdowns - This is the key improvement
+    const dropdownLinks = document.querySelectorAll('.dropdown > a');
+    
+    // Add touchstart event for mobile devices
+    dropdownLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            // Check if we're on mobile view
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                // Get parent dropdown and its submenu
+                const dropdown = this.parentElement;
+                const submenu = dropdown.querySelector('.dropdown-menu');
+                
+                // Close all other open dropdowns first
+                document.querySelectorAll('.dropdown-menu.show').forEach(menu => {
+                    if (menu !== submenu) {
+                        menu.classList.remove('show');
+                        if (menu.previousElementSibling) {
+                            menu.previousElementSibling.setAttribute('aria-expanded', false);
+                        }
+                    }
+                });
+                
+                // Toggle the current dropdown
+                if (submenu) {
+                    submenu.classList.toggle('show');
+                    this.setAttribute('aria-expanded', submenu.classList.contains('show'));
+                }
+            }
+        });
+    });
 
     // Close mobile menu when clicking outside
     document.addEventListener('click', function(event) {
@@ -17,9 +52,19 @@ document.addEventListener('DOMContentLoaded', function() {
             event.target !== mobileMenuBtn) {
             mainMenu.classList.remove('show');
         }
+        
+        // Also close any open dropdown menus when clicking outside
+        if (!event.target.closest('.dropdown')) {
+            document.querySelectorAll('.dropdown-menu.show').forEach(menu => {
+                menu.classList.remove('show');
+                if (menu.previousElementSibling) {
+                    menu.previousElementSibling.setAttribute('aria-expanded', false);
+                }
+            });
+        }
     });
 
-    // Dark Mode Toggle Script
+    // Dark Mode Toggle Script - unchanged
     const themeToggle = document.getElementById('theme-toggle');
     if (themeToggle) {
         const body = document.body;
@@ -53,13 +98,15 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // Dropdown Menu Functionality
+    // Original toggleDropdown is kept but improved to support mobile
     window.toggleDropdown = function(id) {
         event.preventDefault();
+        event.stopPropagation(); // Prevent event bubbling
+        
         const dropdown = document.getElementById(id);
         const backdrop = document.querySelector('.dropdown-backdrop');
         
-        if (!dropdown || !backdrop) return; // Safety check
+        if (!dropdown) return; // Safety check
         
         // Close all other dropdowns
         document.querySelectorAll('.dropdown-menu.show').forEach(menu => {
@@ -73,46 +120,16 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Toggle the clicked dropdown
         dropdown.classList.toggle('show');
-        backdrop.classList.toggle('active');
+        
+        if (backdrop) {
+            backdrop.classList.toggle('active');
+        }
         
         const button = dropdown.previousElementSibling;
         if (button) {
             button.setAttribute('aria-expanded', dropdown.classList.contains('show'));
         }
     };
-    
-    // Close dropdown when clicking outside
-    document.addEventListener('click', function(event) {
-        const dropdowns = document.querySelectorAll('.dropdown-menu');
-        const backdrop = document.querySelector('.dropdown-backdrop');
-        
-        if (!event.target.closest('.dropdown') && backdrop) {
-            dropdowns.forEach(menu => {
-                menu.classList.remove('show');
-                if (menu.previousElementSibling) {
-                    menu.previousElementSibling.setAttribute('aria-expanded', false);
-                }
-            });
-            backdrop.classList.remove('active');
-        }
-    });
-    
-    // Close dropdown when a link is clicked
-    document.querySelectorAll('.dropdown-menu a').forEach(link => {
-        link.addEventListener('click', () => {
-            const dropdown = link.closest('.dropdown-menu');
-            if (dropdown) {
-                dropdown.classList.remove('show');
-                const backdrop = document.querySelector('.dropdown-backdrop');
-                if (backdrop) {
-                    backdrop.classList.remove('active');
-                }
-                if (dropdown.previousElementSibling) {
-                    dropdown.previousElementSibling.setAttribute('aria-expanded', false);
-                }
-            }
-        });
-    });
     
     // Initialize AOS if available
     if (typeof AOS !== 'undefined') {
