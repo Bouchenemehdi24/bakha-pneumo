@@ -597,3 +597,47 @@ form button:hover {
     font-size: 1rem;
   }
 }
+/* Dropdown Menu Styles */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    z-index: 1001;
+    right: 0;
+    min-width: 200px;
+    max-height: 300px;
+    overflow-y: auto;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: translateY(-10px);
+}
+
+.dropdown-menu.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.dropdown-menu li {
+    padding: 0.5rem 1rem;
+}
+
+.dropdown-menu li:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown-menu a {
+    color: #333;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a i.fa-caret-down {
+    transition: transform 0.3s ease;
+}
+
+.dropdown a[aria-expanded="true"] i.fa-caret-down {
+    transform: rotate(180deg);
+}
