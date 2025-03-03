@@ -1,4 +1,4 @@
-/* Modern Color Palette */
+ /* Modern Color Palette */
 :root {
   --primary-color: #3b82f6;
   --primary-dark: #1d4ed8;
@@ -757,6 +757,39 @@ footer::before {
     width: 35px;
     height: 35px;
   }
+
+  @media (max-width: 768px) {
+  .mobile-menu-btn {
+    display: block;
+    position: absolute;
+    right: 1rem;
+    top: 0.5rem;
+  }
+  
+  nav ul {
+    display: none; /* Hidden by default on mobile */
+    width: 100%;
+    flex-direction: column;
+    background: var(--nav-gradient);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  nav ul.show {
+    display: flex; /* Show when toggled */
+  }
+  
+  nav {
+    position: relative; /* Make sure menu sits properly */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+  }
+}
   
   /* Improve spacing on mobile */
   section:hover {
