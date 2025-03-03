@@ -1,5 +1,10 @@
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
+    // Mobile Menu Toggle Script
+    document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+        document.querySelector('#main-menu').classList.toggle('show');
+    });
+
     // Dark Mode Toggle Script
     const themeToggle = document.getElementById('theme-toggle');
     if (themeToggle) {
