@@ -71,15 +71,6 @@
     <!-- Load Google Translate API -->
     <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-    <!-- Google Analytics (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BCT8GP6LZT"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-BCT8GP6LZT');
-    </script>
-
     <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
     {
@@ -122,18 +113,10 @@
           "position": 2,
           "name": "الخدمات",
           "item": "https://bakha-pneumo.netlify.app/#services"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "احجز موعداً",
-          "item": "https://bakha-pneumo.netlify.app/#appointment"
         }
       ]
     }
     </script>
-
-
 </head>
 <body>
     <!-- Dark Mode Toggle Button -->
@@ -213,12 +196,11 @@
                 </li>
                 <li><a href="#services">الخدمات</a></li>
                 <li><a href="#apropos">عن الدكتورة</a></li>
-                <li><a href="#appointment">احجز موعداً</a></li>
+                <li><a href="appointment.html">احجز موعداً</a></li>
                 <li><a href="#contact">التواصل</a></li>
             </ul>
         </nav>
     
-        <!-- Continue from where the previous code left off -->
         <main>
             <section id="accueil" data-aos="fade-up">
                 <h2>مرحباً بكم في عيادتنا</h2>
@@ -232,45 +214,7 @@
                 </div>
             </section>
 
-            <section id="appointment" data-aos="fade-up">
-                <h2>احجز موعداً</h2>
-                <form id="appointmentForm-ar" onsubmit="submitToSupabase(event)">
-                    <label for="name-ar">الاسم الكامل:</label>
-                    <input type="text" id="name-ar" name="name" required>
-
-                    <label for="sex-ar">الجنس:</label>
-                    <select id="sex-ar" name="sex" required>
-                        <option value="">اختر جنساً</option>
-                        <option value="male">ذكر</option>
-                        <option value="female">أنثى</option>
-                    </select>
-
-                    <label for="phone-ar">رقم الهاتف:</label>
-                    <input type="tel" id="phone-ar" name="phone" pattern="[0-9]{10}" required>
-
-                    <label for="appointmentDate-ar">تاريخ الموعد:</label>
-                    <input type="date" id="appointmentDate-ar" name="appointment_date" required>
-
-                    <button type="submit">إرسال</button>
-                </form>
-
-                <div id="success-message-ar" class="success-message" style="display: none;">تم حجز موعدك بنجاح</div>
-
-                <!-- Success Popup -->
-<div id="success-popup" class="popup-overlay" style="display: none;">
-    <div class="popup-content">
-        <span class="close-popup">&times;</span>
-        <h3>تم حجز موعدك بنجاح</h3>
-        <div id="appointment-details">
-            <p><strong>الاسم:</strong> <span id="popup-name"></span></p>
-            <p><strong>رقم الهاتف:</strong> <span id="popup-phone"></span></p>
-            <p><strong>تاريخ الموعد:</strong> <span id="popup-date"></span></p>
-        </div>
-        <p class="thank-you-message">شكراً لاختياركم عيادة الدكتورة بخة س</p>
-    </div>
-</div>
-
- <section id="services" data-aos="fade-right">
+            <section id="services" data-aos="fade-right">
                 <h2>خدماتنا</h2>
                 <ul>
                     <li>تشخيص وعلاج شامل لأمراض الصدر، بما في ذلك الربو، سرطان الرئة، الحساسية، والأمراض الرئوية المزمنة الأخرى</li>
@@ -286,7 +230,7 @@
                 </ul>
             </section>
                 
- <section id="apropos" data-aos="fade-left">
+            <section id="apropos" data-aos="fade-left">
                 <h2>عن الدكتورة بخة س</h2>
                 <p>الدكتورة بخة س حاصلة على شهادة الدراسات الطبية المتخصصة من المستشفى الجامعي قسنطينة والمستشفى العسكري قسنطينة.</p>
                 <p>لديها خبرة واسعة وشاركت في مؤتمرات علمية وطنية ودولية، وحصلت على دورات تدريبية عالية الجودة في مجالات أمراض الحساسية وانقطاع التنفس.</p>
@@ -316,29 +260,6 @@
                     <i class="fab fa-facebook" style="font-size: 1.5rem; color: #3498db; margin-top: 10px;"></i> تابعنا على الفيسبوك
                 </a></p>
             </section>
-
-                
-            </section>
-
-            <!-- Rest of your sections remain unchanged -->
-            
-            <!-- Add Supabase integration script -->
-            <!-- Add Supabase integration script -->
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.38.0/dist/umd/supabase.min.js"></script>
-<script src="supabase-integration.js"></script>
-
-<script src="dark-mode.js"></script>
-<script src="dropdown.js"></script>
-<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-<script src="aos-init.js"></script>
-<script src="mobile-form-optimizer.js" defer></script>  
-
-    
-
-         
-
-
         </main>
 
         <footer>
@@ -348,8 +269,15 @@
 
     <!-- Watermark -->
     <div class="watermark">Dr. Bakha</div>
-               
 
-
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.38.0/dist/umd/supabase.min.js"></script>
+    <script src="supabase-integration.js"></script>
+    <script src="dark-mode.js"></script>
+    <script src="dropdown.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="aos-init.js"></script>
+    <script src="mobile-form-optimizer.js" defer></script>  
 </body>
 </html>
