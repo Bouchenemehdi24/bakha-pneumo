@@ -1032,3 +1032,7 @@ footer p {
   font-size: 0.9em;
   opacity: 0.9;
 }
+
+body.body-no-scroll {
+    overflow: hidden;
+}
