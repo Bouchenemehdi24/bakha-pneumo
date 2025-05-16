@@ -1,4 +1,4 @@
-// Enhanced clinic-status.js - Improved functionality and performance
+// Enhanced clinic-status.js - Uses Algeria Time (UTC+1)
 
 // Define clinic hours (for each day, Saturday to Thursday)
 const clinicHours = {
@@ -21,40 +21,63 @@ function getElement(id) {
     return document.getElementById(id);
 }
 
-// Format time with AM/PM in Arabic
-function formatTimeArabic(hours) {
-    if (hours < 12) {
-        return `${hours}:00 صباحاً`;
-    } else if (hours === 12) {
-        return `${hours}:00 ظهراً`;
-    } else {
-        return `${hours - 12}:00 مساءً`;
-    }
+// Format time with AM/PM in Arabic (takes 24-hour format)
+function formatTimeArabic(hours24) {
+    const ampm = hours24 >= 12 ? 'مساءً' : 'صباحاً';
+    let hours = hours24 % 12;
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+    
+    if (hours24 === 12) return `12:00 ظهراً`; // Noon specifically
+    return `${hours}:00 ${ampm}`;
 }
 
-// Calculate and display countdown
-function getCountdownText(targetDate) {
-    const now = new Date();
-    const diff = targetDate - now;
+// Calculate and display countdown based on target Algerian hour/minute
+function getCountdownText(targetHourAlgeria, targetMinuteAlgeria, currentHourAlgeria, currentMinuteAlgeria) {
+    // Convert current and target times to total minutes from midnight in Algeria time
+    const currentTimeInMinutes = currentHourAlgeria * 60 + currentMinuteAlgeria;
+    let targetTimeInMinutes = targetHourAlgeria * 60 + targetMinuteAlgeria;
+
+    let diffInMinutes = targetTimeInMinutes - currentTimeInMinutes;
+
+    // If diff is negative, it means the target time is on the "next day" conceptually for countdown purposes
+    // (e.g., current 17:00, target for next day 08:00. This case is handled by main logic for next day opening)
+    // This function assumes target is on the same logical "day" or very soon.
+    // For simple same-day countdown:
+    if (diffInMinutes <= 0) return ""; 
     
-    if (diff <= 0) return "";
-    
-    const hours = Math.floor(diff / (1000 * 60 * 60));
-    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const hours = Math.floor(diffInMinutes / 60);
+    const minutes = diffInMinutes % 60;
     
     if (hours > 0) {
         return ` (خلال ${hours} ساعة و ${minutes} دقيقة)`;
-    } else {
+    } else if (minutes > 0) { // Only show if there are minutes to count down
         return ` (خلال ${minutes} دقيقة)`;
     }
+    return ""; // Should not be reached if diffInMinutes > 0 and minutes is 0 but hours is 0.
 }
 
-// Update clinic status with enhanced information
+
+// Update clinic status with enhanced information using Algeria Time
 function updateClinicStatus() {
-    const now = new Date();
-    const day = now.getDay();
-    const hours = now.getHours();
-    const minutes = now.getMinutes();
+    const nowUTC = new Date(); // Get current date/time in UTC
+
+    // Calculate Algeria time (UTC+1)
+    const algeriaTimezoneOffsetHours = 1;
+    let algeriaHour = nowUTC.getUTCHours() + algeriaTimezoneOffsetHours;
+    let algeriaDay = nowUTC.getUTCDay();
+    const algeriaMinute = nowUTC.getUTCMinutes();
+
+    if (algeriaHour >= 24) {
+        algeriaHour -= 24;
+        algeriaDay = (algeriaDay + 1) % 7; // Move to next day
+    } else if (algeriaHour < 0) { // Should not happen with UTC+1 but good for robustness
+        algeriaHour += 24;
+        algeriaDay = (algeriaDay - 1 + 7) % 7; // Move to previous day
+    }
+    
+    const day = algeriaDay;
+    const hours = algeriaHour;
+    const minutes = algeriaMinute;
     const todayHours = clinicHours[day];
     
     // Get DOM elements
@@ -62,106 +85,80 @@ function updateClinicStatus() {
     const nextOpening = getElement('next-opening');
     const clinicStatusElem = getElement('clinic-status');
     
-    // If elements don't exist, don't proceed
     if (!statusMessage || !nextOpening || !clinicStatusElem) return;
     
-    // Update current time display if it exists
     const arabicTimeElem = getElement('arabic-time');
     if (arabicTimeElem) {
-        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' };
-        arabicTimeElem.textContent = now.toLocaleTimeString('ar-SA', options);
+        const options = { 
+            timeZone: 'Africa/Algiers', // Correct timezone for Algeria
+            weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', 
+            hour: '2-digit', minute: '2-digit', hour12: true 
+        };
+        // Use new Date() for toLocaleTimeString as it handles the timeZone option correctly
+        arabicTimeElem.textContent = new Date().toLocaleTimeString('ar-DZ', options); // ar-DZ for Algerian Arabic
     }
     
-    // Remove all possible classes first
     clinicStatusElem.classList.remove('open', 'closed', 'soon');
     
-    // Check if the clinic should be open
-    if (todayHours.open !== null) {
-        // Within opening hours
-        if ((hours > todayHours.open && hours < todayHours.close) || 
-            (hours === todayHours.open && minutes >= 0) || 
-            (hours === todayHours.close && minutes === 0)) {
-            
-            // Open now
+    if (todayHours && todayHours.open !== null) { // Check if todayHours is defined
+        const isOpenNow = (hours > todayHours.open && hours < todayHours.close) ||
+                          (hours === todayHours.open && minutes >= 0) ||
+                          (hours === todayHours.close -1 && minutes >=0 && todayHours.close !== todayHours.open) || // Handles closing at X:00
+                          (hours === todayHours.close && minutes === 0 && todayHours.close !== todayHours.open) ; // Exactly at closing hour, still open
+
+        if (isOpenNow) {
             statusMessage.innerHTML = '<span class="status-with-icon"><i class="fas fa-door-open status-icon"></i> العيادة مفتوحة حالياً</span>';
-            
-            // Calculate closing time today
-            const closingTime = new Date(now);
-            closingTime.setHours(todayHours.close, 0, 0, 0);
-            const countdown = getCountdownText(closingTime);
-            
+            const countdown = getCountdownText(todayHours.close, 0, hours, minutes);
             nextOpening.textContent = `تغلق اليوم في ${formatTimeArabic(todayHours.close)}${countdown}`;
             clinicStatusElem.classList.add('open');
-            
-        // Opening soon (within 1 hour)
-        } else if (hours === todayHours.open - 1) {
-            
+        } else if (hours === todayHours.open - 1 && minutes >=0) { // Opening within the hour before
             statusMessage.innerHTML = '<span class="status-with-icon"><i class="fas fa-clock status-icon"></i> ستفتح العيادة قريباً</span>';
-            
-            // Calculate opening time today
-            const openingTime = new Date(now);
-            openingTime.setHours(todayHours.open, 0, 0, 0);
-            const countdown = getCountdownText(openingTime);
-            
+            const countdown = getCountdownText(todayHours.open, 0, hours, minutes);
             nextOpening.textContent = `تفتح اليوم في ${formatTimeArabic(todayHours.open)}${countdown}`;
             clinicStatusElem.classList.add('soon');
-            
-        // Will open today
         } else if (hours < todayHours.open) {
-            
             statusMessage.innerHTML = '<span class="status-with-icon"><i class="fas fa-door-closed status-icon"></i> العيادة مغلقة حالياً</span>';
-            
-            // Calculate opening time today
-            const openingTime = new Date(now);
-            openingTime.setHours(todayHours.open, 0, 0, 0);
-            const countdown = getCountdownText(openingTime);
-            
+            const countdown = getCountdownText(todayHours.open, 0, hours, minutes);
             nextOpening.textContent = `تفتح اليوم في ${formatTimeArabic(todayHours.open)}${countdown}`;
             clinicStatusElem.classList.add('closed');
-            
-        // Closed for today, check next opening
-        } else {
-            const nextDay = (day + 1) % 7;
-            const nextDayHours = clinicHours[nextDay];
-            
+        } else { // Closed for today (after closing hours), check next opening
             statusMessage.innerHTML = '<span class="status-with-icon"><i class="fas fa-door-closed status-icon"></i> العيادة مغلقة حالياً</span>';
-            
-            if (nextDayHours.open !== null) {
-                nextOpening.textContent = `تفتح غداً (${arabicDays[nextDay]}) في ${formatTimeArabic(nextDayHours.open)}`;
-            } else {
-                // Find the next day after tomorrow that's open
-                let daysToAdd = 2;
-                let nextOpenDay = (day + daysToAdd) % 7;
-                
-                while (clinicHours[nextOpenDay].open === null && daysToAdd < 7) {
-                    daysToAdd++;
-                    nextOpenDay = (day + daysToAdd) % 7;
+            let nextOpenDayInfoFound = false;
+            for (let i = 1; i <= 7; i++) {
+                const nextCheckDay = (day + i) % 7;
+                const nextDayHours = clinicHours[nextCheckDay];
+                if (nextDayHours && nextDayHours.open !== null) {
+                    const dayName = i === 1 ? "غداً" : `يوم ${arabicDays[nextCheckDay]}`;
+                    nextOpening.textContent = `تفتح ${dayName} في ${formatTimeArabic(nextDayHours.open)}`;
+                    nextOpenDayInfoFound = true;
+                    break;
                 }
-                
-                nextOpening.textContent = `تفتح يوم ${arabicDays[nextOpenDay]} في ${formatTimeArabic(clinicHours[nextOpenDay].open)}`;
             }
-            
+            if (!nextOpenDayInfoFound) {
+                nextOpening.textContent = "يرجى مراجعة مواقيت العمل."; // Fallback
+            }
             clinicStatusElem.classList.add('closed');
         }
-    } else {
-        // Today is a holiday (Friday)
+    } else { // Today is a holiday (e.g., Friday or not in clinicHours)
         statusMessage.innerHTML = '<span class="status-with-icon"><i class="fas fa-calendar-times status-icon"></i> العيادة مغلقة اليوم</span>';
-        
-        // Find next open day
-        let daysToAdd = 1;
-        let nextOpenDay = (day + daysToAdd) % 7;
-        
-        while (clinicHours[nextOpenDay].open === null && daysToAdd < 7) {
-            daysToAdd++;
-            nextOpenDay = (day + daysToAdd) % 7;
+        let nextOpenDayInfoFound = false;
+        for (let i = 1; i <= 7; i++) {
+            const nextCheckDay = (day + i) % 7;
+            const nextDayHours = clinicHours[nextCheckDay];
+            if (nextDayHours && nextDayHours.open !== null) {
+                 const dayName = arabicDays[nextCheckDay];
+                nextOpening.textContent = `تفتح يوم ${dayName} في ${formatTimeArabic(nextDayHours.open)}`;
+                nextOpenDayInfoFound = true;
+                break;
+            }
         }
-        
-        nextOpening.textContent = `تفتح يوم ${arabicDays[nextOpenDay]} في ${formatTimeArabic(clinicHours[nextOpenDay].open)}`;
+         if (!nextOpenDayInfoFound) {
+            nextOpening.textContent = "يرجى مراجعة مواقيت العمل."; // Fallback
+        }
         clinicStatusElem.classList.add('closed');
     }
     
-    // Add back-to-top button if it doesn't exist
-    createBackToTopButton();
+    createBackToTopButton(); // Moved here to ensure it's always checked
 }
 
 // Create and handle back-to-top button
@@ -175,26 +172,17 @@ function createBackToTopButton() {
         document.body.appendChild(backToTop);
         
         backToTop.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     }
     
-    // Show/hide back-to-top based on scroll position
     function toggleBackToTop() {
         const backToTop = getElement('back-to-top');
         if (backToTop) {
-            if (window.scrollY > 300) {
-                backToTop.classList.add('visible');
-            } else {
-                backToTop.classList.remove('visible');
-            }
+            backToTop.classList.toggle('visible', window.scrollY > 300);
         }
     }
     
-    // Add scroll event listener if not already added
     if (!window.hasBackToTopListener) {
         window.addEventListener('scroll', toggleBackToTop);
         window.hasBackToTopListener = true;
@@ -204,90 +192,76 @@ function createBackToTopButton() {
 // Format services as cards if they exist
 function formatServiceCards() {
     const servicesSection = getElement('services');
-    if (servicesSection) {
-        const servicesList = servicesSection.querySelector('ul');
-        
-        if (servicesList) {
-            const items = Array.from(servicesList.querySelectorAll('li'));
-            
-            // Create a service grid
-            const serviceGrid = document.createElement('div');
-            serviceGrid.className = 'service-grid';
-            
-            // Map of service keywords to Font Awesome icons
-            const serviceIcons = {
-                'تشخيص': 'fa-stethoscope',
-                'قياس': 'fa-chart-line',
-                'اشعة': 'fa-x-ray',
-                'علاج': 'fa-heartbeat',
-                'اختبارات': 'fa-vial',
-                'انقطاع': 'fa-bed',
-                'طوارئ': 'fa-ambulance',
-                'الاسترواح': 'fa-lungs',
-                'تدخين': 'fa-smoking-ban',
-                'فحوصات': 'fa-user-md'
-            };
-            
-            // Create a card for each service
-            items.forEach(item => {
-                const text = item.textContent;
-                
-                // Find appropriate icon
-                let iconClass = 'fa-lungs';
-                for (const [keyword, icon] of Object.entries(serviceIcons)) {
-                    if (text.includes(keyword)) {
-                        iconClass = icon;
-                        break;
-                    }
-                }
-                
-                // Create card
-                const card = document.createElement('div');
-                card.className = 'service-card';
-                card.innerHTML = `
-                    <div class="service-icon"><i class="fas ${iconClass}"></i></div>
-                    <div class="service-title">${text.split(',')[0]}</div>
-                    <div class="service-description">${text}</div>
-                `;
-                
-                serviceGrid.appendChild(card);
-            });
-            
-            // Replace the list with the grid
-            servicesList.parentNode.replaceChild(serviceGrid, servicesList);
+    if (!servicesSection) return;
+    const servicesList = servicesSection.querySelector('ul');
+    if (!servicesList) return;
+
+    if (servicesSection.dataset.formatted === 'true') return; // Already formatted
+
+    const items = Array.from(servicesList.querySelectorAll('li'));
+    if (items.length === 0) return;
+
+    const serviceGrid = document.createElement('div');
+    serviceGrid.className = 'service-grid';
+    
+    const serviceIcons = {
+        'تشخيص': 'fa-stethoscope', 'قياس': 'fa-chart-line', 'اشعة': 'fa-x-ray',
+        'علاج': 'fa-heartbeat', 'اختبارات': 'fa-vial', 'انقطاع': 'fa-bed',
+        'طوارئ': 'fa-ambulance', 'الاسترواح': 'fa-lungs-virus', // Changed icon slightly
+        'تدخين': 'fa-smoking-ban', 'فحوصات': 'fa-user-md'
+    };
+    
+    items.forEach(item => {
+        const text = item.textContent.trim();
+        if (!text) return;
+
+        let iconClass = 'fa-clinic-medical'; // Default icon
+        for (const [keyword, icon] of Object.entries(serviceIcons)) {
+            if (text.includes(keyword)) {
+                iconClass = icon;
+                break;
+            }
         }
-    }
+        
+        const card = document.createElement('div');
+        card.className = 'service-card';
+        card.innerHTML = `
+            <div class="service-icon"><i class="fas ${iconClass}"></i></div>
+            <div class="service-title">${text.split(/[(,]/)[0].trim()}</div> 
+            <div class="service-description">${text}</div>
+        `;
+        serviceGrid.appendChild(card);
+    });
+    
+    servicesList.parentNode.replaceChild(serviceGrid, servicesList);
+    servicesSection.dataset.formatted = 'true'; // Mark as formatted
 }
 
 // Enhancement for clinic status change animations
 function addStatusTransitionEffects() {
     const statusElem = getElement('clinic-status');
     if (statusElem) {
-        // Add transition class if status changes
         const currentClass = statusElem.className;
-        
         if (statusElem.dataset.prevClass && statusElem.dataset.prevClass !== currentClass) {
             statusElem.classList.add('status-transition');
-            setTimeout(() => {
-                statusElem.classList.remove('status-transition');
-            }, 1000);
+            setTimeout(() => statusElem.classList.remove('status-transition'), 1000);
         }
-        
         statusElem.dataset.prevClass = currentClass;
     }
 }
 
 // Add emergency notice during high-volume periods
 function checkAndAddEmergencyNotice() {
-    const now = new Date();
-    const hour = now.getHours();
-    const day = now.getDay();
-    
-    // Check if it's a typically busy time (e.g., Sunday mornings)
-    const isBusyTime = (day === 0 && hour >= 9 && hour <= 11) || (hour >= 8 && hour <= 9);
-    
+    const nowUTC = new Date();
+    let algeriaHour = nowUTC.getUTCHours() + 1;
+    if (algeriaHour >= 24) algeriaHour -=24;
+    const algeriaDay = (algeriaHour >= 24) ? (nowUTC.getUTCDay() + 1) % 7 : nowUTC.getUTCDay();
+
+    const isBusyTime = (algeriaDay === 0 && algeriaHour >= 9 && algeriaHour <= 11) || // Sunday morning
+                       (algeriaDay >= 0 && algeriaDay <=4 && algeriaHour >= 8 && algeriaHour <= 9); // Weekday early morning
+
     const contactSection = getElement('contact');
-    const existingNotice = document.querySelector('.emergency-notice');
+    let existingNotice = document.querySelector('.emergency-notice');
     
     if (isBusyTime && contactSection && !existingNotice) {
         const notice = document.createElement('div');
@@ -295,11 +269,9 @@ function checkAndAddEmergencyNotice() {
         notice.innerHTML = `
             <div class="emergency-icon"><i class="fas fa-exclamation-triangle"></i></div>
             <div>
-                <strong>تنبيه:</strong> نتوقع فترة ازدحام حالياً. يرجى الاتصال قبل الحضور أو حجز موعد مسبقاً لتجنب فترات الانتظار الطويلة.
+                <strong>تنبيه:</strong> قد تكون هناك فترة ازدحام حالياً. يرجى الاتصال قبل الحضور أو حجز موعد مسبقاً لتجنب الانتظار.
             </div>
         `;
-        
-        // Insert before contact section
         contactSection.parentNode.insertBefore(notice, contactSection);
     } else if (!isBusyTime && existingNotice) {
         existingNotice.remove();
@@ -308,51 +280,31 @@ function checkAndAddEmergencyNotice() {
 
 // Initialize all enhancements
 function initClinicFeatures() {
-    // Update initial status
     updateClinicStatus();
-    
-    // Set interval to update every minute
     setInterval(() => {
         updateClinicStatus();
         addStatusTransitionEffects();
         checkAndAddEmergencyNotice();
-    }, 60000);
+    }, 60000); // Every minute
     
-    // Format services if needed
     formatServiceCards();
-    
-    // Check for busy periods
     checkAndAddEmergencyNotice();
     
-    // Add waiting time indicator if present
     const appointmentSection = getElement('appointment');
-    if (appointmentSection && !document.querySelector('.waiting-time')) {
-        // Get current day and time
-        const now = new Date();
-        const day = now.getDay();
-        const hour = now.getHours();
-        
-        // Estimate waiting time based on historical patterns
-        let waitingClass = 'waiting-low';
-        let waitingText = 'وقت انتظار قصير (15-20 دقيقة)';
-        
-        // Sundays and early mornings are typically busy
-        if (day === 0 || (hour >= 8 && hour <= 10)) {
-            waitingClass = 'waiting-high';
-            waitingText = 'وقت انتظار طويل (45-60 دقيقة)';
-        } else if (day === 6 || (hour >= 10 && hour <= 13)) {
-            waitingClass = 'waiting-medium';
-            waitingText = 'وقت انتظار متوسط (30-45 دقيقة)';
-        }
-        
-        const waitingTime = document.createElement('div');
-        waitingTime.className = 'waiting-time';
-        waitingTime.innerHTML = `
-            <p>الوقت المتوقع للانتظار حالياً:</p>
-            <div class="waiting-time-indicator ${waitingClass}">${waitingText}</div>
+    if (appointmentSection && !document.querySelector('.waiting-time-indicator-container')) {
+        const waitingTimeContainer = document.createElement('div');
+        waitingTimeContainer.className = 'waiting-time-indicator-container'; // New container class
+        waitingTimeContainer.innerHTML = `
+            <p class="waiting-time-label">الوقت المتوقع للانتظار حالياً:</p>
+            <div class="waiting-time-indicator">أقل من 20 دقيقة</div>
         `;
-        
-        appointmentSection.insertBefore(waitingTime, appointmentSection.firstElementChild.nextElementSibling);
+        // Insert after the H2 in the appointment section
+        const h2Appointment = appointmentSection.querySelector('h2');
+        if (h2Appointment) {
+            h2Appointment.parentNode.insertBefore(waitingTimeContainer, h2Appointment.nextSibling);
+        } else { // Fallback if H2 not found
+            appointmentSection.insertBefore(waitingTimeContainer, appointmentSection.firstChild);
+        }
     }
 }
 
