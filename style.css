@@ -1,646 +1,832 @@
-/* Modern Color Palette */
+/* Modern & Elegant Styles - Revision */
+
 :root {
-  --primary-color: #3b82f6;
-  --primary-dark: #1d4ed8;
-  --primary-light: #60a5fa;
-  --accent-color: #f59e0b;
-  --accent-light: #fcd34d;
-  --text-primary: #1f2937;
-  --text-secondary: #4b5563;
-  --text-light: #f9fafb;
-  --background-light: #f9fafb;
-  --background-white: #ffffff;
-  --section-bg: #ffffff;
-  --section-shadow: 0 10px 25px rgba(0, 0, 0, 0.03), 0 6px 12px rgba(0, 0, 0, 0.02);
-  --header-gradient: linear-gradient(135deg, #3b82f6, #1d4ed8);
-  --nav-gradient: linear-gradient(to right, #2563eb, #3b82f6);
-  --highlight-gradient: linear-gradient(135deg, #fcd34d, #f59e0b);
-  --transition-standard: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  --border-radius-sm: 6px;
-  --border-radius-md: 10px;
-  --border-radius-lg: 16px;
+  --primary-color: #3b82f6; /* Tailwind Blue 500 */
+  --primary-dark: #1d4ed8;  /* Tailwind Blue 700 */
+  --primary-light: #60a5fa; /* Tailwind Blue 400 */
+  --primary-rgb: 59, 130, 246;
+
+  --accent-color: #f59e0b;  /* Tailwind Amber 500 */
+  --accent-dark: #d97706;   /* Tailwind Amber 600 */
+  --accent-light: #fcd34d; /* Tailwind Amber 300 */
+  --accent-rgb: 245, 158, 11;
+  
+  --text-primary: #1f2937;    /* Tailwind Gray 800 */
+  --text-secondary: #4b5563;  /* Tailwind Gray 600 */
+  --text-on-primary: #ffffff;
+  --text-on-accent: #1f2937;
+  --text-light: #f9fafb;      /* Tailwind Gray 50 */
+
+  --background-body: #f3f4f6;   /* Tailwind Gray 100 - slightly off-white */
+  --background-card: #ffffff;
+  --background-elevated: #ffffff; /* For elements like dropdowns, popups */
+  --background-input: #ffffff;
+
+  --border-color: #e5e7eb;     /* Tailwind Gray 200 */
+  --border-color-focus: var(--primary-color);
+
+  --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.03);
+  --shadow-sm: 0 2px 4px -1px rgba(0, 0, 0, 0.04), 0 1px 2px -1px rgba(0, 0, 0, 0.03);
+  --shadow-md: 0 4px 8px -2px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.07), 0 4px 6px -4px rgba(0, 0, 0, 0.06);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.07);
+  --shadow-inner: inset 0 2px 4px 0 rgba(0,0,0,0.03);
+
+  --header-gradient: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+  --nav-bg: var(--primary-dark);
+  --highlight-gradient: linear-gradient(135deg, var(--accent-light), var(--accent-color));
+  
+  --transition-fast: all 0.15s ease-in-out;
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-elastic: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+  --border-radius-xl: 16px;
+  --border-radius-full: 9999px;
+
+  --font-sans: 'Inter', 'Noto Sans Arabic', sans-serif;
+  /* --font-serif: 'Merriweather', 'Noto Serif Arabic', serif; */
+  /* --font-mono: 'Fira Code', 'monospace'; */
+
+  --spacing-unit: 0.25rem; /* 4px */
 }
 
-/* Dark theme with enhanced contrast and feel */
 [data-theme="dark"] {
-  --primary-color: #60a5fa;
-  --primary-dark: #3b82f6;
-  --primary-light: #93c5fd;
-  --accent-color: #f59e0b;
-  --accent-light: #fcd34d;
-  --text-primary: #f9fafb;
-  --text-secondary: #e5e7eb;
-  --text-light: #1f2937;
-  --background-light: #111827;
-  --background-white: #1f2937;
-  --section-bg: #1f2937;
-  --section-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-  --header-gradient: linear-gradient(135deg, #1e40af, #1e3a8a);
-  --nav-gradient: linear-gradient(to right, #1e3a8a, #1e40af);
-  --highlight-gradient: linear-gradient(135deg, #d97706, #b45309);
+  --primary-color: #60a5fa; 
+  --primary-dark: #3b82f6;  
+  --primary-light: #93c5fd; 
+  --primary-rgb: 96, 165, 250;
+
+  --accent-color: #fcd34d; 
+  --accent-dark: #f59e0b;   
+  --accent-light: #fef3c7; 
+  --accent-rgb: 252, 211, 77;
+
+  --text-primary: #f3f4f6;    
+  --text-secondary: #9ca3af;  
+  --text-on-primary: #0f172a; /* Darker text on light primary in dark mode */
+  --text-on-accent: #1f2937;
+  --text-light: #1f2937;      
+
+  --background-body: #0f172a;   
+  --background-card: #1e293b;   
+  --background-elevated: #334155; 
+  --background-input: #1e293b;
+
+
+  --border-color: #334155;     
+  --border-color-focus: var(--primary-color);
+
+  --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+  --shadow-sm: 0 2px 4px -1px rgba(0, 0, 0, 0.12), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 8px -2px rgba(0, 0, 0, 0.15), 0 2px 4px -2px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -4px rgba(0, 0, 0, 0.15);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.25), 0 8px 10px -6px rgba(0, 0, 0, 0.2);
+  --shadow-inner: inset 0 2px 4px 0 rgba(0,0,0,0.1);
+
+  --header-gradient: linear-gradient(135deg, var(--primary-dark), #1e3a8a); 
+  --nav-bg: #1e293b; 
+  --highlight-gradient: linear-gradient(135deg, var(--accent-color), var(--accent-dark));
 }
 
-/* Base Styles with improved typography */
+/* Base Styles */
 body {
-  background-color: var(--background-light);
+  background-color: var(--background-body);
   color: var(--text-primary);
-  font-family: 'Inter', 'Noto Sans Arabic', sans-serif;
-  line-height: 1.7;
-  transition: var(--transition-standard);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  transition: background-color var(--transition-smooth), color var(--transition-smooth);
   margin: 0;
   padding: 0;
-  font-size: 16px; /* Base font size */
+  font-size: 1rem; /* 16px */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
-/* Mobile-first approach - base container */
-.container {
+.container { /* Use this class to wrap main content if consistent width is needed */
   width: 92%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
 }
 
-/* Enhanced Header */
+/* Header */
 header {
   background: var(--header-gradient);
-  color: white;
+  color: var(--text-on-primary);
   text-align: center;
-  padding: 2rem 1rem; /* Smaller padding on mobile */
+  padding: 3rem 1rem 2.5rem;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  margin-bottom: 1.5rem; /* Smaller margin on mobile */
+  box-shadow: var(--shadow-md);
+  margin-bottom: 2rem;
 }
 
 header h1 {
-  margin: 0;
-  font-size: clamp(1.5rem, 5vw, 2.5rem); /* Responsive font size */
-  font-weight: 800;
-  letter-spacing: -0.025em;
+  margin: 0 0 0.5rem 0;
+  font-size: clamp(1.75rem, 6vw, 2.75rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
   line-height: 1.2;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-  margin-bottom: 0.75rem; /* Smaller margin on mobile */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
 }
 
-.subheader-text {
-  font-size: clamp(0.875rem, 3vw, 1.25rem); /* Responsive font size */
-  opacity: 0.9;
+.subheader-text { /* This was the class for the paragraph under H1 in the HTML */
+  font-size: clamp(0.9rem, 3.5vw, 1.15rem);
+  opacity: 0.85;
   font-weight: 400;
-  max-width: 800px;
-  margin: 0 auto;
+  max-width: 700px;
+  margin: 0 auto 1rem;
+  line-height: 1.5;
 }
 
-/* Mobile menu button - visible only on mobile */
+/* Mobile Menu Button */
 .mobile-menu-btn {
-  display: block; /* Visible on mobile */
+  display: block; /* Visible on mobile by default */
   cursor: pointer;
-  background: rgba(255, 255, 255, 0.1);
+  background: transparent;
   border: none;
   border-radius: var(--border-radius-sm);
-  padding: 0.75rem;
+  padding: 0.5rem;
   margin-left: auto;
   position: relative;
-  z-index: 1010;
+  z-index: 1050; /* Above mobile menu */
+  color: var(--text-on-primary); /* Icon color, assuming nav bar is dark */
+}
+[data-theme="dark"] .mobile-menu-btn {
+    color: var(--text-primary); /* Light icon on dark nav bar */
 }
 
+
+.mobile-menu-btn i { /* If using FontAwesome like ☰ */
+  font-size: 1.5rem;
+  display: block;
+  transition: transform var(--transition-smooth);
+}
+.mobile-menu-btn.active i { /* JS should add/remove 'active' class */
+  transform: rotate(90deg); /* Example for a 'close' icon or rotated hamburger */
+}
+
+/* Fallback for span-based hamburger if not using icon font */
 .mobile-menu-btn span {
   display: block;
-  width: 24px;
+  width: 22px;
   height: 2px;
-  background-color: white;
+  background-color: currentColor; /* Inherits color from .mobile-menu-btn */
   margin: 5px 0;
-  transition: var(--transition-standard);
+  transition: all var(--transition-fast);
+  border-radius: 1px;
+}
+.mobile-menu-btn.active span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.mobile-menu-btn.active span:nth-child(2) {
+  opacity: 0;
+}
+.mobile-menu-btn.active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
 }
 
-/* Mobile-first navigation */
+/* Navigation */
 nav {
-  background: var(--nav-gradient);
-  padding: 0.5rem 1rem;
+  background: var(--nav-bg);
+  padding: 0.5rem 1rem; /* For mobile button alignment */
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--shadow-sm);
   display: flex;
   align-items: center;
 }
 
-/* Default state for mobile: menu is collapsed */
-#main-menu {
+#main-menu { /* This is the <ul> */
   display: flex;
-  flex-direction: column; /* Stack vertically on mobile */
+  flex-direction: column;
   width: 100%;
   position: absolute;
-  top: 100%;
+  top: 100%; /* Below nav bar */
   left: 0;
-  background-color: var(--background-white);
+  background-color: var(--background-elevated);
   max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.5s ease;
-  z-index: 1000;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: max-height 0.4s ease-in-out;
+  z-index: 999;
+  box-shadow: var(--shadow-md);
+  border-bottom-left-radius: var(--border-radius-md);
+  border-bottom-right-radius: var(--border-radius-md);
 }
 
-#main-menu.show {
-  max-height: 100vh; /* When active */
+#main-menu.show { /* JS adds/removes this class */
+  max-height: calc(100vh - 60px); /* Adjust 60px to actual nav height */
 }
 
-nav ul {
+nav ul { /* Applies to #main-menu and .dropdown-menu */
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 0.5rem 0; /* Inner padding for the menu list */
   width: 100%;
 }
 
 nav ul li {
-  width: 100%; /* Full width on mobile */
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  width: 100%;
 }
 
-nav ul li:last-child {
+nav ul li a { /* Mobile menu item styles */
+  color: var(--text-primary);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.8rem 1.5rem;
+  display: block;
+  transition: background-color var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
+  border-bottom: 1px solid var(--border-color);
+}
+nav ul li:last-child a {
   border-bottom: none;
 }
 
-nav ul li a {
-  color: var(--text-primary);
-  text-decoration: none;
-  font-weight: 600;
-  padding: 1rem 1.5rem;
-  display: block;
-  transition: var(--transition-standard);
+nav ul li a:hover,
+nav ul li a:focus {
+  background-color: rgba(var(--primary-rgb), 0.07);
+  color: var(--primary-color);
+  transform: translateX(4px);
 }
 
-/* Enhanced Sections - mobile-first */
+/* Sections */
 section {
-  margin-bottom: 2rem; /* Smaller margin on mobile */
-  padding: 1.5rem; /* Smaller padding on mobile */
-  background-color: var(--section-bg);
+  margin-bottom: 2.5rem;
+  padding: 1.5rem;
+  background-color: var(--background-card);
   border-radius: var(--border-radius-lg);
-  box-shadow: var(--section-shadow);
-  transition: var(--transition-standard);
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
   overflow: hidden;
   position: relative;
 }
 
-/* Headings - mobile-first */
+/* Headings */
 h2 {
-  color: var(--primary-color);
-  font-size: 1.5rem; /* Smaller on mobile */
-  font-weight: 700;
+  color: var(--primary-dark);
+  font-size: clamp(1.4rem, 4vw, 1.75rem);
+  font-weight: 600;
   margin-top: 0;
-  margin-bottom: 1.25rem;
-  padding-bottom: 0.75rem;
-  border-bottom: 2px solid rgba(59, 130, 246, 0.2);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
   position: relative;
-  display: inline-block;
+}
+[data-theme="dark"] h2 {
+  color: var(--primary-light);
 }
 
-/* Images - mobile-first */
+/* Images */
 .cabinet-photo {
   width: 100%;
+  max-width: 500px; 
   height: auto;
-  border-radius: var(--border-radius-md); /* Smaller radius on mobile */
-  margin: 1.5rem auto; /* Smaller margin on mobile */
+  border-radius: var(--border-radius-md);
+  margin: 1rem auto 2rem;
   display: block;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  transition: var(--transition-standard);
+  box-shadow: var(--shadow-lg);
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
   object-fit: cover;
+  border: 1px solid var(--border-color);
 }
 
-/* Forms - mobile-first */
-form {
-  background-color: var(--section-bg);
-  padding: 1.5rem; /* Smaller padding on mobile */
-  border-radius: var(--border-radius-md);
-  box-shadow: var(--section-shadow);
+/* Forms */
+form { /* Assuming form is inside a padded section */
+  background-color: transparent; 
+  padding: 0; 
   width: 100%;
   margin: 0 auto;
+}
+
+form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
 }
 
 form input,
 form select,
 form textarea {
   width: 100%;
-  padding: 0.75rem; /* Smaller padding on mobile */
+  padding: 0.75rem 1rem;
   margin-bottom: 1.25rem;
-  border: 1px solid #e5e7eb;
-  border-radius: var(--border-radius-sm);
-  background-color: var(--background-white);
-  transition: var(--transition-standard);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  background-color: var(--background-input);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
   font-family: inherit;
   color: var(--text-primary);
-  font-size: 16px; /* Prevent zoom on iOS */
+  font-size: 1rem;
+  box-shadow: var(--shadow-inner);
 }
 
-form button {
+form input:focus,
+form select:focus,
+form textarea:focus {
+  outline: none;
+  border-color: var(--border-color-focus);
+  box-shadow: 0 0 0 3px rgba(var(--primary-rgb), 0.25); /* Focus ring */
+}
+
+form button[type="submit"] {
   background: var(--primary-color);
-  color: white;
+  color: var(--text-on-primary);
   border: none;
-  padding: 0.75rem 1.25rem;
+  padding: 0.8rem 1.5rem;
   border-radius: var(--border-radius-md);
   font-weight: 600;
   cursor: pointer;
-  transition: var(--transition-standard);
+  transition: background-color var(--transition-smooth), transform var(--transition-fast), box-shadow var(--transition-fast);
   display: block;
   width: 100%;
   font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: var(--shadow-sm);
 }
 
-/* Enhanced Popup Styles */
+form button[type="submit"]:hover,
+form button[type="submit"]:focus {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+form button[type="submit"]:active {
+  transform: translateY(0px);
+  background: var(--primary-dark);
+  box-shadow: var(--shadow-inner);
+}
+
+/* Popup Styles */
 .popup-overlay {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(15, 23, 42, 0.6); /* Dark overlay (e.g., slate-900 with alpha) */
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000; /* Ensure it's above everything */
+  z-index: 2000;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  transition: opacity var(--transition-smooth), visibility 0s var(--transition-smooth); /* Delay visibility hide */
 }
-
 .popup-overlay.active {
   opacity: 1;
   visibility: visible;
+  transition-delay: 0s;
 }
+[data-theme="dark"] .popup-overlay {
+    background-color: rgba(0,0,0,0.7);
+}
+
 
 .popup-content {
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  padding: 25px;
+  background-color: var(--background-elevated);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-xl);
+  padding: 1.5rem;
   width: 90%;
-  max-width: 450px;
+  max-width: 480px;
   position: relative;
-  animation: popup-appear 0.4s ease-out;
+  transform: scale(0.95) translateY(10px);
+  opacity: 0;
+  transition: transform var(--transition-smooth), opacity var(--transition-smooth);
   direction: rtl;
   text-align: right;
-  max-height: 80vh;
+  max-height: 90vh;
   overflow-y: auto;
 }
-
-@media (prefers-color-scheme: dark), .dark-mode {
-  .popup-content {
-    background-color: #333;
-    color: #fff;
-    border: 1px solid #555;
-  }
+.popup-overlay.active .popup-content {
+  transform: scale(1) translateY(0);
+  opacity: 1;
 }
 
 .close-popup {
   position: absolute;
-  top: 10px;
-  left: 15px; /* Left in RTL layout */
-  font-size: 24px;
+  top: 0.75rem;
+  left: 1rem; /* RTL */
+  font-size: 1.75rem;
+  line-height: 1;
   font-weight: bold;
   cursor: pointer;
-  color: #888;
-  transition: color 0.2s;
+  color: var(--text-secondary);
+  transition: color var(--transition-fast), transform var(--transition-fast);
+  background: none;
+  border: none;
+  padding: 0.25rem;
 }
-
-.close-popup:hover {
-  color: #e74c3c;
+.close-popup:hover,
+.close-popup:focus {
+  color: var(--accent-dark);
+  transform: scale(1.1);
+  outline: none;
 }
 
 #appointment-details {
-  margin: 20px 0;
-  padding: 15px;
-  background-color: rgba(0, 128, 128, 0.1);
-  border-radius: 8px;
-  border-right: 4px solid teal;
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background-color: rgba(var(--primary-rgb), 0.05);
+  border-radius: var(--border-radius-md);
+  border-right: 3px solid var(--primary-color); /* RTL */
+}
+#appointment-details p {
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+#appointment-details strong {
+  color: var(--text-primary);
+  font-weight: 500;
 }
 
 .thank-you-message {
   font-size: 1.1em;
   text-align: center;
-  margin-top: 20px;
-  color: #2ecc71;
-  font-weight: bold;
+  margin-top: 1.5rem;
+  color: var(--accent-color);
+  font-weight: 600;
 }
 
-@keyframes popup-appear {
-  from {
-    transform: scale(0.8);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-/* Success message improvements */
+/* Success Message (e.g., for non-popup notifications) */
 .success-message {
-  padding: 15px;
-  margin: 15px 0;
-  background-color: rgba(46, 204, 113, 0.2);
-  border-right: 4px solid #2ecc71;
-  border-radius: 5px;
-  font-weight: bold;
+  padding: 1rem 1.5rem;
+  margin: 1rem 0;
+  background-color: rgba(var(--accent-rgb), 0.1);
+  border-right: 3px solid var(--accent-color); /* RTL */
+  border-radius: var(--border-radius-md);
+  color: var(--accent-dark);
+  font-weight: 500;
   text-align: center;
 }
 
-/* Mobile-specific dropdown styling */
-.dropdown-menu {
-  display: none;
+/* Mobile Dropdown Specifics */
+.dropdown-menu { /* This is the <ul> for dropdown items */
+  display: none; /* Controlled by JS via .show */
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.05);
-  padding: 0;
+  background-color: rgba(0,0,0,0.02); /* Subtle differentiation */
+  padding: 0; /* Reset nav ul padding */
   margin: 0;
   border: none;
+  border-top: 1px solid var(--border-color);
+}
+[data-theme="dark"] .dropdown-menu {
+  background-color: rgba(255,255,255,0.02);
 }
 
 .dropdown-menu.show {
   display: block;
 }
 
-.dropdown-menu a {
-  padding-left: 2rem !important;
-  font-size: 0.9rem;
+.dropdown-menu a { /* Styles for items within .dropdown-menu */
+  padding-left: 2.5rem !important; /* Indent sub-items */
+  font-size: 0.85rem;
+  font-weight: 400;
+  /* Hover styles are inherited and then slightly modified if needed */
 }
 
-.dropdown > a::after {
-  content: '';
-  display: inline-block;
-  margin-left: 8px;
-  border: solid var(--text-primary);
-  border-width: 0 2px 2px 0;
-  padding: 3px;
-  transform: rotate(45deg);
-  transition: transform 0.3s ease;
+.dropdown > a { /* The parent <a> that triggers the dropdown */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.dropdown > a[aria-expanded="true"]::after {
-  transform: rotate(-135deg);
+.dropdown > a .fa-caret-down { /* Assuming FontAwesome caret in HTML */
+  margin-left: 8px; /* Space for caret in RTL */
+  transition: transform var(--transition-smooth);
+  font-size: 0.8em; /* Make caret slightly smaller */
 }
 
-/* Footer - mobile-first */
+.dropdown > a[aria-expanded="true"] .fa-caret-down {
+  transform: rotate(-180deg);
+}
+
+/* Footer */
 footer {
-  background: var(--nav-gradient);
-  color: white;
+  background: var(--nav-bg);
+  color: var(--text-on-primary); /* This needs nav-bg to be dark for light text */
   text-align: center;
-  padding: 1.5rem 1rem; /* Smaller padding on mobile */
+  padding: 2rem 1rem;
   margin-top: 3rem;
   position: relative;
-  overflow: hidden;
+  font-size: 0.9rem;
+}
+[data-theme="dark"] footer {
+    color: var(--text-primary); /* Light text on dark footer */
+}
+footer p {
+  margin: 0;
+  opacity: 0.8;
 }
 
-/* Popup - mobile-first */
-.popup-content {
-  background-color: var(--section-bg);
-  padding: 1.5rem; /* Smaller padding on mobile */
-  border-radius: var(--border-radius-md);
-  width: 95%;
-  max-width: 500px;
-  position: relative;
-  text-align: center;
-  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
-}
-
-/* Media query for tablets (portrait) */
-@media (min-width: 600px) {
-  body {
-    font-size: 16px;
-  }
-  
-  header {
-    padding: 2.5rem 1.5rem;
-    margin-bottom: 2rem;
-  }
-  
-  section {
-    padding: 1.75rem;
-    margin-bottom: 2.5rem;
-  }
-  
-  form {
-    padding: 2rem;
-    max-width: 90%;
-  }
-  
-  .popup-content {
-    padding: 2rem;
-    width: 85%;
-  }
-  
-  .cabinet-photo {
-    margin: 2rem auto;
-  }
-}
-
-/* Media query for desktop and larger tablets */
+/* Tablet and Desktop Styles */
 @media (min-width: 768px) {
   body {
-    font-size: 16px;
+    font-size: 1rem; /* Maintain base */
   }
   
-  /* Reset mobile navigation */
   .mobile-menu-btn {
-    display: none; /* Hide mobile menu button */
+    display: none;
   }
   
   nav {
-    padding: 0;
+    padding: 0 1.5rem; /* Horizontal padding for nav bar */
   }
   
-  #main-menu {
-    position: static; /* Not absolute anymore */
-    max-height: none; /* Not collapsed anymore */
-    flex-direction: row; /* Horizontal on desktop */
+  #main-menu { /* Reset mobile styles for desktop */
+    position: static;
+    max-height: none;
+    flex-direction: row;
     background: transparent;
     box-shadow: none;
     justify-content: center;
     width: auto;
+    margin: 0 auto;
+    padding: 0;
+    border-radius: 0;
   }
   
-  nav ul {
+  nav ul { /* #main-menu */
     display: flex;
     flex-direction: row;
     justify-content: center;
     width: auto;
+    padding: 0; /* Reset */
   }
   
   nav ul li {
-    width: auto; /* Auto width on desktop */
+    width: auto;
     border-bottom: none;
     position: relative;
   }
   
-  nav ul li a {
-    color: white;
+  nav ul li a { /* Desktop top-level nav items */
+    color: var(--text-on-primary); /* Text on nav bar (usually white/light) */
+    [data-theme="dark"] & { /* Nested for specificity */
+        color: var(--text-primary); /* Light text for dark theme nav */
+    }
     padding: 1rem 1.25rem;
+    font-weight: 500;
+    border-bottom: none;
+    position: relative;
+    overflow: hidden; /* For advanced hover effects */
+    transform: none; /* Reset mobile transform */
+    background-color: transparent; /* Reset mobile hover */
   }
-  
-  nav ul li a::after {
+  nav ul li a::before { /* Underline hover effect */
     content: '';
     position: absolute;
-    bottom: 10px;
+    bottom: 6px;
     left: 50%;
     width: 0;
     height: 2px;
     background-color: var(--accent-light);
-    transition: var(--transition-standard);
+    transition: all var(--transition-smooth);
     transform: translateX(-50%);
-    opacity: 0;
   }
-  
-  nav ul li a:hover::after {
-    width: 50%;
-    opacity: 1;
+  nav ul li a:hover::before,
+  nav ul li a:focus::before {
+    width: 60%;
   }
-  
-  /* Desktop dropdowns */
-  .dropdown-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    min-width: 230px;
-    background: var(--background-white);
-    border-radius: var(--border-radius-md);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    display: none;
-    opacity: 0;
-    transform: translateY(10px);
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    z-index: 1001;
-    border: 1px solid rgba(0, 0, 0, 0.05);
+  nav ul li a:hover,
+  nav ul li a:focus {
+    background-color: transparent; /* No bg change on hover for top level */
+    color: var(--text-on-primary); /* Maintain color */
+    [data-theme="dark"] & {
+        color: var(--text-primary);
+    }
   }
-  
-  .dropdown-menu.show {
+
+  /* Desktop Dropdowns */
+  .dropdown:hover .dropdown-menu,
+  .dropdown > a:focus + .dropdown-menu, /* Keyboard accessibility */
+  .dropdown-menu:hover /* Keep open while hovering menu */
+  {
     display: block;
     opacity: 1;
     transform: translateY(0);
+    visibility: visible;
+    transition-delay: 0s;
+  }
+
+  .dropdown-menu { /* The <ul> */
+    position: absolute;
+    top: calc(100% + 5px); /* Small gap */
+    left: 0;
+    min-width: 240px;
+    background: var(--background-elevated);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-lg);
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity var(--transition-fast) ease-out, transform var(--transition-fast) ease-out, visibility 0s var(--transition-fast);
+    visibility: hidden;
+    transition-delay: 0.1s; /* Delay hiding */
+    z-index: 1001;
+    border: 1px solid var(--border-color);
+    padding: 0.5rem 0;
   }
   
-  .dropdown > a::after {
-    border-color: white;
+  .dropdown > a .fa-caret-down {
+    color: inherit; /* Inherit color from parent <a> */
+    opacity: 0.7;
   }
   
-  .dropdown-menu a {
+  .dropdown-menu li {
+      width: 100%;
+  }
+  .dropdown-menu a { /* Items inside desktop dropdown */
     color: var(--text-primary) !important;
-    padding: 0.875rem 1.25rem !important;
+    padding: 0.75rem 1.25rem !important;
     display: flex !important;
     align-items: center;
-    background-color: transparent;
+    background-color: transparent !important;
+    font-weight: 400;
+    transition: background-color var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
   }
-  
-  .dropdown-menu a:hover {
-    background-color: rgba(59, 130, 246, 0.1) !important;
+  .dropdown-menu a:hover,
+  .dropdown-menu a:focus {
+    background-color: rgba(var(--primary-rgb), 0.1) !important;
     color: var(--primary-color) !important;
     transform: translateX(5px) !important;
   }
+  .dropdown-menu a::before { /* Remove parent's hover underline */
+      display: none !important;
+  }
   
-  /* Desktop sections */
   section {
     padding: 2.5rem;
     margin-bottom: 3rem;
   }
-  
   section:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
   }
   
-  /* Desktop headings */
   h2 {
-    font-size: 1.875rem;
+    font-size: clamp(1.6rem, 3vw, 2rem);
   }
   
-  /* Desktop forms */
-  form {
-    padding: 2.5rem;
-    max-width: 600px;
+  form { /* If form is not in a section, or to constrain width */
+    /* max-width: 650px; */ /* Example */
   }
-  
   form input,
   form select,
   form textarea {
-    padding: 0.875rem;
+    padding: 0.875rem 1.125rem;
     margin-bottom: 1.5rem;
   }
-  
-  /* Desktop popup */
+  form button[type="submit"] {
+    width: auto;
+    min-width: 180px;
+    padding: 0.9rem 2rem;
+    margin: 0 auto; /* Center if width is auto */
+  }
+
   .popup-content {
-    padding: 2.5rem;
-    width: 90%;
+    padding: 2rem 2.5rem;
   }
   
   .cabinet-photo:hover {
-    transform: scale(1.02);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    transform: scale(1.03);
+    box-shadow: var(--shadow-xl);
   }
   
-  /* Desktop footer */
   footer {
-    padding: 2rem 0;
+    padding: 2.5rem 1rem;
     margin-top: 4rem;
   }
 }
 
-/* Large desktop screens */
+/* Large Desktop Screens */
 @media (min-width: 1200px) {
   .container {
-    width: 85%;
+    width: 80%;
+    max-width: 1100px;
   }
-  
   header {
-    padding: 3.5rem 1rem;
+    padding: 4rem 1rem 3rem;
   }
-  
   section {
     padding: 3rem;
   }
 }
 
-/* Print styles */
+/* Print Styles */
 @media print {
+  :root { /* Force light theme for printing */
+    --primary-color: #000000;
+    --primary-dark: #000000;
+    --accent-color: #000000;
+    --text-primary: #000000;
+    --text-secondary: #333333;
+    --text-on-primary: #000000;
+    --background-body: #ffffff;
+    --background-card: #ffffff;
+    --background-elevated: #ffffff;
+    --border-color: #cccccc;
+    --header-gradient: none;
+    --nav-bg: #ffffff;
+    --shadow-xs: none; --shadow-sm: none; --shadow-md: none; --shadow-lg: none; --shadow-xl: none; --shadow-inner: none;
+  }
+  [data-theme="dark"] { /* Override dark theme for print */
+    --primary-color: #000000; --primary-dark: #000000; --accent-color: #000000;
+    --text-primary: #000000; --text-secondary: #333333; --text-on-primary: #000000;
+    --background-body: #ffffff; --background-card: #ffffff; --background-elevated: #ffffff;
+    --border-color: #cccccc;
+    --header-gradient: none; --nav-bg: #ffffff;
+    --shadow-xs: none; --shadow-sm: none; --shadow-md: none; --shadow-lg: none; --shadow-xl: none; --shadow-inner: none;
+  }
+
   body {
-    background-color: white;
-    color: black;
-    font-size: 12pt;
+    background-color: var(--background-body) !important;
+    color: var(--text-primary) !important;
+    font-size: 11pt !important;
+    font-family: 'Times New Roman', Times, serif !important;
+    line-height: 1.4 !important;
   }
   
-  nav, 
-  #theme-toggle,
-  .mobile-menu-btn,
-  form button,
-  .popup-overlay {
+  nav, #theme-toggle, .mobile-menu-btn, .popup-overlay, footer, .map-container, #google_translate_element {
     display: none !important;
   }
-  
-  header,
-  section,
-  .popup-content {
-    background: none;
-    color: black;
-    box-shadow: none;
-    padding: 0.5cm;
-    margin: 0.5cm 0;
-    border: 1px solid #ccc;
+  form button[type="submit"] { /* Hide submit button usually */
+      display: none !important;
   }
   
-  .container {
-    width: 100%;
-    max-width: none;
+  header {
+    background: var(--background-body) !important;
+    color: var(--text-primary) !important;
+    box-shadow: none !important;
+    padding: 0.5cm 0 !important;
+    margin-bottom: 1cm !important;
+    border-bottom: 1px solid var(--border-color) !important;
+    text-align: left !important;
+  }
+  header h1 {
+    font-size: 16pt !important;
+    text-shadow: none !important;
+  }
+
+  section {
+    background: var(--background-body) !important;
+    color: var(--text-primary) !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin-bottom: 1cm !important;
+    border: none !important;
+  }
+  section h2 {
+    font-size: 14pt !important;
+    border-bottom: 1px solid var(--border-color) !important;
+    color: var(--text-primary) !important;
   }
   
-  a {
-    color: black;
-    text-decoration: underline;
-  }
+  .container { width: 100% !important; max-width: none !important; padding: 0 !important; }
   
-  /* Ensure page breaks don't happen inside elements */
-  section, form, .cabinet-photo {
+  a { color: #0000FF !important; text-decoration: underline !important; }
+  a[href^="http"]:after { content: " (" attr(href) ")"; font-size: 0.8em; }
+  a[href^="#"]:after, a[href^="tel:"]:after, a[href^="mailto:"]:after { content: "" !important; }
+
+  img, .cabinet-photo {
+    max-width: 80% !important; /* Constrain image size */
+    height: auto !important;
     page-break-inside: avoid;
+    border: 1px solid var(--border-color) !important;
+    box-shadow: none !important;
+    display: block;
+    margin: 1em auto;
   }
+  
+  form { padding: 0 !important; }
+  form label { font-size: 10pt; }
+  form input, form select, form textarea {
+      border: 1px solid #999 !important;
+      background-color: #f9f9f9 !important;
+      padding: 4px !important;
+      font-size: 10pt;
+      color: black !important;
+      -webkit-print-color-adjust: exact; /* Try to force background colors for fields */
+      print-color-adjust: exact;
+  }
+  
+  section, form, ul, ol, .cabinet-photo, #appointment-details { page-break-inside: avoid; }
+  h1, h2, h3, h4, h5, h6 { page-break-after: avoid; }
+  p { orphans: 3; widows: 3; }
 }
 
-/* Utility classes for spacing adjustments */
+/* Utility Classes (from original) */
 .mt-0 { margin-top: 0 !important; }
 .mb-0 { margin-bottom: 0 !important; }
+/* ... keep other utility classes as they are useful ... */
 .my-0 { margin-top: 0 !important; margin-bottom: 0 !important; }
 .mt-1 { margin-top: 0.25rem !important; }
 .mt-2 { margin-top: 0.5rem !important; }
@@ -653,11 +839,176 @@ footer {
 .mb-4 { margin-bottom: 1.5rem !important; }
 .mb-5 { margin-bottom: 2rem !important; }
 
-/* Responsive font size classes */
+/* Responsive font size classes (from original) */
 .text-sm { font-size: clamp(0.75rem, 1vw, 0.875rem); }
+/* ... keep other text size utility classes ... */
 .text-base { font-size: clamp(0.875rem, 1.1vw, 1rem); }
 .text-lg { font-size: clamp(1rem, 1.2vw, 1.125rem); }
 .text-xl { font-size: clamp(1.125rem, 1.3vw, 1.25rem); }
 .text-2xl { font-size: clamp(1.25rem, 1.5vw, 1.5rem); }
 .text-3xl { font-size: clamp(1.5rem, 2vw, 1.875rem); }
 .text-4xl { font-size: clamp(1.875rem, 2.5vw, 2.25rem); }
+
+
+/* Optional: Custom Scrollbar for Webkit browsers */
+::-webkit-scrollbar {
+  width: 10px; /* Slightly wider for easier grabbing */
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background-body);
+  border-radius: var(--border-radius-full);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--text-secondary);
+  border-radius: var(--border-radius-full);
+  border: 2px solid var(--background-body); /* Creates a "padding" effect */
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-color);
+}
+
+/* Watermark Style */
+.watermark {
+  position: fixed;
+  bottom: 10px;
+  right: 10px; /* Or left: 10px for LTR */
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  opacity: 0.5;
+  z-index: 3000; /* High z-index */
+  pointer-events: none; /* So it doesn't interfere with clicks */
+  font-family: var(--font-sans);
+}
+@media print {
+  .watermark { display: none !important; }
+}
+
+/* Dark Mode Toggle Button */
+#theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem; /* Adjust if it clashes with other elements like mobile menu */
+  background-color: var(--background-card);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-full);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-smooth);
+  z-index: 1060; /* Above most things */
+}
+#theme-toggle:hover {
+  background-color: var(--primary-light);
+  color: var(--text-on-primary);
+  border-color: var(--primary-light);
+}
+[data-theme="dark"] #theme-toggle:hover {
+    background-color: var(--primary-dark);
+    color: var(--text-on-primary);
+    border-color: var(--primary-dark);
+}
+#theme-toggle i {
+  font-size: 1.2rem;
+}
+@media (max-width: 767px) { /* Position differently on mobile if nav is full width */
+    #theme-toggle {
+        top: calc(0.5rem + 10px); /* Align with nav items if mobile nav is fixed height */
+        right: calc(1rem + 50px); /* Next to hamburger menu if hamburger is on right */
+        /* If hamburger is on left, right: 1rem; is fine */
+    }
+}
+
+/* Google Translate Element Styling */
+#google_translate_element {
+    margin: 1rem auto; /* Center it in header or nav */
+    text-align: center;
+}
+.goog-te-gadget-simple {
+    background-color: transparent !important;
+    border: 1px solid rgba(var(--text-on-primary-rgb, 255,255,255), 0.5) !important; /* Assuming it's on dark header */
+    padding: 0.3rem 0.5rem !important;
+    border-radius: var(--border-radius-md) !important;
+    cursor: pointer;
+    font-family: var(--font-sans) !important;
+}
+[data-theme="dark"] .goog-te-gadget-simple {
+    border-color: rgba(var(--text-primary-rgb, 243,244,246),0.5) !important; /* Assuming text-primary is light */
+}
+.goog-te-gadget-simple .goog-te-menu-value span {
+    color: var(--text-on-primary) !important; /* Text color of selected language */
+    font-size: 0.85rem !important;
+}
+[data-theme="dark"] .goog-te-gadget-simple .goog-te-menu-value span {
+    color: var(--text-primary) !important;
+}
+.goog-te-gadget-icon {
+    display: none !important; /* Hide Google's icon if you want a cleaner look */
+}
+/* For the dropdown panel */
+.goog-te-menu-frame {
+    box-shadow: var(--shadow-lg) !important;
+    border-radius: var(--border-radius-md) !important;
+    background-color: var(--background-elevated) !important;
+}
+.goog-te-menu2-item div, .goog-te-menu2-item:link div, .goog-te-menu2-item:visited div, .goog-te-menu2-item:active div {
+    color: var(--text-primary) !important;
+    background-color: var(--background-elevated) !important;
+    font-family: var(--font-sans) !important;
+}
+.goog-te-menu2-item-selected div, .goog-te-menu2-item-selected:link div, .goog-te-menu2-item-selected:visited div, .goog-te-menu2-item-selected:active div {
+    color: var(--primary-color) !important;
+    background-color: rgba(var(--primary-rgb), 0.1) !important;
+}
+.goog-te-menu2-item:hover div {
+    background-color: rgba(var(--primary-rgb), 0.07) !important;
+}
+
+/* Clinic Status Styles */
+.datetime-display {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  padding: 0.5rem 0;
+  background-color: rgba(var(--primary-rgb), 0.05); /* Subtle background */
+}
+[data-theme="dark"] .datetime-display {
+    background-color: rgba(var(--primary-rgb), 0.1);
+}
+
+.clinic-status {
+  text-align: center;
+  margin: 0.5rem auto 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: var(--border-radius-md);
+  font-weight: 500;
+}
+.clinic-status p {
+  margin: 0.25rem 0;
+  line-height: 1.4;
+}
+.clinic-status.open {
+  background-color: rgba(var(--accent-rgb), 0.15); /* Using accent for "open" - often green-ish */
+  color: var(--accent-dark);
+  border: 1px solid rgba(var(--accent-rgb),0.3);
+}
+.clinic-status.closed {
+  background-color: rgba(239, 68, 68, 0.1); /* Red-ish for "closed" */
+  color: #b91c1c; /* Dark red */
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+[data-theme="dark"] .clinic-status.closed {
+    color: #f87171; /* Lighter red for dark theme */
+}
+#status-message {
+  font-size: 1.1em;
+}
+#next-opening {
+  font-size: 0.9em;
+  opacity: 0.9;
+}
