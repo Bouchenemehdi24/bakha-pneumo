@@ -16,52 +16,43 @@ const arabicDays = [
     "الأحد", "الاثنين", "الثلاثاء", "الأربعاء", "الخميس", "الجمعة", "السبت"
 ];
 
-// Check if an element exists before accessing it
 function getElement(id) {
     return document.getElementById(id);
 }
 
-// Format time with AM/PM in Arabic (takes 24-hour format)
 function formatTimeArabic(hours24) {
     const ampm = hours24 >= 12 ? 'مساءً' : 'صباحاً';
     let hours = hours24 % 12;
-    hours = hours ? hours : 12; // the hour '0' should be '12'
-    
-    if (hours24 === 12) return `12:00 ظهراً`; // Noon specifically
+    hours = hours ? hours : 12;
+    if (hours24 === 12) return `12:00 ظهراً`;
     return `${hours}:00 ${ampm}`;
 }
 
-// Calculate and display countdown based on target Algerian hour/minute
 function getCountdownText(targetHourAlgeria, targetMinuteAlgeria, currentHourAlgeria, currentMinuteAlgeria) {
-    // Convert current and target times to total minutes from midnight in Algeria time
     const currentTimeInMinutes = currentHourAlgeria * 60 + currentMinuteAlgeria;
     let targetTimeInMinutes = targetHourAlgeria * 60 + targetMinuteAlgeria;
-
     let diffInMinutes = targetTimeInMinutes - currentTimeInMinutes;
 
-    // If diff is negative, it means the target time is on the "next day" conceptually for countdown purposes
-    // (e.g., current 17:00, target for next day 08:00. This case is handled by main logic for next day opening)
-    // This function assumes target is on the same logical "day" or very soon.
-    // For simple same-day countdown:
     if (diffInMinutes <= 0) return ""; 
     
     const hours = Math.floor(diffInMinutes / 60);
     const minutes = diffInMinutes % 60;
     
+    let countdownStr = " (خلال ";
     if (hours > 0) {
-        return ` (خلال ${hours} ساعة و ${minutes} دقيقة)`;
-    } else if (minutes > 0) { // Only show if there are minutes to count down
-        return ` (خلال ${minutes} دقيقة)`;
+        countdownStr += `${hours} ساعة`;
+        if (minutes > 0) countdownStr += " و ";
     }
-    return ""; // Should not be reached if diffInMinutes > 0 and minutes is 0 but hours is 0.
+    if (minutes > 0) {
+        countdownStr += `${minutes} دقيقة`;
+    }
+    countdownStr += ")";
+
+    return (hours > 0 || minutes > 0) ? countdownStr : "";
 }
 
-
-// Update clinic status with enhanced information using Algeria Time
 function updateClinicStatus() {
-    const nowUTC = new Date(); // Get current date/time in UTC
-
-    // Calculate Algeria time (UTC+1)
+    const nowUTC = new Date();
     const algeriaTimezoneOffsetHours = 1;
     let algeriaHour = nowUTC.getUTCHours() + algeriaTimezoneOffsetHours;
     let algeriaDay = nowUTC.getUTCDay();
@@ -69,10 +60,10 @@ function updateClinicStatus() {
 
     if (algeriaHour >= 24) {
         algeriaHour -= 24;
-        algeriaDay = (algeriaDay + 1) % 7; // Move to next day
-    } else if (algeriaHour < 0) { // Should not happen with UTC+1 but good for robustness
+        algeriaDay = (algeriaDay + 1) % 7;
+    } else if (algeriaHour < 0) {
         algeriaHour += 24;
-        algeriaDay = (algeriaDay - 1 + 7) % 7; // Move to previous day
+        algeriaDay = (algeriaDay - 1 + 7) % 7;
     }
     
     const day = algeriaDay;
@@ -80,38 +71,60 @@ function updateClinicStatus() {
     const minutes = algeriaMinute;
     const todayHours = clinicHours[day];
     
-    // Get DOM elements
     const statusMessage = getElement('status-message');
     const nextOpening = getElement('next-opening');
     const clinicStatusElem = getElement('clinic-status');
     
-    if (!statusMessage || !nextOpening || !clinicStatusElem) return;
+    if (!statusMessage || !nextOpening || !clinicStatusElem) {
+        // console.warn("Clinic status elements not found.");
+        return;
+    }
     
     const arabicTimeElem = getElement('arabic-time');
     if (arabicTimeElem) {
-        const options = { 
-            timeZone: 'Africa/Algiers', // Correct timezone for Algeria
-            weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', 
-            hour: '2-digit', minute: '2-digit', hour12: true 
+        const displayOptions = { 
+            timeZone: 'Africa/Algiers', // CRUCIAL for Algeria time
+            weekday: 'long', 
+            year: 'numeric', 
+            month: 'long', 
+            day: 'numeric', 
+            hour: '2-digit', 
+            minute: '2-digit', 
+            hour12: true 
         };
-        // Use new Date() for toLocaleTimeString as it handles the timeZone option correctly
-        arabicTimeElem.textContent = new Date().toLocaleTimeString('ar-DZ', options); // ar-DZ for Algerian Arabic
+        try {
+            // Using ar-SA (Saudi Arabia) for formatting as it's widely supported,
+            // but timeZone: 'Africa/Algiers' should give Algeria's time.
+            const algeriaTimeString = new Date().toLocaleTimeString('ar-SA', displayOptions);
+            
+            // --- DEBUGGING LOG ---
+            // console.log("Attempting to display Algeria Time. Current Date object:", new Date());
+            // console.log("Options for toLocaleTimeString:", displayOptions);
+            // console.log("Generated Algeria Time String:", algeriaTimeString);
+            // Compare this ^ with actual Algeria time and your local time.
+            // --- END DEBUGGING LOG ---
+
+            arabicTimeElem.textContent = algeriaTimeString;
+        } catch (e) {
+            console.error("Error formatting time for Algeria display:", e);
+            arabicTimeElem.textContent = "لا يمكن عرض الوقت حالياً";
+        }
     }
     
     clinicStatusElem.classList.remove('open', 'closed', 'soon');
     
-    if (todayHours && todayHours.open !== null) { // Check if todayHours is defined
+    if (todayHours && todayHours.open !== null) {
         const isOpenNow = (hours > todayHours.open && hours < todayHours.close) ||
                           (hours === todayHours.open && minutes >= 0) ||
-                          (hours === todayHours.close -1 && minutes >=0 && todayHours.close !== todayHours.open) || // Handles closing at X:00
-                          (hours === todayHours.close && minutes === 0 && todayHours.close !== todayHours.open) ; // Exactly at closing hour, still open
+                          (hours === todayHours.close -1 && minutes >=0 && todayHours.close !== todayHours.open) || 
+                          (hours === todayHours.close && minutes === 0 && todayHours.close !== todayHours.open);
 
         if (isOpenNow) {
             statusMessage.innerHTML = '<span class="status-with-icon"><i class="fas fa-door-open status-icon"></i> العيادة مفتوحة حالياً</span>';
             const countdown = getCountdownText(todayHours.close, 0, hours, minutes);
             nextOpening.textContent = `تغلق اليوم في ${formatTimeArabic(todayHours.close)}${countdown}`;
             clinicStatusElem.classList.add('open');
-        } else if (hours === todayHours.open - 1 && minutes >=0) { // Opening within the hour before
+        } else if (hours === todayHours.open - 1 && minutes >=0) {
             statusMessage.innerHTML = '<span class="status-with-icon"><i class="fas fa-clock status-icon"></i> ستفتح العيادة قريباً</span>';
             const countdown = getCountdownText(todayHours.open, 0, hours, minutes);
             nextOpening.textContent = `تفتح اليوم في ${formatTimeArabic(todayHours.open)}${countdown}`;
@@ -121,7 +134,7 @@ function updateClinicStatus() {
             const countdown = getCountdownText(todayHours.open, 0, hours, minutes);
             nextOpening.textContent = `تفتح اليوم في ${formatTimeArabic(todayHours.open)}${countdown}`;
             clinicStatusElem.classList.add('closed');
-        } else { // Closed for today (after closing hours), check next opening
+        } else { 
             statusMessage.innerHTML = '<span class="status-with-icon"><i class="fas fa-door-closed status-icon"></i> العيادة مغلقة حالياً</span>';
             let nextOpenDayInfoFound = false;
             for (let i = 1; i <= 7; i++) {
@@ -129,17 +142,15 @@ function updateClinicStatus() {
                 const nextDayHours = clinicHours[nextCheckDay];
                 if (nextDayHours && nextDayHours.open !== null) {
                     const dayName = i === 1 ? "غداً" : `يوم ${arabicDays[nextCheckDay]}`;
-                    nextOpening.textContent = `تفتح ${dayName} في ${formatTimeArabic(nextDayHours.open)}`;
+                    nextOpening.textContent = `تفتح ${dayName} (${arabicDays[nextCheckDay]}) في ${formatTimeArabic(nextDayHours.open)}`;
                     nextOpenDayInfoFound = true;
                     break;
                 }
             }
-            if (!nextOpenDayInfoFound) {
-                nextOpening.textContent = "يرجى مراجعة مواقيت العمل."; // Fallback
-            }
+            if (!nextOpenDayInfoFound) nextOpening.textContent = "يرجى مراجعة مواقيت العمل.";
             clinicStatusElem.classList.add('closed');
         }
-    } else { // Today is a holiday (e.g., Friday or not in clinicHours)
+    } else { 
         statusMessage.innerHTML = '<span class="status-with-icon"><i class="fas fa-calendar-times status-icon"></i> العيادة مغلقة اليوم</span>';
         let nextOpenDayInfoFound = false;
         for (let i = 1; i <= 7; i++) {
@@ -152,16 +163,13 @@ function updateClinicStatus() {
                 break;
             }
         }
-         if (!nextOpenDayInfoFound) {
-            nextOpening.textContent = "يرجى مراجعة مواقيت العمل."; // Fallback
-        }
+         if (!nextOpenDayInfoFound) nextOpening.textContent = "يرجى مراجعة مواقيت العمل.";
         clinicStatusElem.classList.add('closed');
     }
     
-    createBackToTopButton(); // Moved here to ensure it's always checked
+    createBackToTopButton();
 }
 
-// Create and handle back-to-top button
 function createBackToTopButton() {
     if (!getElement('back-to-top')) {
         const backToTop = document.createElement('div');
@@ -171,16 +179,12 @@ function createBackToTopButton() {
         backToTop.title = 'العودة إلى الأعلى';
         document.body.appendChild(backToTop);
         
-        backToTop.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
+        backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
     }
     
     function toggleBackToTop() {
         const backToTop = getElement('back-to-top');
-        if (backToTop) {
-            backToTop.classList.toggle('visible', window.scrollY > 300);
-        }
+        if (backToTop) backToTop.classList.toggle('visible', window.scrollY > 300);
     }
     
     if (!window.hasBackToTopListener) {
@@ -189,14 +193,12 @@ function createBackToTopButton() {
     }
 }
 
-// Format services as cards if they exist
 function formatServiceCards() {
     const servicesSection = getElement('services');
     if (!servicesSection) return;
     const servicesList = servicesSection.querySelector('ul');
     if (!servicesList) return;
-
-    if (servicesSection.dataset.formatted === 'true') return; // Already formatted
+    if (servicesSection.dataset.formatted === 'true') return;
 
     const items = Array.from(servicesList.querySelectorAll('li'));
     if (items.length === 0) return;
@@ -207,22 +209,20 @@ function formatServiceCards() {
     const serviceIcons = {
         'تشخيص': 'fa-stethoscope', 'قياس': 'fa-chart-line', 'اشعة': 'fa-x-ray',
         'علاج': 'fa-heartbeat', 'اختبارات': 'fa-vial', 'انقطاع': 'fa-bed',
-        'طوارئ': 'fa-ambulance', 'الاسترواح': 'fa-lungs-virus', // Changed icon slightly
+        'طوارئ': 'fa-ambulance', 'الاسترواح': 'fa-lungs-virus',
         'تدخين': 'fa-smoking-ban', 'فحوصات': 'fa-user-md'
     };
     
     items.forEach(item => {
         const text = item.textContent.trim();
         if (!text) return;
-
-        let iconClass = 'fa-clinic-medical'; // Default icon
+        let iconClass = 'fa-clinic-medical';
         for (const [keyword, icon] of Object.entries(serviceIcons)) {
             if (text.includes(keyword)) {
                 iconClass = icon;
                 break;
             }
         }
-        
         const card = document.createElement('div');
         card.className = 'service-card';
         card.innerHTML = `
@@ -234,10 +234,9 @@ function formatServiceCards() {
     });
     
     servicesList.parentNode.replaceChild(serviceGrid, servicesList);
-    servicesSection.dataset.formatted = 'true'; // Mark as formatted
+    servicesSection.dataset.formatted = 'true';
 }
 
-// Enhancement for clinic status change animations
 function addStatusTransitionEffects() {
     const statusElem = getElement('clinic-status');
     if (statusElem) {
@@ -250,15 +249,14 @@ function addStatusTransitionEffects() {
     }
 }
 
-// Add emergency notice during high-volume periods
 function checkAndAddEmergencyNotice() {
     const nowUTC = new Date();
     let algeriaHour = nowUTC.getUTCHours() + 1;
     if (algeriaHour >= 24) algeriaHour -=24;
     const algeriaDay = (algeriaHour >= 24) ? (nowUTC.getUTCDay() + 1) % 7 : nowUTC.getUTCDay();
 
-    const isBusyTime = (algeriaDay === 0 && algeriaHour >= 9 && algeriaHour <= 11) || // Sunday morning
-                       (algeriaDay >= 0 && algeriaDay <=4 && algeriaHour >= 8 && algeriaHour <= 9); // Weekday early morning
+    const isBusyTime = (algeriaDay === 0 && algeriaHour >= 9 && algeriaHour <= 11) || 
+                       (algeriaDay >= 0 && algeriaDay <=4 && algeriaHour >= 8 && algeriaHour <= 9);
 
     const contactSection = getElement('contact');
     let existingNotice = document.querySelector('.emergency-notice');
@@ -278,14 +276,13 @@ function checkAndAddEmergencyNotice() {
     }
 }
 
-// Initialize all enhancements
 function initClinicFeatures() {
     updateClinicStatus();
     setInterval(() => {
         updateClinicStatus();
         addStatusTransitionEffects();
         checkAndAddEmergencyNotice();
-    }, 60000); // Every minute
+    }, 60000);
     
     formatServiceCards();
     checkAndAddEmergencyNotice();
@@ -293,22 +290,20 @@ function initClinicFeatures() {
     const appointmentSection = getElement('appointment');
     if (appointmentSection && !document.querySelector('.waiting-time-indicator-container')) {
         const waitingTimeContainer = document.createElement('div');
-        waitingTimeContainer.className = 'waiting-time-indicator-container'; // New container class
+        waitingTimeContainer.className = 'waiting-time-indicator-container';
         waitingTimeContainer.innerHTML = `
             <p class="waiting-time-label">الوقت المتوقع للانتظار حالياً:</p>
             <div class="waiting-time-indicator">أقل من 20 دقيقة</div>
         `;
-        // Insert after the H2 in the appointment section
         const h2Appointment = appointmentSection.querySelector('h2');
         if (h2Appointment) {
             h2Appointment.parentNode.insertBefore(waitingTimeContainer, h2Appointment.nextSibling);
-        } else { // Fallback if H2 not found
+        } else {
             appointmentSection.insertBefore(waitingTimeContainer, appointmentSection.firstChild);
         }
     }
 }
 
-// Run when document is ready
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initClinicFeatures);
 } else {
