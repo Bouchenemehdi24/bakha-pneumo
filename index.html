@@ -58,33 +58,24 @@
         "main.js",  
         "enhanced-features.js",
         "date-features.js",
-        "clinic-status.js",
+        "clinic-status.js", // This will be handled by DOMContentLoaded later
         "calculators.js",
-        "dark-mode.js", // Added here as it's likely non-critical for initial render
-        "dropdown.js", // Added here
-        "aos-init.js", // Added here
-        "mobile-form-optimizer.js" // Added here
+        "dark-mode.js", 
+        "dropdown.js", 
+        "aos-init.js", 
+        "mobile-form-optimizer.js"
       ];
 
       scriptsToDefer.forEach(src => {
         const script = document.createElement("script");
         script.src = src;
         script.defer = true;
-        document.head.appendChild(script); // Appending to head is fine for deferred scripts
+        document.head.appendChild(script);
       });
     </script>
 
     <!-- Load Google Translate API -->
     <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" defer></script>
-
-    <!-- Google Analytics (gtag.js) - Already present and seems fine -->
-    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-BCT8GP6LZT"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-BCT8GP6LZT');
-    </script> -->
 
     <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
@@ -138,7 +129,68 @@
       ]
     }
     </script>
+    <style>
+        /* Basic styles for the popup to be visible */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex; /* Use flex to center */
+            justify-content: center;
+            align-items: center;
+            z-index: 10000; /* Ensure it's on top */
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        .popup-overlay.active { /* Class to show the popup */
+            opacity: 1;
+            visibility: visible;
+        }
+        .popup-content {
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            width: 90%;
+            max-width: 450px;
+            position: relative;
+            text-align: right; /* For RTL */
+            max-height: 80vh;
+            overflow-y: auto;
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+        .popup-overlay.active .popup-content {
+            transform: scale(1);
+        }
+        .close-popup {
+            position: absolute;
+            top: 10px;
+            left: 15px; /* Adjust for RTL if needed */
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+            color: #888;
+        }
+        .close-popup:hover {
+            color: #333;
+        }
+        #appointment-details p { margin-bottom: 0.5em; }
+        .thank-you-message { font-weight: bold; margin-top: 1em; color: #2ecc71;}
 
+        /* Style for submit button during loading */
+        form button[type="submit"].loading {
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+        form button[type="submit"].loading::after {
+            content: ' ...'; /* Simple loading indicator */
+        }
+    </style>
 
 </head>
 <body>
@@ -255,23 +307,36 @@
 
                     <label for="appointmentDate-ar">تاريخ الموعد:</label>
                     <input type="date" id="appointmentDate-ar" name="appointment_date" required>
+                    
+                    <!-- Hidden field for subject, Formspree uses this for email subject -->
+                    <input type="hidden" name="_subject" value="طلب موعد جديد!">
 
                     <button type="submit">إرسال</button>
                 </form>
 
+                <!-- This success message div is no longer primarily used by JS, but can be a fallback -->
                 <div id="success-message-ar" class="success-message" style="display: none;">تم حجز موعدك بنجاح</div>
 
                 <!-- Success Popup -->
-                <div id="success-popup" class="popup-overlay" style="display: none;">
+                <div id="success-popup" class="popup-overlay"> <!-- Removed style="display: none;" to control with 'active' class -->
                     <div class="popup-content">
-                        <span class="close-popup">×</span>
+                        <span class="close-popup" onclick="closeSuccessPopup()">×</span> <!-- Added onclick -->
                         <h3>تم حجز موعدك بنجاح</h3>
                         <div id="appointment-details">
                             <p><strong>الاسم:</strong> <span id="popup-name"></span></p>
                             <p><strong>رقم الهاتف:</strong> <span id="popup-phone"></span></p>
                             <p><strong>تاريخ الموعد:</strong> <span id="popup-date"></span></p>
                         </div>
-                        <p class="thank-you-message">شكراً لاختياركم عيادة الدكتورة بخة س</p>
+                        <p class="thank-you-message">شكراً لاختياركم عيادة الدكتورة بخة س. سيتم التواصل معكم لتأكيد الموعد.</p>
+                    </div>
+                </div>
+                 <!-- Error Popup (Optional but good practice) -->
+                <div id="error-popup" class="popup-overlay">
+                    <div class="popup-content">
+                        <span class="close-popup" onclick="closeErrorPopup()">×</span>
+                        <h3>حدث خطأ</h3>
+                        <p id="error-message-content">عذراً، لم نتمكن من إرسال طلبك. يرجى المحاولة مرة أخرى أو الاتصال بنا مباشرة.</p>
+                        <button onclick="closeErrorPopup()" style="margin-top: 15px; padding: 8px 15px;">حسناً</button>
                     </div>
                 </div>
             </section>
@@ -332,9 +397,125 @@
     <!-- Watermark -->
     <div class="watermark">Dr. Bakha</div>
                
-    <!-- AOS Script (ensure it's loaded after content or deferred) -->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <!-- Initialize AOS in aos-init.js which is deferred -->
+
+    <script>
+        // JavaScript for AJAX Formspree submission and custom popup
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('appointmentForm-ar');
+            const successPopup = document.getElementById('success-popup');
+            const errorPopup = document.getElementById('error-popup');
+            
+            const popupName = document.getElementById('popup-name');
+            const popupPhone = document.getElementById('popup-phone');
+            const popupDate = document.getElementById('popup-date');
+            const errorMessageContent = document.getElementById('error-message-content');
+
+            if (form) {
+                form.addEventListener('submit', function (event) {
+                    event.preventDefault(); // Prevent default form submission
+
+                    const submitButton = form.querySelector('button[type="submit"]');
+                    submitButton.disabled = true;
+                    submitButton.classList.add('loading');
+                    submitButton.textContent = 'جاري الإرسال...';
+
+
+                    const formData = new FormData(form);
+                    const nameValue = formData.get('name');
+                    const phoneValue = formData.get('phone');
+                    const dateValue = formData.get('appointment_date');
+
+                    fetch(form.action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    }).then(response => {
+                        submitButton.disabled = false;
+                        submitButton.classList.remove('loading');
+                        submitButton.textContent = 'إرسال';
+
+                        if (response.ok) {
+                            // Populate popup with submitted data
+                            if(popupName) popupName.textContent = nameValue;
+                            if(popupPhone) popupPhone.textContent = phoneValue;
+                            if(popupDate) {
+                                // Format date nicely if possible
+                                try {
+                                    const dateObj = new Date(dateValue + 'T00:00:00'); // Ensure it's treated as local date
+                                    popupDate.textContent = dateObj.toLocaleDateString('ar-SA', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+                                } catch (e) {
+                                    popupDate.textContent = dateValue; // Fallback
+                                }
+                            }
+                            
+                            if(successPopup) successPopup.classList.add('active');
+                            form.reset(); // Reset form fields
+                        } else {
+                            response.json().then(data => {
+                                let errorMsg = "عذراً، لم نتمكن من إرسال طلبك. يرجى المحاولة مرة أخرى أو الاتصال بنا مباشرة.";
+                                if (data && data.errors) {
+                                    errorMsg = data.errors.map(error => error.message).join(", ");
+                                }
+                                if(errorMessageContent) errorMessageContent.textContent = errorMsg;
+                                if(errorPopup) errorPopup.classList.add('active');
+                            }).catch(() => {
+                                if(errorMessageContent) errorMessageContent.textContent = "عذراً، حدث خطأ غير متوقع. يرجى المحاولة مرة أخرى.";
+                                if(errorPopup) errorPopup.classList.add('active');
+                            });
+                        }
+                    }).catch(error => {
+                        submitButton.disabled = false;
+                        submitButton.classList.remove('loading');
+                        submitButton.textContent = 'إرسال';
+                        if(errorMessageContent) errorMessageContent.textContent = "حدث خطأ في الشبكة. يرجى التحقق من اتصالك بالإنترنت والمحاولة مرة أخرى.";
+                        if(errorPopup) errorPopup.classList.add('active');
+                        console.error('Error:', error);
+                    });
+                });
+            }
+        });
+
+        function closeSuccessPopup() {
+            const successPopup = document.getElementById('success-popup');
+            if (successPopup) successPopup.classList.remove('active');
+        }
+        function closeErrorPopup() {
+            const errorPopup = document.getElementById('error-popup');
+            if (errorPopup) errorPopup.classList.remove('active');
+        }
+
+        // Make sure toggleDropdown is defined if used inline
+        function toggleDropdown(dropdownId) {
+            const dropdownMenu = document.getElementById(dropdownId);
+            if (dropdownMenu) {
+                dropdownMenu.classList.toggle('show');
+                const parentLink = dropdownMenu.previousElementSibling;
+                if (parentLink) {
+                    const isExpanded = dropdownMenu.classList.contains('show');
+                    parentLink.setAttribute('aria-expanded', isExpanded.toString());
+                }
+            }
+        }
+
+        // Global event listener to close dropdowns when clicking outside
+        window.addEventListener('click', function(event) {
+            if (!event.target.closest('.dropdown')) {
+                document.querySelectorAll('.dropdown-menu.show').forEach(function(menu) {
+                    menu.classList.remove('show');
+                    const parentLink = menu.previousElementSibling;
+                     if (parentLink) {
+                        parentLink.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            }
+        });
+
+    </script>
+    <!-- Defered scripts from head will load here too -->
 
 </body>
 </html>
