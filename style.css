@@ -296,8 +296,8 @@ h2 {
   border: 1px solid var(--border-color);
 }
 
-/* Forms */
-form { /* Assuming form is inside a padded section */
+/* Forms --- START OF REVISED FORM STYLES --- */
+form {
   background-color: transparent; 
   padding: 0; 
   width: 100%;
@@ -306,18 +306,19 @@ form { /* Assuming form is inside a padded section */
 
 form label {
   display: block;
-  margin-bottom: 0.5rem;
+  margin-bottom: calc(var(--spacing-unit) * 2); /* 0.5rem */
   font-weight: 500;
   color: var(--text-secondary);
-  font-size: 0.9rem;
+  font-size: 0.875rem; /* 14px */
+  line-height: 1.5;
 }
 
 form input,
 form select,
-form textarea {
+form textarea { /* Added textarea for completeness */
   width: 100%;
-  padding: 0.75rem 1rem;
-  margin-bottom: 1.25rem;
+  padding: calc(var(--spacing-unit) * 3.5) calc(var(--spacing-unit) * 4); /* 0.875rem 1rem */
+  margin-bottom: calc(var(--spacing-unit) * 6); /* 1.5rem */
   border: 1px solid var(--border-color);
   border-radius: var(--border-radius-md);
   background-color: var(--background-input);
@@ -325,45 +326,67 @@ form textarea {
   font-family: inherit;
   color: var(--text-primary);
   font-size: 1rem;
-  box-shadow: var(--shadow-inner);
+  /* Removed --shadow-inner for a flatter, more modern look */
+}
+
+form input::placeholder,
+form textarea::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.6;
+}
+
+form input:hover,
+form select:hover,
+form textarea:hover {
+  border-color: rgba(var(--primary-rgb), 0.5); /* Or var(--text-secondary) if preferred */
 }
 
 form input:focus,
 form select:focus,
 form textarea:focus {
   outline: none;
-  border-color: var(--border-color-focus);
-  box-shadow: 0 0 0 3px rgba(var(--primary-rgb), 0.25); /* Focus ring */
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(var(--primary-rgb), 0.15); /* Softer focus ring */
+}
+
+form select {
+  /* appearance: none; */ /* Keep default arrow for now for simplicity */
+  cursor: pointer;
 }
 
 form button[type="submit"] {
   background: var(--primary-color);
   color: var(--text-on-primary);
   border: none;
-  padding: 0.8rem 1.5rem;
+  padding: calc(var(--spacing-unit) * 3.5) calc(var(--spacing-unit) * 8); /* approx 0.875rem 2rem */
   border-radius: var(--border-radius-md);
   font-weight: 600;
   cursor: pointer;
-  transition: background-color var(--transition-smooth), transform var(--transition-fast), box-shadow var(--transition-fast);
-  display: block;
+  transition: background-color var(--transition-smooth), transform var(--transition-fast), box-shadow var(--transition-smooth);
+  display: block; 
   width: 100%;
   font-size: 1rem;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.075em; 
   box-shadow: var(--shadow-sm);
+  text-align: center;
 }
 
 form button[type="submit"]:hover,
 form button[type="submit"]:focus {
   background: var(--primary-dark);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+  transform: translateY(-3px); 
+  box-shadow: var(--shadow-md); 
+  outline: none;
 }
+
 form button[type="submit"]:active {
-  transform: translateY(0px);
-  background: var(--primary-dark);
-  box-shadow: var(--shadow-inner);
+  transform: translateY(-1px); 
+  background: var(--primary-dark); 
+  box-shadow: var(--shadow-inner); 
 }
+/* --- END OF REVISED FORM STYLES --- */
+
 
 /* Popup Styles */
 .popup-overlay {
@@ -676,20 +699,17 @@ footer p {
     font-size: clamp(1.6rem, 3vw, 2rem);
   }
   
-  form { /* If form is not in a section, or to constrain width */
-    /* max-width: 650px; */ /* Example */
-  }
+  /* Desktop form input adjustments (if any beyond general input styling) */
   form input,
   form select,
   form textarea {
-    padding: 0.875rem 1.125rem;
-    margin-bottom: 1.5rem;
+    /* Padding and margin are already set well for responsiveness */
   }
+  
   form button[type="submit"] {
-    width: auto;
-    min-width: 180px;
-    padding: 0.9rem 2rem;
-    margin: 0 auto; /* Center if width is auto */
+    width: auto; 
+    min-width: 220px; 
+    margin: calc(var(--spacing-unit) * 4) auto 0; /* 1rem auto 0 */
   }
 
   .popup-content {
