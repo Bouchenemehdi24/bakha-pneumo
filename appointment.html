@@ -33,21 +33,17 @@
     <meta property="twitter:description" content="احجز موعداً مع الدكتورة بخة س، طبيبة مختصة في الأمراض الصدرية والحساسية في ولاية قالمة.">
     <meta property="twitter:image" content="https://bakha-pneumo.netlify.app/cabinet.png">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Title -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <!-- Title -->
     <title>احجز موعداً - عيادة الدكتورة بخة س</title>
 
     <!-- Favicon -->
     <link rel="icon" href="cabinet.png" type="image/png">
 
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://bakha-pneumo.netlify.app/appointment.html">
-
-    <!-- Stylesheets -->
+    <link rel="canonical" href="https://bakha-pneumo.netlify.app/appointment.html">    <!-- Stylesheets -->    
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="enhanced-styles.css">
-    <link rel="stylesheet" href="clinic-status.css">
+    <link rel="stylesheet" href="style-updates.css">
+    <link rel="stylesheet" href="dark-mode.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
     <!-- Defer Non-Critical Scripts -->
@@ -115,7 +111,7 @@
     }
     </script>
 </head>
-<body>
+<body data-theme="light">
     <!-- Dark Mode Toggle Button -->
     <button id="theme-toggle" aria-label="Toggle Dark Mode">
         <i class="fas fa-moon"></i>
@@ -199,9 +195,9 @@
         </nav>
     
         <main>
-            <section id="appointment" data-aos="fade-up">
+            <section id="appointment">
                 <h2>احجز موعداً</h2>
-                <form id="appointmentForm-ar" onsubmit="submitToSupabase(event)">
+                <form id="appointmentForm-ar" action="https://formspree.io/f/xrgwqydw" method="POST">
                     <label for="name-ar">الاسم الكامل:</label>
                     <input type="text" id="name-ar" name="name" required>
 
@@ -213,7 +209,7 @@
                     </select>
 
                     <label for="phone-ar">رقم الهاتف:</label>
-                    <input type="tel" id="phone-ar" name="phone" pattern="[0-9]{10}" required>
+                    <input type="tel" id="phone-ar" name="phone" required>
 
                     <label for="appointmentDate-ar">تاريخ الموعد:</label>
                     <input type="date" id="appointmentDate-ar" name="appointment_date" required>
@@ -221,20 +217,8 @@
                     <button type="submit">إرسال</button>
                 </form>
 
-                <div id="success-message-ar" class="success-message" style="display: none;">تم حجز موعدك بنجاح</div>
-
-                <!-- Success Popup -->
-                <div id="success-popup" class="popup-overlay" style="display: none;">
-                    <div class="popup-content">
-                        <span class="close-popup">&times;</span>
-                        <h3>تم حجز موعدك بنجاح</h3>
-                        <div id="appointment-details">
-                            <p><strong>الاسم:</strong> <span id="popup-name"></span></p>
-                            <p><strong>رقم الهاتف:</strong> <span id="popup-phone"></span></p>
-                            <p><strong>تاريخ الموعد:</strong> <span id="popup-date"></span></p>
-                        </div>
-                        <p class="thank-you-message">شكراً لاختياركم عيادة الدكتورة بخة س</p>
-                    </div>
+                <div id="success-message-ar" class="success-message" style="display: none;">
+                    تم إرسال طلب موعدك بنجاح. سنتصل بك قريباً لتأكيد الموعد.
                 </div>
             </section>
         </main>
@@ -245,16 +229,9 @@
     </div>
 
     <!-- Watermark -->
-    <div class="watermark">Dr. Bakha</div>
-
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.38.0/dist/umd/supabase.min.js"></script>
-    <script src="supabase-integration.js"></script>
+    <div class="watermark">Dr. Bakha</div>    <!-- Scripts -->
     <script src="dark-mode.js"></script>
     <script src="dropdown.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script src="aos-init.js"></script>
-    <script src="mobile-form-optimizer.js" defer></script>  
+    <script src="form.js"></script>
 </body>
 </html>

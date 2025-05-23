@@ -1,282 +1,334 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-       <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-BCT8GP6LZT"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BCT8GP6LZT"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-BCT8GP6LZT');
+    </script>
 
-  gtag('config', 'G-BCT8GP6LZT');
-</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Updated Meta Keywords -->
-    <meta name="keywords" content="حاسبة مؤشر كتلة الجسم, حساب BMI, مؤشر كتلة الجسم, الوزن المثالي, تصنيف BMI, نقص الوزن, زيادة الوزن, سمنة, صحة الوزن, حساب الوزن المثالي, مؤشر كتلة الجسم للبالغين, مؤشر كتلة الجسم للأطفال, مؤشر كتلة الجسم للحوامل, صحة الجسم, نصائح الوزن الصحي, حاسبة BMI في ڨالمة, طبيب التغذية في ڨالمة, عيادة التغذية في ڨالمة, cabinet de nutrition à Guelma, calculateur BMI à Guelma, nutritionniste à Guelma">
-    <!-- Improved Meta Description -->
-    <meta name="description" content="حاسبة مؤشر كتلة الجسم (BMI) تساعدك على حساب مؤشر كتلة جسمك بناءً على وزنك وطولك. تعرف على تصنيفك الصحي وفقاً لمنظمة الصحة العالمية (WHO). عيادة الدكتورة بخة س في ڨالمة، الجزائر.">
+    <!-- Meta Keywords for BMI Calculator -->
+    <meta name="keywords" content="حاسبة مؤشر كتلة الجسم, حساب BMI, مؤشر كتلة الجسم, الوزن المثالي, تصنيف BMI, صحة الوزن, حساب الوزن الصحي, الدكتورة بخة س, نصائح الوزن الصحي, حاسبة BMI قالمة, استشارة تغذية قالمة, طبيب تغذية قالمة">
+    <!-- Meta Description for BMI Calculator -->
+    <meta name="description" content="استخدم حاسبة مؤشر كتلة الجسم (BMI) لتقييم وزنك بسهولة. تعرف على معنى نتيجتك وأهمية الحفاظ على وزن صحي مع إرشادات من عيادة الدكتورة بخة س في قالمة.">
     <meta name="author" content="عيادة الدكتورة بخة س - اختصاصية في الأمراض الصدرية والحساسية في ڨالمة">
     <meta http-equiv="Content-Language" content="ar, fr">
-    <!-- Optimized Title Tag -->
-    <title>حاسبة مؤشر كتلة الجسم (BMI) - عيادة الدكتورة بخة س في ڨالمة، الجزائر</title>
+    <!-- Optimized Title for BMI Calculator -->
+    <title>حاسبة مؤشر كتلة الجسم (BMI) الدقيقة وتقييم صحة وزنك - د. بخة س، قالمة</title>
     <link rel="icon" href="cabinet.png" type="image/png">
-    <!-- Canonical URL -->
     <link rel="canonical" href="https://bakha-pneumo.netlify.app/bmi-calculator.html">
-    <!-- Structured Data for Local Business -->
+    <!-- Structured Data -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "MedicalClinic",
-        "name": "عيادة الدكتورة بخة س",
-        "description": "عيادة متخصصة في الأمراض الصدرية والحساسية في ڨالمة، الجزائر.",
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "حي 19 جوان، خلف مستشفى الحكيم عقبي",
-            "addressLocality": "ڨالمة",
-            "addressRegion": "ولاية قالمة",
-            "postalCode": "24000",
-            "addressCountry": "الجزائر"
-        },
-        "telephone": "+213796222597",
-        "image": "https://bakha-pneumo.netlify.app/cabinet.png",
+        "@type": "WebPage",
+        "name": "حاسبة مؤشر كتلة الجسم (BMI) وتقييم صحة الوزن",
+        "description": "حاسبة تفاعلية لمؤشر كتلة الجسم مع معلومات حول التصنيفات الصحية وأهمية استشارة متخصص.",
         "url": "https://bakha-pneumo.netlify.app/bmi-calculator.html",
-        "openingHours": "Sa-Th 08:00-16:00",
-        "medicalSpecialty": "Pulmonology, Allergology"
+        "publisher": {
+            "@type": "Organization",
+            "name": "عيادة الدكتورة بخة س",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://bakha-pneumo.netlify.app/cabinet.png"
+            }
+        }
     }
     </script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css"> <!-- Main stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome for icons -->
     <style>
-        /* Basic styling for the calculator */
+        /* Basic styling - ideally move to style.css */
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            font-family: 'Arial', sans-serif; /* Using a common sans-serif font */
+            background-color: #f4f7f6;
             color: #333;
             margin: 0;
             padding: 0;
+            line-height: 1.6;
         }
-        header {
-            background-color: #4CAF50;
+        header, footer {
+            background-color: #007bff; /* A professional blue */
             color: white;
-            padding: 1rem;
+            padding: 1.5rem 1rem;
             text-align: center;
         }
+        header h1 { margin: 0; font-size: 2em;}
+        .page-subtitle { font-size: 1.1em; color: #e9ecef; margin-top: 5px;}
+
         nav {
-            background-color: #333;
+            background-color: #343a40; /* Darker nav */
             padding: 1rem;
             text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        nav ul li {
-            display: inline;
-            margin: 0 1rem;
-        }
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-        }
-        main {
-            padding: 2rem;
-        }
-        .calculator {
-            background-color: white;
+        nav ul { list-style: none; padding: 0; margin: 0; }
+        nav ul li { display: inline-block; margin: 0 15px; }
+        nav ul li a { color: #f8f9fa; text-decoration: none; font-weight: bold; transition: color 0.3s ease; }
+        nav ul li a:hover { color: #007bff; }
+
+        main { padding: 2rem; max-width: 800px; margin: 20px auto; background-color: #fff; border-radius: 8px; box-shadow: 0 0 15px rgba(0,0,0,0.1); }
+        section { margin-bottom: 2.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid #eee; }
+        section:last-child { border-bottom: none; margin-bottom: 0; }
+        h2 { color: #0056b3; margin-bottom: 1rem; font-size: 1.8em; }
+        h3 { color: #343a40; margin-bottom: 0.8rem; font-size: 1.5em; }
+
+        .calculator-container {
+            background-color: #f8f9fa;
             padding: 2rem;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            max-width: 500px;
-            margin: 0 auto;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
         }
-        .calculator label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: bold;
-        }
-        .calculator input {
-            width: 100%;
-            padding: 0.5rem;
-            margin-bottom: 1rem;
-            border: 1px solid #ccc;
+        .calculator-container label { display: block; margin-bottom: 0.6rem; font-weight: bold; color: #495057; }
+        .calculator-container input[type="number"] {
+            width: calc(100% - 22px); /* Adjust for padding and border */
+            padding: 0.8rem;
+            margin-bottom: 1.2rem;
+            border: 1px solid #ced4da;
             border-radius: 4px;
+            font-size: 1em;
         }
-        .calculator button {
-            background-color: #4CAF50;
+        .calculator-container button {
+            background-color: #28a745; /* Green button */
             color: white;
-            padding: 0.75rem 1.5rem;
+            padding: 0.8rem 1.5rem;
             border: none;
             border-radius: 4px;
             cursor: pointer;
             width: 100%;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
         }
-        .calculator button:hover {
-            background-color: #45a049;
-        }
+        .calculator-container button:hover { background-color: #218838; }
+
         .result {
             margin-top: 1.5rem;
-            padding: 1rem;
-            background-color: #f9f9f9;
-            border: 1px solid #ddd;
+            padding: 1.2rem;
+            background-color: #e9ecef;
+            border: 1px solid #dee2e6;
             border-radius: 4px;
-        }
-        .error {
-            color: red;
-            font-weight: bold;
-        }
-        .bmi-chart {
-            margin-top: 2rem;
             text-align: center;
         }
-        .bmi-chart table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 1rem;
-        }
-        .bmi-chart th,
-        .bmi-chart td {
-            padding: 0.75rem;
-            border: 1px solid #ddd;
-        }
-        .bmi-chart th {
-            background-color: #f4f4f4;
-        }
+        .result p { margin: 0.5rem 0; font-size: 1.1em; }
+        .result strong { color: #007bff; }
+        .error { color: #dc3545; font-weight: bold; font-size: 1em; }
+
+        .bmi-chart-container { margin-top: 2rem; }
+        .bmi-chart-container table { width: 100%; border-collapse: collapse; margin-top: 1rem; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+        .bmi-chart-container th, .bmi-chart-container td { padding: 0.9rem; border: 1px solid #dee2e6; text-align: right; }
+        .bmi-chart-container th { background-color: #e9ecef; color: #495057; font-weight: bold; }
+        .bmi-chart-container tr:nth-child(even) { background-color: #f8f9fa; }
+
+        .info-section p, .info-section ul li { font-size: 1.05em; margin-bottom: 0.8em; }
+        .info-section ul { padding-right: 20px; } /* Indent list for RTL */
+
         .disclaimer {
-            margin-top: 2rem;
-            padding: 1rem;
+            margin-top: 2.5rem;
+            padding: 1.5rem;
             background-color: #fff3cd;
-            border: 1px solid #ffeeba;
+            border-left: 5px solid #ffeeba;
             border-radius: 4px;
             color: #856404;
         }
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 1rem;
-            margin-top: 2rem;
-        }
+        .disclaimer h3 { color: #856404; }
+
+        .cta-section { text-align: center; padding: 30px 20px; background-color: #007bff; color:white; margin-top: 30px; margin-bottom: 20px; border-radius: .3rem; }
+        .cta-section h2 { color: white; margin-bottom: 15px; font-size: 1.8em; }
+        .cta-section p { font-size: 1.15em; margin-bottom: 20px; color: #e9ecef; }
+        .cta-section .button-style { display: inline-block; background-color: #ffc107; color: #212529; padding: 12px 30px; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 1.1em; transition: background-color 0.3s ease, transform 0.2s ease; }
+        .cta-section .button-style:hover { background-color: #e0a800; transform: translateY(-2px); }
+        .icon-before { margin-left: 8px; }
     </style>
 </head>
-<body>
+<body data-theme="dark">
     <header>
         <h1>حاسبة مؤشر كتلة الجسم (BMI)</h1>
+        <p class="page-subtitle">أداة بسيطة لتقييم وزنك وفهم معناه لصحتك</p>
     </header>
     <nav>
         <ul>
-            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="index.html"><i class="fas fa-home icon-before"></i>الرئيسية</a></li>
             <li><a href="bmi-calculator.html">حاسبة BMI</a></li>
+            <li><a href="bmr-calculator.html">حاسبة BMR</a></li>
+            <li><a href="calorie-calculator.html">حاسبة السعرات</a></li>
             <!-- Add other calculator links -->
         </ul>
     </nav>
     <main>
-        <section class="calculator">
-            <h2>حاسبة مؤشر كتلة الجسم (BMI)</h2>
+        <section id="intro-bmi" class="info-section" aria-labelledby="intro-bmi-heading">
+            <h2 id="intro-bmi-heading">ما هو مؤشر كتلة الجسم (BMI) ولماذا هو مهم؟</h2>
+            <p>مؤشر كتلة الجسم (Body Mass Index - BMI) هو مقياس شائع يُستخدم لتقييم ما إذا كان وزن الشخص مناسبًا لطوله. يُعتبر أداة فحص أولية لتحديد فئات الوزن التي قد تؤدي إلى مشاكل صحية مثل نقص الوزن، زيادة الوزن، أو السمنة.</p>
+            <p>على الرغم من أن مؤشر كتلة الجسم لا يقيس نسبة الدهون في الجسم مباشرة، إلا أنه يرتبط بشكل جيد بمقاييس الدهون الأخرى ويُعتبر مؤشرًا مفيدًا للمخاطر الصحية المحتملة المرتبطة بالوزن. <strong>معرفة مؤشر كتلة جسمك هي خطوة أولى نحو فهم صحة وزنك واتخاذ قرارات مستنيرة.</strong></p>
+        </section>
+
+        <section class="calculator-container" aria-labelledby="calculator-heading">
+            <h2 id="calculator-heading">احسب مؤشر كتلة جسمك الآن</h2>
             <form id="bmi-form">
-                <label for="weight">الوزن (كجم):</label>
-                <input type="number" id="weight" name="weight" step="0.1" required>
-
-                <label for="height">الطول (سم):</label>
-                <input type="number" id="height" name="height" step="0.1" required>
-
-                <button type="button" onclick="calculateBMI()">احسب</button>
+                <div>
+                    <label for="weight">وزنك بالكيلوجرام (كجم):</label>
+                    <input type="number" id="weight" name="weight" placeholder="مثال: 70" step="0.1" required aria-describedby="weight-format">
+                    <small id="weight-format" class="form-text text-muted" style="display:none;">أدخل وزنك بالكيلوجرام.</small>
+                </div>
+                <div>
+                    <label for="height">طولك بالسنتيمتر (سم):</label>
+                    <input type="number" id="height" name="height" placeholder="مثال: 165" step="0.1" required aria-describedby="height-format">
+                    <small id="height-format" class="form-text text-muted" style="display:none;">أدخل طولك بالسنتيمتر.</small>
+                </div>
+                <button type="button" onclick="calculateBMI()"><i class="fas fa-calculator icon-before"></i>احسب مؤشر كتلة الجسم</button>
             </form>
-            <div class="result" id="bmi-result"></div>
-
-            <!-- BMI Chart -->
-            <div class="bmi-chart">
-                <h3>تصنيف مؤشر كتلة الجسم (BMI) حسب منظمة الصحة العالمية (WHO)</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>الفئة</th>
-                            <th>مؤشر كتلة الجسم (BMI)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>نقص الوزن</td>
-                            <td>أقل من 18.5</td>
-                        </tr>
-                        <tr>
-                            <td>وزن طبيعي</td>
-                            <td>18.5 - 24.9</td>
-                        </tr>
-                        <tr>
-                            <td>زيادة الوزن</td>
-                            <td>25 - 29.9</td>
-                        </tr>
-                        <tr>
-                            <td>سمنة درجة أولى</td>
-                            <td>30 - 34.9</td>
-                        </tr>
-                        <tr>
-                            <td>سمنة درجة ثانية</td>
-                            <td>35 - 39.9</td>
-                        </tr>
-                        <tr>
-                            <td>سمنة درجة ثالثة</td>
-                            <td>40 أو أكثر</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="result" id="bmi-result" aria-live="polite">
+                <!-- Result will be displayed here -->
+                <p>سيتم عرض نتيجتك هنا بعد إدخال الوزن والطول والضغط على زر الحساب.</p>
             </div>
         </section>
 
-        <!-- Disclaimer Section -->
-        <section class="disclaimer">
-            <h3>تنويه هام</h3>
+        <section class="bmi-chart-container" aria-labelledby="bmi-chart-heading">
+            <h2 id="bmi-chart-heading">فهم نتيجة مؤشر كتلة جسمك</h2>
+            <p>بعد حساب مؤشر كتلة جسمك، يمكنك مقارنة نتيجتك بالتصنيفات القياسية المعتمدة من قبل منظمة الصحة العالمية (WHO) للبالغين:</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>الفئة (التصنيف الصحي)</th>
+                        <th>مؤشر كتلة الجسم (BMI)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>نقص الوزن الشديد</td>
+                        <td>أقل من 16.0</td>
+                    </tr>
+                    <tr>
+                        <td>نقص الوزن</td>
+                        <td>16.0 - 18.4</td>
+                    </tr>
+                    <tr>
+                        <td style="background-color: #d4edda; color: #155724;">وزن طبيعي وصحي</td>
+                        <td style="background-color: #d4edda; color: #155724;">18.5 - 24.9</td>
+                    </tr>
+                    <tr>
+                        <td>زيادة الوزن (مقدمات السمنة)</td>
+                        <td>25.0 - 29.9</td>
+                    </tr>
+                    <tr>
+                        <td>سمنة من الدرجة الأولى</td>
+                        <td>30.0 - 34.9</td>
+                    </tr>
+                    <tr>
+                        <td>سمنة من الدرجة الثانية</td>
+                        <td>35.0 - 39.9</td>
+                    </tr>
+                    <tr>
+                        <td>سمنة من الدرجة الثالثة (مفرطة)</td>
+                        <td>40.0 أو أكثر</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p style="margin-top: 1rem;"><strong>ملاحظة:</strong> هذه التصنيفات هي للبالغين (20 عامًا فأكثر). بالنسبة للأطفال والمراهقين، يتم تفسير مؤشر كتلة الجسم بشكل مختلف باستخدام مخططات النمو المئوية الخاصة بالعمر والجنس.</p>
+        </section>
+
+        <section class="info-section" aria-labelledby="bmi-implications-heading">
+            <h2 id="bmi-implications-heading">ماذا تعني نتيجة مؤشر كتلة جسمك لصحتك؟</h2>
+            <p>مؤشر كتلة الجسم هو مجرد أداة فحص واحدة. ومع ذلك، فإن وجود مؤشر كتلة جسم خارج النطاق "الطبيعي" قد يشير إلى زيادة خطر الإصابة ببعض المشاكل الصحية:</p>
+            <ul>
+                <li><strong>نقص الوزن (BMI أقل من 18.5):</strong> قد يرتبط بسوء التغذية، هشاشة العظام، ضعف جهاز المناعة، ومشاكل في الخصوبة.</li>
+                <li><strong>زيادة الوزن والسمنة (BMI يساوي 25 أو أكثر):</strong> تزيد من خطر الإصابة بأمراض مزمنة مثل أمراض القلب والأوعية الدموية، السكري من النوع 2، ارتفاع ضغط الدم، بعض أنواع السرطان، انقطاع التنفس أثناء النوم، ومشاكل المفاصل.</li>
+            </ul>
+            <p><strong>من المهم أن تتذكر أن مؤشر كتلة الجسم لا يأخذ في الاعتبار عوامل مهمة مثل:</strong></p>
+            <ul>
+                <li>نسبة العضلات إلى الدهون (الأشخاص ذوو الكتلة العضلية الكبيرة قد يكون لديهم BMI مرتفع دون أن يكونوا بدينين).</li>
+                <li>توزيع الدهون في الجسم (دهون البطن أكثر خطورة من الدهون تحت الجلد).</li>
+                <li>العمر، الجنس، والعرق.</li>
+                <li>مستوى اللياقة البدنية.</li>
+            </ul>
+        </section>
+
+        <section class="disclaimer" aria-labelledby="disclaimer-heading">
+            <h3 id="disclaimer-heading">تنويه هام وإخلاء مسؤولية</h3>
             <p>
-                هذه الحاسبة تقدم تقديرات عامة لمؤشر كتلة الجسم (BMI) بناءً على الوزن والطول. ومع ذلك، قد تختلف الاحتياجات الفعلية من شخص لآخر حسب العمر، الجنس، نسبة العضلات إلى الدهون، والحالة الصحية العامة.
+                حاسبة مؤشر كتلة الجسم هذه مُقدمة لأغراض معلوماتية وتثقيفية عامة فقط. <strong>لا ينبغي اعتبارها بديلاً عن الاستشارة الطبية المتخصصة، التشخيص، أو العلاج.</strong>
             </p>
             <p>
-                <strong>يجب استشارة طبيبك أو أخصائي الرعاية الصحية</strong> للحصول على تقييم دقيق لحالتك الصحية، خاصة إذا كنت تعاني من أي حالات صحية مثل أمراض القلب، السكري، أو اضطرابات الأكل.
+                النتائج التي تحصل عليها من هذه الحاسبة هي تقديرات وقد لا تعكس بدقة حالتك الصحية الفردية أو المخاطر الصحية الخاصة بك. عوامل مثل كتلة العضلات، كثافة العظام، وتكوين الجسم العام لا يتم أخذها في الاعتبار في حساب مؤشر كتلة الجسم البسيط.
             </p>
             <p>
-                هذه الحاسبة لا تغني عن الاستشارة الطبية المهنية.
+                <strong>نوصي بشدة باستشارة الدكتورة بخة س أو طبيبك الخاص أو أخصائي رعاية صحية مؤهل</strong> للحصول على تقييم شامل لصحة وزنك وحالتك الصحية العامة، ومناقشة أي مخاوف قد تكون لديك. لا تتجاهل المشورة الطبية المتخصصة أو تتأخر في طلبها بسبب شيء قرأته أو حسبته على هذا الموقع.
             </p>
         </section>
+
+        <section id="contact-cta" class="cta-section" aria-labelledby="contact-cta-heading">
+            <h2 id="contact-cta-heading">هل لديك أسئلة حول نتيجة مؤشر كتلة جسمك أو صحة وزنك؟</h2>
+            <p>فهم مؤشر كتلة جسمك هو الخطوة الأولى نحو نمط حياة صحي. في عيادة الدكتورة بخة س بڨالمة، نقدم لك الاستشارة المتخصصة لتقييم صحة وزنك وتقديم الإرشادات المناسبة لتحقيق أهدافك الصحية.</p>
+            <a href="index.html#appointment" class="button-style"><i class="fas fa-calendar-check icon-before"></i>احجز موعدك للاستشارة اليوم</a>
+            <div style="margin-top: 20px;">
+                <p>أو اتصل بنا مباشرة:</p>
+                <p><i class="fas fa-phone icon-before"></i><a href="tel:+213796222597" style="color:white; font-weight:bold;">0796222597</a> | <a href="tel:+213663755584" style="color:white; font-weight:bold;">0663755584</a></p>
+            </div>
+        </section>
     </main>
-    <footer>
-        <h2>اتصل بنا</h2>
+    <footer style="padding-bottom: 60px;"> <!-- Added padding to avoid overlap with watermark if fixed -->
+        <h2>عيادة الدكتورة بخة س</h2>
+        <p>اختصاصية في الأمراض الصدرية والحساسية ن</p>
         <p><strong>العنوان:</strong> حي 19 جوان، خلف مستشفى الحكيم عقبي، ڨالمة، الجزائر</p>
-        <p><strong>الهاتف:</strong> <a href="tel:+213796222597">0796222597</a> - <a href="tel:+213663755584">0663755584</a></p>
-        <p>© 2024 عيادة الدكتورة بخة س - جميع الحقوق محفوظة</p>
+        <p>© <span id="currentYear"></span> جميع الحقوق محفوظة</p>
     </footer>
+    <div class="watermark" style="position: fixed; bottom: 10px; left: 10px; opacity: 0.5; font-size: 10px; color: #aaa; z-index: 10000; background-color: rgba(255,255,255,0.7); padding: 2px 5px; border-radius: 3px;">Dr. Bakha - Guelma</div>
+
 
     <script>
         function calculateBMI() {
-            // Get user inputs
-            const weight = parseFloat(document.getElementById('weight').value);
-            const height = parseFloat(document.getElementById('height').value) / 100; // Convert cm to meters
+            const weightInput = document.getElementById('weight');
+            const heightInput = document.getElementById('height');
+            const resultDiv = document.getElementById('bmi-result');
 
-            // Input validation
-            if (isNaN(weight) || isNaN(height) || weight <= 0 || height <= 0) {
-                document.getElementById('bmi-result').innerHTML = `
-                    <p class="error">الرجاء إدخال قيم صحيحة للوزن والطول.</p>
-                `;
+            resultDiv.innerHTML = ''; // Clear previous results or errors
+
+            const weight = parseFloat(weightInput.value);
+            const heightCM = parseFloat(heightInput.value);
+
+            let errors = [];
+            if (isNaN(weight) || weight <= 0 || weight > 500) { // Added upper limit for weight
+                errors.push("الرجاء إدخال وزن صحيح (بين 1 و 500 كجم).");
+            }
+            if (isNaN(heightCM) || heightCM <= 50 || heightCM > 300) { // Added limits for height
+                errors.push("الرجاء إدخال طول صحيح (بين 50 و 300 سم).");
+            }
+
+            if (errors.length > 0) {
+                let errorHTML = '<p class="error">يوجد خطأ في الإدخال:</p><ul>';
+                errors.forEach(err => {
+                    errorHTML += `<li class="error">${err}</li>`;
+                });
+                errorHTML += '</ul>';
+                resultDiv.innerHTML = errorHTML;
                 return;
             }
 
-            // Calculate BMI
-            const bmi = (weight / (height * height)).toFixed(2);
+            const heightM = heightCM / 100; // Convert cm to meters
+            const bmi = (weight / (heightM * heightM)).toFixed(2);
 
-            // Determine BMI category
             let category;
-            if (bmi < 18.5) category = 'نقص الوزن';
-            else if (bmi >= 18.5 && bmi < 25) category = 'وزن طبيعي';
-            else if (bmi >= 25 && bmi < 30) category = 'زيادة الوزن';
-            else if (bmi >= 30 && bmi < 35) category = 'سمنة درجة أولى';
-            else if (bmi >= 35 && bmi < 40) category = 'سمنة درجة ثانية';
-            else category = 'سمنة درجة ثالثة';
+            let categoryClass = ''; // For potential styling of category
 
-            // Display the result
-            document.getElementById('bmi-result').innerHTML = `
-                <p>مؤشر كتلة الجسم (BMI) هو: <strong>${bmi}</strong>.</p>
-                <p>التصنيف: <strong>${category}</strong>.</p>
+            if (bmi < 16.0) { category = 'نقص الوزن الشديد'; categoryClass = 'underweight-severe';}
+            else if (bmi >= 16.0 && bmi < 18.5) { category = 'نقص الوزن'; categoryClass = 'underweight';}
+            else if (bmi >= 18.5 && bmi < 25) { category = 'وزن طبيعي وصحي'; categoryClass = 'normal-weight';}
+            else if (bmi >= 25 && bmi < 30) { category = 'زيادة الوزن (مقدمات السمنة)'; categoryClass = 'overweight';}
+            else if (bmi >= 30 && bmi < 35) { category = 'سمنة من الدرجة الأولى'; categoryClass = 'obese-class1';}
+            else if (bmi >= 35 && bmi < 40) { category = 'سمنة من الدرجة الثانية'; categoryClass = 'obese-class2';}
+            else { category = 'سمنة من الدرجة الثالثة (مفرطة)'; categoryClass = 'obese-class3';}
+
+            resultDiv.innerHTML = `
+                <p>مؤشر كتلة جسمك (BMI) هو: <strong style="font-size: 1.3em; color: #007bff;">${bmi}</strong> كجم/م².</p>
+                <p>تصنيفك الصحي هو: <strong class="${categoryClass}" style="font-weight:bold;">${category}</strong>.</p>
+                <p style="margin-top:10px; font-size:0.9em;">هذه نتيجة تقديرية. للحصول على تقييم شامل لصحتك، يرجى استشارة الدكتورة بخة س.</p>
             `;
         }
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
     </script>
 </body>
 </html>

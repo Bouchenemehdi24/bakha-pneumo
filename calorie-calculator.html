@@ -1,191 +1,316 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-BCT8GP6LZT"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BCT8GP6LZT"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-BCT8GP6LZT');
+    </script>
 
-  gtag('config', 'G-BCT8GP6LZT');
-</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>حاسبة السعرات الحرارية اليومية</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="calculators.js" defer></script>
+    <!-- Meta Keywords for Calorie Calculator -->
+    <meta name="keywords" content="حاسبة السعرات الحرارية, حساب السعرات اليومية, احتياجات السعرات الحرارية, معدل الأيض الأساسي, BMR, TDEE, صحة وتغذية, الدكتورة بخة س, نصائح غذائية, حاسبة سعرات قالمة, استشارة تغذية قالمة, الوزن والصحة التنفسية">
+    <!-- Meta Description for Calorie Calculator -->
+    <meta name="description" content="استخدم حاسبة السعرات الحرارية اليومية لتقدير احتياجاتك من الطاقة (BMR و TDEE). تعرف على أهمية التوازن الغذائي لصحتك العامة والتنفسية مع عيادة الدكتورة بخة س في قالمة.">
+    <meta name="author" content="عيادة الدكتورة بخة س - اختصاصية في الأمراض الصدرية والحساسية في ڨالمة">
+    <meta http-equiv="Content-Language" content="ar, fr">
+    <!-- Optimized Title for Calorie Calculator -->
+    <title>حاسبة السعرات الحرارية اليومية (BMR & TDEE) - د. بخة س، قالمة</title>
+    <link rel="icon" href="cabinet.png" type="image/png">
+    <link rel="canonical" href="https://bakha-pneumo.netlify.app/calorie-calculator.html"> <!-- Update this if the filename changes -->
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "حاسبة السعرات الحرارية اليومية (BMR & TDEE)",
+        "description": "حاسبة تفاعلية لتقدير معدل الأيض الأساسي (BMR) وإجمالي إنفاق الطاقة اليومي (TDEE) مع معلومات حول أهمية التوازن الغذائي.",
+        "url": "https://bakha-pneumo.netlify.app/calorie-calculator.html", // Update this
+        "publisher": {
+            "@type": "Organization",
+            "name": "عيادة الدكتورة بخة س",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://bakha-pneumo.netlify.app/cabinet.png"
+            }
+        }
+    }
+    </script>
+    <link rel="stylesheet" href="style.css"> <!-- Main stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome for icons -->
     <style>
-        /* Basic styling for the calculator */
+        /* Basic styling - ideally move to style.css */
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7f6;
             color: #333;
             margin: 0;
             padding: 0;
+            line-height: 1.6;
         }
-        header {
-            background-color: #4CAF50;
+        header, footer {
+            background-color: #5cb85c; /* A calming green */
             color: white;
-            padding: 1rem;
+            padding: 1.5rem 1rem;
             text-align: center;
         }
+        header h1 { margin: 0; font-size: 2em;}
+        .page-subtitle { font-size: 1.1em; color: #e9ecef; margin-top: 5px;}
+
         nav {
-            background-color: #333;
+            background-color: #343a40; /* Darker nav */
             padding: 1rem;
             text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        nav ul li {
-            display: inline;
-            margin: 0 1rem;
-        }
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-        }
-        main {
-            padding: 2rem;
-        }
-        .calculator {
-            background-color: white;
+        nav ul { list-style: none; padding: 0; margin: 0; }
+        nav ul li { display: inline-block; margin: 0 15px; }
+        nav ul li a { color: #f8f9fa; text-decoration: none; font-weight: bold; transition: color 0.3s ease; }
+        nav ul li a:hover { color: #5cb85c; }
+
+        main { padding: 2rem; max-width: 800px; margin: 20px auto; background-color: #fff; border-radius: 8px; box-shadow: 0 0 15px rgba(0,0,0,0.1); }
+        section { margin-bottom: 2.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid #eee; }
+        section:last-child { border-bottom: none; margin-bottom: 0; }
+        h2 { color: #38761d; margin-bottom: 1rem; font-size: 1.8em; } /* Darker green for headings */
+        h3 { color: #343a40; margin-bottom: 0.8rem; font-size: 1.5em; }
+
+        .calculator-container {
+            background-color: #f8f9fa;
             padding: 2rem;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            max-width: 500px;
-            margin: 0 auto;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
         }
-        .calculator label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: bold;
-        }
-        .calculator input,
-        .calculator select {
-            width: 100%;
-            padding: 0.5rem;
-            margin-bottom: 1rem;
-            border: 1px solid #ccc;
+        .calculator-container label { display: block; margin-bottom: 0.6rem; font-weight: bold; color: #495057; }
+        .calculator-container input[type="number"],
+        .calculator-container select {
+            width: calc(100% - 22px); /* Adjust for padding and border */
+            padding: 0.8rem;
+            margin-bottom: 1.2rem;
+            border: 1px solid #ced4da;
             border-radius: 4px;
+            font-size: 1em;
+            box-sizing: border-box; /* Include padding and border in the element's total width and height */
         }
-        .calculator button {
-            background-color: #4CAF50;
+        .calculator-container button {
+            background-color: #5cb85c; /* Green button */
             color: white;
-            padding: 0.75rem 1.5rem;
+            padding: 0.8rem 1.5rem;
             border: none;
             border-radius: 4px;
             cursor: pointer;
             width: 100%;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
         }
-        .calculator button:hover {
-            background-color: #45a049;
-        }
+        .calculator-container button:hover { background-color: #4cae4c; }
+
         .result {
             margin-top: 1.5rem;
-            padding: 1rem;
-            background-color: #f9f9f9;
-            border: 1px solid #ddd;
+            padding: 1.2rem;
+            background-color: #e9f5e9; /* Lighter green for result */
+            border: 1px solid #c3e6cb;
             border-radius: 4px;
-        }
-        .error {
-            color: red;
-            font-weight: bold;
-        }
-        footer {
-            background-color: #333;
-            color: white;
             text-align: center;
-            padding: 1rem;
-            margin-top: 2rem;
         }
+        .result p { margin: 0.5rem 0; font-size: 1.1em; }
+        .result strong { color: #155724; } /* Darker green for strong text in result */
+        .error { color: #dc3545; font-weight: bold; font-size: 1em; }
+
+        .info-section p, .info-section ul li { font-size: 1.05em; margin-bottom: 0.8em; }
+        .info-section ul { padding-right: 20px; }
+
+        .disclaimer {
+            margin-top: 2.5rem;
+            padding: 1.5rem;
+            background-color: #fff3cd;
+            border-left: 5px solid #ffeeba;
+            border-radius: 4px;
+            color: #856404;
+        }
+        .disclaimer h3 { color: #856404; }
+
+        .cta-section { text-align: center; padding: 30px 20px; background-color: #5cb85c; color:white; margin-top: 30px; margin-bottom: 20px; border-radius: .3rem; }
+        .cta-section h2 { color: white; margin-bottom: 15px; font-size: 1.8em; }
+        .cta-section p { font-size: 1.15em; margin-bottom: 20px; color: #f8f9fa; }
+        .cta-section .button-style { display: inline-block; background-color: #f0ad4e; color: #212529; padding: 12px 30px; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 1.1em; transition: background-color 0.3s ease, transform 0.2s ease; } /* Orange button for contrast */
+        .cta-section .button-style:hover { background-color: #ec971f; transform: translateY(-2px); }
+        .icon-before { margin-left: 8px; }
     </style>
 </head>
 <body>
     <header>
         <h1>حاسبة السعرات الحرارية اليومية</h1>
+        <p class="page-subtitle">أداة لتقدير احتياجاتك من الطاقة ودعم صحتك العامة والتنفسية</p>
     </header>
     <nav>
         <ul>
-            <li><a href="index.html">الرئيسية</a></li>
-            <li><a href="calorie-calculator.html">حاسبة السعرات الحرارية</a></li>
+            <li><a href="index.html"><i class="fas fa-home icon-before"></i>الرئيسية</a></li>
+            <li><a href="bmi-calculator.html">حاسبة BMI</a></li>
+            <li><a href="bmr-calculator.html">حاسبة BMR</a></li>
+            <li><a href="calorie-calculator.html">حاسبة السعرات</a></li>
             <!-- Add other calculator links -->
         </ul>
     </nav>
     <main>
-        <section class="calculator">
-            <h2>حاسبة السعرات الحرارية اليومية</h2>
+        <section id="intro-calorie" class="info-section" aria-labelledby="intro-calorie-heading">
+            <h2 id="intro-calorie-heading">لماذا نهتم بحساب السعرات الحرارية؟</h2>
+            <p>السعرات الحرارية هي وحدة لقياس الطاقة التي يحصل عليها جسمك من الطعام والشراب، والطاقة التي يستهلكها في وظائفه الحيوية وأنشطته اليومية. فهم احتياجاتك اليومية من السعرات الحرارية هو خطوة أساسية نحو:</p>
+            <ul>
+                <li><strong>الحفاظ على وزن صحي:</strong> تناول سعرات حرارية أكثر مما تحرق يؤدي إلى زيادة الوزن، بينما تناول سعرات أقل يؤدي إلى نقصانه.</li>
+                <li><strong>دعم الصحة العامة:</strong> التوازن الغذائي السليم يساهم في الوقاية من العديد من الأمراض المزمنة.</li>
+                <li><strong>تحسين الأداء البدني والذهني:</strong> الطاقة الكافية ضرورية للنشاط والتركيز.</li>
+                <li><strong>دعم صحة الجهاز التنفسي:</strong> الحفاظ على وزن صحي يمكن أن يخفف العبء على الرئتين ويحسن وظائف التنفس، خاصة لدى الأشخاص الذين يعانون من أمراض صدرية.</li>
+            </ul>
+            <p>هذه الحاسبة تساعدك في تقدير <strong>معدل الأيض الأساسي (BMR)</strong> و<strong>إجمالي إنفاق الطاقة اليومي (TDEE)</strong>.</p>
+        </section>
+
+        <section class="calculator-container" aria-labelledby="calculator-heading">
+            <h2 id="calculator-heading">احسب احتياجاتك اليومية من السعرات الحرارية</h2>
             <form id="calorie-form">
-                <label for="gender">الجنس:</label>
-                <select id="gender" name="gender" required>
-                    <option value="male">ذكر</option>
-                    <option value="female">أنثى</option>
-                </select>
-
-                <label for="weight">الوزن (كجم):</label>
-                <input type="number" id="weight" name="weight" step="0.1" required>
-
-                <label for="height">الطول (سم):</label>
-                <input type="number" id="height" name="height" step="0.1" required>
-
-                <label for="age">العمر (سنوات):</label>
-                <input type="number" id="age" name="age" required>
-
-                <label for="activity-level">مستوى النشاط:</label>
-                <select id="activity-level" name="activity-level" required>
-                    <option value="1.2">قليل النشاط (لا تمارين)</option>
-                    <option value="1.375">نشاط خفيف (تمارين خفيفة 1-3 أيام/أسبوع)</option>
-                    <option value="1.55">نشاط متوسط (تمارين متوسطة 3-5 أيام/أسبوع)</option>
-                    <option value="1.725">نشاط عالي (تمارين قوية 6-7 أيام/أسبوع)</option>
-                    <option value="1.9">نشاط عالي جداً (تمارين قوية وعمل بدني)</option>
-                </select>
-
-                <button type="button" onclick="calculateTDEE()">احسب</button>
+                <div>
+                    <label for="gender">الجنس:</label>
+                    <select id="gender" name="gender" required>
+                        <option value="male">ذكر</option>
+                        <option value="female">أنثى</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="weight">الوزن (كجم):</label>
+                    <input type="number" id="weight" name="weight" placeholder="مثال: 70" step="0.1" required aria-describedby="weight-format-c">
+                    <small id="weight-format-c" style="display:none;">أدخل وزنك بالكيلوجرام.</small>
+                </div>
+                <div>
+                    <label for="height">الطول (سم):</label>
+                    <input type="number" id="height" name="height" placeholder="مثال: 165" step="0.1" required aria-describedby="height-format-c">
+                    <small id="height-format-c" style="display:none;">أدخل طولك بالسنتيمتر.</small>
+                </div>
+                <div>
+                    <label for="age">العمر (سنوات):</label>
+                    <input type="number" id="age" name="age" placeholder="مثال: 30" required aria-describedby="age-format-c">
+                    <small id="age-format-c" style="display:none;">أدخل عمرك بالسنوات.</small>
+                </div>
+                <div>
+                    <label for="activity-level">مستوى النشاط اليومي:</label>
+                    <select id="activity-level" name="activity-level" required>
+                        <option value="1.2">قليل جدًا أو معدوم (عمل مكتبي، لا تمارين)</option>
+                        <option value="1.375">نشاط خفيف (تمارين خفيفة أو رياضة 1-3 أيام/أسبوع)</option>
+                        <option value="1.55">نشاط متوسط (تمارين معتدلة أو رياضة 3-5 أيام/أسبوع)</option>
+                        <option value="1.725">نشاط عالي (تمارين قوية أو رياضة 6-7 أيام/أسبوع)</option>
+                        <option value="1.9">نشاط عالي جدًا (تمارين قوية جدًا، عمل بدني شاق، أو رياضي محترف)</option>
+                    </select>
+                </div>
+                <button type="button" onclick="calculateTDEE()"><i class="fas fa-burn icon-before"></i>احسب سعراتي الحرارية</button>
             </form>
-            <div class="result" id="calorie-result"></div>
+            <div class="result" id="calorie-result" aria-live="polite">
+                <!-- Result will be displayed here -->
+                <p>سيتم عرض نتيجتك هنا بعد إدخال جميع البيانات والضغط على زر الحساب.</p>
+            </div>
+        </section>
+
+        <section class="info-section" aria-labelledby="understanding-results-heading">
+            <h2 id="understanding-results-heading">فهم نتائج الحاسبة: BMR و TDEE</h2>
+            <h3>معدل الأيض الأساسي (Basal Metabolic Rate - BMR)</h3>
+            <p>معدل الأيض الأساسي (BMR) هو عدد السعرات الحرارية التي يحتاجها جسمك لأداء وظائفه الحيوية الأساسية أثناء الراحة التامة (مثل التنفس، الدورة الدموية، تنظيم درجة حرارة الجسم، وظائف الخلايا). بمعنى آخر، هي الطاقة التي يستهلكها جسمك لو كنت مستلقيًا طوال اليوم دون أي نشاط.</p>
+
+            <h3>إجمالي إنفاق الطاقة اليومي (Total Daily Energy Expenditure - TDEE)</h3>
+            <p>إجمالي إنفاق الطاقة اليومي (TDEE) هو تقدير لعدد السعرات الحرارية التي تحرقها يوميًا، مع الأخذ في الاعتبار معدل الأيض الأساسي (BMR) ومستوى نشاطك البدني. هذا الرقم يمثل احتياجاتك من السعرات الحرارية للحفاظ على وزنك الحالي.</p>
+            <ul>
+                <li><strong>للحفاظ على الوزن:</strong> استهلك سعرات حرارية مساوية لـ TDEE الخاص بك.</li>
+                <li><strong>لخسارة الوزن:</strong> استهلك سعرات حرارية أقل من TDEE الخاص بك (عادةً ما يوصى بعجز 500 سعرة حرارية في اليوم لخسارة حوالي 0.5 كجم في الأسبوع، ولكن يجب أن يتم ذلك بشكل صحي وتحت إشراف).</li>
+                <li><strong>لزيادة الوزن:</strong> استهلك سعرات حرارية أكثر من TDEE الخاص بك (بشكل صحي مع التركيز على بناء العضلات إذا كان هذا هو الهدف).</li>
+            </ul>
+        </section>
+
+        <section class="disclaimer" aria-labelledby="disclaimer-heading-c">
+            <h3 id="disclaimer-heading-c">تنويه هام وإخلاء مسؤولية</h3>
+            <p>
+                حاسبة السعرات الحرارية هذه مُقدمة لأغراض معلوماتية وتثقيفية عامة فقط، وتستخدم معادلات تقديرية شائعة (مثل معادلة ميفلين سانت جور لمعدل الأيض الأساسي). <strong>لا ينبغي اعتبارها بديلاً عن الاستشارة الطبية أو التغذوية المتخصصة.</strong>
+            </p>
+            <p>
+                النتائج التي تحصل عليها هي تقديرات وقد لا تعكس بدقة احتياجاتك الفردية من السعرات الحرارية. عوامل مثل تكوين الجسم (نسبة العضلات إلى الدهون)، الحالة الصحية العامة، الهرمونات، والأدوية يمكن أن تؤثر على معدل الأيض واحتياجات الطاقة.
+            </p>
+            <p>
+                <strong>نوصي بشدة باستشارة الدكتورة بخة س أو طبيبك الخاص أو أخصائي تغذية مؤهل</strong> لوضع خطة غذائية مخصصة تناسب أهدافك الصحية واحتياجاتك الفردية، خاصة إذا كنت تسعى لخسارة أو زيادة الوزن، أو إذا كنت تعاني من أي حالات صحية.
+            </p>
+        </section>
+
+        <section id="contact-cta" class="cta-section" aria-labelledby="contact-cta-heading-c">
+            <h2 id="contact-cta-heading-c">هل ترغب في وضع خطة غذائية وصحية مخصصة لك؟</h2>
+            <p>فهم احتياجاتك من السعرات الحرارية هو خطوة مهمة، ولكن تحقيق أهدافك الصحية يتطلب أكثر من مجرد أرقام. في عيادة الدكتورة بخة س بڨالمة، نقدم لك الاستشارة المتخصصة لتقييم حالتك الصحية ووضع خطة تغذية ونمط حياة تناسبك، مع التركيز على صحتك العامة والتنفسية.</p>
+            <a href="index.html#appointment" class="button-style"><i class="fas fa-calendar-check icon-before"></i>احجز موعدك للاستشارة الغذائية والصحية</a>
+            <div style="margin-top: 20px;">
+                <p>أو اتصل بنا مباشرة للاستفسار:</p>
+                <p><i class="fas fa-phone icon-before"></i><a href="tel:+213796222597" style="color:white; font-weight:bold;">0796222597</a> | <a href="tel:+213663755584" style="color:white; font-weight:bold;">0663755584</a></p>
+            </div>
         </section>
     </main>
-    <footer>
-        <p>&copy; 2024 عيادة الدكتورة بخة س - جميع الحقوق محفوظة</p>
+    <footer style="padding-bottom: 60px;"> <!-- Added padding to avoid overlap with watermark if fixed -->
+        <h2>عيادة الدكتورة بخة س</h2>
+        <p>اختصاصية في الأمراض الصدرية والحساسية، وتقديم الإرشاد الصحي والتغذوي</p>
+        <p><strong>العنوان:</strong> حي 19 جوان، خلف مستشفى الحكيم عقبي، ڨالمة، الجزائر</p>
+        <p>© <span id="currentYear"></span> جميع الحقوق محفوظة</p>
     </footer>
+    <div class="watermark" style="position: fixed; bottom: 10px; left: 10px; opacity: 0.5; font-size: 10px; color: #aaa; z-index: 10000; background-color: rgba(255,255,255,0.7); padding: 2px 5px; border-radius: 3px;">Dr. Bakha - Guelma</div>
 
     <script>
         function calculateTDEE() {
-            // Get user inputs
             const gender = document.getElementById('gender').value;
-            const weight = parseFloat(document.getElementById('weight').value);
-            const height = parseFloat(document.getElementById('height').value);
-            const age = parseFloat(document.getElementById('age').value);
+            const weightInput = document.getElementById('weight');
+            const heightInput = document.getElementById('height');
+            const ageInput = document.getElementById('age');
             const activityLevel = parseFloat(document.getElementById('activity-level').value);
+            const resultDiv = document.getElementById('calorie-result');
 
-            // Input validation
-            if (isNaN(weight) || isNaN(height) || isNaN(age) || weight <= 0 || height <= 0 || age <= 0) {
-                document.getElementById('calorie-result').innerHTML = `
-                    <p class="error">الرجاء إدخال قيم صحيحة للوزن والطول والعمر.</p>
-                `;
+            resultDiv.innerHTML = ''; // Clear previous results
+
+            const weight = parseFloat(weightInput.value);
+            const heightCM = parseFloat(heightInput.value);
+            const age = parseFloat(ageInput.value);
+
+            let errors = [];
+            if (isNaN(weight) || weight <= 20 || weight > 300) { // Realistic weight limits
+                errors.push("الرجاء إدخال وزن صحيح (بين 20 و 300 كجم).");
+            }
+            if (isNaN(heightCM) || heightCM <= 100 || heightCM > 250) { // Realistic height limits
+                errors.push("الرجاء إدخال طول صحيح (بين 100 و 250 سم).");
+            }
+            if (isNaN(age) || age <= 10 || age > 120) { // Realistic age limits
+                errors.push("الرجاء إدخال عمر صحيح (بين 10 و 120 سنة).");
+            }
+
+            if (errors.length > 0) {
+                let errorHTML = '<p class="error">يوجد خطأ في الإدخال:</p><ul>';
+                errors.forEach(err => {
+                    errorHTML += `<li class="error" style="text-align:right;">${err}</li>`;
+                });
+                errorHTML += '</ul>';
+                resultDiv.innerHTML = errorHTML;
                 return;
             }
 
-            // Calculate BMR using Mifflin-St Jeor Equation
             let bmr;
             if (gender === 'male') {
-                bmr = (10 * weight) + (6.25 * height) - (5 * age) + 5;
-            } else {
-                bmr = (10 * weight) + (6.25 * height) - (5 * age) - 161;
+                bmr = (10 * weight) + (6.25 * heightCM) - (5 * age) + 5;
+            } else { // female
+                bmr = (10 * weight) + (6.25 * heightCM) - (5 * age) - 161;
             }
 
-            // Calculate TDEE (Total Daily Energy Expenditure)
-            const tdee = (bmr * activityLevel).toFixed(2);
+            const tdee = (bmr * activityLevel);
 
-            // Display the result
-            document.getElementById('calorie-result').innerHTML = `
-                <p>معدل الأيض الأساسي (BMR) هو: <strong>${bmr.toFixed(2)}</strong> سعرة حرارية/يوم.</p>
-                <p>احتياجك اليومي من السعرات الحرارية (TDEE) هو: <strong>${tdee}</strong> سعرة حرارية/يوم.</p>
+            resultDiv.innerHTML = `
+                <p>معدل الأيض الأساسي التقديري (BMR) هو: <strong style="font-size: 1.2em; color: #155724;">${bmr.toFixed(0)}</strong> سعرة حرارية في اليوم.</p>
+                <p>إجمالي احتياجك اليومي التقديري من السعرات الحرارية (TDEE) للحفاظ على وزنك الحالي هو: <strong style="font-size: 1.3em; color: #007bff;">${tdee.toFixed(0)}</strong> سعرة حرارية في اليوم.</p>
+                <hr style="margin: 15px 0;">
+                <p style="font-size:0.95em;"><strong>لخسارة الوزن بشكل صحي (حوالي 0.5 كجم في الأسبوع):</strong> يمكنك استهداف تقليل حوالي 500 سعرة حرارية من TDEE الخاص بك، أي حوالي <strong>${(tdee - 500).toFixed(0)}</strong> سعرة حرارية في اليوم.</p>
+                <p style="font-size:0.95em;"><strong>لزيادة الوزن بشكل صحي (حوالي 0.5 كجم في الأسبوع):</strong> يمكنك استهداف زيادة حوالي 500 سعرة حرارية فوق TDEE الخاص بك، أي حوالي <strong>${(tdee + 500).toFixed(0)}</strong> سعرة حرارية في اليوم.</p>
+                <p style="margin-top:15px; font-size:0.9em;">هذه أرقام تقديرية. للحصول على خطة تغذية مخصصة تناسب أهدافك وحالتك الصحية، يرجى استشارة الدكتورة بخة س.</p>
             `;
         }
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
     </script>
 </body>
 </html>

@@ -41,42 +41,20 @@
     <!-- Favicon -->
     <link rel="icon" href="cabinet.png" type="image/png">
 
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://bakha-pneumo.netlify.app/">
-
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;700&family=Noto+Kufi+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
+    
     <!-- Stylesheets -->
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="enhanced-styles.css">
-    <link rel="stylesheet" href="clinic-status.css">
+   
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
-
-    <!-- Defer Non-Critical Scripts -->
-    <script>
-      const scriptsToDefer = [
-        "main.js",  
-        "enhanced-features.js",
-        "date-features.js",
-        "clinic-status.js", // This will be handled by DOMContentLoaded later
-        "calculators.js",
-        "dark-mode.js", 
-        "dropdown.js", 
-        "aos-init.js", 
-        "mobile-form-optimizer.js"
-      ];
-
-      scriptsToDefer.forEach(src => {
-        const script = document.createElement("script");
-        script.src = src;
-        script.defer = true;
-        document.head.appendChild(script);
-      });
-    </script>
-
-    <!-- Load Google Translate API -->
+    
+    <!-- Essential Scripts -->
+    <script src="app.js" defer></script>
     <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" defer></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
+    
     <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
     {
@@ -193,7 +171,9 @@
     </style>
 
 </head>
-<body>
+<body data-theme="dark">    <!-- Language Selector -->
+    <div id="google_translate_element" class="language-selector"></div>
+    
     <!-- Dark Mode Toggle Button -->
     <button id="theme-toggle" aria-label="Toggle Dark Mode">
         <i class="fas fa-moon"></i>
@@ -203,44 +183,59 @@
     <div id="content-ar" lang="ar" dir="rtl">
         <div class="datetime-display" data-aos="fade-down">
             <p class="current-time" id="arabic-time"></p>
-        </div>
-        <header role="banner">
-            <h1> عيادة الدكتورة بخة س - اختصاصية في الأمراض الصدرية والحساسية ولاية قالمة </h1>
-            <div id="clinic-status" class="clinic-status" data-aos="fade-down">
-                <p id="status-message"></p>
-                <p id="next-opening"></p>
+        </div>        <header role="banner" class="main-header">
+            <div class="header-top">
+                <div class="clinic-info">
+                    <div class="logo-container">
+                        <img src="cabinet.png" alt="شعار العيادة" class="clinic-logo">
+                    </div>
+                    <div class="clinic-title">
+                        <h1>عيادة الدكتورة بخة س</h1>
+                        <p class="clinic-subtitle">اختصاصية في الأمراض الصدرية والحساسية - ولاية قالمة</p>
+                    </div>
+                </div>
+                <div id="clinic-status" class="clinic-status" data-aos="fade-down">
+                    <div class="status-indicator">
+                        <i class="fas fa-circle"></i>
+                        <p id="status-message"></p>
+                    </div>
+                    <p id="next-opening" class="next-opening"></p>
+                </div>
             </div>
-            <div id="google_translate_element"></div>
-        <script>
-          function googleTranslateElementInit() {
-            new google.translate.TranslateElement({pageLanguage: 'ar'}, 'google_translate_element');
-          }
-        </script>
         </header>
 
-        <nav>
-              <button class="mobile-menu-btn">☰</button>
+        <nav class="main-nav">
+            <div class="nav-container">
+                <button class="mobile-menu-btn" aria-label="القائمة">
+                    <i class="fas fa-bars"></i>
+                </button>
 
-            <ul id="main-menu">
-                <li><a href="#accueil">الرئيسية</a></li>
-                <li class="dropdown" aria-haspopup="true">
-                    <a href="#" onclick="toggleDropdown('diseases-dropdown')" role="button" aria-expanded="false" aria-controls="diseases-dropdown">
-                        أمراض الصدر <i class="fas fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu" id="diseases-dropdown" role="menu">
-                        <li role="menuitem"><a href="asthma.html"><i class="fas fa-lungs"></i> الربو (Asthme)</a></li>
-                        <li role="menuitem"><a href="copd.html"><i class="fas fa-lungs"></i> مرض الانسداد الرئوي المزمن (BPCO)</a></li>
-                        <li role="menuitem"><a href="lung-cancer.html"><i class="fas fa-lungs"></i> سرطان الرئة (Cancer du poumon)</a></li>
-                        <li role="menuitem"><a href="pulmonary-fibrosis.html"><i class="fas fa-lungs"></i> التليف الرئوي (Fibrose pulmonaire)</a></li>
-                        <li role="menuitem"><a href="bronchitis.html"><i class="fas fa-lungs"></i> التهاب الشعب الهوائية (Bronchite)</a></li>
-                        <li role="menuitem"><a href="pneumonia.html"><i class="fas fa-lungs"></i> التهاب الرئة (Pneumonie)</a></li>
-                        <li role="menuitem"><a href="tuberculosis.html"><i class="fas fa-lungs"></i> السل (Tuberculose)</a></li>
-                        <li role="menuitem"><a href="covid-19.html"><i class="fas fa-lungs"></i> كوفيد-19 (COVID-19)</a></li>
-                        <li role="menuitem"><a href="influenza.html"><i class="fas fa-lungs"></i> الإنفلونزا (Influenza)</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown" aria-haspopup="true">
-                    <a href="#" onclick="toggleDropdown('allergic-dropdown')" role="button" aria-expanded="false" aria-controls="allergic-dropdown">
+                <ul id="main-menu">
+                    <li class="nav-item">
+                        <a href="#accueil" class="nav-link">
+                            <i class="fas fa-home"></i>
+                            <span>الرئيسية</span>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown" aria-haspopup="true">
+                        <a href="#" class="nav-link" role="button" aria-expanded="false" aria-controls="diseases-dropdown">
+                            <i class="fas fa-lungs"></i>
+                            <span>أمراض الصدر</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu" id="diseases-dropdown" role="menu">
+                            <li role="menuitem"><a href="asthma.html"><i class="fas fa-lungs"></i> الربو (Asthme)</a></li>
+                            <li role="menuitem"><a href="copd.html"><i class="fas fa-lungs"></i> مرض الانسداد الرئوي المزمن (BPCO)</a></li>
+                            <li role="menuitem"><a href="lung-cancer.html"><i class="fas fa-lungs"></i> سرطان الرئة (Cancer du poumon)</a></li>
+                            <li role="menuitem"><a href="pulmonary-fibrosis.html"><i class="fas fa-lungs"></i> التليف الرئوي (Fibrose pulmonaire)</a></li>
+                            <li role="menuitem"><a href="bronchitis.html"><i class="fas fa-lungs"></i> التهاب الشعب الهوائية (Bronchite)</a></li>
+                            <li role="menuitem"><a href="pneumonia.html"><i class="fas fa-lungs"></i> التهاب الرئة (Pneumonie)</a></li>
+                            <li role="menuitem"><a href="tuberculosis.html"><i class="fas fa-lungs"></i> السل (Tuberculose)</a></li>
+                            <li role="menuitem"><a href="covid-19.html"><i class="fas fa-lungs"></i> كوفيد-19 (COVID-19)</a></li>
+                            <li role="menuitem"><a href="influenza.html"><i class="fas fa-lungs"></i> الإنفلونزا (Influenza)</a></li>
+                        </ul>
+                    </li><li class="dropdown" aria-haspopup="true">
+                    <a href="#" role="button" aria-expanded="false" aria-controls="allergic-dropdown">
                         أمراض الحساسية <i class="fas fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu" id="allergic-dropdown" role="menu">
@@ -253,10 +248,9 @@
                         <li role="menuitem"><a href="food-allergy.html"><i class="fas fa-lungs"></i> حساسية الطعام (Allergie alimentaire)</a></li>
                         <li role="menuitem"><a href="drug-allergy.html"><i class="fas fa-lungs"></i> حساسية الأدوية (Allergie médicamenteuse)</a></li>
                     </ul>
-                </li>
-                <li><a href="sleep-apnea.html">انقطاع التنفس أثناء النوم (Apnée du sommeil)</a></li>
+                </li>                <li><a href="sleep-apnea.html">انقطاع التنفس أثناء النوم (Apnée du sommeil)</a></li>
                 <li class="dropdown" aria-haspopup="true">
-                    <a href="#" onclick="toggleDropdown('calculators-dropdown')" role="button" aria-expanded="false" aria-controls="calculators-dropdown">
+                    <a href="#" role="button" aria-expanded="false" aria-controls="calculators-dropdown">
                         حاسبات صحية <i class="fas fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu" id="calculators-dropdown" role="menu">
@@ -275,103 +269,156 @@
                 <li><a href="#contact">التواصل</a></li>
             </ul>
         </nav>
-    
-        <main>
-            <section id="accueil" data-aos="fade-up">
-                <h2>مرحباً بكم في عيادتنا</h2>
-                <div class="image-container">
-                    <img src="cabinet.png" alt="صورة عيادة الدكتورة بخة س، تخصص أمراض الصدر والحساسية في ڨالمة، الجزائر" class="cabinet-photo" loading="lazy">
-                </div>
-                <p>يسعد الدكتورة بخة س بالإعلان عن افتتاح عيادة جديدة متخصصة في علاج الأمراض الصدرية، الحساسية، وانقطاع التنفس، لجميع الأعمار من الأطفال والبالغين، بمدينة ڨالمة.</p>
-                <div class="highlight">
-                    <h3>مواقيت العمل</h3>
-                    <p>من السبت إلى الخميس، من 8 صباحاً إلى 4 مساءً</p>
-                </div>
-            </section>
 
-            <section id="appointment" data-aos="fade-up">
-                <h2>احجز موعداً</h2>
+        <main role="main">
+            <div class="main-content">
+                <!-- Hero Section -->
+                <section id="hero" class="hero-section" data-aos="fade-up">
+                    <div class="hero-content">
+                        <h2>مرحباً بكم في عيادة الدكتورة بخة س</h2>
+                        <p>نقدم رعاية طبية متخصصة في مجال أمراض الصدر والحساسية</p>
+                        <a href="#appointment" class="cta-button">احجز موعداً</a>
+                    </div>
+                </section>
+
+                <!-- Services Section -->
+                <section id="services" class="services-section" data-aos="fade-up">
+                    <h2>خدماتنا</h2>
+                    <div class="services-grid">
+                        <div class="service-card" data-aos="zoom-in">
+                            <i class="fas fa-lungs"></i>
+                            <h3>تشخيص وعلاج شامل</h3>
+                            <p>تشخيص وعلاج أمراض الصدر، الربو، سرطان الرئة، والحساسية</p>
+                        </div>
+                        <div class="service-card" data-aos="zoom-in">
+                            <i class="fas fa-x-ray"></i>
+                            <h3>اشعة الصدر</h3>
+                            <p>Radio thorax numérique</p>
+                        </div>
+                        <div class="service-card" data-aos="zoom-in">
+                            <i class="fas fa-chart-line"></i>
+                            <h3>قياس الوظيفة التنفسية</h3>
+                            <p>EFR - Spirométrie</p>
+                        </div>
+                        <div class="service-card" data-aos="zoom-in">
+                            <i class="fas fa-child"></i>
+                            <h3>طب الأطفال</h3>
+                            <p>علاج أمراض الصدر للأطفال</p>
+                        </div>
+                        <div class="service-card" data-aos="zoom-in">
+                            <i class="fas fa-allergies"></i>
+                            <h3>اختبارات الحساسية</h3>
+                            <p>Tests cutanés</p>
+                        </div>
+                        <div class="service-card" data-aos="zoom-in">
+                            <i class="fas fa-bed"></i>
+                            <h3>تشخيص انقطاع التنفس</h3>
+                            <p>Polygraphie ventilatoire du sommeil</p>
+                        </div>
+                        <div class="service-card" data-aos="zoom-in">
+                            <i class="fas fa-ambulance"></i>
+                            <h3>حالات الطوارئ</h3>
+                            <p>رعاية حالات الطوارئ التنفسية</p>
+                        </div>
+                        <div class="service-card" data-aos="zoom-in">
+                            <i class="fas fa-syringe"></i>
+                            <h3>خزعة الجنب</h3>
+                            <p>علاج الاسترواح الصدري وخزعة الجنب</p>
+                        </div>
+                        <div class="service-card" data-aos="zoom-in">
+                            <i class="fas fa-smoking-ban"></i>
+                            <h3>الإقلاع عن التدخين</h3>
+                            <p>دعم للإقلاع عن التدخين</p>
+                        </div>
+                        <div class="service-card" data-aos="zoom-in">
+                            <i class="fas fa-heartbeat"></i>
+                            <h3>فحوصات عامة</h3>
+                            <p>فحوصات طبية عامة</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+
+
+        <!-- Appointment Form Section -->
+        <section id="appointment" class="appointment-section" data-aos="fade-up">
+            <div class="appointment-content">
+                <h2>احجز موعداً</h2>"
+                <p>يمكنك حجز موعد من خلال ملء النموذج التالي</p>
                 <form id="appointmentForm-ar" action="https://formspree.io/f/mblowkoo" method="POST">
-                    <label for="name-ar">الاسم الكامل:</label>
-                    <input type="text" id="name-ar" name="name" required>
+                    <div class="form-group">
+                        <label for="name-ar">الاسم الكامل</label>
+                        <input type="text" id="name-ar" name="name" required>
+                    </div>
 
-                    <label for="sex-ar">الجنس:</label>
-                    <select id="sex-ar" name="sex" required>
-                        <option value="">اختر جنساً</option>
-                        <option value="male">ذكر</option>
-                        <option value="female">أنثى</option>
-                    </select>
+                    <div class="form-group">
+                        <label for="sex-ar">الجنس</label>
+                        <select id="sex-ar" name="sex" required>
+                            <option value="">اختر جنساً</option>
+                            <option value="male">ذكر</option>
+                            <option value="female">أنثى</option>
+                        </select>
+                    </div>
 
-                    <label for="phone-ar">رقم الهاتف:</label>
-                    <input type="tel" id="phone-ar" name="phone" pattern="[0-9]{10}" required>
+                    <div class="form-group">
+                        <label for="phone-ar">رقم الهاتف</label>
+                        <input type="tel" id="phone-ar" name="phone" required>
+                    </div>
 
-                    <label for="appointmentDate-ar">تاريخ الموعد:</label>
-                    <input type="date" id="appointmentDate-ar" name="appointment_date" required>
-                    
-                    <!-- Hidden field for subject, Formspree uses this for email subject -->
-                    <input type="hidden" name="_subject" value="طلب موعد جديد!">
+                    <div class="form-group">
+                        <label for="appointmentDate-ar">تاريخ الموعد</label>
+                        <input type="date" id="appointmentDate-ar" name="appointment_date" required>
+                    </div>
 
-                    <button type="submit">إرسال</button>
+                    <button type="submit" class="submit-button">إرسال طلب الموعد</button>
                 </form>
 
-                <!-- This success message div is no longer primarily used by JS, but can be a fallback -->
-                <div id="success-message-ar" class="success-message" style="display: none;">تم حجز موعدك بنجاح</div>
+                <div id="success-message-ar" class="success-message" style="display: none;">
+                    تم إرسال طلب موعدك بنجاح. سنتصل بك قريباً لتأكيد الموعد.
+                </div>
+            </div>
+        </section>
 
-                <!-- Success Popup -->
-                <div id="success-popup" class="popup-overlay"> <!-- Removed style="display: none;" to control with 'active' class -->
-                    <div class="popup-content">
-                        <span class="close-popup" onclick="closeSuccessPopup()">×</span> <!-- Added onclick -->
-                        <h3>تم حجز موعدك بنجاح</h3>
-                        <div id="appointment-details">
-                            <p><strong>الاسم:</strong> <span id="popup-name"></span></p>
-                            <p><strong>رقم الهاتف:</strong> <span id="popup-phone"></span></p>
-                            <p><strong>تاريخ الموعد:</strong> <span id="popup-date"></span></p>
+
+                        <!-- Contact Section -->
+        <section id="contact" class="contact-section" data-aos="fade-up">
+            <div class="contact-content">
+                <h2>اتصل بنا</h2>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <div class="contact-details">
+                            <h3>أرقام الهاتف</h3>
+                            <p><a href="tel:+213796222597">0796222597</a> (مكالمات)</p>
+                            <p>
+                                <a href="https://wa.me/213663755584" target="_blank" rel="noopener noreferrer" class="whatsapp-link">
+                                    <i class="fab fa-whatsapp"></i> 0663755584
+                                </a> (واتساب)
+                            </p>
                         </div>
-                        <p class="thank-you-message">شكراً لاختياركم عيادة الدكتورة بخة س. سيتم التواصل معكم لتأكيد الموعد.</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="contact-details">
+                            <h3>العنوان</h3>
+                            <p>حي 19 جوان، خلف مستشفى الحكيم عقبي، ڨالمة، الجزائر</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div class="contact-details">
+                            <h3>ساعات العمل</h3>
+                            <p>من السبت إلى الخميس</p>
+                            <p>8:00 صباحاً - 4:00 مساءً</p>
+                        </div>
                     </div>
                 </div>
-                 <!-- Error Popup (Optional but good practice) -->
-                <div id="error-popup" class="popup-overlay">
-                    <div class="popup-content">
-                        <span class="close-popup" onclick="closeErrorPopup()">×</span>
-                        <h3>حدث خطأ</h3>
-                        <p id="error-message-content">عذراً، لم نتمكن من إرسال طلبك. يرجى المحاولة مرة أخرى أو الاتصال بنا مباشرة.</p>
-                        <button onclick="closeErrorPopup()" style="margin-top: 15px; padding: 8px 15px;">حسناً</button>
-                    </div>
-                </div>
-            </section>
 
-            <section id="services" data-aos="fade-right">
-                <h2>خدماتنا</h2>
-                <ul>
-                    <li>تشخيص وعلاج شامل لأمراض الصدر، بما في ذلك الربو، سرطان الرئة، الحساسية، والأمراض الرئوية المزمنة الأخرى</li>
-                    <li>اشعة الصدر (Radio thorax numérique)</li>
-                    <li>قياس الوظيفة التنفسية (EFR - Spirométrie)</li>
-                    <li>علاج أمراض الصدر للأطفال</li>
-                    <li>اختبارات الحساسية (Tests cutanés)</li>
-                    <li>تشخيص انقطاع التنفس أثناء النوم (Polygraphie ventilatoire du sommeil)</li>
-                    <li>رعاية حالات الطوارئ التنفسية</li>
-                    <li>علاج الاسترواح الصدري وخزعة الجنب</li>
-                    <li>دعم للإقلاع عن التدخين</li>
-                    <li>فحوصات طبية عامة</li>
-                </ul>
-            </section>
-                
-            <section id="apropos" data-aos="fade-left">
-                <h2>عن الدكتورة بخة س</h2>
-                <p>الدكتورة بخة س حاصلة على شهادة الدراسات الطبية المتخصصة من المستشفى الجامعي قسنطينة والمستشفى العسكري قسنطينة.</p>
-                <p>لديها خبرة واسعة وشاركت في مؤتمرات علمية وطنية ودولية، وحصلت على دورات تدريبية عالية الجودة في مجالات أمراض الحساسية وانقطاع التنفس.</p>
-            </section>
-
-            <section id="contact" data-aos="fade-up">
-                <h2>التواصل</h2>
-                <p><strong>العنوان:</strong> حي 19 جوان، خلف مستشفى الحكيم عقبي، ڨالمة.</p>
-                <p><strong>للحجز والاستفسار:</strong></p>
-                <ul>
-                    <li><a href="tel:0796222597"><i class="fas fa-phone"></i> 0796222597</a></li>
-                    <li><a href="tel:0663755584"><i class="fas fa-phone"></i> 0663755584</a></li>
-                </ul>
-                <div class="map-container">
+                <!-- Map Container -->
+                <div class="map-container" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="map-title">موقعنا على الخريطة</h3>
                     <iframe 
                         src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3209.1007271838494!2d7.436598084719768!3d36.455121980020934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1scabinet%20de%20pneumologie%20allergologie%20Dr.%20Bakha%20S!5e0!3m2!1sar!2sdz!4v1735734049065!5m2!1sar!2sdz" 
                         width="100%" 
@@ -382,140 +429,74 @@
                         referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
                 </div>
-                <p><a href="https://g.page/r/CUUGiOIOMg-BEBM/review" target="_blank" rel="noopener noreferrer">افتح الموقع على خرائط جوجل</a></p>
-                <p><a href="https://www.facebook.com/profile.php?id=61560422818675" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-facebook" style="font-size: 1.5rem; color: #3498db; margin-top: 10px;"></i> تابعنا على الفيسبوك
-                </a></p>
-            </section>
-        </main>
+            </div>
+        </section>
+
+
+         <!-- **** START: About Section **** -->
+                <section id="apropos" class="about-section" data-aos="fade-up">
+                    <div class="section-content-wrapper">
+                        <h2>عن الدكتورة بخة س وعيادتها</h2> <!-- Title can be adjusted -->
+                        <div class="about-content-flex">
+                            <div class="about-image-container" data-aos="zoom-in" data-aos-delay="100">
+                                <img src="cabinet.png" alt="شعار عيادة الدكتورة بخة س" class="clinic-emblem-image">
+                                <!-- Using cabinet.png and updated alt text -->
+                            </div>
+                            <div class="about-text-content" data-aos="fade-right" data-aos-delay="200">
+                                <p class="qualification-highlight">
+                                    <i class="fas fa-graduation-cap icon-before"></i>
+                                    الدكتورة بخة س حاصلة على شهادة الدراسات الطبية المتخصصة من المستشفى الجامعي قسنطينة والمستشفى العسكري قسنطينة.
+                                </p>
+                                <p>
+                                    <i class="fas fa-clinic-medical icon-before"></i> <!-- Changed icon -->
+                                    تلتزم العيادة بتقديم رعاية طبية متخصصة قائمة على أحدث المعايير العلمية، مع التركيز على التشخيص الدقيق والعلاج الفعال لأمراض الصدر والحساسية.
+                                </p>
+                                <p>
+                                    <i class="fas fa-chalkboard-teacher icon-before"></i>
+                                    تشارك الدكتورة بخة س بفعالية في العديد من المؤتمرات العلمية الوطنية والدولية، مما يعكس حرصها على مواكبة آخر التطورات في مجال تخصصها لتقديم أفضل رعاية للمرضى.
+                                </p>
+                                <p>
+                                    <i class="fas fa-certificate icon-before"></i>
+                                    أتمت دورات تدريبية متقدمة وعالية الجودة في مجالات حساسية الجهاز التنفسي، اختبارات الحساسية المتخصصة، وإدارة حالات انقطاع التنفس أثناء النوم.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+        <!-- Appointment Success Popup -->
+<div id="appointmentSuccessPopupOverlay" class="popup-overlay">
+    <div class="popup-content">
+        <button class="close-popup" aria-label="إغلاق">×</button>
+        <h2>تم تأكيد طلب موعدك!</h2>
+        <div id="appointment-confirmation-details">
+            <p>شكراً لك، <strong id="popup-appt-name"></strong>!</p>
+            <p>لقد تم استلام طلب حجز موعدك بالتفاصيل التالية. سنتواصل معك قريباً عبر الهاتف للتأكيد النهائي.</p>
+            <ul>
+                <li><strong>الاسم:</strong> <span id="popup-appt-confirm-name"></span></li>
+                <li><strong>رقم الهاتف:</strong> <span id="popup-appt-phone"></span></li>
+                <li><strong>التاريخ المطلوب:</strong> <span id="popup-appt-date"></span></li>
+            </ul>
+        </div>
+        <p class="thank-you-message">نتطلع لخدمتك في عيادتنا.</p>
+    </div>
+</div>
+
+
+
 
         <footer>
-            <p>© 2024 عيادة الدكتورة بخة س - جميع الحقوق محفوظة</p>
+            <p class="copyright-text">© 2025 عيادة الدكتورة بخة س - جميع الحقوق محفوظة</p>
+            <div class="footer-links">
+                <a href="https://www.facebook.com/profile.php?id=61560422818675" target="_blank" rel="noopener noreferrer" class="footer-link">
+                    <i class="fab fa-facebook-f"></i> تابعنا على الفيسبوك
+                </a>
+                <a href="https://www.google.com/maps/search/?api=1&query=عيادة+الدكتورة+بخة+س+حي+19+جوان+خلف+مستشفى+الحكيم+عقبي+ڨالمة+الجزائر" target="_blank" rel="noopener noreferrer" class="footer-link">
+                    <i class="fas fa-map-marker-alt"></i> افتح الموقع على خرائط جوجل
+                </a>
+            </div>
         </footer>
-    </div>
-
-    <!-- Watermark -->
+    </div>    <!-- Watermark -->
     <div class="watermark">Dr. Bakha</div>
-               
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <!-- Initialize AOS in aos-init.js which is deferred -->
-
-    <script>
-        // JavaScript for AJAX Formspree submission and custom popup
-        document.addEventListener('DOMContentLoaded', function () {
-            const form = document.getElementById('appointmentForm-ar');
-            const successPopup = document.getElementById('success-popup');
-            const errorPopup = document.getElementById('error-popup');
-            
-            const popupName = document.getElementById('popup-name');
-            const popupPhone = document.getElementById('popup-phone');
-            const popupDate = document.getElementById('popup-date');
-            const errorMessageContent = document.getElementById('error-message-content');
-
-            if (form) {
-                form.addEventListener('submit', function (event) {
-                    event.preventDefault(); // Prevent default form submission
-
-                    const submitButton = form.querySelector('button[type="submit"]');
-                    submitButton.disabled = true;
-                    submitButton.classList.add('loading');
-                    submitButton.textContent = 'جاري الإرسال...';
-
-
-                    const formData = new FormData(form);
-                    const nameValue = formData.get('name');
-                    const phoneValue = formData.get('phone');
-                    const dateValue = formData.get('appointment_date');
-
-                    fetch(form.action, {
-                        method: 'POST',
-                        body: formData,
-                        headers: {
-                            'Accept': 'application/json'
-                        }
-                    }).then(response => {
-                        submitButton.disabled = false;
-                        submitButton.classList.remove('loading');
-                        submitButton.textContent = 'إرسال';
-
-                        if (response.ok) {
-                            // Populate popup with submitted data
-                            if(popupName) popupName.textContent = nameValue;
-                            if(popupPhone) popupPhone.textContent = phoneValue;
-                            if(popupDate) {
-                                // Format date nicely if possible
-                                try {
-                                    const dateObj = new Date(dateValue + 'T00:00:00'); // Ensure it's treated as local date
-                                    popupDate.textContent = dateObj.toLocaleDateString('ar-SA', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
-                                } catch (e) {
-                                    popupDate.textContent = dateValue; // Fallback
-                                }
-                            }
-                            
-                            if(successPopup) successPopup.classList.add('active');
-                            form.reset(); // Reset form fields
-                        } else {
-                            response.json().then(data => {
-                                let errorMsg = "عذراً، لم نتمكن من إرسال طلبك. يرجى المحاولة مرة أخرى أو الاتصال بنا مباشرة.";
-                                if (data && data.errors) {
-                                    errorMsg = data.errors.map(error => error.message).join(", ");
-                                }
-                                if(errorMessageContent) errorMessageContent.textContent = errorMsg;
-                                if(errorPopup) errorPopup.classList.add('active');
-                            }).catch(() => {
-                                if(errorMessageContent) errorMessageContent.textContent = "عذراً، حدث خطأ غير متوقع. يرجى المحاولة مرة أخرى.";
-                                if(errorPopup) errorPopup.classList.add('active');
-                            });
-                        }
-                    }).catch(error => {
-                        submitButton.disabled = false;
-                        submitButton.classList.remove('loading');
-                        submitButton.textContent = 'إرسال';
-                        if(errorMessageContent) errorMessageContent.textContent = "حدث خطأ في الشبكة. يرجى التحقق من اتصالك بالإنترنت والمحاولة مرة أخرى.";
-                        if(errorPopup) errorPopup.classList.add('active');
-                        console.error('Error:', error);
-                    });
-                });
-            }
-        });
-
-        function closeSuccessPopup() {
-            const successPopup = document.getElementById('success-popup');
-            if (successPopup) successPopup.classList.remove('active');
-        }
-        function closeErrorPopup() {
-            const errorPopup = document.getElementById('error-popup');
-            if (errorPopup) errorPopup.classList.remove('active');
-        }
-
-        // Make sure toggleDropdown is defined if used inline
-        function toggleDropdown(dropdownId) {
-            const dropdownMenu = document.getElementById(dropdownId);
-            if (dropdownMenu) {
-                dropdownMenu.classList.toggle('show');
-                const parentLink = dropdownMenu.previousElementSibling;
-                if (parentLink) {
-                    const isExpanded = dropdownMenu.classList.contains('show');
-                    parentLink.setAttribute('aria-expanded', isExpanded.toString());
-                }
-            }
-        }
-
-        // Global event listener to close dropdowns when clicking outside
-        window.addEventListener('click', function(event) {
-            if (!event.target.closest('.dropdown')) {
-                document.querySelectorAll('.dropdown-menu.show').forEach(function(menu) {
-                    menu.classList.remove('show');
-                    const parentLink = menu.previousElementSibling;
-                     if (parentLink) {
-                        parentLink.setAttribute('aria-expanded', 'false');
-                    }
-                });
-            }
-        });
-
-    </script>
-    <!-- Defered scripts from head will load here too -->
-
 </body>
 </html>

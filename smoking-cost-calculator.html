@@ -1,35 +1,35 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-      <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-BCT8GP6LZT"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BCT8GP6LZT"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-BCT8GP6LZT');
+    </script>
 
-  gtag('config', 'G-BCT8GP6LZT');
-</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="حاسبة تكلفة التدخين, تكلفة التدخين, تكلفة السجائر, تكلفة التدخين السنوية, تكلفة التدخين الشهرية, تكلفة التدخين اليومية, الإقلاع عن التدخين, صحة الرئة, نصائح الإقلاع عن التدخين, أضرار التدخين">
-    <meta name="description" content="حاسبة تكلفة التدخين تساعدك على حساب التكلفة الإجمالية للتدخين بناءً على عدد العلب التي تدخنها يومياً وعدد سنوات التدخين. اكتشف التكلفة المالية للتدخين واتخذ خطوة نحو الإقلاع عنه.">
-    <meta name="author" content="عيادة الدكتورة بخة س - اختصاصية في الأمراض الصدرية والحساسية">
-    <meta http-equiv="Content-Language" content="ar">
-    <title>حاسبة تكلفة التدخين</title>
+    <!-- Meta Keywords for Smoking Cost Calculator -->
+    <meta name="keywords" content="حاسبة تكلفة التدخين, حساب تكلفة السجائر, الإقلاع عن التدخين, توفير المال من التدخين, أضرار التدخين المالية, الدكتورة بخة س, صحة الرئة, نصائح للإقلاع عن التدخين قالمة, تكلفة التدخين اليومية, السنوية">
+    <!-- Meta Description for Smoking Cost Calculator -->
+    <meta name="description" content="اكتشف كم يكلفك التدخين ماليًا باستخدام حاسبة تكلفة التدخين. خطوة نحو فهم التأثير المالي واتخاذ قرار الإقلاع لدعم صحتك. عيادة الدكتورة بخة س في قالمة.">
+    <meta name="author" content="عيادة الدكتورة بخة س - اختصاصية في الأمراض الصدرية والحساسية في ڨالمة">
+    <meta http-equiv="Content-Language" content="ar, fr">
+    <!-- Optimized Title for Smoking Cost Calculator -->
+    <title>حاسبة تكلفة التدخين: اكتشف كم تنفق على السجائر - د. بخة س، قالمة</title>
     <link rel="icon" href="cabinet.png" type="image/png">
     <link rel="canonical" href="https://bakha-pneumo.netlify.app/smoking-cost-calculator.html">
-    <link rel="stylesheet" href="style.css">
+    <!-- Structured Data -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "WebPage",
-        "name": "حاسبة تكلفة التدخين",
-        "description": "حاسبة تكلفة التدخين تساعدك على حساب التكلفة الإجمالية للتدخين بناءً على عدد العلب التي تدخنها يومياً وعدد سنوات التدخين.",
-        "author": {
-            "@type": "Person",
-            "name": "الدكتورة بخة س"
-        },
+        "name": "حاسبة تكلفة التدخين المالية",
+        "description": "أداة لحساب التكلفة المالية للتدخين على المدى القصير والطويل، مع معلومات حول فوائد الإقلاع عن التدخين.",
+        "url": "https://bakha-pneumo.netlify.app/smoking-cost-calculator.html",
         "publisher": {
             "@type": "Organization",
             "name": "عيادة الدكتورة بخة س",
@@ -37,179 +37,253 @@
                 "@type": "ImageObject",
                 "url": "https://bakha-pneumo.netlify.app/cabinet.png"
             }
-        },
-        "url": "https://bakha-pneumo.netlify.app/smoking-cost-calculator.html",
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://bakha-pneumo.netlify.app/smoking-cost-calculator.html"
         }
     }
     </script>
+    <link rel="stylesheet" href="style.css"> <!-- Main stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome for icons -->
     <style>
-        /* Basic styling for the calculator */
+        /* Basic styling - ideally move to style.css */
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa; /* Lighter background */
             color: #333;
             margin: 0;
             padding: 0;
+            line-height: 1.6;
         }
-        header {
-            background-color: #4CAF50;
+        header, footer {
+            background-color: #dc3545; /* A warning red, suitable for smoking context */
             color: white;
-            padding: 1rem;
+            padding: 1.5rem 1rem;
             text-align: center;
         }
+        header h1 { margin: 0; font-size: 2em;}
+        .page-subtitle { font-size: 1.1em; color: #f8f9fa; margin-top: 5px;}
+
         nav {
-            background-color: #333;
+            background-color: #c82333; /* Darker red for nav */
             padding: 1rem;
             text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        nav ul li {
-            display: inline;
-            margin: 0 1rem;
-        }
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-        }
-        main {
-            padding: 2rem;
-        }
-        .calculator {
-            background-color: white;
+        nav ul { list-style: none; padding: 0; margin: 0; }
+        nav ul li { display: inline-block; margin: 0 15px; }
+        nav ul li a { color: #f8f9fa; text-decoration: none; font-weight: bold; transition: color 0.3s ease; }
+        nav ul li a:hover { color: #ffc107; } /* Yellow hover for contrast */
+
+        main { padding: 2rem; max-width: 800px; margin: 20px auto; background-color: #fff; border-radius: 8px; box-shadow: 0 0 15px rgba(0,0,0,0.1); }
+        section { margin-bottom: 2.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid #eee; }
+        section:last-child { border-bottom: none; margin-bottom: 0; }
+        h2 { color: #b22222; margin-bottom: 1rem; font-size: 1.8em; } /* Dark red for headings */
+        h3 { color: #343a40; margin-bottom: 0.8rem; font-size: 1.5em; }
+
+        .calculator-container {
+            background-color: #fdfdfe;
             padding: 2rem;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            max-width: 500px;
-            margin: 0 auto;
+            border: 1px solid #e9ecef;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
         }
-        .calculator label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: bold;
-        }
-        .calculator input {
-            width: 100%;
-            padding: 0.5rem;
-            margin-bottom: 1rem;
-            border: 1px solid #ccc;
+        .calculator-container label { display: block; margin-bottom: 0.6rem; font-weight: bold; color: #495057; }
+        .calculator-container input[type="number"] {
+            width: calc(100% - 22px);
+            padding: 0.8rem;
+            margin-bottom: 1.2rem;
+            border: 1px solid #ced4da;
             border-radius: 4px;
+            font-size: 1em;
+            box-sizing: border-box;
         }
-        .calculator button {
-            background-color: #4CAF50;
+        .calculator-container button {
+            background-color: #dc3545; /* Red button */
             color: white;
-            padding: 0.75rem 1.5rem;
+            padding: 0.8rem 1.5rem;
             border: none;
             border-radius: 4px;
             cursor: pointer;
             width: 100%;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
         }
-        .calculator button:hover {
-            background-color: #45a049;
-        }
+        .calculator-container button:hover { background-color: #c82333; }
+
         .result {
             margin-top: 1.5rem;
-            padding: 1rem;
-            background-color: #f9f9f9;
-            border: 1px solid #ddd;
+            padding: 1.2rem;
+            background-color: #f8d7da; /* Light red for result background */
+            border: 1px solid #f5c6cb;
             border-radius: 4px;
+            text-align: center;
         }
-        .error {
-            color: red;
-            font-weight: bold;
-        }
+        .result p { margin: 0.5rem 0; font-size: 1.1em; }
+        .result strong { color: #721c24; } /* Darker red for strong text in result */
+        .error { color: #721c24; font-weight: bold; font-size: 1em; } /* Adjusted error color for red theme */
+
+        .info-section p, .info-section ul li { font-size: 1.05em; margin-bottom: 0.8em; }
+        .info-section ul { padding-right: 20px; }
+
         .disclaimer {
-            margin-top: 2rem;
-            padding: 1rem;
+            margin-top: 2.5rem;
+            padding: 1.5rem;
             background-color: #fff3cd;
-            border: 1px solid #ffeeba;
+            border-left: 5px solid #ffeeba;
             border-radius: 4px;
             color: #856404;
         }
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 1rem;
-            margin-top: 2rem;
-        }
+        .disclaimer h3 { color: #856404; }
+
+        .cta-section { text-align: center; padding: 30px 20px; background-color: #dc3545; color:white; margin-top: 30px; margin-bottom: 20px; border-radius: .3rem; }
+        .cta-section h2 { color: white; margin-bottom: 15px; font-size: 1.8em; }
+        .cta-section p { font-size: 1.15em; margin-bottom: 20px; color: #f8f9fa; }
+        .cta-section .button-style { display: inline-block; background-color: #28a745; color: white; padding: 12px 30px; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 1.1em; transition: background-color 0.3s ease, transform 0.2s ease; } /* Green button for quitting */
+        .cta-section .button-style:hover { background-color: #218838; transform: translateY(-2px); }
+        .icon-before { margin-left: 8px; }
+        .impact-list li { margin-bottom: 10px; }
+        .impact-list strong { color: #b22222; }
     </style>
 </head>
 <body>
     <header>
         <h1>حاسبة تكلفة التدخين</h1>
+        <p class="page-subtitle">اكتشف الثمن الحقيقي لعادة التدخين... ليس فقط المالي!</p>
     </header>
     <nav>
         <ul>
-            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="index.html"><i class="fas fa-home icon-before"></i>الرئيسية</a></li>
+            <li><a href="bmi-calculator.html">حاسبة BMI</a></li>
             <li><a href="smoking-cost-calculator.html">حاسبة تكلفة التدخين</a></li>
+            <!-- Add other calculator links -->
         </ul>
     </nav>
     <main>
-        <section class="calculator">
-            <h2>حاسبة تكلفة التدخين</h2>
-            <form id="smoking-cost-form">
-                <label for="cost-per-pack">تكلفة العلبة الواحدة (دينار):</label>
-                <input type="number" id="cost-per-pack" name="cost-per-pack" required>
-
-                <label for="packs-per-day">عدد العلب في اليوم:</label>
-                <input type="number" id="packs-per-day" name="packs-per-day" required>
-
-                <label for="smoking-years">عدد سنوات التدخين:</label>
-                <input type="number" id="smoking-years" name="smoking-years" required>
-
-                <button type="button" onclick="calculateSmokingCost()">احسب</button>
-            </form>
-            <div class="result" id="smoking-cost-result"></div>
+        <section id="intro-smoking-cost" class="info-section" aria-labelledby="intro-smoking-cost-heading">
+            <h2 id="intro-smoking-cost-heading">لماذا يجب أن تهتم بتكلفة تدخينك؟</h2>
+            <p>التدخين ليس مجرد عادة، بل هو استثمار سلبي يؤثر بشكل كبير على صحتك وميزانيتك. الكثير من المدخنين لا يدركون الحجم الحقيقي للمبالغ التي ينفقونها على السجائر على المدى الطويل. هذه الحاسبة مصممة لتمنحك صورة واضحة عن التكلفة المالية لتدخينك، والتي قد تكون دافعًا قويًا للتفكير في الإقلاع.</p>
+            <p>تذكر، التكلفة ليست مالية فقط. التدخين يفرض تكلفة باهظة على صحتك، خاصة صحة رئتيك، ويزيد من خطر الإصابة بالعديد من الأمراض الخطيرة مثل سرطان الرئة، مرض الانسداد الرئوي المزمن (BPCO)، وأمراض القلب. <strong>الإقلاع عن التدخين هو أفضل قرار يمكنك اتخاذه لصحتك ولمستقبلك المالي.</strong></p>
         </section>
 
-        <!-- Disclaimer Section -->
-        <section class="disclaimer">
-            <h3>تنويه هام</h3>
+        <section class="calculator-container" aria-labelledby="calculator-heading-s">
+            <h2 id="calculator-heading-s">احسب تكلفة تدخينك الآن</h2>
+            <form id="smoking-cost-form">
+                <div>
+                    <label for="cost-per-pack">كم تكلفة علبة السجائر الواحدة (بالدينار الجزائري)؟</label>
+                    <input type="number" id="cost-per-pack" name="cost-per-pack" placeholder="مثال: 300" step="10" required aria-describedby="cost-format-s">
+                    <small id="cost-format-s" style="display:none;">أدخل سعر علبة السجائر.</small>
+                </div>
+                <div>
+                    <label for="packs-per-day">كم عدد علب السجائر التي تدخنها في اليوم الواحد؟</label>
+                    <input type="number" id="packs-per-day" name="packs-per-day" placeholder="مثال: 1 (علبة واحدة) أو 0.5 (نصف علبة)" step="0.1" required aria-describedby="packs-format-s">
+                    <small id="packs-format-s" style="display:none;">أدخل عدد العلب يوميًا (يمكن استخدام كسور مثل 0.5 لنصف علبة).</small>
+                </div>
+                <div>
+                    <label for="smoking-years">منذ كم سنة وأنت تدخن؟</label>
+                    <input type="number" id="smoking-years" name="smoking-years" placeholder="مثال: 10" step="1" required aria-describedby="years-format-s">
+                    <small id="years-format-s" style="display:none;">أدخل عدد سنوات التدخين.</small>
+                </div>
+                <button type="button" onclick="calculateSmokingCost()"><i class="fas fa-coins icon-before"></i>احسب التكلفة</button>
+            </form>
+            <div class="result" id="smoking-cost-result" aria-live="polite">
+                <!-- Result will be displayed here -->
+                <p>سيتم عرض تقدير تكلفة تدخينك هنا بعد إدخال جميع البيانات.</p>
+            </div>
+        </section>
+
+        <section class="info-section" aria-labelledby="understanding-smoking-cost-heading">
+            <h2 id="understanding-smoking-cost-heading">ماذا تعني هذه الأرقام لك؟</h2>
+            <p>قد تكون الأرقام التي تظهرها الحاسبة صادمة! فكر فيما يمكنك فعله بهذا المبلغ إذا قمت بتوفيره بدلاً من إنفاقه على السجائر. بالإضافة إلى التوفير المالي، فإن الإقلاع عن التدخين له فوائد صحية هائلة لا تقدر بثمن:</p>
+            <ul class="impact-list">
+                <li><i class="fas fa-lungs icon-before" style="color: #28a745;"></i><strong>تحسين صحة الرئة:</strong> تبدأ رئتاك في التعافي، ويقل السعال وضيق التنفس.</li>
+                <li><i class="fas fa-heartbeat icon-before" style="color: #dc3545;"></i><strong>تقليل خطر أمراض القلب:</strong> ينخفض خطر الإصابة بالنوبات القلبية والسكتات الدماغية بشكل كبير.</li>
+                <li><i class="fas fa-shield-alt icon-before" style="color: #007bff;"></i><strong>تقليل خطر الإصابة بالسرطان:</strong> خاصة سرطان الرئة، الفم، الحلق، والمريء.</li>
+                <li><i class="fas fa-smile icon-before" style="color: #ffc107;"></i><strong>تحسين حاسة التذوق والشم.</strong></li>
+                <li><i class="fas fa-shoe-prints icon-before" style="color: #6f42c1;"></i><strong>زيادة مستويات الطاقة واللياقة البدنية.</strong></li>
+                <li><i class="fas fa-child icon-before" style="color: #fd7e14;"></i><strong>حماية صحة عائلتك وأصدقائك</strong> من أضرار التدخين السلبي.</li>
+                <li><i class="fas fa-dollar-sign icon-before" style="color: #20c997;"></i><strong>توفير المال</strong> الذي يمكنك استخدامه لأشياء أكثر أهمية وفائدة.</li>
+            </ul>
+            <p><strong>التكلفة الحقيقية للتدخين تتجاوز بكثير ما تدفعه مقابل كل علبة. إنها استثمار في تدهور صحتك.</strong></p>
+        </section>
+
+        <section class="disclaimer" aria-labelledby="disclaimer-heading-s">
+            <h3 id="disclaimer-heading-s">تنويه هام وإخلاء مسؤولية</h3>
             <p>
-                هذه الحاسبة تقدم تقديرات عامة للتكلفة المالية للتدخين بناءً على عدد العلب التي تدخنها يومياً وعدد سنوات التدخين. ومع ذلك، قد تختلف التكلفة الفعلية حسب التغيرات في أسعار السجائر وعادات التدخين.
+                حاسبة تكلفة التدخين هذه مُقدمة لأغراض توعوية وتحفيزية. التكلفة المالية المحسوبة هي تقديرية وقد تختلف بناءً على التغيرات في أسعار السجائر وعادات التدخين الفردية.
             </p>
             <p>
-                <strong>يجب استشارة طبيبك أو أخصائي الرعاية الصحية</strong> للحصول على تقييم دقيق لتأثير التدخين على صحتك، خاصة إذا كنت تعاني من أي حالات صحية مثل أمراض الرئة، القلب، أو السرطان.
+                الأهم من التكلفة المالية هو <strong>التأثير الصحي الخطير للتدخين.</strong> إذا كنت تفكر في الإقلاع عن التدخين، فهذه خطوة رائعة نحو حياة أكثر صحة.
             </p>
             <p>
-                هذه الحاسبة لا تغني عن الاستشارة الطبية المهنية.
+                <strong>نوصي بشدة باستشارة الدكتورة بخة س أو طبيبك الخاص أو أخصائي رعاية صحية مؤهل</strong> للحصول على الدعم والمساعدة في الإقلاع عن التدخين، ومناقشة أي مخاوف صحية لديك متعلقة بالتدخين.
             </p>
+        </section>
+
+        <section id="contact-cta" class="cta-section" aria-labelledby="contact-cta-heading-s">
+            <h2 id="contact-cta-heading-s">هل أنت مستعد لاتخاذ الخطوة الأولى نحو الإقلاع عن التدخين؟</h2>
+            <p>الإقلاع عن التدخين هو أفضل هدية يمكنك تقديمها لصحتك ولميزانيتك. في عيادة الدكتورة بخة س بڨالمة، نقدم لك الدعم والإرشاد لمساعدتك في رحلة الإقلاع عن التدخين وتحسين صحة رئتيك وحياتك بشكل عام.</p>
+            <a href="index.html#appointment" class="button-style"><i class="fas fa-leaf icon-before"></i>ابدأ رحلة الإقلاع الآن - احجز استشارة</a>
+            <div style="margin-top: 20px;">
+                <p>أو اتصل بنا مباشرة للاستفسار عن برامج المساعدة في الإقلاع:</p>
+                <p><i class="fas fa-phone icon-before"></i><a href="tel:+213796222597" style="color:white; font-weight:bold;">0796222597</a> | <a href="tel:+213663755584" style="color:white; font-weight:bold;">0663755584</a></p>
+            </div>
         </section>
     </main>
-    <footer>
-        <p>&copy; 2024 عيادة الدكتورة بخة س - جميع الحقوق محفوظة</p>
+    <footer style="padding-bottom: 60px;"> <!-- Added padding to avoid overlap with watermark if fixed -->
+        <h2>عيادة الدكتورة بخة س</h2>
+        <p>اختصاصية في الأمراض الصدرية والحساسية، والمساعدة في الإقلاع عن التدخين</p>
+        <p><strong>العنوان:</strong> حي 19 جوان، خلف مستشفى الحكيم عقبي، ڨالمة، الجزائر</p>
+        <p>© <span id="currentYear"></span> جميع الحقوق محفوظة</p>
     </footer>
+    <div class="watermark" style="position: fixed; bottom: 10px; left: 10px; opacity: 0.5; font-size: 10px; color: #aaa; z-index: 10000; background-color: rgba(255,255,255,0.7); padding: 2px 5px; border-radius: 3px;">Dr. Bakha - Guelma</div>
 
     <script>
         function calculateSmokingCost() {
-            // Get user inputs
-            const costPerPack = parseFloat(document.getElementById('cost-per-pack').value);
-            const packsPerDay = parseFloat(document.getElementById('packs-per-day').value);
-            const smokingYears = parseFloat(document.getElementById('smoking-years').value);
+            const costPerPackInput = document.getElementById('cost-per-pack');
+            const packsPerDayInput = document.getElementById('packs-per-day');
+            const smokingYearsInput = document.getElementById('smoking-years');
+            const resultDiv = document.getElementById('smoking-cost-result');
 
-            // Input validation
-            if (isNaN(costPerPack) || isNaN(packsPerDay) || isNaN(smokingYears) || costPerPack <= 0 || packsPerDay <= 0 || smokingYears <= 0) {
-                document.getElementById('smoking-cost-result').innerHTML = `
-                    <p class="error">الرجاء إدخال قيم صحيحة لتكلفة العلبة وعدد العلب وسنوات التدخين.</p>
-                `;
+            resultDiv.innerHTML = ''; // Clear previous results
+
+            const costPerPack = parseFloat(costPerPackInput.value);
+            const packsPerDay = parseFloat(packsPerDayInput.value);
+            const smokingYears = parseFloat(smokingYearsInput.value);
+
+            let errors = [];
+            if (isNaN(costPerPack) || costPerPack <= 0 || costPerPack > 10000) { // Realistic cost limits
+                errors.push("الرجاء إدخال تكلفة صحيحة للعلبة.");
+            }
+            if (isNaN(packsPerDay) || packsPerDay <= 0 || packsPerDay > 10) { // Realistic packs per day
+                errors.push("الرجاء إدخال عدد علب صحيح في اليوم.");
+            }
+            if (isNaN(smokingYears) || smokingYears <= 0 || smokingYears > 80) { // Realistic smoking years
+                errors.push("الرجاء إدخال عدد سنوات تدخين صحيح.");
+            }
+
+            if (errors.length > 0) {
+                let errorHTML = '<p class="error">يوجد خطأ في الإدخال:</p><ul>';
+                errors.forEach(err => {
+                    errorHTML += `<li class="error" style="text-align:right;">${err}</li>`;
+                });
+                errorHTML += '</ul>';
+                resultDiv.innerHTML = errorHTML;
                 return;
             }
 
-            // Calculate total cost
-            const totalCost = (costPerPack * packsPerDay * 365 * smokingYears).toFixed(2);
+            const costPerDay = costPerPack * packsPerDay;
+            const costPerMonth = costPerDay * 30.44; // Average days in a month
+            const costPerYear = costPerDay * 365.25; // Account for leap years slightly
+            const totalCostOverYears = costPerYear * smokingYears;
 
-            // Display the result
-            document.getElementById('smoking-cost-result').innerHTML = `
-                <p>التكلفة الإجمالية للتدخين: <strong>${totalCost}</strong> دينار.</p>
+            resultDiv.innerHTML = `
+                <p>تنفق يوميًا حوالي: <strong style="color: #b22222;">${costPerDay.toLocaleString('ar-DZ')}</strong> دينار جزائري.</p>
+                <p>تنفق شهريًا حوالي: <strong style="color: #b22222;">${costPerMonth.toLocaleString('ar-DZ', { maximumFractionDigits: 0 })}</strong> دينار جزائري.</p>
+                <p>تنفق سنويًا حوالي: <strong style="color: #b22222;">${costPerYear.toLocaleString('ar-DZ', { maximumFractionDigits: 0 })}</strong> دينار جزائري.</p>
+                <hr style="margin: 15px 0;">
+                <p style="font-size: 1.2em;">خلال <strong>${smokingYears}</strong> سنوات، تكون قد أنفقت ما يقارب: <strong style="font-size: 1.4em; color: #dc3545;">${totalCostOverYears.toLocaleString('ar-DZ', { maximumFractionDigits: 0 })}</strong> دينار جزائري!</p>
+                <p style="margin-top:15px; font-size:0.9em;">فكر فيما يمكنك تحقيقه بهذا المبلغ إذا استثمرته في صحتك أو مستقبلك. الإقلاع عن التدخين ليس فقط توفيرًا للمال، بل هو استثمار في الحياة.</p>
             `;
         }
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
     </script>
 </body>
 </html>

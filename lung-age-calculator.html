@@ -1,35 +1,35 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-      <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-BCT8GP6LZT"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BCT8GP6LZT"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-BCT8GP6LZT');
+    </script>
 
-  gtag('config', 'G-BCT8GP6LZT');
-</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="حاسبة عمر الرئة, حساب عمر الرئة, صحة الرئة, وظائف الرئة, حجم الزفير القسري, FEV1, اختبار وظائف الرئة, صحة الجهاز التنفسي, نصائح صحة الرئة">
-    <meta name="description" content="حاسبة عمر الرئة تساعدك على تقدير عمر رئتيك بناءً على حجم الزفير القسري في الثانية الأولى (FEV1) وطولك وعمرك وجنسك. اكتشف مدى صحة رئتيك واتخذ خطوات لتحسينها.">
-    <meta name="author" content="عيادة الدكتورة بخة س - اختصاصية في الأمراض الصدرية والحساسية">
-    <meta http-equiv="Content-Language" content="ar">
-    <title>حاسبة عمر الرئة</title>
+    <!-- Meta Keywords for Lung Age Calculator -->
+    <meta name="keywords" content="حاسبة عمر الرئة, حساب عمر الرئة, صحة الرئة, وظائف الرئة, FEV1, قياس التنفس, الدكتورة بخة س, الإقلاع عن التدخين, صحة الجهاز التنفسي قالمة, اختبار وظائف الرئة, تأثير التدخين على الرئة">
+    <!-- Meta Description for Lung Age Calculator -->
+    <meta name="description" content="اكتشف 'عمر رئتيك' التقديري باستخدام حاسبة عمر الرئة. أداة توعوية لفهم صحة رئتيك وأهمية الإقلاع عن التدخين. استشر د. بخة س في قالمة لتقييم دقيق لوظائف الرئة.">
+    <meta name="author" content="عيادة الدكتورة بخة س - اختصاصية في الأمراض الصدرية والحساسية في ڨالمة">
+    <meta http-equiv="Content-Language" content="ar, fr">
+    <!-- Optimized Title for Lung Age Calculator -->
+    <title>حاسبة عمر الرئة: تقييم صحة رئتيك - د. بخة س، قالمة</title>
     <link rel="icon" href="cabinet.png" type="image/png">
     <link rel="canonical" href="https://bakha-pneumo.netlify.app/lung-age-calculator.html">
-    <link rel="stylesheet" href="style.css">
+    <!-- Structured Data -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "WebPage",
-        "name": "حاسبة عمر الرئة",
-        "description": "حاسبة عمر الرئة تساعدك على تقدير عمر رئتيك بناءً على حجم الزفير القسري في الثانية الأولى (FEV1) وطولك وعمرك وجنسك.",
-        "author": {
-            "@type": "Person",
-            "name": "الدكتورة بخة س"
-        },
+        "name": "حاسبة عمر الرئة التقديرية",
+        "description": "أداة تعليمية لتقدير عمر الرئة بناءً على قياسات وظائف الرئة (FEV1)، بهدف التوعية بأهمية صحة الرئة والإقلاع عن التدخين.",
+        "url": "https://bakha-pneumo.netlify.app/lung-age-calculator.html",
         "publisher": {
             "@type": "Organization",
             "name": "عيادة الدكتورة بخة س",
@@ -37,199 +37,312 @@
                 "@type": "ImageObject",
                 "url": "https://bakha-pneumo.netlify.app/cabinet.png"
             }
-        },
-        "url": "https://bakha-pneumo.netlify.app/lung-age-calculator.html",
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://bakha-pneumo.netlify.app/lung-age-calculator.html"
         }
     }
     </script>
+    <link rel="stylesheet" href="style.css"> <!-- Main stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome for icons -->
     <style>
-        /* Basic styling for the calculator */
+        /* Basic styling - ideally move to style.css */
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            font-family: 'Arial', sans-serif;
+            background-color: #e6f7ff; /* Light, airy blue */
             color: #333;
             margin: 0;
             padding: 0;
+            line-height: 1.6;
         }
-        header {
-            background-color: #4CAF50;
+        header, footer {
+            background-color: #007bff; /* Professional blue */
             color: white;
-            padding: 1rem;
+            padding: 1.5rem 1rem;
             text-align: center;
         }
+        header h1 { margin: 0; font-size: 2em;}
+        .page-subtitle { font-size: 1.1em; color: #d4e6f1; margin-top: 5px;}
+
         nav {
-            background-color: #333;
+            background-color: #0056b3; /* Darker blue for nav */
             padding: 1rem;
             text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        nav ul li {
-            display: inline;
-            margin: 0 1rem;
-        }
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-        }
-        main {
-            padding: 2rem;
-        }
-        .calculator {
-            background-color: white;
+        nav ul { list-style: none; padding: 0; margin: 0; }
+        nav ul li { display: inline-block; margin: 0 15px; }
+        nav ul li a { color: #f8f9fa; text-decoration: none; font-weight: bold; transition: color 0.3s ease; }
+        nav ul li a:hover { color: #90caf9; }
+
+        main { padding: 2rem; max-width: 800px; margin: 20px auto; background-color: #fff; border-radius: 8px; box-shadow: 0 0 15px rgba(0,0,0,0.1); }
+        section { margin-bottom: 2.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid #eee; }
+        section:last-child { border-bottom: none; margin-bottom: 0; }
+        h2 { color: #004085; margin-bottom: 1rem; font-size: 1.8em; } /* Dark blue for headings */
+        h3 { color: #0056b3; margin-bottom: 0.8rem; font-size: 1.5em; }
+
+        .calculator-container {
+            background-color: #f8f9fa;
             padding: 2rem;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            max-width: 500px;
-            margin: 0 auto;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
         }
-        .calculator label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: bold;
-        }
-        .calculator input,
-        .calculator select {
-            width: 100%;
-            padding: 0.5rem;
-            margin-bottom: 1rem;
-            border: 1px solid #ccc;
+        .calculator-container label { display: block; margin-bottom: 0.6rem; font-weight: bold; color: #495057; }
+        .calculator-container input[type="number"],
+        .calculator-container select {
+            width: calc(100% - 22px);
+            padding: 0.8rem;
+            margin-bottom: 1.2rem;
+            border: 1px solid #ced4da;
             border-radius: 4px;
+            font-size: 1em;
+            box-sizing: border-box;
         }
-        .calculator button {
-            background-color: #4CAF50;
+        .calculator-container button {
+            background-color: #007bff; /* Blue button */
             color: white;
-            padding: 0.75rem 1.5rem;
+            padding: 0.8rem 1.5rem;
             border: none;
             border-radius: 4px;
             cursor: pointer;
             width: 100%;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
         }
-        .calculator button:hover {
-            background-color: #45a049;
-        }
+        .calculator-container button:hover { background-color: #0056b3; }
+
         .result {
             margin-top: 1.5rem;
-            padding: 1rem;
-            background-color: #f9f9f9;
-            border: 1px solid #ddd;
+            padding: 1.2rem;
+            background-color: #d1ecf1; /* Lighter blue for result */
+            border: 1px solid #bee5eb;
             border-radius: 4px;
+            text-align: center;
         }
-        .error {
-            color: red;
-            font-weight: bold;
-        }
-        .disclaimer {
-            margin-top: 2rem;
-            padding: 1rem;
+        .result p { margin: 0.5rem 0; font-size: 1.1em; }
+        .result strong { color: #0c5460; } /* Darker blue for strong text in result */
+        .error { color: #dc3545; font-weight: bold; font-size: 1em; }
+
+        .info-section p, .info-section ul li { font-size: 1.05em; margin-bottom: 0.8em; }
+        .info-section ul { padding-right: 20px; }
+
+        .disclaimer, .fev1-info {
+            margin-top: 2.5rem;
+            padding: 1.5rem;
             background-color: #fff3cd;
-            border: 1px solid #ffeeba;
+            border-left: 5px solid #ffeeba;
             border-radius: 4px;
             color: #856404;
         }
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 1rem;
-            margin-top: 2rem;
-        }
+        .disclaimer h3, .fev1-info h3 { color: #856404; }
+
+        .cta-section { text-align: center; padding: 30px 20px; background-color: #007bff; color:white; margin-top: 30px; margin-bottom: 20px; border-radius: .3rem; }
+        .cta-section h2 { color: white; margin-bottom: 15px; font-size: 1.8em; }
+        .cta-section p { font-size: 1.15em; margin-bottom: 20px; color: #d4e6f1; }
+        .cta-section .button-style { display: inline-block; background-color: #28a745; color: white; padding: 12px 30px; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 1.1em; transition: background-color 0.3s ease, transform 0.2s ease; }
+        .cta-section .button-style:hover { background-color: #218838; transform: translateY(-2px); }
+        .icon-before { margin-left: 8px; }
+        .fev1-note { font-size: 0.9em; color: #6c757d; display: block; margin-top: -0.8rem; margin-bottom: 1rem; }
     </style>
 </head>
 <body>
     <header>
         <h1>حاسبة عمر الرئة</h1>
+        <p class="page-subtitle">أداة توعوية لتقدير صحة رئتيك بناءً على وظائف التنفس</p>
     </header>
     <nav>
         <ul>
-            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="index.html"><i class="fas fa-home icon-before"></i>الرئيسية</a></li>
+            <li><a href="bmi-calculator.html">حاسبة BMI</a></li>
             <li><a href="lung-age-calculator.html">حاسبة عمر الرئة</a></li>
+            <!-- Add other calculator links -->
         </ul>
     </nav>
     <main>
-        <section class="calculator">
-            <h2>حاسبة عمر الرئة</h2>
-            <form id="lung-age-form">
-                <label for="age">العمر (سنوات):</label>
-                <input type="number" id="age" name="age" required>
-
-                <label for="gender">الجنس:</label>
-                <select id="gender" name="gender" required>
-                    <option value="male">ذكر</option>
-                    <option value="female">أنثى</option>
-                </select>
-
-                <label for="lung-height">الطول (سم):</label>
-                <input type="number" id="lung-height" name="lung-height" required>
-
-                <label for="fev1">حجم الزفير القسري في الثانية الأولى (FEV1):</label>
-                <input type="number" id="fev1" name="fev1" required>
-
-                <button type="button" onclick="calculateLungAge()">احسب</button>
-            </form>
-            <div class="result" id="lung-age-result"></div>
+        <section id="intro-lung-age" class="info-section" aria-labelledby="intro-lung-age-heading">
+            <h2 id="intro-lung-age-heading">ما هو "عمر الرئة" ولماذا قد يهمك؟</h2>
+            <p>"عمر الرئة" هو مفهوم يُستخدم لتقدير مدى صحة رئتيك مقارنة بالعمر الزمني لشخص يتمتع بوظائف رئة طبيعية. إذا كان "عمر رئتيك" أكبر من عمرك الفعلي، فقد يشير ذلك إلى أن رئتيك قد تضررت أو تشيخ بسرعة أكبر من المتوقع، غالبًا بسبب عوامل مثل التدخين أو التعرض للملوثات.</p>
+            <p>تُستخدم حاسبة عمر الرئة كأداة <strong>توعوية وتحفيزية</strong>، خاصة للمدخنين، لتوضيح التأثير المباشر للتدخين على صحة الرئة وتشجيعهم على الإقلاع. كما يمكن أن تكون مفيدة للأشخاص الذين يعانون من أمراض تنفسية لفهم وظائف الرئة لديهم بشكل أفضل (بإدخال نتائج فحص وظائف الرئة الخاص بهم).</p>
+            <p><strong>ملاحظة هامة:</strong> هذه الحاسبة تعتمد على قيمة حجم الزفير القسري في الثانية الأولى (FEV1)، وهي قيمة يتم الحصول عليها من خلال <strong>فحص وظائف الرئة (قياس التنفس - Spirométrie)</strong> الذي يجريه أخصائي رعاية صحية. لا يمكنك قياس FEV1 بنفسك في المنزل.</p>
         </section>
 
-        <!-- Disclaimer Section -->
-        <section class="disclaimer">
-            <h3>تنويه هام</h3>
+        <section class="fev1-info" aria-labelledby="fev1-info-heading">
+            <h3 id="fev1-info-heading">حول حجم الزفير القسري في الثانية الأولى (FEV1)</h3>
             <p>
-                هذه الحاسبة تقدم تقديرات عامة لعمر الرئة بناءً على حجم الزفير القسري في الثانية الأولى (FEV1)، الطول، العمر، والجنس. ومع ذلك، قد تختلف النتائج الفعلية حسب نسبة العضلات إلى الدهون، الحالة الصحية العامة، والعوامل الوراثية.
+                حجم الزفير القسري في الثانية الأولى (FEV1) هو مقياس لكمية الهواء التي يمكنك زفيرها بقوة من رئتيك خلال الثانية الأولى من النفخ بعد أخذ نفس عميق. إنه مؤشر مهم لوظائف الرئة ويُستخدم لتقييم صحة المسالك الهوائية.
             </p>
             <p>
-                <strong>يجب استشارة طبيبك أو أخصائي الرعاية الصحية</strong> للحصول على تقييم دقيق لوظائف الرئة، خاصة إذا كنت تعاني من أي حالات صحية مثل الربو، الانسداد الرئوي المزمن، أو أمراض الرئة الأخرى.
+                <strong>يجب الحصول على قيمة FEV1 الخاصة بك من خلال فحص وظائف الرئة (قياس التنفس) الذي يجريه طبيب أو فني متخصص في عيادة أو مستشفى.</strong>
+            </p>
+        </section>
+
+        <section class="calculator-container" aria-labelledby="calculator-heading-la">
+            <h2 id="calculator-heading-la">احسب عمر رئتيك التقديري</h2>
+            <form id="lung-age-form">
+                <div>
+                    <label for="age">عمرك الفعلي (بالسنوات):</label>
+                    <input type="number" id="age" name="age" placeholder="مثال: 45" min="18" max="100" required aria-describedby="age-format-la">
+                    <small id="age-format-la" style="display:none;">أدخل عمرك بالسنوات (18-100).</small>
+                </div>
+                <div>
+                    <label for="gender">الجنس:</label>
+                    <select id="gender" name="gender" required>
+                        <option value="male">ذكر</option>
+                        <option value="female">أنثى</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="lung-height">طولك (بالسنتيمتر):</label>
+                    <input type="number" id="lung-height" name="lung-height" placeholder="مثال: 170" min="100" max="220" required aria-describedby="height-format-la">
+                    <small id="height-format-la" style="display:none;">أدخل طولك بالسنتيمتر (100-220).</small>
+                </div>
+                <div>
+                    <label for="fev1">قيمة FEV1 (باللتر) - من فحص وظائف الرئة:</label>
+                    <input type="number" id="fev1" name="fev1" placeholder="مثال: 3.5" step="0.01" min="0.5" max="8.0" required aria-describedby="fev1-format-la">
+                    <small id="fev1-format-la" class="fev1-note">أدخل قيمة FEV1 باللتر التي حصلت عليها من فحص وظائف الرئة الأخير.</small>
+                </div>
+                <button type="button" onclick="calculateLungAge()"><i class="fas fa-lungs icon-before"></i>احسب عمر الرئة</button>
+            </form>
+            <div class="result" id="lung-age-result" aria-live="polite">
+                <!-- Result will be displayed here -->
+                <p>سيتم عرض تقدير عمر رئتيك هنا بعد إدخال جميع البيانات المطلوبة.</p>
+            </div>
+        </section>
+
+        <section class="info-section" aria-labelledby="understanding-lung-age-results-heading">
+            <h2 id="understanding-lung-age-results-heading">فهم نتيجة "عمر الرئة"</h2>
+            <p>النتيجة التي تظهرها هذه الحاسبة هي <strong>تقدير لعمر رئتيك</strong>. </p>
+            <ul>
+                <li>إذا كان <strong>عمر رئتيك أكبر من عمرك الفعلي</strong>، فقد يشير ذلك إلى أن وظائف رئتيك أقل من المتوقع لعمرك، وقد يكون ذلك بسبب عوامل مثل التدخين، التعرض للملوثات، أو حالات رئوية كامنة.</li>
+                <li>إذا كان <strong>عمر رئتيك مساويًا أو أصغر من عمرك الفعلي</strong>، فهذا مؤشر جيد على أن وظائف رئتيك ضمن النطاق الصحي لعمرك (بناءً على قيمة FEV1 المدخلة).</li>
+            </ul>
+            <p><strong>النسبة المئوية للـ FEV1 المتوقع (% Predicted FEV1)</strong> هي مقارنة بين قيمة FEV1 الفعلية لديك والقيمة المتوقعة لشخص يتمتع بصحة جيدة من نفس عمرك، طولك، وجنسك. القيمة الطبيعية عادة ما تكون 80% أو أعلى.</p>
+            <p><strong>هام:</strong> "عمر الرئة" هو مفهوم توضيحي وليس تشخيصًا طبيًا. إذا كانت نتيجة عمر رئتيك مقلقة، أو إذا كانت أعلى بكثير من عمرك الفعلي، فهذا سبب قوي لاستشارة الدكتورة بخة س لإجراء تقييم شامل لوظائف الرئة ومناقشة صحتك التنفسية.</p>
+        </section>
+
+        <section class="disclaimer" aria-labelledby="disclaimer-heading-la">
+            <h3 id="disclaimer-heading-la">تنويه هام وإخلاء مسؤولية</h3>
+            <p>
+                حاسبة عمر الرئة هذه مُقدمة لأغراض معلوماتية، توعوية، وتحفيزية فقط. <strong>تعتمد دقة النتائج بشكل كبير على دقة قيمة FEV1 المدخلة، والتي يجب الحصول عليها من خلال فحص وظائف الرئة (قياس التنفس) الذي يجريه أخصائي مؤهل.</strong>
             </p>
             <p>
-                هذه الحاسبة لا تغني عن الاستشارة الطبية المهنية.
+                المعادلات المستخدمة في هذه الحاسبة هي نماذج تقديرية وقد لا تعكس بدقة عمر الرئة الفعلي أو وظائف الرئة لديك. هناك العديد من المعادلات المختلفة لحساب القيم المتوقعة لـ FEV1 وعمر الرئة، وقد تختلف النتائج قليلاً بينها.
             </p>
+            <p>
+                <strong>لا ينبغي اعتبار هذه الحاسبة بديلاً عن الاستشارة الطبية المتخصصة، التشخيص، أو العلاج.</strong> إذا كانت لديك أي مخاوف بشأن صحة رئتيك، أعراض تنفسية، أو إذا كنت مدخنًا وترغب في الإقلاع، نوصي بشدة باستشارة الدكتورة بخة س أو طبيبك الخاص.
+            </p>
+        </section>
+
+        <section id="contact-cta" class="cta-section" aria-labelledby="contact-cta-heading-la">
+            <h2 id="contact-cta-heading-la">هل أنت قلق بشأن صحة رئتيك أو نتيجة عمر الرئة؟</h2>
+            <p>فهم صحة رئتيك هو خطوة مهمة نحو حياة أفضل. في عيادة الدكتورة بخة س بڨالمة، نقدم لك التقييم الشامل لوظائف الرئة، الاستشارة المتخصصة، والدعم اللازم للحفاظ على صحتك التنفسية، بما في ذلك المساعدة في الإقلاع عن التدخين.</p>
+            <a href="index.html#appointment" class="button-style"><i class="fas fa-lungs-virus icon-before"></i>احجز موعدك لتقييم وظائف الرئة</a>
+            <div style="margin-top: 20px;">
+                <p>أو اتصل بنا مباشرة للاستفسار:</p>
+                <p><i class="fas fa-phone icon-before"></i><a href="tel:+213796222597" style="color:white; font-weight:bold;">0796222597</a> | <a href="tel:+213663755584" style="color:white; font-weight:bold;">0663755584</a></p>
+            </div>
         </section>
     </main>
-    <footer>
-        <p>&copy; 2024 عيادة الدكتورة بخة س - جميع الحقوق محفوظة</p>
+    <footer style="padding-bottom: 60px;">
+        <h2>عيادة الدكتورة بخة س</h2>
+        <p>اختصاصية في الأمراض الصدرية والحساسية، وتقييم وظائف الرئة</p>
+        <p><strong>العنوان:</strong> حي 19 جوان، خلف مستشفى الحكيم عقبي، ڨالمة، الجزائر</p>
+        <p>© <span id="currentYear"></span> جميع الحقوق محفوظة</p>
     </footer>
+    <div class="watermark" style="position: fixed; bottom: 10px; left: 10px; opacity: 0.5; font-size: 10px; color: #aaa; z-index: 10000; background-color: rgba(255,255,255,0.7); padding: 2px 5px; border-radius: 3px;">Dr. Bakha - Guelma</div>
 
     <script>
         function calculateLungAge() {
-            // Get user inputs
-            const age = parseFloat(document.getElementById('age').value);
+            const ageInput = document.getElementById('age');
             const gender = document.getElementById('gender').value;
-            const height = parseFloat(document.getElementById('lung-height').value);
-            const fev1 = parseFloat(document.getElementById('fev1').value);
+            const heightInput = document.getElementById('lung-height');
+            const fev1Input = document.getElementById('fev1');
+            const resultDiv = document.getElementById('lung-age-result');
 
-            // Input validation
-            if (isNaN(age) || isNaN(height) || isNaN(fev1) || age <= 0 || height <= 0 || fev1 <= 0) {
-                document.getElementById('lung-age-result').innerHTML = `
-                    <p class="error">الرجاء إدخال قيم صحيحة للعمر والطول وحجم الزفير القسري (FEV1).</p>
-                `;
+            resultDiv.innerHTML = ''; // Clear previous results
+
+            const age = parseFloat(ageInput.value);
+            const height = parseFloat(heightInput.value); // Height in cm
+            const fev1 = parseFloat(fev1Input.value);   // FEV1 in Liters
+
+            let errors = [];
+            if (isNaN(age) || age < 18 || age > 100) {
+                errors.push("الرجاء إدخال عمر صحيح (بين 18 و 100 سنة).");
+            }
+            if (isNaN(height) || height < 100 || height > 220) {
+                errors.push("الرجاء إدخال طول صحيح (بين 100 و 220 سم).");
+            }
+            if (isNaN(fev1) || fev1 < 0.5 || fev1 > 8.0) { // FEV1 usually between ~1 to 6 Liters for adults
+                errors.push("الرجاء إدخال قيمة FEV1 صحيحة (بين 0.5 و 8.0 لتر). تأكد من أنك تستخدم القيمة من فحص وظائف الرئة.");
+            }
+
+            if (errors.length > 0) {
+                let errorHTML = '<p class="error">يوجد خطأ في الإدخال:</p><ul>';
+                errors.forEach(err => {
+                    errorHTML += `<li class="error" style="text-align:right;">${err}</li>`;
+                });
+                errorHTML += '</ul>';
+                resultDiv.innerHTML = errorHTML;
                 return;
             }
 
-            // Calculate predicted FEV1 using GLI 2012 equations (simplified example)
+            // Simplified GLI-2012 like equations for predicted FEV1 (Caucasian ethnicity assumed for this example)
+            // These are still approximations. Real GLI equations are more complex and use specific coefficients.
+            // For a highly accurate clinical tool, a backend with proper GLI implementation would be needed.
             let predictedFEV1;
-            if (gender === "male") {
-                predictedFEV1 = (0.0414 * height) - (0.0244 * age) - 2.190; // Example formula for males
-            } else {
-                predictedFEV1 = (0.0395 * height) - (0.0255 * age) - 2.600; // Example formula for females
-            }
+            const heightM = height / 100; // Height in meters for some formulas
 
-            // Calculate percentage predicted FEV1
+            if (gender === "male") {
+                // Simplified formula inspired by some models (e.g., Morris for non-smokers as a very rough base)
+                // Actual GLI is: k1 + k2*ln(height_m) + k3*ln(age) + k4*ln(age)^2 ...
+                // Using a very simplified linear model for demonstration
+                predictedFEV1 = (4.30 * heightM) - (0.029 * age) - 2.49; // Highly simplified, not GLI
+            } else { // female
+                predictedFEV1 = (3.95 * heightM) - (0.025 * age) - 2.60; // Highly simplified, not GLI
+            }
+            // Ensure predictedFEV1 is positive
+             predictedFEV1 = Math.max(0.5, predictedFEV1);
+
+
             const percentagePredictedFEV1 = (fev1 / predictedFEV1) * 100;
 
-            // Estimate lung age using a linear relationship (example formula)
-            const lungAge = (100 / percentagePredictedFEV1) * age;
+            // Lung Age Calculation (Commonly used Fletcher & Peto based or similar models)
+            // This is a conceptual formula. A more precise one from literature should be used if possible.
+            // LA = CA + ((PredFEV1 - ActualFEV1) / DeclineRate)
+            // Assuming an average FEV1 decline rate of 0.03 L/year for simplicity.
+            // This is a very rough estimation for illustrative purposes.
+            let lungAge;
+            const declineRate = 0.03; // Approximate L/year decline for healthy non-smoker
 
-            // Display the result
-            document.getElementById('lung-age-result').innerHTML = `
-                <p>عمر رئتيك هو: <strong>${lungAge.toFixed(2)}</strong> سنة.</p>
-                <p>النسبة المئوية للـ FEV1 المتوقع: <strong>${percentagePredictedFEV1.toFixed(2)}%</strong>.</p>
-            `;
+            if (fev1 < predictedFEV1) {
+                lungAge = age + ((predictedFEV1 - fev1) / declineRate);
+            } else {
+                // If FEV1 is better than predicted, lung age could be younger or same.
+                // Some calculators cap it at actual age or slightly younger.
+                // For simplicity, let's show it as potentially younger, but with a floor.
+                lungAge = age - ((fev1 - predictedFEV1) / (declineRate * 1.5)); // *1.5 to make "younger" effect less drastic
+                lungAge = Math.max(18, lungAge); // Don't go below 18
+            }
+
+
+            let resultHTMLText = `<p>بناءً على البيانات المدخلة:</p>
+                <p>قيمة FEV1 المتوقعة الطبيعية لعمرك وطولك وجنسك هي حوالي: <strong>${predictedFEV1.toFixed(2)}</strong> لتر.</p>
+                <p>قيمة FEV1 الفعلية لديك تمثل حوالي: <strong>${percentagePredictedFEV1.toFixed(1)}%</strong> من القيمة المتوقعة.</p>
+                <hr style="margin: 15px 0;">`;
+
+            if (lungAge > age + 5) { // Significantly older lung age
+                resultHTMLText += `<p style="font-size: 1.2em;">عمر رئتيك التقديري هو: <strong style="font-size: 1.4em; color: #dc3545;">${lungAge.toFixed(0)}</strong> سنة.</p>
+                                   <p style="color: #721c24;">هذا يشير إلى أن وظائف رئتيك قد تكون أضعف من المتوقع لعمرك. نوصي بشدة بمناقشة هذه النتيجة مع الدكتورة بخة س.</p>`;
+            } else if (lungAge < age - 2 && fev1 > predictedFEV1) { // Lung age younger
+                 resultHTMLText += `<p style="font-size: 1.2em;">عمر رئتيك التقديري هو: <strong style="font-size: 1.4em; color: #155724;">${lungAge.toFixed(0)}</strong> سنة.</p>
+                                   <p style="color: #155724;">هذا مؤشر جيد على أن وظائف رئتيك ممتازة بالنسبة لعمرك!</p>`;
+            }
+             else { // Lung age similar to actual age or slightly older
+                 resultHTMLText += `<p style="font-size: 1.2em;">عمر رئتيك التقديري هو: <strong style="font-size: 1.4em; color: #0c5460;">${lungAge.toFixed(0)}</strong> سنة.</p>
+                                   <p>هذه نتيجة تقديرية. للحصول على تقييم شامل، يرجى استشارة الدكتورة بخة س.</p>`;
+            }
+
+            resultHTMLText += `<p style="margin-top:15px; font-size:0.9em;"><strong>تذكر:</strong> هذه الحاسبة هي أداة توعوية. التشخيص الدقيق وتقييم وظائف الرئة يجب أن يتم بواسطة أخصائي.</p>`;
+            resultDiv.innerHTML = resultHTMLText;
         }
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
     </script>
 </body>
 </html>

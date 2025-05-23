@@ -1,26 +1,35 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BCT8GP6LZT"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-BCT8GP6LZT');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="حاسبة نسبة الخصر إلى الورك, حساب WHR, نسبة الخصر إلى الورك, صحة القلب, مخاطر السمنة, صحة الوزن, قياس الخصر والورك, نسبة الخصر إلى الورك للنساء, نسبة الخصر إلى الورك للرجال, صحة الجسم, نصائح الوزن الصحي">
-    <meta name="description" content="حاسبة نسبة الخصر إلى الورك (WHR) تساعدك على حساب نسبة الخصر إلى الورك وتقييم مخاطر الإصابة بأمراض القلب والسمنة بناءً على محيط الخصر والورك.">
-    <meta name="author" content="عيادة الدكتورة بخة س - اختصاصية في الأمراض الصدرية والحساسية">
-    <meta http-equiv="Content-Language" content="ar">
-    <title>حاسبة نسبة الخصر إلى الورك (WHR)</title>
+    <!-- Meta Keywords for WHR Calculator -->
+    <meta name="keywords" content="حاسبة نسبة الخصر إلى الورك, حساب WHR, نسبة الخصر للورك, صحة القلب, مخاطر السمنة البطنية, توزيع الدهون, الدكتورة بخة س, نصائح صحية قالمة, قياس دهون البطن, مؤشر صحي">
+    <!-- Meta Description for WHR Calculator -->
+    <meta name="description" content="استخدم حاسبة نسبة الخصر إلى الورك (WHR) لتقييم توزيع الدهون في جسمك ومخاطر صحية محتملة. نصائح للحفاظ على صحتك مع عيادة الدكتورة بخة س في قالمة.">
+    <meta name="author" content="عيادة الدكتورة بخة س - اختصاصية في الأمراض الصدرية والحساسية في ڨالمة">
+    <meta http-equiv="Content-Language" content="ar, fr">
+    <!-- Optimized Title for WHR Calculator -->
+    <title>حاسبة نسبة الخصر إلى الورك (WHR) وتقييم توزيع الدهون - د. بخة س، قالمة</title>
     <link rel="icon" href="cabinet.png" type="image/png">
     <link rel="canonical" href="https://bakha-pneumo.netlify.app/whr-calculator.html">
-    <link rel="stylesheet" href="style.css">
+    <!-- Structured Data -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "WebPage",
-        "name": "حاسبة نسبة الخصر إلى الورك (WHR)",
-        "description": "حاسبة نسبة الخصر إلى الورك (WHR) تساعدك على حساب نسبة الخصر إلى الورك وتقييم مخاطر الإصابة بأمراض القلب والسمنة بناءً على محيط الخصر والورك.",
-        "author": {
-            "@type": "Person",
-            "name": "الدكتورة بخة س"
-        },
+        "name": "حاسبة نسبة الخصر إلى الورك (WHR) وتقييم توزيع الدهون",
+        "description": "أداة تفاعلية لحساب نسبة الخصر إلى الورك (WHR) مع معلومات حول أهميتها كمؤشر للمخاطر الصحية المرتبطة بتوزيع الدهون.",
+        "url": "https://bakha-pneumo.netlify.app/whr-calculator.html",
         "publisher": {
             "@type": "Organization",
             "name": "عيادة الدكتورة بخة س",
@@ -28,210 +37,335 @@
                 "@type": "ImageObject",
                 "url": "https://bakha-pneumo.netlify.app/cabinet.png"
             }
-        },
-        "url": "https://bakha-pneumo.netlify.app/whr-calculator.html",
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://bakha-pneumo.netlify.app/whr-calculator.html"
         }
     }
     </script>
+    <link rel="stylesheet" href="style.css"> <!-- Main stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome for icons -->
     <style>
-        /* Basic styling for the calculator */
+        /* Basic styling - ideally move to style.css */
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f4f8; /* Light cool background */
             color: #333;
             margin: 0;
             padding: 0;
+            line-height: 1.6;
         }
-        header {
-            background-color: #4CAF50;
+        header, footer {
+            background-color: #4a90e2; /* A clear, friendly blue */
             color: white;
-            padding: 1rem;
+            padding: 1.5rem 1rem;
             text-align: center;
         }
+        header h1 { margin: 0; font-size: 2em;}
+        .page-subtitle { font-size: 1.1em; color: #d4e6f1; margin-top: 5px;}
+
         nav {
-            background-color: #333;
+            background-color: #357abd; /* Darker blue for nav */
             padding: 1rem;
             text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        nav ul li {
-            display: inline;
-            margin: 0 1rem;
-        }
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-        }
-        main {
-            padding: 2rem;
-        }
-        .calculator {
-            background-color: white;
+        nav ul { list-style: none; padding: 0; margin: 0; }
+        nav ul li { display: inline-block; margin: 0 15px; }
+        nav ul li a { color: #f8f9fa; text-decoration: none; font-weight: bold; transition: color 0.3s ease; }
+        nav ul li a:hover { color: #a9cce3; }
+
+        main { padding: 2rem; max-width: 800px; margin: 20px auto; background-color: #fff; border-radius: 8px; box-shadow: 0 0 15px rgba(0,0,0,0.1); }
+        section { margin-bottom: 2.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid #eee; }
+        section:last-child { border-bottom: none; margin-bottom: 0; }
+        h2 { color: #2a6bad; margin-bottom: 1rem; font-size: 1.8em; } /* Darker blue for headings */
+        h3 { color: #343a40; margin-bottom: 0.8rem; font-size: 1.5em; }
+
+        .calculator-container {
+            background-color: #f8f9fa;
             padding: 2rem;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            max-width: 500px;
-            margin: 0 auto;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
         }
-        .calculator label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: bold;
-        }
-        .calculator input,
-        .calculator select {
-            width: 100%;
-            padding: 0.5rem;
-            margin-bottom: 1rem;
-            border: 1px solid #ccc;
+        .calculator-container label { display: block; margin-bottom: 0.6rem; font-weight: bold; color: #495057; }
+        .calculator-container input[type="number"],
+        .calculator-container select {
+            width: calc(100% - 22px);
+            padding: 0.8rem;
+            margin-bottom: 1.2rem;
+            border: 1px solid #ced4da;
             border-radius: 4px;
+            font-size: 1em;
+            box-sizing: border-box;
         }
-        .calculator button {
-            background-color: #4CAF50;
+        .calculator-container button {
+            background-color: #4a90e2; /* Blue button */
             color: white;
-            padding: 0.75rem 1.5rem;
+            padding: 0.8rem 1.5rem;
             border: none;
             border-radius: 4px;
             cursor: pointer;
             width: 100%;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
         }
-        .calculator button:hover {
-            background-color: #45a049;
-        }
+        .calculator-container button:hover { background-color: #357abd; }
+
         .result {
             margin-top: 1.5rem;
-            padding: 1rem;
-            background-color: #f9f9f9;
-            border: 1px solid #ddd;
+            padding: 1.2rem;
+            background-color: #e4f0f5; /* Lighter blue for result */
+            border: 1px solid #b8d8e3;
             border-radius: 4px;
+            text-align: center;
         }
-        .error {
-            color: red;
-            font-weight: bold;
-        }
+        .result p { margin: 0.5rem 0; font-size: 1.1em; }
+        .result strong { color: #2a6bad; } /* Darker blue for strong text in result */
+        .error { color: #dc3545; font-weight: bold; font-size: 1em; }
+
+        .info-section p, .info-section ul li { font-size: 1.05em; margin-bottom: 0.8em; }
+        .info-section ul { padding-right: 20px; }
+
+        .whr-chart-container { margin-top: 2rem; }
+        .whr-chart-container table { width: 100%; border-collapse: collapse; margin-top: 1rem; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+        .whr-chart-container th, .whr-chart-container td { padding: 0.9rem; border: 1px solid #dee2e6; text-align: right; }
+        .whr-chart-container th { background-color: #e9ecef; color: #495057; font-weight: bold; }
+        .whr-chart-container tr:nth-child(even) { background-color: #f8f9fa; }
+        .low-risk { background-color: #d4edda; color: #155724; }
+        .moderate-risk { background-color: #fff3cd; color: #856404; }
+        .high-risk { background-color: #f8d7da; color: #721c24; }
+
+
         .disclaimer {
-            margin-top: 2rem;
-            padding: 1rem;
+            margin-top: 2.5rem;
+            padding: 1.5rem;
             background-color: #fff3cd;
-            border: 1px solid #ffeeba;
+            border-left: 5px solid #ffeeba;
             border-radius: 4px;
             color: #856404;
         }
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 1rem;
-            margin-top: 2rem;
-        }
+        .disclaimer h3 { color: #856404; }
+
+        .cta-section { text-align: center; padding: 30px 20px; background-color: #4a90e2; color:white; margin-top: 30px; margin-bottom: 20px; border-radius: .3rem; }
+        .cta-section h2 { color: white; margin-bottom: 15px; font-size: 1.8em; }
+        .cta-section p { font-size: 1.15em; margin-bottom: 20px; color: #d4e6f1; }
+        .cta-section .button-style { display: inline-block; background-color: #28a745; color: white; padding: 12px 30px; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 1.1em; transition: background-color 0.3s ease, transform 0.2s ease; }
+        .cta-section .button-style:hover { background-color: #218838; transform: translateY(-2px); }
+        .icon-before { margin-left: 8px; }
     </style>
 </head>
 <body>
     <header>
         <h1>حاسبة نسبة الخصر إلى الورك (WHR)</h1>
+        <p class="page-subtitle">أداة لتقييم توزيع الدهون في جسمك وفهم المخاطر الصحية المحتملة</p>
     </header>
     <nav>
         <ul>
-            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="index.html"><i class="fas fa-home icon-before"></i>الرئيسية</a></li>
+            <li><a href="bmi-calculator.html">حاسبة BMI</a></li>
             <li><a href="whr-calculator.html">حاسبة WHR</a></li>
+            <!-- Add other calculator links -->
         </ul>
     </nav>
     <main>
-        <section class="calculator">
-            <h2>حاسبة نسبة الخصر إلى الورك (WHR)</h2>
-            <form id="whr-form">
-                <label for="waist">محيط الخصر (سم):</label>
-                <input type="number" id="waist" name="waist" required>
-                
-                <label for="hip">محيط الورك (سم):</label>
-                <input type="number" id="hip" name="hip" required>
-                
-                <label for="gender">الجنس:</label>
-                <select id="gender" name="gender" required>
-                    <option value="female">أنثى</option>
-                    <option value="male">ذكر</option>
-                </select>
-                
-                <button type="button" onclick="calculateWHR()">احسب</button>
-            </form>
-            <div class="result" id="whr-result"></div>
+        <section id="intro-whr" class="info-section" aria-labelledby="intro-whr-heading">
+            <h2 id="intro-whr-heading">ما هي نسبة الخصر إلى الورك (WHR) ولماذا هي مهمة؟</h2>
+            <p>نسبة الخصر إلى الورك (Waist-to-Hip Ratio - WHR) هي مقياس بسيط يُستخدم لتقييم توزيع الدهون في الجسم، وتحديدًا كمية الدهون المتراكمة في منطقة البطن (الدهون الحشوية) مقارنة بالدهون المتراكمة حول الوركين والفخذين.</p>
+            <p>تعتبر هذه النسبة مؤشرًا هامًا للمخاطر الصحية، حيث أن تراكم الدهون الزائد في منطقة البطن (شكل "التفاحة") يرتبط بزيادة خطر الإصابة بالعديد من الأمراض المزمنة أكثر من تراكم الدهون في منطقة الوركين والفخذين (شكل "الكمثرى"). تشمل هذه المخاطر:</p>
+            <ul>
+                <li>أمراض القلب والأوعية الدموية.</li>
+                <li>السكري من النوع 2.</li>
+                <li>ارتفاع ضغط الدم.</li>
+                <li>بعض أنواع السرطان.</li>
+            </ul>
+            <p><strong>معرفة نسبة الخصر إلى الورك لديك، بالإضافة إلى مؤشر كتلة الجسم (BMI)، يمكن أن يوفر صورة أوضح عن صحة وزنك والمخاطر الصحية المحتملة.</strong></p>
         </section>
 
-        <!-- Disclaimer Section -->
-        <section class="disclaimer">
-            <h3>تنويه هام</h3>
+        <section class="calculator-container" aria-labelledby="calculator-heading-whr">
+            <h2 id="calculator-heading-whr">احسب نسبة الخصر إلى الورك لديك</h2>
+            <form id="whr-form">
+                <div>
+                    <label for="waist">محيط خصرك (سم):</label>
+                    <input type="number" id="waist" name="waist" placeholder="مثال: 80" step="0.1" required aria-describedby="waist-format-whr">
+                    <small id="waist-format-whr" style="display:block; font-size:0.85em; color:#6c757d; margin-top:-0.8rem; margin-bottom:1rem;">قم بقياس محيط خصرك عند أضيق نقطة، عادة فوق السرة مباشرة.</small>
+                </div>
+                <div>
+                    <label for="hip">محيط وركك (سم):</label>
+                    <input type="number" id="hip" name="hip" placeholder="مثال: 100" step="0.1" required aria-describedby="hip-format-whr">
+                    <small id="hip-format-whr" style="display:block; font-size:0.85em; color:#6c757d; margin-top:-0.8rem; margin-bottom:1rem;">قم بقياس محيط وركيك عند أوسع نقطة حول الأرداف.</small>
+                </div>
+                <div>
+                    <label for="gender">الجنس:</label>
+                    <select id="gender" name="gender" required>
+                        <option value="female">أنثى</option>
+                        <option value="male">ذكر</option>
+                    </select>
+                </div>
+                <button type="button" onclick="calculateWHR()"><i class="fas fa-balance-scale icon-before"></i>احسب نسبة WHR</button>
+            </form>
+            <div class="result" id="whr-result" aria-live="polite">
+                <!-- Result will be displayed here -->
+                <p>سيتم عرض نتيجتك هنا بعد إدخال القياسات واختيار الجنس والضغط على زر الحساب.</p>
+            </div>
+        </section>
+
+        <section class="whr-chart-container" aria-labelledby="whr-chart-heading">
+            <h2 id="whr-chart-heading">فهم نتيجة نسبة الخصر إلى الورك (WHR)</h2>
+            <p>بعد حساب نسبة الخصر إلى الورك، يمكنك مقارنة نتيجتك بالتصنيفات التالية لتقييم مستوى المخاطر الصحية المرتبطة بتوزيع الدهون (وفقًا لمنظمة الصحة العالمية WHO ومعايير أخرى شائعة):</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>الجنس</th>
+                        <th>مستوى المخاطر</th>
+                        <th>نسبة الخصر إلى الورك (WHR)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="3">أنثى</td>
+                        <td class="low-risk">منخفض المخاطر</td>
+                        <td>0.80 أو أقل</td>
+                    </tr>
+                    <tr>
+                        <td class="moderate-risk">متوسط المخاطر</td>
+                        <td>0.81 - 0.85</td>
+                    </tr>
+                    <tr>
+                        <td class="high-risk">عالي المخاطر</td>
+                        <td>أعلى من 0.85</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3">ذكر</td>
+                        <td class="low-risk">منخفض المخاطر</td>
+                        <td>0.95 أو أقل (بعض المصادر تذكر 0.90)</td>
+                    </tr>
+                    <tr>
+                        <td class="moderate-risk">متوسط المخاطر</td>
+                        <td>0.96 - 0.99 (أو 0.91 - 0.99)</td>
+                    </tr>
+                    <tr>
+                        <td class="high-risk">عالي المخاطر</td>
+                        <td>1.0 أو أعلى</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p style="margin-top: 1rem;"><strong>ملاحظة:</strong> هذه القيم هي إرشادات عامة. قد تختلف الحدود قليلاً بين المصادر المختلفة. الأهم هو الاتجاه العام: كلما ارتفعت النسبة، زادت المخاطر الصحية المحتملة المرتبطة بالدهون الحشوية.</p>
+        </section>
+
+        <section class="info-section" aria-labelledby="whr-implications-heading">
+            <h2 id="whr-implications-heading">ماذا تعني نتيجتك لصحتك؟</h2>
+            <p>نسبة الخصر إلى الورك (WHR) المرتفعة، خاصة عند النساء (أعلى من 0.85) والرجال (أعلى من 1.0 أو 0.95 حسب المصدر)، تشير إلى تراكم أكبر للدهون في منطقة البطن (السمنة المركزية أو شكل "التفاحة"). هذا النوع من توزيع الدهون يرتبط بزيادة خطر الإصابة بـ:</p>
+            <ul>
+                <li>أمراض القلب التاجية.</li>
+                <li>ارتفاع ضغط الدم.</li>
+                <li>السكري من النوع 2.</li>
+                <li>ارتفاع مستويات الكوليسترول الضار والدهون الثلاثية.</li>
+                <li>بعض أنواع السرطان.</li>
+                <li>متلازمة التمثيل الغذائي (متلازمة الأيض).</li>
+            </ul>
+            <p>حتى لو كان مؤشر كتلة جسمك (BMI) ضمن النطاق الطبيعي، فإن ارتفاع نسبة الخصر إلى الورك قد يشير إلى وجود مخاطر صحية. لذلك، يُنصح باستخدام كلا المقياسين (BMI و WHR) للحصول على تقييم أكثر شمولاً لصحة وزنك وتوزيع الدهون.</p>
+        </section>
+
+        <section class="disclaimer" aria-labelledby="disclaimer-heading-whr">
+            <h3 id="disclaimer-heading-whr">تنويه هام وإخلاء مسؤولية</h3>
             <p>
-                هذه الحاسبة تقدم تقديرات عامة لنسبة الخصر إلى الورك (WHR) بناءً على محيط الخصر والورك. ومع ذلك، قد تختلف المخاطر الصحية الفعلية من شخص لآخر حسب العمر، الجنس، نسبة العضلات إلى الدهون، والحالة الصحية العامة.
+                حاسبة نسبة الخصر إلى الورك هذه مُقدمة لأغراض معلوماتية وتثقيفية عامة فقط. <strong>لا ينبغي اعتبارها بديلاً عن الاستشارة الطبية المتخصصة، التشخيص، أو العلاج.</strong>
             </p>
             <p>
-                <strong>يجب استشارة طبيبك أو أخصائي الرعاية الصحية</strong> للحصول على تقييم دقيق لحالتك الصحية، خاصة إذا كنت تعاني من أي حالات صحية مثل أمراض القلب، السكري، أو اضطرابات الأكل.
+                النتائج التي تحصل عليها من هذه الحاسبة هي مؤشرات وقد لا تعكس بدقة حالتك الصحية الفردية أو المخاطر الصحية الخاصة بك. عوامل مثل العمر، العرق، ومستوى اللياقة البدنية يمكن أن تؤثر على تفسير هذه النسبة.
             </p>
             <p>
-                هذه الحاسبة لا تغني عن الاستشارة الطبية المهنية.
+                <strong>نوصي بشدة باستشارة الدكتورة بخة س أو طبيبك الخاص أو أخصائي رعاية صحية مؤهل</strong> للحصول على تقييم شامل لصحة وزنك، توزيع الدهون في جسمك، وحالتك الصحية العامة، ومناقشة أي مخاوف قد تكون لديك.
             </p>
         </section>
+
+        <section id="contact-cta" class="cta-section" aria-labelledby="contact-cta-heading-whr">
+            <h2 id="contact-cta-heading-whr">هل لديك أسئلة حول نتيجة نسبة الخصر إلى الورك أو صحة توزيع الدهون لديك؟</h2>
+            <p>فهم توزيع الدهون في جسمك هو جزء مهم من الحفاظ على صحتك. في عيادة الدكتورة بخة س بڨالمة، نقدم لك الاستشارة المتخصصة لتقييم صحتك بشكل شامل وتقديم الإرشادات المناسبة لتحسين نمط حياتك وتقليل المخاطر الصحية.</p>
+            <a href="index.html#appointment" class="button-style"><i class="fas fa-heartbeat icon-before"></i>احجز موعدك للاستشارة الصحية الشاملة</a>
+            <div style="margin-top: 20px;">
+                <p>أو اتصل بنا مباشرة للاستفسار:</p>
+                <p><i class="fas fa-phone icon-before"></i><a href="tel:+213796222597" style="color:white; font-weight:bold;">0796222597</a> | <a href="tel:+213663755584" style="color:white; font-weight:bold;">0663755584</a></p>
+            </div>
+        </section>
     </main>
-    <footer>
-        <p>&copy; 2024 عيادة الدكتورة بخة س - جميع الحقوق محفوظة</p>
+    <footer style="padding-bottom: 60px;">
+        <h2>عيادة الدكتورة بخة س</h2>
+        <p>اختصاصية في الأمراض الصدرية والحساسية، وتقديم الإرشاد الصحي</p>
+        <p><strong>العنوان:</strong> حي 19 جوان، خلف مستشفى الحكيم عقبي، ڨالمة، الجزائر</p>
+        <p>© <span id="currentYear"></span> جميع الحقوق محفوظة</p>
     </footer>
+    <div class="watermark" style="position: fixed; bottom: 10px; left: 10px; opacity: 0.5; font-size: 10px; color: #aaa; z-index: 10000; background-color: rgba(255,255,255,0.7); padding: 2px 5px; border-radius: 3px;">Dr. Bakha - Guelma</div>
 
     <script>
         function calculateWHR() {
-            // Get input values
-            const waist = parseFloat(document.getElementById('waist').value);
-            const hip = parseFloat(document.getElementById('hip').value);
+            const waistInput = document.getElementById('waist');
+            const hipInput = document.getElementById('hip');
             const gender = document.getElementById('gender').value;
-            
-            // Validate inputs
-            if (isNaN(waist) || isNaN(hip) || waist <= 0 || hip <= 0) {
-                document.getElementById('whr-result').innerHTML = '<p class="error">الرجاء إدخال قيم عددية إيجابية للمحيطين.</p>';
+            const resultDiv = document.getElementById('whr-result');
+
+            resultDiv.innerHTML = ''; // Clear previous results
+
+            const waist = parseFloat(waistInput.value);
+            const hip = parseFloat(hipInput.value);
+
+            let errors = [];
+            if (isNaN(waist) || waist <= 20 || waist > 300) { // Realistic waist limits
+                errors.push("الرجاء إدخال قياس صحيح للخصر (بين 20 و 300 سم).");
+            }
+            if (isNaN(hip) || hip <= 20 || hip > 300) { // Realistic hip limits
+                errors.push("الرجاء إدخال قياس صحيح للورك (بين 20 و 300 سم).");
+            }
+            if (hip === 0) { // Should be caught by above, but explicit check
+                errors.push("محيط الورك يجب أن يكون أكبر من الصفر.");
+            }
+            if (waist > hip * 2 && hip > 0) { // Unlikely ratio, potential input error
+                 errors.push("قياس الخصر يبدو مرتفعًا جدًا مقارنة بالورك. يرجى التحقق من القياسات.");
+            }
+
+
+            if (errors.length > 0) {
+                let errorHTML = '<p class="error">يوجد خطأ في الإدخال:</p><ul>';
+                errors.forEach(err => {
+                    errorHTML += `<li class="error" style="text-align:right;">${err}</li>`;
+                });
+                errorHTML += '</ul>';
+                resultDiv.innerHTML = errorHTML;
                 return;
             }
             
-            if (hip === 0) {
-                document.getElementById('whr-result').innerHTML = '<p class="error">محيط الورك يجب أن يكون أكبر من الصفر.</p>';
-                return;
-            }
-            
-            // Calculate WHR
-            const whr = waist / hip;
-            
-            // Determine risk category based on gender and WHR
-            let interpretation;
+            const whr = (waist / hip);
+            let interpretation = '';
+            let riskClass = '';
+
             if (gender === "female") {
-                if (whr < 0.80) {
-                    interpretation = 'نسبة متدنية (منخفضة المخاطر)';
-                } else if (whr >= 0.80 && whr < 0.85) {
-                    interpretation = 'نسبة معتدلة (مخاطر متوسطة)';
-                } else {
-                    interpretation = 'نسبة عالية (مخاطر عالية)';
+                if (whr <= 0.80) {
+                    interpretation = 'منخفض المخاطر';
+                    riskClass = 'low-risk';
+                } else if (whr > 0.80 && whr <= 0.85) {
+                    interpretation = 'متوسط المخاطر';
+                    riskClass = 'moderate-risk';
+                } else { // whr > 0.85
+                    interpretation = 'عالي المخاطر';
+                    riskClass = 'high-risk';
                 }
-            } else if (gender === "male") {
-                if (whr < 0.90) {
-                    interpretation = 'نسبة متدنية (منخفضة المخاطر)';
-                } else if (whr >= 0.90 && whr < 1.00) {
-                    interpretation = 'نسبة معتدلة (مخاطر متوسطة)';
-                } else {
-                    interpretation = 'نسبة عالية (مخاطر عالية)';
+            } else { // male
+                if (whr <= 0.95) { // Using 0.95 as a common threshold for low risk in men
+                    interpretation = 'منخفض المخاطر';
+                    riskClass = 'low-risk';
+                } else if (whr > 0.95 && whr < 1.00) { // Some sources use <0.90 for low, 0.90-0.99 for moderate
+                    interpretation = 'متوسط المخاطر';
+                    riskClass = 'moderate-risk';
+                } else { // whr >= 1.00
+                    interpretation = 'عالي المخاطر';
+                    riskClass = 'high-risk';
                 }
-            } else {
-                document.getElementById('whr-result').innerHTML = '<p class="error">الرجاء تحديد الجنس.</p>';
-                return;
             }
             
-            // Display the result and interpretation
-            document.getElementById('whr-result').innerHTML = `
-                <p>نسبة الخصر إلى الورك: <strong>${whr.toFixed(2)}</strong></p>
-                <p>النسبة: <strong>${interpretation}</strong></p>
+            resultDiv.innerHTML = `
+                <p>نسبة الخصر إلى الورك لديك هي: <strong style="font-size: 1.3em; color: #2a6bad;">${whr.toFixed(2)}</strong></p>
+                <p>مستوى المخاطر الصحية المرتبط بتوزيع الدهون لديك هو: <strong class="${riskClass}" style="font-weight:bold; padding: 2px 6px; border-radius: 3px;">${interpretation}</strong>.</p>
+                <p style="margin-top:10px; font-size:0.9em;">هذه نتيجة تقديرية. للحصول على تقييم شامل لصحتك، يرجى استشارة الدكتورة بخة س.</p>
             `;
         }
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
     </script>
 </body>
 </html>

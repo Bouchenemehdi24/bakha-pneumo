@@ -1,36 +1,35 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-       <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-BCT8GP6LZT"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BCT8GP6LZT"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-BCT8GP6LZT');
+    </script>
 
-  gtag('config', 'G-BCT8GP6LZT');
-</script>
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="حاسبة الترطيب اليومي, حساب الماء اليومي, كمية الماء اليومية, الترطيب الصحي, كمية الماء حسب الوزن, كمية الماء حسب النشاط, كمية الماء حسب العمر, كمية الماء حسب الجنس, كمية الماء حسب المناخ, كمية الماء للحامل, كمية الماء للمرضع, كمية الماء لأمراض الكلى, كمية الماء لأمراض القلب, صحة الترطيب, نصائح الترطيب, أهمية شرب الماء">
-    <meta name="description" content="حاسبة الترطيب اليومي العلمية تساعدك على حساب كمية الماء التي يحتاجها جسمك يومياً بناءً على وزنك، عمرك، جنسك، مستوى نشاطك، المناخ، وحالتك الصحية. احصل على توصيات مخصصة لتحسين صحتك.">
-    <meta name="author" content="عيادة الدكتورة بخة س - اختصاصية في الأمراض الصدرية والحساسية">
-    <meta http-equiv="Content-Language" content="ar">
-    <title>حاسبة الترطيب اليومي العلمية</title>
+    <!-- Meta Keywords for Hydration Calculator -->
+    <meta name="keywords" content="حاسبة الترطيب اليومي, حساب كمية الماء, احتياجات الماء اليومية, شرب الماء, الترطيب الصحي, الدكتورة بخة س, نصائح شرب الماء, حاسبة ماء قالمة, صحة وترطيب, أهمية الماء للجسم">
+    <!-- Meta Description for Hydration Calculator -->
+    <meta name="description" content="استخدم حاسبة الترطيب اليومي لتقدير كمية الماء التي يحتاجها جسمك يوميًا. نصائح للحفاظ على ترطيب مثالي لصحتك العامة والتنفسية من عيادة الدكتورة بخة س في قالمة.">
+    <meta name="author" content="عيادة الدكتورة بخة س - اختصاصية في الأمراض الصدرية والحساسية في ڨالمة">
+    <meta http-equiv="Content-Language" content="ar, fr">
+    <!-- Optimized Title for Hydration Calculator -->
+    <title>حاسبة الترطيب اليومي: كمية الماء المثالية لجسمك - د. بخة س، قالمة</title>
     <link rel="icon" href="cabinet.png" type="image/png">
     <link rel="canonical" href="https://bakha-pneumo.netlify.app/hydration-calculator.html">
-    <link rel="stylesheet" href="style.css">
+    <!-- Structured Data -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "WebPage",
-        "name": "حاسبة الترطيب اليومي العلمية",
-        "description": "حاسبة الترطيب اليومي العلمية تساعدك على حساب كمية الماء التي يحتاجها جسمك يومياً بناءً على وزنك، عمرك، جنسك، مستوى نشاطك، المناخ، وحالتك الصحية.",
-        "author": {
-            "@type": "Person",
-            "name": "الدكتورة بخة س"
-        },
+        "name": "حاسبة الترطيب اليومي وتقدير احتياجات الماء",
+        "description": "حاسبة تفاعلية لتقدير احتياجات الماء اليومية بناءً على عوامل فردية، مع معلومات حول أهمية الترطيب للصحة.",
+        "url": "https://bakha-pneumo.netlify.app/hydration-calculator.html",
         "publisher": {
             "@type": "Organization",
             "name": "عيادة الدكتورة بخة س",
@@ -38,254 +37,326 @@
                 "@type": "ImageObject",
                 "url": "https://bakha-pneumo.netlify.app/cabinet.png"
             }
-        },
-        "url": "https://bakha-pneumo.netlify.app/hydration-calculator.html",
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://bakha-pneumo.netlify.app/hydration-calculator.html"
         }
     }
     </script>
+    <link rel="stylesheet" href="style.css"> <!-- Main stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome for icons -->
     <style>
-        /* Basic styling for the calculator */
+        /* Basic styling - ideally move to style.css */
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            font-family: 'Arial', sans-serif;
+            background-color: #eaf6ff; /* Light blue background */
             color: #333;
             margin: 0;
             padding: 0;
+            line-height: 1.6;
         }
-        header {
-            background-color: #4CAF50;
+        header, footer {
+            background-color: #007bff; /* Professional blue */
             color: white;
-            padding: 1rem;
+            padding: 1.5rem 1rem;
             text-align: center;
         }
+        header h1 { margin: 0; font-size: 2em;}
+        .page-subtitle { font-size: 1.1em; color: #e9ecef; margin-top: 5px;}
+
         nav {
-            background-color: #333;
+            background-color: #0056b3; /* Darker blue for nav */
             padding: 1rem;
             text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        nav ul li {
-            display: inline;
-            margin: 0 1rem;
-        }
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-        }
-        main {
-            padding: 2rem;
-        }
-        .calculator {
-            background-color: white;
+        nav ul { list-style: none; padding: 0; margin: 0; }
+        nav ul li { display: inline-block; margin: 0 15px; }
+        nav ul li a { color: #f8f9fa; text-decoration: none; font-weight: bold; transition: color 0.3s ease; }
+        nav ul li a:hover { color: #90caf9; }
+
+        main { padding: 2rem; max-width: 800px; margin: 20px auto; background-color: #fff; border-radius: 8px; box-shadow: 0 0 15px rgba(0,0,0,0.1); }
+        section { margin-bottom: 2.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid #eee; }
+        section:last-child { border-bottom: none; margin-bottom: 0; }
+        h2 { color: #004085; margin-bottom: 1rem; font-size: 1.8em; } /* Dark blue for headings */
+        h3 { color: #0056b3; margin-bottom: 0.8rem; font-size: 1.5em; }
+
+        .calculator-container {
+            background-color: #f8f9fa;
             padding: 2rem;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            max-width: 500px;
-            margin: 0 auto;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
         }
-        .calculator label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: bold;
-        }
-        .calculator input,
-        .calculator select {
-            width: 100%;
-            padding: 0.5rem;
-            margin-bottom: 1rem;
-            border: 1px solid #ccc;
+        .calculator-container label { display: block; margin-bottom: 0.6rem; font-weight: bold; color: #495057; }
+        .calculator-container input[type="number"],
+        .calculator-container select {
+            width: calc(100% - 22px);
+            padding: 0.8rem;
+            margin-bottom: 1.2rem;
+            border: 1px solid #ced4da;
             border-radius: 4px;
+            font-size: 1em;
+            box-sizing: border-box;
         }
-        .calculator button {
-            background-color: #4CAF50;
+        .calculator-container button {
+            background-color: #007bff; /* Blue button */
             color: white;
-            padding: 0.75rem 1.5rem;
+            padding: 0.8rem 1.5rem;
             border: none;
             border-radius: 4px;
             cursor: pointer;
             width: 100%;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
         }
-        .calculator button:hover {
-            background-color: #45a049;
-        }
+        .calculator-container button:hover { background-color: #0056b3; }
+
         .result {
             margin-top: 1.5rem;
-            padding: 1rem;
-            background-color: #f9f9f9;
-            border: 1px solid #ddd;
+            padding: 1.2rem;
+            background-color: #d1ecf1; /* Lighter blue for result */
+            border: 1px solid #bee5eb;
             border-radius: 4px;
+            text-align: center;
         }
-        .error {
-            color: red;
-            font-weight: bold;
-        }
+        .result p { margin: 0.5rem 0; font-size: 1.1em; }
+        .result strong { color: #0c5460; } /* Darker blue for strong text in result */
+        .error { color: #dc3545; font-weight: bold; font-size: 1em; }
+
+        .info-section p, .info-section ul li { font-size: 1.05em; margin-bottom: 0.8em; }
+        .info-section ul { padding-right: 20px; }
+
         .disclaimer {
-            margin-top: 2rem;
-            padding: 1rem;
+            margin-top: 2.5rem;
+            padding: 1.5rem;
             background-color: #fff3cd;
-            border: 1px solid #ffeeba;
+            border-left: 5px solid #ffeeba;
             border-radius: 4px;
             color: #856404;
         }
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 1rem;
-            margin-top: 2rem;
-        }
+        .disclaimer h3 { color: #856404; }
+
+        .cta-section { text-align: center; padding: 30px 20px; background-color: #007bff; color:white; margin-top: 30px; margin-bottom: 20px; border-radius: .3rem; }
+        .cta-section h2 { color: white; margin-bottom: 15px; font-size: 1.8em; }
+        .cta-section p { font-size: 1.15em; margin-bottom: 20px; color: #e9ecef; }
+        .cta-section .button-style { display: inline-block; background-color: #28a745; color: white; padding: 12px 30px; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 1.1em; transition: background-color 0.3s ease, transform 0.2s ease; }
+        .cta-section .button-style:hover { background-color: #218838; transform: translateY(-2px); }
+        .icon-before { margin-left: 8px; }
     </style>
 </head>
 <body>
     <header>
         <h1>حاسبة الترطيب اليومي العلمية</h1>
+        <p class="page-subtitle">أداة لتقدير كمية الماء التي يحتاجها جسمك للحفاظ على صحة مثالية</p>
     </header>
     <nav>
         <ul>
-            <li><a href="index.html">الرئيسية</a></li>
-            <li><a href="hydration-calculator.html">حاسبة الترطيب اليومي</a></li>
+            <li><a href="index.html"><i class="fas fa-home icon-before"></i>الرئيسية</a></li>
+            <li><a href="bmi-calculator.html">حاسبة BMI</a></li>
+            <li><a href="hydration-calculator.html">حاسبة الترطيب</a></li>
+            <!-- Add other calculator links -->
         </ul>
     </nav>
     <main>
-        <section class="calculator">
-            <h2>حاسبة الترطيب اليومي</h2>
-            <form id="hydration-form">
-                <label for="hydration-weight">الوزن (كجم):</label>
-                <input type="number" id="hydration-weight" name="hydration-weight" step="0.1" required>
-
-                <label for="age">العمر:</label>
-                <select id="age" name="age" required>
-                    <option value="40">14-18 سنة</option>
-                    <option value="35">19-30 سنة</option>
-                    <option value="35">31-50 سنة</option>
-                    <option value="30">51-70 سنة</option>
-                    <option value="25">أكثر من 70 سنة</option>
-                </select>
-
-                <label for="gender">الجنس:</label>
-                <select id="gender" name="gender" required>
-                    <option value="male">ذكر</option>
-                    <option value="female">أنثى</option>
-                </select>
-
-                <label for="activity-level">مستوى النشاط:</label>
-                <select id="activity-level" name="activity-level" required>
-                    <option value="0">مستقر (معظم الوقت جالس)</option>
-                    <option value="0.3">نشاط خفيف (30-60 دقيقة تمارين خفيفة)</option>
-                    <option value="0.5">نشاط متوسط (60-90 دقيقة تمارين متوسطة)</option>
-                    <option value="0.7">نشاط عالي (90+ دقيقة تمارين قوية)</option>
-                    <option value="1.0">رياضي محترف</option>
-                </select>
-
-                <label for="temperature">درجة الحرارة المحيطة:</label>
-                <select id="temperature" name="temperature" required>
-                    <option value="1.0">معتدل (15-25°C)</option>
-                    <option value="1.2">حار (26-35°C)</option>
-                    <option value="1.4">حار جداً (>35°C)</option>
-                </select>
-
-                <label for="humidity">الرطوبة النسبية:</label>
-                <select id="humidity" name="humidity" required>
-                    <option value="1.0">منخفضة (<30%)</option>
-                    <option value="1.1">متوسطة (30-60%)</option>
-                    <option value="1.2">عالية (>60%)</option>
-                </select>
-
-                <label for="health-condition">الحالة الصحية:</label>
-                <select id="health-condition" name="health-condition" required>
-                    <option value="1.0">صحة جيدة</option>
-                    <option value="1.3">حامل</option>
-                    <option value="1.5">مرضع</option>
-                    <option value="1.2">أمراض كلى</option>
-                    <option value="1.2">أمراض قلب</option>
-                </select>
-
-                <button type="button" onclick="calculateHydration()">احسب</button>
-            </form>
-            <div class="result" id="hydration-result"></div>
+        <section id="intro-hydration" class="info-section" aria-labelledby="intro-hydration-heading">
+            <h2 id="intro-hydration-heading">لماذا يعتبر الترطيب الكافي أمرًا حيويًا لصحتك؟</h2>
+            <p>الماء هو عنصر أساسي للحياة، ويشكل جزءًا كبيرًا من جسم الإنسان. الحفاظ على ترطيب جيد ضروري لجميع وظائف الجسم تقريبًا، بما في ذلك:</p>
+            <ul>
+                <li>تنظيم درجة حرارة الجسم.</li>
+                <li>نقل العناصر الغذائية والأكسجين إلى الخلايا.</li>
+                <li>طرد الفضلات والسموم من الجسم.</li>
+                <li>تليين المفاصل وحماية الأعضاء والأنسجة.</li>
+                <li>الحفاظ على صحة الجلد.</li>
+                <li>دعم وظائف الجهاز الهضمي.</li>
+                <li>تحسين مستويات الطاقة والوظائف الإدراكية.</li>
+                <li><strong>بالنسبة لصحة الجهاز التنفسي،</strong> يساعد الترطيب الكافي في الحفاظ على لزوجة الإفرازات المخاطية في المسالك الهوائية منخفضة، مما يسهل طردها ويقلل من خطر الالتهابات.</li>
+            </ul>
+            <p>احتياجات الترطيب تختلف من شخص لآخر. هذه الحاسبة مصممة لتقديم تقدير شخصي بناءً على عدة عوامل.</p>
         </section>
 
-        <!-- Disclaimer Section -->
-        <section class="disclaimer">
-            <h3>تنويه هام</h3>
+        <section class="calculator-container" aria-labelledby="calculator-heading-h">
+            <h2 id="calculator-heading-h">احسب احتياجك اليومي من الماء</h2>
+            <form id="hydration-form">
+                <div>
+                    <label for="hydration-weight">وزنك بالكيلوجرام (كجم):</label>
+                    <input type="number" id="hydration-weight" name="hydration-weight" placeholder="مثال: 70" step="0.1" required aria-describedby="weight-format-h">
+                    <small id="weight-format-h" style="display:none;">أدخل وزنك بالكيلوجرام.</small>
+                </div>
+                <div>
+                    <label for="gender">الجنس:</label>
+                    <select id="gender" name="gender" required>
+                        <option value="male">ذكر</option>
+                        <option value="female">أنثى</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="activity-level">مستوى النشاط البدني اليومي:</label>
+                    <select id="activity-level" name="activity-level" required>
+                        <option value="0">قليل جدًا أو معدوم (عمل مكتبي، لا تمارين)</option>
+                        <option value="0.375">نشاط خفيف (تمارين خفيفة أو مشي 1-3 أيام/أسبوع)</option>
+                        <option value="0.550">نشاط متوسط (تمارين معتدلة 3-5 أيام/أسبوع)</option>
+                        <option value="0.725">نشاط عالي (تمارين قوية 6-7 أيام/أسبوع)</option>
+                        <option value="0.900">نشاط عالي جدًا (تمارين قوية جدًا يوميًا أو عمل بدني شاق)</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="climate">المناخ السائد (درجة الحرارة والرطوبة):</label>
+                    <select id="climate" name="climate" required>
+                        <option value="0">معتدل (درجة حرارة معتدلة ورطوبة منخفضة)</option>
+                        <option value="0.25">حار أو رطب (درجة حرارة مرتفعة أو رطوبة عالية)</option>
+                        <option value="0.5">حار جدًا ورطب (درجات حرارة ورطوبة مرتفعة جدًا)</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="health-condition">هل توجد ظروف صحية خاصة؟</label>
+                    <select id="health-condition" name="health-condition" required>
+                        <option value="0">لا توجد (صحة جيدة)</option>
+                        <option value="0.5">حامل</option>
+                        <option value="0.75">مرضع</option>
+                        <option value="-0.5">أمراض كلى (تتطلب تحديد السوائل) - استشر طبيبك!</option>
+                        <option value="-0.5">أمراض قلب (تتطلب تحديد السوائل) - استشر طبيبك!</option>
+                        <option value="0.2">حمى أو مرض حاد</option>
+                    </select>
+                </div>
+                <button type="button" onclick="calculateHydration()"><i class="fas fa-tint icon-before"></i>احسب كمية الماء</button>
+            </form>
+            <div class="result" id="hydration-result" aria-live="polite">
+                <!-- Result will be displayed here -->
+                <p>سيتم عرض تقدير احتياجك اليومي من الماء هنا بعد إدخال البيانات.</p>
+            </div>
+        </section>
+
+        <section class="info-section" aria-labelledby="understanding-hydration-results-heading">
+            <h2 id="understanding-hydration-results-heading">فهم نتيجة حاسبة الترطيب</h2>
+            <p>النتيجة التي تحصل عليها من هذه الحاسبة هي <strong>تقدير لإجمالي كمية السوائل</strong> التي قد تحتاجها يوميًا. تذكر أن "السوائل" تشمل الماء، بالإضافة إلى المشروبات الأخرى (مثل الشاي، العصير المخفف) والمحتوى المائي في الأطعمة (خاصة الفواكه والخضروات، والتي يمكن أن تساهم بحوالي 20% من إجمالي احتياجاتك من السوائل).</p>
+            <h3>عوامل تؤثر على احتياجاتك من الماء:</h3>
+            <ul>
+                <li><strong>الوزن:</strong> الأشخاص الأثقل وزنًا يحتاجون عادةً إلى كمية أكبر من الماء.</li>
+                <li><strong>مستوى النشاط:</strong> كلما زاد نشاطك البدني، زادت حاجتك لتعويض السوائل المفقودة عن طريق العرق.</li>
+                <li><strong>المناخ:</strong> الطقس الحار والرطب يزيد من فقدان السوائل وبالتالي يزيد من احتياجات الترطيب.</li>
+                <li><strong>الحالة الصحية:</strong> بعض الحالات الصحية (مثل الحمى، الإسهال، القيء) تزيد من الحاجة إلى السوائل. <strong>بينما حالات أخرى (مثل بعض أمراض الكلى أو القلب) قد تتطلب تحديد كمية السوائل المتناولة – وفي هذه الحالة، يجب دائمًا اتباع توصيات طبيبك المعالج.</strong></li>
+                <li><strong>الحمل والرضاعة:</strong> تحتاج النساء الحوامل والمرضعات إلى كميات إضافية من السوائل.</li>
+            </ul>
+            <h3>علامات الترطيب الجيد والجفاف:</h3>
+            <ul>
+                <li><strong>الترطيب الجيد:</strong> لون البول أصفر فاتح جدًا (شفاف تقريبًا)، الشعور بالعطش نادرًا.</li>
+                <li><strong>الجفاف الخفيف إلى المتوسط:</strong> الشعور بالعطش، جفاف الفم، لون البول أصفر داكن، قلة التبول، صداع، دوخة خفيفة.</li>
+                <li><strong>الجفاف الشديد (يتطلب عناية طبية):</strong> عطش شديد، جفاف شديد في الفم والأغشية المخاطية، عدم التبول أو بول داكن جدًا، جلد جاف وبارد، تسارع ضربات القلب والتنفس، ارتباك، دوخة شديدة أو إغماء.</li>
+            </ul>
+        </section>
+
+        <section class="disclaimer" aria-labelledby="disclaimer-heading-h">
+            <h3 id="disclaimer-heading-h">تنويه هام وإخلاء مسؤولية</h3>
             <p>
-                هذه الحاسبة تقدم تقديرات عامة لكمية الماء التي يحتاجها جسمك يومياً بناءً على المعطيات المدخلة. ومع ذلك، قد تختلف الاحتياجات الفعلية من شخص لآخر حسب الحالة الصحية، النشاط البدني، والعوامل البيئية.
+                حاسبة الترطيب اليومي هذه مُقدمة لأغراض معلوماتية وتثقيفية عامة فقط، وتستخدم مبادئ تقديرية. <strong>لا ينبغي اعتبارها بديلاً عن الاستشارة الطبية المتخصصة أو التوصيات الفردية من طبيبك.</strong>
             </p>
             <p>
-                <strong>يجب استشارة طبيبك أو أخصائي الرعاية الصحية</strong> للحصول على توصيات مخصصة، خاصة إذا كنت تعاني من أي حالات صحية مثل أمراض الكلى أو القلب، أو إذا كنت حاملاً أو مرضعاً.
+                الاحتياجات الفعلية من السوائل تختلف بشكل كبير بين الأفراد. إذا كنت تعاني من أي حالات صحية، خاصة أمراض الكلى، أمراض القلب، أو أي حالة تتطلب إدارة دقيقة للسوائل، <strong>يجب عليك دائمًا اتباع تعليمات طبيبك المعالج فيما يتعلق بكمية السوائل التي يجب أن تتناولها.</strong>
             </p>
             <p>
-                هذه الحاسبة لا تغني عن الاستشارة الطبية المهنية.
+                هذه الحاسبة لا تأخذ في الاعتبار جميع العوامل الفردية المعقدة. استشر الدكتورة بخة س أو أخصائي رعاية صحية مؤهل للحصول على توصيات مخصصة لاحتياجاتك.
             </p>
+        </section>
+
+        <section id="contact-cta" class="cta-section" aria-labelledby="contact-cta-heading-h">
+            <h2 id="contact-cta-heading-h">هل لديك أسئلة حول احتياجاتك من الترطيب أو صحتك العامة؟</h2>
+            <p>الترطيب الكافي هو جزء أساسي من نمط حياة صحي. في عيادة الدكتورة بخة س بڨالمة، نقدم لك الاستشارة المتخصصة لتقييم حالتك الصحية وتقديم الإرشادات المناسبة لتحقيق التوازن المائي الأمثل لجسمك، ودعم صحتك التنفسية والعامة.</p>
+            <a href="index.html#appointment" class="button-style"><i class="fas fa-tint icon-before"></i>احجز موعدك للاستشارة الصحية الشاملة</a>
+            <div style="margin-top: 20px;">
+                <p>أو اتصل بنا مباشرة للاستفسار:</p>
+                <p><i class="fas fa-phone icon-before"></i><a href="tel:+213796222597" style="color:white; font-weight:bold;">0796222597</a> | <a href="tel:+213663755584" style="color:white; font-weight:bold;">0663755584</a></p>
+            </div>
         </section>
     </main>
-     <footer>
-        <p>© 2025 الدكتورة بخة س - اختصاصية في الأمراض الصدرية والحساسية ولاية قالمة</p>
-        <p><a href="index.html">العودة إلى الصفحة الرئيسية</a></p>
+    <footer style="padding-bottom: 60px;"> <!-- Added padding to avoid overlap with watermark if fixed -->
+        <h2>عيادة الدكتورة بخة س</h2>
+        <p>اختصاصية في الأمراض الصدرية والحساسية، وتقديم الإرشاد الصحي</p>
+        <p><strong>العنوان:</strong> حي 19 جوان، خلف مستشفى الحكيم عقبي، ڨالمة، الجزائر</p>
+        <p>© <span id="currentYear"></span> جميع الحقوق محفوظة</p>
     </footer>
+    <div class="watermark" style="position: fixed; bottom: 10px; left: 10px; opacity: 0.5; font-size: 10px; color: #aaa; z-index: 10000; background-color: rgba(255,255,255,0.7); padding: 2px 5px; border-radius: 3px;">Dr. Bakha - Guelma</div>
+
     <script>
         function calculateHydration() {
-            // Get user inputs
-            const weight = parseFloat(document.getElementById('hydration-weight').value);
-            const age = parseFloat(document.getElementById('age').value);
+            const weightInput = document.getElementById('hydration-weight');
             const gender = document.getElementById('gender').value;
-            const activityLevel = parseFloat(document.getElementById('activity-level').value);
-            const temperature = parseFloat(document.getElementById('temperature').value);
-            const humidity = parseFloat(document.getElementById('humidity').value);
-            const healthCondition = parseFloat(document.getElementById('health-condition').value);
+            const activityLevelFactor = parseFloat(document.getElementById('activity-level').value); // This is an ADDITIVE factor in Liters
+            const climateFactor = parseFloat(document.getElementById('climate').value); // This is an ADDITIVE factor in Liters
+            const healthConditionFactor = parseFloat(document.getElementById('health-condition').value); // This is an ADDITIVE factor or SUBTRACTIVE for kidney/heart
+            const resultDiv = document.getElementById('hydration-result');
 
-            // Input validation
-            if (isNaN(weight) || weight <= 0) {
-                document.getElementById('hydration-result').innerHTML = `<p class="error">الرجاء إدخال قيمة صحيحة للوزن.</p>`;
+            resultDiv.innerHTML = ''; // Clear previous results
+
+            const weight = parseFloat(weightInput.value);
+
+            let errors = [];
+            if (isNaN(weight) || weight <= 20 || weight > 300) {
+                errors.push("الرجاء إدخال وزن صحيح (بين 20 و 300 كجم).");
+            }
+            // Removed age from calculation as it's less direct than weight for general hydration,
+            // but kept age ranges in select for potential future complex formulas or just user context.
+            // The original age factor in the old formula was not standard.
+
+            if (errors.length > 0) {
+                let errorHTML = '<p class="error">يوجد خطأ في الإدخال:</p><ul>';
+                errors.forEach(err => {
+                    errorHTML += `<li class="error" style="text-align:right;">${err}</li>`;
+                });
+                errorHTML += '</ul>';
+                resultDiv.innerHTML = errorHTML;
                 return;
             }
 
-            // Base hydration calculation using evidence-based formulas
-            let baseHydration;
-
-            // Calculate base needs using IOM guidelines
+            // Base recommendations (approximate from IOM for total fluids, then assume ~80% from beverages)
+            // These are simplified for a general calculator.
+            let baseFluidIntakeLiters; // Liters
             if (gender === 'male') {
-                baseHydration = (weight * age) / 30; // Male formula
-            } else {
-                baseHydration = (weight * age) / 35; // Female formula
+                baseFluidIntakeLiters = 3.7 * 0.8; // Approx 3.0 Liters from beverages
+            } else { // female
+                baseFluidIntakeLiters = 2.7 * 0.8; // Approx 2.2 Liters from beverages
             }
 
-            // Apply environmental factors
-            let environmentalFactor = temperature * humidity;
+            // Modify base intake with factors. These are illustrative adjustments.
+            // A more scientific calculator would use more complex, validated models or specific guidelines for each factor.
 
-            // Apply activity adjustment
-            let activityAdjustment = 1 + activityLevel;
+            let adjustedIntake = baseFluidIntakeLiters;
 
-            // Calculate sweat loss compensation for activity
-            let sweatLossCompensation = (activityLevel > 0) ?
-                (weight * activityLevel * 15) : 0; // 15ml per kg for every activity level
+            // Activity: Add extra fluid for activity (e.g., 0.5-1L per hour of moderate exercise is a common rough guide)
+            // The select values (0, 0.375, etc.) will represent ADDITIONAL liters needed.
+            adjustedIntake += activityLevelFactor;
 
-            // Apply health condition modifier
-            let healthAdjustment = healthCondition;
+            // Climate: Add extra for hot/humid
+            adjustedIntake += climateFactor;
 
-            // Calculate total daily water needs
-            let totalHydration = (baseHydration * environmentalFactor * activityAdjustment * healthAdjustment + sweatLossCompensation) / 1000;
+            // Health Condition:
+            // For pregnancy/lactation, ADD fluids.
+            // For kidney/heart issues, this calculator should strongly advise medical consultation,
+            // but if a factor is used, it might imply restriction.
+            // The current factor value of -0.5 for kidney/heart is problematic if it directly subtracts
+            // without context, as fluid restriction is highly individual.
+            // It's better to handle this in the disclaimer and advice.
+            // For now, let's use the additive factors for pregnancy/lactation.
+            if (healthConditionFactor > 0) { // Only apply positive adjustments for pregnancy/lactation/fever
+                 adjustedIntake += healthConditionFactor;
+            }
 
-            // Display the result with recommendations
-            const resultHTML = `
-                <p>احتياجك اليومي من الماء هو: <strong>${totalHydration.toFixed(2)}</strong> لتر/يوم.</p>
-                <p>ملاحظات:</p>
-                <ul>
-                    <li>يجب توزيع هذه الكمية على مدار اليوم</li>
-                    <li>راقب لون البول - يجب أن يكون أصفر فاتح</li>
-                    <li>زد الكمية في حالة التعرق الشديد</li>
-                </ul>
-            `;
 
-            document.getElementById('hydration-result').innerHTML = resultHTML;
+            let resultHTML = `<p>احتياجك اليومي التقديري من السوائل هو: <strong style="font-size: 1.3em; color: #007bff;">${adjustedIntake.toFixed(1)} - ${(adjustedIntake + 0.5).toFixed(1)}</strong> لتر في اليوم.</p>`;
+            resultHTML += `<p style="font-size:0.9em;">(يشمل ذلك الماء والمشروبات الأخرى، وحوالي 20% من السوائل تأتي من الطعام)</p><hr style="margin:15px 0;">`;
+            resultHTML += `<p><strong>نصائح هامة للترطيب:</strong></p>
+                            <ul style="text-align: right; padding-right: 20px; font-size:0.95em;">
+                                <li>وزع شرب الماء على مدار اليوم، لا تنتظر حتى تشعر بالعطش الشديد.</li>
+                                <li>راقب لون البول: يجب أن يكون أصفر فاتحًا جدًا أو شفافًا. إذا كان داكنًا، فأنت بحاجة إلى المزيد من السوائل.</li>
+                                <li>زد من كمية السوائل عند ممارسة الرياضة، في الطقس الحار، أو إذا كنت تعاني من حمى أو إسهال.</li>
+                                <li>تناول الأطعمة الغنية بالماء مثل الفواكه والخضروات.</li>
+                            </ul>`;
+
+            if (document.getElementById('health-condition').value === "-0.5") { // Kidney or Heart disease selected
+                resultHTML += `<p class="error" style="margin-top:15px; font-weight:bold;">ملاحظة هامة: نظرًا لاختيارك حالة صحية تتطلب إدارة دقيقة للسوائل (أمراض الكلى أو القلب)، فإن هذه الحاسبة لا يمكنها تقديم توصية دقيقة. يجب عليك <strong>مراجعة طبيبك المعالج فورًا</strong> لتحديد كمية السوائل المناسبة لحالتك.</p>`;
+            } else {
+                 resultHTML += `<p style="margin-top:15px; font-size:0.9em;">هذه نتيجة تقديرية. للحصول على توصيات مخصصة، يرجى استشارة الدكتورة بخة س.</p>`;
+            }
+
+            resultDiv.innerHTML = resultHTML;
         }
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
     </script>
 </body>
 </html>
