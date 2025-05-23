@@ -29,17 +29,12 @@
     <!-- Twitter Meta Tags -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://bakha-pneumo.netlify.app/">
-    <meta property="twitter:title" content="عيادة الدكتورة بخة س - اختصاصية في الأمراض الصدرية والحساسية ولاية قالمة">
-    <meta property="twitter:description" content="عيادة متخصصة في علاج الأمراض الصدرية والحساسية في ولاية قالمة، الجزائر.">
+    <meta property="twitter:title" content="عيادة الدكتورة بخة س - اختصاصية في الأمراض الصدرية والحساسية ولاية قالمة">    <meta property="twitter:description" content="عيادة متخصصة في علاج الأمراض الصدرية والحساسية في ولاية قالمة، الجزائر.">
     <meta property="twitter:image" content="https://bakha-pneumo.netlify.app/cabinet.png">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <!-- Title -->
-    <title> عيادة الدكتورة بخة - اختصاصية في الأمراض الصدرية والحساسية ولاية قالمة </title>
-
-    <!-- Favicon -->
-    <link rel="icon" href="cabinet.png" type="image/png">
+    <title> عيادة الدكتورة بخة - اختصاصية في الأمراض الصدرية والحساسية ولاية قالمة </title>    <!-- Favicon -->
+    <link rel="icon" href="cabinet-logo.png" type="image/png">
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;700&family=Noto+Kufi+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
@@ -54,15 +49,14 @@
     <script src="app.js" defer></script>
     <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
-    
-    <!-- Structured Data (JSON-LD) -->
+      <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "MedicalClinic",
       "name": "عيادة الدكتورة بخة س",
       "description": "عيادة متخصصة في علاج الأمراض الصدرية والحساسية في ولاية قالمة، الجزائر.",
-      "image": "https://bakha-pneumo.netlify.app/cabinet.png",
+      "image": "https://bakha-pneumo.netlify.app/cabinet-large.png",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "حي 19 جوان، خلف مستشفى الحكيم عقبي",
@@ -187,7 +181,13 @@
             <div class="header-top">
                 <div class="clinic-info">
                     <div class="logo-container">
-                        <img src="cabinet.png" alt="شعار العيادة" class="clinic-logo">
+                        <img 
+                            src="cabinet-logo.png" 
+                            srcset="cabinet-logo.webp 100w, cabinet-logo.png 100w" 
+                            sizes="(max-width: 600px) 50px, 50px" 
+                            alt="شعار العيادة" 
+                            class="clinic-logo"
+                            loading="lazy">
                     </div>
                     <div class="clinic-title">
                         <h1>عيادة الدكتورة بخة س</h1>
@@ -439,8 +439,27 @@
                         <h2>عن الدكتورة بخة س وعيادتها</h2> <!-- Title can be adjusted -->
                         <div class="about-content-flex">
                             <div class="about-image-container" data-aos="zoom-in" data-aos-delay="100">
-                                <img src="cabinet.png" alt="شعار عيادة الدكتورة بخة س" class="clinic-emblem-image">
-                                <!-- Using cabinet.png and updated alt text -->
+                                <picture>
+                                    <source 
+                                        media="(min-width: 768px)" 
+                                        srcset="cabinet-large.webp"
+                                        type="image/webp">
+                                    <source 
+                                        media="(min-width: 768px)" 
+                                        srcset="cabinet-large.png">
+                                    
+                                    <source 
+                                        srcset="cabinet-medium.webp"
+                                        type="image/webp">
+                                    <source 
+                                        srcset="cabinet-medium.png">
+
+                                    <img 
+                                        src="cabinet-medium.png" 
+                                        alt="شعار عيادة الدكتورة بخة س" 
+                                        class="clinic-emblem-image" 
+                                        loading="lazy">
+                                </picture>
                             </div>
                             <div class="about-text-content" data-aos="fade-right" data-aos-delay="200">
                                 <p class="qualification-highlight">

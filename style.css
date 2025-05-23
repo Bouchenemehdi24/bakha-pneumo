@@ -1,4 +1,4 @@
-          /* Modern & Elegant Styles - Revision */
+/* Modern & Elegant Styles - Revision */
 
 :root {
   --font-primary-ar: 'Noto Kufi Arabic', 'Noto Sans Arabic', sans-serif;
@@ -134,6 +134,7 @@ body {
   background-color: var(--bg-body);
   color: var(--text-primary);
   transition: background-color var(--transition-smooth), color var(--transition-smooth);
+  -webkit-tap-highlight-color: transparent; /* Remove tap highlight on iOS */
 }
 
 [lang="ar"], [dir="rtl"] {
@@ -196,22 +197,22 @@ main {
   width: 100%;
   max-width: 1200px; /* Standard max-width */
   margin: 0 auto;
-  padding: calc(var(--spacing-unit) * 8) calc(var(--spacing-unit) * 4); /* 2rem 1rem */
+  padding: calc(var(--spacing-unit) * 6) calc(var(--spacing-unit) * 3); /* 1.5rem 0.75rem */
 }
 
 .main-content { /* Container for sections within main */
   background: var(--bg-card);
   border-radius: var(--border-radius-lg);
   box-shadow: var(--shadow-md);
-  padding: calc(var(--spacing-unit) * 8); /* 2rem */
+  padding: calc(var(--spacing-unit) * 5);
   margin-bottom: calc(var(--spacing-unit) * 8); /* 2rem */
 }
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   main {
-    padding: calc(var(--spacing-unit) * 6) calc(var(--spacing-unit) * 4);
+    padding: calc(var(--spacing-unit) * 8) calc(var(--spacing-unit) * 4);
   }
   .main-content {
-    padding: calc(var(--spacing-unit) * 6);
+    padding: calc(var(--spacing-unit) * 8);
   }
 }
 
@@ -233,6 +234,8 @@ main {
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
+  flex-wrap: wrap;
+  gap: calc(var(--spacing-unit) * 2);
 }
 
 .clinic-info {
@@ -242,8 +245,8 @@ main {
 }
 
 .logo-container {
-  width: 50px; /* Slightly smaller */
-  height: 50px;
+  width: 45px; /* Slightly smaller */
+  height: 45px;
   border-radius: var(--border-radius-full);
   overflow: hidden;
   border: 2px solid var(--primary-color);
@@ -256,13 +259,13 @@ main {
 }
 
 .clinic-title h1 {
-  font-size: clamp(1.25rem, 4vw, 1.65rem);
+  font-size: clamp(1.1rem, 4vw, 1.65rem);
   margin-bottom: 0;
   font-weight: 600;
   color: var(--text-primary);
 }
 .clinic-subtitle {
-  font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+  font-size: clamp(0.75rem, 2.5vw, 0.9rem);
   color: var(--text-secondary);
   margin-top: calc(var(--spacing-unit) * 0.5);
 }
@@ -290,12 +293,13 @@ main {
   flex-direction: column;
   align-items: flex-end; /* RTL: flex-start */
   gap: calc(var(--spacing-unit) * 1);
-  font-size: 0.85rem;
-  text-align: right; /* RTL */
+  font-size: 0.8rem;
+  width: 100%;
+  text-align: center;
 }
-[dir="ltr"] .clinic-status {
-  align-items: flex-start;
-  text-align: left;
+[dir="rtl"] .clinic-status {
+  align-items: center;
+  text-align: center;
 }
 .status-indicator {
   display: flex;
@@ -543,11 +547,11 @@ main {
 /* Hero Section */
 .hero-section {
   text-align: center;
-  padding: calc(var(--spacing-unit) * 16) calc(var(--spacing-unit) * 6); /* 4rem 1.5rem */
+  padding: calc(var(--spacing-unit) * 10) calc(var(--spacing-unit) * 4);
   background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
   color: var(--text-on-primary);
   border-radius: var(--border-radius-lg);
-  margin-bottom: calc(var(--spacing-unit) * 12); /* 3rem */
+  margin-bottom: calc(var(--spacing-unit) * 8);
 }
 .hero-content h2 {
   font-size: clamp(1.8rem, 5vw, 2.8rem);
@@ -558,7 +562,7 @@ main {
 .hero-content p {
   font-size: clamp(1rem, 3vw, 1.2rem);
   opacity: 0.9;
-  margin: 0 auto calc(var(--spacing-unit) * 6);
+  margin: 0 auto calc(var(--spacing-unit) * 5);
   max-width: 60ch;
 }
 .cta-button {
@@ -591,7 +595,7 @@ main {
   background: var(--bg-card);
   /* border: 1px solid var(--border-color); */ /* Optional: borderless cards */
   border-radius: var(--border-radius-lg);
-  padding: calc(var(--spacing-unit) * 8); /* 2rem */
+  padding: calc(var(--spacing-unit) * 6);
   text-align: center;
   box-shadow: var(--shadow-md);
   transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
@@ -601,14 +605,14 @@ main {
   box-shadow: var(--shadow-lg);
 }
 .service-card .fas { /* Icon styling */
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   color: var(--primary-color);
   margin-bottom: calc(var(--spacing-unit) * 4); /* 1rem */
   display: inline-block; /* To allow margin */
   background-color: rgba(var(--primary-rgb), 0.1);
-  width: 70px;
-  height: 70px;
-  line-height: 70px;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
   border-radius: var(--border-radius-full);
 }
 .service-card h3 {
@@ -641,9 +645,10 @@ main {
   display: flex;
   align-items: flex-start;
   gap: calc(var(--spacing-unit) * 4); /* 1rem */
-  padding: calc(var(--spacing-unit) * 5); /* 1.25rem */
-  background: var(--bg-body); /* Slightly different background for contrast */
-  border-radius: var(--border-radius-md);
+  padding: calc(var(--spacing-unit) * 4);
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
   transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
 }
 .contact-item:hover {
@@ -653,10 +658,12 @@ main {
 .contact-item .fas {
   font-size: 1.5rem;
   color: var(--primary-color);
-  margin-top: calc(var(--spacing-unit) * 1);
+  margin-top: 0;
+  margin-bottom: calc(var(--spacing-unit) * 2);
   width: 40px;
   text-align: center;
 }
+
 .contact-details h3 {
   font-size: 1.1rem;
   margin-top: 0;
@@ -1319,14 +1326,6 @@ nav[aria-label="جدول محتويات الدليل"] ul li a:hover {
     border-radius: var(--border-radius-md);
 }
 
-
-
-
-
-
-
-/* ... (your existing CSS) ... */
-
 /* Contact Section */
 /* ... (your existing contact styles) ... */
 
@@ -1578,8 +1577,8 @@ nav[aria-label="جدول محتويات الصفحة"] ul li a:hover {
 
 .about-image-container {
     flex-shrink: 0;
-    width: 180px; /* Adjust size for clinic emblem/logo */
-    height: 180px; /* Can be different if logo is not square */
+    width: 150px; /* Adjust size for clinic emblem/logo */
+    height: 150px; /* Can be different if logo is not square */
     /* border-radius: 50%; */ /* REMOVED: Perfect circle might not suit a logo */
     border-radius: var(--border-radius-xl); /* Using a large rounded corner, adjust as needed */
     /* Or use --border-radius-md for less rounding, or even 0 for square */
@@ -1637,24 +1636,370 @@ nav[aria-label="جدول محتويات الصفحة"] ul li a:hover {
     border-left: 3px solid var(--accent-color); /* LTR */
 }
 
-/* Responsive adjustments */
+/* Mobile-First & Touch Optimizations */
+body {
+  -webkit-tap-highlight-color: transparent;
+}
+
+main {
+  padding: calc(var(--spacing-unit) * 6) calc(var(--spacing-unit) * 3);
+}
+
+.main-content {
+  padding: calc(var(--spacing-unit) * 5);
+}
+
 @media (min-width: 768px) {
-    .about-content-flex {
-        flex-direction: row;
-        align-items: flex-start; /* Or 'center' if preferred for vertical alignment */
-    }
-    .about-image-container {
-        width: 200px; /* Adjust if needed for tablet */
-        height: 200px;
-    }
+  main {
+    padding: calc(var(--spacing-unit) * 8) calc(var(--spacing-unit) * 4);
+  }
+  .main-content {
+    padding: calc(var(--spacing-unit) * 8);
+  }
+}
+
+/* Typography Scale */
+h1 { font-size: clamp(1.8rem, 5vw, 2.75rem); }
+h2 { font-size: clamp(1.4rem, 4vw, 2rem); }
+h3 { font-size: clamp(1.15rem, 3vw, 1.5rem); }
+
+/* Header Adjustments */
+.header-top {
+  flex-wrap: wrap;
+  gap: calc(var(--spacing-unit) * 2);
+}
+
+.clinic-info {
+  gap: calc(var(--spacing-unit) * 3);
+}
+
+.logo-container {
+  width: 45px; 
+  height: 45px;
+}
+
+.clinic-title h1 {
+  font-size: clamp(1.1rem, 4vw, 1.65rem);
+}
+
+.clinic-subtitle {
+  font-size: clamp(0.75rem, 2.5vw, 0.9rem);
+}
+
+.clinic-status {
+  font-size: 0.8rem;
+  width: 100%;
+  align-items: center;
+  text-align: center;
+}
+
+[dir="rtl"] .clinic-status {
+  align-items: center;
+  text-align: center;
+}
+
+/* Mobile Navigation */
+@media (max-width: 992px) {
+  #main-menu > li > a,
+  #main-menu > li > .dropdown > a {
+    padding: calc(var(--spacing-unit) * 4.5) calc(var(--spacing-unit) * 4);
+  }
+  .dropdown-menu a {
+    padding-top: calc(var(--spacing-unit) * 3.5);
+    padding-bottom: calc(var(--spacing-unit) * 3.5);
+  }
+}
+
+/* Touch Feedback */
+.cta-button,
+.submit-button, 
+button[type="submit"],
+#main-menu a,
+.mobile-menu-btn,
+.close-popup,
+#theme-toggle,
+.footer-links a.footer-link,
+.back-to-top {
+  transition: transform 0.1s ease-out, opacity 0.1s ease-out, 
+              background-color var(--transition-fast), 
+              color var(--transition-fast);
+}
+
+.cta-button:active,
+.submit-button:active,
+button[type="submit"]:active,
+#main-menu a:active,
+.mobile-menu-btn:active,
+.close-popup:active,
+#theme-toggle:active,
+.footer-links a.footer-link:active,
+.back-to-top:active {
+  transform: scale(0.97);
+  opacity: 0.85;
+}
+
+#theme-toggle:active {
+  background-color: var(--primary-dark);
+}
+
+/* Form Elements */
+form input[type="text"],
+form input[type="tel"],
+form input[type="email"],
+form input[type="date"],
+form select,
+form textarea {
+  font-size: 1rem;
+}
+
+/* Service Cards */
+.service-card {
+  padding: calc(var(--spacing-unit) * 6);
+}
+
+.service-card .fas {
+  font-size: 2.2rem;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+}
+
+/* Contact Section */
+.contact-info {
+  gap: calc(var(--spacing-unit) * 4);
+}
+
+.contact-item {
+  padding: calc(var(--spacing-unit) * 4);
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.contact-item .fas {
+  margin-top: 0;
+  margin-bottom: calc(var(--spacing-unit) * 2);
+}
+
+@media (min-width: 576px) {
+  .contact-item {
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: right;
+  }
+  [dir="ltr"] .contact-item {
+    text-align: left;
+  }
+  .contact-item .fas {
+    margin-bottom: 0;
+    margin-top: calc(var(--spacing-unit) * 1);
+  }
+}
+
+/* Hero Section */
+.hero-section {
+  padding: calc(var(--spacing-unit) * 10) calc(var(--spacing-unit) * 4);
+  margin-bottom: calc(var(--spacing-unit) * 8);
+}
+
+.hero-content p {
+  margin: 0 auto calc(var(--spacing-unit) * 5);
+}
+
+/* About Section */
+.about-content-flex {
+  gap: calc(var(--spacing-unit) * 6);
+}
+
+.about-image-container {
+  width: 150px;
+  height: 150px;
+}
+
+@media (min-width: 768px) {
+  .about-image-container {
+    width: 200px;
+    height: 200px;
+  }
 }
 
 @media (min-width: 992px) {
-    .about-image-container {
-        width: 220px; /* Adjust for desktop */
-        height: 220px;
+  .about-image-container {
+    width: 220px;
+    height: 220px;
+  }
+}
+
+
+/* In your main style.css */
+
+/* Article Page Specific Header */
+.health-article-header {
+    text-align: center;
+    padding: calc(var(--spacing-unit) * 6) calc(var(--spacing-unit) * 4);
+    margin-bottom: calc(var(--spacing-unit) * 8);
+    background-color: rgba(var(--primary-rgb), 0.05); /* Light primary accent */
+    border-radius: var(--border-radius-lg);
+}
+.health-article-header h1 {
+    color: var(--primary-color);
+    font-size: clamp(1.8rem, 5vw, 2.6rem);
+    margin-bottom: calc(var(--spacing-unit) * 3);
+    border-bottom: none; /* Override global if it has one */
+}
+.health-article-header .page-subtitle {
+    font-size: 1.15em;
+    color: var(--text-secondary);
+    max-width: 70ch;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+/* General Article Page Styling (if .article-page class is on .main-content) */
+.article-page section {
+    margin-bottom: calc(var(--spacing-unit) * 10);
+}
+.article-page section:last-of-type { /* Reduce margin for last section before footer/CTA */
+    margin-bottom: calc(var(--spacing-unit) * 6);
+}
+.article-page section h2 {
+    text-align: right; /* RTL */
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: calc(var(--spacing-unit) * 3);
+    margin-bottom: calc(var(--spacing-unit) * 6);
+    font-size: clamp(1.5rem, 4vw, 2rem); /* Consistent sub-heading size */
+    color: var(--text-primary);
+}
+[dir="ltr"] .article-page section h2 {
+    text-align: left;
+}
+.article-page section ul, .article-page section ol, .article-page section dl {
+    padding-right: calc(var(--spacing-unit) * 5); /* Indent lists RTL */
+    margin-bottom: calc(var(--spacing-unit) * 4);
+    line-height: 1.8;
+}
+[dir="ltr"] .article-page section ul,
+[dir="ltr"] .article-page section ol,
+[dir="ltr"] .article-page section dl {
+    padding-right: 0;
+    padding-left: calc(var(--spacing-unit) * 5); /* Indent lists LTR */
+}
+.article-page section ul li,
+.article-page section ol li,
+.article-page section dl dt,
+.article-page section dl dd {
+    margin-bottom: calc(var(--spacing-unit) * 2.5);
+}
+.article-page section dl dt {
+    font-weight: 700; /* Bolder dt */
+    color: var(--text-primary);
+    margin-top: calc(var(--spacing-unit) * 4);
+}
+.article-page section dl dd {
+    margin-right: calc(var(--spacing-unit) * 4); /* Indent dd under dt for RTL */
+}
+[dir="ltr"] .article-page section dl dd {
+    margin-right: 0;
+    margin-left: calc(var(--spacing-unit) * 4); /* Indent dd under dt for LTR */
+}
+.article-page .important-note { /* Already styled, ensure it uses theme vars */
+    background-color: rgba(var(--color-error-rgb, 220, 38, 38), 0.1);
+    border-right: 5px solid var(--color-error-border, #dc2626); /* RTL */
+    padding: calc(var(--spacing-unit) * 4);
+    margin: calc(var(--spacing-unit) * 6) 0;
+    color: var(--color-error-text, #721c24);
+    border-radius: var(--border-radius-md);
+}
+[dir="ltr"] .article-page .important-note {
+    border-right: none;
+    border-left: 5px solid var(--color-error-border, #dc2626); /* LTR */
+}
+.article-page .important-note h3 {
+    color: var(--color-error-border, #f5c6cb); /* Or a darker shade of error color */
+    margin-top: 0;
+    margin-bottom: calc(var(--spacing-unit) * 2);
+    font-size: 1.1em;
+    border-bottom: none; /* No border for h3 in note */
+    text-align: right; /* RTL */
+}
+[dir="ltr"] .article-page .important-note h3 {
+    text-align: left;
+}
+
+/* Contact Info & Map Section (specific to this article, or can be global) */
+.article-contact-map-section {
+    display: grid;
+    grid-template-columns: 1fr; /* Stack on mobile */
+    gap: calc(var(--spacing-unit) * 8);
+    margin-top: calc(var(--spacing-unit) * 10);
+    margin-bottom: calc(var(--spacing-unit) * 10);
+    padding: calc(var(--spacing-unit) * 6);
+    background-color: var(--bg-elevated); /* Slightly different background */
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+}
+.article-contact-details .contact-item { /* Reuse contact item style from main page if applicable */
+    display: flex;
+    align-items: flex-start;
+    gap: calc(var(--spacing-unit) * 3);
+    margin-bottom: calc(var(--spacing-unit) * 4);
+    padding: calc(var(--spacing-unit) * 3);
+    background-color: var(--bg-card);
+    border-radius: var(--border-radius-md);
+}
+.article-contact-details .contact-item .fas {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    margin-top: calc(var(--spacing-unit) * 0.5);
+    width: 30px;
+    text-align: center;
+}
+.article-contact-details .contact-item h4 { /* Use h4 for sub-titles in contact items */
+    font-size: 1.05rem;
+    color: var(--text-primary);
+    margin-top: 0;
+    margin-bottom: calc(var(--spacing-unit) * 1);
+}
+.article-contact-details .contact-item p,
+.article-contact-details .contact-item a {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin-bottom: calc(var(--spacing-unit) * 1);
+}
+.article-contact-details .contact-item a {
+    color: var(--primary-color);
+    font-weight: 500;
+}
+.article-contact-details .contact-item a:hover {
+    color: var(--primary-dark);
+}
+
+.article-map-container {
+    border-radius: var(--border-radius-md);
+    overflow: hidden; /* To clip iframe corners */
+    box-shadow: var(--shadow-sm);
+    height: 350px; /* Default height, adjust as needed */
+}
+.article-map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+@media (min-width: 992px) { /* Desktop layout for contact/map */
+    .article-contact-map-section {
+        grid-template-columns: 1fr 1.5fr; /* Text on left, map on right */
+        align-items: flex-start;
     }
-    .about-content-flex {
-         gap: calc(var(--spacing-unit) * 12);
+    [dir="rtl"] .article-contact-map-section {
+        grid-template-columns: 1.5fr 1fr; /* Map on left, text on right for RTL */
     }
+    .article-map-container {
+        height: 400px; /* Taller map on desktop */
+    }
+}
+
+/* Ensure .icon-before styles are globally available (from previous answers) */
+.icon-before {
+    margin-inline-end: calc(var(--spacing-unit) * 2); /* RTL/LTR friendly */
 }

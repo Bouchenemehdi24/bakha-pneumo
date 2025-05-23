@@ -1,260 +1,309 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-       <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-BCT8GP6LZT"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-BCT8GP6LZT');
-</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BCT8GP6LZT"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-BCT8GP6LZT');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="حاسبة معدل الأيض الأساسي, حاسبة BMR, حاسبة TDEE, حساب السعرات الحرارية, معدل الأيض الأساسي, الطاقة اليومية, حساب السعرات اليومية, حاسبة المغذيات الكبرى, البروتين, الكربوهيدرات, الدهون, صحة التغذية, نصائح التغذية, حساب السعرات الحرارية اليومية">
-    <meta name="description" content="حاسبة معدل الأيض الأساسي (BMR) والطاقة اليومية (TDEE) تساعدك على حساب احتياجاتك اليومية من السعرات الحرارية بناءً على وزنك، طولك، عمرك، جنسك، ومستوى نشاطك. احصل على توصيات مخصصة لتحسين صحتك.">
-    <meta name="author" content="عيادة الدكتورة بخة س - اختصاصية في الأمراض الصدرية والحساسية">
+    <meta name="keywords" content="حاسبة معدل الأيض الأساسي, BMR, TDEE, حساب السعرات الحرارية, صحة, تغذية, دكتورة بخة, قالمة">
+    <meta name="description" content="استخدم حاسبة معدل الأيض الأساسي (BMR) والطاقة اليومية (TDEE) لتقدير احتياجاتك من السعرات الحرارية. مقدمة من عيادة الدكتورة بخة س في قالمة.">
+    <meta name="author" content="عيادة الدكتورة بخة س">
     <meta http-equiv="Content-Language" content="ar">
-    <title>حاسبة معدل الأيض الأساسي (BMR) والطاقة اليومية (TDEE)</title>
+    <title>حاسبة دقيقة: معدل الأيض الأساسي (BMR) واحتياجات الطاقة اليومية (TDEE) - د. بخة س</title>
     <link rel="icon" href="cabinet.png" type="image/png">
     <link rel="canonical" href="https://bakha-pneumo.netlify.app/bmr-calculator.html">
+
+    <!-- Main Stylesheet (links to the same style.css as index.html) -->
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "WebPage",
         "name": "حاسبة معدل الأيض الأساسي (BMR) والطاقة اليومية (TDEE)",
-        "description": "حاسبة معدل الأيض الأساسي (BMR) والطاقة اليومية (TDEE) تساعدك على حساب احتياجاتك اليومية من السعرات الحرارية بناءً على وزنك، طولك، عمرك، جنسك، ومستوى نشاطك.",
-        "author": {
-            "@type": "Person",
-            "name": "الدكتورة بخة س"
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "عيادة الدكتورة بخة س",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://bakha-pneumo.netlify.app/cabinet.png"
-            }
-        },
+        "description": "أداة لحساب تقديرات معدل الأيض الأساسي (BMR) والطاقة اليومية (TDEE) لمساعدتك في فهم احتياجاتك من السعرات الحرارية. مقدمة من عيادة الدكتورة بخة س.",
+        "keywords": "BMR, TDEE, السعرات الحرارية, حساب, تغذية, صحة",
         "url": "https://bakha-pneumo.netlify.app/bmr-calculator.html",
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://bakha-pneumo.netlify.app/bmr-calculator.html"
+        // ... other schema if needed
+        "mainEntity": {
+            "@type": "HowTo",
+            "name": "كيفية حساب معدل الأيض الأساسي (BMR) والطاقة اليومية (TDEE)",
+            "description": "أدخل جنسك، وزنك بالكيلوجرام، طولك بالسنتيمتر، عمرك بالسنوات، ومستوى نشاطك البدني اليومي للحصول على تقديرات لـ BMR و TDEE.",
+            "step": [
+                {"@type": "HowToStep", "name": "أدخل الجنس", "text": "اختر جنسك من القائمة المنسدلة (ذكر أو أنثى)."},
+                {"@type": "HowToStep", "name": "أدخل الوزن", "text": "أدخل وزنك الحالي بالكيلوجرام."},
+                {"@type": "HowToStep", "name": "أدخل الطول", "text": "أدخل طولك الحالي بالسنتيمتر."},
+                {"@type": "HowToStep", "name": "أدخل العمر", "text": "أدخل عمرك بالسنوات."},
+                {"@type": "HowToStep", "name": "اختر مستوى النشاط", "text": "حدد مستوى نشاطك البدني اليومي المعتاد."}
+            ],
+            "estimatedCost": { "@type": "MonetaryAmount", "currency": "DZD", "value": "0" },
+            "supply": [ {"@type": "HowToSupply", "name": "معلومات شخصية (الوزن، الطول، العمر، الجنس، مستوى النشاط)"} ],
+            "tool": [ {"@type": "HowToTool", "name": "حاسبة BMR/TDEE عبر الإنترنت"} ]
         }
     }
     </script>
-    <style>
-        /* Basic styling for the calculator */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 1rem;
-            text-align: center;
-        }
-        nav {
-            background-color: #333;
-            padding: 1rem;
-            text-align: center;
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        nav ul li {
-            display: inline;
-            margin: 0 1rem;
-        }
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-        }
-        main {
-            padding: 2rem;
-        }
-        .calculator {
-            background-color: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            max-width: 500px;
-            margin: 0 auto;
-        }
-        .calculator label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: bold;
-        }
-        .calculator input,
-        .calculator select {
-            width: 100%;
-            padding: 0.5rem;
-            margin-bottom: 1rem;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        .calculator button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            width: 100%;
-        }
-        .calculator button:hover {
-            background-color: #45a049;
-        }
-        .result {
-            margin-top: 1.5rem;
-            padding: 1rem;
-            background-color: #f9f9f9;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-        .error {
-            color: red;
-            font-weight: bold;
-        }
-        .disclaimer {
-            margin-top: 2rem;
-            padding: 1rem;
-            background-color: #fff3cd;
-            border: 1px solid #ffeeba;
-            border-radius: 4px;
-            color: #856404;
-        }
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 1rem;
-            margin-top: 2rem;
-        }
-    </style>
+    <!-- REMOVE THE INLINE <style> BLOCK -->
 </head>
-<body>
-    <header>
-        <h1>حاسبة معدل الأيض الأساسي (BMR) والطاقة اليومية (TDEE)</h1>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="index.html">الرئيسية</a></li>
-            <li><a href="bmr-calculator.html">حاسبة BMR</a></li>
-            <!-- Add other calculator links -->
-        </ul>
-    </nav>
-    <main>
-        <section class="calculator">
-            <h2>حاسبة معدل الأيض الأساسي (BMR) والطاقة اليومية (TDEE)</h2>
-            <form id="bmr-form">
-                <label for="gender">الجنس:</label>
-                <select id="gender" name="gender" required>
-                    <option value="male">ذكر</option>
-                    <option value="female">أنثى</option>
-                </select>
+<body data-theme="dark"> <!-- Or your default theme -->
 
-                <label for="weight">الوزن (كجم):</label>
-                <input type="number" id="weight" name="weight" step="0.1" required>
+    <!-- These should be part of your standard header include -->
+    <div id="google_translate_element" class="language-selector"></div>
+    <button id="theme-toggle" aria-label="Toggle Dark Mode"><i class="fas fa-moon"></i></button>
 
-                <label for="height">الطول (سم):</label>
-                <input type="number" id="height" name="height" step="0.1" required>
+    <div id="content-ar" lang="ar" dir="rtl">
 
-                <label for="age">العمر (سنوات):</label>
-                <input type="number" id="age" name="age" required>
+        <!-- ====================================================================== -->
+        <!-- START: STANDARD HEADER (Copy from index.html) -->
+        <!-- This should include .datetime-display, .main-header, .main-nav etc. -->
+        <header role="banner" class="main-header">
+            <!-- ... Your full header HTML from index.html ... -->
+        </header>
+        <nav class="main-nav">
+            <!-- ... Your full main navigation HTML from index.html ... -->
+        </nav>
+        <!-- END: STANDARD HEADER -->
+        <!-- ====================================================================== -->
 
-                <label for="activity-level">مستوى النشاط:</label>
-                <select id="activity-level" name="activity-level" required>
-                    <option value="1.2">قليل النشاط (لا تمارين)</option>
-                    <option value="1.375">نشاط خفيف (تمارين خفيفة 1-3 أيام/أسبوع)</option>
-                    <option value="1.55">نشاط متوسط (تمارين متوسطة 3-5 أيام/أسبوع)</option>
-                    <option value="1.725">نشاط عالي (تمارين قوية 6-7 أيام/أسبوع)</option>
-                    <option value="1.9">نشاط عالي جداً (تمارين قوية وعمل بدني)</option>
-                </select>
+        <main role="main">
+            <div class="main-content calculator-page"> <!-- Added .calculator-page -->
 
-                <button type="button" onclick="calculateBMRAndTDEE()">احسب</button>
-            </form>
-            <div class="result" id="bmr-result"></div>
-        </section>
+                <header class="health-calculator-header" data-aos="fade-down"> <!-- Themed header for calculators -->
+                    <h1>حاسبة معدل الأيض الأساسي (BMR) والطاقة اليومية (TDEE)</h1>
+                    <p class="page-subtitle">اكتشف احتياجات جسمك من الطاقة لوضع خطط صحية وغذائية فعالة.</p>
+                </header>
 
-        <!-- Disclaimer Section -->
-        <section class="disclaimer">
-            <h3>تنويه هام</h3>
-            <p>
-                هذه الحاسبة تقدم تقديرات عامة لمعدل الأيض الأساسي (BMR) والطاقة اليومية (TDEE) بناءً على الوزن، الطول، العمر، الجنس، ومستوى النشاط. ومع ذلك، قد تختلف الاحتياجات الفعلية من شخص لآخر حسب نسبة العضلات إلى الدهون، الحالة الصحية العامة، والعوامل الوراثية.
-            </p>
-            <p>
-                <strong>يجب استشارة طبيبك أو أخصائي التغذية</strong> للحصول على تقييم دقيق لاحتياجاتك اليومية من السعرات الحرارية، خاصة إذا كنت تعاني من أي حالات صحية مثل السكري، أمراض القلب، أو اضطرابات الأكل.
-            </p>
-            <p>
-                هذه الحاسبة لا تغني عن الاستشارة الطبية أو الغذائية المهنية.
-            </p>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 عيادة الدكتورة بخة س - جميع الحقوق محفوظة</p>
-    </footer>
+                <section id="bmr-introduction" class="text-content-section" data-aos="fade-up">
+                    <h2>ما هو معدل الأيض الأساسي (BMR) وإجمالي إنفاق الطاقة اليومي (TDEE)؟</h2>
+                    <p>
+                        <strong>معدل الأيض الأساسي (BMR):</strong> هو عدد السعرات الحرارية التي يحرقها جسمك أثناء الراحة التامة للحفاظ على وظائفه الحيوية الأساسية مثل التنفس، الدورة الدموية، وتنظيم درجة حرارة الجسم. إنه الحد الأدنى من الطاقة التي يحتاجها جسمك ليبقى على قيد الحياة.
+                    </p>
+                    <p>
+                        <strong>إجمالي إنفاق الطاقة اليومي (TDEE):</strong> هو إجمالي عدد السعرات الحرارية التي تحرقها في اليوم، بما في ذلك معدل الأيض الأساسي (BMR) بالإضافة إلى الطاقة المصروفة خلال الأنشطة البدنية، التمارين الرياضية، وحتى عملية هضم الطعام (التأثير الحراري للغذاء).
+                    </p>
+                    <p>
+                        فهم هذه القيم يساعدك على تحديد احتياجاتك من السعرات الحرارية سواء كنت تهدف إلى <strong>فقدان الوزن، الحفاظ عليه، أو زيادته</strong> بطريقة صحية ومدروسة.
+                    </p>
+                </section>
+
+                <section class="calculator-form-section" data-aos="fade-up" data-aos-delay="100">
+                    <h2>أدخل بياناتك لحساب BMR و TDEE</h2>
+                    <p class="form-instructions">يرجى إدخال المعلومات التالية بدقة للحصول على أفضل تقدير ممكن.</p>
+                    <form id="bmr-form">
+                        <div class="form-group">
+                            <label for="gender">الجنس:</label>
+                            <select id="gender" name="gender" required>
+                                <option value="male">ذكر</option>
+                                <option value="female">أنثى</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="weight">الوزن (كجم):</label>
+                            <input type="number" id="weight" name="weight" placeholder="مثال: 70" step="0.1" min="20" max="300" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="height">الطول (سم):</label>
+                            <input type="number" id="height" name="height" placeholder="مثال: 175" step="0.1" min="100" max="250" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="age">العمر (سنوات):</label>
+                            <input type="number" id="age" name="age" placeholder="مثال: 30" min="15" max="100" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="activity-level">مستوى النشاط:</label>
+                            <select id="activity-level" name="activity-level" required>
+                                <option value="1.2">خامل (قليل أو لا يوجد تمارين، عمل مكتبي)</option>
+                                <option value="1.375">نشاط خفيف (تمارين رياضية خفيفة 1-3 أيام في الأسبوع)</option>
+                                <option value="1.55">نشاط متوسط (تمارين رياضية معتدلة 3-5 أيام في الأسبوع)</option>
+                                <option value="1.725">نشاط عالي (تمارين رياضية مكثفة 6-7 أيام في الأسبوع)</option>
+                                <option value="1.9">نشاط عالي جداً (تمارين رياضية مكثفة جداً وعمل بدني شاق أو تدريب رياضي مرتين يومياً)</option>
+                            </select>
+                        </div>
+                        <!-- Use your themed button style -->
+                        <button type="button" class="submit-button" onclick="calculateBMRAndTDEE()">
+                            <i class="fas fa-calculator icon-before"></i> احسب الآن
+                        </button>
+                    </form>
+                </section>
+
+                <section id="results-section" class="result-display" style="display: none;" data-aos="fade-up">
+                    <h3><i class="fas fa-poll icon-before"></i> نتائجك المقدرة:</h3>
+                    <div id="bmr-tdee-output">
+                        <!-- Results will be injected here by JavaScript -->
+                    </div>
+                    <div id="macronutrients-output" style="margin-top: calc(var(--spacing-unit) * 6);">
+                        <!-- Macronutrient suggestions will be injected here -->
+                    </div>
+                    <div id="interpretation-notes" style="margin-top: calc(var(--spacing-unit) * 6);">
+                         <h4>كيف تستفيد من هذه الأرقام؟</h4>
+                         <p><strong>للحفاظ على وزنك الحالي:</strong> استهلك ما يقارب قيمة TDEE من السعرات الحرارية يوميًا.</p>
+                         <p><strong>لفقدان الوزن:</strong> يُنصح عادةً بتقليل 300-500 سعرة حرارية من قيمة TDEE اليومية. استشر مختصًا لتحديد العجز المناسب لك.</p>
+                         <p><strong>لزيادة الوزن (بناء العضلات):</strong> قد تحتاج إلى زيادة 300-500 سعرة حرارية فوق قيمة TDEE اليومية، مع التركيز على البروتين والتمارين المناسبة.</p>
+                    </div>
+                </section>
+
+                <section class="disclaimer-section important-note" data-aos="fade-up"> <!-- Reused .important-note style -->
+                    <h3><i class="fas fa-exclamation-triangle icon-before"></i> تنويه هام وإخلاء مسؤولية</h3>
+                    <p>
+                        النتائج المقدمة من هذه الحاسبة هي <strong>تقديرات عامة</strong> وتعتمد على معادلات رياضية قياسية. قد تختلف احتياجاتك الفعلية من الطاقة بناءً على عوامل فردية متعددة مثل:
+                    </p>
+                    <ul>
+                        <li>تركيبة الجسم (نسبة العضلات إلى الدهون).</li>
+                        <li>الحالة الصحية العامة (مثل أمراض الغدة الدرقية، السكري، وغيرها).</li>
+                        <li>العوامل الوراثية.</li>
+                        <li>الأدوية التي تتناولها.</li>
+                        <li>التأثير الحراري الفعلي للطعام الذي تتناوله.</li>
+                    </ul>
+                    <p>
+                        <strong>لا ينبغي الاعتماد على هذه الحاسبة كبديل للاستشارة الطبية أو الغذائية المتخصصة.</strong> للحصول على تقييم دقيق وشامل لاحتياجاتك ووضع خطة غذائية مناسبة، يُرجى استشارة الدكتورة بخة س أو أخصائي تغذية معتمد.
+                    </p>
+                </section>
+
+                <section class="cta-section" data-aos="fade-up">
+                    <h2>هل تحتاج إلى مساعدة متخصصة؟</h2>
+                    <p>الدكتورة بخة س وفريقها مستعدون لمساعدتك في فهم احتياجاتك الصحية والغذائية بشكل أفضل وتقديم خطط علاجية وتغذوية مخصصة.</p>
+                    <a href="index.html#appointment" class="cta-button">احجز استشارة الآن</a>
+                </section>
+
+            </div> <!-- End .main-content .calculator-page -->
+        </main>
+
+        <!-- ====================================================================== -->
+        <!-- START: STANDARD FOOTER (Copy from index.html) -->
+        <footer>
+            <!-- ... Your full footer HTML from index.html ... -->
+        </footer>
+        <!-- END: STANDARD FOOTER -->
+        <!-- ====================================================================== -->
+
+    </div> <!-- End #content-ar -->
+
+    <div class="watermark">Dr. Bakha</div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" defer></script>
+    <script src="app.js" defer></script> <!-- Your main JS -->
 
     <script>
+        // BMR Calculator Specific Script
         function calculateBMRAndTDEE() {
-            // Get user inputs
+            const resultSection = document.getElementById('results-section');
+            const bmrTdeeOutput = document.getElementById('bmr-tdee-output');
+            const macronutrientsOutput = document.getElementById('macronutrients-output');
+            const interpretationNotes = document.getElementById('interpretation-notes');
+
+            // Clear previous results and hide section
+            bmrTdeeOutput.innerHTML = '';
+            macronutrientsOutput.innerHTML = '';
+            resultSection.style.display = 'none';
+
+
             const gender = document.getElementById('gender').value;
             const weight = parseFloat(document.getElementById('weight').value);
             const height = parseFloat(document.getElementById('height').value);
             const age = parseFloat(document.getElementById('age').value);
             const activityLevel = parseFloat(document.getElementById('activity-level').value);
 
-            // Input validation
-            if (isNaN(weight) || isNaN(height) || isNaN(age) || weight <= 0 || height <= 0 || age <= 0) {
-                document.getElementById('bmr-result').innerHTML = `
-                    <p class="error">الرجاء إدخال قيم صحيحة للوزن والطول والعمر.</p>
-                `;
+            let isValid = true;
+            let errorMessages = [];
+
+            if (isNaN(weight) || weight <= 0 || weight > 300) {
+                errorMessages.push("الرجاء إدخال وزن صحيح (بين 20 و 300 كجم).");
+                document.getElementById('weight').classList.add('invalid'); // Assuming 'invalid' class exists in your main CSS
+                isValid = false;
+            } else {
+                 document.getElementById('weight').classList.remove('invalid');
+            }
+
+            if (isNaN(height) || height <= 0 || height > 250) {
+                errorMessages.push("الرجاء إدخال طول صحيح (بين 100 و 250 سم).");
+                document.getElementById('height').classList.add('invalid');
+                isValid = false;
+            } else {
+                document.getElementById('height').classList.remove('invalid');
+            }
+
+            if (isNaN(age) || age <= 0 || age > 100) {
+                errorMessages.push("الرجاء إدخال عمر صحيح (بين 15 و 100 سنة).");
+                document.getElementById('age').classList.add('invalid');
+                isValid = false;
+            } else {
+                document.getElementById('age').classList.remove('invalid');
+            }
+             if (isNaN(activityLevel)) { // Should not happen with select but good practice
+                errorMessages.push("الرجاء اختيار مستوى النشاط.");
+                isValid = false;
+            }
+
+
+            if (!isValid) {
+                // Display errors using your site's toast notification if app.js is linked and utils are available
+                if (typeof utils !== 'undefined' && typeof utils.showToast === 'function') {
+                    errorMessages.forEach(msg => utils.showToast(msg, 'error'));
+                } else { // Fallback basic alert
+                    alert(errorMessages.join("\n"));
+                }
+                // Optionally show errors within the result div too
+                bmrTdeeOutput.innerHTML = `<p class="error">${errorMessages.join("<br>")}</p>`;
+                resultSection.style.display = 'block'; // Show section to display error
                 return;
             }
 
-            // Calculate BMR using Mifflin-St Jeor Equation
             let bmr;
             if (gender === 'male') {
                 bmr = (10 * weight) + (6.25 * height) - (5 * age) + 5;
-            } else {
+            } else { // female
                 bmr = (10 * weight) + (6.25 * height) - (5 * age) - 161;
             }
 
-            // Calculate TDEE (Total Daily Energy Expenditure)
-            const tdee = (bmr * activityLevel).toFixed(2);
+            const tdee = bmr * activityLevel;
 
-            // Display the results
-            document.getElementById('bmr-result').innerHTML = `
-                <p>معدل الأيض الأساسي (BMR) هو: <strong>${bmr.toFixed(2)}</strong> سعرة حرارية/يوم.</p>
-                <p>احتياجك اليومي من السعرات الحرارية (TDEE) هو: <strong>${tdee}</strong> سعرة حرارية/يوم.</p>
+            bmrTdeeOutput.innerHTML = `
+                <p>معدل الأيض الأساسي التقديري (BMR): <strong>${bmr.toLocaleString('ar-EG', {maximumFractionDigits: 0})}</strong> سعرة حرارية/يوم.</p>
+                <p>إجمالي إنفاق الطاقة اليومي التقديري (TDEE): <strong>${tdee.toLocaleString('ar-EG', {maximumFractionDigits: 0})}</strong> سعرة حرارية/يوم.</p>
             `;
 
-            // Optional: Display macronutrient breakdown
-            calculateMacronutrients(tdee);
-        }
+            // Macronutrient suggestions (example: 40% Carbs, 30% Protein, 30% Fat)
+            const carbsCalories = tdee * 0.40;
+            const proteinCalories = tdee * 0.30;
+            const fatCalories = tdee * 0.30;
 
-        // Optional: Macronutrient Breakdown
-        function calculateMacronutrients(tdee) {
-            const protein = (tdee * 0.3 / 4).toFixed(2); // 30% of calories from protein (4 calories per gram)
-            const carbs = (tdee * 0.5 / 4).toFixed(2);   // 50% of calories from carbs (4 calories per gram)
-            const fat = (tdee * 0.2 / 9).toFixed(2);     // 20% of calories from fat (9 calories per gram)
+            const carbsGrams = carbsCalories / 4;
+            const proteinGrams = proteinCalories / 4;
+            const fatGrams = fatCalories / 9;
 
-            document.getElementById('bmr-result').innerHTML += `
-                <h4>توزيع المغذيات الكبرى:</h4>
-                <p>البروتين: <strong>${protein}</strong> غرام/يوم.</p>
-                <p>الكربوهيدرات: <strong>${carbs}</strong> غرام/يوم.</p>
-                <p>الدهون: <strong>${fat}</strong> غرام/يوم.</p>
+            macronutrientsOutput.innerHTML = `
+                <h4>مقترحات توزيع المغذيات الكبرى (للحفاظ على الوزن):</h4>
+                <p><i class="fas fa-bread-slice icon-before"></i> الكربوهيدرات: <strong>${carbsGrams.toLocaleString('ar-EG', {maximumFractionDigits: 0})}</strong> غرام/يوم (تقريباً ${carbsCalories.toLocaleString('ar-EG', {maximumFractionDigits: 0})} سعرة)</p>
+                <p><i class="fas fa-drumstick-bite icon-before"></i> البروتين: <strong>${proteinGrams.toLocaleString('ar-EG', {maximumFractionDigits: 0})}</strong> غرام/يوم (تقريباً ${proteinCalories.toLocaleString('ar-EG', {maximumFractionDigits: 0})} سعرة)</p>
+                <p><i class="fas fa-oil-can icon-before"></i> الدهون: <strong>${fatGrams.toLocaleString('ar-EG', {maximumFractionDigits: 0})}</strong> غرام/يوم (تقريباً ${fatCalories.toLocaleString('ar-EG', {maximumFractionDigits: 0})} سعرة)</p>
+                <p class="note" style="font-size: 0.85em; margin-top: 10px;">ملاحظة: هذه نسب مقترحة عامة. يمكن تعديلها بناءً على أهدافك الصحية وتفضيلاتك الغذائية بعد استشارة مختص.</p>
             `;
+            
+            resultSection.style.display = 'block'; // Show the results section
+            resultSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
+
+        // Add event listener to form fields to remove 'invalid' class on input
+        ['weight', 'height', 'age'].forEach(id => {
+            const field = document.getElementById(id);
+            if (field) {
+                field.addEventListener('input', () => field.classList.remove('invalid'));
+            }
+        });
     </script>
 </body>
 </html>
