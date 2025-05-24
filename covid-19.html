@@ -12,16 +12,18 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="كوفيد-19, فيروس كورونا, سارس-كوف-2, متحورات كوفيد, أعراض كوفيد طويلة الأمد, لقاحات كوفيد, علاج كوفيد-19, الوقاية من كورونا, تشخيص كوفيد, الدكتورة بخة س, أمراض صدرية قالمة, استشارة كوفيد قالمة">
+    <meta name="keywords" content="كوفيد-19, فيروس كورونا, سارس-كوف-2, متحورات كوفيد, أعراض كوفيد طويلة الأمد, لقاحات كوفيد, علاج كوفيد-19, الوقاية من كورونا, تشخيص كوفيد, الدكتورة بخة س, أمراض صدرية قالمة, استشارة كوفيد قالمة, متابعة ما بعد كوفيد">
     <meta name="description" content="دليل علمي شامل ومتقدم حول فيروس كوفيد-19 (SARS-CoV-2): التصنيف، الآليات المرضية، التشخيص، العلاج، والوقاية. استشر الدكتورة بخة س في قالمة لمتابعة حالات ما بعد كوفيد.">
     <meta name="author" content="عيادة الدكتورة بخة س - اختصاصية في الأمراض الصدرية والحساسية">
     <meta http-equiv="Content-Language" content="ar">
-    <title>الدليل العلمي الشامل لـ كوفيد-19 (COVID-19) وسبل المتابعة - د. بخة س، قالمة</title>
+    <title>كوفيد-19 (COVID-19): الدليل العلمي الشامل وسبل المتابعة - د. بخة س، قالمة</title>
     <link rel="icon" href="cabinet.png" type="image/png">
     <link rel="canonical" href="https://bakha-pneumo.netlify.app/covid-19.html">
+    
+    <!-- Main Stylesheet (should contain all theme variables and common styles) -->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
     <script type="application/ld+json">
     {
@@ -29,7 +31,7 @@
         "@type": "MedicalWebPage",
         "name": "الدليل العلمي الشامل لـ كوفيد-19 (SARS-CoV-2) وسبل المتابعة",
         "description": "دليل علمي شامل ومتقدم حول فيروس كوفيد-19، يغطي الجوانب الفيروسية، المرضية، التشخيصية، العلاجية، والوقائية، مع معلومات حول استشارة الدكتورة بخة س لمتابعة حالات ما بعد كوفيد.",
-        "keywords": "كوفيد-19, سارس-كوف-2, فيروس كورونا, جائحة, علاج كوفيد, لقاح كوفيد, كوفيد طويل الأمد, قالمة",
+        "keywords": "كوفيد-19, سارس-كوف-2, فيروس كورونا, جائحة, علاج كوفيد, لقاح كوفيد, كوفيد طويل الأمد, قالمة, الدكتورة بخة س",
         "author": {
             "@type": "Person",
             "name": "الدكتورة بخة س"
@@ -47,339 +49,466 @@
             "@type": "WebPage",
             "@id": "https://bakha-pneumo.netlify.app/covid-19.html"
         },
-        "datePublished": "2023-11-01", // Example: Update with actual publication date
-        "dateModified": "2023-11-01"  // Example: Update with actual modification date
+        "datePublished": "2023-11-15", 
+        "dateModified": "2023-12-12" 
     }
     </script>
-    <style>
-        /* Styles for ToC and CTA (ideally in style.css) */
-        nav[aria-label="جدول محتويات الدليل"] { margin-bottom: 20px; padding: 15px; background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: .25rem; }
-        nav[aria-label="جدول محتويات الدليل"] h3 { margin-top: 0; color: #343a40; }
-        nav[aria-label="جدول محتويات الدليل"] ul { list-style: none; padding-right: 0; }
-        nav[aria-label="جدول محتويات الدليل"] ul li { margin-bottom: 10px; }
-        nav[aria-label="جدول محتويات الدليل"] ul li a { text-decoration: none; color: #007bff; }
-        nav[aria-label="جدول محتويات الدليل"] ul li a:hover { text-decoration: underline; color: #0056b3; }
-
-        .cta-section { text-align: center; padding: 30px 20px; background-color: #e9ecef; margin-top: 30px; margin-bottom: 20px; border-radius: .3rem; border: 1px solid #ced4da; }
-        .cta-section h2 { color: #2c3e50; margin-bottom: 15px; font-size: 1.8em; }
-        .cta-section p { font-size: 1.15em; margin-bottom: 20px; color: #34495e; }
-        .cta-section .button-style { display: inline-block; background-color: #28a745; color: white; padding: 12px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 1.1em; transition: background-color 0.3s ease, transform 0.2s ease; }
-        .cta-section .button-style:hover { background-color: #218838; transform: translateY(-2px); }
-        .cta-section .contact-info p { margin-bottom: 8px; font-size: 1.1em;}
-        .cta-section .contact-info a { color: #007bff; font-weight: bold; }
-        .cta-section .contact-info a:hover { color: #0056b3; }
-        .icon-before { margin-left: 8px; }
-        .page-subtitle { text-align:center; font-size: 1.1em; color: #555; margin-bottom: 15px;}
-        .last-updated { text-align:center; font-size:0.9em; color: #777; margin-bottom: 20px;}
-    </style>
+    <!-- Inline <style> block REMOVED. All styles should be in style.css -->
 </head>
-<body>
-    <header>
-        <h1>الدليل العلمي الشامل لـ كوفيد-19 (COVID-19)</h1>
-        <p class="page-subtitle">مقدم من عيادة الدكتورة بخة س - اختصاصية في الأمراض الصدرية والحساسية</p>
-        <p class="last-updated">آخر تحديث: <span id="updateDate"></span></p>
-    </header>
-    <main>
-        <nav aria-label="جدول محتويات الدليل">
-            <h3>جدول محتويات الدليل</h3>
-            <ul>
-                <li><a href="#introduction">مقدمة: فهم معمق لجائحة كوفيد-19</a></li>
-                <li><a href="#scientific-classification">التصنيف العلمي والخصائص الفيروسية</a></li>
-                <li><a href="#pathophysiology">الآلية المرضية (الفيزيولوجيا المرضية)</a></li>
-                <li><a href="#advanced-diagnostics">التشخيص المتقدم والمتكامل</a></li>
-                <li><a href="#treatment-protocols">البروتوكولات العلاجية المتقدمة والمستندة للأدلة</a></li>
-                <li><a href="#long-covid">متلازمة ما بعد كوفيد-19 (كوفيد طويل الأمد)</a></li>
-                <li><a href="#prevention-public-health">استراتيجيات الوقاية والصحة العامة</a></li>
-                <li><a href="#research-updates">آخر المستجدات البحثية الهامة</a></li>
-                <li><a href="#future-directions">التوجهات المستقبلية في مكافحة الفيروس</a></li>
-                <li><a href="#consult-dr-bakha">استشارة الدكتورة بخة س بخصوص كوفيد-19</a></li>
-                <!-- Removed link to References -->
-            </ul>
+<body data-theme="dark"> <!-- Default theme, JS handles toggle -->
+
+    <!-- Global Elements (Theme Toggle, Language Selector) -->
+    <div id="google_translate_element" class="language-selector"></div>
+    <button id="theme-toggle" aria-label="Toggle Dark Mode">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <div id="content-ar" lang="ar" dir="rtl">
+
+        <!-- ====================================================================== -->
+        <!-- START: STANDARD HEADER (Copy from index.html) -->
+        <header role="banner" class="main-header">
+            <div class="header-top">
+                <div class="clinic-info">
+                    <div class="logo-container">
+                        <img src="cabinet.png" alt="شعار العيادة" class="clinic-logo">
+                    </div>
+                    <div class="clinic-title">
+                        <h1>عيادة الدكتورة بخة س</h1>
+                        <p class="clinic-subtitle">اختصاصية في الأمراض الصدرية والحساسية - ولاية قالمة</p>
+                    </div>
+                </div>
+                <div id="clinic-status" class="clinic-status" data-aos="fade-down">
+                    <div class="status-indicator">
+                        <i class="fas fa-circle"></i>
+                        <p id="status-message"></p>
+                    </div>
+                    <p id="next-opening" class="next-opening"></p>
+                </div>
+            </div>
+        </header>
+        <nav class="main-nav">
+            <div class="nav-container">
+                <button class="mobile-menu-btn" aria-label="القائمة"><i class="fas fa-bars"></i></button>
+                <ul id="main-menu">
+                    <li><a href="index.html#hero"><i class="fas fa-home"></i> الرئيسية</a></li>
+                    <li class="dropdown">
+                        <a href="#" role="button" aria-expanded="false"><i class="fas fa-lungs"></i> أمراض الصدر <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="asthma.html">الربو (Asthme)</a></li>
+                            <li><a href="copd.html">مرض الانسداد الرئوي المزمن (BPCO)</a></li>
+                            <li><a href="lung-cancer.html">سرطان الرئة</a></li>
+                            <li><a href="pulmonary-fibrosis.html">التليف الرئوي</a></li>
+                            <li><a href="bronchitis.html">التهاب الشعب الهوائية</a></li>
+                            <li><a href="pneumonia.html">التهاب الرئة</a></li>
+                            <li><a href="tuberculosis.html">السل</a></li>
+                            <li><a href="covid-19.html">كوفيد-19</a></li>
+                            <li><a href="influenza.html">الإنفلونزا</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" role="button" aria-expanded="false"><i class="fas fa-allergies"></i> أمراض الحساسية <i class="fas fa-chevron-down"></i></a>
+                         <ul class="dropdown-menu">
+                            <li><a href="allergic-rhinitis.html">التهاب الأنف التحسسي</a></li>
+                            <li><a href="allergic-asthma.html">الربو التحسسي</a></li>
+                            <li><a href="allergic-bronchitis.html">التهاب الشعب الهوائية التحسسي</a></li>
+                            <li><a href="hypersensitivity-pneumonitis.html">التهاب الرئة التحسسي</a></li>
+                            <li><a href="eczema.html">الإكزيما</a></li>
+                            <li><a href="urticaria.html">الشرى</a></li>
+                            <li><a href="food-allergy.html">حساسية الطعام</a></li>
+                            <li><a href="drug-allergy.html">الحساسية الدوائية</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="sleep-apnea.html"><i class="fas fa-bed"></i> انقطاع التنفس أثناء النوم</a></li>
+                     <li class="dropdown">
+                        <a href="#" role="button" aria-expanded="false"><i class="fas fa-calculator"></i> حاسبات صحية <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="bmi-calculator.html">مؤشر كتلة الجسم (BMI)</a></li>
+                            <li><a href="bmr-calculator.html">معدل الأيض الأساسي (BMR)</a></li>
+                            <li><a href="calorie-calculator.html">حاسبة السعرات الحرارية</a></li>
+                            <li><a href="whr-calculator.html">نسبة الخصر إلى الورك (WHR)</a></li>
+                            <li><a href="smoking-cost-calculator.html">تكلفة التدخين</a></li>
+                            <li><a href="lung-age-calculator.html">عمر الرئة</a></li>
+                            <li><a href="hydration-calculator.html">الترطيب اليومي</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="index.html#services"><i class="fas fa-concierge-bell"></i> الخدمات</a></li>
+                    <li><a href="index.html#apropos"><i class="fas fa-user-md"></i> عن الدكتورة</a></li>
+                    <li><a href="index.html#appointment"><i class="fas fa-calendar-check"></i> حجز موعد</a></li>
+                    <li><a href="index.html#contact"><i class="fas fa-phone-alt"></i> التواصل</a></li>
+                </ul>
+            </div>
         </nav>
-        <hr>
+        <!-- END: STANDARD HEADER -->
+        <!-- ====================================================================== -->
 
-        <section id="introduction" aria-labelledby="introduction-heading">
-            <h2 id="introduction-heading">مقدمة: فهم معمق لجائحة كوفيد-19</h2>
-            <p>لقد شكلت جائحة كوفيد-19، التي يسببها فيروس سارس-كوف-2 (SARS-CoV-2)، تحديًا صحيًا عالميًا غير مسبوق، مما استدعى جهودًا بحثية وعلاجية مكثفة على مستوى العالم. يستمر الفيروس في التطور، وتستمر معه الحاجة إلى فهم دقيق لبيولوجيته، آلياته المرضية، وطرق تشخيصه وعلاجه والوقاية منه. يهدف هذا الدليل العلمي الشامل، المقدم من عيادة الدكتورة بخة س، إلى توفير مرجع متقدم يستعرض أحدث المعارف والممارسات السريرية المستندة إلى الأدلة حول فيروس كوفيد-19، موجهًا للمختصين والباحثين في المجال الطبي، وكذلك للمرضى الباحثين عن معلومات دقيقة وموثوقة.</p>
-        </section>
+        <main role="main">
+            <div class="main-content article-page">
 
-        <section id="scientific-classification" aria-labelledby="classification-heading">
-            <h2 id="classification-heading">التصنيف العلمي والخصائص الفيروسية (Classification Scientifique et Caractéristiques Virales)</h2>
-            <p>ينتمي فيروس سارس-كوف-2 (SARS-CoV-2)، المسبب لمرض كوفيد-19، إلى عائلة الفيروسات التاجية (Coronaviridae)، وتحديدًا جنس فيروس بيتا التاجي (Betacoronavirus)، ونوع فيروس كورونا المرتبط بالمتلازمة التنفسية الحادة الوخيمة (SARSr-CoV). فهم تصنيفه وخصائصه الفيروسية الدقيقة أمر بالغ الأهمية لتطوير استراتيجيات التشخيص والعلاج والوقاية. يتميز الفيروس بالخصائص التالية:</p>
-            <ul>
-                <li><strong>البنية الجزيئية (Structure Moléculaire):</strong>
-                    <figure style="text-align: center; margin: 15px 0;">
-                        <!-- Placeholder for virus structure image -->
-                        <!-- <img src="sars-cov-2-structure.png" alt="مخطط يوضح البنية الجزيئية لفيروس سارس-كوف-2 مع البروتينات الرئيسية" style="max-width: 400px; border: 1px solid #ccc;"> -->
-                        <figcaption style="font-size: 0.9em; color: #555;"><em>(شكل توضيحي مقترح: بنية فيروس سارس-كوف-2)</em></figcaption>
-                    </figure>
-                    <ul>
-                        <li>جينوم RNA أحادي السلسلة موجب الاتجاه (positive-sense single-stranded RNA).</li>
-                        <li>بروتين السنبلة (Spike Protein - S): هو البروتين السطحي الرئيسي المسؤول عن الارتباط بمستقبلات إنزيم محول الأنجيوتنسين 2 (ACE2) على سطح الخلايا المضيفة، وتسهيل دخول الفيروس. وهو الهدف الرئيسي للقاحات والأجسام المضادة المعادلة.</li>
-                        <li>البروتين الغشائي (Membrane Protein - M): البروتين الأكثر وفرة في الغلاف الفيروسي، ويلعب دورًا في تحديد شكل الفيروس وتجميعه.</li>
-                        <li>البروتين النووي القفيصي (Nucleocapsid Protein - N): يرتبط بالحمض النووي الريبوزي الفيروسي (RNA) ويحميه، ويشارك في تضاعف الفيروس وتجميعه.</li>
-                        <li>البروتين الغلافي (Envelope Protein - E): بروتين صغير يشارك في تجميع الفيروس وإطلاقه من الخلية المضيفة، وقد يلعب دورًا في إمراضية الفيروس.</li>
-                    </ul>
-                </li>
-                <li><strong>المتحورات الرئيسية ذات الأهمية (Variants of Concern - VOCs):</strong> نتيجة للطفرات المستمرة، ظهرت عدة متحورات أثارت قلقًا عالميًا بسبب تأثيرها المحتمل على معدل الانتقال، شدة المرض، أو فعالية اللقاحات والعلاجات. تشمل أبرزها (مع الإشارة إلى أن القائمة تتطور):
-                    <ul>
-                        <li>ألفا (Alpha - B.1.1.7)</li>
-                        <li>بيتا (Beta - B.1.351)</li>
-                        <li>غاما (Gamma - P.1)</li>
-                        <li>دلتا (Delta - B.1.617.2)</li>
-                        <li>أوميكرون (Omicron - B.1.1.529) وسلالاته الفرعية المتعددة (مثل BA.1, BA.2, BA.5, XBB, JN.1). تتميز متحورات أوميكرون بقدرة عالية على الانتشار وتجنب المناعة المكتسبة جزئيًا.</li>
-                    </ul>
-                </li>
-                <li><strong>آليات التنوع الجيني (Mécanismes de Diversité Génétique):</strong>
-                    <ul>
-                        <li>الانجراف الجيني (Dérive Antigénique / Antigenic Drift): تراكم طفرات نقطية صغيرة بمرور الوقت، خاصة في جين بروتين السنبلة (S)، مما يؤدي إلى تغييرات تدريجية في خصائص الفيروس.</li>
-                        <li>الانزياح الجيني (Cassure Antigénique / Antigenic Shift): عملية إعادة تركيب جيني أكثر دراماتيكية، وهي أقل شيوعًا في فيروسات كورونا مقارنة بالإنفلونزا، ولكنها تظل مصدر قلق نظري.</li>
-                    </ul>
-                </li>
-            </ul>
-        </section>
+                <header class="health-article-header" data-aos="fade-down">
+                    <h1><i class="fas fa-virus icon-before"></i> الدليل العلمي الشامل لـ كوفيد-19 (COVID-19)</h1>
+                    <p class="page-subtitle">مقدم من عيادة الدكتورة بخة س: فهم معمق للفيروس، التشخيص، العلاج، والوقاية، مع التركيز على متابعة حالات ما بعد كوفيد.</p>
+                </header>
 
-        <section id="pathophysiology" aria-labelledby="pathophysiology-heading">
-            <h2 id="pathophysiology-heading">الآلية المرضية (الفيزيولوجيا المرضية) (Physiopathologie)</h2>
-            <p>تتضمن الآلية المرضية المعقدة لكوفيد-19 سلسلة من الأحداث التفاعلية بين الفيروس والجهاز المناعي للمضيف، والتي يمكن أن تؤدي إلى طيف واسع من المظاهر السريرية:</p>
-            <ol>
-                <li><strong>مرحلة الدخول الفيروسي والتكاثر الأولي (Phase d'Entrée Virale et Réplication Initiale):</strong>
+                <nav aria-label="جدول محتويات الدليل" data-aos="fade-up">
+                    <h3><i class="fas fa-list-ul icon-before"></i> محتويات هذا الدليل:</h3>
                     <ul>
-                        <li>ارتباط بروتين السنبلة (S) الفيروسي بمستقبلات الإنزيم المحول للأنجيوتنسين 2 (ACE2) الموجودة بكثرة على خلايا الجهاز التنفسي (خاصة الخلايا السنخية من النوع الثاني) وأنسجة أخرى.</li>
-                        <li>تنشيط بروتين S بواسطة إنزيمات بروتياز خلوية مثل TMPRSS2، مما يسهل اندماج الغشاء الفيروسي مع غشاء الخلية المضيفة.</li>
-                        <li>دخول الحمض النووي الريبوزي الفيروسي (RNA) إلى سيتوبلازم الخلية المضيفة وبدء عملية التضاعف الفيروسي وتجميع جسيمات فيروسية جديدة.</li>
+                        <li><a href="#introduction">مقدمة: فهم معمق لجائحة كوفيد-19</a></li>
+                        <li><a href="#scientific-classification">التصنيف العلمي والخصائص الفيروسية</a></li>
+                        <li><a href="#pathophysiology">الآلية المرضية (الفيزيولوجيا المرضية)</a></li>
+                        <li><a href="#advanced-diagnostics">التشخيص المتقدم والمتكامل</a></li>
+                        <li><a href="#treatment-protocols">البروتوكولات العلاجية المتقدمة والمستندة للأدلة</a></li>
+                        <li><a href="#long-covid">متلازمة ما بعد كوفيد-19 (كوفيد طويل الأمد)</a></li>
+                        <li><a href="#prevention-public-health">استراتيجيات الوقاية والصحة العامة</a></li>
+                        <li><a href="#research-updates">آخر المستجدات البحثية الهامة</a></li>
+                        <li><a href="#future-directions">التوجهات المستقبلية في مكافحة الفيروس</a></li>
+                        <li><a href="#contact-us-now">استشارة الدكتورة بخة س بخصوص كوفيد-19</a></li>
                     </ul>
-                </li>
-                <li><strong>الاستجابة المناعية الفطرية والتكيفية (Réponse Immunitaire Innée et Adaptative):</strong>
-                    <ul>
-                        <li>تنشيط الخلايا المناعية الفطرية (مثل الخلايا البلعمية والخلايا القاتلة الطبيعية) عند التعرف على الأنماط الجزيئية المرتبطة بالفيروس (PAMPs).</li>
-                        <li>إفراز الإنترفيرونات من النوع الأول والثالث، والتي تلعب دورًا حاسمًا في الحد من التكاثر الفيروسي الأولي.</li>
-                        <li>إطلاق السيتوكينات والكيماكينات الالتهابية (مثل IL-6, TNF-α) لجذب وتنشيط المزيد من الخلايا المناعية.</li>
-                        <li>في الحالات الشديدة، قد يحدث إفراط في إنتاج السيتوكينات (عاصفة السيتوكين - Cytokine Storm)، مما يساهم في تلف الأنسجة ومتلازمة الضائقة التنفسية الحادة (ARDS).</li>
-                        <li>تطور الاستجابة المناعية التكيفية، بما في ذلك تنشيط الخلايا التائية (T-cells) (CD4+ المساعدة و CD8+ السامة للخلايا) والخلايا البائية (B-cells) المنتجة للأجسام المضادة النوعية (IgM, IgG, IgA) ضد بروتينات الفيروس، وخاصة بروتين S.</li>
-                    </ul>
-                </li>
-                <li><strong>المضاعفات النسيجية والجهازية (Complications Tissulaires et Systémiques):</strong>
-                    <ul>
-                        <li><strong>التأثيرات الرئوية:</strong> التهاب رئوي فيروسي، تلف الخلايا السنخية، تكوين أغشية هيالينية، وتطور متلازمة الضائقة التنفسية الحادة (ARDS) في الحالات الشديدة.</li>
-                        <li><strong>التأثيرات الوعائية البطانية:</strong> تلف الخلايا البطانية المبطنة للأوعية الدموية (Endotheliitis)، مما يساهم في فرط التخثر، تكوين الجلطات الدموية الدقيقة والكبيرة (Thromboembolism)، واضطرابات في وظائف الأعضاء.</li>
-                        <li><strong>التأثيرات على أعضاء أخرى:</strong> يمكن أن يؤثر الفيروس أو الاستجابة الالتهابية المصاحبة له على القلب (التهاب العضلة القلبية)، الكلى (إصابة كلوية حادة)، الجهاز العصبي (السكتة الدماغية، متلازمة غيلان باريه)، والجهاز الهضمي.</li>
-                    </ul>
-                </li>
-            </ol>
-        </section>
+                </nav>
+                <hr data-aos="fade-up">
 
-        <section id="advanced-diagnostics" aria-labelledby="diagnostics-heading">
-            <h2 id="diagnostics-heading">التشخيص المتقدم والمتكامل (Diagnostic Avancé et Intégré)</h2>
-            <p>يعتمد التشخيص الدقيق لكوفيد-19 وتحديد شدة المرض على مجموعة متكاملة من الاختبارات المعملية والتصويرية:</p>
-            <ul>
-                <li><strong>الاختبارات الجزيئية (Tests Moléculaires) للكشف عن الحمض النووي الفيروسي:</strong>
-                    <ul>
-                        <li><strong>تفاعل البوليميراز المتسلسل بالنسخ العكسي (RT-PCR):</strong> يعتبر المعيار الذهبي لتشخيص العدوى الحادة، ويتميز بحساسية ونوعية عاليتين. يستهدف عادةً جينات متعددة في الفيروس (مثل E, N, RdRp).</li>
-                        <li><strong>RT-PCR السريع (Rapid RT-PCR / Point-of-Care):</strong> يوفر نتائج أسرع (خلال 15-60 دقيقة)، مفيد في حالات الطوارئ أو الفحص السريع.</li>
-                        <li><strong>تقنية التضخيم متساوي الحرارة المعتمد على العروة (LAMP - Loop-mediated isothermal amplification):</strong> تقنية بديلة للكشف الجزيئي، أسرع وأقل تعقيدًا من RT-PCR التقليدي.</li>
-                        <li><strong>تسلسل الجينوم الكامل (Whole Genome Sequencing - WGS):</strong> مهم لترصد المتحورات الفيروسية وفهم ديناميكيات الوباء.</li>
-                    </ul>
-                </li>
-                <li><strong>اختبارات الكشف عن المستضدات (Tests Antigéniques):</strong>
-                    <ul>
-                        <li>تكشف عن بروتينات فيروسية معينة (مثل بروتين N). توفر نتائج سريعة (15-30 دقيقة) وأقل تكلفة، ولكنها أقل حساسية من RT-PCR، خاصة في المراحل المبكرة من العدوى أو عند انخفاض الحمل الفيروسي.</li>
-                    </ul>
-                </li>
-                <li><strong>الاختبارات المصلية (Tests Sérologiques) للكشف عن الأجسام المضادة:</strong>
-                    <ul>
-                        <li>تكشف عن وجود الأجسام المضادة (IgM, IgG) ضد SARS-CoV-2 في الدم. لا تستخدم عادة لتشخيص العدوى الحادة، ولكنها مفيدة لتقييم الاستجابة المناعية بعد العدوى أو التطعيم، وفي الدراسات الوبائية.</li>
-                    </ul>
-                </li>
-                <li><strong>التصوير التشخيصي المتقدم (Imagerie Diagnostique Avancée):</strong>
-                    <ul>
-                        <li><strong>الأشعة المقطعية عالية الدقة للصدر (HRCT):</strong> يمكن أن تظهر تغيرات رئوية مميزة لكوفيد-19 (مثل عتامات الزجاج المغشى - Ground-glass opacities، والتكثفات - Consolidations)، وتساعد في تقييم مدى الإصابة الرئوية وشدتها.</li>
-                        <li><strong>التصوير بالرنين المغناطيسي (IRM):</strong> قد يُستخدم لتقييم المضاعفات العصبية أو القلبية.</li>
-                        <li><strong>الموجات فوق الصوتية للرئة (Échographie pulmonaire):</strong> أداة سريعة ومتاحة بجانب سرير المريض لتقييم الرئة، خاصة في وحدات العناية المركزة.</li>
-                    </ul>
-                </li>
-                <li><strong>التحاليل المخبرية (Biomarqueurs et Analyses de Laboratoire):</strong>
-                    <ul>
-                        <li><strong>واسمات الالتهاب:</strong> ارتفاع مستويات بروتين سي التفاعلي (CRP)، الفيريتين (Ferritin)، إنترلوكين-6 (IL-6)، وسرعة تثفل الكريات الحمر (ESR).</li>
-                        <li><strong>واسمات التخثر:</strong> ارتفاع مستويات دي-دايمر (D-dimer)، الفيبرينوجين (Fibrinogen).</li>
-                        <li><strong>تعداد الدم الكامل:</strong> قد يظهر نقص الخلايا اللمفاوية (Lymphopenia)، ارتفاع الخلايا المتعادلة (Neutrophilia).</li>
-                        <li><strong>إنزيمات الكبد والكلى، اللاكتات ديهيدروجيناز (LDH).</strong></li>
-                    </ul>
-                </li>
-            </ul>
-        </section>
+                <section id="introduction" aria-labelledby="introduction-heading" data-aos="fade-up">
+                    <h2 id="introduction-heading"><i class="fas fa-info-circle icon-before"></i> مقدمة: فهم معمق لجائحة كوفيد-19</h2>
+                    <p>لقد شكلت جائحة كوفيد-19، التي يسببها فيروس سارس-كوف-2 (SARS-CoV-2)، تحديًا صحيًا عالميًا غير مسبوق، مما استدعى جهودًا بحثية وعلاجية مكثفة على مستوى العالم. يستمر الفيروس في التطور، وتستمر معه الحاجة إلى فهم دقيق لبيولوجيته، آلياته المرضية، وطرق تشخيصه وعلاجه والوقاية منه. يهدف هذا الدليل العلمي الشامل، المقدم من عيادة الدكتورة بخة س، إلى توفير مرجع متقدم يستعرض أحدث المعارف والممارسات السريرية المستندة إلى الأدلة حول فيروس كوفيد-19، موجهًا للمختصين والباحثين في المجال الطبي، وكذلك للمرضى الباحثين عن معلومات دقيقة وموثوقة.</p>
+                </section>
 
-        <section id="treatment-protocols" aria-labelledby="treatment-heading">
-            <h2 id="treatment-heading">البروتوكولات العلاجية المتقدمة والمستندة للأدلة (Protocoles Thérapeutiques Avancés)</h2>
-            <p>تعتمد استراتيجيات علاج كوفيد-19 على شدة المرض، وجود عوامل الخطر لدى المريض، والمرحلة الزمنية للعدوى. تتطور البروتوكولات باستمرار بناءً على نتائج الدراسات السريرية:</p>
-            <ul>
-                <li><strong>العلاجات المضادة للفيروسات (Traitements Antiviraux):</strong> تهدف إلى تثبيط تكاثر الفيروس.
+                <section id="scientific-classification" aria-labelledby="classification-heading" data-aos="fade-up">
+                    <h2 id="classification-heading"><i class="fas fa-dna icon-before"></i> التصنيف العلمي والخصائص الفيروسية (Classification Scientifique et Caractéristiques Virales)</h2>
+                    <p>ينتمي فيروس سارس-كوف-2 (SARS-CoV-2)، المسبب لمرض كوفيد-19، إلى عائلة الفيروسات التاجية (Coronaviridae)، وتحديدًا جنس فيروس بيتا التاجي (Betacoronavirus)، ونوع فيروس كورونا المرتبط بالمتلازمة التنفسية الحادة الوخيمة (SARSr-CoV). فهم تصنيفه وخصائصه الفيروسية الدقيقة أمر بالغ الأهمية لتطوير استراتيجيات التشخيص والعلاج والوقاية. يتميز الفيروس بالخصائص التالية:</p>
                     <ul>
-                        <li><strong>ريمديسيفير (Remdesivir):</strong> دواء وريدي يُستخدم للمرضى في المستشفى الذين يحتاجون إلى أكسجين تكميلي، خاصة في المراحل المبكرة من المرض الشديد.</li>
-                        <li><strong>نيرماتريلفير/ريتونافير (Nirmatrelvir/Ritonavir - Paxlovid™):</strong> علاج فموي يُستخدم للمرضى غير المقيمين في المستشفى ذوي الخطورة العالية لتطور المرض الشديد، ويجب أن يبدأ خلال 5 أيام من ظهور الأعراض.</li>
-                        <li><strong>مولنوبيرافير (Molnupiravir):</strong> علاج فموي بديل لبعض المرضى ذوي الخطورة العالية، ويُعطى أيضًا في المراحل المبكرة.</li>
-                    </ul>
-                </li>
-                <li><strong>العلاجات المناعية والمعدلة للمناعة (Immunothérapies et Immunomodulateurs):</strong>
-                    <ul>
-                        <li><strong>الكورتيكوستيرويدات (Corticostéroïdes):</strong> مثل ديكساميثازون (Dexamethasone)، أثبتت فعاليتها في تقليل الوفيات لدى المرضى في المستشفى الذين يحتاجون إلى أكسجين أو تهوية ميكانيكية.</li>
-                        <li><strong>مثبطات مستقبلات إنترلوكين-6 (IL-6 Receptor Blockers):</strong> مثل توسيليزوماب (Tocilizumab) أو ساريلوماب (Sarilumab)، قد تُستخدم لبعض المرضى في المستشفى ذوي الحالات الشديدة أو الحرجة المصحوبة بالتهاب جهازي شديد.</li>
-                        <li><strong>مثبطات جانوس كيناز (JAK Inhibitors):</strong> مثل باريسيتينيب (Baricitinib)، قد تُستخدم مع الكورتيكوستيرويدات لبعض المرضى في المستشفى.</li>
-                        <li><strong>الأجسام المضادة وحيدة النسيلة (Anticorps Monoclonaux):</strong> كانت تستخدم سابقًا للمرضى غير المقيمين في المستشفى ذوي الخطورة العالية، ولكن فعاليتها تختلف بشكل كبير ضد المتحورات الجديدة.</li>
-                        <li><strong>بلازما النقاهة (Plasma de Convalescents):</strong> استخدامها محدود حاليًا ونتائج الدراسات متباينة.</li>
-                    </ul>
-                </li>
-                <li><strong>العلاج الداعم المتقدم (Soins de Support Avancés):</strong>
-                    <ul>
-                        <li><strong>العلاج بالأكسجين (Oxygénothérapie):</strong> باستخدام قنيات الأنف، أقنعة الأكسجين، أو أجهزة الأكسجين عالي التدفق عبر القنية الأنفية (HFNC).</li>
-                        <li><strong>التهوية الميكانيكية (Ventilation Mécanique):</strong> غير الغازية (Non-invasive - NIV) أو الغازية (Invasive - IMV) للمرضى المصابين بفشل تنفسي حاد.</li>
-                        <li><strong>الأكسجة الغشائية خارج الجسم (ECMO - Extracorporeal Membrane Oxygenation):</strong> للحالات الحرجة جدًا من الفشل التنفسي أو القلبي المقاوم للعلاجات الأخرى.</li>
-                        <li><strong>إدارة السوائل والكهارل، الدعم الغذائي، والوقاية من الجلطات الدموية.</strong></li>
-                    </ul>
-                </li>
-            </ul>
-        </section>
-
-        <section id="long-covid" aria-labelledby="long-covid-heading">
-            <h2 id="long-covid-heading">متلازمة ما بعد كوفيد-19 (كوفيد طويل الأمد) (Syndrome Post-COVID / COVID Long)</h2>
-            <p>تُعرف متلازمة ما بعد كوفيد-19 (أو "كوفيد طويل الأمد") بأنها استمرار أو ظهور أعراض جديدة بعد أربعة أسابيع (أو أحيانًا بعد 12 أسبوعًا حسب بعض التعريفات) من الإصابة الأولية بـ SARS-CoV-2، والتي لا يمكن تفسيرها بتشخيصات بديلة. تتميز هذه المتلازمة بتنوع كبير في الأعراض التي يمكن أن تؤثر على أنظمة متعددة في الجسم، ولا تزال آلياتها المرضية الدقيقة قيد البحث المكثف. تشمل أبرز المظاهر المستمرة:</p>
-            <ul>
-                <li><strong>الأعراض العامة (Symptômes Généraux):</strong>
-                    <ul>
-                        <li>التعب الشديد والمستمر (Fatigue chronique) الذي يتفاقم مع المجهود (Post-exertional malaise - PEM).</li>
-                        <li>الحمى المتقطعة.</li>
-                    </ul>
-                </li>
-                <li><strong>الأعراض التنفسية (Symptômes Respiratoires):</strong>
-                    <ul>
-                        <li>ضيق التنفس المستمر (Dyspnée persistante).</li>
-                        <li>السعال المزمن (Toux chronique).</li>
-                    </ul>
-                </li>
-                <li><strong>الأعراض القلبية الوعائية (Symptômes Cardiovasculaires):</strong>
-                    <ul>
-                        <li>خفقان القلب (Palpitations) أو عدم انتظام ضربات القلب.</li>
-                        <li>ألم في الصدر.</li>
-                        <li>متلازمة تسارع معدل ضربات القلب الانتصابي (POTS - Postural Orthostatic Tachycardia Syndrome).</li>
-                    </ul>
-                </li>
-                <li><strong>الأعراض العصبية والمعرفية (Symptômes Neurologiques et Cognitifs):</strong>
-                    <ul>
-                        <li>"ضباب الدماغ" (Brouillard cérébral / Brain Fog) ويشمل صعوبات في التركيز والتفكير.</li>
-                        <li>اضطرابات الذاكرة.</li>
-                        <li>الصداع المزمن.</li>
-                        <li>اضطرابات النوم (الأرق).</li>
-                        <li>فقدان أو تغير حاسة الشم (Anosmie/Parosmie) أو التذوق (Agueusie/Dysgueusie).</li>
-                        <li>الدوخة، الوخز أو التنميل.</li>
-                    </ul>
-                </li>
-                <li><strong>الأعراض النفسية (Symptômes Psychologiques):</strong>
-                    <ul>
-                        <li>القلق (Anxiété).</li>
-                        <li>الاكتئاب (Dépression).</li>
-                        <li>اضطراب ما بعد الصدمة (PTSD).</li>
-                    </ul>
-                </li>
-                <li><strong>أعراض أخرى:</strong> آلام المفاصل والعضلات، مشاكل الجهاز الهضمي، طفح جلدي.</li>
-                <li><strong>المتابعة والتأهيل (Suivi et Réhabilitation):</strong> تتطلب إدارة كوفيد طويل الأمد نهجًا متعدد التخصصات يشمل:
-                    <ul>
-                        <li>تقييمًا شاملاً لاستبعاد الأسباب الأخرى للأعراض.</li>
-                        <li>برامج إعادة التأهيل الرئوي والقلبي.</li>
-                        <li>العلاج الطبيعي والوظيفي المتخصص.</li>
-                        <li>الدعم النفسي والمعرفي السلوكي.</li>
-                        <li>إدارة الأعراض بشكل فردي.</li>
-                    </ul>
-                </li>
-            </ul>
-            <p><strong>إذا كنت تعاني من أعراض مستمرة بعد الإصابة بكوفيد-19، فمن المهم استشارة طبيب متخصص مثل الدكتورة بخة س لتقييم حالتك ووضع خطة متابعة مناسبة.</strong></p>
-        </section>
-
-        <section id="prevention-public-health" aria-labelledby="prevention-heading">
-            <h2 id="prevention-heading">استراتيجيات الوقاية والصحة العامة (Prévention et Santé Publique)</h2>
-            <p>تستند استراتيجيات الوقاية من كوفيد-19 ومكافحته إلى الأدلة العلمية المتراكمة والمتجددة باستمرار، مع التركيز على التطعيم وتدابير الصحة العامة التي تتكيف مع تطور الفيروس وظهور متحورات جديدة. تشمل الجوانب الرئيسية:</p>
-            <ul>
-                <li><strong>التطعيم (Vaccination):</strong> هو حجر الزاوية في الوقاية من المرض الشديد والوفاة.
-                    <ul>
-                        <li><strong>أنواع اللقاحات الرئيسية:</strong>
+                        <li><strong>البنية الجزيئية (Structure Moléculaire):</strong>
+                            <figure style="text-align: center; margin: 15px 0;">
+                                <!-- Placeholder for virus structure image -->
+                                <!-- <img src="sars-cov-2-structure.png" alt="مخطط يوضح البنية الجزيئية لفيروس سارس-كوف-2 مع البروتينات الرئيسية" style="max-width: 400px; border: 1px solid #ccc;"> -->
+                                <figcaption style="font-size: 0.9em; color: #555;"><em>(شكل توضيحي مقترح: بنية فيروس سارس-كوف-2)</em></figcaption>
+                            </figure>
                             <ul>
-                                <li>لقاحات الحمض النووي الريبوزي المرسال (mRNA Vaccines - مثل Pfizer-BioNTech, Moderna): تعتمد على إدخال mRNA يحمل شفرة بروتين السنبلة لتحفيز الاستجابة المناعية. أظهرت فعالية عالية.</li>
-                                <li>لقاحات الناقل الفيروسي (Viral Vector Vaccines - مثل AstraZeneca, Johnson & Johnson/Janssen): تستخدم فيروسًا آخر غير ضار كناقل لإدخال جين بروتين السنبلة إلى الخلايا.</li>
-                                <li>لقاحات البروتين المؤتلف (Recombinant Protein Vaccines - مثل Novavax): تحتوي على أجزاء من بروتين السنبلة المصنعة معمليًا.</li>
-                                <li>لقاحات الفيروس المعطل (Inactivated Virus Vaccines - مثل Sinopharm, Sinovac).</li>
+                                <li>جينوم RNA أحادي السلسلة موجب الاتجاه (positive-sense single-stranded RNA).</li>
+                                <li>بروتين السنبلة (Spike Protein - S): هو البروتين السطحي الرئيسي المسؤول عن الارتباط بمستقبلات إنزيم محول الأنجيوتنسين 2 (ACE2) على سطح الخلايا المضيفة، وتسهيل دخول الفيروس. وهو الهدف الرئيسي للقاحات والأجسام المضادة المعادلة.</li>
+                                <li>البروتين الغشائي (Membrane Protein - M): البروتين الأكثر وفرة في الغلاف الفيروسي، ويلعب دورًا في تحديد شكل الفيروس وتجميعه.</li>
+                                <li>البروتين النووي القفيصي (Nucleocapsid Protein - N): يرتبط بالحمض النووي الريبوزي الفيروسي (RNA) ويحميه، ويشارك في تضاعف الفيروس وتجميعه.</li>
+                                <li>البروتين الغلافي (Envelope Protein - E): بروتين صغير يشارك في تجميع الفيروس وإطلاقه من الخلية المضيفة، وقد يلعب دورًا في إمراضية الفيروس.</li>
                             </ul>
                         </li>
-                        <li><strong>الجرعات الأولية والمعززة (Doses primaires et de rappel / Boosters):</strong> يوصى بإكمال السلسلة الأولية من اللقاح والحصول على الجرعات المعززة المحدثة (التي تستهدف المتحورات السائدة) لتعزيز المناعة والحماية، خاصة للفئات الأكثر عرضة للخطر.</li>
-                        <li><strong>فعالية اللقاحات وأمانها:</strong> أثبتت اللقاحات المعتمدة فعاليتها العالية في الوقاية من المرض الشديد، الاستشفاء، والوفاة، كما أن ملف أمانها جيد بشكل عام.</li>
+                        <li><strong>المتحورات الرئيسية ذات الأهمية (Variants of Concern - VOCs):</strong> نتيجة للطفرات المستمرة، ظهرت عدة متحورات أثارت قلقًا عالميًا بسبب تأثيرها المحتمل على معدل الانتقال، شدة المرض، أو فعالية اللقاحات والعلاجات. تشمل أبرزها (مع الإشارة إلى أن القائمة تتطور):
+                            <ul>
+                                <li>ألفا (Alpha - B.1.1.7)</li>
+                                <li>بيتا (Beta - B.1.351)</li>
+                                <li>غاما (Gamma - P.1)</li>
+                                <li>دلتا (Delta - B.1.617.2)</li>
+                                <li>أوميكرون (Omicron - B.1.1.529) وسلالاته الفرعية المتعددة (مثل BA.1, BA.2, BA.5, XBB, JN.1). تتميز متحورات أوميكرون بقدرة عالية على الانتشار وتجنب المناعة المكتسبة جزئيًا.</li>
+                            </ul>
+                        </li>
+                        <li><strong>آليات التنوع الجيني (Mécanismes de Diversité Génétique):</strong>
+                            <ul>
+                                <li>الانجراف الجيني (Dérive Antigénique / Antigenic Drift): تراكم طفرات نقطية صغيرة بمرور الوقت، خاصة في جين بروتين السنبلة (S)، مما يؤدي إلى تغييرات تدريجية في خصائص الفيروس.</li>
+                                <li>الانزياح الجيني (Cassure Antigénique / Antigenic Shift): عملية إعادة تركيب جيني أكثر دراماتيكية، وهي أقل شيوعًا في فيروسات كورونا مقارنة بالإنفلونزا، ولكنها تظل مصدر قلق نظري.</li>
+                            </ul>
+                        </li>
                     </ul>
-                </li>
-                <li><strong>تدابير الصحة العامة غير الدوائية (Mesures de Santé Publique Non Pharmaceutiques):</strong>
+                </section>
+
+                <section id="pathophysiology" aria-labelledby="pathophysiology-heading" data-aos="fade-up">
+                    <h2 id="pathophysiology-heading"><i class="fas fa-project-diagram icon-before"></i> الآلية المرضية (الفيزيولوجيا المرضية) (Physiopathologie)</h2>
+                    <p>تتضمن الآلية المرضية المعقدة لكوفيد-19 سلسلة من الأحداث التفاعلية بين الفيروس والجهاز المناعي للمضيف، والتي يمكن أن تؤدي إلى طيف واسع من المظاهر السريرية:</p>
+                    <ol>
+                        <li><strong>مرحلة الدخول الفيروسي والتكاثر الأولي (Phase d'Entrée Virale et Réplication Initiale):</strong>
+                            <ul>
+                                <li>ارتباط بروتين السنبلة (S) الفيروسي بمستقبلات الإنزيم المحول للأنجيوتنسين 2 (ACE2) الموجودة بكثرة على خلايا الجهاز التنفسي (خاصة الخلايا السنخية من النوع الثاني) وأنسجة أخرى.</li>
+                                <li>تنشيط بروتين S بواسطة إنزيمات بروتياز خلوية مثل TMPRSS2، مما يسهل اندماج الغشاء الفيروسي مع غشاء الخلية المضيفة.</li>
+                                <li>دخول الحمض النووي الريبوزي الفيروسي (RNA) إلى سيتوبلازم الخلية المضيفة وبدء عملية التضاعف الفيروسي وتجميع جسيمات فيروسية جديدة.</li>
+                            </ul>
+                        </li>
+                        <li><strong>الاستجابة المناعية الفطرية والتكيفية (Réponse Immunitaire Innée et Adaptative):</strong>
+                            <ul>
+                                <li>تنشيط الخلايا المناعية الفطرية (مثل الخلايا البلعمية والخلايا القاتلة الطبيعية) عند التعرف على الأنماط الجزيئية المرتبطة بالفيروس (PAMPs).</li>
+                                <li>إفراز الإنترفيرونات من النوع الأول والثالث، والتي تلعب دورًا حاسمًا في الحد من التكاثر الفيروسي الأولي.</li>
+                                <li>إطلاق السيتوكينات والكيماكينات الالتهابية (مثل IL-6, TNF-α) لجذب وتنشيط المزيد من الخلايا المناعية.</li>
+                                <li>في الحالات الشديدة، قد يحدث إفراط في إنتاج السيتوكينات (عاصفة السيتوكين - Cytokine Storm)، مما يساهم في تلف الأنسجة ومتلازمة الضائقة التنفسية الحادة (ARDS).</li>
+                                <li>تطور الاستجابة المناعية التكيفية، بما في ذلك تنشيط الخلايا التائية (T-cells) (CD4+ المساعدة و CD8+ السامة للخلايا) والخلايا البائية (B-cells) المنتجة للأجسام المضادة النوعية (IgM, IgG, IgA) ضد بروتينات الفيروس، وخاصة بروتين S.</li>
+                            </ul>
+                        </li>
+                        <li><strong>المضاعفات النسيجية والجهازية (Complications Tissulaires et Systémiques):</strong>
+                            <ul>
+                                <li><strong>التأثيرات الرئوية:</strong> التهاب رئوي فيروسي، تلف الخلايا السنخية، تكوين أغشية هيالينية، وتطور متلازمة الضائقة التنفسية الحادة (ARDS) في الحالات الشديدة.</li>
+                                <li><strong>التأثيرات الوعائية البطانية:</strong> تلف الخلايا البطانية المبطنة للأوعية الدموية (Endotheliitis)، مما يساهم في فرط التخثر، تكوين الجلطات الدموية الدقيقة والكبيرة (Thromboembolism)، واضطرابات في وظائف الأعضاء.</li>
+                                <li><strong>التأثيرات على أعضاء أخرى:</strong> يمكن أن يؤثر الفيروس أو الاستجابة الالتهابية المصاحبة له على القلب (التهاب العضلة القلبية)، الكلى (إصابة كلوية حادة)، الجهاز العصبي (السكتة الدماغية، متلازمة غيلان باريه)، والجهاز الهضمي.</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </section>
+
+                <section id="advanced-diagnostics" aria-labelledby="diagnostics-heading" data-aos="fade-up">
+                    <h2 id="diagnostics-heading"><i class="fas fa-vial icon-before"></i> التشخيص المتقدم والمتكامل (Diagnostic Avancé et Intégré)</h2>
+                    <p>يعتمد التشخيص الدقيق لكوفيد-19 وتحديد شدة المرض على مجموعة متكاملة من الاختبارات المعملية والتصويرية:</p>
                     <ul>
-                        <li><strong>ارتداء الكمامات (Masques):</strong> خاصة في الأماكن المغلقة المزدحمة أو سيئة التهوية، وعند ارتفاع مستويات انتقال العدوى في المجتمع. الكمامات عالية الجودة (مثل N95, KN95, FFP2) توفر حماية أفضل.</li>
-                        <li><strong>التهوية الجيدة (Bonne ventilation):</strong> فتح النوافذ، استخدام أجهزة تنقية الهواء، وتحسين أنظمة التهوية في المباني لتقليل تركيز الفيروس في الهواء.</li>
-                        <li><strong>التباعد الجسدي (Distanciation physique):</strong> الحفاظ على مسافة من الآخرين، خاصة في الأماكن المزدحمة.</li>
-                        <li><strong>نظافة اليدين (Hygiène des mains):</strong> غسل اليدين بانتظام بالماء والصابون أو استخدام معقم اليدين الكحولي.</li>
-                        <li><strong>آداب السعال والعطس (Étiquette respiratoire):</strong> تغطية الفم والأنف عند السعال أو العطس.</li>
-                        <li><strong>الاختبار والعزل (Test et isolement):</strong> إجراء الاختبار عند ظهور الأعراض أو بعد التعرض المحتمل، وعزل المصابين لمنع انتشار العدوى.</li>
-                        <li><strong>تتبع المخالطين (Traçage des contacts).</strong></li>
+                        <li><strong>الاختبارات الجزيئية (Tests Moléculaires) للكشف عن الحمض النووي الفيروسي:</strong>
+                            <ul>
+                                <li><strong>تفاعل البوليميراز المتسلسل بالنسخ العكسي (RT-PCR):</strong> يعتبر المعيار الذهبي لتشخيص العدوى الحادة، ويتميز بحساسية ونوعية عاليتين. يستهدف عادةً جينات متعددة في الفيروس (مثل E, N, RdRp).</li>
+                                <li><strong>RT-PCR السريع (Rapid RT-PCR / Point-of-Care):</strong> يوفر نتائج أسرع (خلال 15-60 دقيقة)، مفيد في حالات الطوارئ أو الفحص السريع.</li>
+                                <li><strong>تقنية التضخيم متساوي الحرارة المعتمد على العروة (LAMP - Loop-mediated isothermal amplification):</strong> تقنية بديلة للكشف الجزيئي، أسرع وأقل تعقيدًا من RT-PCR التقليدي.</li>
+                                <li><strong>تسلسل الجينوم الكامل (Whole Genome Sequencing - WGS):</strong> مهم لترصد المتحورات الفيروسية وفهم ديناميكيات الوباء.</li>
+                            </ul>
+                        </li>
+                        <li><strong>اختبارات الكشف عن المستضدات (Tests Antigéniques):</strong>
+                            <ul>
+                                <li>تكشف عن بروتينات فيروسية معينة (مثل بروتين N). توفر نتائج سريعة (15-30 دقيقة) وأقل تكلفة، ولكنها أقل حساسية من RT-PCR، خاصة في المراحل المبكرة من العدوى أو عند انخفاض الحمل الفيروسي.</li>
+                            </ul>
+                        </li>
+                        <li><strong>الاختبارات المصلية (Tests Sérologiques) للكشف عن الأجسام المضادة:</strong>
+                            <ul>
+                                <li>تكشف عن وجود الأجسام المضادة (IgM, IgG) ضد SARS-CoV-2 في الدم. لا تستخدم عادة لتشخيص العدوى الحادة، ولكنها مفيدة لتقييم الاستجابة المناعية بعد العدوى أو التطعيم، وفي الدراسات الوبائية.</li>
+                            </ul>
+                        </li>
+                        <li><strong>التصوير التشخيصي المتقدم (Imagerie Diagnostique Avancée):</strong>
+                            <ul>
+                                <li><strong>الأشعة المقطعية عالية الدقة للصدر (HRCT):</strong> يمكن أن تظهر تغيرات رئوية مميزة لكوفيد-19 (مثل عتامات الزجاج المغشى - Ground-glass opacities، والتكثفات - Consolidations)، وتساعد في تقييم مدى الإصابة الرئوية وشدتها.</li>
+                                <li><strong>التصوير بالرنين المغناطيسي (IRM):</strong> قد يُستخدم لتقييم المضاعفات العصبية أو القلبية.</li>
+                                <li><strong>الموجات فوق الصوتية للرئة (Échographie pulmonaire):</strong> أداة سريعة ومتاحة بجانب سرير المريض لتقييم الرئة، خاصة في وحدات العناية المركزة.</li>
+                            </ul>
+                        </li>
+                        <li><strong>التحاليل المخبرية (Biomarqueurs et Analyses de Laboratoire):</strong>
+                            <ul>
+                                <li><strong>واسمات الالتهاب:</strong> ارتفاع مستويات بروتين سي التفاعلي (CRP)، الفيريتين (Ferritin)، إنترلوكين-6 (IL-6)، وسرعة تثفل الكريات الحمر (ESR).</li>
+                                <li><strong>واسمات التخثر:</strong> ارتفاع مستويات دي-دايمر (D-dimer)، الفيبرينوجين (Fibrinogen).</li>
+                                <li><strong>تعداد الدم الكامل:</strong> قد يظهر نقص الخلايا اللمفاوية (Lymphopenia)، ارتفاع الخلايا المتعادلة (Neutrophilia).</li>
+                                <li><strong>إنزيمات الكبد والكلى، اللاكتات ديهيدروجيناز (LDH).</strong></li>
+                            </ul>
+                        </li>
                     </ul>
-                </li>
-            </ul>
-        </section>
+                </section>
 
-        <section id="research-updates" aria-labelledby="research-heading">
-            <h2 id="research-heading">آخر المستجدات البحثية الهامة (Mises à Jour de la Recherche)</h2>
-            <p>يتطور فهمنا لكوفيد-19 بشكل سريع بفضل الأبحاث العلمية المستمرة. تشمل المجالات الرئيسية التي تركز عليها الأبحاث الحالية:</p>
-            <ul>
-                <li><strong>رصد وتوصيف المتحورات الفيروسية الجديدة:</strong> فهم خصائصها من حيث قابلية الانتقال، شدة المرض، والهروب المناعي، وتأثيرها على فعالية اللقاحات والعلاجات.</li>
-                <li><strong>تطوير لقاحات وعلاجات جديدة ومحسنة:</strong> بما في ذلك لقاحات الجيل التالي (مثل اللقاحات الأنفية أو اللقاحات واسعة الطيف ضد فيروسات كورونا المتعددة)، ومضادات فيروسات جديدة ذات آليات عمل مختلفة.</li>
-                <li><strong>فهم آليات متلازمة ما بعد كوفيد-19 (كوفيد طويل الأمد):</strong> تحديد عوامل الخطر، الآليات البيولوجية الكامنة، وتطوير استراتيجيات فعالة للتشخيص والعلاج والوقاية.</li>
-                <li><strong>دراسة التفاعلات بين الفيروس والمضيف:</strong> بما في ذلك العوامل الوراثية والمناعية التي تؤثر على قابلية الإصابة وشدة المرض.</li>
-                <li><strong>تقييم فعالية وأمان التدخلات العلاجية والوقائية على المدى الطويل.</strong></li>
-                <li><strong>تحسين استراتيجيات الصحة العامة للتأهب والاستجابة للأوبئة المستقبلية.</strong></li>
-            </ul>
-        </section>
+                <section id="treatment-protocols" aria-labelledby="treatment-heading" data-aos="fade-up">
+                    <h2 id="treatment-heading"><i class="fas fa-pills icon-before"></i> البروتوكولات العلاجية المتقدمة والمستندة للأدلة (Protocoles Thérapeutiques Avancés)</h2>
+                    <p>تعتمد استراتيجيات علاج كوفيد-19 على شدة المرض، وجود عوامل الخطر لدى المريض، والمرحلة الزمنية للعدوى. تتطور البروتوكولات باستمرار بناءً على نتائج الدراسات السريرية:</p>
+                    <ul>
+                        <li><strong>العلاجات المضادة للفيروسات (Traitements Antiviraux):</strong> تهدف إلى تثبيط تكاثر الفيروس.
+                            <ul>
+                                <li><strong>ريمديسيفير (Remdesivir):</strong> دواء وريدي يُستخدم للمرضى في المستشفى الذين يحتاجون إلى أكسجين تكميلي، خاصة في المراحل المبكرة من المرض الشديد.</li>
+                                <li><strong>نيرماتريلفير/ريتونافير (Nirmatrelvir/Ritonavir - Paxlovid™):</strong> علاج فموي يُستخدم للمرضى غير المقيمين في المستشفى ذوي الخطورة العالية لتطور المرض الشديد، ويجب أن يبدأ خلال 5 أيام من ظهور الأعراض.</li>
+                                <li><strong>مولنوبيرافير (Molnupiravir):</strong> علاج فموي بديل لبعض المرضى ذوي الخطورة العالية، ويُعطى أيضًا في المراحل المبكرة.</li>
+                            </ul>
+                        </li>
+                        <li><strong>العلاجات المناعية والمعدلة للمناعة (Immunothérapies et Immunomodulateurs):</strong>
+                            <ul>
+                                <li><strong>الكورتيكوستيرويدات (Corticostéroïdes):</strong> مثل ديكساميثازون (Dexamethasone)، أثبتت فعاليتها في تقليل الوفيات لدى المرضى في المستشفى الذين يحتاجون إلى أكسجين أو تهوية ميكانيكية.</li>
+                                <li><strong>مثبطات مستقبلات إنترلوكين-6 (IL-6 Receptor Blockers):</strong> مثل توسيليزوماب (Tocilizumab) أو ساريلوماب (Sarilumab)، قد تُستخدم لبعض المرضى في المستشفى ذوي الحالات الشديدة أو الحرجة المصحوبة بالتهاب جهازي شديد.</li>
+                                <li><strong>مثبطات جانوس كيناز (JAK Inhibitors):</strong> مثل باريسيتينيب (Baricitinib)، قد تُستخدم مع الكورتيكوستيرويدات لبعض المرضى في المستشفى.</li>
+                                <li><strong>الأجسام المضادة وحيدة النسيلة (Anticorps Monoclonaux):</strong> كانت تستخدم سابقًا للمرضى غير المقيمين في المستشفى ذوي الخطورة العالية، ولكن فعاليتها تختلف بشكل كبير ضد المتحورات الجديدة.</li>
+                                <li><strong>بلازما النقاهة (Plasma de Convalescents):</strong> استخدامها محدود حاليًا ونتائج الدراسات متباينة.</li>
+                            </ul>
+                        </li>
+                        <li><strong>العلاج الداعم المتقدم (Soins de Support Avancés):</strong>
+                            <ul>
+                                <li><strong>العلاج بالأكسجين (Oxygénothérapie):</strong> باستخدام قنيات الأنف، أقنعة الأكسجين، أو أجهزة الأكسجين عالي التدفق عبر القنية الأنفية (HFNC).</li>
+                                <li><strong>التهوية الميكانيكية (Ventilation Mécanique):</strong> غير الغازية (Non-invasive - NIV) أو الغازية (Invasive - IMV) للمرضى المصابين بفشل تنفسي حاد.</li>
+                                <li><strong>الأكسجة الغشائية خارج الجسم (ECMO - Extracorporeal Membrane Oxygenation):</strong> للحالات الحرجة جدًا من الفشل التنفسي أو القلبي المقاوم للعلاجات الأخرى.</li>
+                                <li><strong>إدارة السوائل والكهارل، الدعم الغذائي، والوقاية من الجلطات الدموية.</strong></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
 
-        <section id="future-directions" aria-labelledby="future-directions-heading">
-            <h2 id="future-directions-heading">التوجهات المستقبلية في مكافحة الفيروس (Perspectives Futures)</h2>
-            <p>بالنظر إلى استمرار وجود فيروس SARS-CoV-2 وتطوره، تركز الجهود المستقبلية على عدة محاور رئيسية:</p>
-            <ul>
-                <li><strong>تطوير لقاحات شاملة (pan-coronavirus vaccines):</strong> تهدف إلى توفير حماية واسعة الطيف ضد المتحورات الحالية والمستقبلية من SARS-CoV-2، وربما ضد فيروسات كورونا الأخرى التي قد تظهر.</li>
-                <li><strong>تحسين استراتيجيات العلاج:</strong> بما في ذلك تطوير مضادات فيروسات فموية فعالة وآمنة يمكن استخدامها على نطاق واسع في المراحل المبكرة من العدوى، وإيجاد علاجات مستهدفة للمضاعفات الشديدة وكوفيد طويل الأمد.</li>
-                <li><strong>تعزيز أنظمة الترصد الوبائي والجينومي العالمية:</strong> للكشف المبكر عن المتحورات الجديدة وتقييم مخاطرها بسرعة.</li>
-                <li><strong>فهم أعمق للتفاعلات بين كوفيد-19 والأمراض الأخرى الموجودة مسبقًا (الأمراض المصاحبة).</strong></li>
-                <li><strong>الاستثمار في البنية التحتية للصحة العامة والبحث العلمي للتأهب للأوبئة المستقبلية.</strong></li>
-                <li><strong>معالجة التفاوتات الصحية في الوصول إلى اللقاحات والعلاجات والمعلومات.</strong></li>
-            </ul>
-        </section>
+                <section id="long-covid" aria-labelledby="long-covid-heading" data-aos="fade-up">
+                    <h2 id="long-covid-heading"><i class="fas fa-user-clock icon-before"></i> متلازمة ما بعد كوفيد-19 (كوفيد طويل الأمد) (Syndrome Post-COVID / COVID Long)</h2>
+                    <p>تُعرف متلازمة ما بعد كوفيد-19 (أو "كوفيد طويل الأمد") بأنها استمرار أو ظهور أعراض جديدة بعد أربعة أسابيع (أو أحيانًا بعد 12 أسبوعًا حسب بعض التعريفات) من الإصابة الأولية بـ SARS-CoV-2، والتي لا يمكن تفسيرها بتشخيصات بديلة. تتميز هذه المتلازمة بتنوع كبير في الأعراض التي يمكن أن تؤثر على أنظمة متعددة في الجسم، ولا تزال آلياتها المرضية الدقيقة قيد البحث المكثف. تشمل أبرز المظاهر المستمرة:</p>
+                    <ul>
+                        <li><strong>الأعراض العامة (Symptômes Généraux):</strong>
+                            <ul>
+                                <li>التعب الشديد والمستمر (Fatigue chronique) الذي يتفاقم مع المجهود (Post-exertional malaise - PEM).</li>
+                                <li>الحمى المتقطعة.</li>
+                            </ul>
+                        </li>
+                        <li><strong>الأعراض التنفسية (Symptômes Respiratoires):</strong>
+                            <ul>
+                                <li>ضيق التنفس المستمر (Dyspnée persistante).</li>
+                                <li>السعال المزمن (Toux chronique).</li>
+                            </ul>
+                        </li>
+                        <li><strong>الأعراض القلبية الوعائية (Symptômes Cardiovasculaires):</strong>
+                            <ul>
+                                <li>خفقان القلب (Palpitations) أو عدم انتظام ضربات القلب.</li>
+                                <li>ألم في الصدر.</li>
+                                <li>متلازمة تسارع معدل ضربات القلب الانتصابي (POTS - Postural Orthostatic Tachycardia Syndrome).</li>
+                            </ul>
+                        </li>
+                        <li><strong>الأعراض العصبية والمعرفية (Symptômes Neurologiques et Cognitifs):</strong>
+                            <ul>
+                                <li>"ضباب الدماغ" (Brouillard cérébral / Brain Fog) ويشمل صعوبات في التركيز والتفكير.</li>
+                                <li>اضطرابات الذاكرة.</li>
+                                <li>الصداع المزمن.</li>
+                                <li>اضطرابات النوم (الأرق).</li>
+                                <li>فقدان أو تغير حاسة الشم (Anosmie/Parosmie) أو التذوق (Agueusie/Dysgueusie).</li>
+                                <li>الدوخة، الوخز أو التنميل.</li>
+                            </ul>
+                        </li>
+                        <li><strong>الأعراض النفسية (Symptômes Psychologiques):</strong>
+                            <ul>
+                                <li>القلق (Anxiété).</li>
+                                <li>الاكتئاب (Dépression).</li>
+                                <li>اضطراب ما بعد الصدمة (PTSD).</li>
+                            </ul>
+                        </li>
+                        <li><strong>أعراض أخرى:</strong> آلام المفاصل والعضلات، مشاكل الجهاز الهضمي، طفح جلدي.</li>
+                        <li><strong>المتابعة والتأهيل (Suivi et Réhabilitation):</strong> تتطلب إدارة كوفيد طويل الأمد نهجًا متعدد التخصصات يشمل:
+                            <ul>
+                                <li>تقييمًا شاملاً لاستبعاد الأسباب الأخرى للأعراض.</li>
+                                <li>برامج إعادة التأهيل الرئوي والقلبي.</li>
+                                <li>العلاج الطبيعي والوظيفي المتخصص.</li>
+                                <li>الدعم النفسي والمعرفي السلوكي.</li>
+                                <li>إدارة الأعراض بشكل فردي.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <p><strong>إذا كنت تعاني من أعراض مستمرة بعد الإصابة بكوفيد-19، فمن المهم استشارة طبيب متخصص مثل الدكتورة بخة س لتقييم حالتك ووضع خطة متابعة مناسبة.</strong></p>
+                </section>
 
-        <section id="consult-dr-bakha" class="cta-section" aria-labelledby="consult-dr-bakha-heading">
-            <h2 id="consult-dr-bakha-heading">هل لديك مخاوف بشأن كوفيد-19 أو أعراض ما بعد الإصابة؟</h2>
-            <p>في عيادة الدكتورة بخة س بڨالمة، نقدم تقييمًا متخصصًا ومتابعة للحالات المتعلقة بكوفيد-19، بما في ذلك متلازمة كوفيد طويل الأمد، والمشكلات التنفسية الأخرى. خبرتنا في الأمراض الصدرية والحساسية تضمن لك الحصول على الرعاية المناسبة.</p>
-            <div class="contact-info">
-                <p><i class="fas fa-phone icon-before"></i><strong>للاستشارة أو حجز موعد، يرجى الاتصال بنا:</strong> <a href="tel:+213796222597">0796222597</a> أو <a href="tel:+213663755584">0663755584</a></p>
-                <p><i class="fas fa-map-marker-alt icon-before"></i><strong>عنوان العيادة:</strong> حي 19 جوان، خلف مستشفى الحكيم عقبي، ڨالمة، الجزائر.</p>
+                <section id="prevention-public-health" aria-labelledby="prevention-heading" data-aos="fade-up">
+                    <h2 id="prevention-heading"><i class="fas fa-shield-alt icon-before"></i> استراتيجيات الوقاية والصحة العامة (Prévention et Santé Publique)</h2>
+                    <p>تستند استراتيجيات الوقاية من كوفيد-19 ومكافحته إلى الأدلة العلمية المتراكمة والمتجددة باستمرار، مع التركيز على التطعيم وتدابير الصحة العامة التي تتكيف مع تطور الفيروس وظهور متحورات جديدة. تشمل الجوانب الرئيسية:</p>
+                    <ul>
+                        <li><strong>التطعيم (Vaccination):</strong> هو حجر الزاوية في الوقاية من المرض الشديد والوفاة.
+                            <ul>
+                                <li><strong>أنواع اللقاحات الرئيسية:</strong>
+                                    <ul>
+                                        <li>لقاحات الحمض النووي الريبوزي المرسال (mRNA Vaccines - مثل Pfizer-BioNTech, Moderna): تعتمد على إدخال mRNA يحمل شفرة بروتين السنبلة لتحفيز الاستجابة المناعية. أظهرت فعالية عالية.</li>
+                                        <li>لقاحات الناقل الفيروسي (Viral Vector Vaccines - مثل AstraZeneca, Johnson & Johnson/Janssen): تستخدم فيروسًا آخر غير ضار كناقل لإدخال جين بروتين السنبلة إلى الخلايا.</li>
+                                        <li>لقاحات البروتين المؤتلف (Recombinant Protein Vaccines - مثل Novavax): تحتوي على أجزاء من بروتين السنبلة المصنعة معمليًا.</li>
+                                        <li>لقاحات الفيروس المعطل (Inactivated Virus Vaccines - مثل Sinopharm, Sinovac).</li>
+                                    </ul>
+                                </li>
+                                <li><strong>الجرعات الأولية والمعززة (Doses primaires et de rappel / Boosters):</strong> يوصى بإكمال السلسلة الأولية من اللقاح والحصول على الجرعات المعززة المحدثة (التي تستهدف المتحورات السائدة) لتعزيز المناعة والحماية، خاصة للفئات الأكثر عرضة للخطر.</li>
+                                <li><strong>فعالية اللقاحات وأمانها:</strong> أثبتت اللقاحات المعتمدة فعاليتها العالية في الوقاية من المرض الشديد، الاستشفاء، والوفاة، كما أن ملف أمانها جيد بشكل عام.</li>
+                            </ul>
+                        </li>
+                        <li><strong>تدابير الصحة العامة غير الدوائية (Mesures de Santé Publique Non Pharmaceutiques):</strong>
+                            <ul>
+                                <li><strong>ارتداء الكمامات (Masques):</strong> خاصة في الأماكن المغلقة المزدحمة أو سيئة التهوية، وعند ارتفاع مستويات انتقال العدوى في المجتمع. الكمامات عالية الجودة (مثل N95, KN95, FFP2) توفر حماية أفضل.</li>
+                                <li><strong>التهوية الجيدة (Bonne ventilation):</strong> فتح النوافذ، استخدام أجهزة تنقية الهواء، وتحسين أنظمة التهوية في المباني لتقليل تركيز الفيروس في الهواء.</li>
+                                <li><strong>التباعد الجسدي (Distanciation physique):</strong> الحفاظ على مسافة من الآخرين، خاصة في الأماكن المزدحمة.</li>
+                                <li><strong>نظافة اليدين (Hygiène des mains):</strong> غسل اليدين بانتظام بالماء والصابون أو استخدام معقم اليدين الكحولي.</li>
+                                <li><strong>آداب السعال والعطس (Étiquette respiratoire):</strong> تغطية الفم والأنف عند السعال أو العطس.</li>
+                                <li><strong>الاختبار والعزل (Test et isolement):</strong> إجراء الاختبار عند ظهور الأعراض أو بعد التعرض المحتمل، وعزل المصابين لمنع انتشار العدوى.</li>
+                                <li><strong>تتبع المخالطين (Traçage des contacts).</strong></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+
+                <section id="research-updates" aria-labelledby="research-heading" data-aos="fade-up">
+                    <h2 id="research-heading"><i class="fas fa-flask icon-before"></i> آخر المستجدات البحثية الهامة (Mises à Jour de la Recherche)</h2>
+                    <p>يتطور فهمنا لكوفيد-19 بشكل سريع بفضل الأبحاث العلمية المستمرة. تشمل المجالات الرئيسية التي تركز عليها الأبحاث الحالية:</p>
+                    <ul>
+                        <li>رصد وتوصيف المتحورات الفيروسية الجديدة: فهم خصائصها من حيث قابلية الانتقال، شدة المرض، والهروب المناعي، وتأثيرها على فعالية اللقاحات والعلاجات.</li>
+                        <li>تطوير لقاحات وعلاجات جديدة ومحسنة: بما في ذلك لقاحات الجيل التالي (مثل اللقاحات الأنفية أو اللقاحات واسعة الطيف ضد فيروسات كورونا المتعددة)، ومضادات فيروسات جديدة ذات آليات عمل مختلفة.</li>
+                        <li>فهم آليات متلازمة ما بعد كوفيد-19 (كوفيد طويل الأمد): تحديد عوامل الخطر، الآليات البيولوجية الكامنة، وتطوير استراتيجيات فعالة للتشخيص والعلاج والوقاية.</li>
+                        <li>دراسة التفاعلات بين الفيروس والمضيف: بما في ذلك العوامل الوراثية والمناعية التي تؤثر على قابلية الإصابة وشدة المرض.</li>
+                        <li>تقييم فعالية وأمان التدخلات العلاجية والوقائية على المدى الطويل.</li>
+                        <li>تحسين استراتيجيات الصحة العامة للتأهب والاستجابة للأوبئة المستقبلية.</li>
+                    </ul>
+                </section>
+
+                <section id="future-directions" aria-labelledby="future-directions-heading" data-aos="fade-up">
+                    <h2 id="future-directions-heading"><i class="fas fa-directions icon-before"></i> التوجهات المستقبلية في مكافحة الفيروس (Perspectives Futures)</h2>
+                    <p>بالنظر إلى استمرار وجود فيروس SARS-CoV-2 وتطوره، تركز الجهود المستقبلية على عدة محاور رئيسية:</p>
+                    <ul>
+                        <li>تطوير لقاحات شاملة (pan-coronavirus vaccines): تهدف إلى توفير حماية واسعة الطيف ضد المتحورات الحالية والمستقبلية من SARS-CoV-2، وربما ضد فيروسات كورونا الأخرى التي قد تظهر.</li>
+                        <li>تحسين استراتيجيات العلاج: بما في ذلك تطوير مضادات فيروسات فموية فعالة وآمنة يمكن استخدامها على نطاق واسع في المراحل المبكرة من العدوى، وإيجاد علاجات مستهدفة للمضاعفات الشديدة وكوفيد طويل الأمد.</li>
+                        <li>تعزيز أنظمة الترصد الوبائي والجينومي العالمية: للكشف المبكر عن المتحورات الجديدة وتقييم مخاطرها بسرعة.</li>
+                        <li>فهم أعمق للتفاعلات بين كوفيد-19 والأمراض الأخرى الموجودة مسبقًا (الأمراض المصاحبة).</li>
+                        <li>الاستثمار في البنية التحتية للصحة العامة والبحث العلمي للتأهب للأوبئة المستقبلية.</li>
+                        <li>معالجة التفاوتات الصحية في الوصول إلى اللقاحات والعلاجات والمعلومات.</li>
+                    </ul>
+                </section>
+
+                <!-- Contact Info & Map Section -->
+                <section id="contact-us-now" class="article-contact-map-section" data-aos="fade-up">
+                    <div class="article-contact-details">
+                        <h3><i class="fas fa-headset icon-before"></i> هل لديك استفسارات أو تحتاج لتقييم متعلق بكوفيد-19؟</h3>
+                        <p>الدكتورة بخة س وفريقها في عيادة قالمة متخصصون في تقييم ومتابعة الحالات المتعلقة بكوفيد-19، بما في ذلك متلازمة كوفيد طويل الأمد والمشكلات التنفسية الأخرى.</p>
+                        <div class="contact-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <div>
+                                <h4>أرقام الهاتف</h4>
+                                <p><a href="tel:+213796222597">0796222597</a> (مكالمات)</p>
+                                <p><a href="https://wa.me/213663755584" target="_blank" rel="noopener noreferrer" class="whatsapp-link">
+                                    <i class="fab fa-whatsapp"></i> 0663755584</a> (واتساب)
+                                </p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>عنوان العيادة</h4>
+                                <p>حي 19 جوان، خلف مستشفى الحكيم عقبي، ڨالمة، الجزائر</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="article-map-container">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3209.1007271838494!2d7.436598084719768!3d36.455121980020934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1scabinet%20de%20pneumologie%20allergologie%20Dr.%20Bakha%20S!5e0!3m2!1sar!2sdz!4v1735734049065!5m2!1sar!2sdz" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="موقع عيادة الدكتورة بخة س على الخريطة">
+                        </iframe>
+                    </div>
+                </section>
+
+                <section class="cta-section" data-aos="fade-up">
+                    <h2 id="contact-cta-heading"><i class="fas fa-life-ring icon-before"></i> احصل على المتابعة المتخصصة لحالتك بعد كوفيد-19!</h2>
+                    <p>لا تتجاهل الأعراض المستمرة. تقدم عيادة الدكتورة بخة س تقييمًا شاملاً ودعمًا لإدارة متلازمة ما بعد كوفيد والمشكلات التنفسية.</p>
+                    <a href="index.html#appointment" class="cta-button">احجز موعدك الآن لتقييم شامل</a>
+                </section>
+
+            </div> <!-- End .main-content .article-page -->
+        </main>
+
+        <!-- ====================================================================== -->
+        <!-- START: STANDARD FOOTER (Copy from index.html) -->
+         <footer>
+            <p class="copyright-text">© <span id="currentYear"></span> عيادة الدكتورة بخة س - جميع الحقوق محفوظة</p>
+            <div class="footer-links">
+                <a href="https://www.facebook.com/profile.php?id=61560422818675" target="_blank" rel="noopener noreferrer" class="footer-link">
+                    <i class="fab fa-facebook-f"></i> تابعنا على الفيسبوك
+                </a>
+                <a href="https://www.google.com/maps/search/?api=1&query=عيادة+الدكتورة+بخة+س+حي+19+جوان+خلف+مستشفى+الحكيم+عقبي+ڨالمة+الجزائر" target="_blank" rel="noopener noreferrer" class="footer-link">
+                    <i class="fas fa-map-marker-alt"></i> موقعنا على خرائط جوجل
+                </a>
             </div>
-            <a href="index.html#appointment" class="button-style">اطلب موعدك الآن عبر موقعنا</a>
-        </section>
+            <div class="footer-visitor-stats">
+                <div class="visitor-stat-item">
+                    <i class="fas fa-users"></i>
+                    <span>إجمالي الزوار: <span id="total-visitors">0</span></span>
+                </div>
+                <div class="visitor-stat-item">
+                    <i class="fas fa-user-clock"></i>
+                    <span>زوار اليوم: <span id="today-visitors">0</span></span>
+                </div>
+                <div class="visitor-stat-item">
+                    <span class="flag-icon" id="visitor-country-flag"></span>
+                    <span>موقعك: <span id="visitor-country-name">جارِ التحديد...</span></span>
+                </div>
+            </div>
+            <p style="text-align:center; font-size: 0.85em; opacity: 0.8; margin-top: calc(var(--spacing-unit) * 4);">المعلومات المقدمة في هذه الصفحة هي لأغراض تثقيفية فقط ولا تغني عن الاستشارة الطبية المتخصصة. الآراء والإرشادات قد تتغير بناءً على تطور الأبحاث.</p>
+        </footer>
+        <!-- END: STANDARD FOOTER -->
+        <!-- ====================================================================== -->
 
-        <!-- References section removed as per request -->
+    </div> <!-- End #content-ar -->
 
-    </main>
-    <footer>
-        <p style="text-align:center;">المعلومات المقدمة في هذا الدليل هي لأغراض علمية وتثقيفية متقدمة ولا تغني عن الاستشارة الطبية المتخصصة. الآراء والإرشادات قد تتغير بناءً على تطور الأبحاث.</p>
-        <p style="text-align:center;">تقدم عيادة الدكتورة بخة س تقييمًا متخصصًا وعلاجًا للأمراض الصدرية والتنفسية، بما في ذلك متابعة حالات ما بعد كوفيد-19. لمزيد من المعلومات حول خدماتنا، يرجى زيارة <a href="index.html">صفحتنا الرئيسية</a> أو <a href="index.html#contact">التواصل معنا</a>.</p>
-        <p style="text-align:center;">© <span id="copyrightYear"></span> الدكتورة بخة س - جميع الحقوق محفوظة<br>اختصاصية في الأمراض الصدرية والحساسية، ڨالمة، الجزائر.</p>
-        <p style="text-align:center;"><a href="index.html"><i class="fas fa-home icon-before"></i>العودة إلى الصفحة الرئيسية</a></p>
-    </footer>
+    <div class="watermark">Dr. Bakha</div>
+
+    <!-- Essential Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" defer></script>
+    <script src="app.js" defer></script> <!-- Your main JS file -->
 
     <script>
-        // Dynamic year for copyright
-        document.getElementById('copyrightYear').textContent = new Date().getFullYear();
-
-        // Dynamic date for "Last Updated"
-        const lastUpdatedDate = new Date(); // Sets to current date, or set a specific date like: new Date("2023-11-01");
-        const options = { year: 'numeric', month: 'long', day: 'numeric' };
-        document.getElementById('updateDate').textContent = lastUpdatedDate.toLocaleDateString('ar-EG', options); // 'ar-EG' for Arabic date format
+        const currentYearEl = document.getElementById('currentYear');
+        if (currentYearEl) {
+            currentYearEl.textContent = new Date().getFullYear();
+        }
     </script>
 </body>
 </html>
