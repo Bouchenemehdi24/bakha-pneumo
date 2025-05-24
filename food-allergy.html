@@ -13,17 +13,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Meta Keywords for Food Allergy -->
-    <meta name="keywords" content="حساسية الطعام, علاج حساسية الطعام, أعراض حساسية الطعام, أسباب حساسية الطعام, تشخيص حساسية الطعام في قالمة, حساسية الفول السوداني, حساسية البيض, حساسية الحليب, الدكتورة بخة س, طبيب حساسية طعام قالمة, الصدمة التحسسية من الطعام, الوقاية من حساسية الطعام, اختبار حساسية الطعام">
+    <meta name="keywords" content="حساسية الطعام, علاج حساسية الطعام, أعراض حساسية الطعام, أسباب حساسية الطعام, تشخيص حساسية الطعام في قالمة, حساسية الفول السوداني, حساسية البيض, حساسية الحليب, الدكتورة بخة س, طبيب حساسية طعام قالمة, الصدمة التحسسية من الطعام, الوقاية من حساسية الطعام, اختبار حساسية الطعام, Allergie alimentaire">
     <!-- Meta Description for Food Allergy -->
     <meta name="description" content="هل تعاني من ردود فعل بعد تناول أطعمة معينة؟ قد تكون حساسية الطعام. تعرف على الأعراض، التشخيص، والعلاج مع د. بخة س، أخصائية الحساسية في قالمة.">
     <meta name="author" content="عيادة الدكتورة بخة س - اختصاصية في الأمراض الصدرية والحساسية">
-    <meta http-equiv="Content-Language" content="ar, fr">
+    <meta http-equiv="Content-Language" content="ar">
     <!-- Optimized Title for Food Allergy -->
     <title>حساسية الطعام (Allergie alimentaire): التشخيص والعلاج الآمن - د. بخة س، قالمة</title>
     <link rel="icon" href="cabinet.png" type="image/png">
     <link rel="canonical" href="https://bakha-pneumo.netlify.app/food-allergy.html">
-    <link rel="stylesheet" href="style.css"> <!-- Main stylesheet -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome for icons -->
+    
+    <!-- Main Stylesheet (should contain all theme variables and common styles) -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
     <script type="application/ld+json">
     {
@@ -31,7 +34,7 @@
         "@type": "MedicalWebPage",
         "name": "دليل شامل عن حساسية الطعام (Allergie alimentaire)",
         "description": "معلومات مفصلة حول حساسية الطعام، بما في ذلك الأطعمة الشائعة المسببة للحساسية، الأعراض، التشخيص الدقيق، وخيارات العلاج وإدارة الحالات الطارئة (الصدمة التحسسية) المتاحة في عيادة الدكتورة بخة س، قالمة.",
-        "keywords": "حساسية الطعام, حساسية غذائية, الصدمة التحسسية, علاج الحساسية, اختبار الحساسية, قالمة",
+        "keywords": "حساسية الطعام, حساسية غذائية, الصدمة التحسسية, علاج الحساسية, اختبار الحساسية, قالمة, الدكتورة بخة س, Allergie alimentaire",
         "author": {
             "@type": "Person",
             "name": "الدكتورة بخة س"
@@ -49,252 +52,383 @@
             "@type": "WebPage",
             "@id": "https://bakha-pneumo.netlify.app/food-allergy.html"
         },
-        "datePublished": "2023-11-01", // Example: Update with actual publication date
-        "dateModified": "2023-11-01"  // Example: Update with actual modification date
+        "datePublished": "2023-11-23", 
+        "dateModified": "2023-12-12"  
     }
     </script>
-    <style>
-        /* Styles for ToC and CTA (ideally in style.css) */
-        nav[aria-label="جدول محتويات الصفحة"] { margin-bottom: 20px; padding: 15px; background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: .25rem; }
-        nav[aria-label="جدول محتويات الصفحة"] h3 { margin-top: 0; color: #343a40; }
-        nav[aria-label="جدول محتويات الصفحة"] ul { list-style: none; padding-right: 0; }
-        nav[aria-label="جدول محتويات الصفحة"] ul li { margin-bottom: 10px; }
-        nav[aria-label="جدول محتويات الصفحة"] ul li a { text-decoration: none; color: #007bff; }
-        nav[aria-label="جدول محتويات الصفحة"] ul li a:hover { text-decoration: underline; color: #0056b3; }
-
-        .cta-section { text-align: center; padding: 30px 20px; background-color: #e9ecef; margin-top: 30px; margin-bottom: 20px; border-radius: .3rem; border: 1px solid #ced4da; }
-        .cta-section h2 { color: #2c3e50; margin-bottom: 15px; font-size: 1.8em; }
-        .cta-section p { font-size: 1.15em; margin-bottom: 20px; color: #34495e; }
-        .cta-section .button-style { display: inline-block; background-color: #28a745; color: white; padding: 12px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 1.1em; transition: background-color 0.3s ease, transform 0.2s ease; }
-        .cta-section .button-style:hover { background-color: #218838; transform: translateY(-2px); }
-        .cta-section .contact-info p { margin-bottom: 8px; font-size: 1.1em;}
-        .cta-section .contact-info a { color: #007bff; font-weight: bold; }
-        .cta-section .contact-info a:hover { color: #0056b3; }
-        .icon-before { margin-left: 8px; }
-
-        .page-subtitle { text-align:center; font-size: 1.1em; color: #555; margin-bottom: 15px;}
-        .important-note { background-color: #f8d7da; border-left: 5px solid #f5c6cb; padding: 15px; margin: 20px 0; color: #721c24; } /* Reddish note for allergy/emergency context */
-    </style>
+    <!-- Inline <style> block REMOVED. All styles should be in style.css -->
 </head>
-<body>
-    <header>
-        <h1>حساسية الطعام (Allergie alimentaire)</h1>
-        <p class="page-subtitle">دليل شامل لفهم ردود الفعل التحسسية تجاه الأطعمة وكيفية التعامل معها بأمان مع د. بخة س</p>
-    </header>
-    <main>
-        <nav aria-label="جدول محتويات الصفحة">
-            <h3>ماذا ستجد في هذا الدليل؟</h3>
-            <ul>
-                <li><a href="#what-is-food-allergy">ما هي حساسية الطعام؟ وما الفرق بينها وبين عدم تحمل الطعام؟</a></li>
-                <li><a href="#symptoms">كيف أتعرف على أعراض حساسية الطعام؟ (بما في ذلك الصدمة التحسسية)</a></li>
-                <li><a href="#common-food-allergens">ما هي الأطعمة الأكثر شيوعًا في التسبب بالحساسية؟</a></li>
-                <li><a href="#risk-factors">من هم الأشخاص الأكثر عرضة للإصابة؟</a></li>
-                <li><a href="#diagnosis">كيف يتم تشخيص حساسية الطعام بدقة؟</a></li>
-                <li><a href="#treatment">ما هو علاج حساسية الطعام وكيف يتم التعامل مع الحالات الطارئة؟</a></li>
-                <li><a href="#living-with-food-allergy">نصائح للتعايش الآمن مع حساسية الطعام</a></li>
-                <li><a href="#when-to-see-doctor">متى تكون زيارة الطبيب ضرورية؟</a></li>
-                <li><a href="#faq">أسئلة شائعة حول حساسية الطعام</a></li>
-                <li><a href="#contact-cta">هل تشك في إصابتك بحساسية تجاه طعام معين؟ اتصل بنا</a></li>
-            </ul>
-        </nav>
-        <hr>
+<body data-theme="dark"> <!-- Default theme, JS handles toggle -->
 
-        <section id="what-is-food-allergy" aria-labelledby="what-is-food-allergy-heading">
-            <h2 id="what-is-food-allergy-heading">ما هي حساسية الطعام؟ وما الفرق بينها وبين عدم تحمل الطعام؟ (Qu'est-ce que l'allergie alimentaire ?)</h2>
-            <p>
-                حساسية الطعام هي <strong>رد فعل غير طبيعي ومبالغ فيه من جهاز المناعة</strong> تجاه بروتين معين موجود في الطعام. عندما يتناول الشخص المصاب هذا الطعام، يتعرف جهازه المناعي على هذا البروتين بطريق الخطأ على أنه مادة ضارة (مستضد أو مُؤَرِّج)، ويقوم بإنتاج أجسام مضادة (عادة من نوع IgE) وخلايا مناعية أخرى لمهاجمته. هذا التفاعل يؤدي إلى إطلاق مواد كيميائية (مثل الهيستامين) في الجسم، والتي تسبب أعراض الحساسية.
-            </p>
-            <p>
-                يمكن أن تظهر حساسية الطعام في أي عمر، ولكنها أكثر شيوعًا لدى الرضع والأطفال الصغار. بعض حساسيات الطعام قد تختفي مع تقدم العمر (مثل حساسية الحليب والبيض)، بينما قد تستمر أنواع أخرى (مثل حساسية الفول السوداني والمكسرات والمأكولات البحرية) مدى الحياة.
-            </p>
-            <p><strong>من المهم التمييز بين حساسية الطعام وعدم تحمل الطعام (Intolérance alimentaire):</strong></p>
-            <ul>
-                <li><strong>حساسية الطعام:</strong> هي رد فعل مناعي حقيقي. يمكن أن تكون الأعراض خفيفة أو شديدة جدًا ومهددة للحياة (مثل الصدمة التحسسية - Anaphylaxie)، حتى مع تناول كمية صغيرة جدًا من الطعام المسبب.</li>
-                <li><strong>عدم تحمل الطعام:</strong> هو رد فعل غير مرغوب فيه تجاه طعام معين لا يشمل جهاز المناعة بنفس طريقة الحساسية. عادة ما يكون مرتبطًا بصعوبة في هضم الطعام (مثل عدم تحمل اللاكتوز بسبب نقص إنزيم اللاكتاز). الأعراض غالبًا ما تكون مرتبطة بالجهاز الهضمي (مثل الانتفاخ، الغازات، الإسهال) وتعتمد على الكمية المتناولة من الطعام، ونادرًا ما تكون مهددة للحياة.</li>
-            </ul>
-            <p><strong>إذا كنت تشك في أن لديك حساسية أو عدم تحمل تجاه طعام معين، فمن الضروري استشارة طبيب متخصص في الحساسية مثل الدكتورة بخة س لتأكيد التشخيص والحصول على التوجيه المناسب.</strong></p>
-        </section>
+    <!-- Global Elements (Theme Toggle, Language Selector) -->
+    <div id="google_translate_element" class="language-selector"></div>
+    <button id="theme-toggle" aria-label="Toggle Dark Mode">
+        <i class="fas fa-moon"></i>
+    </button>
 
-        <section id="symptoms" aria-labelledby="symptoms-heading">
-            <h2 id="symptoms-heading">كيف أتعرف على أعراض حساسية الطعام؟ (بما في ذلك الصدمة التحسسية) (Symptômes)</h2>
-            <p>
-                تظهر أعراض حساسية الطعام عادة خلال دقائق إلى ساعتين بعد تناول الطعام المسبب للحساسية. يمكن أن تختلف الأعراض في نوعها وشدتها من شخص لآخر ومن رد فعل لآخر لدى نفس الشخص. قد تشمل الأعراض واحدًا أو أكثر مما يلي:
-            </p>
-            <ul>
-                <li><strong>أعراض جلدية (Manifestations cutanées):</strong>
-                    <ul>
-                        <li>الشرى (Urticaire): طفح جلدي أحمر، مرتفع، ومثير للحكة (لويحات).</li>
-                        <li>الإكزيما (Eczéma): خاصة عند الأطفال.</li>
-                        <li>احمرار الجلد أو تورمه.</li>
-                        <li>حكة أو وخز في الفم أو الحلق.</li>
-                        <li>الوذمة الوعائية (Angio-œdème): تورم في الوجه، الشفتين، اللسان، أو الجفون.</li>
-                    </ul>
-                </li>
-                <li><strong>أعراض الجهاز الهضمي (Manifestations digestives):</strong>
-                    <ul>
-                        <li>ألم في البطن أو تقلصات.</li>
-                        <li>غثيان أو قيء.</li>
-                        <li>إسهال.</li>
-                    </ul>
-                </li>
-                <li><strong>أعراض الجهاز التنفسي (Manifestations respiratoires):</strong>
-                    <ul>
-                        <li>سيلان أو انسداد الأنف، عطس.</li>
-                        <li>سعال، صفير الصدر، أو ضيق في التنفس.</li>
-                        <li>ضيق أو انقباض في الحلق.</li>
-                    </ul>
-                </li>
-                <li><strong>أعراض أخرى:</strong>
-                    <ul>
-                        <li>الدوخة أو الدوار أو الشعور بالإغماء (بسبب انخفاض ضغط الدم).</li>
-                        <li>خفقان القلب.</li>
-                    </ul>
-                </li>
-            </ul>
-            <div class="important-note">
-                <h3>الصدمة التحسسية (Choc anaphylactique / Anaphylaxie)</h3>
-                <p><strong>الصدمة التحسسية هي رد فعل حساسية شديد وسريع الانتشار يمكن أن يكون مهددًا للحياة.</strong> تحدث عادة خلال دقائق من تناول الطعام المسبب للحساسية. تشمل أعراضها (بالإضافة إلى بعض الأعراض المذكورة أعلاه):</p>
-                <ul>
-                    <li>صعوبة شديدة في التنفس أو البلع (بسبب تورم الحلق أو اللسان).</li>
-                    <li>انخفاض مفاجئ وحاد في ضغط الدم.</li>
-                    <li>تسارع أو ضعف في النبض.</li>
-                    <li>دوخة شديدة أو فقدان الوعي.</li>
-                    <li>ازرقاق الجلد أو الشفاه.</li>
-                    <li>شعور بالهلاك الوشيك.</li>
+    <div id="content-ar" lang="ar" dir="rtl">
+
+        <!-- ====================================================================== -->
+        <!-- START: STANDARD HEADER (Copy from index.html) -->
+        <header role="banner" class="main-header">
+            <div class="header-top">
+                <div class="clinic-info">
+                    <div class="logo-container">
+                        <img src="cabinet.png" alt="شعار العيادة" class="clinic-logo">
+                    </div>
+                    <div class="clinic-title">
+                        <h1>عيادة الدكتورة بخة س</h1>
+                        <p class="clinic-subtitle">اختصاصية في الأمراض الصدرية والحساسية - ولاية قالمة</p>
+                    </div>
+                </div>
+                <div id="clinic-status" class="clinic-status" data-aos="fade-down">
+                    <div class="status-indicator">
+                        <i class="fas fa-circle"></i>
+                        <p id="status-message"></p>
+                    </div>
+                    <p id="next-opening" class="next-opening"></p>
+                </div>
+            </div>
+        </header>
+        <nav class="main-nav">
+            <div class="nav-container">
+                <button class="mobile-menu-btn" aria-label="القائمة"><i class="fas fa-bars"></i></button>
+                <ul id="main-menu">
+                    <li><a href="index.html#hero"><i class="fas fa-home"></i> الرئيسية</a></li>
+                    <li class="dropdown">
+                        <a href="#" role="button" aria-expanded="false"><i class="fas fa-lungs"></i> أمراض الصدر <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="asthma.html">الربو (Asthme)</a></li>
+                            <li><a href="copd.html">مرض الانسداد الرئوي المزمن (BPCO)</a></li>
+                            <li><a href="lung-cancer.html">سرطان الرئة</a></li>
+                            <li><a href="pulmonary-fibrosis.html">التليف الرئوي</a></li>
+                            <li><a href="bronchitis.html">التهاب الشعب الهوائية</a></li>
+                            <li><a href="pneumonia.html">التهاب الرئة</a></li>
+                            <li><a href="tuberculosis.html">السل</a></li>
+                            <li><a href="covid-19.html">كوفيد-19</a></li>
+                            <li><a href="influenza.html">الإنفلونزا</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" role="button" aria-expanded="false"><i class="fas fa-allergies"></i> أمراض الحساسية <i class="fas fa-chevron-down"></i></a>
+                         <ul class="dropdown-menu">
+                            <li><a href="allergic-rhinitis.html">التهاب الأنف التحسسي</a></li>
+                            <li><a href="allergic-asthma.html">الربو التحسسي</a></li>
+                            <li><a href="allergic-bronchitis.html">التهاب الشعب الهوائية التحسسي</a></li>
+                            <li><a href="hypersensitivity-pneumonitis.html">التهاب الرئة التحسسي</a></li>
+                            <li><a href="eczema.html">الإكزيما</a></li>
+                            <li><a href="urticaria.html">الشرى</a></li>
+                            <li><a href="food-allergy.html">حساسية الطعام</a></li>
+                            <li><a href="drug-allergy.html">الحساسية الدوائية</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="sleep-apnea.html"><i class="fas fa-bed"></i> انقطاع التنفس أثناء النوم</a></li>
+                     <li class="dropdown">
+                        <a href="#" role="button" aria-expanded="false"><i class="fas fa-calculator"></i> حاسبات صحية <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="bmi-calculator.html">مؤشر كتلة الجسم (BMI)</a></li>
+                            <li><a href="bmr-calculator.html">معدل الأيض الأساسي (BMR)</a></li>
+                            <li><a href="calorie-calculator.html">حاسبة السعرات الحرارية</a></li>
+                            <li><a href="whr-calculator.html">نسبة الخصر إلى الورك (WHR)</a></li>
+                            <li><a href="smoking-cost-calculator.html">تكلفة التدخين</a></li>
+                            <li><a href="lung-age-calculator.html">عمر الرئة</a></li>
+                            <li><a href="hydration-calculator.html">الترطيب اليومي</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="index.html#services"><i class="fas fa-concierge-bell"></i> الخدمات</a></li>
+                    <li><a href="index.html#apropos"><i class="fas fa-user-md"></i> عن الدكتورة</a></li>
+                    <li><a href="index.html#appointment"><i class="fas fa-calendar-check"></i> حجز موعد</a></li>
+                    <li><a href="index.html#contact"><i class="fas fa-phone-alt"></i> التواصل</a></li>
                 </ul>
-                <p><strong>إذا ظهرت عليك أو على شخص آخر أي من علامات الصدمة التحسسية، يجب طلب المساعدة الطبية الطارئة فورًا (اتصل بالإسعاف أو توجه إلى أقرب قسم طوارئ) واستخدام حقنة الإبينفرين (الأدرينالين) ذاتية الحقن إذا كانت متوفرة وموصوفة لك.</strong></p>
             </div>
-        </section>
+        </nav>
+        <!-- END: STANDARD HEADER -->
+        <!-- ====================================================================== -->
 
-        <section id="common-food-allergens" aria-labelledby="common-food-allergens-heading">
-            <h2 id="common-food-allergens-heading">ما هي الأطعمة الأكثر شيوعًا في التسبب بالحساسية؟ (Allergènes alimentaires courants)</h2>
-            <p>على الرغم من أن أي طعام تقريبًا يمكن أن يسبب حساسية، إلا أن هناك مجموعة من الأطعمة مسؤولة عن الغالبية العظمى من ردود الفعل التحسسية الغذائية. تشمل هذه الأطعمة (تُعرف أحيانًا بـ "الثمانية الكبار" بالإضافة إلى السمسم):</p>
-            <ul>
-                <li><strong>الحليب (Lait de vache):</strong> خاصة عند الرضع والأطفال الصغار.</li>
-                <li><strong>البيض (Œufs).</strong></li>
-                <li><strong>الفول السوداني (Arachides).</strong></li>
-                <li><strong>المكسرات (Noix / Fruits à coque):</strong> مثل اللوز، الجوز (عين الجمل)، الكاجو، البندق، الفستق، والجوز البرازيلي.</li>
-                <li><strong>القمح (Blé).</strong></li>
-                <li><strong>فول الصويا (Soja).</strong></li>
-                <li><strong>الأسماك (Poissons):</strong> مثل السلمون، التونة، والقد.</li>
-                <li><strong>المحار والقشريات (Crustacés et mollusques / Fruits de mer):</strong> مثل الجمبري (الروبيان)، سرطان البحر، جراد البحر، والمحار.</li>
-                <li><strong>السمسم (Sésame):</strong> يعتبر من مسببات الحساسية الهامة بشكل متزايد.</li>
-            </ul>
-            <p>يمكن أن تحدث حساسية تجاه أطعمة أخرى أيضًا، مثل بعض الفواكه، الخضروات، أو البذور الأخرى.</p>
-        </section>
+        <main role="main">
+            <div class="main-content article-page">
 
-        <section id="risk-factors" aria-labelledby="risk-factors-heading">
-            <h2 id="risk-factors-heading">من هم الأشخاص الأكثر عرضة للإصابة؟ (Facteurs de risque)</h2>
-            <p>يمكن لأي شخص أن يصاب بحساسية الطعام، ولكن هناك بعض العوامل التي قد تزيد من خطر الإصابة:</p>
-            <ul>
-                <li><strong>التاريخ العائلي للحساسية:</strong> إذا كان لديك أفراد في العائلة يعانون من حساسية الطعام، الربو، الإكزيما، أو حمى القش، فقد تكون أكثر عرضة للإصابة بحساسية الطعام.</li>
-                <li><strong>وجود أنواع أخرى من الحساسية:</strong> الأشخاص الذين يعانون من الربو أو الإكزيما هم أكثر عرضة للإصابة بحساسية الطعام.</li>
-                <li><strong>العمر:</strong> حساسية الطعام أكثر شيوعًا لدى الرضع والأطفال الصغار. بعض أنواع الحساسية (مثل حساسية الحليب والبيض) قد تختفي مع تقدم العمر، بينما تميل أنواع أخرى (مثل حساسية الفول السوداني والمكسرات) إلى الاستمرار.</li>
-                <li><strong>الإصابة السابقة بحساسية طعام:</strong> إذا كنت قد عانيت من حساسية تجاه طعام معين في الماضي، فقد تكون معرضًا لخطر تكرارها أو تطور حساسية تجاه أطعمة أخرى.</li>
-            </ul>
-        </section>
+                <header class="health-article-header" data-aos="fade-down">
+                    <h1><i class="fas fa-utensils icon-before"></i> حساسية الطعام (Allergie alimentaire)</h1>
+                    <p class="page-subtitle">دليل شامل لفهم ردود الفعل التحسسية تجاه الأطعمة، الأعراض، التشخيص، وكيفية التعامل معها بأمان مع الدكتورة بخة س.</p>
+                </header>
 
-        <section id="diagnosis" aria-labelledby="diagnosis-heading">
-            <h2 id="diagnosis-heading">كيف يتم تشخيص حساسية الطعام بدقة؟ (Diagnostic)</h2>
-            <p>إذا كنت تشك في أنك أو طفلك تعاني من حساسية تجاه طعام معين، فمن المهم جدًا استشارة طبيب متخصص في الحساسية مثل الدكتورة بخة س. التشخيص الدقيق ضروري لتجنب الأطعمة المسببة للحساسية بأمان وتلقي التوجيه المناسب. يشمل التشخيص عادةً:</p>
-            <ul>
-                <li><strong>التاريخ الطبي المفصل (Anamnèse détaillée):</strong> <strong>هذه هي الخطوة الأكثر أهمية.</strong> ستسألك الدكتورة بالتفصيل عن الأعراض التي حدثت، ما هو الطعام المشتبه به، كم من الوقت استغرق ظهور الأعراض بعد تناول الطعام، ما هي الأعراض بالضبط، كم استمرت، وكيف تم علاجها. من المهم أيضًا ذكر أي تاريخ شخصي أو عائلي للحساسية. يُنصح أحيانًا بالاحتفاظ بـ "مذكرة طعام وأعراض" (journal alimentaire et des symptômes) لتتبع العلاقة بين الأطعمة المتناولة والأعراض.</li>
-                <li><strong>الفحص البدني:</strong> لتقييم حالتك الصحية العامة والبحث عن أي علامات حساسية.</li>
-                <li><strong>اختبار وخز الجلد (Prick tests cutanés):</strong> يتم وضع قطرات صغيرة من مستخلصات الأطعمة المشتبه بها على جلدك (عادة الذراع أو الظهر)، ثم يتم وخز الجلد برفق من خلال القطرة. ظهور تفاعل (مثل احمرار أو انتفاخ صغير يشبه لدغة البعوض) خلال 15-20 دقيقة يشير إلى وجود حساسية محتملة تجاه ذلك الطعام.</li>
-                <li><strong>فحص الدم لقياس الأجسام المضادة IgE النوعية (Dosage des IgE spécifiques sanguines):</strong> يقيس هذا الاختبار مستوى الأجسام المضادة من نوع IgE الموجهة ضد بروتينات طعام معينة في دمك.</li>
-                <li><strong>نظام الحمية الاستبعادية (Régime d'éviction):</strong> قد يُطلب منك تجنب تناول الطعام المشتبه به لفترة معينة (عادة بضعة أسابيع) لمعرفة ما إذا كانت الأعراض تتحسن، ثم إعادة إدخاله (تحت إشراف طبي فقط) لمراقبة أي رد فعل.</li>
-                <li><strong>اختبار التحدي الغذائي الفموي المراقب (Test de provocation orale contrôlé - TPO):</strong> <strong>يعتبر هذا الاختبار هو المعيار الذهبي لتأكيد أو نفي حساسية طعام معينة.</strong> يتم إجراؤه فقط تحت إشراف طبي صارم في بيئة مجهزة للتعامل مع أي رد فعل تحسسي شديد. يتضمن إعطاء المريض كميات متزايدة تدريجيًا من الطعام المشتبه به على فترات منتظمة ومراقبة أي رد فعل.</li>
-            </ul>
-            <p>من المهم عدم محاولة إجراء اختبار التحدي الغذائي بنفسك في المنزل، خاصة إذا كان هناك تاريخ لردود فعل شديدة.</p>
-        </section>
-
-        <section id="treatment" aria-labelledby="treatment-heading">
-            <h2 id="treatment-heading">ما هو علاج حساسية الطعام وكيف يتم التعامل مع الحالات الطارئة؟ (Traitement)</h2>
-            <p>العلاج الأساسي لحساسية الطعام هو <strong>التجنب الصارم للطعام المسبب للحساسية.</strong> لا يوجد حاليًا علاج يشفي من حساسية الطعام بشكل نهائي لمعظم الأنواع، على الرغم من أن الأبحاث جارية.</p>
-            <h3>إدارة حساسية الطعام:</h3>
-            <ul>
-                <li><strong>تجنب الطعام المسبب (Éviction stricte de l'allergène):</strong>
+                <nav aria-label="جدول محتويات الصفحة" data-aos="fade-up">
+                    <h3><i class="fas fa-list-ul icon-before"></i> محتويات هذا الدليل:</h3>
                     <ul>
-                        <li>تعلم قراءة ملصقات المكونات على المنتجات الغذائية بعناية فائقة.</li>
-                        <li>كن على دراية بالمكونات المخفية أو التلوث العرضي (cross-contamination) الذي قد يحدث أثناء تحضير الطعام.</li>
-                        <li>عند تناول الطعام خارج المنزل، أبلغ طاقم المطعم بحساسيتك بوضوح واستفسر عن مكونات الأطباق.</li>
+                        <li><a href="#what-is-food-allergy">ما هي حساسية الطعام؟ وما الفرق بينها وبين عدم تحمل الطعام؟</a></li>
+                        <li><a href="#symptoms">كيف أتعرف على أعراض حساسية الطعام؟ (بما في ذلك الصدمة التحسسية)</a></li>
+                        <li><a href="#common-food-allergens">ما هي الأطعمة الأكثر شيوعًا في التسبب بالحساسية؟</a></li>
+                        <li><a href="#risk-factors">من هم الأشخاص الأكثر عرضة للإصابة؟</a></li>
+                        <li><a href="#diagnosis">كيف يتم تشخيص حساسية الطعام بدقة؟</a></li>
+                        <li><a href="#treatment">ما هو علاج حساسية الطعام وكيف يتم التعامل مع الحالات الطارئة؟</a></li>
+                        <li><a href="#living-with-food-allergy">نصائح للتعايش الآمن مع حساسية الطعام</a></li>
+                        <li><a href="#when-to-see-doctor">متى تكون زيارة الطبيب ضرورية؟</a></li>
+                        <li><a href="#faq">أسئلة شائعة حول حساسية الطعام</a></li>
+                        <li><a href="#contact-us-now">هل تشك في إصابتك بحساسية تجاه طعام معين؟ تواصل معنا</a></li>
                     </ul>
-                </li>
-                <li><strong>خطة عمل الطوارئ للحساسية المفرطة (Plan d'action d'urgence pour l'anaphylaxie):</strong> إذا كان لديك تاريخ من ردود الفعل الشديدة أو حساسية تجاه طعام معروف بخطورته (مثل الفول السوداني، المكسرات، المأكولات البحرية)، فستقوم الدكتورة بخة س بوضع خطة طوارئ مكتوبة معك. تتضمن هذه الخطة كيفية التعرف على أعراض الصدمة التحسسية ومتى وكيفية استخدام حقنة الإبينفرين (الأدرينالين).</li>
-                <li><strong>حمل حقنة الإبينفرين (الأدرينالين) ذاتية الحقن (Auto-injecteur d'épinéphrine):</strong> الأشخاص المعرضون لخطر الصدمة التحسسية يجب أن يحملوا دائمًا حقنتي إبينفرين ذاتية الحقن (مثل EpiPen®، Jext®، Anapen®) ويعرفوا هم وأفراد عائلاتهم كيفية استخدامها بشكل صحيح. <strong>الإبينفرين هو العلاج الأول والمنقذ للحياة في حالة الصدمة التحسسية.</strong></li>
-                <li><strong>مضادات الهيستامين (Antihistaminiques):</strong> يمكن استخدامها لتخفيف الأعراض الخفيفة لحساسية الطعام (مثل الحكة أو الشرى الخفيف)، ولكنها <strong>لا تمنع أو تعالج ردود الفعل التحسسية الشديدة أو الصدمة التحسسية.</strong></li>
-                <li><strong>الكورتيكوستيرويدات (Corticostéroïdes):</strong> قد توصف في بعض الحالات لتقليل الالتهاب بعد السيطرة على رد الفعل التحسسي الأولي.</li>
-            </ul>
-            <h3>العلاجات الناشئة (قد لا تكون متاحة على نطاق واسع أو مناسبة للجميع):</h3>
-            <ul>
-                <li><strong>العلاج المناعي الفموي (Immunothérapie orale - ITO):</strong> يتضمن إعطاء كميات صغيرة ومتزايدة تدريجيًا من الطعام المسبب للحساسية تحت إشراف طبي دقيق بهدف بناء قدرة التحمل (desensitization). لا يزال هذا العلاج قيد البحث والتطوير للعديد من الأطعمة، ويحمل مخاطر ردود فعل تحسسية.</li>
-            </ul>
-        </section>
+                </nav>
+                <hr data-aos="fade-up">
 
-        <section id="living-with-food-allergy" aria-labelledby="living-with-food-allergy-heading">
-            <h2 id="living-with-food-allergy-heading">نصائح للتعايش الآمن مع حساسية الطعام (Vivre en toute sécurité avec une allergie alimentaire)</h2>
-            <p>التعايش مع حساسية الطعام يتطلب يقظة وتخطيطًا دائمين. إليك بعض النصائح الهامة لضمان سلامتك وسلامة طفلك:</p>
-            <ul>
-                <li><strong>اقرأ ملصقات المكونات دائمًا:</strong> في كل مرة تشتري فيها منتجًا غذائيًا، حتى لو كنت قد اشتريته من قبل، لأن المكونات قد تتغير. تعلم كيفية التعرف على الأسماء المختلفة للمادة المسببة للحساسية.</li>
-                <li><strong>كن حذرًا من التلوث العرضي:</strong> يمكن أن يحدث التلوث العرضي عندما يلامس طعام آمن كمية صغيرة من الطعام المسبب للحساسية (على سبيل المثال، من خلال أواني الطهي المشتركة، ألواح التقطيع، أو الزيوت).</li>
-                <li><strong>عند تناول الطعام خارج المنزل:</strong> أبلغ طاقم المطعم أو المضيف بحساسيتك بوضوح قبل طلب الطعام. اسأل عن المكونات وكيفية تحضير الطعام. إذا كنت غير متأكد، فمن الأفضل تجنب الطبق.</li>
-                <li><strong>احمل معك دائمًا حقنتي إبينفرين ذاتية الحقن إذا كانت موصوفة لك.</strong> تأكد من أنها ليست منتهية الصلاحية وأنك تعرف كيفية استخدامها.</li>
-                <li><strong>ارتدِ سوار أو قلادة تنبيه طبي:</strong> تشير إلى حساسيتك الغذائية، خاصة إذا كانت شديدة.</li>
-                <li><strong>علّم أفراد عائلتك، أصدقائك، ومقدمي الرعاية (مثل المعلمين في المدرسة) عن حساسيتك،</strong> كيفية التعرف على أعراض رد الفعل التحسسي، وماذا يفعلون في حالة الطوارئ (بما في ذلك كيفية استخدام حقنة الإبينفرين).</li>
-                <li><strong>كن مستعدًا:</strong> ضع خطة عمل للطوارئ وراجعها بانتظام.</li>
-                <li><strong>استشر أخصائي تغذية (إذا لزم الأمر):</strong> يمكن أن يساعدك في التخطيط لوجبات آمنة ومغذية وتجنب نقص العناصر الغذائية إذا كنت بحاجة إلى استبعاد العديد من الأطعمة.</li>
-            </ul>
-        </section>
+                <section id="what-is-food-allergy" aria-labelledby="what-is-food-allergy-heading" data-aos="fade-up">
+                    <h2 id="what-is-food-allergy-heading"><i class="fas fa-question-circle icon-before"></i> ما هي حساسية الطعام؟ وما الفرق بينها وبين عدم تحمل الطعام؟ (Qu'est-ce que l'allergie alimentaire ?)</h2>
+                    <p>حساسية الطعام هي <strong>رد فعل غير طبيعي ومبالغ فيه من جهاز المناعة</strong> تجاه بروتين معين موجود في الطعام. عندما يتناول الشخص المصاب هذا الطعام، يتعرف جهازه المناعي على هذا البروتين بطريق الخطأ على أنه مادة ضارة (مستضد أو مُؤَرِّج)، ويقوم بإنتاج أجسام مضادة (عادة من نوع IgE) وخلايا مناعية أخرى لمهاجمته. هذا التفاعل يؤدي إلى إطلاق مواد كيميائية (مثل الهيستامين) في الجسم، والتي تسبب أعراض الحساسية.</p>
+                    <p>يمكن أن تظهر حساسية الطعام في أي عمر، ولكنها أكثر شيوعًا لدى الرضع والأطفال الصغار. بعض حساسيات الطعام قد تختفي مع تقدم العمر (مثل حساسية الحليب والبيض)، بينما قد تستمر أنواع أخرى (مثل حساسية الفول السوداني والمكسرات والمأكولات البحرية) مدى الحياة.</p>
+                    <p><strong>من المهم التمييز بين حساسية الطعام وعدم تحمل الطعام (Intolérance alimentaire):</strong></p>
+                    <ul>
+                        <li><strong>حساسية الطعام:</strong> هي رد فعل مناعي حقيقي. يمكن أن تكون الأعراض خفيفة أو شديدة جدًا ومهددة للحياة (مثل الصدمة التحسسية - Anaphylaxie)، حتى مع تناول كمية صغيرة جدًا من الطعام المسبب.</li>
+                        <li><strong>عدم تحمل الطعام:</strong> هو رد فعل غير مرغوب فيه تجاه طعام معين لا يشمل جهاز المناعة بنفس طريقة الحساسية. عادة ما يكون مرتبطًا بصعوبة في هضم الطعام (مثل عدم تحمل اللاكتوز بسبب نقص إنزيم اللاكتاز). الأعراض غالبًا ما تكون مرتبطة بالجهاز الهضمي (مثل الانتفاخ، الغازات، الإسهال) وتعتمد على الكمية المتناولة من الطعام، ونادرًا ما تكون مهددة للحياة.</li>
+                    </ul>
+                    <p><strong>إذا كنت تشك في أن لديك حساسية أو عدم تحمل تجاه طعام معين، فمن الضروري استشارة طبيب متخصص في الحساسية مثل الدكتورة بخة س لتأكيد التشخيص والحصول على التوجيه المناسب.</strong></p>
+                </section>
 
-        <section id="when-to-see-doctor" aria-labelledby="when-to-see-doctor-heading">
-            <h2 id="when-to-see-doctor-heading">متى تكون زيارة الطبيب ضرورية؟ (Quand consulter un médecin ?)</h2>
-            <p>من الضروري استشارة طبيب متخصص في الحساسية مثل الدكتورة بخة س في الحالات التالية:</p>
-            <ul>
-                <li><strong>إذا كنت تشك في أنك أو طفلك تعاني من حساسية تجاه طعام معين،</strong> حتى لو كانت الأعراض خفيفة. التشخيص الدقيق هو الخطوة الأولى للإدارة الآمنة.</li>
-                <li><strong>إذا كنت قد عانيت من رد فعل تحسسي تجاه طعام،</strong> خاصة إذا كان شديدًا أو شمل أعراضًا في أكثر من جهاز في الجسم (مثل الجلد والجهاز التنفسي معًا).</li>
-                <li><strong>إذا كنت بحاجة إلى تأكيد حساسية طعام معينة أو استبعادها.</strong></li>
-                <li><strong>إذا كنت بحاجة إلى خطة عمل للطوارئ وحقنة إبينفرين ذاتية الحقن.</strong></li>
-                <li><strong>إذا كنت ترغب في مناقشة أحدث خيارات العلاج، بما في ذلك العلاج المناعي الفموي إذا كان مناسبًا.</strong></li>
-                <li><strong>للمتابعة المنتظمة وإعادة تقييم الحساسية، خاصة عند الأطفال، حيث أن بعض الحساسيات قد تختفي بمرور الوقت.</strong></li>
-            </ul>
-            <div class="important-note">
-                <p><strong>تذكر: إذا ظهرت عليك أو على شخص آخر أعراض رد فعل تحسسي شديد (صعوبة في التنفس، تورم في الحلق أو اللسان، دوخة، انخفاض مفاجئ في ضغط الدم)، فاطلب المساعدة الطبية الطارئة على الفور.</strong></p>
+                <section id="symptoms" aria-labelledby="symptoms-heading" data-aos="fade-up">
+                    <h2 id="symptoms-heading"><i class="fas fa-exclamation-triangle icon-before"></i> كيف أتعرف على أعراض حساسية الطعام؟ (بما في ذلك الصدمة التحسسية) (Symptômes)</h2>
+                    <p>تظهر أعراض حساسية الطعام عادة خلال دقائق إلى ساعتين بعد تناول الطعام المسبب للحساسية. يمكن أن تختلف الأعراض في نوعها وشدتها من شخص لآخر ومن رد فعل لآخر لدى نفس الشخص. قد تشمل الأعراض واحدًا أو أكثر مما يلي:</p>
+                    <ul>
+                        <li><strong>أعراض جلدية (Manifestations cutanées):</strong>
+                            <ul>
+                                <li>الشرى (Urticaire): طفح جلدي أحمر، مرتفع، ومثير للحكة (لويحات).</li>
+                                <li>الإكزيما (Eczéma): خاصة عند الأطفال.</li>
+                                <li>احمرار الجلد أو تورمه.</li>
+                                <li>حكة أو وخز في الفم أو الحلق.</li>
+                                <li>الوذمة الوعائية (Angio-œdème): تورم في الوجه، الشفتين، اللسان، أو الجفون.</li>
+                            </ul>
+                        </li>
+                        <li><strong>أعراض الجهاز الهضمي (Manifestations digestives):</strong>
+                            <ul>
+                                <li>ألم في البطن أو تقلصات.</li>
+                                <li>غثيان أو قيء.</li>
+                                <li>إسهال.</li>
+                            </ul>
+                        </li>
+                        <li><strong>أعراض الجهاز التنفسي (Manifestations respiratoires):</strong>
+                            <ul>
+                                <li>سيلان أو انسداد الأنف، عطس.</li>
+                                <li>سعال، صفير الصدر، أو ضيق في التنفس.</li>
+                                <li>ضيق أو انقباض في الحلق.</li>
+                            </ul>
+                        </li>
+                        <li><strong>أعراض أخرى:</strong>
+                            <ul>
+                                <li>الدوخة أو الدوار أو الشعور بالإغماء (بسبب انخفاض ضغط الدم).</li>
+                                <li>خفقان القلب.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="important-note emergency-note">
+                        <h3><i class="fas fa-bolt icon-before"></i> الصدمة التحسسية (Choc anaphylactique / Anaphylaxie)</h3>
+                        <p><strong>الصدمة التحسسية هي رد فعل حساسية شديد وسريع الانتشار يمكن أن يكون مهددًا للحياة.</strong> تحدث عادة خلال دقائق من تناول الطعام المسبب للحساسية. تشمل أعراضها (بالإضافة إلى بعض الأعراض المذكورة أعلاه):</p>
+                        <ul>
+                            <li>صعوبة شديدة في التنفس أو البلع (بسبب تورم الحلق أو اللسان).</li>
+                            <li>انخفاض مفاجئ وحاد في ضغط الدم.</li>
+                            <li>تسارع أو ضعف في النبض.</li>
+                            <li>دوخة شديدة أو فقدان الوعي.</li>
+                            <li>ازرقاق الجلد أو الشفاه.</li>
+                            <li>شعور بالهلاك الوشيك.</li>
+                        </ul>
+                        <p><strong>إذا ظهرت عليك أو على شخص آخر أي من علامات الصدمة التحسسية، يجب طلب المساعدة الطبية الطارئة فورًا (اتصل بالإسعاف أو توجه إلى أقرب قسم طوارئ) واستخدام حقنة الإبينفرين (الأدرينالين) ذاتية الحقن إذا كانت متوفرة وموصوفة لك.</strong></p>
+                    </div>
+                </section>
+
+                <section id="common-food-allergens" aria-labelledby="common-food-allergens-heading" data-aos="fade-up">
+                    <h2 id="common-food-allergens-heading"><i class="fas fa-apple-alt icon-before"></i> ما هي الأطعمة الأكثر شيوعًا في التسبب بالحساسية؟ (Allergènes alimentaires courants)</h2>
+                    <p>على الرغم من أن أي طعام تقريبًا يمكن أن يسبب حساسية، إلا أن هناك مجموعة من الأطعمة مسؤولة عن الغالبية العظمى من ردود الفعل التحسسية الغذائية. تشمل هذه الأطعمة (تُعرف أحيانًا بـ "الثمانية الكبار" بالإضافة إلى السمسم):</p>
+                    <ul>
+                        <li><strong>الحليب (Lait de vache):</strong> خاصة عند الرضع والأطفال الصغار.</li>
+                        <li><strong>البيض (Œufs).</strong></li>
+                        <li><strong>الفول السوداني (Arachides).</strong></li>
+                        <li><strong>المكسرات (Noix / Fruits à coque):</strong> مثل اللوز، الجوز (عين الجمل)، الكاجو، البندق، الفستق، والجوز البرازيلي.</li>
+                        <li><strong>القمح (Blé).</strong></li>
+                        <li><strong>فول الصويا (Soja).</strong></li>
+                        <li><strong>الأسماك (Poissons):</strong> مثل السلمون، التونة، والقد.</li>
+                        <li><strong>المحار والقشريات (Crustacés et mollusques / Fruits de mer):</strong> مثل الجمبري (الروبيان)، سرطان البحر، جراد البحر، والمحار.</li>
+                        <li><strong>السمسم (Sésame):</strong> يعتبر من مسببات الحساسية الهامة بشكل متزايد.</li>
+                    </ul>
+                    <p>يمكن أن تحدث حساسية تجاه أطعمة أخرى أيضًا، مثل بعض الفواكه، الخضروات، أو البذور الأخرى.</p>
+                </section>
+
+                <section id="risk-factors" aria-labelledby="risk-factors-heading" data-aos="fade-up">
+                    <h2 id="risk-factors-heading"><i class="fas fa-users icon-before"></i> من هم الأشخاص الأكثر عرضة للإصابة؟ (Facteurs de risque)</h2>
+                    <p>يمكن لأي شخص أن يصاب بحساسية الطعام، ولكن هناك بعض العوامل التي قد تزيد من خطر الإصابة:</p>
+                    <ul>
+                        <li>التاريخ العائلي للحساسية: إذا كان لديك أفراد في العائلة يعانون من حساسية الطعام، الربو، الإكزيما، أو حمى القش، فقد تكون أكثر عرضة للإصابة بحساسية الطعام.</li>
+                        <li>وجود أنواع أخرى من الحساسية: الأشخاص الذين يعانون من الربو أو الإكزيما هم أكثر عرضة للإصابة بحساسية الطعام.</li>
+                        <li>العمر: حساسية الطعام أكثر شيوعًا لدى الرضع والأطفال الصغار. بعض أنواع الحساسية (مثل حساسية الحليب والبيض) قد تختفي مع تقدم العمر، بينما تميل أنواع أخرى (مثل حساسية الفول السوداني والمكسرات) إلى الاستمرار.</li>
+                        <li>الإصابة السابقة بحساسية طعام: إذا كنت قد عانيت من حساسية تجاه طعام معين في الماضي، فقد تكون معرضًا لخطر تكرارها أو تطور حساسية تجاه أطعمة أخرى.</li>
+                    </ul>
+                </section>
+
+                <section id="diagnosis" aria-labelledby="diagnosis-heading" data-aos="fade-up">
+                    <h2 id="diagnosis-heading"><i class="fas fa-stethoscope icon-before"></i> كيف يتم تشخيص حساسية الطعام بدقة؟ (Diagnostic)</h2>
+                    <p>إذا كنت تشك في أنك أو طفلك تعاني من حساسية تجاه طعام معين، فمن المهم جدًا استشارة طبيب متخصص في الحساسية مثل الدكتورة بخة س. التشخيص الدقيق ضروري لتجنب الأطعمة المسببة للحساسية بأمان وتلقي التوجيه المناسب. يشمل التشخيص عادةً:</p>
+                    <ul>
+                        <li><strong>التاريخ الطبي المفصل (Anamnèse détaillée):</strong> <strong>هذه هي الخطوة الأكثر أهمية.</strong> ستسألك الدكتورة بالتفصيل عن الأعراض التي حدثت، ما هو الطعام المشتبه به، كم من الوقت استغرق ظهور الأعراض بعد تناول الطعام، ما هي الأعراض بالضبط، كم استمرت، وكيف تم علاجها. من المهم أيضًا ذكر أي تاريخ شخصي أو عائلي للحساسية. يُنصح أحيانًا بالاحتفاظ بـ "مذكرة طعام وأعراض" (journal alimentaire et des symptômes) لتتبع العلاقة بين الأطعمة المتناولة والأعراض.</li>
+                        <li><strong>الفحص البدني:</strong> لتقييم حالتك الصحية العامة والبحث عن أي علامات حساسية.</li>
+                        <li><strong>اختبار وخز الجلد (Prick tests cutanés):</strong> يتم وضع قطرات صغيرة من مستخلصات الأطعمة المشتبه بها على جلدك (عادة الذراع أو الظهر)، ثم يتم وخز الجلد برفق من خلال القطرة. ظهور تفاعل (مثل احمرار أو انتفاخ صغير يشبه لدغة البعوض) خلال 15-20 دقيقة يشير إلى وجود حساسية محتملة تجاه ذلك الطعام.</li>
+                        <li><strong>فحص الدم لقياس الأجسام المضادة IgE النوعية (Dosage des IgE spécifiques sanguines):</strong> يقيس هذا الاختبار مستوى الأجسام المضادة من نوع IgE الموجهة ضد بروتينات طعام معينة في دمك.</li>
+                        <li><strong>نظام الحمية الاستبعادية (Régime d'éviction):</strong> قد يُطلب منك تجنب تناول الطعام المشتبه به لفترة معينة (عادة بضعة أسابيع) لمعرفة ما إذا كانت الأعراض تتحسن، ثم إعادة إدخاله (تحت إشراف طبي فقط) لمراقبة أي رد فعل.</li>
+                        <li><strong>اختبار التحدي الغذائي الفموي المراقب (Test de provocation orale contrôlé - TPO):</strong> <strong>يعتبر هذا الاختبار هو المعيار الذهبي لتأكيد أو نفي حساسية طعام معينة.</strong> يتم إجراؤه فقط تحت إشراف طبي صارم في بيئة مجهزة للتعامل مع أي رد فعل تحسسي شديد. يتضمن إعطاء المريض كميات متزايدة تدريجيًا من الطعام المشتبه به على فترات منتظمة ومراقبة أي رد فعل.</li>
+                    </ul>
+                    <p>من المهم عدم محاولة إجراء اختبار التحدي الغذائي بنفسك في المنزل، خاصة إذا كان هناك تاريخ لردود فعل شديدة.</p>
+                </section>
+
+                <section id="treatment" aria-labelledby="treatment-heading" data-aos="fade-up">
+                    <h2 id="treatment-heading"><i class="fas fa-first-aid icon-before"></i> ما هو علاج حساسية الطعام وكيف يتم التعامل مع الحالات الطارئة؟ (Traitement)</h2>
+                    <p>العلاج الأساسي لحساسية الطعام هو <strong>التجنب الصارم للطعام المسبب للحساسية.</strong> لا يوجد حاليًا علاج يشفي من حساسية الطعام بشكل نهائي لمعظم الأنواع، على الرغم من أن الأبحاث جارية.</p>
+                    <h3>إدارة حساسية الطعام:</h3>
+                    <ul>
+                        <li><strong>تجنب الطعام المسبب (Éviction stricte de l'allergène):</strong>
+                            <ul>
+                                <li>تعلم قراءة ملصقات المكونات على المنتجات الغذائية بعناية فائقة.</li>
+                                <li>كن على دراية بالمكونات المخفية أو التلوث العرضي (cross-contamination) الذي قد يحدث أثناء تحضير الطعام.</li>
+                                <li>عند تناول الطعام خارج المنزل، أبلغ طاقم المطعم بحساسيتك بوضوح واستفسر عن مكونات الأطباق.</li>
+                            </ul>
+                        </li>
+                        <li><strong>خطة عمل الطوارئ للحساسية المفرطة (Plan d'action d'urgence pour l'anaphylaxie):</strong> إذا كان لديك تاريخ من ردود الفعل الشديدة أو حساسية تجاه طعام معروف بخطورته (مثل الفول السوداني، المكسرات، المأكولات البحرية)، فستقوم الدكتورة بخة س بوضع خطة طوارئ مكتوبة معك. تتضمن هذه الخطة كيفية التعرف على أعراض الصدمة التحسسية ومتى وكيفية استخدام حقنة الإبينفرين (الأدرينالين).</li>
+                        <li><strong>حمل حقنة الإبينفرين (الأدرينالين) ذاتية الحقن (Auto-injecteur d'épinéphrine):</strong> الأشخاص المعرضون لخطر الصدمة التحسسية يجب أن يحملوا دائمًا حقنتي إبينفرين ذاتية الحقن (مثل EpiPen®، Jext®، Anapen®) ويعرفوا هم وأفراد عائلاتهم كيفية استخدامها بشكل صحيح. <strong>الإبينفرين هو العلاج الأول والمنقذ للحياة في حالة الصدمة التحسسية.</strong></li>
+                        <li><strong>مضادات الهيستامين (Antihistaminiques):</strong> يمكن استخدامها لتخفيف الأعراض الخفيفة لحساسية الطعام (مثل الحكة أو الشرى الخفيف)، ولكنها <strong>لا تمنع أو تعالج ردود الفعل التحسسية الشديدة أو الصدمة التحسسية.</strong></li>
+                        <li><strong>الكورتيكوستيرويدات (Corticostéroïdes):</strong> قد توصف في بعض الحالات لتقليل الالتهاب بعد السيطرة على رد الفعل التحسسي الأولي.</li>
+                    </ul>
+                    <h3>العلاجات الناشئة (قد لا تكون متاحة على نطاق واسع أو مناسبة للجميع):</h3>
+                    <ul>
+                        <li><strong>العلاج المناعي الفموي (Immunothérapie orale - ITO):</strong> يتضمن إعطاء كميات صغيرة ومتزايدة تدريجيًا من الطعام المسبب للحساسية تحت إشراف طبي دقيق بهدف بناء قدرة التحمل (desensitization). لا يزال هذا العلاج قيد البحث والتطوير للعديد من الأطعمة، ويحمل مخاطر ردود فعل تحسسية.</li>
+                    </ul>
+                </section>
+
+                <section id="living-with-food-allergy" aria-labelledby="living-with-food-allergy-heading" data-aos="fade-up">
+                    <h2 id="living-with-food-allergy-heading"><i class="fas fa-hands-helping icon-before"></i> نصائح للتعايش الآمن مع حساسية الطعام (Vivre en toute sécurité avec une allergie alimentaire)</h2>
+                    <p>التعايش مع حساسية الطعام يتطلب يقظة وتخطيطًا دائمين. إليك بعض النصائح الهامة لضمان سلامتك وسلامة طفلك:</p>
+                    <ul>
+                        <li>اقرأ ملصقات المكونات دائمًا: في كل مرة تشتري فيها منتجًا غذائيًا، حتى لو كنت قد اشتريته من قبل، لأن المكونات قد تتغير. تعلم كيفية التعرف على الأسماء المختلفة للمادة المسببة للحساسية.</li>
+                        <li>كن حذرًا من التلوث العرضي: يمكن أن يحدث التلوث العرضي عندما يلامس طعام آمن كمية صغيرة من الطعام المسبب للحساسية (على سبيل المثال، من خلال أواني الطهي المشتركة، ألواح التقطيع، أو الزيوت).</li>
+                        <li>عند تناول الطعام خارج المنزل: أبلغ طاقم المطعم أو المضيف بحساسيتك بوضوح قبل طلب الطعام. اسأل عن المكونات وكيفية تحضير الطعام. إذا كنت غير متأكد، فمن الأفضل تجنب الطبق.</li>
+                        <li>احمل معك دائمًا حقنتي إبينفرين ذاتية الحقن إذا كانت موصوفة لك. تأكد من أنها ليست منتهية الصلاحية وأنك تعرف كيفية استخدامها.</li>
+                        <li>ارتدِ سوار أو قلادة تنبيه طبي: تشير إلى حساسيتك الغذائية، خاصة إذا كانت شديدة.</li>
+                        <li>علّم أفراد عائلتك، أصدقائك، ومقدمي الرعاية (مثل المعلمين في المدرسة) عن حساسيتك، كيفية التعرف على أعراض رد الفعل التحسسي، وماذا يفعلون في حالة الطوارئ (بما في ذلك كيفية استخدام حقنة الإبينفرين).</li>
+                        <li>كن مستعدًا: ضع خطة عمل للطوارئ وراجعها بانتظام.</li>
+                        <li>استشر أخصائي تغذية (إذا لزم الأمر): يمكن أن يساعدك في التخطيط لوجبات آمنة ومغذية وتجنب نقص العناصر الغذائية إذا كنت بحاجة إلى استبعاد العديد من الأطعمة.</li>
+                    </ul>
+                </section>
+
+                <section id="when-to-see-doctor" aria-labelledby="when-to-see-doctor-heading" data-aos="fade-up">
+                    <h2 id="when-to-see-doctor-heading"><i class="fas fa-clinic-medical icon-before"></i> متى تكون زيارة الطبيب ضرورية؟ (Quand consulter un médecin ?)</h2>
+                    <p>من الضروري استشارة طبيب متخصص في الحساسية مثل الدكتورة بخة س في الحالات التالية:</p>
+                    <ul>
+                        <li>إذا كنت تشك في أنك أو طفلك تعاني من حساسية تجاه طعام معين، حتى لو كانت الأعراض خفيفة. التشخيص الدقيق هو الخطوة الأولى للإدارة الآمنة.</li>
+                        <li>إذا كنت قد عانيت من رد فعل تحسسي تجاه طعام، خاصة إذا كان شديدًا أو شمل أعراضًا في أكثر من جهاز في الجسم (مثل الجلد والجهاز التنفسي معًا).</li>
+                        <li>إذا كنت بحاجة إلى تأكيد حساسية طعام معينة أو استبعادها.</li>
+                        <li>إذا كنت بحاجة إلى خطة عمل للطوارئ وحقنة إبينفرين ذاتية الحقن.</li>
+                        <li>إذا كنت ترغب في مناقشة أحدث خيارات العلاج، بما في ذلك العلاج المناعي الفموي إذا كان مناسبًا.</li>
+                        <li>للمتابعة المنتظمة وإعادة تقييم الحساسية، خاصة عند الأطفال، حيث أن بعض الحساسيات قد تختفي بمرور الوقت.</li>
+                    </ul>
+                    <div class="important-note emergency-note">
+                        <p><strong>تذكر: إذا ظهرت عليك أو على شخص آخر أعراض رد فعل تحسسي شديد (صعوبة في التنفس، تورم في الحلق أو اللسان، دوخة، انخفاض مفاجئ في ضغط الدم)، فاطلب المساعدة الطبية الطارئة على الفور.</strong></p>
+                    </div>
+                </section>
+
+                <section id="faq" aria-labelledby="faq-heading" data-aos="fade-up">
+                    <h2 id="faq-heading"><i class="fas fa-question icon-before"></i> أسئلة شائعة حول حساسية الطعام (Questions Fréquentes)</h2>
+                    <dl>
+                        <dt>هل يمكن أن تختفي حساسية الطعام لدى الأطفال مع تقدمهم في العمر؟</dt>
+                        <dd>نعم، بعض أنواع حساسية الطعام الشائعة لدى الأطفال، مثل حساسية الحليب، البيض، القمح، وفول الصويا، غالبًا ما تختفي مع تقدمهم في العمر (عادة بحلول سن المدرسة أو المراهقة). ومع ذلك، فإن حساسية الفول السوداني، المكسرات، الأسماك، والمحار تميل إلى أن تكون مدى الحياة. المتابعة المنتظمة مع أخصائي الحساسية مهمة لتقييم ذلك.</dd>
+
+                        <dt>هل يمكن أن تظهر حساسية الطعام لأول مرة في مرحلة البلوغ؟</dt>
+                        <dd>نعم، على الرغم من أنها أكثر شيوعًا في الطفولة، إلا أن حساسية الطعام يمكن أن تتطور في أي عمر، حتى تجاه أطعمة كنت تتناولها سابقًا دون مشاكل. حساسية المأكولات البحرية هي مثال شائع لحساسية الطعام التي تبدأ في مرحلة البلوغ.</dd>
+
+                        <dt>إذا كنت أعاني من حساسية تجاه نوع معين من المكسرات، فهل يجب أن أتجنب جميع أنواع المكسرات الأخرى؟</dt>
+                        <dd>ليس بالضرورة، ولكن هناك خطر كبير للتفاعل المتصالب بين أنواع المكسرات المختلفة، وكذلك بين المكسرات والفول السوداني (وهو من البقوليات وليس المكسرات الحقيقية). من المهم جدًا مناقشة هذا الأمر مع أخصائي الحساسية الذي قد يوصي باختبارات لأنواع أخرى من المكسرات أو تجنبها كإجراء وقائي.</dd>
+                    </dl>
+                </section>
+
+                <!-- Contact Info & Map Section -->
+                <section id="contact-us-now" class="article-contact-map-section" data-aos="fade-up">
+                    <div class="article-contact-details">
+                        <h3><i class="fas fa-headset icon-before"></i> هل تشك في إصابتك أو إصابة طفلك بحساسية تجاه طعام معين؟</h3>
+                        <p>الدكتورة بخة س وفريقها في عيادة قالمة متخصصون في تشخيص وعلاج حساسية الطعام. نقدم لك التقييم الشامل، اختبارات الحساسية المتقدمة، والإرشادات اللازمة للتعايش بأمان وثقة.</p>
+                        <div class="contact-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <div>
+                                <h4>أرقام الهاتف</h4>
+                                <p><a href="tel:+213796222597">0796222597</a> (مكالمات)</p>
+                                <p><a href="https://wa.me/213663755584" target="_blank" rel="noopener noreferrer" class="whatsapp-link">
+                                    <i class="fab fa-whatsapp"></i> 0663755584</a> (واتساب)
+                                </p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>عنوان العيادة</h4>
+                                <p>حي 19 جوان، خلف مستشفى الحكيم عقبي، ڨالمة، الجزائر</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="article-map-container">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3209.1007271838494!2d7.436598084719768!3d36.455121980020934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1scabinet%20de%20pneumologie%20allergologie%20Dr.%20Bakha%20S!5e0!3m2!1sar!2sdz!4v1735734049065!5m2!1sar!2sdz" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="موقع عيادة الدكتورة بخة س على الخريطة">
+                        </iframe>
+                    </div>
+                </section>
+
+                <section class="cta-section" data-aos="fade-up">
+                    <h2 id="contact-cta-heading"><i class="fas fa-life-ring icon-before"></i> تناول طعامك بأمان وثقة!</h2>
+                    <p>التشخيص الدقيق والإدارة السليمة هما مفتاح التعايش الآمن مع حساسية الطعام. احصل على الرعاية المتخصصة التي تحتاجها من الدكتورة بخة س.</p>
+                    <a href="index.html#appointment" class="cta-button">احجز موعدك الآن لتقييم حساسية الطعام</a>
+                </section>
+
+            </div> <!-- End .main-content .article-page -->
+        </main>
+
+        <!-- ====================================================================== -->
+        <!-- START: STANDARD FOOTER (Copy from index.html) -->
+         <footer>
+            <p class="copyright-text">© <span id="currentYear"></span> عيادة الدكتورة بخة س - جميع الحقوق محفوظة</p>
+            <div class="footer-links">
+                <a href="https://www.facebook.com/profile.php?id=61560422818675" target="_blank" rel="noopener noreferrer" class="footer-link">
+                    <i class="fab fa-facebook-f"></i> تابعنا على الفيسبوك
+                </a>
+                <a href="https://www.google.com/maps/search/?api=1&query=عيادة+الدكتورة+بخة+س+حي+19+جوان+خلف+مستشفى+الحكيم+عقبي+ڨالمة+الجزائر" target="_blank" rel="noopener noreferrer" class="footer-link">
+                    <i class="fas fa-map-marker-alt"></i> موقعنا على خرائط جوجل
+                </a>
             </div>
-        </section>
-
-        <section id="faq" aria-labelledby="faq-heading">
-            <h2 id="faq-heading">أسئلة شائعة حول حساسية الطعام (Questions Fréquentes)</h2>
-            <dl>
-                <dt>هل يمكن أن تختفي حساسية الطعام لدى الأطفال مع تقدمهم في العمر؟</dt>
-                <dd>نعم، بعض أنواع حساسية الطعام الشائعة لدى الأطفال، مثل حساسية الحليب، البيض، القمح، وفول الصويا، غالبًا ما تختفي مع تقدمهم في العمر (عادة بحلول سن المدرسة أو المراهقة). ومع ذلك، فإن حساسية الفول السوداني، المكسرات، الأسماك، والمحار تميل إلى أن تكون مدى الحياة. المتابعة المنتظمة مع أخصائي الحساسية مهمة لتقييم ذلك.</dd>
-
-                <dt>هل يمكن أن تظهر حساسية الطعام لأول مرة في مرحلة البلوغ؟</dt>
-                <dd>نعم، على الرغم من أنها أكثر شيوعًا في الطفولة، إلا أن حساسية الطعام يمكن أن تتطور في أي عمر، حتى تجاه أطعمة كنت تتناولها سابقًا دون مشاكل. حساسية المأكولات البحرية هي مثال شائع لحساسية الطعام التي تبدأ في مرحلة البلوغ.</dd>
-
-                <dt>إذا كنت أعاني من حساسية تجاه نوع معين من المكسرات، فهل يجب أن أتجنب جميع أنواع المكسرات الأخرى؟</dt>
-                <dd>ليس بالضرورة، ولكن هناك خطر كبير للتفاعل المتصالب بين أنواع المكسرات المختلفة، وكذلك بين المكسرات والفول السوداني (وهو من البقوليات وليس المكسرات الحقيقية). من المهم جدًا مناقشة هذا الأمر مع أخصائي الحساسية الذي قد يوصي باختبارات لأنواع أخرى من المكسرات أو تجنبها كإجراء وقائي.</dd>
-            </dl>
-        </section>
-
-        <section id="contact-cta" class="cta-section" aria-labelledby="contact-cta-heading">
-            <h2 id="contact-cta-heading">هل تشك في إصابتك أو إصابة طفلك بحساسية تجاه طعام معين؟</h2>
-            <p>التعامل مع حساسية الطعام يتطلب تشخيصًا دقيقًا وخطة إدارة آمنة. في عيادة الدكتورة بخة س بڨالمة، نقدم لك التقييم الشامل، اختبارات الحساسية المتقدمة، والإرشادات اللازمة للتعايش بأمان وثقة مع حساسية الطعام.</p>
-            <div class="contact-info">
-                <p><i class="fas fa-phone icon-before"></i><strong>للاستشارة أو لحجز موعد، يرجى الاتصال بنا:</strong> <a href="tel:+213796222597">0796222597</a> أو <a href="tel:+213663755584">0663755584</a></p>
-                <p><i class="fas fa-map-marker-alt icon-before"></i><strong>عنوان العيادة:</strong> حي 19 جوان، خلف مستشفى الحكيم عقبي، ڨالمة، الجزائر.</p>
+            <div class="footer-visitor-stats">
+                <div class="visitor-stat-item">
+                    <i class="fas fa-users"></i>
+                    <span>إجمالي الزوار: <span id="total-visitors">0</span></span>
+                </div>
+                <div class="visitor-stat-item">
+                    <i class="fas fa-user-clock"></i>
+                    <span>زوار اليوم: <span id="today-visitors">0</span></span>
+                </div>
+                <div class="visitor-stat-item">
+                    <span class="flag-icon" id="visitor-country-flag"></span>
+                    <span>موقعك: <span id="visitor-country-name">جارِ التحديد...</span></span>
+                </div>
             </div>
-            <a href="index.html#appointment" class="button-style">اطلب موعدك الآن لتقييم حساسية الطعام</a>
-        </section>
-    </main>
-    <footer>
-        <p style="text-align:center;">المعلومات الواردة في هذا الدليل الطبي هي لأغراض تثقيفية وعلمية، ولا تغني عن الاستشارة الطبية الشخصية من طبيب متخصص. التشخيص والعلاج يجب أن يتم تحت إشراف طبي.</p>
-        <p style="text-align:center;">© <span id="currentYear"></span> الدكتورة بخة س - جميع الحقوق محفوظة<br>اختصاصية في الأمراض الصدرية والحساسية، ڨالمة، الجزائر.</p>
-        <p style="text-align:center;"><a href="index.html"><i class="fas fa-home icon-before"></i>العودة إلى الصفحة الرئيسية</a> | <a href="urticaria.html">معلومات عن الشرى (الأرتيكاريا)</a></p> <!-- Example link to another relevant page -->
-    </footer>
-    <div class="watermark" style="position: fixed; bottom: 5px; left: 5px; opacity: 0.5; font-size: 10px; color: #aaa; z-index: 10000;">Dr. Bakha - Guelma</div>
+            <p style="text-align:center; font-size: 0.85em; opacity: 0.8; margin-top: calc(var(--spacing-unit) * 4);">المعلومات المقدمة في هذه الصفحة هي لأغراض تثقيفية فقط ولا تغني عن الاستشارة الطبية المتخصصة. التشخيص والعلاج يجب أن يتم تحت إشراف طبي.</p>
+        </footer>
+        <!-- END: STANDARD FOOTER -->
+        <!-- ====================================================================== -->
+
+    </div> <!-- End #content-ar -->
+
+    <div class="watermark">Dr. Bakha</div>
+
+    <!-- Essential Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" defer></script>
+    <script src="app.js" defer></script> <!-- Your main JS file -->
 
     <script>
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        const currentYearEl = document.getElementById('currentYear');
+        if (currentYearEl) {
+            currentYearEl.textContent = new Date().getFullYear();
+        }
     </script>
 </body>
 </html>
