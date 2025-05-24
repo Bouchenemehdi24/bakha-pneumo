@@ -13,17 +13,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Meta Keywords for Tuberculosis -->
-    <meta name="keywords" content="السل, علاج السل, أعراض السل, تشخيص السل في قالمة, السل الرئوي, السل خارج الرئة, المتفطرة السلية, الدكتورة بخة س, أمراض الصدر المعدية قالمة, طبيب أمراض صدرية قالمة, السعال المستمر, التعرق الليلي, الوقاية من السل, لقاح BCG, السل المقاوم للأدوية">
+    <meta name="keywords" content="السل, علاج السل, أعراض السل, تشخيص السل في قالمة, السل الرئوي, السل خارج الرئة, المتفطرة السلية, الدكتورة بخة س, أمراض الصدر المعدية قالمة, طبيب أمراض صدرية قالمة, السعال المستمر, التعرق الليلي, الوقاية من السل, لقاح BCG, السل المقاوم للأدوية, Tuberculose">
     <!-- Meta Description for Tuberculosis -->
     <meta name="description" content="هل تعاني من سعال مستمر، تعرق ليلي، أو فقدان وزن؟ قد يكون السل. تعرف على الأعراض، التشخيص، والعلاج الفعال مع د. بخة س، أخصائية الأمراض الصدرية في قالمة.">
     <meta name="author" content="عيادة الدكتورة بخة س - اختصاصية في الأمراض الصدرية والحساسية">
-    <meta http-equiv="Content-Language" content="ar, fr">
+    <meta http-equiv="Content-Language" content="ar">
     <!-- Optimized Title for Tuberculosis -->
     <title>السل (Tuberculose): التشخيص، العلاج، والوقاية - د. بخة س، قالمة</title>
     <link rel="icon" href="cabinet.png" type="image/png">
     <link rel="canonical" href="https://bakha-pneumo.netlify.app/tuberculosis.html">
-    <link rel="stylesheet" href="style.css"> <!-- Main stylesheet -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome for icons -->
+    
+    <!-- Main Stylesheet (should contain all theme variables and common styles) -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
     <script type="application/ld+json">
     {
@@ -31,7 +34,7 @@
         "@type": "MedicalWebPage",
         "name": "دليل شامل عن السل (Tuberculose)",
         "description": "معلومات مفصلة حول مرض السل، بما في ذلك السل الكامن والنشط، السل الرئوي وخارج الرئة، الأسباب (المتفطرة السلية)، الأعراض، التشخيص الدقيق، وخيارات العلاج المتاحة في عيادة الدكتورة بخة س، قالمة.",
-        "keywords": "السل, Tuberculose, المتفطرة السلية, علاج الأمراض المعدية, قالمة",
+        "keywords": "السل, Tuberculose, المتفطرة السلية, علاج الأمراض المعدية, قالمة, الدكتورة بخة س",
         "author": {
             "@type": "Person",
             "name": "الدكتورة بخة س"
@@ -49,281 +52,395 @@
             "@type": "WebPage",
             "@id": "https://bakha-pneumo.netlify.app/tuberculosis.html"
         },
-        "datePublished": "2023-11-01", // Example: Update with actual publication date
-        "dateModified": "2023-11-01"  // Example: Update with actual modification date
+        "datePublished": "2023-11-10", 
+        "dateModified": "2023-12-12" 
     }
     </script>
-    <style>
-        /* Styles for ToC and CTA (ideally in style.css) */
-        nav[aria-label="جدول محتويات الصفحة"] { margin-bottom: 20px; padding: 15px; background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: .25rem; }
-        nav[aria-label="جدول محتويات الصفحة"] h3 { margin-top: 0; color: #343a40; }
-        nav[aria-label="جدول محتويات الصفحة"] ul { list-style: none; padding-right: 0; }
-        nav[aria-label="جدول محتويات الصفحة"] ul li { margin-bottom: 10px; }
-        nav[aria-label="جدول محتويات الصفحة"] ul li a { text-decoration: none; color: #007bff; }
-        nav[aria-label="جدول محتويات الصفحة"] ul li a:hover { text-decoration: underline; color: #0056b3; }
-
-        .cta-section { text-align: center; padding: 30px 20px; background-color: #e9ecef; margin-top: 30px; margin-bottom: 20px; border-radius: .3rem; border: 1px solid #ced4da; }
-        .cta-section h2 { color: #2c3e50; margin-bottom: 15px; font-size: 1.8em; }
-        .cta-section p { font-size: 1.15em; margin-bottom: 20px; color: #34495e; }
-        .cta-section .button-style { display: inline-block; background-color: #28a745; color: white; padding: 12px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 1.1em; transition: background-color 0.3s ease, transform 0.2s ease; }
-        .cta-section .button-style:hover { background-color: #218838; transform: translateY(-2px); }
-        .cta-section .contact-info p { margin-bottom: 8px; font-size: 1.1em;}
-        .cta-section .contact-info a { color: #007bff; font-weight: bold; }
-        .cta-section .contact-info a:hover { color: #0056b3; }
-        .icon-before { margin-left: 8px; }
-
-        /* Watermark Styles */
-        .watermark {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) rotate(-45deg);
-            font-size: 3rem;
-            color: rgba(0, 0, 0, 0.1);
-            pointer-events: none;
-            z-index: 1000;
-            white-space: nowrap;
-            font-weight: bold;
-            user-select: none;
-        }
-        .page-subtitle { text-align:center; font-size: 1.1em; color: #555; margin-bottom: 15px;}
-        .image-caption { font-style: italic; color: #555; text-align: center; margin-top: 5px; font-size: 0.9em; }
-        .important-note { background-color: #fff3cd; border-left: 5px solid #ffeeba; padding: 15px; margin: 20px 0; color: #856404; }
-    </style>
+    <!-- Inline <style> block REMOVED. All styles should be in style.css -->
 </head>
-<body>
-    <header>
-        <h1>السل (Tuberculose)</h1>
-        <p class="page-subtitle">دليل شامل لفهم هذا المرض المعدي، طرق علاجه، والوقاية منه مع د. بخة س</p>
-    </header>
-    <main>
-        <nav aria-label="جدول محتويات الصفحة">
-            <h3>ماذا ستجد في هذا الدليل؟</h3>
-            <ul>
-                <li><a href="#what-is-tb">ما هو مرض السل؟ (كامن ونشط)</a></li>
-                <li><a href="#types-of-tb">ما هي أنواع السل المختلفة؟ (رئوي وخارج الرئة)</a></li>
-                <li><a href="#symptoms">ما هي الأعراض التي يجب أن أنتبه إليها؟</a></li>
-                <li><a href="#transmission">كيف ينتقل مرض السل؟</a></li>
-                <li><a href="#risk-factors">من هم الأشخاص الأكثر عرضة للإصابة؟</a></li>
-                <li><a href="#diagnosis">كيف يتم تشخيص السل بدقة؟</a></li>
-                <li><a href="#treatment">ما هو علاج السل وأهمية الالتزام به؟</a></li>
-                <li><a href="#mdr-tb">ما هو السل المقاوم للأدوية؟</a></li>
-                <li><a href="#prevention">كيف يمكنني الوقاية من مرض السل؟</a></li>
-                <li><a href="#when-to-see-doctor">متى تكون زيارة الطبيب ضرورية؟</a></li>
-                <li><a href="#contact-cta">هل لديك مخاوف بشأن السل؟ اتصل بنا</a></li>
-            </ul>
+<body data-theme="dark"> <!-- Default theme, JS handles toggle -->
+
+    <!-- Global Elements (Theme Toggle, Language Selector) -->
+    <div id="google_translate_element" class="language-selector"></div>
+    <button id="theme-toggle" aria-label="Toggle Dark Mode">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <div id="content-ar" lang="ar" dir="rtl">
+
+        <!-- ====================================================================== -->
+        <!-- START: STANDARD HEADER (Copy from index.html) -->
+        <header role="banner" class="main-header">
+            <div class="header-top">
+                <div class="clinic-info">
+                    <div class="logo-container">
+                        <img src="cabinet.png" alt="شعار العيادة" class="clinic-logo">
+                    </div>
+                    <div class="clinic-title">
+                        <h1>عيادة الدكتورة بخة س</h1>
+                        <p class="clinic-subtitle">اختصاصية في الأمراض الصدرية والحساسية - ولاية قالمة</p>
+                    </div>
+                </div>
+                <div id="clinic-status" class="clinic-status" data-aos="fade-down">
+                    <div class="status-indicator">
+                        <i class="fas fa-circle"></i>
+                        <p id="status-message"></p>
+                    </div>
+                    <p id="next-opening" class="next-opening"></p>
+                </div>
+            </div>
+        </header>
+        <nav class="main-nav">
+            <div class="nav-container">
+                <button class="mobile-menu-btn" aria-label="القائمة"><i class="fas fa-bars"></i></button>
+                <ul id="main-menu">
+                    <li><a href="index.html#hero"><i class="fas fa-home"></i> الرئيسية</a></li>
+                    <li class="dropdown">
+                        <a href="#" role="button" aria-expanded="false"><i class="fas fa-lungs"></i> أمراض الصدر <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="asthma.html">الربو (Asthme)</a></li>
+                            <li><a href="copd.html">مرض الانسداد الرئوي المزمن (BPCO)</a></li>
+                            <li><a href="lung-cancer.html">سرطان الرئة</a></li>
+                            <li><a href="pulmonary-fibrosis.html">التليف الرئوي</a></li>
+                            <li><a href="bronchitis.html">التهاب الشعب الهوائية</a></li>
+                            <li><a href="pneumonia.html">التهاب الرئة</a></li>
+                            <li><a href="tuberculosis.html">السل</a></li>
+                            <li><a href="covid-19.html">كوفيد-19</a></li>
+                            <li><a href="influenza.html">الإنفلونزا</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" role="button" aria-expanded="false"><i class="fas fa-allergies"></i> أمراض الحساسية <i class="fas fa-chevron-down"></i></a>
+                         <ul class="dropdown-menu">
+                            <li><a href="allergic-rhinitis.html">التهاب الأنف التحسسي</a></li>
+                            <li><a href="allergic-asthma.html">الربو التحسسي</a></li>
+                            <li><a href="allergic-bronchitis.html">التهاب الشعب الهوائية التحسسي</a></li>
+                            <li><a href="hypersensitivity-pneumonitis.html">التهاب الرئة التحسسي</a></li>
+                            <li><a href="eczema.html">الإكزيما</a></li>
+                            <li><a href="urticaria.html">الشرى</a></li>
+                            <li><a href="food-allergy.html">حساسية الطعام</a></li>
+                            <li><a href="drug-allergy.html">الحساسية الدوائية</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="sleep-apnea.html"><i class="fas fa-bed"></i> انقطاع التنفس أثناء النوم</a></li>
+                     <li class="dropdown">
+                        <a href="#" role="button" aria-expanded="false"><i class="fas fa-calculator"></i> حاسبات صحية <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="bmi-calculator.html">مؤشر كتلة الجسم (BMI)</a></li>
+                            <li><a href="bmr-calculator.html">معدل الأيض الأساسي (BMR)</a></li>
+                            <li><a href="calorie-calculator.html">حاسبة السعرات الحرارية</a></li>
+                            <li><a href="whr-calculator.html">نسبة الخصر إلى الورك (WHR)</a></li>
+                            <li><a href="smoking-cost-calculator.html">تكلفة التدخين</a></li>
+                            <li><a href="lung-age-calculator.html">عمر الرئة</a></li>
+                            <li><a href="hydration-calculator.html">الترطيب اليومي</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="index.html#services"><i class="fas fa-concierge-bell"></i> الخدمات</a></li>
+                    <li><a href="index.html#apropos"><i class="fas fa-user-md"></i> عن الدكتورة</a></li>
+                    <li><a href="index.html#appointment"><i class="fas fa-calendar-check"></i> حجز موعد</a></li>
+                    <li><a href="index.html#contact"><i class="fas fa-phone-alt"></i> التواصل</a></li>
+                </ul>
+            </div>
         </nav>
-        <hr>
+        <!-- END: STANDARD HEADER -->
+        <!-- ====================================================================== -->
 
-        <section id="what-is-tb" aria-labelledby="what-is-tb-heading">
-            <h2 id="what-is-tb-heading">ما هو مرض السل؟ (كامن ونشط) (Qu'est-ce que la tuberculose ?)</h2>
-            <p>
-                السل (Tuberculose - TB) هو مرض مُعدٍ خطير تسببه بكتيريا تسمى <strong>المُتَفَطِّرَة السُّلِّيَّة (Mycobacterium tuberculosis)</strong>. يؤثر هذا المرض بشكل رئيسي على الرئتين (السل الرئوي)، ولكنه يمكن أن يصيب أجزاء أخرى من الجسم مثل الكلى، العمود الفقري، الدماغ، أو الغدد الليمفاوية (السل خارج الرئة).
-            </p>
-            <p>
-                من المهم فهم أن هناك حالتين رئيسيتين لعدوى السل:
-            </p>
-            <ul>
-                <li><strong>عدوى السل الكامنة (Infection tuberculeuse latente - ITL):</strong> في هذه الحالة، تكون بكتيريا السل موجودة في الجسم ولكنها غير نشطة (خاملة) بفضل سيطرة جهاز المناعة عليها. الأشخاص المصابون بالسل الكامن <strong>لا يشعرون بالمرض، ليس لديهم أعراض، ولا يمكنهم نقل العدوى إلى الآخرين.</strong> ومع ذلك، يمكن أن تنشط هذه البكتيريا في وقت لاحق وتسبب مرض السل النشط، خاصة إذا ضعف جهاز المناعة.</li>
-                <li><strong>مرض السل النشط (Tuberculose maladie / Tuberculose active):</strong> في هذه الحالة، تكون بكتيريا السل نشطة وتتكاثر في الجسم، مما يؤدي إلى ظهور الأعراض. الأشخاص المصابون بمرض السل النشط (خاصة السل الرئوي) <strong>يمكنهم نقل العدوى إلى الآخرين</strong> عن طريق الهواء.</li>
-            </ul>
-            <p><strong>السل مرض قابل للعلاج والشفاء، ولكن التشخيص المبكر والالتزام الكامل بالعلاج ضروريان.</strong> في عيادة الدكتورة بخة س، نقدم التشخيص الدقيق والرعاية المتخصصة لمرضى السل.</p>
-        </section>
+        <main role="main">
+            <div class="main-content article-page">
 
-        <section id="types-of-tb" aria-labelledby="types-of-tb-heading">
-            <h2 id="types-of-tb-heading">ما هي أنواع السل المختلفة؟ (رئوي وخارج الرئة) (Types de tuberculose)</h2>
-            <p>
-                بينما يصيب السل الرئتين بشكل شائع، يمكن لبكتيريا السل أن تهاجم أي جزء من الجسم تقريبًا. يتم تصنيف السل بشكل رئيسي إلى:
-            </p>
-            <ul>
-                <li><strong>السل الرئوي (Tuberculose pulmonaire):</strong> هذا هو النوع الأكثر شيوعًا والأكثر عدوى (عندما يكون نشطًا). يؤثر على أنسجة الرئة ويمكن أن يسبب تلفًا دائمًا إذا لم يتم علاجه.</li>
-                <li><strong>السل خارج الرئة (Tuberculose extrapulmonaire):</strong> يحدث عندما تصيب بكتيريا السل أعضاء أخرى غير الرئتين. يمكن أن يحدث السل خارج الرئة بمفرده أو مع السل الرئوي. بعض الأمثلة الشائعة تشمل:
+                <header class="health-article-header" data-aos="fade-down">
+                    <h1><i class="fas fa-bacteria icon-before"></i> السل (Tuberculose)</h1>
+                    <p class="page-subtitle">دليل شامل لفهم هذا المرض المعدي، أعراضه، طرق تشخيصه، علاجه، والوقاية منه مع الدكتورة بخة س، أخصائية الأمراض الصدرية في قالمة.</p>
+                </header>
+
+                <nav aria-label="جدول محتويات الصفحة" data-aos="fade-up">
+                    <h3><i class="fas fa-list-ul icon-before"></i> محتويات هذا الدليل:</h3>
                     <ul>
-                        <li><strong>سل الغدد الليمفاوية (Adénite tuberculeuse / Tuberculose ganglionnaire):</strong> هو الشكل الأكثر شيوعًا للسل خارج الرئة، ويصيب الغدد الليمفاوية، خاصة في الرقبة.</li>
-                        <li><strong>سل الجنب (Pleurésie tuberculeuse):</strong> التهاب الغشاء المحيط بالرئتين (الغشاء الجنبي).</li>
-                        <li><strong>سل العظام والمفاصل (Tuberculose ostéo-articulaire):</strong> يمكن أن يصيب العمود الفقري (مرض بوت - Mal de Pott)، المفاصل الكبيرة (مثل الورك أو الركبة).</li>
-                        <li><strong>التهاب السحايا السلي (Méningite tuberculeuse):</strong> التهاب الأغشية المحيطة بالدماغ والحبل الشوكي. وهو شكل خطير جدًا.</li>
-                        <li><strong>سل الجهاز البولي التناسلي (Tuberculose génito-urinaire):</strong> يمكن أن يصيب الكلى، المثانة، أو الأعضاء التناسلية.</li>
-                        <li><strong>سل الجهاز الهضمي (Tuberculose digestive):</strong> يمكن أن يصيب أي جزء من الجهاز الهضمي.</li>
-                        <li><strong>السل الدُخني أو المنتشر (Tuberculose miliaire ou disséminée):</strong> شكل خطير ينتشر فيه السل على نطاق واسع في جميع أنحاء الجسم عبر مجرى الدم، مما يؤدي إلى ظهور آفات صغيرة تشبه حبات الدخن في العديد من الأعضاء.</li>
+                        <li><a href="#what-is-tb">ما هو مرض السل؟ (كامن ونشط)</a></li>
+                        <li><a href="#types-of-tb">ما هي أنواع السل المختلفة؟ (رئوي وخارج الرئة)</a></li>
+                        <li><a href="#symptoms">ما هي الأعراض التي يجب أن أنتبه إليها؟</a></li>
+                        <li><a href="#transmission">كيف ينتقل مرض السل؟</a></li>
+                        <li><a href="#risk-factors">من هم الأشخاص الأكثر عرضة للإصابة؟</a></li>
+                        <li><a href="#diagnosis">كيف يتم تشخيص السل بدقة؟</a></li>
+                        <li><a href="#treatment">ما هو علاج السل وأهمية الالتزام به؟</a></li>
+                        <li><a href="#mdr-tb">ما هو السل المقاوم للأدوية؟</a></li>
+                        <li><a href="#prevention">كيف يمكنني الوقاية من مرض السل؟</a></li>
+                        <li><a href="#when-to-see-doctor">متى تكون زيارة الطبيب ضرورية؟</a></li>
+                        <li><a href="#contact-us-now">هل لديك مخاوف بشأن السل؟ تواصل معنا</a></li>
                     </ul>
-                </li>
-            </ul>
-        </section>
+                </nav>
+                <hr data-aos="fade-up">
 
-        <section id="symptoms" aria-labelledby="symptoms-heading">
-            <h2 id="symptoms-heading">ما هي الأعراض التي يجب أن أنتبه إليها؟ (Symptômes)</h2>
-            <p>تختلف أعراض مرض السل النشط اعتمادًا على الجزء المصاب من الجسم. تذكر أن عدوى السل الكامنة لا تسبب أي أعراض.</p>
-            <h3>الأعراض العامة لمرض السل النشط:</h3>
-            <ul>
-                <li><strong>فقدان الوزن غير المبرر (Perte de poids inexpliquée).</strong></li>
-                <li><strong>فقدان الشهية (Perte d'appétit).</strong></li>
-                <li><strong>الحمى (Fièvre)، غالبًا ما تكون خفيفة وتزداد سوءًا في المساء.</strong></li>
-                <li><strong>التعرق الليلي الغزير (Sueurs nocturnes).</strong></li>
-                <li><strong>التعب الشديد والإرهاق (Fatigue importante et malaise général).</strong></li>
-                <li><strong>القشعريرة (Frissons).</strong></li>
-            </ul>
-            <h3>أعراض السل الرئوي النشط:</h3>
-            <ul>
-                <li><strong>سعال مستمر يستمر لمدة 3 أسابيع أو أكثر (Toux persistante).</strong></li>
-                <li><strong>السعال المصحوب ببلغم (Crachats)، والذي قد يكون مصحوبًا بدم (Hémoptysie).</strong></li>
-                <li><strong>ألم في الصدر (Douleur thoracique)، خاصة عند التنفس أو السعال.</strong></li>
-            </ul>
-            <h3>أعراض السل خارج الرئة (تعتمد على العضو المصاب):</h3>
-            <ul>
-                <li><strong>سل الغدد الليمفاوية:</strong> تورم غير مؤلم عادة في الغدد الليمفاوية، غالبًا في الرقبة.</li>
-                <li><strong>سل العظام والمفاصل:</strong> ألم في العظم أو المفصل المصاب، تورم، تصلب. في حالة إصابة العمود الفقري (مرض بوت)، قد يحدث ألم في الظهر، تشوهات، أو أعراض عصبية.</li>
-                <li><strong>التهاب السحايا السلي:</strong> صداع مستمر، حمى، تصلب الرقبة، ارتباك، غثيان، قيء.</li>
-                <li><strong>سل الجهاز البولي التناسلي:</strong> دم في البول، ألم أو حرقة عند التبول، ألم في الخاصرة.</li>
-            </ul>
-            <div class="important-note">
-                <p><strong>إذا كنت تعاني من أي من هذه الأعراض، خاصة السعال المستمر لأكثر من أسبوعين، فمن الضروري استشارة الدكتورة بخة س أو طبيبك فورًا لإجراء الفحوصات اللازمة.</strong></p>
+                <section id="what-is-tb" aria-labelledby="what-is-tb-heading" data-aos="fade-up">
+                    <h2 id="what-is-tb-heading"><i class="fas fa-info-circle icon-before"></i> ما هو مرض السل؟ (كامن ونشط) (Qu'est-ce que la tuberculose ?)</h2>
+                    <p>السل (Tuberculose - TB) هو مرض مُعدٍ خطير تسببه بكتيريا تسمى <strong>المُتَفَطِّرَة السُّلِّيَّة (Mycobacterium tuberculosis)</strong>. يؤثر هذا المرض بشكل رئيسي على الرئتين (السل الرئوي)، ولكنه يمكن أن يصيب أجزاء أخرى من الجسم مثل الكلى، العمود الفقري، الدماغ، أو الغدد الليمفاوية (السل خارج الرئة).</p>
+                    <p>من المهم فهم أن هناك حالتين رئيسيتين لعدوى السل:</p>
+                    <ul>
+                        <li><strong>عدوى السل الكامنة (Infection tuberculeuse latente - ITL):</strong> في هذه الحالة، تكون بكتيريا السل موجودة في الجسم ولكنها غير نشطة (خاملة) بفضل سيطرة جهاز المناعة عليها. الأشخاص المصابون بالسل الكامن <strong>لا يشعرون بالمرض، ليس لديهم أعراض، ولا يمكنهم نقل العدوى إلى الآخرين.</strong> ومع ذلك، يمكن أن تنشط هذه البكتيريا في وقت لاحق وتسبب مرض السل النشط، خاصة إذا ضعف جهاز المناعة.</li>
+                        <li><strong>مرض السل النشط (Tuberculose maladie / Tuberculose active):</strong> في هذه الحالة، تكون بكتيريا السل نشطة وتتكاثر في الجسم، مما يؤدي إلى ظهور الأعراض. الأشخاص المصابون بمرض السل النشط (خاصة السل الرئوي) <strong>يمكنهم نقل العدوى إلى الآخرين</strong> عن طريق الهواء.</li>
+                    </ul>
+                    <p><strong>السل مرض قابل للعلاج والشفاء، ولكن التشخيص المبكر والالتزام الكامل بالعلاج ضروريان.</strong> في عيادة الدكتورة بخة س، نقدم التشخيص الدقيق والرعاية المتخصصة لمرضى السل.</p>
+                </section>
+
+                <section id="types-of-tb" aria-labelledby="types-of-tb-heading" data-aos="fade-up">
+                    <h2 id="types-of-tb-heading"><i class="fas fa-lungs icon-before"></i> ما هي أنواع السل المختلفة؟ (رئوي وخارج الرئة) (Types de tuberculose)</h2>
+                    <p>بينما يصيب السل الرئتين بشكل شائع، يمكن لبكتيريا السل أن تهاجم أي جزء من الجسم تقريبًا. يتم تصنيف السل بشكل رئيسي إلى:</p>
+                    <ul>
+                        <li><strong>السل الرئوي (Tuberculose pulmonaire):</strong> هذا هو النوع الأكثر شيوعًا والأكثر عدوى (عندما يكون نشطًا). يؤثر على أنسجة الرئة ويمكن أن يسبب تلفًا دائمًا إذا لم يتم علاجه.</li>
+                        <li><strong>السل خارج الرئة (Tuberculose extrapulmonaire):</strong> يحدث عندما تصيب بكتيريا السل أعضاء أخرى غير الرئتين. يمكن أن يحدث السل خارج الرئة بمفرده أو مع السل الرئوي. بعض الأمثلة الشائعة تشمل:
+                            <ul>
+                                <li><strong>سل الغدد الليمفاوية (Adénite tuberculeuse / Tuberculose ganglionnaire):</strong> هو الشكل الأكثر شيوعًا للسل خارج الرئة، ويصيب الغدد الليمفاوية، خاصة في الرقبة.</li>
+                                <li><strong>سل الجنب (Pleurésie tuberculeuse):</strong> التهاب الغشاء المحيط بالرئتين (الغشاء الجنبي).</li>
+                                <li><strong>سل العظام والمفاصل (Tuberculose ostéo-articulaire):</strong> يمكن أن يصيب العمود الفقري (مرض بوت - Mal de Pott)، المفاصل الكبيرة (مثل الورك أو الركبة).</li>
+                                <li><strong>التهاب السحايا السلي (Méningite tuberculeuse):</strong> التهاب الأغشية المحيطة بالدماغ والحبل الشوكي. وهو شكل خطير جدًا.</li>
+                                <li><strong>سل الجهاز البولي التناسلي (Tuberculose génito-urinaire):</strong> يمكن أن يصيب الكلى، المثانة، أو الأعضاء التناسلية.</li>
+                                <li><strong>سل الجهاز الهضمي (Tuberculose digestive):</strong> يمكن أن يصيب أي جزء من الجهاز الهضمي.</li>
+                                <li><strong>السل الدُخني أو المنتشر (Tuberculose miliaire ou disséminée):</strong> شكل خطير ينتشر فيه السل على نطاق واسع في جميع أنحاء الجسم عبر مجرى الدم، مما يؤدي إلى ظهور آفات صغيرة تشبه حبات الدخن في العديد من الأعضاء.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+
+                <section id="symptoms" aria-labelledby="symptoms-heading" data-aos="fade-up">
+                    <h2 id="symptoms-heading"><i class="fas fa-head-side-cough icon-before"></i> ما هي الأعراض التي يجب أن أنتبه إليها؟ (Symptômes)</h2>
+                    <p>تختلف أعراض مرض السل النشط اعتمادًا على الجزء المصاب من الجسم. تذكر أن عدوى السل الكامنة لا تسبب أي أعراض.</p>
+                    <h3>الأعراض العامة لمرض السل النشط:</h3>
+                    <ul>
+                        <li><strong>فقدان الوزن غير المبرر (Perte de poids inexpliquée).</strong></li>
+                        <li><strong>فقدان الشهية (Perte d'appétit).</strong></li>
+                        <li><strong>الحمى (Fièvre)، غالبًا ما تكون خفيفة وتزداد سوءًا في المساء.</strong></li>
+                        <li><strong>التعرق الليلي الغزير (Sueurs nocturnes).</strong></li>
+                        <li><strong>التعب الشديد والإرهاق (Fatigue importante et malaise général).</strong></li>
+                        <li><strong>القشعريرة (Frissons).</strong></li>
+                    </ul>
+                    <h3>أعراض السل الرئوي النشط:</h3>
+                    <ul>
+                        <li><strong>سعال مستمر يستمر لمدة 3 أسابيع أو أكثر (Toux persistante).</strong></li>
+                        <li><strong>السعال المصحوب ببلغم (Crachats)، والذي قد يكون مصحوبًا بدم (Hémoptysie).</strong></li>
+                        <li><strong>ألم في الصدر (Douleur thoracique)، خاصة عند التنفس أو السعال.</strong></li>
+                    </ul>
+                    <h3>أعراض السل خارج الرئة (تعتمد على العضو المصاب):</h3>
+                    <ul>
+                        <li><strong>سل الغدد الليمفاوية:</strong> تورم غير مؤلم عادة في الغدد الليمفاوية، غالبًا في الرقبة.</li>
+                        <li><strong>سل العظام والمفاصل:</strong> ألم في العظم أو المفصل المصاب، تورم، تصلب. في حالة إصابة العمود الفقري (مرض بوت)، قد يحدث ألم في الظهر، تشوهات، أو أعراض عصبية.</li>
+                        <li><strong>التهاب السحايا السلي:</strong> صداع مستمر، حمى، تصلب الرقبة، ارتباك، غثيان، قيء.</li>
+                        <li><strong>سل الجهاز البولي التناسلي:</strong> دم في البول، ألم أو حرقة عند التبول، ألم في الخاصرة.</li>
+                    </ul>
+                    <div class="important-note">
+                        <p><strong>إذا كنت تعاني من أي من هذه الأعراض، خاصة السعال المستمر لأكثر من أسبوعين، فمن الضروري استشارة الدكتورة بخة س أو طبيبك فورًا لإجراء الفحوصات اللازمة.</strong></p>
+                    </div>
+                </section>
+
+                <section id="transmission" aria-labelledby="transmission-heading" data-aos="fade-up">
+                    <h2 id="transmission-heading"><i class="fas fa-wind icon-before"></i> كيف ينتقل مرض السل؟ (Transmission)</h2>
+                    <p>ينتقل مرض السل (النشط الرئوي أو الحنجري) من شخص لآخر عبر الهواء. عندما يسعل الشخص المصاب بمرض السل النشط في رئتيه أو حنجرته، أو يتكلم، أو يغني، أو يعطس، فإنه يطلق قطيرات دقيقة تحتوي على بكتيريا السل في الهواء. إذا استنشق شخص آخر هذه القطيرات، فقد يصاب بالعدوى.</p>
+                    <ul>
+                        <li>السل <strong>ليس</strong> من السهل التقاطه. عادة ما يتطلب الأمر اتصالًا وثيقًا ومطولًا مع شخص مصاب بالسل النشط المعدي.</li>
+                        <li>الأشخاص المصابون <strong>بعدوى السل الكامنة</strong> لا يمكنهم نقل المرض إلى الآخرين.</li>
+                        <li>السل <strong>لا ينتقل</strong> عن طريق لمس الأسطح، مشاركة الطعام أو الشراب، أو المصافحة.</li>
+                    </ul>
+                </section>
+
+                <section id="risk-factors" aria-labelledby="risk-factors-heading" data-aos="fade-up">
+                    <h2 id="risk-factors-heading"><i class="fas fa-exclamation-triangle icon-before"></i> من هم الأشخاص الأكثر عرضة للإصابة؟ (Facteurs de risque)</h2>
+                    <p>يمكن لأي شخص أن يصاب بالسل، ولكن بعض الأشخاص أكثر عرضة للإصابة بمرض السل النشط بعد التعرض للبكتيريا، خاصة أولئك الذين يعانون من ضعف في جهاز المناعة. تشمل عوامل الخطر الرئيسية:</p>
+                    <ul>
+                        <li><strong>ضعف الجهاز المناعي:</strong> بسبب فيروس نقص المناعة البشرية/الإيدز، مرض السكري، أمراض الكلى الشديدة، بعض أنواع السرطان، أو استخدام أدوية مثبطة للمناعة (مثل الكورتيكوستيرويدات طويلة الأمد أو أدوية علاج أمراض المناعة الذاتية أو بعد زراعة الأعضاء).</li>
+                        <li><strong>الأطفال الصغار وكبار السن.</strong></li>
+                        <li><strong>سوء التغذية.</strong></li>
+                        <li><strong>التدخين وتعاطي المخدرات.</strong></li>
+                        <li><strong>العيش أو العمل في أماكن مزدحمة أو سيئة التهوية:</strong> مثل السجون، ملاجئ المشردين، بعض دور الرعاية.</li>
+                        <li><strong>العاملون في مجال الرعاية الصحية:</strong> الذين يتعاملون مع مرضى السل.</li>
+                        <li><strong>الأشخاص الذين كانوا على اتصال وثيق مع شخص مصاب بمرض السل النشط.</strong></li>
+                        <li><strong>الأشخاص الذين هاجروا من مناطق ينتشر فيها السل بمعدلات عالية.</strong></li>
+                    </ul>
+                </section>
+
+                <section id="diagnosis" aria-labelledby="diagnosis-heading" data-aos="fade-up">
+                    <h2 id="diagnosis-heading"><i class="fas fa-microscope icon-before"></i> كيف يتم تشخيص السل بدقة؟ (Diagnostic)</h2>
+                    <p>يتطلب تشخيص السل (سواء الكامن أو النشط) مجموعة من الفحوصات. ستقوم الدكتورة بخة س بتقييم حالتك بعناية لتحديد الاختبارات المناسبة.</p>
+                    <h3>لتشخيص عدوى السل الكامنة:</h3>
+                    <ul>
+                        <li><strong>اختبار الجلد (Test cutané à la tuberculine - TCT / Test de Mantoux):</strong> يتم حقن كمية صغيرة من مادة تسمى التوبركولين تحت جلد الساعد. بعد 48-72 ساعة، يتم فحص موقع الحقن بحثًا عن أي تورم أو تصلب. نتيجة إيجابية تشير إلى وجود عدوى السل (غالبًا كامنة).</li>
+                        <li><strong>اختبارات الدم (Tests sanguins de libération d'interféron gamma - IGRA):</strong> تقيس هذه الاختبارات استجابة جهاز المناعة لبكتيريا السل. هي أكثر تحديدًا من اختبار الجلد وقد تكون مفضلة في بعض الحالات (مثل الأشخاص الذين تلقوا لقاح BCG).</li>
+                    </ul>
+                    <h3>لتشخيص مرض السل النشط:</h3>
+                    <ul>
+                        <li><strong>الأشعة السينية للصدر (Radiographie thoracique):</strong> غالبًا ما تكون أول فحص يتم إجراؤه إذا كان هناك اشتباه في السل الرئوي. يمكن أن تظهر تغيرات في الرئتين مميزة للسل (مثل التكهفات أو الارتشاحات).</li>
+                        <figure class="article-image-container" data-aos="zoom-in">
+                            <img src="tuber.jpg" alt="صورة أشعة سينية للصدر تظهر علامات السل الرئوي النشط، مثل التكتلات والتكهفات في الجزء العلوي من الرئة." class="responsive-image">
+                            <figcaption class="image-caption">صورة أشعة سينية تظهر علامات السل الرئوي النشط. التشخيص يتطلب تأكيدًا مجهريًا أو جزيئيًا.</figcaption>
+                        </figure>
+                        <li><strong>فحص البلغم المجهري (Examen microscopique des crachats):</strong> يتم فحص عينات من البلغم (عادة 2-3 عينات) تحت المجهر للبحث عن بكتيريا السل (العصيات المقاومة للحمض - Bacilles Acido-Alcoolo-Résistants - BAAR).</li>
+                        <li><strong>زرع البلغم (Culture des crachats):</strong> يتم زرع عينات البلغم في المختبر لتنمية بكتيريا السل. هذا الاختبار أكثر حساسية من الفحص المجهري ويمكن أن يستغرق عدة أسابيع. كما يسمح بإجراء اختبارات حساسية الأدوية.</li>
+                        <li><strong>الاختبارات الجزيئية السريعة (Tests moléculaires rapides):</strong> مثل اختبار Xpert MTB/RIF. يمكن لهذه الاختبارات الكشف عن بكتيريا السل وحساسيتها لدواء الريفامبيسين (أحد الأدوية الرئيسية لعلاج السل) في غضون ساعات قليلة.</li>
+                        <li><strong>في حالة الاشتباه بالسل خارج الرئة،</strong> قد تكون هناك حاجة لاختبارات إضافية حسب العضو المصاب، مثل:
+                            <ul>
+                                <li>التصوير المقطعي المحوسب (Scanner - TDM) أو التصوير بالرنين المغناطيسي (IRM).</li>
+                                <li>خزعة (Biopsie) من العضو المصاب (مثل الغدد الليمفاوية، العظام، أو الأنسجة الأخرى).</li>
+                                <li>فحص سوائل الجسم الأخرى (مثل السائل الدماغي الشوكي، البول، أو السائل الجنبي).</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+
+                <section id="treatment" aria-labelledby="treatment-heading" data-aos="fade-up">
+                    <h2 id="treatment-heading"><i class="fas fa-pills icon-before"></i> ما هو علاج السل وأهمية الالتزام به؟ (Traitement)</h2>
+                    <p><strong>السل مرض قابل للعلاج والشفاء التام.</strong> يعتمد العلاج على تناول مجموعة من المضادات الحيوية المحددة لعدة أشهر. من الضروري للغاية الالتزام الكامل بخطة العلاج كما وصفتها الدكتورة بخة س لضمان القضاء على جميع بكتيريا السل ومنع تطور سلالات مقاومة للأدوية.</p>
+                    <h3>علاج مرض السل النشط:</h3>
+                    <ul>
+                        <li>يتضمن العلاج عادةً تناول <strong>4 أنواع من المضادات الحيوية</strong> (مثل أيزونيازيد، ريفامبيسين، بيرازيناميد، وإيثامبوتول) لمدة شهرين (المرحلة المكثفة)، تليها مرحلة استمرارية لمدة 4 أشهر إضافية (عادةً أيزونيازيد وريفامبيسين فقط). وبالتالي، <strong>يستمر العلاج عادة لمدة 6 أشهر على الأقل.</strong></li>
+                        <li>في بعض الحالات (مثل السل خارج الرئة الشديد أو السل المقاوم للأدوية)، قد تكون هناك حاجة لفترة علاج أطول أو أدوية إضافية.</li>
+                        <li><strong>أهمية الالتزام:</strong> عدم إكمال دورة العلاج كاملة أو تناول الأدوية بشكل غير منتظم يمكن أن يؤدي إلى فشل العلاج، عودة المرض بشكل أسوأ، وتطور <strong>السل المقاوم للأدوية (Tuberculose multirésistante - MDR-TB)</strong>، والذي يكون علاجه أصعب بكثير وأطول وأكثر تكلفة.</li>
+                        <li><strong>العلاج تحت الإشراف المباشر (Directly Observed Therapy - DOT):</strong> في كثير من برامج مكافحة السل، يوصى بأن يتناول المريض أدويته تحت إشراف عامل صحي لضمان الالتزام.</li>
+                        <li><strong>الآثار الجانبية:</strong> مثل أي أدوية، يمكن أن يكون لأدوية السل آثار جانبية. سيقوم طبيبك بمراقبتك وإعطائك تعليمات حول كيفية التعامل معها. من المهم إبلاغ طبيبك بأي آثار جانبية تلاحظها.</li>
+                    </ul>
+                    <h3>علاج عدوى السل الكامنة:</h3>
+                    <ul>
+                        <li>يهدف علاج السل الكامن إلى منع تطور المرض إلى سل نشط.</li>
+                        <li>عادة ما يتضمن تناول دواء واحد أو اثنين من المضادات الحيوية (مثل أيزونيازيد بمفرده لمدة 6-9 أشهر، أو ريفامبيسين بمفرده لمدة 4 أشهر، أو مزيج من أيزونيازيد وريفابنتين لمدة 3 أشهر)</li>
+                        <li>يوصى به بشكل خاص للأشخاص ذوي الخطورة العالية لتطور السل النشط (مثل المصابين بفيروس نقص المناعة البشرية، أو أولئك الذين كانوا على اتصال وثيق مع مريض سل نشط).</li>
+                    </ul>
+                </section>
+
+                <section id="mdr-tb" aria-labelledby="mdr-tb-heading" data-aos="fade-up">
+                    <h2 id="mdr-tb-heading"><i class="fas fa-biohazard icon-before"></i> ما هو السل المقاوم للأدوية؟ (Tuberculose multirésistante - MDR-TB)</h2>
+                    <p>السل المقاوم للأدوية المتعددة (MDR-TB) هو شكل من أشكال السل تسببه بكتيريا لا تستجيب على الأقل لاثنين من أقوى أدوية الخط الأول المضادة للسل: أيزونيازيد وريفامبيسين. يحدث السل المقاوم للأدوية عندما:</p>
+                    <ul>
+                        <li>لا يكمل المرضى دورة العلاج الكاملة لأدوية السل.</li>
+                        <li>يصف الأطباء علاجًا خاطئًا (جرعة خاطئة أو مدة خاطئة).</li>
+                        <li>تكون الأدوية ذات نوعية رديئة.</li>
+                        <li>ينتقل الشخص المصاب بالسل المقاوم للأدوية العدوى إلى شخص آخر.</li>
+                    </ul>
+                    <p>علاج السل المقاوم للأدوية أكثر تعقيدًا وصعوبة ويتطلب أدوية الخط الثاني التي تكون أقل فعالية، أكثر سمية، وأكثر تكلفة، ويجب تناولها لفترة أطول بكثير (قد تصل إلى عامين). <strong>الالتزام الصارم بالعلاج الموصوف من البداية هو أفضل طريقة لمنع تطور السل المقاوم للأدوية.</strong></p>
+                </section>
+
+                <section id="prevention" aria-labelledby="prevention-heading" data-aos="fade-up">
+                    <h2 id="prevention-heading"><i class="fas fa-shield-alt icon-before"></i> كيف يمكنني الوقاية من مرض السل؟ (Prévention)</h2>
+                    <p>تتضمن الوقاية من السل عدة جوانب مهمة:</p>
+                    <ul>
+                        <li><strong>التطعيم (Vaccination):</strong>
+                            <ul>
+                                <li>لقاح <strong>BCG (Bacille Calmette-Guérin)</strong> يُعطى عادة للأطفال حديثي الولادة والرضع في البلدان التي ينتشر فيها السل بمعدلات عالية. يساعد اللقاح في الوقاية من الأشكال الشديدة من السل لدى الأطفال (مثل التهاب السحايا السلي والسل الدخني)، ولكنه أقل فعالية في الوقاية من السل الرئوي لدى البالغين.</li>
+                            </ul>
+                        </li>
+                        <li><strong>تدابير مكافحة العدوى (Mesures de contrôle de l'infection):</strong>
+                            <ul>
+                                <li><strong>التشخيص والعلاج المبكر والسريع لمرضى السل النشط:</strong> هذا يقلل من فترة العدوى ويمنع انتشار المرض.</li>
+                                <li><strong>التهوية الجيدة للأماكن المغلقة:</strong> يساعد الهواء النقي في تشتيت القطيرات المحتوية على البكتيريا.</li>
+                                <li><strong>استخدام الأشعة فوق البنفسجية (UVGI):</strong> في بعض الأماكن عالية الخطورة (مثل المستشفيات) لقتل البكتيريا المحمولة جوًا.</li>
+                                <li><strong>آداب السعال:</strong> يجب على مرضى السل النشط تغطية فمهم وأنفهم عند السعال أو العطس، وارتداء كمامة إذا أوصى الطبيب بذلك.</li>
+                            </ul>
+                        </li>
+                        <li><strong>علاج عدوى السل الكامنة:</strong> للأشخاص المعرضين لخطر كبير لتطور المرض النشط.</li>
+                        <li><strong>تجنب الاتصال الوثيق والمطول مع الأشخاص المصابين بالسل النشط غير المعالج.</strong></li>
+                        <li><strong>الحفاظ على صحة جيدة ونظام مناعة قوي:</strong> من خلال التغذية الجيدة، عدم التدخين، وإدارة الحالات الطبية المزمنة.</li>
+                    </ul>
+                </section>
+
+                <section id="when-to-see-doctor" aria-labelledby="when-to-see-doctor-heading" data-aos="fade-up">
+                    <h2 id="when-to-see-doctor-heading"><i class="fas fa-user-md icon-before"></i> متى تكون زيارة الطبيب ضرورية؟ (Quand consulter un médecin ?)</h2>
+                    <p>يجب عليك استشارة طبيب متخصص في الأمراض الصدرية مثل الدكتورة بخة س فورًا إذا:</p>
+                    <ul>
+                        <li>كنت تعاني من <strong>سعال مستمر لأكثر من أسبوعين إلى ثلاثة أسابيع</strong>، خاصة إذا كان مصحوبًا بأعراض أخرى مثل الحمى، التعرق الليلي، فقدان الوزن، أو البلغم الدموي.</li>
+                        <li>كنت على <strong>اتصال وثيق مع شخص تم تشخيصه مؤخرًا بمرض السل النشط.</strong></li>
+                        <li>كنت تعيش أو تعمل في بيئة عالية الخطورة لانتقال السل (مثل بعض مرافق الرعاية الصحية، السجون، أو ملاجئ المشردين).</li>
+                        <li>كنت تعاني من حالة تضعف جهاز المناعة (مثل فيروس نقص المناعة البشرية/الإيدز، أو تتناول أدوية مثبطة للمناعة) وتشتبه في تعرضك للسل.</li>
+                        <li>سافرت مؤخرًا إلى منطقة ينتشر فيها السل بمعدلات عالية ولديك أعراض مقلقة.</li>
+                    </ul>
+                    <div class="important-note">
+                        <p><strong>لا تتجاهل أعراض السل. التشخيص المبكر والعلاج الفعال لا ينقذ حياتك فحسب، بل يمنع أيضًا انتشار المرض إلى الآخرين. الدكتورة بخة س هنا لتقديم التقييم الشامل والدعم اللازم.</strong></p>
+                    </div>
+                </section>
+
+                <!-- Contact Info & Map Section -->
+                <section id="contact-us-now" class="article-contact-map-section" data-aos="fade-up">
+                    <div class="article-contact-details">
+                        <h3><i class="fas fa-headset icon-before"></i> هل لديك استفسارات أو مخاوف بشأن السل؟</h3>
+                        <p>الدكتورة بخة س وفريقها في عيادة قالمة متخصصون في تشخيص وعلاج مرض السل. نقدم لك التقييم الدقيق، أحدث طرق التشخيص، والرعاية المتخصصة اللازمة لمكافحة هذا المرض.</p>
+                        <div class="contact-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <div>
+                                <h4>أرقام الهاتف</h4>
+                                <p><a href="tel:+213796222597">0796222597</a> (مكالمات)</p>
+                                <p><a href="https://wa.me/213663755584" target="_blank" rel="noopener noreferrer" class="whatsapp-link">
+                                    <i class="fab fa-whatsapp"></i> 0663755584</a> (واتساب)
+                                </p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>عنوان العيادة</h4>
+                                <p>حي 19 جوان، خلف مستشفى الحكيم عقبي، ڨالمة، الجزائر</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="article-map-container">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3209.1007271838494!2d7.436598084719768!3d36.455121980020934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1scabinet%20de%20pneumologie%20allergologie%20Dr.%20Bakha%20S!5e0!3m2!1sar!2sdz!4v1735734049065!5m2!1sar!2sdz" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="موقع عيادة الدكتورة بخة س على الخريطة">
+                        </iframe>
+                    </div>
+                </section>
+
+                <section class="cta-section" data-aos="fade-up">
+                    <h2 id="contact-cta-heading"><i class="fas fa-life-ring icon-before"></i> السل قابل للعلاج، لا تتردد في طلب المساعدة!</h2>
+                    <p>التشخيص المبكر والالتزام بالعلاج هما مفتاح الشفاء من السل. احصل على الرعاية المتخصصة التي تحتاجها في عيادة الدكتورة بخة س.</p>
+                    <a href="index.html#appointment" class="cta-button">احجز موعدك الآن لتقييم شامل</a>
+                </section>
+
+            </div> <!-- End .main-content .article-page -->
+        </main>
+
+        <!-- ====================================================================== -->
+        <!-- START: STANDARD FOOTER (Copy from index.html) -->
+         <footer>
+            <p class="copyright-text">© <span id="currentYear"></span> عيادة الدكتورة بخة س - جميع الحقوق محفوظة</p>
+            <div class="footer-links">
+                <a href="https://www.facebook.com/profile.php?id=61560422818675" target="_blank" rel="noopener noreferrer" class="footer-link">
+                    <i class="fab fa-facebook-f"></i> تابعنا على الفيسبوك
+                </a>
+                <a href="https://www.google.com/maps/search/?api=1&query=عيادة+الدكتورة+بخة+س+حي+19+جوان+خلف+مستشفى+الحكيم+عقبي+ڨالمة+الجزائر" target="_blank" rel="noopener noreferrer" class="footer-link">
+                    <i class="fas fa-map-marker-alt"></i> موقعنا على خرائط جوجل
+                </a>
             </div>
-        </section>
-
-        <section id="transmission" aria-labelledby="transmission-heading">
-            <h2 id="transmission-heading">كيف ينتقل مرض السل؟ (Transmission)</h2>
-            <p>ينتقل مرض السل (النشط الرئوي أو الحنجري) من شخص لآخر عبر الهواء. عندما يسعل الشخص المصاب بمرض السل النشط في رئتيه أو حنجرته، أو يتكلم، أو يغني، أو يعطس، فإنه يطلق قطيرات دقيقة تحتوي على بكتيريا السل في الهواء. إذا استنشق شخص آخر هذه القطيرات، فقد يصاب بالعدوى.</p>
-            <ul>
-                <li>السل <strong>ليس</strong> من السهل التقاطه. عادة ما يتطلب الأمر اتصالًا وثيقًا ومطولًا مع شخص مصاب بالسل النشط المعدي.</li>
-                <li>الأشخاص المصابون <strong>بعدوى السل الكامنة</strong> لا يمكنهم نقل المرض إلى الآخرين.</li>
-                <li>السل <strong>لا ينتقل</strong> عن طريق لمس الأسطح، مشاركة الطعام أو الشراب، أو المصافحة.</li>
-            </ul>
-        </section>
-
-        <section id="risk-factors" aria-labelledby="risk-factors-heading">
-            <h2 id="risk-factors-heading">من هم الأشخاص الأكثر عرضة للإصابة؟ (Facteurs de risque)</h2>
-            <p>يمكن لأي شخص أن يصاب بالسل، ولكن بعض الأشخاص أكثر عرضة للإصابة بمرض السل النشط بعد التعرض للبكتيريا، خاصة أولئك الذين يعانون من ضعف في جهاز المناعة. تشمل عوامل الخطر الرئيسية:</p>
-            <ul>
-                <li><strong>ضعف الجهاز المناعي:</strong> بسبب فيروس نقص المناعة البشرية/الإيدز، مرض السكري، أمراض الكلى الشديدة، بعض أنواع السرطان، أو استخدام أدوية مثبطة للمناعة (مثل الكورتيكوستيرويدات طويلة الأمد أو أدوية علاج أمراض المناعة الذاتية أو بعد زراعة الأعضاء).</li>
-                <li><strong>الأطفال الصغار وكبار السن.</strong></li>
-                <li><strong>سوء التغذية.</strong></li>
-                <li><strong>التدخين وتعاطي المخدرات.</strong></li>
-                <li><strong>العيش أو العمل في أماكن مزدحمة أو سيئة التهوية:</strong> مثل السجون، ملاجئ المشردين، بعض دور الرعاية.</li>
-                <li><strong>العاملون في مجال الرعاية الصحية:</strong> الذين يتعاملون مع مرضى السل.</li>
-                <li><strong>الأشخاص الذين كانوا على اتصال وثيق مع شخص مصاب بمرض السل النشط.</strong></li>
-                <li><strong>الأشخاص الذين هاجروا من مناطق ينتشر فيها السل بمعدلات عالية.</strong></li>
-            </ul>
-        </section>
-
-        <section id="diagnosis" aria-labelledby="diagnosis-heading">
-            <h2 id="diagnosis-heading">كيف يتم تشخيص السل بدقة؟ (Diagnostic)</h2>
-            <p>يتطلب تشخيص السل (سواء الكامن أو النشط) مجموعة من الفحوصات. ستقوم الدكتورة بخة س بتقييم حالتك بعناية لتحديد الاختبارات المناسبة.</p>
-            <h3>لتشخيص عدوى السل الكامنة:</h3>
-            <ul>
-                <li><strong>اختبار الجلد (Test cutané à la tuberculine - TCT / Test de Mantoux):</strong> يتم حقن كمية صغيرة من مادة تسمى التوبركولين تحت جلد الساعد. بعد 48-72 ساعة، يتم فحص موقع الحقن بحثًا عن أي تورم أو تصلب. نتيجة إيجابية تشير إلى وجود عدوى السل (غالبًا كامنة).</li>
-                <li><strong>اختبارات الدم (Tests sanguins de libération d'interféron gamma - IGRA):</strong> تقيس هذه الاختبارات استجابة جهاز المناعة لبكتيريا السل. هي أكثر تحديدًا من اختبار الجلد وقد تكون مفضلة في بعض الحالات (مثل الأشخاص الذين تلقوا لقاح BCG).</li>
-            </ul>
-            <h3>لتشخيص مرض السل النشط:</h3>
-            <ul>
-                <li><strong>الأشعة السينية للصدر (Radiographie thoracique):</strong> غالبًا ما تكون أول فحص يتم إجراؤه إذا كان هناك اشتباه في السل الرئوي. يمكن أن تظهر تغيرات في الرئتين مميزة للسل (مثل التكهفات أو الارتشاحات).</li>
-                <figure style="margin: 15px 0; text-align: center;">
-                    <img src="tuber.jpg" alt="صورة أشعة سينية للصدر تظهر علامات السل الرئوي النشط، مثل التكتلات والتكهفات في الجزء العلوي من الرئة." style="width:100%; max-width:450px; display: block; margin: 0 auto 10px auto; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-                    <figcaption class="image-caption">صورة أشعة سينية تظهر علامات السل الرئوي النشط. التشخيص يتطلب تأكيدًا مجهريًا أو جزيئيًا.</figcaption>
-                </figure>
-                <li><strong>فحص البلغم المجهري (Examen microscopique des crachats):</strong> يتم فحص عينات من البلغم (عادة 2-3 عينات) تحت المجهر للبحث عن بكتيريا السل (العصيات المقاومة للحمض - Bacilles Acido-Alcoolo-Résistants - BAAR).</li>
-                <li><strong>زرع البلغم (Culture des crachats):</strong> يتم زرع عينات البلغم في المختبر لتنمية بكتيريا السل. هذا الاختبار أكثر حساسية من الفحص المجهري ويمكن أن يستغرق عدة أسابيع. كما يسمح بإجراء اختبارات حساسية الأدوية.</li>
-                <li><strong>الاختبارات الجزيئية السريعة (Tests moléculaires rapides):</strong> مثل اختبار Xpert MTB/RIF. يمكن لهذه الاختبارات الكشف عن بكتيريا السل وحساسيتها لدواء الريفامبيسين (أحد الأدوية الرئيسية لعلاج السل) في غضون ساعات قليلة.</li>
-                <li><strong>في حالة الاشتباه بالسل خارج الرئة،</strong> قد تكون هناك حاجة لاختبارات إضافية حسب العضو المصاب، مثل:
-                    <ul>
-                        <li>التصوير المقطعي المحوسب (Scanner - TDM) أو التصوير بالرنين المغناطيسي (IRM).</li>
-                        <li>خزعة (Biopsie) من العضو المصاب (مثل الغدد الليمفاوية، العظام، أو الأنسجة الأخرى).</li>
-                        <li>فحص سوائل الجسم الأخرى (مثل السائل الدماغي الشوكي، البول، أو السائل الجنبي).</li>
-                    </ul>
-                </li>
-            </ul>
-        </section>
-
-        <section id="treatment" aria-labelledby="treatment-heading">
-            <h2 id="treatment-heading">ما هو علاج السل وأهمية الالتزام به؟ (Traitement)</h2>
-            <p>
-                <strong>السل مرض قابل للعلاج والشفاء التام.</strong> يعتمد العلاج على تناول مجموعة من المضادات الحيوية المحددة لعدة أشهر. من الضروري للغاية الالتزام الكامل بخطة العلاج كما وصفتها الدكتورة بخة س لضمان القضاء على جميع بكتيريا السل ومنع تطور سلالات مقاومة للأدوية.
-            </p>
-            <h3>علاج مرض السل النشط:</h3>
-            <ul>
-                <li>يتضمن العلاج عادةً تناول <strong>4 أنواع من المضادات الحيوية</strong> (مثل أيزونيازيد، ريفامبيسين، بيرازيناميد، وإيثامبوتول) لمدة شهرين (المرحلة المكثفة)، تليها مرحلة استمرارية لمدة 4 أشهر إضافية (عادةً أيزونيازيد وريفامبيسين فقط). وبالتالي، <strong>يستمر العلاج عادة لمدة 6 أشهر على الأقل.</strong></li>
-                <li>في بعض الحالات (مثل السل خارج الرئة الشديد أو السل المقاوم للأدوية)، قد تكون هناك حاجة لفترة علاج أطول أو أدوية إضافية.</li>
-                <li><strong>أهمية الالتزام:</strong> عدم إكمال دورة العلاج كاملة أو تناول الأدوية بشكل غير منتظم يمكن أن يؤدي إلى فشل العلاج، عودة المرض بشكل أسوأ، وتطور <strong>السل المقاوم للأدوية (Tuberculose multirésistante - MDR-TB)</strong>، والذي يكون علاجه أصعب بكثير وأطول وأكثر تكلفة.</li>
-                <li><strong>العلاج تحت الإشراف المباشر (Directly Observed Therapy - DOT):</strong> في كثير من برامج مكافحة السل، يوصى بأن يتناول المريض أدويته تحت إشراف عامل صحي لضمان الالتزام.</li>
-                <li><strong>الآثار الجانبية:</strong> مثل أي أدوية، يمكن أن يكون لأدوية السل آثار جانبية. سيقوم طبيبك بمراقبتك وإعطائك تعليمات حول كيفية التعامل معها. من المهم إبلاغ طبيبك بأي آثار جانبية تلاحظها.</li>
-            </ul>
-            <h3>علاج عدوى السل الكامنة:</h3>
-            <ul>
-                <li>يهدف علاج السل الكامن إلى منع تطور المرض إلى سل نشط.</li>
-                <li>عادة ما يتضمن تناول دواء واحد أو اثنين من المضادات الحيوية (مثل أيزونيازيد بمفرده لمدة 6-9 أشهر، أو ريفامبيسين بمفرده لمدة 4 أشهر، أو مزيج من أيزونيازيد وريفابنتين لمدة 3 أشهر)</li>
-                <li>يوصى به بشكل خاص للأشخاص ذوي الخطورة العالية لتطور السل النشط (مثل المصابين بفيروس نقص المناعة البشرية، أو أولئك الذين كانوا على اتصال وثيق مع مريض سل نشط).</li>
-            </ul>
-        </section>
-
-        <section id="mdr-tb" aria-labelledby="mdr-tb-heading">
-            <h2 id="mdr-tb-heading">ما هو السل المقاوم للأدوية؟ (Tuberculose multirésistante - MDR-TB)</h2>
-            <p>السل المقاوم للأدوية المتعددة (MDR-TB) هو شكل من أشكال السل تسببه بكتيريا لا تستجيب على الأقل لاثنين من أقوى أدوية الخط الأول المضادة للسل: أيزونيازيد وريفامبيسين. يحدث السل المقاوم للأدوية عندما:</p>
-            <ul>
-                <li>لا يكمل المرضى دورة العلاج الكاملة لأدوية السل.</li>
-                <li>يصف الأطباء علاجًا خاطئًا (جرعة خاطئة أو مدة خاطئة).</li>
-                <li>تكون الأدوية ذات نوعية رديئة.</li>
-                <li>ينتقل الشخص المصاب بالسل المقاوم للأدوية العدوى إلى شخص آخر.</li>
-            </ul>
-            <p>علاج السل المقاوم للأدوية أكثر تعقيدًا وصعوبة ويتطلب أدوية الخط الثاني التي تكون أقل فعالية، أكثر سمية، وأكثر تكلفة، ويجب تناولها لفترة أطول بكثير (قد تصل إلى عامين). <strong>الالتزام الصارم بالعلاج الموصوف من البداية هو أفضل طريقة لمنع تطور السل المقاوم للأدوية.</strong></p>
-        </section>
-
-        <section id="prevention" aria-labelledby="prevention-heading">
-            <h2 id="prevention-heading">كيف يمكنني الوقاية من مرض السل؟ (Prévention)</h2>
-            <p>تتضمن الوقاية من السل عدة جوانب مهمة:</p>
-            <ul>
-                <li><strong>التطعيم (Vaccination):</strong>
-                    <ul>
-                        <li>لقاح <strong>BCG (Bacille Calmette-Guérin)</strong> يُعطى عادة للأطفال حديثي الولادة والرضع في البلدان التي ينتشر فيها السل بمعدلات عالية. يساعد اللقاح في الوقاية من الأشكال الشديدة من السل لدى الأطفال (مثل التهاب السحايا السلي والسل الدخني)، ولكنه أقل فعالية في الوقاية من السل الرئوي لدى البالغين.</li>
-                    </ul>
-                </li>
-                <li><strong>تدابير مكافحة العدوى (Mesures de contrôle de l'infection):</strong>
-                    <ul>
-                        <li><strong>التشخيص والعلاج المبكر والسريع لمرضى السل النشط:</strong> هذا يقلل من فترة العدوى ويمنع انتشار المرض.</li>
-                        <li><strong>التهوية الجيدة للأماكن المغلقة:</strong> يساعد الهواء النقي في تشتيت القطيرات المحتوية على البكتيريا.</li>
-                        <li><strong>استخدام الأشعة فوق البنفسجية (UVGI):</strong> في بعض الأماكن عالية الخطورة (مثل المستشفيات) لقتل البكتيريا المحمولة جوًا.</li>
-                        <li><strong>آداب السعال:</strong> يجب على مرضى السل النشط تغطية فمهم وأنفهم عند السعال أو العطس، وارتداء كمامة إذا أوصى الطبيب بذلك.</li>
-                    </ul>
-                </li>
-                <li><strong>علاج عدوى السل الكامنة:</strong> للأشخاص المعرضين لخطر كبير لتطور المرض النشط.</li>
-                <li><strong>تجنب الاتصال الوثيق والمطول مع الأشخاص المصابين بالسل النشط غير المعالج.</strong></li>
-                <li><strong>الحفاظ على صحة جيدة ونظام مناعة قوي:</strong> من خلال التغذية الجيدة، عدم التدخين، وإدارة الحالات الطبية المزمنة.</li>
-            </ul>
-        </section>
-
-        <section id="when-to-see-doctor" aria-labelledby="when-to-see-doctor-heading">
-            <h2 id="when-to-see-doctor-heading">متى تكون زيارة الطبيب ضرورية؟ (Quand consulter un médecin ?)</h2>
-            <p>يجب عليك استشارة طبيب متخصص في الأمراض الصدرية مثل الدكتورة بخة س فورًا إذا:</p>
-            <ul>
-                <li>كنت تعاني من <strong>سعال مستمر لأكثر من أسبوعين إلى ثلاثة أسابيع</strong>، خاصة إذا كان مصحوبًا بأعراض أخرى مثل الحمى، التعرق الليلي، فقدان الوزن، أو البلغم الدموي.</li>
-                <li>كنت على <strong>اتصال وثيق مع شخص تم تشخيصه مؤخرًا بمرض السل النشط.</strong></li>
-                <li>كنت تعيش أو تعمل في بيئة عالية الخطورة لانتقال السل (مثل بعض مرافق الرعاية الصحية، السجون، أو ملاجئ المشردين).</li>
-                <li>كنت تعاني من حالة تضعف جهاز المناعة (مثل فيروس نقص المناعة البشرية/الإيدز، أو تتناول أدوية مثبطة للمناعة) وتشتبه في تعرضك للسل.</li>
-                <li>سافرت مؤخرًا إلى منطقة ينتشر فيها السل بمعدلات عالية ولديك أعراض مقلقة.</li>
-            </ul>
-            <div class="important-note">
-                <p><strong>لا تتجاهل أعراض السل. التشخيص المبكر والعلاج الفعال لا ينقذ حياتك فحسب، بل يمنع أيضًا انتشار المرض إلى الآخرين. الدكتورة بخة س هنا لتقديم التقييم الشامل والدعم اللازم.</strong></p>
+            <div class="footer-visitor-stats">
+                <div class="visitor-stat-item">
+                    <i class="fas fa-users"></i>
+                    <span>إجمالي الزوار: <span id="total-visitors">0</span></span>
+                </div>
+                <div class="visitor-stat-item">
+                    <i class="fas fa-user-clock"></i>
+                    <span>زوار اليوم: <span id="today-visitors">0</span></span>
+                </div>
+                <div class="visitor-stat-item">
+                    <span class="flag-icon" id="visitor-country-flag"></span>
+                    <span>موقعك: <span id="visitor-country-name">جارِ التحديد...</span></span>
+                </div>
             </div>
-        </section>
+            <p style="text-align:center; font-size: 0.85em; opacity: 0.8; margin-top: calc(var(--spacing-unit) * 4);">المعلومات المقدمة في هذه الصفحة هي لأغراض تثقيفية فقط ولا تغني عن الاستشارة الطبية المتخصصة. التشخيص والعلاج يجب أن يتم تحت إشراف طبي.</p>
+        </footer>
+        <!-- END: STANDARD FOOTER -->
+        <!-- ====================================================================== -->
 
-        <section id="contact-cta" class="cta-section" aria-labelledby="contact-cta-heading">
-            <h2 id="contact-cta-heading">هل لديك مخاوف بشأن السل أو تعاني من أعراض مشابهة؟</h2>
-            <p>السل مرض يمكن علاجه، ولكن التشخيص المبكر والالتزام بالعلاج هما مفتاح الشفاء. في عيادة الدكتورة بخة س بڨالمة، نقدم لك التقييم الدقيق، أحدث طرق التشخيص، والرعاية المتخصصة اللازمة لمكافحة هذا المرض.</p>
-            <div class="contact-info">
-                <p><i class="fas fa-phone icon-before"></i><strong>للاستشارة أو لحجز موعد، يرجى الاتصال بنا:</strong> <a href="tel:+213796222597">0796222597</a> أو <a href="tel:+213663755584">0663755584</a></p>
-                <p><i class="fas fa-map-marker-alt icon-before"></i><strong>عنوان العيادة:</strong> حي 19 جوان، خلف مستشفى الحكيم عقبي، ڨالمة، الجزائر.</p>
-            </div>
-            <a href="index.html#appointment" class="button-style">اطلب موعدك الآن للحصول على الرعاية المتخصصة</a>
-        </section>
-    </main>
-    <footer>
-        <p style="text-align:center;">المعلومات الواردة في هذا الدليل الطبي هي لأغراض تثقيفية وعلمية، ولا تغني عن الاستشارة الطبية الشخصية من طبيب متخصص. التشخيص والعلاج يجب أن يتم تحت إشراف طبي.</p>
-        <p style="text-align:center;">© <span id="currentYear"></span> الدكتورة بخة س - جميع الحقوق محفوظة<br>اختصاصية في الأمراض الصدرية والحساسية، ڨالمة، الجزائر.</p>
-        <p style="text-align:center;"><a href="index.html"><i class="fas fa-home icon-before"></i>العودة إلى الصفحة الرئيسية</a> | <a href="prevention.html">نصائح عامة للوقاية من أمراض الجهاز التنفسي</a></p> <!-- Consider a general respiratory prevention page -->
-    </footer>
-    <div class="watermark" style="position: fixed; bottom: 5px; left: 5px; opacity: 0.5; font-size: 10px; color: #aaa; z-index: 10000;">Dr. Bakha - Guelma</div>
+    </div> <!-- End #content-ar -->
+
+    <div class="watermark">Dr. Bakha</div>
+
+    <!-- Essential Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" defer></script>
+    <script src="app.js" defer></script> <!-- Your main JS file -->
 
     <script>
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        const currentYearEl = document.getElementById('currentYear');
+        if (currentYearEl) {
+            currentYearEl.textContent = new Date().getFullYear();
+        }
     </script>
 </body>
 </html>
