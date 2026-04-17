@@ -433,14 +433,22 @@ main {
   max-height: 70vh;
   overflow-y: auto;
 }
-.dropdown:hover .dropdown-menu,
-.dropdown > a:focus + .dropdown-menu,
-.dropdown-menu:hover,
 .dropdown-menu.show { /* .show class for JS control */
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
   transition-delay: 0s;
+}
+
+@media (min-width: 993px) {
+  .dropdown:hover .dropdown-menu,
+  .dropdown > a:focus + .dropdown-menu,
+  .dropdown-menu:hover {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition-delay: 0s;
+  }
 }
 .dropdown-menu a {
   display: flex;
