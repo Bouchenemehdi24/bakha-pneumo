@@ -2,7 +2,6 @@
 <html lang="ar" dir="rtl">
 <head>
    <!-- Meta Pixel Code -->
-<!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -18,7 +17,6 @@ fbq('track', 'PageView');
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=2095513227953611&ev=PageView&noscript=1"
 /></noscript>
-<!-- End Meta Pixel Code -->
 <!-- End Meta Pixel Code -->
     
     <!-- Google tag (gtag.js) -->
@@ -121,68 +119,6 @@ src="https://www.facebook.com/tr?id=2095513227953611&ev=PageView&noscript=1"
       ]
     }
     </script>
-    <style>
-        /* Basic styles for the popup to be visible */
-        .popup-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0, 0, 0, 0.7);
-            display: flex; /* Use flex to center */
-            justify-content: center;
-            align-items: center;
-            z-index: 10000; /* Ensure it's on top */
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease, visibility 0.3s ease;
-        }
-        .popup-overlay.active { /* Class to show the popup */
-            opacity: 1;
-            visibility: visible;
-        }
-        .popup-content {
-            background-color: #fff;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            width: 90%;
-            max-width: 450px;
-            position: relative;
-            text-align: right; /* For RTL */
-            max-height: 80vh;
-            overflow-y: auto;
-            transform: scale(0.9);
-            transition: transform 0.3s ease;
-        }
-        .popup-overlay.active .popup-content {
-            transform: scale(1);
-        }
-        .close-popup {
-            position: absolute;
-            top: 10px;
-            left: 15px; /* Adjust for RTL if needed */
-            font-size: 24px;
-            font-weight: bold;
-            cursor: pointer;
-            color: #888;
-        }
-        .close-popup:hover {
-            color: #333;
-        }
-        #appointment-details p { margin-bottom: 0.5em; }
-        .thank-you-message { font-weight: bold; margin-top: 1em; color: #2ecc71;}
-
-        /* Style for submit button during loading */
-        form button[type="submit"].loading {
-            cursor: not-allowed;
-            opacity: 0.7;
-        }
-        form button[type="submit"].loading::after {
-            content: ' ...'; /* Simple loading indicator */
-        }
-    </style>
 
 </head>
 <body data-theme="dark">    <!-- Language Selector -->
@@ -284,6 +220,7 @@ src="https://www.facebook.com/tr?id=2095513227953611&ev=PageView&noscript=1"
                     </ul>
                 </li>
                 <li><a href="#services">الخدمات</a></li>
+                <li><a href="#faq">أسئلة شائعة</a></li>
                 <li><a href="#apropos">عن الدكتورة</a></li>
                 <li><a href="#appointment">احجز موعداً</a></li>
                 <li><a href="#contact">التواصل</a></li>
@@ -362,10 +299,37 @@ src="https://www.facebook.com/tr?id=2095513227953611&ev=PageView&noscript=1"
 
 
 
+        <!-- FAQ Section -->
+        <section id="faq" class="services-section faq-section" data-aos="fade-up">
+            <h2>الأسئلة الشائعة</h2>
+            <div class="services-grid faq-grid">
+                <div class="service-card faq-card" data-aos="zoom-in">
+                    <i class="fas fa-question-circle"></i>
+                    <h3>هل تقبلون بطاقة الشفاء؟</h3>
+                    <p>نعم، العيادة تتعامل مع بطاقة الشفاء (Chifa) لتسهيل الفحوصات الطبية.</p>
+                </div>
+                <div class="service-card faq-card" data-aos="zoom-in" data-aos-delay="100">
+                    <i class="fas fa-calendar-check"></i>
+                    <h3>هل يجب حجز موعد؟</h3>
+                    <p>يُفضل حجز موعد لتجنب الانتظار، لكننا نستقبل أيضاً الحالات المستعجلة.</p>
+                </div>
+                <div class="service-card faq-card" data-aos="zoom-in" data-aos-delay="200">
+                    <i class="fas fa-child"></i>
+                    <h3>هل تعالجون الأطفال؟</h3>
+                    <p>نعم، نحن نقدم رعاية متخصصة للأمراض الصدرية والحساسية لدى الأطفال.</p>
+                </div>
+                <div class="service-card faq-card" data-aos="zoom-in" data-aos-delay="300">
+                    <i class="fas fa-clipboard-list"></i>
+                    <h3>ماذا أُحضر معي؟</h3>
+                    <p>يُرجى إحضار أي تحاليل أو أشعة سابقة، وقائمة الأدوية التي تتناولها حالياً.</p>
+                </div>
+            </div>
+        </section>
+
         <!-- Appointment Form Section -->
         <section id="appointment" class="appointment-section" data-aos="fade-up">
             <div class="appointment-content">
-                <h2>احجز موعداً</h2>"
+                <h2>احجز موعداً</h2>
                 <p>يمكنك حجز موعد من خلال ملء النموذج التالي</p>
                 <form id="appointmentForm-ar" action="https://formspree.io/f/mblowkoo" method="POST">
                     <div class="form-group">
@@ -533,10 +497,23 @@ src="https://www.facebook.com/tr?id=2095513227953611&ev=PageView&noscript=1"
                     <i class="fas fa-map-marker-alt"></i> افتح الموقع على خرائط جوجل
                 </a>
             </div>
+            <div class="footer-visitor-stats" data-aos="fade-up">
+                <div class="visitor-stat-item" title="إجمالي الزيارات">
+                    <i class="fas fa-users"></i>
+                    <span id="total-visitors">0</span>
+                </div>
+                <div class="visitor-stat-item" title="زيارات اليوم">
+                    <i class="fas fa-user-clock"></i>
+                    <span id="today-visitors">0</span>
+                </div>
+                <div class="visitor-stat-item" title="بلد الزائر">
+                    <span class="flag-icon" id="visitor-country-flag">🌍</span>
+                    <span id="visitor-country-name">جاري التحديد...</span>
+                </div>
+            </div>
         </footer>
     </div>    <!-- Watermark -->
     <div class="watermark">Dr. Bakha</div>
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 </body>
 
 </html>
