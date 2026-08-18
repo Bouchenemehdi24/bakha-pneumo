@@ -1,25 +1,60 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-   <!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '2095513227953611');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=2095513227953611&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#1e3a8a">
+    <meta name="format-detection" content="telephone=no">
+
+    <!-- Instant Theme Loader (Prevents Flash of Light/Dark Theme) -->
+    <script>
+        (function() {
+            try {
+                var savedTheme = localStorage.getItem('bakha_theme');
+                var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+                var theme = savedTheme ? savedTheme : (prefersDark ? 'dark' : 'light');
+                document.documentElement.setAttribute('data-theme', theme);
+            } catch (e) {}
+        })();
+    </script>
+
+    <!-- SEO & Metadata -->
+    <title>عيادة الدكتورة بخة س - أخصائية الأمراض الصدرية والحساسية | قالمة</title>
+    <meta name="description" content="عيادة الدكتورة بخة س بولاية قالمة. تشخيص وعلاج أمراض الصدر، الربو، الحساسية، اختبارات وظائف الرئة (EFR) وتسجيل اضطرابات النوم.">
+    <meta name="keywords" content="طبيب رئة قالمة, طبيب حساسية قالمة, علاج الربو, قياس وظائف الرئة EFR, الدكتورة بخة, الجزائر, كوفيد 19">
+    <meta name="author" content="عيادة الدكتورة بخة س">
+    <link rel="canonical" href="https://bakha-pneumo.netlify.app/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ar_DZ">
+    <meta property="og:url" content="https://bakha-pneumo.netlify.app/">
+    <meta property="og:title" content="عيادة الدكتورة بخة س - أخصائية الأمراض الصدرية والحساسية | قالمة">
+    <meta property="og:description" content="رعاية طبية متكاملة لأمراض الجهاز التنفسي والحساسية في ولاية قالمة.">
+    <meta property="og:image" content="https://bakha-pneumo.netlify.app/cabinet.png">
+
+    <!-- Favicons -->
+    <link rel="icon" href="cabinet-logo.png" type="image/png">
+
+    <!-- Performance: Preconnect to CDNs -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
     
-    <!-- Google tag (gtag.js) -->
+    <!-- Asynchronous Non-blocking FontAwesome -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"></noscript>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+
+    <!-- Google Analytics (GA4) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-BCT8GP6LZT"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -27,499 +62,424 @@ src="https://www.facebook.com/tr?id=2095513227953611&ev=PageView&noscript=1"
       gtag('js', new Date());
       gtag('config', 'G-BCT8GP6LZT');
     </script>
-    <!-- Basic Meta Tags -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Language" content="ar, fr">
-    
-    <!-- SEO Meta Tags -->
-    <meta name="keywords" content="عيادة الحساسية, علاج الربو, أمراض صدرية, ڨالمة, الجزائر, ربو, سرطان الرئة, انقطاع التنفس أثناء النوم, طبيب مختص, عيادة طبية, مواعيد طبية, أمراض الرئة, طبيب الرئة, طبيب الصدر, أمراض التنفس, علاج التنفس, طبيب الجهاز التنفسي, تشخيص الرئة, علاج الرئة, صحة الرئة, التهاب الشعب الهوائية, التليف الرئوي, أمراض القصبات الهوائية, عيادة أمراض الجهاز التنفسي, العناية بالتنفس, أمراض الحساسية, علاج الجهاز التنفسي, طبيب الأمراض التنفسية, الأشعة السينية للصدر, تشخيص بالأشعة, انقطاع التنفس أثناء النوم, اختبار وظائف الرئة, قياس التنفس, EFR, فحص التنفس, تشخيص الحساسية, جهاز التنفس الصناعي, طبيب الرئة في ڨالمة, طبيب الصدر في ڨالمة, مختص أمراض التنفس في ڨالمة, cabinet de pneumologie, traitement de l'asthme, maladies pulmonaires, Guelma, Algérie, docteur des poumons, cancer du poumon, apnée du sommeil, consultation médicale, radiographie thoracique, spirométrie, EFR, spécialiste des maladies respiratoires, diagnostic des allergies, clinique médicale, santé respiratoire, soins respiratoires, pneumologue à Guelma, médecin des poumons à Guelma, spécialiste des poumons à Guelma, soins pulmonaires à Guelma, maladies des voies respiratoires, examen médical des poumons, centre médical à Guelma, prise en charge des maladies respiratoires">
-    <meta name="author" content=" اختصاصية في الأمراض الصدرية والحساسية عيادة الدكتورة بخة س">
-    <meta name="description" content="طبيبة مختصة في الامراض الصدرية والحساسية ولاية قالمة">
 
-    <!-- Open Graph / Facebook Meta Tags -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://bakha-pneumo.netlify.app/">
-    <meta property="og:title" content="عيادة الدكتورة بخة س - اختصاصية في الأمراض الصدرية والحساسية ولاية قالمة">
-    <meta property="og:description" content="عيادة متخصصة في علاج الأمراض الصدرية والحساسية في ولاية قالمة، الجزائر.">
-    <meta property="og:image" content="https://bakha-pneumo.netlify.app/cabinet.png">
+    <!-- Facebook Pixel -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '2095513227953611');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2095513227953611&ev=PageView&noscript=1" alt=""/></noscript>
 
-    <!-- Twitter Meta Tags -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://bakha-pneumo.netlify.app/">
-    <meta property="twitter:title" content="عيادة الدكتورة بخة س - اختصاصية في الأمراض الصدرية والحساسية ولاية قالمة">    <meta property="twitter:description" content="عيادة متخصصة في علاج الأمراض الصدرية والحساسية في ولاية قالمة، الجزائر.">
-    <meta property="twitter:image" content="https://bakha-pneumo.netlify.app/cabinet.png">
-
-    <!-- Title -->
-    <title> عيادة الدكتورة بخة - اختصاصية في الأمراض الصدرية والحساسية ولاية قالمة </title>    <!-- Favicon -->
-    <link rel="icon" href="cabinet-logo.png" type="image/png">
-
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;700&family=Noto+Kufi+Arabic:wght@400;500;700&display=swap" rel="stylesheet">
-    
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="style.css">
-   
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-    
-    <!-- Essential Scripts -->
-    <script src="app.js" defer></script>
-    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
-      <!-- Structured Data (JSON-LD) -->
+    <!-- Schema.org JSON-LD (MedicalClinic Structured Data) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "MedicalClinic",
       "name": "عيادة الدكتورة بخة س",
-      "description": "عيادة متخصصة في علاج الأمراض الصدرية والحساسية في ولاية قالمة، الجزائر.",
+      "alternateName": "Cabinet Médical Dr Bakha S Pneumo-Allergologue",
+      "description": "عيادة متخصصة في تشخيص وعلاج أمراض الجهاز التنفسي، الربو، الحساسية واضطرابات النوم.",
       "image": "https://bakha-pneumo.netlify.app/cabinet-large.png",
+      "url": "https://bakha-pneumo.netlify.app/",
+      "telephone": "+213-796-222-597",
+      "priceRange": "$$",
+      "medicalSpecialty": [
+        "Pulmonary",
+        "Allergy"
+      ],
+      "availableService": [
+        {
+          "@type": "MedicalProcedure",
+          "name": "Exploration Fonctionnelle Respiratoire (EFR / Spirométrie)"
+        },
+        {
+          "@type": "MedicalProcedure",
+          "name": "Tests Cutanés d'Allergie"
+        },
+        {
+          "@type": "MedicalProcedure",
+          "name": "Polygraphie Ventilatoire du Sommeil"
+        }
+      ],
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "حي 19 جوان، خلف مستشفى الحكيم عقبي",
         "addressLocality": "ڨالمة",
         "addressRegion": "ولاية قالمة",
         "postalCode": "24000",
-        "addressCountry": "الجزائر"
+        "addressCountry": "DZ"
       },
-      "telephone": "+213-796-222-597",
-      "openingHours": "Sa-Th 08:00-16:00",
-      "url": "https://bakha-pneumo.netlify.app/",
-      "sameAs": [
-        "https://www.facebook.com/profile.php?id=61560422818675"
-      ]
-    }
-    </script>
-
-    <!-- BreadcrumbList Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 36.45512,
+        "longitude": 7.43659
+      },
+      "openingHoursSpecification": [
         {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "الرئيسية",
-          "item": "https://bakha-pneumo.netlify.app/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "الخدمات",
-          "item": "https://bakha-pneumo.netlify.app/#services"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "احجز موعداً",
-          "item": "https://bakha-pneumo.netlify.app/#appointment"
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Saturday",
+            "Sunday",
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday"
+          ],
+          "opens": "08:00",
+          "closes": "16:00"
         }
       ]
     }
     </script>
-
 </head>
-<body data-theme="dark">    <!-- Language Selector -->
-    <div id="google_translate_element" class="language-selector"></div>
-    
-    <!-- Dark Mode Toggle Button -->
-    <button id="theme-toggle" aria-label="Toggle Dark Mode">
-        <i class="fas fa-moon"></i>
-    </button>
+<body>
 
-    <!-- Arabic Content -->
-    <div id="content-ar" lang="ar" dir="rtl">
-        <div class="datetime-display" data-aos="fade-down">
-            <p class="current-time" id="arabic-time"></p>
-        </div>        <header role="banner" class="main-header">
-            <div class="header-top">
-                <div class="clinic-info">
+    <!-- Mobile Drawer Overlay -->
+    <div class="menu-overlay" id="menuOverlay" aria-hidden="true"></div>
+
+    <div id="content-wrapper">
+        
+        <!-- Live Clinic Status Bar -->
+        <aside class="datetime-bar" aria-label="توقيت وحالة العيادة">
+            <div class="datetime-container">
+                <span id="arabic-time" class="current-time"></span>
+                <div id="clinic-status" class="clinic-status">
+                    <span class="status-indicator">
+                        <i class="fas fa-circle" aria-hidden="true"></i>
+                        <span id="status-message">جاري التحقق...</span>
+                    </span>
+                    <span id="next-opening" class="next-opening"></span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Header -->
+        <header class="main-header">
+            <div class="header-inner">
+                <div class="clinic-brand">
                     <div class="logo-container">
                         <img 
                             src="cabinet-logo.png" 
-                            srcset="cabinet-logo.webp 100w, cabinet-logo.png 100w" 
-                            sizes="(max-width: 600px) 50px, 50px" 
-                            alt="شعار العيادة" 
-                            class="clinic-logo"
-                            loading="lazy">
+                            width="46"
+                            height="46"
+                            alt="شعار عيادة الدكتورة بخة" 
+                            class="clinic-logo">
                     </div>
                     <div class="clinic-title">
                         <h1>عيادة الدكتورة بخة س</h1>
-                        <p class="clinic-subtitle">اختصاصية في الأمراض الصدرية والحساسية - ولاية قالمة</p>
+                        <p class="clinic-subtitle">أمراض الصدر والحساسية - قالمة</p>
                     </div>
                 </div>
-                <div id="clinic-status" class="clinic-status" data-aos="fade-down">
-                    <div class="status-indicator">
-                        <i class="fas fa-circle"></i>
-                        <p id="status-message"></p>
-                    </div>
-                    <p id="next-opening" class="next-opening"></p>
+
+                <!-- Header Actions (Integrated Controls) -->
+                <div class="header-actions">
+                    <div id="google_translate_element" class="lang-selector-wrap"></div>
+                    
+                    <button id="theme-toggle" aria-label="تبديل الوضع الليلي" class="control-btn" type="button">
+                        <i class="fas fa-moon" aria-hidden="true"></i>
+                    </button>
+                    
+                    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="فتح القائمة الرئيسية" aria-expanded="false" type="button">
+                        <i class="fas fa-bars" aria-hidden="true"></i>
+                    </button>
                 </div>
             </div>
         </header>
 
-        <nav class="main-nav">
+        <!-- Navigation Bar / Mobile Drawer -->
+        <nav class="main-nav" id="mainNav" aria-label="القائمة الرئيسية">
             <div class="nav-container">
-                <button class="mobile-menu-btn" aria-label="القائمة">
-                    <i class="fas fa-bars"></i>
-                </button>
+                <div class="nav-drawer-header">
+                    <span class="drawer-title">القائمة الرئيسية</span>
+                    <button class="close-drawer-btn" id="closeDrawerBtn" aria-label="إغلاق القائمة" type="button">
+                        <i class="fas fa-times" aria-hidden="true"></i>
+                    </button>
+                </div>
 
                 <ul id="main-menu">
                     <li class="nav-item">
-                        <a href="#accueil" class="nav-link">
-                            <i class="fas fa-home"></i>
-                            <span>الرئيسية</span>
-                        </a>
+                        <a href="#hero" class="nav-link"><i class="fas fa-home" aria-hidden="true"></i> <span>الرئيسية</span></a>
                     </li>
-                    <li class="nav-item dropdown" aria-haspopup="true">
-                        <a href="#" class="nav-link" role="button" aria-expanded="false" aria-controls="diseases-dropdown">
-                            <i class="fas fa-lungs"></i>
-                            <span>أمراض الصدر</span>
-                            <i class="fas fa-chevron-down"></i>
-                        </a>
-                        <ul class="dropdown-menu" id="diseases-dropdown" role="menu">
-                            <li role="menuitem"><a href="asthma.html"><i class="fas fa-lungs"></i> الربو (Asthme)</a></li>
-                            <li role="menuitem"><a href="copd.html"><i class="fas fa-lungs"></i> مرض الانسداد الرئوي المزمن (BPCO)</a></li>
-                            <li role="menuitem"><a href="lung-cancer.html"><i class="fas fa-lungs"></i> سرطان الرئة (Cancer du poumon)</a></li>
-                            <li role="menuitem"><a href="pulmonary-fibrosis.html"><i class="fas fa-lungs"></i> التليف الرئوي (Fibrose pulmonaire)</a></li>
-                            <li role="menuitem"><a href="bronchitis.html"><i class="fas fa-lungs"></i> التهاب الشعب الهوائية (Bronchite)</a></li>
-                            <li role="menuitem"><a href="pneumonia.html"><i class="fas fa-lungs"></i> التهاب الرئة (Pneumonie)</a></li>
-                            <li role="menuitem"><a href="tuberculosis.html"><i class="fas fa-lungs"></i> السل (Tuberculose)</a></li>
-                            <li role="menuitem"><a href="covid-19.html"><i class="fas fa-lungs"></i> كوفيد-19 (COVID-19)</a></li>
-                            <li role="menuitem"><a href="influenza.html"><i class="fas fa-lungs"></i> الإنفلونزا (Influenza)</a></li>
+                    <li class="nav-item dropdown">
+                        <button class="dropdown-toggle" aria-expanded="false" type="button">
+                            <span><i class="fas fa-lungs" aria-hidden="true"></i> أمراض الصدر</span>
+                            <i class="fas fa-chevron-down caret-icon" aria-hidden="true"></i>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="asthma.html">الربو (Asthme)</a></li>
+                            <li><a href="copd.html">الانسداد الرئوي المزمن (BPCO)</a></li>
+                            <li><a href="lung-cancer.html">سرطان الرئة (Cancer)</a></li>
+                            <li><a href="pulmonary-fibrosis.html">التليف الرئوي (Fibrose)</a></li>
+                            <li><a href="bronchitis.html">التهاب الشعب الهوائية (Bronchite)</a></li>
+                            <li><a href="pneumonia.html">التهاب الرئة (Pneumonie)</a></li>
+                            <li><a href="tuberculosis.html">السل (Tuberculose)</a></li>
+                            <li><a href="covid-19.html">كوفيد-19 (COVID-19)</a></li>
                         </ul>
-                    </li><li class="dropdown" aria-haspopup="true">
-                    <a href="#" role="button" aria-expanded="false" aria-controls="allergic-dropdown">
-                        أمراض الحساسية <i class="fas fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu" id="allergic-dropdown" role="menu">
-                        <li role="menuitem"><a href="allergic-rhinitis.html"><i class="fas fa-lungs"></i> التهاب الأنف التحسسي (Rhinite allergique)</a></li>
-                        <li role="menuitem"><a href="allergic-asthma.html"><i class="fas fa-lungs"></i> الربو التحسسي (Asthme allergique)</a></li>
-                        <li role="menuitem"><a href="allergic-bronchitis.html"><i class="fas fa-lungs"></i> التهاب الشعب الهوائية التحسسي (Bronchite allergique)</a></li>
-                        <li role="menuitem"><a href="hypersensitivity-pneumonitis.html"><i class="fas fa-lungs"></i> التهاب الرئة التحسسي (Pneumopathie d'hypersensibilité)</a></li>
-                        <li role="menuitem"><a href="eczema.html"><i class="fas fa-lungs"></i> الإكزيما (Eczéma)</a></li>
-                        <li role="menuitem"><a href="urticaria.html"><i class="fas fa-lungs"></i> الشرى (Urticaire)</a></li>
-                        <li role="menuitem"><a href="food-allergy.html"><i class="fas fa-lungs"></i> حساسية الطعام (Allergie alimentaire)</a></li>
-                        <li role="menuitem"><a href="drug-allergy.html"><i class="fas fa-lungs"></i> حساسية الأدوية (Allergie médicamenteuse)</a></li>
-                    </ul>
-                </li>                <li><a href="sleep-apnea.html">انقطاع التنفس أثناء النوم (Apnée du sommeil)</a></li>
-                <li class="dropdown" aria-haspopup="true">
-                    <a href="#" role="button" aria-expanded="false" aria-controls="calculators-dropdown">
-                        حاسبات صحية <i class="fas fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu" id="calculators-dropdown" role="menu">
-                        <li role="menuitem"><a href="bmi-calculator.html">حاسبة مؤشر كتلة الجسم (BMI)</a></li>
-                        <li role="menuitem"><a href="bmr-calculator.html">حاسبة معدل الأيض الأساسي (BMR)</a></li>
-                        <li role="menuitem"><a href="calorie-calculator.html">حاسبة السعرات الحرارية اليومية</a></li>
-                        <li role="menuitem"><a href="whr-calculator.html">حاسبة نسبة الخصر إلى الورك (WHR)</a></li>
-                        <li role="menuitem"><a href="smoking-cost-calculator.html">حاسبة تكلفة التدخين</a></li>
-                        <li role="menuitem"><a href="lung-age-calculator.html">حاسبة عمر الرئة</a></li>
-                        <li role="menuitem"><a href="hydration-calculator.html">حاسبة الترطيب اليومي</a></li>
-                    </ul>
-                </li>
-                <li><a href="#services">الخدمات</a></li>
-                <li><a href="#faq">أسئلة شائعة</a></li>
-                <li><a href="#apropos">عن الدكتورة</a></li>
-                <li><a href="#appointment">احجز موعداً</a></li>
-                <li><a href="#contact">التواصل</a></li>
-            </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <button class="dropdown-toggle" aria-expanded="false" type="button">
+                            <span><i class="fas fa-allergies" aria-hidden="true"></i> أمراض الحساسية</span>
+                            <i class="fas fa-chevron-down caret-icon" aria-hidden="true"></i>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="allergic-rhinitis.html">التهاب الأنف التحسسي (Rhinite)</a></li>
+                            <li><a href="allergic-asthma.html">الربو التحسسي (Asthme)</a></li>
+                            <li><a href="allergic-bronchitis.html">التهاب الشعب التحسسي</a></li>
+                            <li><a href="eczema.html">الإكزيما (Eczéma)</a></li>
+                            <li><a href="urticaria.html">الشرى (Urticaire)</a></li>
+                            <li><a href="food-allergy.html">حساسية الطعام</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="sleep-apnea.html" class="nav-link"><i class="fas fa-bed" aria-hidden="true"></i> <span>انقطاع التنفس النومي</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <button class="dropdown-toggle" aria-expanded="false" type="button">
+                            <span><i class="fas fa-calculator" aria-hidden="true"></i> حاسبات صحية</span>
+                            <i class="fas fa-chevron-down caret-icon" aria-hidden="true"></i>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="bmi-calculator.html">مؤشر كتلة الجسم (BMI)</a></li>
+                            <li><a href="calorie-calculator.html">حاسبة السعرات الحرارية</a></li>
+                            <li><a href="smoking-cost-calculator.html">حاسبة تكلفة التدخين</a></li>
+                            <li><a href="lung-age-calculator.html">حاسبة عمر الرئة</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a href="#services" class="nav-link">الخدمات</a></li>
+                    <li class="nav-item"><a href="#faq" class="nav-link">الأسئلة الشائعة</a></li>
+                    <li class="nav-item"><a href="#apropos" class="nav-link">عن الدكتورة</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link">التواصل</a></li>
+                </ul>
+            </div>
         </nav>
 
-        <main role="main">
-            <div class="main-content">
-                <!-- Hero Section -->
-                <section id="hero" class="hero-section" data-aos="fade-up">
-                    <div class="hero-content">
-                        <h2>مرحباً بكم في عيادة الدكتورة بخة س</h2>
-                        <p>نقدم رعاية طبية متخصصة في مجال أمراض الصدر والحساسية</p>
-                        <a href="#appointment" class="cta-button">احجز موعداً</a>
+        <!-- Main Page Content -->
+        <main>
+            <!-- Hero Section -->
+            <section id="hero" class="hero-section" data-aos="fade-up">
+                <div class="hero-content">
+                    <h2>رعاية متخصصة في أمراض الجهاز التنفسي والحساسية</h2>
+                    <p class="hero-desc">تشخيص دقيق، تجهيزات حديثة، وبروتوكولات علاجية متطورة للأطفال والبالغين في ولاية قالمة.</p>
+                    <div class="hero-actions">
+                        <a href="#appointment" class="cta-button primary-cta">
+                            <i class="fas fa-calendar-check" aria-hidden="true"></i> طلب موعد بالعيادة
+                        </a>
+                        <a href="tel:+213796222597" class="cta-button secondary-cta">
+                            <i class="fas fa-phone-alt" aria-hidden="true"></i> اتصال مباشر
+                        </a>
                     </div>
-                </section>
-
-                <!-- Services Section -->
-                <section id="services" class="services-section" data-aos="fade-up">
-                    <h2>خدماتنا</h2>
-                    <div class="services-grid">
-                        <div class="service-card" data-aos="zoom-in">
-                            <i class="fas fa-lungs"></i>
-                            <h3>تشخيص وعلاج شامل</h3>
-                            <p>تشخيص وعلاج أمراض الصدر، الربو، سرطان الرئة، والحساسية</p>
-                        </div>
-                        <div class="service-card" data-aos="zoom-in">
-                            <i class="fas fa-x-ray"></i>
-                            <h3>اشعة الصدر</h3>
-                            <p>Radio thorax numérique</p>
-                        </div>
-                        <div class="service-card" data-aos="zoom-in">
-                            <i class="fas fa-chart-line"></i>
-                            <h3>قياس الوظيفة التنفسية</h3>
-                            <p>EFR - Spirométrie</p>
-                        </div>
-                        <div class="service-card" data-aos="zoom-in">
-                            <i class="fas fa-child"></i>
-                            <h3>طب الأطفال</h3>
-                            <p>علاج أمراض الصدر للأطفال</p>
-                        </div>
-                        <div class="service-card" data-aos="zoom-in">
-                            <i class="fas fa-allergies"></i>
-                            <h3>اختبارات الحساسية</h3>
-                            <p>Tests cutanés</p>
-                        </div>
-                        <div class="service-card" data-aos="zoom-in">
-                            <i class="fas fa-bed"></i>
-                            <h3>تشخيص انقطاع التنفس</h3>
-                            <p>Polygraphie ventilatoire du sommeil</p>
-                        </div>
-                        <div class="service-card" data-aos="zoom-in">
-                            <i class="fas fa-ambulance"></i>
-                            <h3>حالات الطوارئ</h3>
-                            <p>رعاية حالات الطوارئ التنفسية</p>
-                        </div>
-                        <div class="service-card" data-aos="zoom-in">
-                            <i class="fas fa-syringe"></i>
-                            <h3>خزعة الجنب</h3>
-                            <p>علاج الاسترواح الصدري وخزعة الجنب</p>
-                        </div>
-                        <div class="service-card" data-aos="zoom-in">
-                            <i class="fas fa-smoking-ban"></i>
-                            <h3>الإقلاع عن التدخين</h3>
-                            <p>دعم للإقلاع عن التدخين</p>
-                        </div>
-                        <div class="service-card" data-aos="zoom-in">
-                            <i class="fas fa-heartbeat"></i>
-                            <h3>فحوصات عامة</h3>
-                            <p>فحوصات طبية عامة</p>
-                        </div>
-                    </div>
-                </section>
-            </div>
-        </main>
-
-
-
-        <!-- FAQ Section -->
-        <section id="faq" class="services-section faq-section" data-aos="fade-up">
-            <h2>الأسئلة الشائعة</h2>
-            <div class="services-grid faq-grid">
-                <div class="service-card faq-card" data-aos="zoom-in">
-                    <i class="fas fa-question-circle"></i>
-                    <h3>هل تقبلون بطاقة الشفاء؟</h3>
-                    <p>نعم، العيادة تتعامل مع بطاقة الشفاء (Chifa) لتسهيل الفحوصات الطبية.</p>
                 </div>
-                <div class="service-card faq-card" data-aos="zoom-in" data-aos-delay="100">
-                    <i class="fas fa-calendar-times"></i>
-                    <h3>هل يجب حجز موعد؟</h3>
-                    <p>لا، لا داعي لحجز موعد مسبق. يمكنك القدوم إلى العيادة مباشرة خلال أوقات العمل وسنسعد باستقبالك.</p>
+            </section>
+
+            <!-- Services Section -->
+            <section id="services" class="services-section" data-aos="fade-up">
+                <h2 class="section-title">خدماتنا الطبية المتخصصة</h2>
+                <div class="services-grid">
+                    <article class="service-card">
+                        <div class="service-icon-box"><i class="fas fa-lungs" aria-hidden="true"></i></div>
+                        <h3>تشخيص وعلاج الأمراض الصدرية</h3>
+                        <p>متابعة الربو، التهاب الشعب المزمن (BPCO)، السل والتليف الرئوي.</p>
+                    </article>
+                    <article class="service-card">
+                        <div class="service-icon-box"><i class="fas fa-chart-line" aria-hidden="true"></i></div>
+                        <h3>قياس كفاءة الرئة (EFR)</h3>
+                        <p>فحص دقيق لوظائف التنفس بواسطة جهاز قياس التنفس (Spirométrie).</p>
+                    </article>
+                    <article class="service-card">
+                        <div class="service-icon-box"><i class="fas fa-allergies" aria-hidden="true"></i></div>
+                        <h3>اختبارات الحساسية الجلدية</h3>
+                        <p>تحديد مسببات الحساسية الصدرية والأنفية عبر Tests Cutanés الدقيقة.</p>
+                    </article>
+                    <article class="service-card">
+                        <div class="service-icon-box"><i class="fas fa-bed" aria-hidden="true"></i></div>
+                        <h3>تسجيل النوم والتنفس</h3>
+                        <p>Polygraphie du sommeil لتشخيص انقطاع التنفس والشخير أثناء النوم.</p>
+                    </article>
+                    <article class="service-card">
+                        <div class="service-icon-box"><i class="fas fa-child" aria-hidden="true"></i></div>
+                        <h3>أمراض رئة وحساسية الأطفال</h3>
+                        <p>رعاية متخصصة للأطفال المصابين بالربو، السعال المتكرر والحساسية.</p>
+                    </article>
+                    <article class="service-card">
+                        <div class="service-icon-box"><i class="fas fa-smoking-ban" aria-hidden="true"></i></div>
+                        <h3>المساعدة على الإقلاع عن التدخين</h3>
+                        <p>مرافقة طبية وبرامج علاجية للحد من الأضرار الرئوية للتبغ.</p>
+                    </article>
                 </div>
-                <div class="service-card faq-card" data-aos="zoom-in" data-aos-delay="200">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <h3>أين تقع العيادة بالتحديد؟</h3>
-                    <p>تقع عيادتنا في ولاية قالمة، حي 19 جوان، خلف مستشفى الحكيم عقبي.</p>
+            </section>
+
+            <!-- FAQ Section -->
+            <section id="faq" class="faq-section" data-aos="fade-up">
+                <h2 class="section-title">الأسئلة الأكثر شيوعاً</h2>
+                <div class="faq-grid">
+                    <details class="faq-accordion" open>
+                        <summary><i class="fas fa-question-circle" aria-hidden="true"></i> هل العيادة تقبل بطاقة الشفاء؟</summary>
+                        <div class="faq-answer">نعم، العيادة متعاقدة مع بطاقة الشفاء لتسهيل الفحوصات والوصفات الطبية للمرضى المؤمنين.</div>
+                    </details>
+                    <details class="faq-accordion">
+                        <summary><i class="fas fa-calendar-alt" aria-hidden="true"></i> هل الحجز عبر الموقع إلزامي؟</summary>
+                        <div class="faq-answer">الحجز الإلكتروني يمنحك أولوية التنظيم وتأكيد التوقيت المناسب لك، كما تستقبل العيادة المرضى دون موعد مسبق خلال ساعات العمل.</div>
+                    </details>
+                    <details class="faq-accordion">
+                        <summary><i class="fas fa-map-marker-alt" aria-hidden="true"></i> أين تقع العيادة بدقة؟</summary>
+                        <div class="faq-answer">ولاية قالمة، حي 19 جوان، مباشرة خلف مستشفى الحكيم عقبي، مقابل الصيدلية.</div>
+                    </details>
                 </div>
-                <div class="service-card faq-card" data-aos="zoom-in" data-aos-delay="300">
-                    <i class="fas fa-child"></i>
-                    <h3>هل تعالجون الأطفال؟</h3>
-                    <p>نعم، نحن نقدم رعاية متخصصة للأمراض الصدرية والحساسية لدى الأطفال.</p>
-                </div>
-                <div class="service-card faq-card" data-aos="zoom-in" data-aos-delay="400">
-                    <i class="fas fa-clipboard-list"></i>
-                    <h3>ماذا أُحضر معي؟</h3>
-                    <p>يُرجى إحضار أي تحاليل أو أشعة سابقة، وقائمة الأدوية التي تتناولها حالياً.</p>
-                </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Appointment Form Section -->
-        <section id="appointment" class="appointment-section" data-aos="fade-up">
-            <div class="appointment-content">
-                <h2>احجز موعداً</h2>
-                <p>يمكنك حجز موعد من خلال ملء النموذج التالي</p>
-                <form id="appointmentForm-ar" action="https://formspree.io/f/mblowkoo" method="POST">
-                    <div class="form-group">
-                        <label for="name-ar">الاسم الكامل</label>
-                        <input type="text" id="name-ar" name="name" required>
-                    </div>
+            <!-- Appointment Form Section -->
+            <section id="appointment" class="appointment-section" data-aos="fade-up">
+                <div class="appointment-content">
+                    <h2 class="section-title text-light">طلب موعد عبر الإنترنت</h2>
+                    <p class="appointment-intro">يرجى ملء النموذج، وسيقوم طاقم العيادة بالاتصال بكم هاتفياً لتأكيد الساعة:</p>
+                    
+                    <form id="appointmentForm-ar" action="https://formspree.io/f/mblowkoo" method="POST" class="mobile-form" novalidate>
+                        <!-- Formspree Spam Honeypot -->
+                        <input type="text" name="_gotcha" style="display:none !important;" tabindex="-1" autocomplete="off">
 
-                    <div class="form-group">
-                        <label for="sex-ar">الجنس</label>
-                        <select id="sex-ar" name="sex" required>
-                            <option value="">اختر جنساً</option>
-                            <option value="male">ذكر</option>
-                            <option value="female">أنثى</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="phone-ar">رقم الهاتف</label>
-                        <input type="tel" id="phone-ar" name="phone" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="appointmentDate-ar">تاريخ الموعد</label>
-                        <input type="date" id="appointmentDate-ar" name="appointment_date" required>
-                    </div>
-
-                    <button type="submit" class="submit-button">إرسال طلب الموعد</button>
-                </form>
-
-                <div id="success-message-ar" class="success-message" style="display: none;">
-                    تم إرسال طلب موعدك بنجاح. سنتصل بك قريباً لتأكيد الموعد.
-                </div>
-            </div>
-        </section>
-
-
-                        <!-- Contact Section -->
-        <section id="contact" class="contact-section" data-aos="fade-up">
-            <div class="contact-content">
-                <h2>اتصل بنا</h2>
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-phone-alt"></i>
-                        <div class="contact-details">
-                            <h3>أرقام الهاتف</h3>
-                            <p><a href="tel:+213796222597">0796222597</a> (مكالمات)</p>
-                            <p>
-                                <a href="https://wa.me/213663755584" target="_blank" rel="noopener noreferrer" class="whatsapp-link">
-                                    <i class="fab fa-whatsapp"></i> 0663755584
-                                </a> (واتساب)
-                            </p>
+                        <div class="form-group">
+                            <label for="name-ar">الاسم واللقب <span class="req">*</span></label>
+                            <input type="text" id="name-ar" name="name" autocomplete="name" required placeholder="مثال: محمد بلقاسم">
+                            <span class="field-error" id="name-error"></span>
                         </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div class="contact-details">
-                            <h3>العنوان</h3>
-                            <p>حي 19 جوان، خلف مستشفى الحكيم عقبي، ڨالمة، الجزائر</p>
+
+                        <div class="form-group">
+                            <label for="sex-ar">الجنس <span class="req">*</span></label>
+                            <select id="sex-ar" name="sex" required>
+                                <option value="">-- اختر الجنس --</option>
+                                <option value="ذكر">ذكر</option>
+                                <option value="أنثى">أنثى</option>
+                            </select>
+                            <span class="field-error" id="sex-error"></span>
                         </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-clock"></i>
-                        <div class="contact-details">
-                            <h3>ساعات العمل</h3>
-                            <p>من السبت إلى الخميس</p>
-                            <p>8:00 صباحاً - 4:00 مساءً</p>
+
+                        <div class="form-group">
+                            <label for="phone-ar">رقم الهاتف <span class="req">*</span></label>
+                            <input type="tel" id="phone-ar" name="phone" autocomplete="tel" inputmode="numeric" placeholder="0796XXXXXX أو 0663XXXXXX" required>
+                            <span class="field-error" id="phone-error"></span>
                         </div>
+
+                        <div class="form-group">
+                            <label for="appointmentDate-ar">التاريخ المفضل للموعد <span class="req">*</span></label>
+                            <input type="date" id="appointmentDate-ar" name="appointment_date" required>
+                            <span class="field-error" id="date-error"></span>
+                        </div>
+
+                        <button type="submit" class="submit-button" id="submitApptBtn">
+                            <i class="fas fa-paper-plane" aria-hidden="true"></i> تأكيد إرسال الطلب
+                        </button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Contact & Map -->
+            <section id="contact" class="contact-section" data-aos="fade-up">
+                <h2 class="section-title">معلومات الاتصال والموقع</h2>
+                <div class="contact-cards-container">
+                    <a href="tel:+213796222597" class="contact-card touch-card">
+                        <i class="fas fa-phone-alt" aria-hidden="true"></i>
+                        <h3>الهاتف المباشر</h3>
+                        <p dir="ltr">0796 22 25 97</p>
+                    </a>
+                    <a href="https://wa.me/213663755584" target="_blank" rel="noopener noreferrer" class="contact-card touch-card whatsapp-card">
+                        <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                        <h3>واتساب (WhatsApp)</h3>
+                        <p dir="ltr">0663 75 55 84</p>
+                    </a>
+                    <div class="contact-card">
+                        <i class="fas fa-clock" aria-hidden="true"></i>
+                        <h3>أوقات الاستقبال</h3>
+                        <p>السبت إلى الخميس: 08:00 - 16:00</p>
                     </div>
                 </div>
 
-                <!-- Map Container -->
-                <div class="map-container" data-aos="fade-up" data-aos-delay="200">
-                    <h3 class="map-title">موقعنا على الخريطة</h3>
+                <div class="map-wrapper">
                     <iframe 
+                        title="موقع عيادة الدكتورة بخة على خرائط جوجل"
                         src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3209.1007271838494!2d7.436598084719768!3d36.455121980020934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1scabinet%20de%20pneumologie%20allergologie%20Dr.%20Bakha%20S!5e0!3m2!1sar!2sdz!4v1735734049065!5m2!1sar!2sdz" 
                         width="100%" 
-                        height="450" 
+                        height="320" 
                         style="border:0;" 
                         allowfullscreen="" 
-                        loading="lazy" 
+                        loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
                 </div>
-            </div>
-        </section>
+            </section>
 
-
-         <!-- **** START: About Section **** -->
-                <section id="apropos" class="about-section" data-aos="fade-up">
-                    <div class="section-content-wrapper">
-                        <h2>عن الدكتورة بخة س وعيادتها</h2> <!-- Title can be adjusted -->
-                        <div class="about-content-flex">
-                            <div class="about-image-container" data-aos="zoom-in" data-aos-delay="100">
-                                <picture>
-                                    <source 
-                                        media="(min-width: 768px)" 
-                                        srcset="cabinet-large.webp"
-                                        type="image/webp">
-                                    <source 
-                                        media="(min-width: 768px)" 
-                                        srcset="cabinet-large.png">
-                                    
-                                    <source 
-                                        srcset="cabinet-medium.webp"
-                                        type="image/webp">
-                                    <source 
-                                        srcset="cabinet-medium.png">
-
-                                    <img 
-                                        src="cabinet-medium.png" 
-                                        alt="شعار عيادة الدكتورة بخة س" 
-                                        class="clinic-emblem-image" 
-                                        loading="lazy">
-                                </picture>
-                            </div>
-                            <div class="about-text-content" data-aos="fade-right" data-aos-delay="200">
-                                <p class="qualification-highlight">
-                                    <i class="fas fa-graduation-cap icon-before"></i>
-                                    الدكتورة بخة س حاصلة على شهادة الدراسات الطبية المتخصصة من المستشفى الجامعي قسنطينة والمستشفى العسكري قسنطينة.
-                                </p>
-                                <p>
-                                    <i class="fas fa-clinic-medical icon-before"></i> <!-- Changed icon -->
-                                    تلتزم العيادة بتقديم رعاية طبية متخصصة قائمة على أحدث المعايير العلمية، مع التركيز على التشخيص الدقيق والعلاج الفعال لأمراض الصدر والحساسية.
-                                </p>
-                                <p>
-                                    <i class="fas fa-chalkboard-teacher icon-before"></i>
-                                    تشارك الدكتورة بخة س بفعالية في العديد من المؤتمرات العلمية الوطنية والدولية، مما يعكس حرصها على مواكبة آخر التطورات في مجال تخصصها لتقديم أفضل رعاية للمرضى.
-                                </p>
-                                <p>
-                                    <i class="fas fa-certificate icon-before"></i>
-                                    أتمت دورات تدريبية متقدمة وعالية الجودة في مجالات حساسية الجهاز التنفسي، اختبارات الحساسية المتخصصة، وإدارة حالات انقطاع التنفس أثناء النوم.
-                                </p>
-                            </div>
+            <!-- About Doctor -->
+            <section id="apropos" class="about-section" data-aos="fade-up">
+                <div class="about-card">
+                    <div class="about-header">
+                        <img src="cabinet-medium.png" width="80" height="80" alt="الدكتورة بخة س" class="about-emblem" loading="lazy">
+                        <div>
+                            <h3>الدكتورة بخة س</h3>
+                            <p class="about-badge">طبيبة مختصة في أمراض الجهاز التنفسي، الحساسية واضطرابات النوم</p>
                         </div>
                     </div>
-                </section>
-        <!-- Appointment Success Popup -->
-<div id="appointmentSuccessPopupOverlay" class="popup-overlay">
-    <div class="popup-content">
-        <button class="close-popup" aria-label="إغلاق">×</button>
-        <h2>تم تأكيد طلب موعدك!</h2>
-        <div id="appointment-confirmation-details">
-            <p>شكراً لك، <strong id="popup-appt-name"></strong>!</p>
-            <p>لقد تم استلام طلب حجز موعدك بالتفاصيل التالية. سنتواصل معك قريباً عبر الهاتف للتأكيد النهائي.</p>
-            <ul>
-                <li><strong>الاسم:</strong> <span id="popup-appt-confirm-name"></span></li>
-                <li><strong>رقم الهاتف:</strong> <span id="popup-appt-phone"></span></li>
-                <li><strong>التاريخ المطلوب:</strong> <span id="popup-appt-date"></span></li>
-            </ul>
-        </div>
-        <p class="thank-you-message">نتطلع لخدمتك في عيادتنا.</p>
-    </div>
-</div>
-
-
-
-
-        <footer>
-            <p class="copyright-text">© 2025 عيادة الدكتورة بخة س - جميع الحقوق محفوظة</p>
-            <div class="footer-links">
-                <a href="https://www.facebook.com/profile.php?id=61560422818675" target="_blank" rel="noopener noreferrer" class="footer-link">
-                    <i class="fab fa-facebook-f"></i> تابعنا على الفيسبوك
-                </a>
-                <a href="https://www.google.com/maps/search/?api=1&query=عيادة+الدكتورة+بخة+س+حي+19+جوان+خلف+مستشفى+الحكيم+عقبي+ڨالمة+الجزائر" target="_blank" rel="noopener noreferrer" class="footer-link">
-                    <i class="fas fa-map-marker-alt"></i> افتح الموقع على خرائط جوجل
-                </a>
-            </div>
-            <div class="footer-visitor-stats" data-aos="fade-up">
-                <div class="visitor-stat-item" title="إجمالي الزيارات">
-                    <i class="fas fa-users"></i>
-                    <span id="total-visitors">0</span>
+                    <ul class="about-list">
+                        <li><i class="fas fa-check-circle" aria-hidden="true"></i> خريجة كلية الطب والمستشفى الجامعي والعسكري بقسنطينة.</li>
+                        <li><i class="fas fa-check-circle" aria-hidden="true"></i> تكوين وخبرة سريرية متقدمة في الحساسية الصدرية ومشاكل التنفس أثناء النوم.</li>
+                        <li><i class="fas fa-check-circle" aria-hidden="true"></i> عيادة مجهزة بأحدث المعدات الطبية للفحص الوظيفي والشعاعي.</li>
+                    </ul>
                 </div>
-                <div class="visitor-stat-item" title="زيارات اليوم">
-                    <i class="fas fa-user-clock"></i>
-                    <span id="today-visitors">0</span>
-                </div>
-                <div class="visitor-stat-item" title="بلد الزائر">
-                    <span class="flag-icon" id="visitor-country-flag">🌍</span>
-                    <span id="visitor-country-name">جاري التحديد...</span>
-                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="main-footer">
+            <div class="footer-inner">
+                <p>© 2025 عيادة الدكتورة بخة س - جميع الحقوق محفوظة</p>
+                <p class="footer-address"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> حي 19 جوان، خلف مستشفى الحكيم عقبي، ولاية قالمة، الجزائر</p>
             </div>
         </footer>
-    </div>    <!-- Watermark -->
-    <div class="watermark">Dr. Bakha</div>
+
+        <!-- Mobile Sticky Thumb-Accessible Quick Actions -->
+        <aside class="mobile-action-bar" aria-label="شريط الوصول السريع">
+            <a href="tel:+213796222597" class="mobile-action-btn call-btn">
+                <i class="fas fa-phone-alt" aria-hidden="true"></i>
+                <span>اتصال</span>
+            </a>
+            <a href="https://wa.me/213663755584" target="_blank" rel="noopener noreferrer" class="mobile-action-btn wa-btn">
+                <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                <span>واتساب</span>
+            </a>
+            <a href="#appointment" class="mobile-action-btn appt-btn">
+                <i class="fas fa-calendar-check" aria-hidden="true"></i>
+                <span>موعد</span>
+            </a>
+            <a href="https://maps.google.com/?q=36.45512,7.43659" target="_blank" rel="noopener noreferrer" class="mobile-action-btn map-btn">
+                <i class="fas fa-directions" aria-hidden="true"></i>
+                <span>الاتجاهات</span>
+            </a>
+        </aside>
+
+        <!-- Booking Success Modal -->
+        <div id="appointmentSuccessPopupOverlay" class="popup-overlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <div class="popup-content">
+                <button class="close-popup" id="modalCloseBtn" aria-label="إغلاق النافذة" type="button">×</button>
+                <div class="popup-icon"><i class="fas fa-check-circle" aria-hidden="true"></i></div>
+                <h2 id="modalTitle">تم تسجيل طلبكم بنجاح</h2>
+                <div class="appointment-confirmation-details">
+                    <p>شكراً لك، <strong id="popup-appt-name"></strong>!</p>
+                    <p>سيقوم طاقم العيادة بالاتصال بكم على الرقم (<span id="popup-appt-phone" dir="ltr"></span>) لتأكيد ساعة الحضور يوم <strong id="popup-appt-date"></strong>.</p>
+                </div>
+                <button type="button" class="cta-button primary-cta modal-ok-btn" id="modalOkBtn">حسناً</button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" defer></script>
+    <script src="app.js" defer></script>
 </body>
-
 </html>
-
