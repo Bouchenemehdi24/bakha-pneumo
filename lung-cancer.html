@@ -1,6 +1,18 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
+    <!-- Instant Theme Loader (Zero Flash) -->
+    <script>
+        (function() {
+            try {
+                var savedTheme = localStorage.getItem('bakha_theme');
+                var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+                var theme = savedTheme ? savedTheme : (prefersDark ? 'dark' : 'light');
+                document.documentElement.setAttribute('data-theme', theme);
+            } catch (e) {}
+        })();
+    </script>
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-BCT8GP6LZT"></script>
     <script>
@@ -11,7 +23,7 @@
     </script>
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
     <!-- Meta Keywords for Lung Cancer -->
     <meta name="keywords" content="سرطان الرئة, علاج سرطان الرئة, أعراض سرطان الرئة, أسباب سرطان الرئة, تشخيص سرطان الرئة في قالمة, الوقاية من سرطان الرئة, الدكتورة بخة س, طبيب أورام صدرية قالمة, سرطان الرئة ذو الخلايا الصغيرة, سرطان الرئة ذو الخلايا غير الصغيرة, التدخين وسرطان الرئة, الكشف المبكر عن سرطان الرئة, Cancer du poumon">
     <!-- Meta Description for Lung Cancer -->
@@ -58,94 +70,135 @@
     </script>
     <!-- Inline <style> block REMOVED. All styles should be in style.css -->
 </head>
-<body data-theme="dark"> <!-- Default theme, JS handles toggle -->
+<body>
 
-    <!-- Global Elements (Theme Toggle, Language Selector) -->
-    <div id="google_translate_element" class="language-selector"></div>
-    <button id="theme-toggle" aria-label="Toggle Dark Mode">
-        <i class="fas fa-moon"></i>
-    </button>
+    <!-- Mobile Drawer Overlay -->
+    <div class="menu-overlay" id="menuOverlay" aria-hidden="true"></div>
 
-    <div id="content-ar" lang="ar" dir="rtl">
+    <div id="page-wrapper">
+        
+        <!-- Live Clinic Status Bar -->
+        <aside class="datetime-bar" aria-label="توقيت وحالة العيادة">
+            <div class="datetime-container">
+                <span id="arabic-time" class="current-time">--:--</span>
+                <div id="clinic-status" class="clinic-status">
+                    <span class="status-indicator">
+                        <i class="fas fa-circle" aria-hidden="true"></i>
+                        <span id="status-message">جاري التحقق...</span>
+                    </span>
+                    <span id="next-opening" class="next-opening"></span>
+                </div>
+            </div>
+        </aside>
 
-        <!-- ====================================================================== -->
-        <!-- START: STANDARD HEADER (Copy from index.html) -->
-        <header role="banner" class="main-header">
-            <div class="header-top">
-                <div class="clinic-info">
+        <!-- Main Header -->
+        <header class="main-header">
+            <div class="header-inner">
+                <a href="index.html" class="clinic-brand" aria-label="الصفحة الرئيسية">
                     <div class="logo-container">
-                        <img src="cabinet.png" alt="شعار العيادة" class="clinic-logo">
+                        <img 
+                            src="cabinet-logo.png" 
+                            width="44"
+                            height="44"
+                            alt="شعار عيادة د. بخة" 
+                            class="clinic-logo"
+                            decoding="async">
                     </div>
                     <div class="clinic-title">
                         <h1>عيادة الدكتورة بخة س</h1>
-                        <p class="clinic-subtitle">اختصاصية في الأمراض الصدرية والحساسية - ولاية قالمة</p>
+                        <p class="clinic-subtitle">أمراض الصدر والحساسية - قالمة</p>
                     </div>
-                </div>
-                <div id="clinic-status" class="clinic-status" data-aos="fade-down">
-                    <div class="status-indicator">
-                        <i class="fas fa-circle"></i>
-                        <p id="status-message"></p>
-                    </div>
-                    <p id="next-opening" class="next-opening"></p>
+                </a>
+
+                <!-- Header Actions -->
+                <div class="header-actions">
+                    <div id="google_translate_element" class="lang-selector-wrap"></div>
+                    
+                    <button id="theme-toggle" aria-label="تبديل الوضع الليلي" class="control-btn" type="button">
+                        <i class="fas fa-moon" aria-hidden="true"></i>
+                    </button>
+                    
+                    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="فتح القائمة الرئيسية" aria-expanded="false" type="button">
+                        <i class="fas fa-bars" aria-hidden="true"></i>
+                    </button>
                 </div>
             </div>
         </header>
-        <nav class="main-nav">
+
+        <!-- Navigation Drawer -->
+        <nav class="main-nav" id="mainNav" aria-label="القائمة الرئيسية">
             <div class="nav-container">
-                <button class="mobile-menu-btn" aria-label="القائمة"><i class="fas fa-bars"></i></button>
+                <div class="nav-drawer-header">
+                    <span class="drawer-title">القائمة والتخصصات</span>
+                    <button class="close-drawer-btn" id="closeDrawerBtn" aria-label="إغلاق القائمة" type="button">
+                        <i class="fas fa-times" aria-hidden="true"></i>
+                    </button>
+                </div>
+
                 <ul id="main-menu">
-                    <li><a href="index.html#hero"><i class="fas fa-home"></i> الرئيسية</a></li>
-                    <li class="dropdown">
-                        <a href="#" role="button" aria-expanded="false"><i class="fas fa-lungs"></i> أمراض الصدر <i class="fas fa-chevron-down"></i></a>
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link"><i class="fas fa-home" aria-hidden="true"></i> <span>الرئيسية</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <button class="dropdown-toggle" aria-expanded="false" type="button">
+                            <span><i class="fas fa-lungs" aria-hidden="true"></i> أمراض الصدر</span>
+                            <i class="fas fa-chevron-down caret-icon" aria-hidden="true"></i>
+                        </button>
                         <ul class="dropdown-menu">
                             <li><a href="asthma.html">الربو (Asthme)</a></li>
-                            <li><a href="copd.html">مرض الانسداد الرئوي المزمن (BPCO)</a></li>
-                            <li><a href="lung-cancer.html">سرطان الرئة</a></li>
-                            <li><a href="pulmonary-fibrosis.html">التليف الرئوي</a></li>
-                            <li><a href="bronchitis.html">التهاب الشعب الهوائية</a></li>
-                            <li><a href="pneumonia.html">التهاب الرئة</a></li>
-                            <li><a href="tuberculosis.html">السل</a></li>
-                            <li><a href="covid-19.html">كوفيد-19</a></li>
-                            <li><a href="influenza.html">الإنفلونزا</a></li>
+                            <li><a href="copd.html">الانسداد الرئوي المزمن (BPCO)</a></li>
+                            <li><a href="lung-cancer.html">سرطان الرئة (Cancer)</a></li>
+                            <li><a href="pulmonary-fibrosis.html">التليف الرئوي (Fibrose)</a></li>
+                            <li><a href="bronchitis.html">التهاب الشعب الهوائية (Bronchite)</a></li>
+                            <li><a href="pneumonia.html">التهاب الرئة (Pneumonie)</a></li>
+                            <li><a href="tuberculosis.html">السل (Tuberculose)</a></li>
+                            <li><a href="covid-19.html">كوفيد-19 (COVID-19)</a></li>
+                            <li><a href="influenza.html">الإنفلونزا (Grippe)</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown">
-                        <a href="#" role="button" aria-expanded="false"><i class="fas fa-allergies"></i> أمراض الحساسية <i class="fas fa-chevron-down"></i></a>
-                         <ul class="dropdown-menu">
-                            <li><a href="allergic-rhinitis.html">التهاب الأنف التحسسي</a></li>
-                            <li><a href="allergic-asthma.html">الربو التحسسي</a></li>
-                            <li><a href="allergic-bronchitis.html">التهاب الشعب الهوائية التحسسي</a></li>
+                    <li class="nav-item dropdown">
+                        <button class="dropdown-toggle" aria-expanded="false" type="button">
+                            <span><i class="fas fa-allergies" aria-hidden="true"></i> أمراض الحساسية</span>
+                            <i class="fas fa-chevron-down caret-icon" aria-hidden="true"></i>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="allergic-rhinitis.html">التهاب الأنف التحسسي (Rhinite)</a></li>
+                            <li><a href="allergic-asthma.html">الربو التحسسي (Asthme)</a></li>
+                            <li><a href="allergic-bronchitis.html">التهاب الشعب التحسسي</a></li>
                             <li><a href="hypersensitivity-pneumonitis.html">التهاب الرئة التحسسي</a></li>
-                            <li><a href="eczema.html">الإكزيما</a></li>
-                            <li><a href="urticaria.html">الشرى</a></li>
+                            <li><a href="urticaria.html">الشرى (Urticaire)</a></li>
                             <li><a href="food-allergy.html">حساسية الطعام</a></li>
                             <li><a href="drug-allergy.html">الحساسية الدوائية</a></li>
                         </ul>
                     </li>
-                    <li><a href="sleep-apnea.html"><i class="fas fa-bed"></i> انقطاع التنفس أثناء النوم</a></li>
-                     <li class="dropdown">
-                        <a href="#" role="button" aria-expanded="false"><i class="fas fa-calculator"></i> حاسبات صحية <i class="fas fa-chevron-down"></i></a>
+                    <li class="nav-item">
+                        <a href="sleep-apnea.html" class="nav-link"><i class="fas fa-bed" aria-hidden="true"></i> <span>انقطاع التنفس النومي</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <button class="dropdown-toggle" aria-expanded="false" type="button">
+                            <span><i class="fas fa-calculator" aria-hidden="true"></i> حاسبات صحية</span>
+                            <i class="fas fa-chevron-down caret-icon" aria-hidden="true"></i>
+                        </button>
                         <ul class="dropdown-menu">
                             <li><a href="bmi-calculator.html">مؤشر كتلة الجسم (BMI)</a></li>
                             <li><a href="bmr-calculator.html">معدل الأيض الأساسي (BMR)</a></li>
                             <li><a href="calorie-calculator.html">حاسبة السعرات الحرارية</a></li>
                             <li><a href="whr-calculator.html">نسبة الخصر إلى الورك (WHR)</a></li>
-                            <li><a href="smoking-cost-calculator.html">تكلفة التدخين</a></li>
-                            <li><a href="lung-age-calculator.html">عمر الرئة</a></li>
-                            <li><a href="hydration-calculator.html">الترطيب اليومي</a></li>
+                            <li><a href="smoking-cost-calculator.html">حاسبة تكلفة التدخين</a></li>
+                            <li><a href="lung-age-calculator.html">حاسبة عمر الرئة</a></li>
+                            <li><a href="hydration-calculator.html">حاسبة الترطيب اليومي</a></li>
                         </ul>
                     </li>
-                    <li><a href="index.html#services"><i class="fas fa-concierge-bell"></i> الخدمات</a></li>
-                    <li><a href="index.html#apropos"><i class="fas fa-user-md"></i> عن الدكتورة</a></li>
-                    <li><a href="index.html#appointment"><i class="fas fa-calendar-check"></i> حجز موعد</a></li>
-                    <li><a href="index.html#contact"><i class="fas fa-phone-alt"></i> التواصل</a></li>
+                    <li class="nav-item"><a href="index.html#services" class="nav-link"><i class="fas fa-stethoscope" aria-hidden="true"></i> <span>الخدمات</span></a></li>
+                    <li class="nav-item"><a href="index.html#coverage" class="nav-link"><i class="fas fa-map-marked-alt" aria-hidden="true"></i> <span>المناطق المجاورة</span></a></li>
+                    <li class="nav-item"><a href="index.html#faq" class="nav-link"><i class="fas fa-question-circle" aria-hidden="true"></i> <span>الأسئلة الشائعة</span></a></li>
+                    <li class="nav-item"><a href="index.html#apropos" class="nav-link"><i class="fas fa-user-md" aria-hidden="true"></i> <span>عن الدكتورة</span></a></li>
+                    <li class="nav-item"><a href="index.html#contact" class="nav-link"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> <span>التواصل والموقع</span></a></li>
                 </ul>
             </div>
         </nav>
-        <!-- END: STANDARD HEADER -->
-        <!-- ====================================================================== -->
 
-        <main role="main">
+    <main role="main">
             <div class="main-content article-page">
 
                 <header class="health-article-header" data-aos="fade-down">
@@ -392,51 +445,45 @@
             </div> <!-- End .main-content .article-page -->
         </main>
 
-        <!-- ====================================================================== -->
-        <!-- START: STANDARD FOOTER (Copy from index.html) -->
-         <footer>
-            <p class="copyright-text">© <span id="currentYear"></span> عيادة الدكتورة بخة س - جميع الحقوق محفوظة</p>
-            <div class="footer-links">
-                <a href="https://www.facebook.com/profile.php?id=61560422818675" target="_blank" rel="noopener noreferrer" class="footer-link">
-                    <i class="fab fa-facebook-f"></i> تابعنا على الفيسبوك
-                </a>
-                <a href="https://www.google.com/maps/search/?api=1&query=عيادة+الدكتورة+بخة+س+حي+19+جوان+خلف+مستشفى+الحكيم+عقبي+ڨالمة+الجزائر" target="_blank" rel="noopener noreferrer" class="footer-link">
-                    <i class="fas fa-map-marker-alt"></i> موقعنا على خرائط جوجل
-                </a>
+        <!-- Main Footer -->
+        <footer class="main-footer">
+            <div class="footer-inner">
+                <p>© <span id="currentYear"></span> عيادة الدكتورة بخة س للأمراض الصدرية والحساسية - قالمة</p>
+                <p class="footer-address">حي 19 جوان، خلف مستشفى الحكيم عقبي، ڨالمة، الجزائر</p>
             </div>
-            <div class="footer-visitor-stats">
-                <div class="visitor-stat-item">
-                    <i class="fas fa-users"></i>
-                    <span>إجمالي الزوار: <span id="total-visitors">0</span></span>
-                </div>
-                <div class="visitor-stat-item">
-                    <i class="fas fa-user-clock"></i>
-                    <span>زوار اليوم: <span id="today-visitors">0</span></span>
-                </div>
-                <div class="visitor-stat-item">
-                    <span class="flag-icon" id="visitor-country-flag"></span>
-                    <span>موقعك: <span id="visitor-country-name">جارِ التحديد...</span></span>
-                </div>
-            </div>
-            <p style="text-align:center; font-size: 0.85em; opacity: 0.8; margin-top: calc(var(--spacing-unit) * 4);">المعلومات المقدمة في هذه الصفحة هي لأغراض تثقيفية فقط ولا تغني عن الاستشارة الطبية المتخصصة. التشخيص والعلاج يجب أن يتم تحت إشراف طبي.</p>
         </footer>
-        <!-- END: STANDARD FOOTER -->
-        <!-- ====================================================================== -->
 
-    </div> <!-- End #content-ar -->
+    </div> <!-- End #page-wrapper -->
 
-    <div class="watermark">Dr. Bakha</div>
+    <!-- Mobile Sticky Quick-Action Bar -->
+    <nav class="mobile-action-bar" aria-label="أزرار التواصل السريع">
+        <a href="tel:+213796222597" class="mobile-action-btn call-btn" aria-label="اتصال هاتفي">
+            <i class="fas fa-phone-alt" aria-hidden="true"></i>
+            <span>اتصال</span>
+        </a>
+        <a href="https://wa.me/213663755584" target="_blank" rel="noopener noreferrer" class="mobile-action-btn wa-btn" aria-label="تواصل عبر واتساب">
+            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+            <span>واتساب</span>
+        </a>
+        <a href="https://maps.google.com/?q=36.45512,7.43659" target="_blank" rel="noopener noreferrer" class="mobile-action-btn" aria-label="موقع العيادة على الخريطة">
+            <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+            <span>الموقع</span>
+        </a>
+        <a href="index.html#appointment" class="mobile-action-btn appt-btn" aria-label="حجز موعد">
+            <i class="fas fa-calendar-plus" aria-hidden="true"></i>
+            <span>حجز موعد</span>
+        </a>
+    </nav>
 
     <!-- Essential Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" defer></script>
-    <script src="app.js" defer></script> <!-- Your main JS file -->
-
+    <script src="app.js" defer></script>
     <script>
-        const currentYearEl = document.getElementById('currentYear');
-        if (currentYearEl) {
-            currentYearEl.textContent = new Date().getFullYear();
-        }
+        const yearEl = document.getElementById('currentYear');
+        if (yearEl) yearEl.textContent = new Date().getFullYear();
     </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 </body>
 </html>

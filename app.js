@@ -1,7 +1,7 @@
 "use strict";
 
 // ============================================================================
-// Configuration
+// Core Configuration & Algerian Clinic Timetable
 // ============================================================================
 const CONFIG = {
     MOBILE_BREAKPOINT: 991,
@@ -14,12 +14,12 @@ const CONFIG = {
         4: { open: 8, close: 16 }, // Thursday
         5: null                     // Friday (Closed)
     },
-    TOAST_TIMEOUT: 4000,
+    TOAST_TIMEOUT: 4500,
     ALGERIAN_PHONE_REGEX: /^0[567]\d{8}$/
 };
 
 // ============================================================================
-// Utilities
+// Utility Helpers
 // ============================================================================
 const utils = {
     getElement: (id) => document.getElementById(id),
@@ -40,8 +40,8 @@ const utils = {
     },
 
     showToast: (message, type = 'info') => {
-        const existing = document.querySelector('.toast-notification');
-        if (existing) existing.remove();
+        const existingToast = document.querySelector('.toast-notification');
+        if (existingToast) existingToast.remove();
 
         const toast = document.createElement('div');
         toast.className = `toast-notification toast-${type}`;
@@ -63,25 +63,9 @@ const utils = {
 };
 
 // ============================================================================
-// Mobile Viewport & Touch UI
+// UI & Theme Management
 // ============================================================================
 const UI = {
-    // Robust iOS Scroll Locker
-    lockBodyScroll: (lock) => {
-        if (lock) {
-            document.body.dataset.scrollY = window.scrollY.toString();
-            document.body.style.position = 'fixed';
-            document.body.style.top = `-${document.body.dataset.scrollY}px`;
-            document.body.style.width = '100%';
-        } else {
-            const scrollY = parseInt(document.body.dataset.scrollY || '0', 10);
-            document.body.style.position = '';
-            document.body.style.top = '';
-            document.body.style.width = '';
-            window.scrollTo(0, scrollY);
-        }
-    },
-
     initializeThemeToggle: () => {
         const themeToggle = utils.getElement('theme-toggle');
         if (!themeToggle) return;
@@ -91,6 +75,7 @@ const UI = {
             if (icon) {
                 icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
             }
+            themeToggle.setAttribute('aria-label', theme === 'dark' ? 'تفعيل الوضع الفاتح' : 'تفعيل الوضع الداكن');
         };
 
         const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
@@ -117,7 +102,7 @@ const UI = {
             nav.classList.toggle('active', isOpen);
             if (overlay) overlay.classList.toggle('active', isOpen);
             if (mobileBtn) mobileBtn.setAttribute('aria-expanded', isOpen.toString());
-            UI.lockBodyScroll(isOpen);
+            document.body.style.overflow = isOpen ? 'hidden' : '';
         };
 
         if (mobileBtn) mobileBtn.addEventListener('click', () => toggleDrawer(true));
@@ -165,7 +150,7 @@ const UI = {
             });
         });
 
-        document.addEventListener('click', () => {
+        document.addEventListener('click', (e) => {
             if (window.innerWidth > CONFIG.MOBILE_BREAKPOINT) {
                 dropdowns.forEach(d => d.classList.remove('open'));
             }
@@ -192,19 +177,21 @@ const UI = {
         const modal = utils.getElement(modalId);
         if (!modal) return;
         modal.classList.add('active');
-        UI.lockBodyScroll(true);
+        document.body.style.overflow = 'hidden';
+        const focusable = modal.querySelector('button, [tabindex="0"]');
+        if (focusable) focusable.focus();
     },
 
     hideModal: (modalId) => {
         const modal = utils.getElement(modalId);
         if (!modal) return;
         modal.classList.remove('active');
-        UI.lockBodyScroll(false);
+        document.body.style.overflow = '';
     }
 };
 
 // ============================================================================
-// Real-time Clinic Schedule (Africa/Algiers Timezone)
+// Clinic Real-time Status Tracker (Algerian Timezone)
 // ============================================================================
 const ClinicSchedule = {
     update: () => {
@@ -219,7 +206,8 @@ const ClinicSchedule = {
 
         if (arabicTimeEl) {
             const options = {
-                weekday: 'short', hour: '2-digit', minute: '2-digit', hour12: true,
+                weekday: 'long', year: 'numeric', month: 'long', day: 'numeric',
+                hour: '2-digit', minute: '2-digit', hour12: true,
                 timeZone: 'Africa/Algiers'
             };
             arabicTimeEl.textContent = now.toLocaleString('ar-DZ', options);
@@ -236,21 +224,23 @@ const ClinicSchedule = {
 
         if (todayHours && currentHour >= todayHours.open && currentHour < todayHours.close) {
             clinicStatusDiv.classList.add('open');
-            statusMessageEl.textContent = 'العيادة مفتوحة';
+            statusMessageEl.textContent = 'العيادة مفتوحة حالياً';
 
             const remainingHours = todayHours.close - currentHour - (currentMinutes > 0 ? 1 : 0);
-            if (remainingHours <= 1) {
-                nextOpeningEl.textContent = `(تغلق قريباً)`;
+            const remainingMinutes = currentMinutes > 0 ? 60 - currentMinutes : 0;
+
+            if (remainingHours <= 2) {
+                nextOpeningEl.textContent = `(تغلق بعد ${remainingHours} س و ${remainingMinutes} د)`;
             } else {
-                nextOpeningEl.textContent = `(حتى ${utils.formatTimeArabic(todayHours.close)})`;
+                nextOpeningEl.textContent = `(حتى الساعة ${utils.formatTimeArabic(todayHours.close)})`;
             }
         } else {
             clinicStatusDiv.classList.add('closed');
-            statusMessageEl.textContent = 'العيادة مغلقة';
+            statusMessageEl.textContent = 'العيادة مغلقة حالياً';
 
             if (todayHours && currentHour < todayHours.open) {
                 clinicStatusDiv.classList.add('soon');
-                nextOpeningEl.textContent = `تفتح 08:00 ص`;
+                nextOpeningEl.textContent = `تفتح اليوم على ${utils.formatTimeArabic(todayHours.open)}`;
             } else {
                 let nextDay = (currentDay + 1) % 7;
                 let daysCount = 1;
@@ -258,8 +248,11 @@ const ClinicSchedule = {
                     nextDay = (nextDay + 1) % 7;
                     daysCount++;
                 }
-                const dayLabel = daysCount === 1 ? 'غداً' : 'السبت';
-                nextOpeningEl.textContent = `تفتح ${dayLabel} 08:00 ص`;
+
+                const dayNames = ["الأحد", "الاثنين", "الثلاثاء", "الأربعاء", "الخميس", "الجمعة", "السبت"];
+                const dayLabel = daysCount === 1 ? 'غداً' : `يوم ${dayNames[nextDay]}`;
+                const openHour = CONFIG.CLINIC_HOURS[nextDay] ? utils.formatTimeArabic(CONFIG.CLINIC_HOURS[nextDay].open) : '';
+                nextOpeningEl.textContent = `تفتح ${dayLabel} الساعة ${openHour}`;
             }
         }
     },
@@ -294,7 +287,7 @@ const BookingForm = {
             const selDate = new Date(Number(parts[0]), Number(parts[1]) - 1, Number(parts[2]));
 
             if (selDate.getDay() === 5) { // Friday
-                utils.showToast('العيادة مغلقة يوم الجمعة. الرجاء اختيار يوم آخر.', 'error');
+                utils.showToast('العيادة مغلقة يوم الجمعة. يرجى اختيار يوم آخر.', 'error');
                 e.target.value = '';
             }
         });
@@ -321,6 +314,7 @@ const BookingForm = {
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
 
+            // Clear previous errors
             form.querySelectorAll('.invalid').forEach(el => el.classList.remove('invalid'));
             form.querySelectorAll('.field-error').forEach(el => el.textContent = '');
 
@@ -346,25 +340,26 @@ const BookingForm = {
             const cleanPhone = utils.cleanAlgerianPhone(phoneInput.value);
             if (!CONFIG.ALGERIAN_PHONE_REGEX.test(cleanPhone)) {
                 phoneInput.classList.add('invalid');
-                utils.getElement('phone-error').textContent = 'رقم هاتف غير صحيح (مثال: 0796222597)';
+                utils.getElement('phone-error').textContent = 'يرجى إدخال رقم هاتف جزائري صحيح (مثل 0796222597)';
                 hasError = true;
             }
 
             if (!dateInput.value) {
                 dateInput.classList.add('invalid');
-                utils.getElement('date-error').textContent = 'يرجى تحديد التاريخ';
+                utils.getElement('date-error').textContent = 'يرجى تحديد تاريخ الموعد';
                 hasError = true;
             }
 
             if (hasError) return;
 
+            // Submit to Formspree
             const submitBtn = utils.getElement('submitApptBtn');
             const originalBtnHtml = submitBtn.innerHTML;
             submitBtn.disabled = true;
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> جاري الإرسال...';
 
             const formData = new FormData(form);
-            formData.set('phone', cleanPhone);
+            formData.set('phone', cleanPhone); // Send clean normalized phone number
 
             try {
                 const response = await fetch(form.action, {
@@ -374,17 +369,21 @@ const BookingForm = {
                 });
 
                 if (response.ok) {
-                    utils.getElement('popup-appt-name').textContent = formData.get('name');
+                    const name = formData.get('name') || '';
+                    const dateVal = formData.get('appointment_date') || '';
+
+                    utils.getElement('popup-appt-name').textContent = name;
                     utils.getElement('popup-appt-phone').textContent = cleanPhone;
-                    utils.getElement('popup-appt-date').textContent = formData.get('appointment_date');
+                    utils.getElement('popup-appt-date').textContent = dateVal;
 
                     UI.showModal('appointmentSuccessPopupOverlay');
                     form.reset();
                 } else {
-                    utils.showToast('تعذر إرسال الطلب، يرجى الاتصال هاتفياً.', 'error');
+                    const errData = await response.json().catch(() => ({}));
+                    utils.showToast(errData.error || 'تعذر إرسال الطلب. يرجى الاتصال هاتفياً بالعيادة.', 'error');
                 }
             } catch (err) {
-                utils.showToast('تعذر الاتصال بالخادم. تحقق من الإنترنت.', 'error');
+                utils.showToast('تعذر الاتصال بالخادم. يرجى التحقق من اتصال الإنترنت.', 'error');
             } finally {
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = originalBtnHtml;
@@ -405,8 +404,12 @@ document.addEventListener('DOMContentLoaded', () => {
     ClinicSchedule.initialize();
     BookingForm.initialize();
 
-    // Disable heavy AOS library on mobile viewports for smooth scrolling
-    if (typeof AOS !== 'undefined' && window.innerWidth > 768) {
-        AOS.init({ duration: 500, once: true });
+    if (typeof AOS !== 'undefined') {
+        AOS.init({
+            duration: 600,
+            offset: 50,
+            once: true,
+            disable: 'mobile'
+        });
     }
 });

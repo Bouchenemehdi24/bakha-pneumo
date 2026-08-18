@@ -1,6 +1,18 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
+    <!-- Instant Theme Loader (Zero Flash) -->
+    <script>
+        (function() {
+            try {
+                var savedTheme = localStorage.getItem('bakha_theme');
+                var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+                var theme = savedTheme ? savedTheme : (prefersDark ? 'dark' : 'light');
+                document.documentElement.setAttribute('data-theme', theme);
+            } catch (e) {}
+        })();
+    </script>
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-BCT8GP6LZT"></script>
     <script>
@@ -11,7 +23,7 @@
     </script>
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
     <!-- Meta Keywords for Calorie Calculator -->
     <meta name="keywords" content="حاسبة السعرات الحرارية, حساب السعرات اليومية, احتياجات السعرات الحرارية, معدل الأيض الأساسي, BMR, TDEE, صحة وتغذية, الدكتورة بخة س, نصائح غذائية, حاسبة سعرات قالمة, استشارة تغذية قالمة, الوزن والصحة التنفسية">
     <!-- Meta Description for Calorie Calculator -->
@@ -42,119 +54,136 @@
     </script>
     <link rel="stylesheet" href="style.css"> <!-- Main stylesheet -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome for icons -->
-    <style>
-        /* Basic styling - ideally move to style.css */
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f4f7f6;
-            color: #333;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
-        header, footer {
-            background-color: #5cb85c; /* A calming green */
-            color: white;
-            padding: 1.5rem 1rem;
-            text-align: center;
-        }
-        header h1 { margin: 0; font-size: 2em;}
-        .page-subtitle { font-size: 1.1em; color: #e9ecef; margin-top: 5px;}
-
-        nav {
-            background-color: #343a40; /* Darker nav */
-            padding: 1rem;
-            text-align: center;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        nav ul { list-style: none; padding: 0; margin: 0; }
-        nav ul li { display: inline-block; margin: 0 15px; }
-        nav ul li a { color: #f8f9fa; text-decoration: none; font-weight: bold; transition: color 0.3s ease; }
-        nav ul li a:hover { color: #5cb85c; }
-
-        main { padding: 2rem; max-width: 800px; margin: 20px auto; background-color: #fff; border-radius: 8px; box-shadow: 0 0 15px rgba(0,0,0,0.1); }
-        section { margin-bottom: 2.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid #eee; }
-        section:last-child { border-bottom: none; margin-bottom: 0; }
-        h2 { color: #38761d; margin-bottom: 1rem; font-size: 1.8em; } /* Darker green for headings */
-        h3 { color: #343a40; margin-bottom: 0.8rem; font-size: 1.5em; }
-
-        .calculator-container {
-            background-color: #f8f9fa;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-        }
-        .calculator-container label { display: block; margin-bottom: 0.6rem; font-weight: bold; color: #495057; }
-        .calculator-container input[type="number"],
-        .calculator-container select {
-            width: calc(100% - 22px); /* Adjust for padding and border */
-            padding: 0.8rem;
-            margin-bottom: 1.2rem;
-            border: 1px solid #ced4da;
-            border-radius: 4px;
-            font-size: 1em;
-            box-sizing: border-box; /* Include padding and border in the element's total width and height */
-        }
-        .calculator-container button {
-            background-color: #5cb85c; /* Green button */
-            color: white;
-            padding: 0.8rem 1.5rem;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            width: 100%;
-            font-size: 1.1em;
-            transition: background-color 0.3s ease;
-        }
-        .calculator-container button:hover { background-color: #4cae4c; }
-
-        .result {
-            margin-top: 1.5rem;
-            padding: 1.2rem;
-            background-color: #e9f5e9; /* Lighter green for result */
-            border: 1px solid #c3e6cb;
-            border-radius: 4px;
-            text-align: center;
-        }
-        .result p { margin: 0.5rem 0; font-size: 1.1em; }
-        .result strong { color: #155724; } /* Darker green for strong text in result */
-        .error { color: #dc3545; font-weight: bold; font-size: 1em; }
-
-        .info-section p, .info-section ul li { font-size: 1.05em; margin-bottom: 0.8em; }
-        .info-section ul { padding-right: 20px; }
-
-        .disclaimer {
-            margin-top: 2.5rem;
-            padding: 1.5rem;
-            background-color: #fff3cd;
-            border-left: 5px solid #ffeeba;
-            border-radius: 4px;
-            color: #856404;
-        }
-        .disclaimer h3 { color: #856404; }
-
-        .cta-section { text-align: center; padding: 30px 20px; background-color: #5cb85c; color:white; margin-top: 30px; margin-bottom: 20px; border-radius: .3rem; }
-        .cta-section h2 { color: white; margin-bottom: 15px; font-size: 1.8em; }
-        .cta-section p { font-size: 1.15em; margin-bottom: 20px; color: #f8f9fa; }
-        .cta-section .button-style { display: inline-block; background-color: #f0ad4e; color: #212529; padding: 12px 30px; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 1.1em; transition: background-color 0.3s ease, transform 0.2s ease; } /* Orange button for contrast */
-        .cta-section .button-style:hover { background-color: #ec971f; transform: translateY(-2px); }
-        .icon-before { margin-left: 8px; }
-    </style>
+    
 </head>
 <body>
-    <header>
-        <h1>حاسبة السعرات الحرارية اليومية</h1>
-        <p class="page-subtitle">أداة لتقدير احتياجاتك من الطاقة ودعم صحتك العامة والتنفسية</p>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="index.html"><i class="fas fa-home icon-before"></i>الرئيسية</a></li>
-            <li><a href="bmi-calculator.html">حاسبة BMI</a></li>
-            <li><a href="bmr-calculator.html">حاسبة BMR</a></li>
-            <li><a href="calorie-calculator.html">حاسبة السعرات</a></li>
-            <!-- Add other calculator links -->
-        </ul>
-    </nav>
+
+    <!-- Mobile Drawer Overlay -->
+    <div class="menu-overlay" id="menuOverlay" aria-hidden="true"></div>
+
+    <div id="page-wrapper">
+        
+        <!-- Live Clinic Status Bar -->
+        <aside class="datetime-bar" aria-label="توقيت وحالة العيادة">
+            <div class="datetime-container">
+                <span id="arabic-time" class="current-time">--:--</span>
+                <div id="clinic-status" class="clinic-status">
+                    <span class="status-indicator">
+                        <i class="fas fa-circle" aria-hidden="true"></i>
+                        <span id="status-message">جاري التحقق...</span>
+                    </span>
+                    <span id="next-opening" class="next-opening"></span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Header -->
+        <header class="main-header">
+            <div class="header-inner">
+                <a href="index.html" class="clinic-brand" aria-label="الصفحة الرئيسية">
+                    <div class="logo-container">
+                        <img 
+                            src="cabinet-logo.png" 
+                            width="44"
+                            height="44"
+                            alt="شعار عيادة د. بخة" 
+                            class="clinic-logo"
+                            decoding="async">
+                    </div>
+                    <div class="clinic-title">
+                        <h1>عيادة الدكتورة بخة س</h1>
+                        <p class="clinic-subtitle">أمراض الصدر والحساسية - قالمة</p>
+                    </div>
+                </a>
+
+                <!-- Header Actions -->
+                <div class="header-actions">
+                    <div id="google_translate_element" class="lang-selector-wrap"></div>
+                    
+                    <button id="theme-toggle" aria-label="تبديل الوضع الليلي" class="control-btn" type="button">
+                        <i class="fas fa-moon" aria-hidden="true"></i>
+                    </button>
+                    
+                    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="فتح القائمة الرئيسية" aria-expanded="false" type="button">
+                        <i class="fas fa-bars" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation Drawer -->
+        <nav class="main-nav" id="mainNav" aria-label="القائمة الرئيسية">
+            <div class="nav-container">
+                <div class="nav-drawer-header">
+                    <span class="drawer-title">القائمة والتخصصات</span>
+                    <button class="close-drawer-btn" id="closeDrawerBtn" aria-label="إغلاق القائمة" type="button">
+                        <i class="fas fa-times" aria-hidden="true"></i>
+                    </button>
+                </div>
+
+                <ul id="main-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link"><i class="fas fa-home" aria-hidden="true"></i> <span>الرئيسية</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <button class="dropdown-toggle" aria-expanded="false" type="button">
+                            <span><i class="fas fa-lungs" aria-hidden="true"></i> أمراض الصدر</span>
+                            <i class="fas fa-chevron-down caret-icon" aria-hidden="true"></i>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="asthma.html">الربو (Asthme)</a></li>
+                            <li><a href="copd.html">الانسداد الرئوي المزمن (BPCO)</a></li>
+                            <li><a href="lung-cancer.html">سرطان الرئة (Cancer)</a></li>
+                            <li><a href="pulmonary-fibrosis.html">التليف الرئوي (Fibrose)</a></li>
+                            <li><a href="bronchitis.html">التهاب الشعب الهوائية (Bronchite)</a></li>
+                            <li><a href="pneumonia.html">التهاب الرئة (Pneumonie)</a></li>
+                            <li><a href="tuberculosis.html">السل (Tuberculose)</a></li>
+                            <li><a href="covid-19.html">كوفيد-19 (COVID-19)</a></li>
+                            <li><a href="influenza.html">الإنفلونزا (Grippe)</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <button class="dropdown-toggle" aria-expanded="false" type="button">
+                            <span><i class="fas fa-allergies" aria-hidden="true"></i> أمراض الحساسية</span>
+                            <i class="fas fa-chevron-down caret-icon" aria-hidden="true"></i>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="allergic-rhinitis.html">التهاب الأنف التحسسي (Rhinite)</a></li>
+                            <li><a href="allergic-asthma.html">الربو التحسسي (Asthme)</a></li>
+                            <li><a href="allergic-bronchitis.html">التهاب الشعب التحسسي</a></li>
+                            <li><a href="hypersensitivity-pneumonitis.html">التهاب الرئة التحسسي</a></li>
+                            <li><a href="urticaria.html">الشرى (Urticaire)</a></li>
+                            <li><a href="food-allergy.html">حساسية الطعام</a></li>
+                            <li><a href="drug-allergy.html">الحساسية الدوائية</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="sleep-apnea.html" class="nav-link"><i class="fas fa-bed" aria-hidden="true"></i> <span>انقطاع التنفس النومي</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <button class="dropdown-toggle" aria-expanded="false" type="button">
+                            <span><i class="fas fa-calculator" aria-hidden="true"></i> حاسبات صحية</span>
+                            <i class="fas fa-chevron-down caret-icon" aria-hidden="true"></i>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="bmi-calculator.html">مؤشر كتلة الجسم (BMI)</a></li>
+                            <li><a href="bmr-calculator.html">معدل الأيض الأساسي (BMR)</a></li>
+                            <li><a href="calorie-calculator.html">حاسبة السعرات الحرارية</a></li>
+                            <li><a href="whr-calculator.html">نسبة الخصر إلى الورك (WHR)</a></li>
+                            <li><a href="smoking-cost-calculator.html">حاسبة تكلفة التدخين</a></li>
+                            <li><a href="lung-age-calculator.html">حاسبة عمر الرئة</a></li>
+                            <li><a href="hydration-calculator.html">حاسبة الترطيب اليومي</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a href="index.html#services" class="nav-link"><i class="fas fa-stethoscope" aria-hidden="true"></i> <span>الخدمات</span></a></li>
+                    <li class="nav-item"><a href="index.html#coverage" class="nav-link"><i class="fas fa-map-marked-alt" aria-hidden="true"></i> <span>المناطق المجاورة</span></a></li>
+                    <li class="nav-item"><a href="index.html#faq" class="nav-link"><i class="fas fa-question-circle" aria-hidden="true"></i> <span>الأسئلة الشائعة</span></a></li>
+                    <li class="nav-item"><a href="index.html#apropos" class="nav-link"><i class="fas fa-user-md" aria-hidden="true"></i> <span>عن الدكتورة</span></a></li>
+                    <li class="nav-item"><a href="index.html#contact" class="nav-link"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> <span>التواصل والموقع</span></a></li>
+                </ul>
+            </div>
+        </nav>
+
     <main>
         <section id="intro-calorie" class="info-section" aria-labelledby="intro-calorie-heading">
             <h2 id="intro-calorie-heading">لماذا نهتم بحساب السعرات الحرارية؟</h2>
@@ -248,69 +277,80 @@
             </div>
         </section>
     </main>
-    <footer style="padding-bottom: 60px;"> <!-- Added padding to avoid overlap with watermark if fixed -->
-        <h2>عيادة الدكتورة بخة س</h2>
-        <p>اختصاصية في الأمراض الصدرية والحساسية، وتقديم الإرشاد الصحي والتغذوي</p>
-        <p><strong>العنوان:</strong> حي 19 جوان، خلف مستشفى الحكيم عقبي، ڨالمة، الجزائر</p>
-        <p>© <span id="currentYear"></span> جميع الحقوق محفوظة</p>
-    </footer>
-    <div class="watermark" style="position: fixed; bottom: 10px; left: 10px; opacity: 0.5; font-size: 10px; color: #aaa; z-index: 10000; background-color: rgba(255,255,255,0.7); padding: 2px 5px; border-radius: 3px;">Dr. Bakha - Guelma</div>
+
+        <!-- Main Footer -->
+        <footer class="main-footer">
+            <div class="footer-inner">
+                <p>© <span id="currentYear"></span> عيادة الدكتورة بخة س للأمراض الصدرية والحساسية - قالمة</p>
+                <p class="footer-address">حي 19 جوان، خلف مستشفى الحكيم عقبي، ڨالمة، الجزائر</p>
+            </div>
+        </footer>
+
+    </div> <!-- End #page-wrapper -->
+
+    <!-- Mobile Sticky Quick-Action Bar -->
+    <nav class="mobile-action-bar" aria-label="أزرار التواصل السريع">
+        <a href="tel:+213796222597" class="mobile-action-btn call-btn" aria-label="اتصال هاتفي">
+            <i class="fas fa-phone-alt" aria-hidden="true"></i>
+            <span>اتصال</span>
+        </a>
+        <a href="https://wa.me/213663755584" target="_blank" rel="noopener noreferrer" class="mobile-action-btn wa-btn" aria-label="تواصل عبر واتساب">
+            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+            <span>واتساب</span>
+        </a>
+        <a href="https://maps.google.com/?q=36.45512,7.43659" target="_blank" rel="noopener noreferrer" class="mobile-action-btn" aria-label="موقع العيادة على الخريطة">
+            <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+            <span>الموقع</span>
+        </a>
+        <a href="index.html#appointment" class="mobile-action-btn appt-btn" aria-label="حجز موعد">
+            <i class="fas fa-calendar-plus" aria-hidden="true"></i>
+            <span>حجز موعد</span>
+        </a>
+    </nav>
+
+    <!-- Essential Scripts -->
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" defer></script>
+    <script src="app.js" defer></script>
+    <script>
+        const yearEl = document.getElementById('currentYear');
+        if (yearEl) yearEl.textContent = new Date().getFullYear();
+    </script>
+
+
 
     <script>
         function calculateTDEE() {
             const gender = document.getElementById('gender').value;
-            const weightInput = document.getElementById('weight');
-            const heightInput = document.getElementById('height');
-            const ageInput = document.getElementById('age');
+            const weight = parseFloat(document.getElementById('weight').value);
+            const height = parseFloat(document.getElementById('height').value);
+            const age = parseFloat(document.getElementById('age').value);
             const activityLevel = parseFloat(document.getElementById('activity-level').value);
             const resultDiv = document.getElementById('calorie-result');
 
-            resultDiv.innerHTML = ''; // Clear previous results
-
-            const weight = parseFloat(weightInput.value);
-            const heightCM = parseFloat(heightInput.value);
-            const age = parseFloat(ageInput.value);
-
-            let errors = [];
-            if (isNaN(weight) || weight <= 20 || weight > 300) { // Realistic weight limits
-                errors.push("الرجاء إدخال وزن صحيح (بين 20 و 300 كجم).");
-            }
-            if (isNaN(heightCM) || heightCM <= 100 || heightCM > 250) { // Realistic height limits
-                errors.push("الرجاء إدخال طول صحيح (بين 100 و 250 سم).");
-            }
-            if (isNaN(age) || age <= 10 || age > 120) { // Realistic age limits
-                errors.push("الرجاء إدخال عمر صحيح (بين 10 و 120 سنة).");
-            }
-
-            if (errors.length > 0) {
-                let errorHTML = '<p class="error">يوجد خطأ في الإدخال:</p><ul>';
-                errors.forEach(err => {
-                    errorHTML += `<li class="error" style="text-align:right;">${err}</li>`;
-                });
-                errorHTML += '</ul>';
-                resultDiv.innerHTML = errorHTML;
+            if (isNaN(weight) || isNaN(height) || isNaN(age)) {
+                resultDiv.innerHTML = '<p class="error">يرجى إدخال جميع البيانات بشكل صحيح.</p>';
                 return;
             }
 
-            let bmr;
+            let bmr = 0;
             if (gender === 'male') {
-                bmr = (10 * weight) + (6.25 * heightCM) - (5 * age) + 5;
-            } else { // female
-                bmr = (10 * weight) + (6.25 * heightCM) - (5 * age) - 161;
+                bmr = 10 * weight + 6.25 * height - 5 * age + 5;
+            } else {
+                bmr = 10 * weight + 6.25 * height - 5 * age - 161;
             }
 
-            const tdee = (bmr * activityLevel);
+            const tdee = Math.round(bmr * activityLevel);
+            const loseWeight = Math.round(tdee - 500);
+            const gainWeight = Math.round(tdee + 500);
 
             resultDiv.innerHTML = `
-                <p>معدل الأيض الأساسي التقديري (BMR) هو: <strong style="font-size: 1.2em; color: #155724;">${bmr.toFixed(0)}</strong> سعرة حرارية في اليوم.</p>
-                <p>إجمالي احتياجك اليومي التقديري من السعرات الحرارية (TDEE) للحفاظ على وزنك الحالي هو: <strong style="font-size: 1.3em; color: #007bff;">${tdee.toFixed(0)}</strong> سعرة حرارية في اليوم.</p>
-                <hr style="margin: 15px 0;">
-                <p style="font-size:0.95em;"><strong>لخسارة الوزن بشكل صحي (حوالي 0.5 كجم في الأسبوع):</strong> يمكنك استهداف تقليل حوالي 500 سعرة حرارية من TDEE الخاص بك، أي حوالي <strong>${(tdee - 500).toFixed(0)}</strong> سعرة حرارية في اليوم.</p>
-                <p style="font-size:0.95em;"><strong>لزيادة الوزن بشكل صحي (حوالي 0.5 كجم في الأسبوع):</strong> يمكنك استهداف زيادة حوالي 500 سعرة حرارية فوق TDEE الخاص بك، أي حوالي <strong>${(tdee + 500).toFixed(0)}</strong> سعرة حرارية في اليوم.</p>
-                <p style="margin-top:15px; font-size:0.9em;">هذه أرقام تقديرية. للحصول على خطة تغذية مخصصة تناسب أهدافك وحالتك الصحية، يرجى استشارة الدكتورة بخة س.</p>
+                <p>احتياجك اليومي للحفاظ على وزنك الحالي: <strong style="font-size: 1.3em; color: var(--primary);">${tdee}</strong> سعرة حرارية.</p>
+                <hr style="margin: 12px 0; border: 0; border-top: 1px solid var(--border-color);">
+                <p>لإنقاص الوزن (حوالي 0.5 كجم/أسبوع): <strong>${loseWeight}</strong> سعرة حرارية/يوم.</p>
+                <p>لزيادة الوزن: <strong>${gainWeight}</strong> سعرة حرارية/يوم.</p>
             `;
         }
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
     </script>
+
 </body>
 </html>

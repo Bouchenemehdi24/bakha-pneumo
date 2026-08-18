@@ -1,6 +1,18 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
+    <!-- Instant Theme Loader (Zero Flash) -->
+    <script>
+        (function() {
+            try {
+                var savedTheme = localStorage.getItem('bakha_theme');
+                var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+                var theme = savedTheme ? savedTheme : (prefersDark ? 'dark' : 'light');
+                document.documentElement.setAttribute('data-theme', theme);
+            } catch (e) {}
+        })();
+    </script>
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-BCT8GP6LZT"></script>
     <script>
@@ -11,7 +23,7 @@
     </script>
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
     <!-- Meta Keywords for Lung Age Calculator -->
     <meta name="keywords" content="حاسبة عمر الرئة, حساب عمر الرئة, صحة الرئة, وظائف الرئة, FEV1, قياس التنفس, الدكتورة بخة س, الإقلاع عن التدخين, صحة الجهاز التنفسي قالمة, اختبار وظائف الرئة, تأثير التدخين على الرئة">
     <!-- Meta Description for Lung Age Calculator -->
@@ -42,119 +54,136 @@
     </script>
     <link rel="stylesheet" href="style.css"> <!-- Main stylesheet -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome for icons -->
-    <style>
-        /* Basic styling - ideally move to style.css */
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #e6f7ff; /* Light, airy blue */
-            color: #333;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
-        header, footer {
-            background-color: #007bff; /* Professional blue */
-            color: white;
-            padding: 1.5rem 1rem;
-            text-align: center;
-        }
-        header h1 { margin: 0; font-size: 2em;}
-        .page-subtitle { font-size: 1.1em; color: #d4e6f1; margin-top: 5px;}
-
-        nav {
-            background-color: #0056b3; /* Darker blue for nav */
-            padding: 1rem;
-            text-align: center;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        nav ul { list-style: none; padding: 0; margin: 0; }
-        nav ul li { display: inline-block; margin: 0 15px; }
-        nav ul li a { color: #f8f9fa; text-decoration: none; font-weight: bold; transition: color 0.3s ease; }
-        nav ul li a:hover { color: #90caf9; }
-
-        main { padding: 2rem; max-width: 800px; margin: 20px auto; background-color: #fff; border-radius: 8px; box-shadow: 0 0 15px rgba(0,0,0,0.1); }
-        section { margin-bottom: 2.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid #eee; }
-        section:last-child { border-bottom: none; margin-bottom: 0; }
-        h2 { color: #004085; margin-bottom: 1rem; font-size: 1.8em; } /* Dark blue for headings */
-        h3 { color: #0056b3; margin-bottom: 0.8rem; font-size: 1.5em; }
-
-        .calculator-container {
-            background-color: #f8f9fa;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-        }
-        .calculator-container label { display: block; margin-bottom: 0.6rem; font-weight: bold; color: #495057; }
-        .calculator-container input[type="number"],
-        .calculator-container select {
-            width: calc(100% - 22px);
-            padding: 0.8rem;
-            margin-bottom: 1.2rem;
-            border: 1px solid #ced4da;
-            border-radius: 4px;
-            font-size: 1em;
-            box-sizing: border-box;
-        }
-        .calculator-container button {
-            background-color: #007bff; /* Blue button */
-            color: white;
-            padding: 0.8rem 1.5rem;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            width: 100%;
-            font-size: 1.1em;
-            transition: background-color 0.3s ease;
-        }
-        .calculator-container button:hover { background-color: #0056b3; }
-
-        .result {
-            margin-top: 1.5rem;
-            padding: 1.2rem;
-            background-color: #d1ecf1; /* Lighter blue for result */
-            border: 1px solid #bee5eb;
-            border-radius: 4px;
-            text-align: center;
-        }
-        .result p { margin: 0.5rem 0; font-size: 1.1em; }
-        .result strong { color: #0c5460; } /* Darker blue for strong text in result */
-        .error { color: #dc3545; font-weight: bold; font-size: 1em; }
-
-        .info-section p, .info-section ul li { font-size: 1.05em; margin-bottom: 0.8em; }
-        .info-section ul { padding-right: 20px; }
-
-        .disclaimer, .fev1-info {
-            margin-top: 2.5rem;
-            padding: 1.5rem;
-            background-color: #fff3cd;
-            border-left: 5px solid #ffeeba;
-            border-radius: 4px;
-            color: #856404;
-        }
-        .disclaimer h3, .fev1-info h3 { color: #856404; }
-
-        .cta-section { text-align: center; padding: 30px 20px; background-color: #007bff; color:white; margin-top: 30px; margin-bottom: 20px; border-radius: .3rem; }
-        .cta-section h2 { color: white; margin-bottom: 15px; font-size: 1.8em; }
-        .cta-section p { font-size: 1.15em; margin-bottom: 20px; color: #d4e6f1; }
-        .cta-section .button-style { display: inline-block; background-color: #28a745; color: white; padding: 12px 30px; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 1.1em; transition: background-color 0.3s ease, transform 0.2s ease; }
-        .cta-section .button-style:hover { background-color: #218838; transform: translateY(-2px); }
-        .icon-before { margin-left: 8px; }
-        .fev1-note { font-size: 0.9em; color: #6c757d; display: block; margin-top: -0.8rem; margin-bottom: 1rem; }
-    </style>
+    
 </head>
 <body>
-    <header>
-        <h1>حاسبة عمر الرئة</h1>
-        <p class="page-subtitle">أداة توعوية لتقدير صحة رئتيك بناءً على وظائف التنفس</p>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="index.html"><i class="fas fa-home icon-before"></i>الرئيسية</a></li>
-            <li><a href="bmi-calculator.html">حاسبة BMI</a></li>
-            <li><a href="lung-age-calculator.html">حاسبة عمر الرئة</a></li>
-            <!-- Add other calculator links -->
-        </ul>
-    </nav>
+
+    <!-- Mobile Drawer Overlay -->
+    <div class="menu-overlay" id="menuOverlay" aria-hidden="true"></div>
+
+    <div id="page-wrapper">
+        
+        <!-- Live Clinic Status Bar -->
+        <aside class="datetime-bar" aria-label="توقيت وحالة العيادة">
+            <div class="datetime-container">
+                <span id="arabic-time" class="current-time">--:--</span>
+                <div id="clinic-status" class="clinic-status">
+                    <span class="status-indicator">
+                        <i class="fas fa-circle" aria-hidden="true"></i>
+                        <span id="status-message">جاري التحقق...</span>
+                    </span>
+                    <span id="next-opening" class="next-opening"></span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Header -->
+        <header class="main-header">
+            <div class="header-inner">
+                <a href="index.html" class="clinic-brand" aria-label="الصفحة الرئيسية">
+                    <div class="logo-container">
+                        <img 
+                            src="cabinet-logo.png" 
+                            width="44"
+                            height="44"
+                            alt="شعار عيادة د. بخة" 
+                            class="clinic-logo"
+                            decoding="async">
+                    </div>
+                    <div class="clinic-title">
+                        <h1>عيادة الدكتورة بخة س</h1>
+                        <p class="clinic-subtitle">أمراض الصدر والحساسية - قالمة</p>
+                    </div>
+                </a>
+
+                <!-- Header Actions -->
+                <div class="header-actions">
+                    <div id="google_translate_element" class="lang-selector-wrap"></div>
+                    
+                    <button id="theme-toggle" aria-label="تبديل الوضع الليلي" class="control-btn" type="button">
+                        <i class="fas fa-moon" aria-hidden="true"></i>
+                    </button>
+                    
+                    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="فتح القائمة الرئيسية" aria-expanded="false" type="button">
+                        <i class="fas fa-bars" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation Drawer -->
+        <nav class="main-nav" id="mainNav" aria-label="القائمة الرئيسية">
+            <div class="nav-container">
+                <div class="nav-drawer-header">
+                    <span class="drawer-title">القائمة والتخصصات</span>
+                    <button class="close-drawer-btn" id="closeDrawerBtn" aria-label="إغلاق القائمة" type="button">
+                        <i class="fas fa-times" aria-hidden="true"></i>
+                    </button>
+                </div>
+
+                <ul id="main-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link"><i class="fas fa-home" aria-hidden="true"></i> <span>الرئيسية</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <button class="dropdown-toggle" aria-expanded="false" type="button">
+                            <span><i class="fas fa-lungs" aria-hidden="true"></i> أمراض الصدر</span>
+                            <i class="fas fa-chevron-down caret-icon" aria-hidden="true"></i>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="asthma.html">الربو (Asthme)</a></li>
+                            <li><a href="copd.html">الانسداد الرئوي المزمن (BPCO)</a></li>
+                            <li><a href="lung-cancer.html">سرطان الرئة (Cancer)</a></li>
+                            <li><a href="pulmonary-fibrosis.html">التليف الرئوي (Fibrose)</a></li>
+                            <li><a href="bronchitis.html">التهاب الشعب الهوائية (Bronchite)</a></li>
+                            <li><a href="pneumonia.html">التهاب الرئة (Pneumonie)</a></li>
+                            <li><a href="tuberculosis.html">السل (Tuberculose)</a></li>
+                            <li><a href="covid-19.html">كوفيد-19 (COVID-19)</a></li>
+                            <li><a href="influenza.html">الإنفلونزا (Grippe)</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <button class="dropdown-toggle" aria-expanded="false" type="button">
+                            <span><i class="fas fa-allergies" aria-hidden="true"></i> أمراض الحساسية</span>
+                            <i class="fas fa-chevron-down caret-icon" aria-hidden="true"></i>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="allergic-rhinitis.html">التهاب الأنف التحسسي (Rhinite)</a></li>
+                            <li><a href="allergic-asthma.html">الربو التحسسي (Asthme)</a></li>
+                            <li><a href="allergic-bronchitis.html">التهاب الشعب التحسسي</a></li>
+                            <li><a href="hypersensitivity-pneumonitis.html">التهاب الرئة التحسسي</a></li>
+                            <li><a href="urticaria.html">الشرى (Urticaire)</a></li>
+                            <li><a href="food-allergy.html">حساسية الطعام</a></li>
+                            <li><a href="drug-allergy.html">الحساسية الدوائية</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="sleep-apnea.html" class="nav-link"><i class="fas fa-bed" aria-hidden="true"></i> <span>انقطاع التنفس النومي</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <button class="dropdown-toggle" aria-expanded="false" type="button">
+                            <span><i class="fas fa-calculator" aria-hidden="true"></i> حاسبات صحية</span>
+                            <i class="fas fa-chevron-down caret-icon" aria-hidden="true"></i>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="bmi-calculator.html">مؤشر كتلة الجسم (BMI)</a></li>
+                            <li><a href="bmr-calculator.html">معدل الأيض الأساسي (BMR)</a></li>
+                            <li><a href="calorie-calculator.html">حاسبة السعرات الحرارية</a></li>
+                            <li><a href="whr-calculator.html">نسبة الخصر إلى الورك (WHR)</a></li>
+                            <li><a href="smoking-cost-calculator.html">حاسبة تكلفة التدخين</a></li>
+                            <li><a href="lung-age-calculator.html">حاسبة عمر الرئة</a></li>
+                            <li><a href="hydration-calculator.html">حاسبة الترطيب اليومي</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a href="index.html#services" class="nav-link"><i class="fas fa-stethoscope" aria-hidden="true"></i> <span>الخدمات</span></a></li>
+                    <li class="nav-item"><a href="index.html#coverage" class="nav-link"><i class="fas fa-map-marked-alt" aria-hidden="true"></i> <span>المناطق المجاورة</span></a></li>
+                    <li class="nav-item"><a href="index.html#faq" class="nav-link"><i class="fas fa-question-circle" aria-hidden="true"></i> <span>الأسئلة الشائعة</span></a></li>
+                    <li class="nav-item"><a href="index.html#apropos" class="nav-link"><i class="fas fa-user-md" aria-hidden="true"></i> <span>عن الدكتورة</span></a></li>
+                    <li class="nav-item"><a href="index.html#contact" class="nav-link"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> <span>التواصل والموقع</span></a></li>
+                </ul>
+            </div>
+        </nav>
+
     <main>
         <section id="intro-lung-age" class="info-section" aria-labelledby="intro-lung-age-heading">
             <h2 id="intro-lung-age-heading">ما هو "عمر الرئة" ولماذا قد يهمك؟</h2>
@@ -240,109 +269,87 @@
             </div>
         </section>
     </main>
-    <footer style="padding-bottom: 60px;">
-        <h2>عيادة الدكتورة بخة س</h2>
-        <p>اختصاصية في الأمراض الصدرية والحساسية، وتقييم وظائف الرئة</p>
-        <p><strong>العنوان:</strong> حي 19 جوان، خلف مستشفى الحكيم عقبي، ڨالمة، الجزائر</p>
-        <p>© <span id="currentYear"></span> جميع الحقوق محفوظة</p>
-    </footer>
-    <div class="watermark" style="position: fixed; bottom: 10px; left: 10px; opacity: 0.5; font-size: 10px; color: #aaa; z-index: 10000; background-color: rgba(255,255,255,0.7); padding: 2px 5px; border-radius: 3px;">Dr. Bakha - Guelma</div>
+
+        <!-- Main Footer -->
+        <footer class="main-footer">
+            <div class="footer-inner">
+                <p>© <span id="currentYear"></span> عيادة الدكتورة بخة س للأمراض الصدرية والحساسية - قالمة</p>
+                <p class="footer-address">حي 19 جوان، خلف مستشفى الحكيم عقبي، ڨالمة، الجزائر</p>
+            </div>
+        </footer>
+
+    </div> <!-- End #page-wrapper -->
+
+    <!-- Mobile Sticky Quick-Action Bar -->
+    <nav class="mobile-action-bar" aria-label="أزرار التواصل السريع">
+        <a href="tel:+213796222597" class="mobile-action-btn call-btn" aria-label="اتصال هاتفي">
+            <i class="fas fa-phone-alt" aria-hidden="true"></i>
+            <span>اتصال</span>
+        </a>
+        <a href="https://wa.me/213663755584" target="_blank" rel="noopener noreferrer" class="mobile-action-btn wa-btn" aria-label="تواصل عبر واتساب">
+            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+            <span>واتساب</span>
+        </a>
+        <a href="https://maps.google.com/?q=36.45512,7.43659" target="_blank" rel="noopener noreferrer" class="mobile-action-btn" aria-label="موقع العيادة على الخريطة">
+            <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+            <span>الموقع</span>
+        </a>
+        <a href="index.html#appointment" class="mobile-action-btn appt-btn" aria-label="حجز موعد">
+            <i class="fas fa-calendar-plus" aria-hidden="true"></i>
+            <span>حجز موعد</span>
+        </a>
+    </nav>
+
+    <!-- Essential Scripts -->
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" defer></script>
+    <script src="app.js" defer></script>
+    <script>
+        const yearEl = document.getElementById('currentYear');
+        if (yearEl) yearEl.textContent = new Date().getFullYear();
+    </script>
+
+
 
     <script>
         function calculateLungAge() {
-            const ageInput = document.getElementById('age');
+            const age = parseFloat(document.getElementById('age').value);
             const gender = document.getElementById('gender').value;
-            const heightInput = document.getElementById('lung-height');
-            const fev1Input = document.getElementById('fev1');
+            const height = parseFloat(document.getElementById('lung-height').value);
+            const fev1 = parseFloat(document.getElementById('fev1').value);
             const resultDiv = document.getElementById('lung-age-result');
 
-            resultDiv.innerHTML = ''; // Clear previous results
-
-            const age = parseFloat(ageInput.value);
-            const height = parseFloat(heightInput.value); // Height in cm
-            const fev1 = parseFloat(fev1Input.value);   // FEV1 in Liters
-
-            let errors = [];
-            if (isNaN(age) || age < 18 || age > 100) {
-                errors.push("الرجاء إدخال عمر صحيح (بين 18 و 100 سنة).");
-            }
-            if (isNaN(height) || height < 100 || height > 220) {
-                errors.push("الرجاء إدخال طول صحيح (بين 100 و 220 سم).");
-            }
-            if (isNaN(fev1) || fev1 < 0.5 || fev1 > 8.0) { // FEV1 usually between ~1 to 6 Liters for adults
-                errors.push("الرجاء إدخال قيمة FEV1 صحيحة (بين 0.5 و 8.0 لتر). تأكد من أنك تستخدم القيمة من فحص وظائف الرئة.");
-            }
-
-            if (errors.length > 0) {
-                let errorHTML = '<p class="error">يوجد خطأ في الإدخال:</p><ul>';
-                errors.forEach(err => {
-                    errorHTML += `<li class="error" style="text-align:right;">${err}</li>`;
-                });
-                errorHTML += '</ul>';
-                resultDiv.innerHTML = errorHTML;
+            if (isNaN(age) || isNaN(height) || isNaN(fev1)) {
+                resultDiv.innerHTML = '<p class="error">يرجى إدخال جميع البيانات المطلوبة بشكل صحيح.</p>';
                 return;
             }
 
-            // Simplified GLI-2012 like equations for predicted FEV1 (Caucasian ethnicity assumed for this example)
-            // These are still approximations. Real GLI equations are more complex and use specific coefficients.
-            // For a highly accurate clinical tool, a backend with proper GLI implementation would be needed.
-            let predictedFEV1;
-            const heightM = height / 100; // Height in meters for some formulas
+            const heightInches = height / 2.54;
+            let lungAge = 0;
 
-            if (gender === "male") {
-                // Simplified formula inspired by some models (e.g., Morris for non-smokers as a very rough base)
-                // Actual GLI is: k1 + k2*ln(height_m) + k3*ln(age) + k4*ln(age)^2 ...
-                // Using a very simplified linear model for demonstration
-                predictedFEV1 = (4.30 * heightM) - (0.029 * age) - 2.49; // Highly simplified, not GLI
-            } else { // female
-                predictedFEV1 = (3.95 * heightM) - (0.025 * age) - 2.60; // Highly simplified, not GLI
-            }
-            // Ensure predictedFEV1 is positive
-             predictedFEV1 = Math.max(0.5, predictedFEV1);
-
-
-            const percentagePredictedFEV1 = (fev1 / predictedFEV1) * 100;
-
-            // Lung Age Calculation (Commonly used Fletcher & Peto based or similar models)
-            // This is a conceptual formula. A more precise one from literature should be used if possible.
-            // LA = CA + ((PredFEV1 - ActualFEV1) / DeclineRate)
-            // Assuming an average FEV1 decline rate of 0.03 L/year for simplicity.
-            // This is a very rough estimation for illustrative purposes.
-            let lungAge;
-            const declineRate = 0.03; // Approximate L/year decline for healthy non-smoker
-
-            if (fev1 < predictedFEV1) {
-                lungAge = age + ((predictedFEV1 - fev1) / declineRate);
+            if (gender === 'male') {
+                lungAge = Math.round((2.87 * heightInches) - (31.25 * fev1) - 39.375);
             } else {
-                // If FEV1 is better than predicted, lung age could be younger or same.
-                // Some calculators cap it at actual age or slightly younger.
-                // For simplicity, let's show it as potentially younger, but with a floor.
-                lungAge = age - ((fev1 - predictedFEV1) / (declineRate * 1.5)); // *1.5 to make "younger" effect less drastic
-                lungAge = Math.max(18, lungAge); // Don't go below 18
+                lungAge = Math.round((3.56 * heightInches) - (40 * fev1) - 77.28);
             }
 
+            if (lungAge < 18) lungAge = 18;
 
-            let resultHTMLText = `<p>بناءً على البيانات المدخلة:</p>
-                <p>قيمة FEV1 المتوقعة الطبيعية لعمرك وطولك وجنسك هي حوالي: <strong>${predictedFEV1.toFixed(2)}</strong> لتر.</p>
-                <p>قيمة FEV1 الفعلية لديك تمثل حوالي: <strong>${percentagePredictedFEV1.toFixed(1)}%</strong> من القيمة المتوقعة.</p>
-                <hr style="margin: 15px 0;">`;
-
-            if (lungAge > age + 5) { // Significantly older lung age
-                resultHTMLText += `<p style="font-size: 1.2em;">عمر رئتيك التقديري هو: <strong style="font-size: 1.4em; color: #dc3545;">${lungAge.toFixed(0)}</strong> سنة.</p>
-                                   <p style="color: #721c24;">هذا يشير إلى أن وظائف رئتيك قد تكون أضعف من المتوقع لعمرك. نوصي بشدة بمناقشة هذه النتيجة مع الدكتورة بخة س.</p>`;
-            } else if (lungAge < age - 2 && fev1 > predictedFEV1) { // Lung age younger
-                 resultHTMLText += `<p style="font-size: 1.2em;">عمر رئتيك التقديري هو: <strong style="font-size: 1.4em; color: #155724;">${lungAge.toFixed(0)}</strong> سنة.</p>
-                                   <p style="color: #155724;">هذا مؤشر جيد على أن وظائف رئتيك ممتازة بالنسبة لعمرك!</p>`;
-            }
-             else { // Lung age similar to actual age or slightly older
-                 resultHTMLText += `<p style="font-size: 1.2em;">عمر رئتيك التقديري هو: <strong style="font-size: 1.4em; color: #0c5460;">${lungAge.toFixed(0)}</strong> سنة.</p>
-                                   <p>هذه نتيجة تقديرية. للحصول على تقييم شامل، يرجى استشارة الدكتورة بخة س.</p>`;
+            let diffText = '';
+            if (lungAge > age) {
+                diffText = `<span style="color: var(--danger); font-weight:bold;">عمر رئتيك أكبر من عمرك الفعلي بـ ${lungAge - age} سنة.</span> قد يشير ذلك إلى تأثر وظائف الرئة بسبب التدخين أو عوامل بيئية.`;
+            } else if (lungAge === age) {
+                diffText = `<span style="color: var(--success); font-weight:bold;">عمر رئتيك يطابق تماماً عمرك الفعلي.</span>`;
+            } else {
+                diffText = `<span style="color: var(--success); font-weight:bold;">عمر رئتيك أصغر من عمرك الفعلي!</span> وظائف رئتيك في حالة ممتازة.`;
             }
 
-            resultHTMLText += `<p style="margin-top:15px; font-size:0.9em;"><strong>تذكر:</strong> هذه الحاسبة هي أداة توعوية. التشخيص الدقيق وتقييم وظائف الرئة يجب أن يتم بواسطة أخصائي.</p>`;
-            resultDiv.innerHTML = resultHTMLText;
+            resultDiv.innerHTML = `
+                <p>عمر الرئة التقديري: <strong style="font-size: 1.4em; color: var(--primary);">${lungAge} سنة</strong></p>
+                <p style="margin-top: 10px;">${diffText}</p>
+                <p style="margin-top:10px; font-size:0.9em; color: var(--text-muted);">هذه النتيجة استرشادية فقط. لفحص وظائف الرئة بدقة، يرجى زيارة عيادة الدكتورة بخة س.</p>
+            `;
         }
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
     </script>
+
 </body>
 </html>

@@ -1,6 +1,18 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
+    <!-- Instant Theme Loader (Zero Flash) -->
+    <script>
+        (function() {
+            try {
+                var savedTheme = localStorage.getItem('bakha_theme');
+                var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+                var theme = savedTheme ? savedTheme : (prefersDark ? 'dark' : 'light');
+                document.documentElement.setAttribute('data-theme', theme);
+            } catch (e) {}
+        })();
+    </script>
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-BCT8GP6LZT"></script>
     <script>
@@ -10,7 +22,7 @@
       gtag('config', 'G-BCT8GP6LZT');
     </script>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
     <meta name="keywords" content="حاسبة معدل الأيض الأساسي, BMR, TDEE, حساب السعرات الحرارية, صحة, تغذية, دكتورة بخة, قالمة">
     <meta name="description" content="استخدم حاسبة معدل الأيض الأساسي (BMR) والطاقة اليومية (TDEE) لتقدير احتياجاتك من السعرات الحرارية. مقدمة من عيادة الدكتورة بخة س في قالمة.">
     <meta name="author" content="عيادة الدكتورة بخة س">
@@ -53,27 +65,135 @@
     </script>
     <!-- REMOVE THE INLINE <style> BLOCK -->
 </head>
-<body data-theme="dark"> <!-- Or your default theme -->
+<body>
 
-    <!-- These should be part of your standard header include -->
-    <div id="google_translate_element" class="language-selector"></div>
-    <button id="theme-toggle" aria-label="Toggle Dark Mode"><i class="fas fa-moon"></i></button>
+    <!-- Mobile Drawer Overlay -->
+    <div class="menu-overlay" id="menuOverlay" aria-hidden="true"></div>
 
-    <div id="content-ar" lang="ar" dir="rtl">
+    <div id="page-wrapper">
+        
+        <!-- Live Clinic Status Bar -->
+        <aside class="datetime-bar" aria-label="توقيت وحالة العيادة">
+            <div class="datetime-container">
+                <span id="arabic-time" class="current-time">--:--</span>
+                <div id="clinic-status" class="clinic-status">
+                    <span class="status-indicator">
+                        <i class="fas fa-circle" aria-hidden="true"></i>
+                        <span id="status-message">جاري التحقق...</span>
+                    </span>
+                    <span id="next-opening" class="next-opening"></span>
+                </div>
+            </div>
+        </aside>
 
-        <!-- ====================================================================== -->
-        <!-- START: STANDARD HEADER (Copy from index.html) -->
-        <!-- This should include .datetime-display, .main-header, .main-nav etc. -->
-        <header role="banner" class="main-header">
-            <!-- ... Your full header HTML from index.html ... -->
+        <!-- Main Header -->
+        <header class="main-header">
+            <div class="header-inner">
+                <a href="index.html" class="clinic-brand" aria-label="الصفحة الرئيسية">
+                    <div class="logo-container">
+                        <img 
+                            src="cabinet-logo.png" 
+                            width="44"
+                            height="44"
+                            alt="شعار عيادة د. بخة" 
+                            class="clinic-logo"
+                            decoding="async">
+                    </div>
+                    <div class="clinic-title">
+                        <h1>عيادة الدكتورة بخة س</h1>
+                        <p class="clinic-subtitle">أمراض الصدر والحساسية - قالمة</p>
+                    </div>
+                </a>
+
+                <!-- Header Actions -->
+                <div class="header-actions">
+                    <div id="google_translate_element" class="lang-selector-wrap"></div>
+                    
+                    <button id="theme-toggle" aria-label="تبديل الوضع الليلي" class="control-btn" type="button">
+                        <i class="fas fa-moon" aria-hidden="true"></i>
+                    </button>
+                    
+                    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="فتح القائمة الرئيسية" aria-expanded="false" type="button">
+                        <i class="fas fa-bars" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
         </header>
-        <nav class="main-nav">
-            <!-- ... Your full main navigation HTML from index.html ... -->
-        </nav>
-        <!-- END: STANDARD HEADER -->
-        <!-- ====================================================================== -->
 
-        <main role="main">
+        <!-- Navigation Drawer -->
+        <nav class="main-nav" id="mainNav" aria-label="القائمة الرئيسية">
+            <div class="nav-container">
+                <div class="nav-drawer-header">
+                    <span class="drawer-title">القائمة والتخصصات</span>
+                    <button class="close-drawer-btn" id="closeDrawerBtn" aria-label="إغلاق القائمة" type="button">
+                        <i class="fas fa-times" aria-hidden="true"></i>
+                    </button>
+                </div>
+
+                <ul id="main-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link"><i class="fas fa-home" aria-hidden="true"></i> <span>الرئيسية</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <button class="dropdown-toggle" aria-expanded="false" type="button">
+                            <span><i class="fas fa-lungs" aria-hidden="true"></i> أمراض الصدر</span>
+                            <i class="fas fa-chevron-down caret-icon" aria-hidden="true"></i>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="asthma.html">الربو (Asthme)</a></li>
+                            <li><a href="copd.html">الانسداد الرئوي المزمن (BPCO)</a></li>
+                            <li><a href="lung-cancer.html">سرطان الرئة (Cancer)</a></li>
+                            <li><a href="pulmonary-fibrosis.html">التليف الرئوي (Fibrose)</a></li>
+                            <li><a href="bronchitis.html">التهاب الشعب الهوائية (Bronchite)</a></li>
+                            <li><a href="pneumonia.html">التهاب الرئة (Pneumonie)</a></li>
+                            <li><a href="tuberculosis.html">السل (Tuberculose)</a></li>
+                            <li><a href="covid-19.html">كوفيد-19 (COVID-19)</a></li>
+                            <li><a href="influenza.html">الإنفلونزا (Grippe)</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <button class="dropdown-toggle" aria-expanded="false" type="button">
+                            <span><i class="fas fa-allergies" aria-hidden="true"></i> أمراض الحساسية</span>
+                            <i class="fas fa-chevron-down caret-icon" aria-hidden="true"></i>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="allergic-rhinitis.html">التهاب الأنف التحسسي (Rhinite)</a></li>
+                            <li><a href="allergic-asthma.html">الربو التحسسي (Asthme)</a></li>
+                            <li><a href="allergic-bronchitis.html">التهاب الشعب التحسسي</a></li>
+                            <li><a href="hypersensitivity-pneumonitis.html">التهاب الرئة التحسسي</a></li>
+                            <li><a href="urticaria.html">الشرى (Urticaire)</a></li>
+                            <li><a href="food-allergy.html">حساسية الطعام</a></li>
+                            <li><a href="drug-allergy.html">الحساسية الدوائية</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="sleep-apnea.html" class="nav-link"><i class="fas fa-bed" aria-hidden="true"></i> <span>انقطاع التنفس النومي</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <button class="dropdown-toggle" aria-expanded="false" type="button">
+                            <span><i class="fas fa-calculator" aria-hidden="true"></i> حاسبات صحية</span>
+                            <i class="fas fa-chevron-down caret-icon" aria-hidden="true"></i>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="bmi-calculator.html">مؤشر كتلة الجسم (BMI)</a></li>
+                            <li><a href="bmr-calculator.html">معدل الأيض الأساسي (BMR)</a></li>
+                            <li><a href="calorie-calculator.html">حاسبة السعرات الحرارية</a></li>
+                            <li><a href="whr-calculator.html">نسبة الخصر إلى الورك (WHR)</a></li>
+                            <li><a href="smoking-cost-calculator.html">حاسبة تكلفة التدخين</a></li>
+                            <li><a href="lung-age-calculator.html">حاسبة عمر الرئة</a></li>
+                            <li><a href="hydration-calculator.html">حاسبة الترطيب اليومي</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a href="index.html#services" class="nav-link"><i class="fas fa-stethoscope" aria-hidden="true"></i> <span>الخدمات</span></a></li>
+                    <li class="nav-item"><a href="index.html#coverage" class="nav-link"><i class="fas fa-map-marked-alt" aria-hidden="true"></i> <span>المناطق المجاورة</span></a></li>
+                    <li class="nav-item"><a href="index.html#faq" class="nav-link"><i class="fas fa-question-circle" aria-hidden="true"></i> <span>الأسئلة الشائعة</span></a></li>
+                    <li class="nav-item"><a href="index.html#apropos" class="nav-link"><i class="fas fa-user-md" aria-hidden="true"></i> <span>عن الدكتورة</span></a></li>
+                    <li class="nav-item"><a href="index.html#contact" class="nav-link"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> <span>التواصل والموقع</span></a></li>
+                </ul>
+            </div>
+        </nav>
+
+    <main role="main">
             <div class="main-content calculator-page"> <!-- Added .calculator-page -->
 
                 <header class="health-calculator-header" data-aos="fade-down"> <!-- Themed header for calculators -->
@@ -180,130 +300,82 @@
             </div> <!-- End .main-content .calculator-page -->
         </main>
 
-        <!-- ====================================================================== -->
-        <!-- START: STANDARD FOOTER (Copy from index.html) -->
-        <footer>
-            <!-- ... Your full footer HTML from index.html ... -->
+        <!-- Main Footer -->
+        <footer class="main-footer">
+            <div class="footer-inner">
+                <p>© <span id="currentYear"></span> عيادة الدكتورة بخة س للأمراض الصدرية والحساسية - قالمة</p>
+                <p class="footer-address">حي 19 جوان، خلف مستشفى الحكيم عقبي، ڨالمة، الجزائر</p>
+            </div>
         </footer>
-        <!-- END: STANDARD FOOTER -->
-        <!-- ====================================================================== -->
 
-    </div> <!-- End #content-ar -->
+    </div> <!-- End #page-wrapper -->
 
-    <div class="watermark">Dr. Bakha</div>
+    <!-- Mobile Sticky Quick-Action Bar -->
+    <nav class="mobile-action-bar" aria-label="أزرار التواصل السريع">
+        <a href="tel:+213796222597" class="mobile-action-btn call-btn" aria-label="اتصال هاتفي">
+            <i class="fas fa-phone-alt" aria-hidden="true"></i>
+            <span>اتصال</span>
+        </a>
+        <a href="https://wa.me/213663755584" target="_blank" rel="noopener noreferrer" class="mobile-action-btn wa-btn" aria-label="تواصل عبر واتساب">
+            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+            <span>واتساب</span>
+        </a>
+        <a href="https://maps.google.com/?q=36.45512,7.43659" target="_blank" rel="noopener noreferrer" class="mobile-action-btn" aria-label="موقع العيادة على الخريطة">
+            <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+            <span>الموقع</span>
+        </a>
+        <a href="index.html#appointment" class="mobile-action-btn appt-btn" aria-label="حجز موعد">
+            <i class="fas fa-calendar-plus" aria-hidden="true"></i>
+            <span>حجز موعد</span>
+        </a>
+    </nav>
 
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <!-- Essential Scripts -->
     <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" defer></script>
-    <script src="app.js" defer></script> <!-- Your main JS -->
+    <script src="app.js" defer></script>
+    <script>
+        const yearEl = document.getElementById('currentYear');
+        if (yearEl) yearEl.textContent = new Date().getFullYear();
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 
     <script>
-        // BMR Calculator Specific Script
         function calculateBMRAndTDEE() {
-            const resultSection = document.getElementById('results-section');
-            const bmrTdeeOutput = document.getElementById('bmr-tdee-output');
-            const macronutrientsOutput = document.getElementById('macronutrients-output');
-            const interpretationNotes = document.getElementById('interpretation-notes');
-
-            // Clear previous results and hide section
-            bmrTdeeOutput.innerHTML = '';
-            macronutrientsOutput.innerHTML = '';
-            resultSection.style.display = 'none';
-
-
             const gender = document.getElementById('gender').value;
             const weight = parseFloat(document.getElementById('weight').value);
             const height = parseFloat(document.getElementById('height').value);
             const age = parseFloat(document.getElementById('age').value);
             const activityLevel = parseFloat(document.getElementById('activity-level').value);
+            const resultsSection = document.getElementById('results-section');
+            const outputDiv = document.getElementById('bmr-tdee-output');
 
-            let isValid = true;
-            let errorMessages = [];
-
-            if (isNaN(weight) || weight <= 0 || weight > 300) {
-                errorMessages.push("الرجاء إدخال وزن صحيح (بين 20 و 300 كجم).");
-                document.getElementById('weight').classList.add('invalid'); // Assuming 'invalid' class exists in your main CSS
-                isValid = false;
-            } else {
-                 document.getElementById('weight').classList.remove('invalid');
-            }
-
-            if (isNaN(height) || height <= 0 || height > 250) {
-                errorMessages.push("الرجاء إدخال طول صحيح (بين 100 و 250 سم).");
-                document.getElementById('height').classList.add('invalid');
-                isValid = false;
-            } else {
-                document.getElementById('height').classList.remove('invalid');
-            }
-
-            if (isNaN(age) || age <= 0 || age > 100) {
-                errorMessages.push("الرجاء إدخال عمر صحيح (بين 15 و 100 سنة).");
-                document.getElementById('age').classList.add('invalid');
-                isValid = false;
-            } else {
-                document.getElementById('age').classList.remove('invalid');
-            }
-             if (isNaN(activityLevel)) { // Should not happen with select but good practice
-                errorMessages.push("الرجاء اختيار مستوى النشاط.");
-                isValid = false;
-            }
-
-
-            if (!isValid) {
-                // Display errors using your site's toast notification if app.js is linked and utils are available
-                if (typeof utils !== 'undefined' && typeof utils.showToast === 'function') {
-                    errorMessages.forEach(msg => utils.showToast(msg, 'error'));
-                } else { // Fallback basic alert
-                    alert(errorMessages.join("\n"));
-                }
-                // Optionally show errors within the result div too
-                bmrTdeeOutput.innerHTML = `<p class="error">${errorMessages.join("<br>")}</p>`;
-                resultSection.style.display = 'block'; // Show section to display error
+            if (isNaN(weight) || isNaN(height) || isNaN(age)) {
+                alert('يرجى إدخال جميع البيانات بشكل صحيح');
                 return;
             }
 
-            let bmr;
+            let bmr = 0;
             if (gender === 'male') {
-                bmr = (10 * weight) + (6.25 * height) - (5 * age) + 5;
-            } else { // female
-                bmr = (10 * weight) + (6.25 * height) - (5 * age) - 161;
+                bmr = 10 * weight + 6.25 * height - 5 * age + 5;
+            } else {
+                bmr = 10 * weight + 6.25 * height - 5 * age - 161;
             }
 
-            const tdee = bmr * activityLevel;
+            const tdee = Math.round(bmr * activityLevel);
+            bmr = Math.round(bmr);
 
-            bmrTdeeOutput.innerHTML = `
-                <p>معدل الأيض الأساسي التقديري (BMR): <strong>${bmr.toLocaleString('ar-EG', {maximumFractionDigits: 0})}</strong> سعرة حرارية/يوم.</p>
-                <p>إجمالي إنفاق الطاقة اليومي التقديري (TDEE): <strong>${tdee.toLocaleString('ar-EG', {maximumFractionDigits: 0})}</strong> سعرة حرارية/يوم.</p>
+            resultsSection.style.display = 'block';
+            outputDiv.innerHTML = `
+                <div class="result" style="margin-top:15px;">
+                    <p>معدل الأيض الأساسي (BMR): <strong style="font-size: 1.25rem; color: var(--primary);">${bmr}</strong> سعرة حرارية/يوم</p>
+                    <p>إجمالي استهلاك الطاقة اليومي (TDEE): <strong style="font-size: 1.25rem; color: var(--accent-hover);">${tdee}</strong> سعرة حرارية/يوم</p>
+                </div>
             `;
-
-            // Macronutrient suggestions (example: 40% Carbs, 30% Protein, 30% Fat)
-            const carbsCalories = tdee * 0.40;
-            const proteinCalories = tdee * 0.30;
-            const fatCalories = tdee * 0.30;
-
-            const carbsGrams = carbsCalories / 4;
-            const proteinGrams = proteinCalories / 4;
-            const fatGrams = fatCalories / 9;
-
-            macronutrientsOutput.innerHTML = `
-                <h4>مقترحات توزيع المغذيات الكبرى (للحفاظ على الوزن):</h4>
-                <p><i class="fas fa-bread-slice icon-before"></i> الكربوهيدرات: <strong>${carbsGrams.toLocaleString('ar-EG', {maximumFractionDigits: 0})}</strong> غرام/يوم (تقريباً ${carbsCalories.toLocaleString('ar-EG', {maximumFractionDigits: 0})} سعرة)</p>
-                <p><i class="fas fa-drumstick-bite icon-before"></i> البروتين: <strong>${proteinGrams.toLocaleString('ar-EG', {maximumFractionDigits: 0})}</strong> غرام/يوم (تقريباً ${proteinCalories.toLocaleString('ar-EG', {maximumFractionDigits: 0})} سعرة)</p>
-                <p><i class="fas fa-oil-can icon-before"></i> الدهون: <strong>${fatGrams.toLocaleString('ar-EG', {maximumFractionDigits: 0})}</strong> غرام/يوم (تقريباً ${fatCalories.toLocaleString('ar-EG', {maximumFractionDigits: 0})} سعرة)</p>
-                <p class="note" style="font-size: 0.85em; margin-top: 10px;">ملاحظة: هذه نسب مقترحة عامة. يمكن تعديلها بناءً على أهدافك الصحية وتفضيلاتك الغذائية بعد استشارة مختص.</p>
-            `;
-            
-            resultSection.style.display = 'block'; // Show the results section
-            resultSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            resultsSection.scrollIntoView({ behavior: 'smooth' });
         }
-
-        // Add event listener to form fields to remove 'invalid' class on input
-        ['weight', 'height', 'age'].forEach(id => {
-            const field = document.getElementById(id);
-            if (field) {
-                field.addEventListener('input', () => field.classList.remove('invalid'));
-            }
-        });
     </script>
+
 </body>
 </html>

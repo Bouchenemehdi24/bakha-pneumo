@@ -1,6 +1,18 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
+    <!-- Instant Theme Loader (Zero Flash) -->
+    <script>
+        (function() {
+            try {
+                var savedTheme = localStorage.getItem('bakha_theme');
+                var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+                var theme = savedTheme ? savedTheme : (prefersDark ? 'dark' : 'light');
+                document.documentElement.setAttribute('data-theme', theme);
+            } catch (e) {}
+        })();
+    </script>
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-BCT8GP6LZT"></script>
     <script>
@@ -11,7 +23,7 @@
     </script>
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
     <!-- Meta Keywords for WHR Calculator -->
     <meta name="keywords" content="حاسبة نسبة الخصر إلى الورك, حساب WHR, نسبة الخصر للورك, صحة القلب, مخاطر السمنة البطنية, توزيع الدهون, الدكتورة بخة س, نصائح صحية قالمة, قياس دهون البطن, مؤشر صحي">
     <!-- Meta Description for WHR Calculator -->
@@ -42,128 +54,136 @@
     </script>
     <link rel="stylesheet" href="style.css"> <!-- Main stylesheet -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome for icons -->
-    <style>
-        /* Basic styling - ideally move to style.css */
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f0f4f8; /* Light cool background */
-            color: #333;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
-        header, footer {
-            background-color: #4a90e2; /* A clear, friendly blue */
-            color: white;
-            padding: 1.5rem 1rem;
-            text-align: center;
-        }
-        header h1 { margin: 0; font-size: 2em;}
-        .page-subtitle { font-size: 1.1em; color: #d4e6f1; margin-top: 5px;}
-
-        nav {
-            background-color: #357abd; /* Darker blue for nav */
-            padding: 1rem;
-            text-align: center;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        nav ul { list-style: none; padding: 0; margin: 0; }
-        nav ul li { display: inline-block; margin: 0 15px; }
-        nav ul li a { color: #f8f9fa; text-decoration: none; font-weight: bold; transition: color 0.3s ease; }
-        nav ul li a:hover { color: #a9cce3; }
-
-        main { padding: 2rem; max-width: 800px; margin: 20px auto; background-color: #fff; border-radius: 8px; box-shadow: 0 0 15px rgba(0,0,0,0.1); }
-        section { margin-bottom: 2.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid #eee; }
-        section:last-child { border-bottom: none; margin-bottom: 0; }
-        h2 { color: #2a6bad; margin-bottom: 1rem; font-size: 1.8em; } /* Darker blue for headings */
-        h3 { color: #343a40; margin-bottom: 0.8rem; font-size: 1.5em; }
-
-        .calculator-container {
-            background-color: #f8f9fa;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-        }
-        .calculator-container label { display: block; margin-bottom: 0.6rem; font-weight: bold; color: #495057; }
-        .calculator-container input[type="number"],
-        .calculator-container select {
-            width: calc(100% - 22px);
-            padding: 0.8rem;
-            margin-bottom: 1.2rem;
-            border: 1px solid #ced4da;
-            border-radius: 4px;
-            font-size: 1em;
-            box-sizing: border-box;
-        }
-        .calculator-container button {
-            background-color: #4a90e2; /* Blue button */
-            color: white;
-            padding: 0.8rem 1.5rem;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            width: 100%;
-            font-size: 1.1em;
-            transition: background-color 0.3s ease;
-        }
-        .calculator-container button:hover { background-color: #357abd; }
-
-        .result {
-            margin-top: 1.5rem;
-            padding: 1.2rem;
-            background-color: #e4f0f5; /* Lighter blue for result */
-            border: 1px solid #b8d8e3;
-            border-radius: 4px;
-            text-align: center;
-        }
-        .result p { margin: 0.5rem 0; font-size: 1.1em; }
-        .result strong { color: #2a6bad; } /* Darker blue for strong text in result */
-        .error { color: #dc3545; font-weight: bold; font-size: 1em; }
-
-        .info-section p, .info-section ul li { font-size: 1.05em; margin-bottom: 0.8em; }
-        .info-section ul { padding-right: 20px; }
-
-        .whr-chart-container { margin-top: 2rem; }
-        .whr-chart-container table { width: 100%; border-collapse: collapse; margin-top: 1rem; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
-        .whr-chart-container th, .whr-chart-container td { padding: 0.9rem; border: 1px solid #dee2e6; text-align: right; }
-        .whr-chart-container th { background-color: #e9ecef; color: #495057; font-weight: bold; }
-        .whr-chart-container tr:nth-child(even) { background-color: #f8f9fa; }
-        .low-risk { background-color: #d4edda; color: #155724; }
-        .moderate-risk { background-color: #fff3cd; color: #856404; }
-        .high-risk { background-color: #f8d7da; color: #721c24; }
-
-
-        .disclaimer {
-            margin-top: 2.5rem;
-            padding: 1.5rem;
-            background-color: #fff3cd;
-            border-left: 5px solid #ffeeba;
-            border-radius: 4px;
-            color: #856404;
-        }
-        .disclaimer h3 { color: #856404; }
-
-        .cta-section { text-align: center; padding: 30px 20px; background-color: #4a90e2; color:white; margin-top: 30px; margin-bottom: 20px; border-radius: .3rem; }
-        .cta-section h2 { color: white; margin-bottom: 15px; font-size: 1.8em; }
-        .cta-section p { font-size: 1.15em; margin-bottom: 20px; color: #d4e6f1; }
-        .cta-section .button-style { display: inline-block; background-color: #28a745; color: white; padding: 12px 30px; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 1.1em; transition: background-color 0.3s ease, transform 0.2s ease; }
-        .cta-section .button-style:hover { background-color: #218838; transform: translateY(-2px); }
-        .icon-before { margin-left: 8px; }
-    </style>
+    
 </head>
 <body>
-    <header>
-        <h1>حاسبة نسبة الخصر إلى الورك (WHR)</h1>
-        <p class="page-subtitle">أداة لتقييم توزيع الدهون في جسمك وفهم المخاطر الصحية المحتملة</p>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="index.html"><i class="fas fa-home icon-before"></i>الرئيسية</a></li>
-            <li><a href="bmi-calculator.html">حاسبة BMI</a></li>
-            <li><a href="whr-calculator.html">حاسبة WHR</a></li>
-            <!-- Add other calculator links -->
-        </ul>
-    </nav>
+
+    <!-- Mobile Drawer Overlay -->
+    <div class="menu-overlay" id="menuOverlay" aria-hidden="true"></div>
+
+    <div id="page-wrapper">
+        
+        <!-- Live Clinic Status Bar -->
+        <aside class="datetime-bar" aria-label="توقيت وحالة العيادة">
+            <div class="datetime-container">
+                <span id="arabic-time" class="current-time">--:--</span>
+                <div id="clinic-status" class="clinic-status">
+                    <span class="status-indicator">
+                        <i class="fas fa-circle" aria-hidden="true"></i>
+                        <span id="status-message">جاري التحقق...</span>
+                    </span>
+                    <span id="next-opening" class="next-opening"></span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Header -->
+        <header class="main-header">
+            <div class="header-inner">
+                <a href="index.html" class="clinic-brand" aria-label="الصفحة الرئيسية">
+                    <div class="logo-container">
+                        <img 
+                            src="cabinet-logo.png" 
+                            width="44"
+                            height="44"
+                            alt="شعار عيادة د. بخة" 
+                            class="clinic-logo"
+                            decoding="async">
+                    </div>
+                    <div class="clinic-title">
+                        <h1>عيادة الدكتورة بخة س</h1>
+                        <p class="clinic-subtitle">أمراض الصدر والحساسية - قالمة</p>
+                    </div>
+                </a>
+
+                <!-- Header Actions -->
+                <div class="header-actions">
+                    <div id="google_translate_element" class="lang-selector-wrap"></div>
+                    
+                    <button id="theme-toggle" aria-label="تبديل الوضع الليلي" class="control-btn" type="button">
+                        <i class="fas fa-moon" aria-hidden="true"></i>
+                    </button>
+                    
+                    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="فتح القائمة الرئيسية" aria-expanded="false" type="button">
+                        <i class="fas fa-bars" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation Drawer -->
+        <nav class="main-nav" id="mainNav" aria-label="القائمة الرئيسية">
+            <div class="nav-container">
+                <div class="nav-drawer-header">
+                    <span class="drawer-title">القائمة والتخصصات</span>
+                    <button class="close-drawer-btn" id="closeDrawerBtn" aria-label="إغلاق القائمة" type="button">
+                        <i class="fas fa-times" aria-hidden="true"></i>
+                    </button>
+                </div>
+
+                <ul id="main-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link"><i class="fas fa-home" aria-hidden="true"></i> <span>الرئيسية</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <button class="dropdown-toggle" aria-expanded="false" type="button">
+                            <span><i class="fas fa-lungs" aria-hidden="true"></i> أمراض الصدر</span>
+                            <i class="fas fa-chevron-down caret-icon" aria-hidden="true"></i>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="asthma.html">الربو (Asthme)</a></li>
+                            <li><a href="copd.html">الانسداد الرئوي المزمن (BPCO)</a></li>
+                            <li><a href="lung-cancer.html">سرطان الرئة (Cancer)</a></li>
+                            <li><a href="pulmonary-fibrosis.html">التليف الرئوي (Fibrose)</a></li>
+                            <li><a href="bronchitis.html">التهاب الشعب الهوائية (Bronchite)</a></li>
+                            <li><a href="pneumonia.html">التهاب الرئة (Pneumonie)</a></li>
+                            <li><a href="tuberculosis.html">السل (Tuberculose)</a></li>
+                            <li><a href="covid-19.html">كوفيد-19 (COVID-19)</a></li>
+                            <li><a href="influenza.html">الإنفلونزا (Grippe)</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <button class="dropdown-toggle" aria-expanded="false" type="button">
+                            <span><i class="fas fa-allergies" aria-hidden="true"></i> أمراض الحساسية</span>
+                            <i class="fas fa-chevron-down caret-icon" aria-hidden="true"></i>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="allergic-rhinitis.html">التهاب الأنف التحسسي (Rhinite)</a></li>
+                            <li><a href="allergic-asthma.html">الربو التحسسي (Asthme)</a></li>
+                            <li><a href="allergic-bronchitis.html">التهاب الشعب التحسسي</a></li>
+                            <li><a href="hypersensitivity-pneumonitis.html">التهاب الرئة التحسسي</a></li>
+                            <li><a href="urticaria.html">الشرى (Urticaire)</a></li>
+                            <li><a href="food-allergy.html">حساسية الطعام</a></li>
+                            <li><a href="drug-allergy.html">الحساسية الدوائية</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="sleep-apnea.html" class="nav-link"><i class="fas fa-bed" aria-hidden="true"></i> <span>انقطاع التنفس النومي</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <button class="dropdown-toggle" aria-expanded="false" type="button">
+                            <span><i class="fas fa-calculator" aria-hidden="true"></i> حاسبات صحية</span>
+                            <i class="fas fa-chevron-down caret-icon" aria-hidden="true"></i>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="bmi-calculator.html">مؤشر كتلة الجسم (BMI)</a></li>
+                            <li><a href="bmr-calculator.html">معدل الأيض الأساسي (BMR)</a></li>
+                            <li><a href="calorie-calculator.html">حاسبة السعرات الحرارية</a></li>
+                            <li><a href="whr-calculator.html">نسبة الخصر إلى الورك (WHR)</a></li>
+                            <li><a href="smoking-cost-calculator.html">حاسبة تكلفة التدخين</a></li>
+                            <li><a href="lung-age-calculator.html">حاسبة عمر الرئة</a></li>
+                            <li><a href="hydration-calculator.html">حاسبة الترطيب اليومي</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a href="index.html#services" class="nav-link"><i class="fas fa-stethoscope" aria-hidden="true"></i> <span>الخدمات</span></a></li>
+                    <li class="nav-item"><a href="index.html#coverage" class="nav-link"><i class="fas fa-map-marked-alt" aria-hidden="true"></i> <span>المناطق المجاورة</span></a></li>
+                    <li class="nav-item"><a href="index.html#faq" class="nav-link"><i class="fas fa-question-circle" aria-hidden="true"></i> <span>الأسئلة الشائعة</span></a></li>
+                    <li class="nav-item"><a href="index.html#apropos" class="nav-link"><i class="fas fa-user-md" aria-hidden="true"></i> <span>عن الدكتورة</span></a></li>
+                    <li class="nav-item"><a href="index.html#contact" class="nav-link"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> <span>التواصل والموقع</span></a></li>
+                </ul>
+            </div>
+        </nav>
+
     <main>
         <section id="intro-whr" class="info-section" aria-labelledby="intro-whr-heading">
             <h2 id="intro-whr-heading">ما هي نسبة الخصر إلى الورك (WHR) ولماذا هي مهمة؟</h2>
@@ -209,7 +229,7 @@
         <section class="whr-chart-container" aria-labelledby="whr-chart-heading">
             <h2 id="whr-chart-heading">فهم نتيجة نسبة الخصر إلى الورك (WHR)</h2>
             <p>بعد حساب نسبة الخصر إلى الورك، يمكنك مقارنة نتيجتك بالتصنيفات التالية لتقييم مستوى المخاطر الصحية المرتبطة بتوزيع الدهون (وفقًا لمنظمة الصحة العالمية WHO ومعايير أخرى شائعة):</p>
-            <table>
+            <div class="table-responsive"><table>
                 <thead>
                     <tr>
                         <th>الجنس</th>
@@ -245,7 +265,7 @@
                         <td>1.0 أو أعلى</td>
                     </tr>
                 </tbody>
-            </table>
+            </table></div>
             <p style="margin-top: 1rem;"><strong>ملاحظة:</strong> هذه القيم هي إرشادات عامة. قد تختلف الحدود قليلاً بين المصادر المختلفة. الأهم هو الاتجاه العام: كلما ارتفعت النسبة، زادت المخاطر الصحية المحتملة المرتبطة بالدهون الحشوية.</p>
         </section>
 
@@ -286,86 +306,80 @@
             </div>
         </section>
     </main>
-    <footer style="padding-bottom: 60px;">
-        <h2>عيادة الدكتورة بخة س</h2>
-        <p>اختصاصية في الأمراض الصدرية والحساسية، وتقديم الإرشاد الصحي</p>
-        <p><strong>العنوان:</strong> حي 19 جوان، خلف مستشفى الحكيم عقبي، ڨالمة، الجزائر</p>
-        <p>© <span id="currentYear"></span> جميع الحقوق محفوظة</p>
-    </footer>
-    <div class="watermark" style="position: fixed; bottom: 10px; left: 10px; opacity: 0.5; font-size: 10px; color: #aaa; z-index: 10000; background-color: rgba(255,255,255,0.7); padding: 2px 5px; border-radius: 3px;">Dr. Bakha - Guelma</div>
+
+        <!-- Main Footer -->
+        <footer class="main-footer">
+            <div class="footer-inner">
+                <p>© <span id="currentYear"></span> عيادة الدكتورة بخة س للأمراض الصدرية والحساسية - قالمة</p>
+                <p class="footer-address">حي 19 جوان، خلف مستشفى الحكيم عقبي، ڨالمة، الجزائر</p>
+            </div>
+        </footer>
+
+    </div> <!-- End #page-wrapper -->
+
+    <!-- Mobile Sticky Quick-Action Bar -->
+    <nav class="mobile-action-bar" aria-label="أزرار التواصل السريع">
+        <a href="tel:+213796222597" class="mobile-action-btn call-btn" aria-label="اتصال هاتفي">
+            <i class="fas fa-phone-alt" aria-hidden="true"></i>
+            <span>اتصال</span>
+        </a>
+        <a href="https://wa.me/213663755584" target="_blank" rel="noopener noreferrer" class="mobile-action-btn wa-btn" aria-label="تواصل عبر واتساب">
+            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+            <span>واتساب</span>
+        </a>
+        <a href="https://maps.google.com/?q=36.45512,7.43659" target="_blank" rel="noopener noreferrer" class="mobile-action-btn" aria-label="موقع العيادة على الخريطة">
+            <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+            <span>الموقع</span>
+        </a>
+        <a href="index.html#appointment" class="mobile-action-btn appt-btn" aria-label="حجز موعد">
+            <i class="fas fa-calendar-plus" aria-hidden="true"></i>
+            <span>حجز موعد</span>
+        </a>
+    </nav>
+
+    <!-- Essential Scripts -->
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" defer></script>
+    <script src="app.js" defer></script>
+    <script>
+        const yearEl = document.getElementById('currentYear');
+        if (yearEl) yearEl.textContent = new Date().getFullYear();
+    </script>
+
+
 
     <script>
         function calculateWHR() {
-            const waistInput = document.getElementById('waist');
-            const hipInput = document.getElementById('hip');
+            const waist = parseFloat(document.getElementById('waist').value);
+            const hip = parseFloat(document.getElementById('hip').value);
             const gender = document.getElementById('gender').value;
             const resultDiv = document.getElementById('whr-result');
 
-            resultDiv.innerHTML = ''; // Clear previous results
-
-            const waist = parseFloat(waistInput.value);
-            const hip = parseFloat(hipInput.value);
-
-            let errors = [];
-            if (isNaN(waist) || waist <= 20 || waist > 300) { // Realistic waist limits
-                errors.push("الرجاء إدخال قياس صحيح للخصر (بين 20 و 300 سم).");
-            }
-            if (isNaN(hip) || hip <= 20 || hip > 300) { // Realistic hip limits
-                errors.push("الرجاء إدخال قياس صحيح للورك (بين 20 و 300 سم).");
-            }
-            if (hip === 0) { // Should be caught by above, but explicit check
-                errors.push("محيط الورك يجب أن يكون أكبر من الصفر.");
-            }
-            if (waist > hip * 2 && hip > 0) { // Unlikely ratio, potential input error
-                 errors.push("قياس الخصر يبدو مرتفعًا جدًا مقارنة بالورك. يرجى التحقق من القياسات.");
-            }
-
-
-            if (errors.length > 0) {
-                let errorHTML = '<p class="error">يوجد خطأ في الإدخال:</p><ul>';
-                errors.forEach(err => {
-                    errorHTML += `<li class="error" style="text-align:right;">${err}</li>`;
-                });
-                errorHTML += '</ul>';
-                resultDiv.innerHTML = errorHTML;
+            if (isNaN(waist) || isNaN(hip) || waist <= 0 || hip <= 0) {
+                resultDiv.innerHTML = '<p class="error">يرجى إدخال قياسات الخصر والورك بشكل صحيح بالسنتيمتر.</p>';
                 return;
             }
-            
-            const whr = (waist / hip);
-            let interpretation = '';
-            let riskClass = '';
 
-            if (gender === "female") {
-                if (whr <= 0.80) {
-                    interpretation = 'منخفض المخاطر';
-                    riskClass = 'low-risk';
-                } else if (whr > 0.80 && whr <= 0.85) {
-                    interpretation = 'متوسط المخاطر';
-                    riskClass = 'moderate-risk';
-                } else { // whr > 0.85
-                    interpretation = 'عالي المخاطر';
-                    riskClass = 'high-risk';
-                }
-            } else { // male
-                if (whr <= 0.95) { // Using 0.95 as a common threshold for low risk in men
-                    interpretation = 'منخفض المخاطر';
-                    riskClass = 'low-risk';
-                } else if (whr > 0.95 && whr < 1.00) { // Some sources use <0.90 for low, 0.90-0.99 for moderate
-                    interpretation = 'متوسط المخاطر';
-                    riskClass = 'moderate-risk';
-                } else { // whr >= 1.00
-                    interpretation = 'عالي المخاطر';
-                    riskClass = 'high-risk';
-                }
+            const whr = (waist / hip).toFixed(2);
+            let riskLevel = '';
+            let riskColor = '';
+
+            if (gender === 'female') {
+                if (whr <= 0.80) { riskLevel = 'منخفض المخاطر'; riskColor = 'var(--success)'; }
+                else if (whr <= 0.85) { riskLevel = 'متوسط المخاطر'; riskColor = 'var(--accent-hover)'; }
+                else { riskLevel = 'عالي المخاطر'; riskColor = 'var(--danger)'; }
+            } else {
+                if (whr <= 0.95) { riskLevel = 'منخفض المخاطر'; riskColor = 'var(--success)'; }
+                else if (whr <= 1.0) { riskLevel = 'متوسط المخاطر'; riskColor = 'var(--accent-hover)'; }
+                else { riskLevel = 'عالي المخاطر'; riskColor = 'var(--danger)'; }
             }
-            
+
             resultDiv.innerHTML = `
-                <p>نسبة الخصر إلى الورك لديك هي: <strong style="font-size: 1.3em; color: #2a6bad;">${whr.toFixed(2)}</strong></p>
-                <p>مستوى المخاطر الصحية المرتبط بتوزيع الدهون لديك هو: <strong class="${riskClass}" style="font-weight:bold; padding: 2px 6px; border-radius: 3px;">${interpretation}</strong>.</p>
-                <p style="margin-top:10px; font-size:0.9em;">هذه نتيجة تقديرية. للحصول على تقييم شامل لصحتك، يرجى استشارة الدكتورة بخة س.</p>
+                <p>نسبة الخصر إلى الورك (WHR): <strong style="font-size: 1.3em; color: var(--primary);">${whr}</strong></p>
+                <p>مستوى المخاطر الصحية المرتبطة بتوزيع الدهون: <strong style="color: ${riskColor}; font-weight:bold;">${riskLevel}</strong></p>
+                <p style="margin-top: 10px; font-size: 0.9em; color: var(--text-muted);">هذه النتيجة تقديرية. للحصول على تقييم شامل لصحة وزنك ولياقتك، يرجى استشارة الدكتورة بخة س.</p>
             `;
         }
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
     </script>
+
 </body>
 </html>
