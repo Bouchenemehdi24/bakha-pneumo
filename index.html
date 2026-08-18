@@ -2,11 +2,15 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="theme-color" content="#1e3a8a">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+    <meta name="theme-color" content="#1e3a8a" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0b1120" media="(prefers-color-scheme: dark)">
     <meta name="format-detection" content="telephone=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-    <!-- Instant Theme Loader (Prevents Flash of Light/Dark Theme) -->
+    <!-- Instant Theme Loader (Zero Flash) -->
     <script>
         (function() {
             try {
@@ -18,42 +22,39 @@
         })();
     </script>
 
-    <!-- SEO & Metadata: Arabic, French & Local Search Optimization -->
+    <!-- SEO & Metadata -->
     <title>طبيب أمراض الصدر والحساسية قالمة | Pneumologue Allergologue Guelma - د. بخة س</title>
     <meta name="description" content="عيادة الدكتورة بخة س للأمراض الصدرية والحساسية بقالمة. أشعة الصدر الرقمية (Radio Thorax)، فحص وظائف الرئة (EFR)، علاج الربو، الحساسية، وضيق التنفس وانقطاع النوم.">
-    <meta name="keywords" content="Pneumologue Guelma, Allergologue Guelma, طبيب صدرية قالمة, طبيب حساسية قالمة, علاج الربو قالمة, راديو الصدر قالمة, علاج النهجة وضيق التنفس, فحص EFR قالمة, طبيب السعلة في قالمة, دكتورة بخة, وادي الزناتي, بوشقوف, هيليوبوليس, حمام دباغ, سوق أهراس, عنابة, radio thorax guelma, docteur poumon guelma">
+    <meta name="keywords" content="Pneumologue Guelma, Allergologue Guelma, طبيب صدرية قالمة, طبيب حساسية قالمة, علاج الربو قالمة, راديو الصدر قالمة, علاج النهجة وضيق التنفس, فحص EFR قالمة, دكتورة بخة, وادي الزناتي, بوشقوف, هيليوبوليس, حمام دباغ, سوق أهراس, عنابة">
     <meta name="author" content="عيادة الدكتورة بخة س">
     <link rel="canonical" href="https://bakha-pneumo.netlify.app/">
 
-    <!-- Open Graph / Multilingual Social -->
+    <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:locale" content="ar_DZ">
     <meta property="og:locale:alternate" content="fr_DZ">
     <meta property="og:url" content="https://bakha-pneumo.netlify.app/">
-    <meta property="og:title" content="Cabinet de Pneumologie et Allergologie Dr Bakha S - Guelma | عيادة أمراض الصدر والحساسية">
+    <meta property="og:title" content="Cabinet de Pneumologie et Allergologie Dr Bakha S - Guelma">
     <meta property="og:description" content="عيادة متخصصة في أمراض الجهاز التنفسي، الربو، الحساسية، راديو الصدر الرقمي وتخطيط النوم بولاية قالمة.">
     <meta property="og:image" content="https://bakha-pneumo.netlify.app/cabinet.png">
 
     <!-- Favicon -->
     <link rel="icon" href="cabinet-logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="cabinet-logo.png">
 
-    <!-- Performance: Preconnect to CDNs -->
+    <!-- Performance: Preconnect & Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="style.css">
     
-    <!-- Asynchronous Non-blocking FontAwesome -->
+    <!-- Non-blocking FontAwesome -->
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"></noscript>
     
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" media="(min-width: 768px)">
 
     <!-- Google Analytics (GA4) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-BCT8GP6LZT"></script>
@@ -64,51 +65,20 @@
       gtag('config', 'G-BCT8GP6LZT');
     </script>
 
-    <!-- Facebook Pixel -->
-    <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '2095513227953611');
-    fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2095513227953611&ev=PageView&noscript=1" alt=""/></noscript>
-
-    <!-- Schema.org JSON-LD (Valid MedicalClinic Structured Data) -->
+    <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "MedicalClinic",
       "@id": "https://bakha-pneumo.netlify.app/#clinic",
       "name": "عيادة الدكتورة بخة س للأمراض الصدرية والحساسية",
-      "alternateName": [
-        "Cabinet Médical Dr. Bakha S. - Pneumologue Allergologue",
-        "Cabinet de Pneumologie et Allergologie Dr Bakha S",
-        "عيادة أمراض الصدر والحساسية قالمة"
-      ],
-      "description": "عيادة متخصصة في تشخيص وعلاج أمراض الجهاز التنفسي، الربو، الحساسية الصدرية والجلدية، الأشعة الرقمية للصدر (Radio Thorax)، فحص وظائف الرئة (EFR)، وتسجيل اضطرابات النوم في ولاية ڨالمة.",
+      "alternateName": "Cabinet Médical Dr. Bakha S. - Pneumologue Allergologue",
+      "description": "عيادة متخصصة في تشخيص وعلاج أمراض الجهاز التنفسي، الربو، الحساسية الصدرية والجلدية، الأشعة الرقمية للصدر (Radio Thorax)، وفحص وظائف الرئة (EFR) في قالمة.",
       "url": "https://bakha-pneumo.netlify.app/",
-      "logo": "https://bakha-pneumo.netlify.app/cabinet-logo.png",
-      "image": "https://bakha-pneumo.netlify.app/cabinet-large.png",
       "telephone": ["+213796222597", "+213663755584"],
       "priceRange": "DZD",
       "currenciesAccepted": "DZD",
-      "paymentAccepted": "Cash, Chifa",
-      "medicalSpecialty": [
-        "Pulmonary",
-        "Allergy",
-        "RespiratoryTherapy"
-      ],
-      "hasMap": "https://maps.google.com/?q=36.455176,7.434448",
-      "sameAs": [
-        "https://www.facebook.com/profile.php?id=61560422818675",
-        "https://maps.app.goo.gl/CUUGiOIOMg-BEAE"
-      ],
+      "medicalSpecialty": ["Pulmonary", "Allergy", "RespiratoryTherapy"],
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "حي 19 جوان، خلف مستشفى الحكيم عقبي",
@@ -122,90 +92,12 @@
         "latitude": 36.455176,
         "longitude": 7.434448
       },
-      "areaServed": [
-        { "@type": "AdministrativeArea", "name": "ڨالمة - Guelma" },
-        { "@type": "AdministrativeArea", "name": "بوشقوف - Bouchegouf" },
-        { "@type": "AdministrativeArea", "name": "وادي الزناتي - Oued Zenati" },
-        { "@type": "AdministrativeArea", "name": "هيليوبوليس - Héliopolis" },
-        { "@type": "AdministrativeArea", "name": "حمام دباغ - Hammam Debagh" },
-        { "@type": "AdministrativeArea", "name": "سوق أهراس - Souk Ahras" },
-        { "@type": "AdministrativeArea", "name": "عنابة - Annaba" }
-      ],
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": [
-            "Saturday",
-            "Sunday",
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday"
-          ],
-          "opens": "08:00",
-          "closes": "16:00"
-        }
-      ],
-      "founder": {
-        "@type": "Physician",
-        "@id": "https://bakha-pneumo.netlify.app/#doctor",
-        "name": "الدكتورة بخة س",
-        "alternateName": "Dr. Bakha S.",
-        "jobTitle": "طبيبة أخصائية في الأمراض الصدرية، الحساسية واضطرابات النوم (Pneumologue-Allergologue)",
-        "url": "https://bakha-pneumo.netlify.app/#apropos",
-        "knowsLanguage": ["ar", "fr"],
-        "alumniOf": {
-          "@type": "EducationalOrganization",
-          "name": "كلية الطب والمستشفى الجامعي والعسكري بقسنطينة (Faculté de Médecine / CHU Constantine)"
-        }
-      },
-      "availableService": [
-        {
-          "@type": "MedicalTest",
-          "name": "تصوير الصدر بالأشعة السينية الرقمية (Radiographie thoracique numérique)",
-          "alternateName": "Radio du thorax numérique",
-          "description": "فحص إشعاعي عالي الدقة لتقييم صحة الرئتين والقفص الصدري والكشف الفوري عن الالتهابات، السل، وأورام الصدر."
-        },
-        {
-          "@type": "MedicalTest",
-          "name": "قياس الوظائف التنفسية (Spirométrie / EFR)",
-          "alternateName": "Exploration Fonctionnelle Respiratoire",
-          "description": "فحص دقيق لكفاءة الرئتين وتشخيص ومتابعة حالات الربو والانسداد الرئوي المزمن."
-        },
-        {
-          "@type": "MedicalTest",
-          "name": "اختبارات الحساسية الجلدية (Tests Cutanés d'Allergie / Prick Tests)",
-          "alternateName": "Tests d'allergie",
-          "description": "تحديد مسببات الحساسية الصدرية، الأنفية، والغذائية بنتائج سريعة ودقيقة."
-        },
-        {
-          "@type": "MedicalProcedure",
-          "name": "تسجيل النوم والتنفس (Polygraphie Ventilatoire du Sommeil)",
-          "alternateName": "تشخيص انقطاع التنفس النومي (Apnée du sommeil)",
-          "description": "فحص وتشخيص متلازمة انقطاع التنفس والشخير أثناء النوم وتحديد خطة العلاج المناسبة."
-        },
-        {
-          "@type": "MedicalProcedure",
-          "name": "تشخيص وعلاج أمراض الصدر والربو (Prise en charge de l'Asthme et BPCO)",
-          "description": "متابعة شاملة لمرضى الربو، الحساسية الصدرية، والتهابات الشعب الهوائية للأطفال والبالغين."
-        }
-      ],
-      "contactPoint": [
-        {
-          "@type": "ContactPoint",
-          "telephone": "+213796222597",
-          "contactType": "reservations",
-          "availableLanguage": ["Arabic", "French"],
-          "areaServed": "DZ"
-        },
-        {
-          "@type": "ContactPoint",
-          "telephone": "+213663755584",
-          "contactType": "customer support",
-          "availableLanguage": ["Arabic", "French"],
-          "areaServed": "DZ"
-        }
-      ]
+      "openingHoursSpecification": [{
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"],
+        "opens": "08:00",
+        "closes": "16:00"
+      }]
     }
     </script>
 </head>
@@ -214,12 +106,12 @@
     <!-- Mobile Drawer Overlay -->
     <div class="menu-overlay" id="menuOverlay" aria-hidden="true"></div>
 
-    <div id="content-wrapper">
+    <div id="page-wrapper">
         
         <!-- Live Clinic Status Bar -->
         <aside class="datetime-bar" aria-label="توقيت وحالة العيادة">
             <div class="datetime-container">
-                <span id="arabic-time" class="current-time"></span>
+                <span id="arabic-time" class="current-time">--:--</span>
                 <div id="clinic-status" class="clinic-status">
                     <span class="status-indicator">
                         <i class="fas fa-circle" aria-hidden="true"></i>
@@ -233,22 +125,23 @@
         <!-- Main Header -->
         <header class="main-header">
             <div class="header-inner">
-                <div class="clinic-brand">
+                <a href="#hero" class="clinic-brand" aria-label="الصفحة الرئيسية">
                     <div class="logo-container">
                         <img 
                             src="cabinet-logo.png" 
-                            width="46"
-                            height="46"
-                            alt="شعار عيادة الدكتورة بخة" 
-                            class="clinic-logo">
+                            width="44"
+                            height="44"
+                            alt="شعار عيادة د. بخة" 
+                            class="clinic-logo"
+                            decoding="async">
                     </div>
                     <div class="clinic-title">
                         <h1>عيادة الدكتورة بخة س</h1>
                         <p class="clinic-subtitle">أمراض الصدر والحساسية - قالمة</p>
                     </div>
-                </div>
+                </a>
 
-                <!-- Clean Integrated Header Actions -->
+                <!-- Header Actions -->
                 <div class="header-actions">
                     <div id="google_translate_element" class="lang-selector-wrap"></div>
                     
@@ -263,11 +156,11 @@
             </div>
         </header>
 
-        <!-- Navigation Drawer / Menu -->
+        <!-- Navigation Drawer -->
         <nav class="main-nav" id="mainNav" aria-label="القائمة الرئيسية">
             <div class="nav-container">
                 <div class="nav-drawer-header">
-                    <span class="drawer-title">القائمة الرئيسية</span>
+                    <span class="drawer-title">القائمة والتخصصات</span>
                     <button class="close-drawer-btn" id="closeDrawerBtn" aria-label="إغلاق القائمة" type="button">
                         <i class="fas fa-times" aria-hidden="true"></i>
                     </button>
@@ -322,21 +215,23 @@
                             <li><a href="lung-age-calculator.html">حاسبة عمر الرئة</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item"><a href="#services" class="nav-link">الخدمات</a></li>
-                    <li class="nav-item"><a href="#faq" class="nav-link">الأسئلة الشائعة</a></li>
-                    <li class="nav-item"><a href="#apropos" class="nav-link">عن الدكتورة</a></li>
-                    <li class="nav-item"><a href="#contact" class="nav-link">التواصل</a></li>
+                    <li class="nav-item"><a href="#services" class="nav-link"><i class="fas fa-stethoscope" aria-hidden="true"></i> <span>الخدمات</span></a></li>
+                    <li class="nav-item"><a href="#faq" class="nav-link"><i class="fas fa-question-circle" aria-hidden="true"></i> <span>الأسئلة الشائعة</span></a></li>
+                    <li class="nav-item"><a href="#apropos" class="nav-link"><i class="fas fa-user-md" aria-hidden="true"></i> <span>عن الدكتورة</span></a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> <span>التواصل والموقع</span></a></li>
                 </ul>
             </div>
         </nav>
 
-        <!-- Main Page Content -->
-        <main>
+        <!-- Main Content -->
+        <main id="main-content">
+            
             <!-- Hero Section -->
-            <section id="hero" class="hero-section" data-aos="fade-up">
+            <section id="hero" class="hero-section">
                 <div class="hero-content">
+                    <span class="hero-badge"><i class="fas fa-shield-alt" aria-hidden="true"></i> رعاية طبية متقدمة بقالمة</span>
                     <h2>رعاية متخصصة في أمراض الجهاز التنفسي، الحساسية وأشعة الصدر</h2>
-                    <p class="hero-desc">تشخيص دقيق بالأشعة الرقمية، قياس كفاءة الرئة EFR، وتجهيزات حديثة لعلاج الربو والحساسية لجميع الأعمار في ولاية قالمة.</p>
+                    <p class="hero-desc">تشخيص فوري بالأشعة الرقمية، فحص كفاءة الرئة EFR، وتجهيزات حديثة لعلاج الربو والحساسية لجميع الأعمار.</p>
                     <div class="hero-actions">
                         <a href="#appointment" class="cta-button primary-cta">
                             <i class="fas fa-calendar-check" aria-hidden="true"></i> طلب موعد بالعيادة
@@ -349,144 +244,140 @@
             </section>
 
             <!-- Services Section -->
-            <section id="services" class="services-section" data-aos="fade-up">
+            <section id="services" class="services-section">
                 <h2 class="section-title">خدماتنا الطبية المتخصصة</h2>
                 <div class="services-grid">
                     <article class="service-card">
                         <div class="service-icon-box"><i class="fas fa-lungs" aria-hidden="true"></i></div>
-                        <h3>تشخيص وعلاج الأمراض الصدرية</h3>
-                        <p>متابعة الربو، الانسداد الرئوي المزمن (BPCO)، السل، التليف وأورام الصدر.</p>
+                        <h3>تشخيص وعلاج أمراض الصدر</h3>
+                        <p>متابعة الربو، الانسداد الرئوي المزمن (BPCO)، السل، التليف وأورام الجهاز التنفسي.</p>
                     </article>
 
-                    <!-- Digital Chest X-Ray (Radio Thorax) -->
-                    <article class="service-card">
+                    <article class="service-card featured-service">
                         <div class="service-icon-box"><i class="fas fa-x-ray" aria-hidden="true"></i></div>
+                        <span class="card-tag">فوري بالعيادة</span>
                         <h3>أشعة الصدر الرقمية (Radio Thorax)</h3>
-                        <p>تصوير إشعاعي عالي الدقة (Radiographie thoracique numérique) للتشخيص الفوري لصحة الرئتين والقفص الصدري.</p>
+                        <p>تصوير إشعاعي عالي الدقة (Radiographie numérique) للتشخيص الفوري لصحة الرئتين والقفص الصدري.</p>
                     </article>
 
                     <article class="service-card">
                         <div class="service-icon-box"><i class="fas fa-chart-line" aria-hidden="true"></i></div>
                         <h3>قياس كفاءة الرئة (EFR / Spirométrie)</h3>
-                        <p>فحص دقيق لكفاءة التنفس ووظائف الرئة بواسطة جهاز قياس التنفس المتطور.</p>
+                        <p>فحص دقيق لكفاءة التنفس ووظائف الرئة للمرضى والرياضيين والمدخنين.</p>
                     </article>
 
                     <article class="service-card">
                         <div class="service-icon-box"><i class="fas fa-allergies" aria-hidden="true"></i></div>
                         <h3>اختبارات الحساسية الجلدية</h3>
-                        <p>تحديد مسببات الحساسية الصدرية، الأنفية والغذائية عبر Tests Cutanés الدقيقة.</p>
+                        <p>تحديد مسببات الحساسية الصدرية، الأنفية والغذائية عبر Prick Tests السريعة والآمنة.</p>
                     </article>
 
                     <article class="service-card">
                         <div class="service-icon-box"><i class="fas fa-bed" aria-hidden="true"></i></div>
                         <h3>تسجيل النوم والتنفس (Polygraphie)</h3>
-                        <p>Polygraphie du sommeil لتشخيص متلازمة انقطاع التنفس والشخير أثناء النوم.</p>
+                        <p>Polygraphie du sommeil لتشخيص أسباب الشخير ومتلازمة انقطاع النفس النومي.</p>
                     </article>
 
                     <article class="service-card">
                         <div class="service-icon-box"><i class="fas fa-child" aria-hidden="true"></i></div>
                         <h3>أمراض رئة وحساسية الأطفال</h3>
-                        <p>رعاية وفحوصات خاصة للأطفال المصابين بالربو، السعال المتكرر وضيق التنفس.</p>
+                        <p>رعاية طبية لطيفة وفحوصات خاصة للأطفال المصابين بالسعال المتكرر والحساسية.</p>
                     </article>
                 </div>
             </section>
 
-            <!-- SEO Section 1: Common Symptoms & Consultations -->
-            <section id="symptoms" class="seo-symptoms-section" data-aos="fade-up">
-                <h2 class="section-title">متى يجب عليك زيارة طبيب الصدرية والحساسية؟ <br><span class="sub-fr">Quand consulter un Pneumologue-Allergologue ?</span></h2>
-                <p class="symptoms-lead">إذا كنت تعاني أنت أو أحد أفراد عائلتك من أحد الأعراض التالية، يُنصح بإجراء فحص سريري دقيق بالعيادة:</p>
+            <!-- Symptoms Section -->
+            <section id="symptoms" class="seo-symptoms-section">
+                <h2 class="section-title">متى يجب عليك زيارة طبيب الصدرية والحساسية؟ <br><span class="sub-fr">Quand consulter un Pneumologue ?</span></h2>
+                <p class="symptoms-lead">يُنصح بإجراء فحص سريري دقيق في حال ظهور أي من الأعراض التالية:</p>
                 
                 <div class="symptoms-grid">
                     <div class="symptom-tag">
                         <i class="fas fa-check-circle" aria-hidden="true"></i>
-                        <span><strong>ضيق التنفس والنهجة:</strong> صعوبة أخذ النفس خاصة عند بذل مجهود أو أثناء الليل (Gêne respiratoire / Essoufflement).</span>
+                        <span><strong>ضيق التنفس والنهجة:</strong> صعوبة التنفس عند بذل مجهود أو أثناء الاستلقاء ليلاً.</span>
                     </div>
                     <div class="symptom-tag">
                         <i class="fas fa-check-circle" aria-hidden="true"></i>
-                        <span><strong>السعال المزمن (السعلة الطويلة):</strong> كحة مستمرة لأكثر من 3 أسابيع سواء كانت جافة أو مصحوبة ببلغم (Toux persistante).</span>
+                        <span><strong>السعال المزمن (السعلة):</strong> كحة متواصلة لأكثر من 3 أسابيع سواء جافة أو ببلغم.</span>
                     </div>
                     <div class="symptom-tag">
                         <i class="fas fa-check-circle" aria-hidden="true"></i>
-                        <span><strong>التصفير وحريق الصدر:</strong> صوت صفير أو خشخشة في القفص الصدري أثناء التنفس (Sifflement thoracique).</span>
+                        <span><strong>الصفير وحريق الصدر:</strong> صوت صفير أو تزييق أثناء الشهيق والزفير.</span>
                     </div>
                     <div class="symptom-tag">
                         <i class="fas fa-check-circle" aria-hidden="true"></i>
-                        <span><strong>حساسية الأنف والعيون:</strong> العطاس المتكرر، سيلان الأنف، انسداد التنفس وحكة العينين الموسمية (Rhinite allergique).</span>
+                        <span><strong>حساسية الأنف والعيون:</strong> العطاس، الحكة، وانسداد الأنف المتكرر (Rhinite).</span>
                     </div>
                     <div class="symptom-tag">
                         <i class="fas fa-check-circle" aria-hidden="true"></i>
-                        <span><strong>الشخير وانقطاع النفس أثناء النوم:</strong> الاستيقاظ المتكرر مع الإحساس بالاختناق والتعب الصباحي (Apnée du sommeil).</span>
+                        <span><strong>الشخير وانقطاع النفس:</strong> الاستيقاظ بالاختناق والصداع والخمول اليومي.</span>
                     </div>
                     <div class="symptom-tag">
                         <i class="fas fa-check-circle" aria-hidden="true"></i>
-                        <span><strong>متابعة صحة المدخنين:</strong> الكشف المبكر بالأشعة وقياس التنفس لحماية الرئتين من التلف (Bilan respiratoire du fumeur).</span>
+                        <span><strong>فحص الرئة للمدخنين:</strong> مراقبة سنوية للرئتين والوقاية من التلف الرئوي.</span>
                     </div>
                 </div>
             </section>
 
-            <!-- SEO Section 2: Regional Coverage (Guelma & Surrounding Cities) -->
-            <section id="coverage" class="seo-coverage-section" data-aos="fade-up">
+            <!-- Coverage Section -->
+            <section id="coverage" class="seo-coverage-section">
                 <div class="coverage-box">
-                    <h3><i class="fas fa-map-marked-alt" aria-hidden="true"></i> استقبال المرضى من ولاية قالمة والولايات المجاورة</h3>
+                    <h3><i class="fas fa-map-marked-alt" aria-hidden="true"></i> نستقبلكم من قالمة وكافة المناطق المجاورة</h3>
                     <p>
-                        تقع العيادة في موقع استراتيجي بوسط مدينة <strong>ڨالمة (حي 19 جوان، خلف مستشفى الحكيم عقبي)</strong>، وتستقبل يومياً المرضى القادمين من كافة بلديات ودوائر الولاية:
+                        تقع العيادة بوسط مدينة <strong>ڨالمة (حي 19 جوان، خلف مستشفى الحكيم عقبي)</strong>، وتستقبل يومياً مرضانا من:
                     </p>
-                    <div class="city-pills">
-                        <span>ڨالمة (وسط المدينة)</span>
-                        <span>وادي الزناتي</span>
-                        <span>بوشقوف</span>
-                        <span>هيليوبوليس</span>
-                        <span>حمام دباغ</span>
-                        <span>مجاز عمار</span>
-                        <span>عين مخلوف</span>
-                        <span>بلخير</span>
-                        <span>قلعة بوصبع</span>
-                        <span>نشماية</span>
-                        <span>عين بن بيضاء</span>
-                        <span>حمام النبائل</span>
+                    <div class="city-pills" role="list">
+                        <span role="listitem">ڨالمة وسط</span>
+                        <span role="listitem">وادي الزناتي</span>
+                        <span role="listitem">بوشقوف</span>
+                        <span role="listitem">هيليوبوليس</span>
+                        <span role="listitem">حمام دباغ</span>
+                        <span role="listitem">مجاز عمار</span>
+                        <span role="listitem">عين مخلوف</span>
+                        <span role="listitem">بلخير</span>
+                        <span role="listitem">قلعة بوصبع</span>
+                        <span role="listitem">نشماية</span>
+                        <span role="listitem">سوق أهراس</span>
+                        <span role="listitem">عنابة</span>
                     </div>
-                    <p class="neighboring-note">
-                        كما نرحب بمرضانا القادمين من الولايات القريبة: <strong>سوق أهراس، عنابة، الطارف، أم البواقي، وقسنطينة</strong> لتلقي الفحوصات المتخصصة الشاملة (أشعة الصدر الرقمية، EFR، اختبارات الحساسية، وتسجيل النوم).
-                    </p>
                 </div>
             </section>
 
             <!-- FAQ Section -->
-            <section id="faq" class="faq-section" data-aos="fade-up">
+            <section id="faq" class="faq-section">
                 <h2 class="section-title">الأسئلة الأكثر شيوعاً</h2>
                 <div class="faq-grid">
                     <details class="faq-accordion" open>
-                        <summary><i class="fas fa-question-circle" aria-hidden="true"></i> هل العيادة تقبل بطاقة الشفاء؟</summary>
-                        <div class="faq-answer">نعم، العيادة متعاقدة مع بطاقة الشفاء لتسهيل الفحوصات والوصفات الطبية للمرضى المؤمنين.</div>
+                        <summary><i class="fas fa-credit-card" aria-hidden="true"></i> هل تقبل العيادة بطاقة الشفاء؟</summary>
+                        <div class="faq-answer">نعم، العيادة متعاقدة ومجهزة بنظام بطاقة الشفاء لتسهيل الفحوصات والوصفات الطبية.</div>
                     </details>
                     <details class="faq-accordion">
-                        <summary><i class="fas fa-x-ray" aria-hidden="true"></i> هل تتوفر أشعة الصدر (Radio Thorax) مباشرة في العيادة؟</summary>
-                        <div class="faq-answer">نعم، تتوفر العيادة على جهاز تصوير إشعاعي رقمي عالي الدقة، مما يتيح للمريض إجراء الفحص السريري وصورة الأشعة في نفس الزيارة دون عناء التنقل لمركز أشعة خارجي.</div>
+                        <summary><i class="fas fa-x-ray" aria-hidden="true"></i> هل تتوفر أشعة الصدر (Radio Thorax) داخل العيادة؟</summary>
+                        <div class="faq-answer">نعم، العيادة مزودة بجهاز تصوير رقمي فوري، فلن تحتاج للتنقل لمركز تصوير خارجي.</div>
                     </details>
                     <details class="faq-accordion">
-                        <summary><i class="fas fa-calendar-alt" aria-hidden="true"></i> هل الحجز عبر الموقع إلزامي؟</summary>
-                        <div class="faq-answer">الحجز الإلكتروني يمنحك أولوية التنظيم وتأكيد التوقيت المناسب لك، كما تستقبل العيادة المرضى دون موعد مسبق خلال ساعات العمل الرسمية (من السبت إلى الخميس: 08:00 - 16:00).</div>
+                        <summary><i class="fas fa-clock" aria-hidden="true"></i> هل يمكن الحضور بدون حجز موعد مسبق؟</summary>
+                        <div class="faq-answer">نعم، تستقبل العيادة الحالات المباشرة يومياً من السبت إلى الخميس من 08:00 صباحاً حتى 16:00 مساءً.</div>
                     </details>
                     <details class="faq-accordion">
-                        <summary><i class="fas fa-map-marker-alt" aria-hidden="true"></i> أين تقع العيادة بدقة؟</summary>
+                        <summary><i class="fas fa-map-pin" aria-hidden="true"></i> ما هو العنوان الدقيق للعيادة؟</summary>
                         <div class="faq-answer">ولاية قالمة، حي 19 جوان، مباشرة خلف مستشفى الحكيم عقبي، مقابل الصيدلية.</div>
                     </details>
                 </div>
             </section>
 
             <!-- Appointment Form Section -->
-            <section id="appointment" class="appointment-section" data-aos="fade-up">
+            <section id="appointment" class="appointment-section">
                 <div class="appointment-content">
-                    <h2 class="section-title text-light">طلب موعد عبر الإنترنت</h2>
-                    <p class="appointment-intro">يرجى ملء النموذج، وسيقوم طاقم العيادة بالاتصال بكم هاتفياً لتأكيد ساعة الحضور:</p>
+                    <h2 class="section-title text-light">طلب موعد بالعيادة</h2>
+                    <p class="appointment-intro">املأ المعلومات التالية، وسيتواصل معكم فريق الاستقبال لتأكيد وقت الزيارة:</p>
                     
                     <form id="appointmentForm-ar" action="https://formspree.io/f/mblowkoo" method="POST" class="mobile-form" novalidate>
-                        <!-- Formspree Spam Honeypot -->
                         <input type="text" name="_gotcha" style="display:none !important;" tabindex="-1" autocomplete="off">
 
                         <div class="form-group">
                             <label for="name-ar">الاسم واللقب <span class="req">*</span></label>
-                            <input type="text" id="name-ar" name="name" autocomplete="name" required placeholder="مثال: محمد بلقاسم">
+                            <input type="text" id="name-ar" name="name" autocomplete="name" enterkeyhint="next" required placeholder="مثال: محمد بلقاسم">
                             <span class="field-error" id="name-error"></span>
                         </div>
 
@@ -502,13 +393,13 @@
 
                         <div class="form-group">
                             <label for="phone-ar">رقم الهاتف <span class="req">*</span></label>
-                            <input type="tel" id="phone-ar" name="phone" autocomplete="tel" inputmode="numeric" placeholder="0796XXXXXX أو 0663XXXXXX" required>
+                            <input type="tel" id="phone-ar" name="phone" autocomplete="tel" inputmode="numeric" enterkeyhint="next" placeholder="07XXXXXXXX أو 06XXXXXXXX" required>
                             <span class="field-error" id="phone-error"></span>
                         </div>
 
                         <div class="form-group">
-                            <label for="appointmentDate-ar">التاريخ المفضل للموعد <span class="req">*</span></label>
-                            <input type="date" id="appointmentDate-ar" name="appointment_date" required>
+                            <label for="appointmentDate-ar">التاريخ المفضل <span class="req">*</span></label>
+                            <input type="date" id="appointmentDate-ar" name="appointment_date" enterkeyhint="done" required>
                             <span class="field-error" id="date-error"></span>
                         </div>
 
@@ -519,55 +410,62 @@
                 </div>
             </section>
 
-            <!-- Contact & Map Section -->
-            <section id="contact" class="contact-section" data-aos="fade-up">
-                <h2 class="section-title">معلومات الاتصال والموقع</h2>
+            <!-- Contact & Map -->
+            <section id="contact" class="contact-section">
+                <h2 class="section-title">التواصل والموقع</h2>
                 <div class="contact-cards-container">
                     <a href="tel:+213796222597" class="contact-card touch-card">
                         <i class="fas fa-phone-alt" aria-hidden="true"></i>
-                        <h3>الهاتف المباشر</h3>
+                        <h3>الاتصال الهاتفي</h3>
                         <p dir="ltr">0796 22 25 97</p>
                     </a>
                     <a href="https://wa.me/213663755584" target="_blank" rel="noopener noreferrer" class="contact-card touch-card whatsapp-card">
                         <i class="fab fa-whatsapp" aria-hidden="true"></i>
-                        <h3>واتساب (WhatsApp)</h3>
+                        <h3>مراسلة واتساب</h3>
                         <p dir="ltr">0663 75 55 84</p>
                     </a>
                     <div class="contact-card">
-                        <i class="fas fa-clock" aria-hidden="true"></i>
-                        <h3>أوقات العمل والاستقبال</h3>
+                        <i class="fas fa-door-open" aria-hidden="true"></i>
+                        <h3>أوقات العمل</h3>
                         <p>السبت إلى الخميس: 08:00 - 16:00</p>
                     </div>
                 </div>
 
-                <div class="map-wrapper">
+                <!-- Touch-friendly Map Wrapper -->
+                <div class="map-wrapper" id="mapWrapper">
                     <iframe 
+                        id="googleMapIframe"
                         title="موقع عيادة الدكتورة بخة على خرائط جوجل"
                         src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3209.1007271838494!2d7.436598084719768!3d36.455121980020934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1scabinet%20de%20pneumologie%20allergologie%20Dr.%20Bakha%20S!5e0!3m2!1sar!2sdz!4v1735734049065!5m2!1sar!2sdz" 
                         width="100%" 
-                        height="320" 
+                        height="300" 
                         style="border:0;" 
                         allowfullscreen="" 
                         loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
+                    <div class="map-overlay" id="mapOverlay">
+                        <a href="https://maps.google.com/?q=36.45512,7.43659" target="_blank" rel="noopener noreferrer" class="cta-button primary-cta map-direct-btn">
+                            <i class="fas fa-directions" aria-hidden="true"></i> فتح عبر تطبيق الخرائط GPS
+                        </a>
+                    </div>
                 </div>
             </section>
 
-            <!-- About Doctor Section -->
-            <section id="apropos" class="about-section" data-aos="fade-up">
+            <!-- About Doctor -->
+            <section id="apropos" class="about-section">
                 <div class="about-card">
                     <div class="about-header">
-                        <img src="cabinet-medium.png" width="80" height="80" alt="الدكتورة بخة س" class="about-emblem" loading="lazy">
+                        <img src="cabinet-medium.png" width="70" height="70" alt="الدكتورة بخة س" class="about-emblem" loading="lazy" decoding="async">
                         <div>
                             <h3>الدكتورة بخة س</h3>
-                            <p class="about-badge">طبيبة أخصائية في الأمراض الصدرية، الحساسية واضطرابات النوم</p>
+                            <p class="about-badge">طبيبة أخصائية في الأمراض الصدرية والحساسية</p>
                         </div>
                     </div>
                     <ul class="about-list">
                         <li><i class="fas fa-check-circle" aria-hidden="true"></i> خريجة كلية الطب والمستشفى الجامعي والعسكري بقسنطينة.</li>
-                        <li><i class="fas fa-check-circle" aria-hidden="true"></i> تكوين وخبرة سريرية متقدمة في الحساسية الصدرية ومشاكل التنفس أثناء النوم.</li>
-                        <li><i class="fas fa-check-circle" aria-hidden="true"></i> عيادة مجهزة بأحدث المعدات الطبية للتصوير الإشعاعي الرقمي والفحص الوظيفي للرئتين.</li>
+                        <li><i class="fas fa-check-circle" aria-hidden="true"></i> فحص تشخيصي متكامل للأشعة، وظائف التنفس، واضطرابات النوم.</li>
+                        <li><i class="fas fa-check-circle" aria-hidden="true"></i> رعاية مخصصة للبالغين والأطفال بأحدث المعايير الطبية.</li>
                     </ul>
                 </div>
             </section>
@@ -576,12 +474,12 @@
         <!-- Footer -->
         <footer class="main-footer">
             <div class="footer-inner">
-                <p>© 2025 عيادة الدكتورة بخة س للأمراض الصدرية والحساسية - جميع الحقوق محفوظة</p>
-                <p class="footer-address"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> حي 19 جوان، خلف مستشفى الحكيم عقبي، ولاية قالمة، الجزائر</p>
+                <p>© 2025 عيادة الدكتورة بخة س للأمراض الصدرية والحساسية</p>
+                <p class="footer-address"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> حي 19 جوان، خلف مستشفى الحكيم عقبي، قالمة</p>
             </div>
         </footer>
 
-        <!-- Mobile Sticky Quick-Action Bar -->
+        <!-- Mobile Sticky Fast-Action Bar -->
         <aside class="mobile-action-bar" aria-label="شريط الوصول السريع">
             <a href="tel:+213796222597" class="mobile-action-btn call-btn">
                 <i class="fas fa-phone-alt" aria-hidden="true"></i>
@@ -617,7 +515,7 @@
 
     </div>
 
-    <!-- Scripts (Deferred for Maximum Speed) -->
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
     <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" defer></script>
     <script src="app.js" defer></script>
