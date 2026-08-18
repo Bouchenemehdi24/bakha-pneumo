@@ -8,7 +8,7 @@
     "Cabinet de Pneumologie et Allergologie Dr Bakha S",
     "عيادة أمراض الصدر والحساسية قالمة"
   ],
-  "description": "عيادة متخصصة في تشخيص وعلاج أمراض الجهاز التنفسي، الربو، الحساسية الصدرية والجلدية، فحص وظائف الرئة (EFR)، وتسجيل اضطرابات النوم في ولاية ڨالمة. Cabinet médical spécialisé à Guelma : Asthme, Allergies, Spirométrie, et Apnée du Sommeil.",
+  "description": "عيادة متخصصة في تشخيص وعلاج أمراض الجهاز التنفسي، الربو، الحساسية الصدرية والجلدية، الأشعة الرقمية للصدر (Radio Thorax)، فحص وظائف الرئة (EFR)، وتسجيل اضطرابات النوم في ولاية ڨالمة.",
   "url": "https://bakha-pneumo.netlify.app/",
   "logo": "https://bakha-pneumo.netlify.app/cabinet-logo.png",
   "image": "https://bakha-pneumo.netlify.app/cabinet-large.png",
@@ -40,46 +40,18 @@
     "longitude": 7.434448
   },
   "areaServed": [
-    {
-      "@type": "AdministrativeArea",
-      "name": "ڨالمة - Guelma"
-    },
-    {
-      "@type": "AdministrativeArea",
-      "name": "بوشقوف - Bouchegouf"
-    },
-    {
-      "@type": "AdministrativeArea",
-      "name": "وادي الزناتي - Oued Zenati"
-    },
-    {
-      "@type": "AdministrativeArea",
-      "name": "هيليوبوليس - Héliopolis"
-    },
-    {
-      "@type": "AdministrativeArea",
-      "name": "حمام دباغ - Hammam Debagh"
-    },
-    {
-      "@type": "AdministrativeArea",
-      "name": "سوق أهراس - Souk Ahras"
-    },
-    {
-      "@type": "AdministrativeArea",
-      "name": "عنابة - Annaba"
-    }
+    { "@type": "AdministrativeArea", "name": "ڨالمة - Guelma" },
+    { "@type": "AdministrativeArea", "name": "بوشقوف - Bouchegouf" },
+    { "@type": "AdministrativeArea", "name": "وادي الزناتي - Oued Zenati" },
+    { "@type": "AdministrativeArea", "name": "هيليوبوليس - Héliopolis" },
+    { "@type": "AdministrativeArea", "name": "حمام دباغ - Hammam Debagh" },
+    { "@type": "AdministrativeArea", "name": "سوق أهراس - Souk Ahras" },
+    { "@type": "AdministrativeArea", "name": "عنابة - Annaba" }
   ],
   "openingHoursSpecification": [
     {
       "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Saturday",
-        "Sunday",
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday"
-      ],
+      "dayOfWeek": ["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"],
       "opens": "08:00",
       "closes": "16:00"
     }
@@ -98,6 +70,12 @@
     }
   },
   "availableService": [
+    {
+      "@type": "MedicalTest",
+      "name": "تصوير الصدر بالأشعة السينية الرقمية (Radiographie thoracique numérique)",
+      "alternateName": "Radio du thorax numérique",
+      "description": "فحص إشعاعي عالي الدقة لتقييم صحة الرئتين والقفص الصدري والكشف الفوري عن الالتهابات، السل، وأورام الصدر."
+    },
     {
       "@type": "MedicalTest",
       "name": "قياس الوظائف التنفسية (Spirométrie / EFR)",
@@ -120,11 +98,6 @@
       "@type": "MedicalProcedure",
       "name": "تشخيص وعلاج أمراض الصدر والربو (Prise en charge de l'Asthme et BPCO)",
       "description": "متابعة شاملة لمرضى الربو، الحساسية الصدرية، والتهابات الشعب الهوائية للأطفال والبالغين."
-    },
-    {
-      "@type": "MedicalProcedure",
-      "name": "المساعدة على الإقلاع عن التدخين (Sevrage Tabagique)",
-      "description": "مرافقة طبية وبرامج علاجية لمساعدة المدخنين على التوقف عن التدخين وحماية الرئتين."
     }
   ],
   "contactPoint": [
