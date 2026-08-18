@@ -12,7 +12,7 @@
   "url": "https://bakha-pneumo.netlify.app/",
   "logo": "https://bakha-pneumo.netlify.app/cabinet-logo.png",
   "image": "https://bakha-pneumo.netlify.app/cabinet-large.png",
-  "telephone": ["+213796222597", "+213663755584"],
+  "telephone": "+213663755584",
   "priceRange": "DZD",
   "currenciesAccepted": "DZD",
   "paymentAccepted": "Cash, Chifa",
@@ -130,7 +130,7 @@
   "contactPoint": [
     {
       "@type": "ContactPoint",
-      "telephone": "+213796222597",
+      "telephone": "+213663755584",
       "contactType": "reservations",
       "availableLanguage": ["Arabic", "French"],
       "areaServed": "DZ"

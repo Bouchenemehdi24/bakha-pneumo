@@ -370,7 +370,7 @@ const BookingForm = {
             const cleanPhone = utils.cleanAlgerianPhone(phoneInput.value);
             if (!CONFIG.ALGERIAN_PHONE_REGEX.test(cleanPhone)) {
                 phoneInput.classList.add('invalid');
-                utils.getElement('phone-error').textContent = 'يرجى إدخال رقم هاتف جزائري صحيح (مثل 0796222597)';
+                utils.getElement('phone-error').textContent = 'يرجى إدخال رقم هاتف جزائري صحيح (مثل 0663755584)';
                 hasError = true;
             }
 
