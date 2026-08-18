@@ -1,20 +1,31 @@
 {
   "@context": "https://schema.org",
   "@type": "MedicalClinic",
-  "@id": "https://bakha-pneumo.netlify.app/",
-  "name": "عيادة الدكتورة بخة س",
-  "alternateName": "Cabinet Médical Dr. Bakha S.",
-  "description": "عيادة طبية متخصصة في تشخيص وعلاج الأمراض الصدرية، الحساسية، واضطرابات النوم في ڨالمة، الجزائر. نقدم خدمات شاملة تشمل علاج الربو، سرطان الرئة، انقطاع التنفس أثناء النوم، التهاب الشعب الهوائية، وتصوير الصدر بالأشعة السينية. (Clinique médicale spécialisée dans le diagnostic et le traitement des maladies pulmonaires, des allergies et des troubles du sommeil à Guelma, Algérie.)",
-  "medicalSpecialty": ["Pulmonology", "AllergyAndImmunology", "SleepMedicine"],
-  "image": {
-    "@type": "ImageObject",
-    "url": "https://bakha-pneumo.netlify.app/images/clinic-photo.jpg", // Ensure this image exists and is representative
-    "caption": "صورة لعيادة الدكتورة بخة س في قالمة"
-  },
-  "logo": {
-      "@type": "ImageObject",
-      "url": "https://bakha-pneumo.netlify.app/cabinet.png" // Assuming this is your logo
-  },
+  "@id": "https://bakha-pneumo.netlify.app/#clinic",
+  "name": "عيادة الدكتورة بخة س للأمراض الصدرية والحساسية",
+  "alternateName": [
+    "Cabinet Médical Dr. Bakha S. - Pneumologue Allergologue",
+    "Cabinet de Pneumologie et Allergologie Dr Bakha S",
+    "عيادة أمراض الصدر والحساسية قالمة"
+  ],
+  "description": "عيادة متخصصة في تشخيص وعلاج أمراض الجهاز التنفسي، الربو، الحساسية الصدرية والجلدية، فحص وظائف الرئة (EFR)، وتسجيل اضطرابات النوم في ولاية ڨالمة. Cabinet médical spécialisé à Guelma : Asthme, Allergies, Spirométrie, et Apnée du Sommeil.",
+  "url": "https://bakha-pneumo.netlify.app/",
+  "logo": "https://bakha-pneumo.netlify.app/cabinet-logo.png",
+  "image": "https://bakha-pneumo.netlify.app/cabinet-large.png",
+  "telephone": ["+213796222597", "+213663755584"],
+  "priceRange": "DZD",
+  "currenciesAccepted": "DZD",
+  "paymentAccepted": "Cash, Chifa",
+  "medicalSpecialty": [
+    "Pulmonary",
+    "Allergy",
+    "RespiratoryTherapy"
+  ],
+  "hasMap": "https://maps.google.com/?q=36.455176,7.434448",
+  "sameAs": [
+    "https://www.facebook.com/profile.php?id=61560422818675",
+    "https://maps.app.goo.gl/CUUGiOIOMg-BEAE"
+  ],
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "حي 19 جوان، خلف مستشفى الحكيم عقبي",
@@ -25,132 +36,111 @@
   },
   "geo": {
     "@type": "GeoCoordinates",
-    "latitude": "36.45517612695582",
-    "longitude": "7.4344489018555"
+    "latitude": 36.455176,
+    "longitude": 7.434448
   },
-  "telephone": ["+213663755584", "+213796222597"], // List both numbers if applicable, in E.164
-  "url": "https://bakha-pneumo.netlify.app/",
-  "hasMap": "https://goo.gl/maps/CUUGiOIOMg-BEAE", // Your Google Maps link
+  "areaServed": [
+    {
+      "@type": "AdministrativeArea",
+      "name": "ڨالمة - Guelma"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "بوشقوف - Bouchegouf"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "وادي الزناتي - Oued Zenati"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "هيليوبوليس - Héliopolis"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "حمام دباغ - Hammam Debagh"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "سوق أهراس - Souk Ahras"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "عنابة - Annaba"
+    }
+  ],
   "openingHoursSpecification": [
     {
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": [
-        "https://schema.org/Saturday",
-        "https://schema.org/Sunday",    // Assuming Sunday is a working day
-        "https://schema.org/Monday",
-        "https://schema.org/Tuesday",
-        "https://schema.org/Wednesday",
-        "https://schema.org/Thursday"
+        "Saturday",
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday"
       ],
       "opens": "08:00",
       "closes": "16:00"
     }
-    // If Friday is closed, it's implicitly handled by not being listed.
-    // If Friday has different hours, add another OpeningHoursSpecification object for Friday.
   ],
-  "sameAs": [
-    "https://g.page/r/CUUGiOIOMg-BEAE/", // Google My Business Link
-    "https://www.facebook.com/profile.php?id=61560422818675" // Facebook Page (cleaned URL)
-  ],
-  "contactPoint": [ // Can have multiple contact points if needed
+  "founder": {
+    "@type": "Physician",
+    "@id": "https://bakha-pneumo.netlify.app/#doctor",
+    "name": "الدكتورة بخة س",
+    "alternateName": "Dr. Bakha S.",
+    "jobTitle": "طبيبة أخصائية في الأمراض الصدرية، الحساسية واضطرابات النوم (Pneumologue-Allergologue)",
+    "url": "https://bakha-pneumo.netlify.app/#apropos",
+    "knowsLanguage": ["ar", "fr"],
+    "alumniOf": {
+      "@type": "EducationalOrganization",
+      "name": "كلية الطب والمستشفى الجامعي والعسكري بقسنطينة (Faculté de Médecine / CHU Constantine)"
+    }
+  },
+  "availableService": [
     {
-      "@type": "ContactPoint",
-      "telephone": "+213663755584",
-      "contactType": "موعد طبي أو استفسار (Rendez-vous médical ou renseignements)",
-      "areaServed": {
-        "@type": "City",
-        "name": "ڨالمة"
-      },
-      "availableLanguage": ["ar", "fr", "en"]
+      "@type": "MedicalTest",
+      "name": "قياس الوظائف التنفسية (Spirométrie / EFR)",
+      "alternateName": "Exploration Fonctionnelle Respiratoire",
+      "description": "فحص دقيق لكفاءة الرئتين وتشخيص ومتابعة حالات الربو والانسداد الرئوي المزمن."
     },
+    {
+      "@type": "MedicalTest",
+      "name": "اختبارات الحساسية الجلدية (Tests Cutanés d'Allergie / Prick Tests)",
+      "alternateName": "Tests d'allergie",
+      "description": "تحديد مسببات الحساسية الصدرية، الأنفية، والغذائية بنتائج سريعة ودقيقة."
+    },
+    {
+      "@type": "MedicalProcedure",
+      "name": "تسجيل النوم والتنفس (Polygraphie Ventilatoire du Sommeil)",
+      "alternateName": "تشخيص انقطاع التنفس النومي (Apnée du sommeil)",
+      "description": "فحص وتشخيص متلازمة انقطاع التنفس والشخير أثناء النوم وتحديد خطة العلاج المناسبة."
+    },
+    {
+      "@type": "MedicalProcedure",
+      "name": "تشخيص وعلاج أمراض الصدر والربو (Prise en charge de l'Asthme et BPCO)",
+      "description": "متابعة شاملة لمرضى الربو، الحساسية الصدرية، والتهابات الشعب الهوائية للأطفال والبالغين."
+    },
+    {
+      "@type": "MedicalProcedure",
+      "name": "المساعدة على الإقلاع عن التدخين (Sevrage Tabagique)",
+      "description": "مرافقة طبية وبرامج علاجية لمساعدة المدخنين على التوقف عن التدخين وحماية الرئتين."
+    }
+  ],
+  "contactPoint": [
     {
       "@type": "ContactPoint",
       "telephone": "+213796222597",
-      "contactType": "استفسارات عامة (Renseignements généraux)", // Example for a second number
-      "areaServed": {
-        "@type": "City",
-        "name": "ڨالمة"
-      },
-      "availableLanguage": ["ar", "fr", "en"]
+      "contactType": "reservations",
+      "availableLanguage": ["Arabic", "French"],
+      "areaServed": "DZ"
+    },
+    {
+      "@type": "ContactPoint",
+      "telephone": "+213663755584",
+      "contactType": "customer support",
+      "availableLanguage": ["Arabic", "French"],
+      "areaServed": "DZ"
     }
-  ],
-  "priceRange": "$$", // Example: "متوسط" or use symbols like $, $$, $$$ if common in your region
-  "makesOffer": [
-    {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Service",
-        "name": "تشخيص وعلاج الربو (Diagnostic et traitement de l'asthme)",
-        "description": "تقييم شامل وعلاج مخصص لجميع أنواع الربو للبالغين والأطفال."
-      }
-    },
-    {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "MedicalTest", // More specific type
-        "name": "فحص وظائف الرئة (قياس التنفس - Spirométrie)",
-        "alternateName": "EFR",
-        "description": "تقييم دقيق لوظائف الرئة لتشخيص ومتابعة الأمراض التنفسية."
-      }
-    },
-    {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Service", // Could be MedicalProcedure or more specific
-        "name": "علاج انقطاع التنفس أثناء النوم (Traitement de l'apnée du sommeil)",
-        "description": "تشخيص وعلاج شامل لاضطرابات التنفس أثناء النوم بما في ذلك العلاج بـ CPAP ودراسة النوم."
-      }
-    },
-    {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "MedicalTest",
-        "name": "اختبارات الحساسية (Tests d'allergie)",
-        "description": "تحديد مسببات الحساسية التنفسية والجلدية والغذائية من خلال اختبارات دقيقة."
-      }
-    },
-    {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Service",
-        "name": "المساعدة في الإقلاع عن التدخين (Aide au sevrage tabagique)",
-        "description": "برامج دعم واستشارات للمساعدة في الإقلاع عن التدخين بنجاح وتحسين صحة الرئة."
-      }
-    },
-    {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "MedicalTest",
-        "name": "تصوير الصدر بالأشعة السينية (Radiographie thoracique numérique)",
-        "alternateName": "Radio du thorax",
-        "description": "فحص تصويري أساسي لتقييم صحة الرئتين والقلب والكشف عن حالات مثل الالتهاب الرئوي، السل، أو أورام الصدر. (Examen d'imagerie essentiel pour évaluer la santé des poumons, du cœur et détecter des affections telles que la pneumonie, la tuberculose ou les tumeurs thoraciques.)",
-        "medicalSpecialty": "Radiology", // The procedure itself is radiology
-        "disambiguatingDescription": "يُعرف أيضًا بـ أشعة الصدر أو صورة الصدر الشعاعية."
-      }
-    }
-    // Add other key services your clinic provides
-  ],
-  "founder": { // Assuming Dr. Bakha S. is the founder/main physician
-      "@type": "Physician",
-      "name": "الدكتورة بخة س (Dr. Bakha S.)",
-      "jobTitle": "اختصاصية في الأمراض الصدرية والحساسية واضطرابات النوم (Pneumologue, Allergologue et Spécialiste des troubles du sommeil)",
-      "url": "https://bakha-pneumo.netlify.app/#apropos", // Link to her bio section if available
-      "knowsLanguage": ["ar", "fr", "en"],
-      "alumniOf": { // Optional: if you want to add education
-        "@type": "EducationalOrganization",
-        "name": "اسم الجامعة أو المستشفى الجامعي الذي تخرجت منه" // Name of the University/Hospital
-      },
-      "worksFor": {
-         "@id": "https://bakha-pneumo.netlify.app/" // Links back to this clinic
-      }
-  },
-  "aggregateRating": { // If you have reviews on Google/Facebook etc.
-    "@type": "AggregateRating",
-    "ratingValue": "4.5", // Example value
-    "reviewCount": "27",  // Example value
-    "itemReviewed": {
-        "@type": "MedicalClinic",
-        "name": "عيادة الدكتورة بخة س (Cabinet Dr. Bakha S.)"
-    }
-  }
+  ]
 }
