@@ -157,6 +157,36 @@ const UI = {
         });
     },
 
+    initializeSymptomNavigator: () => {
+        const tabs = document.querySelectorAll('.symptom-tab');
+        const panels = document.querySelectorAll('.symptom-panel');
+        if (!tabs.length || !panels.length) return;
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const targetPanelId = tab.getAttribute('aria-controls');
+                if (!targetPanelId) return;
+
+                tabs.forEach(t => {
+                    t.classList.remove('active');
+                    t.setAttribute('aria-selected', 'false');
+                });
+                tab.classList.add('active');
+                tab.setAttribute('aria-selected', 'true');
+
+                panels.forEach(p => {
+                    if (p.id === targetPanelId) {
+                        p.classList.add('active');
+                        p.removeAttribute('hidden');
+                    } else {
+                        p.classList.remove('active');
+                        p.setAttribute('hidden', 'true');
+                    }
+                });
+            });
+        });
+    },
+
     initializeGoogleTranslate: () => {
         window.googleTranslateElementInit = function() {
             try {
@@ -399,6 +429,7 @@ document.addEventListener('DOMContentLoaded', () => {
     UI.initializeThemeToggle();
     UI.initializeMobileDrawer();
     UI.initializeDropdowns();
+    UI.initializeSymptomNavigator();
     UI.initializeGoogleTranslate();
 
     ClinicSchedule.initialize();

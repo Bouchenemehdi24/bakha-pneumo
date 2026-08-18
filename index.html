@@ -265,9 +265,187 @@
                         <a href="#appointment" class="cta-button primary-cta">
                             <i class="fas fa-calendar-check" aria-hidden="true"></i> طلب موعد بالعيادة
                         </a>
+                        <a href="https://wa.me/213663755584?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%20%D8%B9%D9%8A%D8%A7%D8%AF%D8%A9%20%D8%AF.%20%D8%A8%D8%AE%D8%A9%D8%8C%20%D8%A3%D9%88%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AD%D8%AC%D8%B2%20%D9%85%D9%88%D8%B9%D8%AF" target="_blank" rel="noopener noreferrer" class="cta-button wa-hero-cta">
+                            <i class="fab fa-whatsapp" aria-hidden="true"></i> حجز سريع عبر واتساب
+                        </a>
                         <a href="tel:+213796222597" class="cta-button secondary-cta">
                             <i class="fas fa-phone-alt" aria-hidden="true"></i> اتصال مباشر
                         </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Interactive Symptom Navigator Widget -->
+            <section id="symptom-navigator" class="symptom-navigator-section">
+                <div class="navigator-card">
+                    <div class="navigator-header">
+                        <span class="navigator-badge"><i class="fas fa-stethoscope" aria-hidden="true"></i> التوجيه السريع للأعراض</span>
+                        <h2 class="section-title">بماذا تشعر؟ دليل الفحوصات والتوجيه الطبي الفوري</h2>
+                        <p class="navigator-subtitle">اختر العَرَض الذي تعاني منه لمعرفة الفحص الطبي الموصى به والخطوة القادمة:</p>
+                    </div>
+
+                    <!-- Symptom Selection Tabs -->
+                    <div class="symptom-tabs" role="tablist" aria-label="قائمة الأعراض">
+                        <button class="symptom-tab active" role="tab" aria-selected="true" aria-controls="symptom-panel-breath" id="tab-breath">
+                            <i class="fas fa-lungs" aria-hidden="true"></i>
+                            <span>ضيق في التنفس (نهجة)</span>
+                        </button>
+                        <button class="symptom-tab" role="tab" aria-selected="false" aria-controls="symptom-panel-cough" id="tab-cough">
+                            <i class="fas fa-head-side-cough" aria-hidden="true"></i>
+                            <span>سعال مزمن ومستمر</span>
+                        </button>
+                        <button class="symptom-tab" role="tab" aria-selected="false" aria-controls="symptom-panel-allergy" id="tab-allergy">
+                            <i class="fas fa-allergies" aria-hidden="true"></i>
+                            <span>حساسية الأنف والجلد</span>
+                        </button>
+                        <button class="symptom-tab" role="tab" aria-selected="false" aria-controls="symptom-panel-sleep" id="tab-sleep">
+                            <i class="fas fa-bed" aria-hidden="true"></i>
+                            <span>شخير وانقطاع النفس</span>
+                        </button>
+                        <button class="symptom-tab" role="tab" aria-selected="false" aria-controls="symptom-panel-smoker" id="tab-smoker">
+                            <i class="fas fa-smoking" aria-hidden="true"></i>
+                            <span>المدخنون ومراقبة الرئة</span>
+                        </button>
+                    </div>
+
+                    <!-- Dynamic Result Panels -->
+                    <div class="symptom-panels">
+                        
+                        <!-- 1. ضيق التنفس -->
+                        <div class="symptom-panel active" id="symptom-panel-breath" role="tabpanel" aria-labelledby="tab-breath">
+                            <div class="panel-header">
+                                <div class="panel-title-wrap">
+                                    <span class="panel-tag"><i class="fas fa-info-circle"></i> التشخيص المحتمل</span>
+                                    <h3>أعراض ضيق التنفس (Essoufflement / Dyspnée)</h3>
+                                </div>
+                                <span class="urgency-badge"><i class="fas fa-heartbeat"></i> فحص سريري ضروري</span>
+                            </div>
+                            <p class="panel-desc">صعوبة أخذ نفس عميق عند بذل مجهود أو أثناء النوم، مع إحساس بضيق القفص الصدري أو تزييق، قد يكون مؤشراً على <strong>الربو (Asthme)</strong> أو <strong>مرض الانسداد الرئوي المزمن (BPCO)</strong>.</p>
+                            <div class="panel-tests">
+                                <h4><i class="fas fa-clipboard-check"></i> الفحوصات المتوفرة بالعيادة:</h4>
+                                <div class="test-badges">
+                                    <span class="test-badge"><i class="fas fa-check"></i> فحص وظائف الرئة الإلكتروني (EFR / Spirométrie)</span>
+                                    <span class="test-badge"><i class="fas fa-check"></i> أشعة الصدر الرقمية الفورية (Radio Thorax)</span>
+                                </div>
+                            </div>
+                            <div class="panel-actions">
+                                <a href="https://wa.me/213663755584?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%20%D8%B9%D9%8A%D8%A7%D8%AF%D8%A9%20%D8%AF.%20%D8%A8%D8%AE%D8%A9%D8%8C%20%D8%A3%D8%B9%D8%A7%D9%86%D9%8A%20%D9%85%D9%86%20%D8%B6%D9%8A%D9%82%20%D8%AA%D9%86%D9%81%D8%B3%20%D9%88%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%AD%D8%AC%D8%B2%20%D9%85%D9%88%D8%B9%D8%AF%20%D9%81%D8%AD%D8%B5%20EFR" target="_blank" rel="noopener noreferrer" class="cta-button primary-cta">
+                                    <i class="fab fa-whatsapp"></i> استفسار وحجز فحص التنفس عبر واتساب
+                                </a>
+                                <a href="asthma.html" class="cta-button secondary-cta">
+                                    <i class="fas fa-book-medical"></i> دليل الربو وضيق التنفس
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- 2. السعال المزمن -->
+                        <div class="symptom-panel" id="symptom-panel-cough" role="tabpanel" aria-labelledby="tab-cough" hidden>
+                            <div class="panel-header">
+                                <div class="panel-title-wrap">
+                                    <span class="panel-tag"><i class="fas fa-info-circle"></i> التشخيص المحتمل</span>
+                                    <h3>السعال المستمر لأكثر من 3 أسابيع (Toux Chronique)</h3>
+                                </div>
+                                <span class="urgency-badge"><i class="fas fa-clock"></i> استشارة موصى بها</span>
+                            </div>
+                            <p class="panel-desc">سواء كان السعال جافاً أو مصحوباً ببلغم، فإن استمراره يستدعي تصوير الرئتين للكشف عن التهاب الشعب الهوائية، الحساسية الصدرية، أو الالتهابات الرئوية المزمنة.</p>
+                            <div class="panel-tests">
+                                <h4><i class="fas fa-clipboard-check"></i> الفحوصات المتوفرة بالعيادة:</h4>
+                                <div class="test-badges">
+                                    <span class="test-badge"><i class="fas fa-check"></i> تصوير الصدر بالأشعة الرقمية (Radio Thorax)</span>
+                                    <span class="test-badge"><i class="fas fa-check"></i> قياس السعة التنفسية وفحص القصبات</span>
+                                </div>
+                            </div>
+                            <div class="panel-actions">
+                                <a href="https://wa.me/213663755584?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D9%88%D8%AF%20%D8%AD%D8%AC%D8%B2%20%D9%85%D9%88%D8%B9%D8%AF%20%D9%84%D9%81%D8%AD%D8%B5%20%D8%A7%D9%84%D8%B3%D8%B9%D8%A7%D9%84%20%D8%A7%D9%84%D9%85%D8%B2%D9%85%D9%86%20%D9%88%D8%A5%D8%AC%D8%B1%D8%A7%D8%A1%20%D8%A3%D8%B4%D8%B9%D8%A9%20%D8%A7%D9%84%D8%B5%D8%AF%D8%B1" target="_blank" rel="noopener noreferrer" class="cta-button primary-cta">
+                                    <i class="fab fa-whatsapp"></i> حجز موعد أشعة وفحص السعال
+                                </a>
+                                <a href="bronchitis.html" class="cta-button secondary-cta">
+                                    <i class="fas fa-book-medical"></i> دليل التهاب الشعب الهوائية
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- 3. الحساسية -->
+                        <div class="symptom-panel" id="symptom-panel-allergy" role="tabpanel" aria-labelledby="tab-allergy" hidden>
+                            <div class="panel-header">
+                                <div class="panel-title-wrap">
+                                    <span class="panel-tag"><i class="fas fa-info-circle"></i> التشخيص المحتمل</span>
+                                    <h3>حساسية الأنف، العين والجلد (Rhinite & Allergies)</h3>
+                                </div>
+                                <span class="urgency-badge"><i class="fas fa-allergies"></i> علاج نوعي</span>
+                            </div>
+                            <p class="panel-desc">عطاس متكرر، حكة بالأنف والعيون، سيلان مائي أو طفح جلدي، تنتج عن رد فعل مناعي تجاه غبار الطلع، عث الفراش، أو وبر الحيوانات. التشخيص الدقيق يتيح العلاج المناعي الفعال.</p>
+                            <div class="panel-tests">
+                                <h4><i class="fas fa-clipboard-check"></i> الفحوصات المتوفرة بالعيادة:</h4>
+                                <div class="test-badges">
+                                    <span class="test-badge"><i class="fas fa-check"></i> اختبارات وخز الجلد الفورية (Prick Tests) - نتيجة في 15 دقيقة</span>
+                                    <span class="test-badge"><i class="fas fa-check"></i> خطة العلاج المناعي وإزالة التحسس (Désensibilisation)</span>
+                                </div>
+                            </div>
+                            <div class="panel-actions">
+                                <a href="https://wa.me/213663755584?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A7%D8%AE%D8%AA%D8%A8%D8%A7%D8%B1%D8%A7%D8%AA%20%D8%A7%D9%84%D8%AD%D8%B3%D8%A7%D8%B3%D9%8A%D8%A9%20%D8%A7%D9%84%D8%AC%D9%84%D8%AF%D9%8A%D8%A9%20(Prick%20Test)" target="_blank" rel="noopener noreferrer" class="cta-button primary-cta">
+                                    <i class="fab fa-whatsapp"></i> استفسار وحجز اختبار الحساسية Prick Test
+                                </a>
+                                <a href="allergic-rhinitis.html" class="cta-button secondary-cta">
+                                    <i class="fas fa-book-medical"></i> دليل حساسية الأنف
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- 4. انقطاع التنفس النومي -->
+                        <div class="symptom-panel" id="symptom-panel-sleep" role="tabpanel" aria-labelledby="tab-sleep" hidden>
+                            <div class="panel-header">
+                                <div class="panel-title-wrap">
+                                    <span class="panel-tag"><i class="fas fa-info-circle"></i> التشخيص المحتمل</span>
+                                    <h3>الشخير واختناق النوم والنعاس (Apnée du Sommeil)</h3>
+                                </div>
+                                <span class="urgency-badge"><i class="fas fa-bed"></i> فحص متقدم</span>
+                            </div>
+                            <p class="panel-desc">الشخير القوي، الاستيقاظ المتكرر مع جفاف الفم، والنعاس والصداع الصباحي هي أعراض كلاسيكية لمتلازمة انقطاع النفس أثناء النوم التي تؤثر على صحة القلب والدماغ.</p>
+                            <div class="panel-tests">
+                                <h4><i class="fas fa-clipboard-check"></i> الفحوصات المتوفرة بالعيادة:</h4>
+                                <div class="test-badges">
+                                    <span class="test-badge"><i class="fas fa-check"></i> جهاز تخطيط وتسجيل النوم المحمول (Polygraphie Ventilatoire)</span>
+                                    <span class="test-badge"><i class="fas fa-check"></i> قياس نسبة الأكسجين ونبضات القلب أثناء النوم</span>
+                                </div>
+                            </div>
+                            <div class="panel-actions">
+                                <a href="https://wa.me/213663755584?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%AD%D8%AC%D8%B2%20%D9%81%D8%AD%D8%B5%20%D9%88%D8%AA%D8%AE%D8%B7%D9%8A%D8%B7%20%D8%A7%D9%84%D9%86%D9%88%D9%85%20(Polygraphie)" target="_blank" rel="noopener noreferrer" class="cta-button primary-cta">
+                                    <i class="fab fa-whatsapp"></i> استفسار وحجز فحص تخطيط النوم
+                                </a>
+                                <a href="sleep-apnea.html" class="cta-button secondary-cta">
+                                    <i class="fas fa-book-medical"></i> دليل انقطاع التنفس النومي
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- 5. فحص المدخنين -->
+                        <div class="symptom-panel" id="symptom-panel-smoker" role="tabpanel" aria-labelledby="tab-smoker" hidden>
+                            <div class="panel-header">
+                                <div class="panel-title-wrap">
+                                    <span class="panel-tag"><i class="fas fa-info-circle"></i> الفحص الوقائي</span>
+                                    <h3>الفحص السنوي الشامل لصحة رئة المدخن (Bilan Fumeur)</h3>
+                                </div>
+                                <span class="urgency-badge"><i class="fas fa-shield-alt"></i> وقاية مبكرة</span>
+                            </div>
+                            <p class="panel-desc">التدخين يتلف أنسجة الرئة تدريجياً. الفحص الدوري يسمح باكتشاف الانسداد الرئوي والالتهابات في مراحلها الأولى قبل تطور الأعراض الخطيرة.</p>
+                            <div class="panel-tests">
+                                <h4><i class="fas fa-clipboard-check"></i> الفحوصات المتوفرة بالعيادة:</h4>
+                                <div class="test-badges">
+                                    <span class="test-badge"><i class="fas fa-check"></i> أشعة الصدر الرقمية الفورية (Radio Thorax)</span>
+                                    <span class="test-badge"><i class="fas fa-check"></i> فحص كفاءة وظائف الرئة الإلكتروني (EFR)</span>
+                                </div>
+                            </div>
+                            <div class="panel-actions">
+                                <a href="https://wa.me/213663755584?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D9%88%D8%AF%20%D8%AD%D8%AC%D8%B2%20%D9%81%D8%AD%D8%B5%20%D8%B4%D8%A7%D9%85%D9%84%20%D9%84%D9%84%D8%B1%D8%A6%D8%A9%20%D9%88%D9%88%D8%B8%D8%A7%D8%A6%D9%81%20%D8%A7%D9%84%D8%AA%D9%86%D9%81%D8%B3" target="_blank" rel="noopener noreferrer" class="cta-button primary-cta">
+                                    <i class="fab fa-whatsapp"></i> حجز الفحص الشامل للرئة
+                                </a>
+                                <a href="lung-age-calculator.html" class="cta-button secondary-cta">
+                                    <i class="fas fa-calculator"></i> احسب عمر رئتيك الآن
+                                </a>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </section>
@@ -315,35 +493,69 @@
                 </div>
             </section>
 
-            <!-- Symptoms Section -->
-            <section id="symptoms" class="seo-symptoms-section">
-                <h2 class="section-title">متى يجب عليك زيارة طبيب الصدرية والحساسية؟ <br><span class="sub-fr">Quand consulter un Pneumologue ?</span></h2>
-                <p class="symptoms-lead">يُنصح بإجراء فحص سريري دقيق في حال ظهور أي من الأعراض التالية:</p>
-                
-                <div class="symptoms-grid">
-                    <div class="symptom-tag">
-                        <i class="fas fa-check-circle" aria-hidden="true"></i>
-                        <span><strong>ضيق التنفس والنهجة:</strong> صعوبة التنفس عند بذل مجهود أو أثناء الاستلقاء ليلاً.</span>
+            <!-- Equipment & Technology Showcase Section -->
+            <section id="technology" class="equipment-section">
+                <div class="equipment-header">
+                    <span class="section-badge"><i class="fas fa-microchip" aria-hidden="true"></i> التجهيزات والتكنولوجيا الطبية</span>
+                    <h2 class="section-title">تجهيزات تشخيصية رقمية متطورة داخل العيادة</h2>
+                    <p class="section-subtitle">نوفر أحدث الأجهزة الطبية لتشخيص سريع ودقيق دون الحاجة للتنقل بين مخابر متعددة:</p>
+                </div>
+
+                <div class="equipment-grid">
+                    <!-- 1. Radio Thorax -->
+                    <div class="equipment-card">
+                        <div class="equip-badge">نتائج فورية</div>
+                        <div class="equip-icon-wrap">
+                            <i class="fas fa-x-ray" aria-hidden="true"></i>
+                        </div>
+                        <h3>أشعة الصدر الرقمية الفورية</h3>
+                        <span class="equip-fr">Radiographie Thoracique Numérique</span>
+                        <p>تصوير إشعاعي رقمي عالي الدقة للقفص الصدري والرئتين يُمكّن من كشف الالتهابات والسل وأورام الصدر فوراً أثناء الاستشارة.</p>
+                        <a href="https://wa.me/213663755584?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D9%88%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A3%D8%B4%D8%B9%D8%A9%20%D8%A7%D9%84%D8%B5%D8%AF%D8%B1%20%D8%A7%D9%84%D8%B1%D9%82%D9%85%D9%8A%D8%A9%20(Radio%20Thorax)" target="_blank" rel="noopener noreferrer" class="equip-btn">
+                            <i class="fab fa-whatsapp"></i> استفسار عن أشعة الصدر
+                        </a>
                     </div>
-                    <div class="symptom-tag">
-                        <i class="fas fa-check-circle" aria-hidden="true"></i>
-                        <span><strong>السعال المزمن (السعلة):</strong> كحة متواصلة لأكثر من 3 أسابيع سواء جافة أو ببلغم.</span>
+
+                    <!-- 2. Spirométrie / EFR -->
+                    <div class="equipment-card">
+                        <div class="equip-badge">فحص إلكتروني دقيق</div>
+                        <div class="equip-icon-wrap">
+                            <i class="fas fa-lungs" aria-hidden="true"></i>
+                        </div>
+                        <h3>قياس وظائف الرئة (EFR)</h3>
+                        <span class="equip-fr">Exploration Fonctionnelle Respiratoire</span>
+                        <p>جهاز قياس التنفس الإلكتروني لتقييم حجم الهواء وسرعة التدفق وتشخيص الربو، الانسداد الرئوي المزمن، وتقييم كفاءة الجهاز التنفسي.</p>
+                        <a href="https://wa.me/213663755584?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D9%88%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D9%81%D8%AD%D8%B3%20%D9%88%D8%B8%D8%A7%D8%A6%D9%81%20%D8%A7%D9%84%D8%B1%D8%A6%D8%A9%20(EFR)" target="_blank" rel="noopener noreferrer" class="equip-btn">
+                            <i class="fab fa-whatsapp"></i> استفسار عن فحص EFR
+                        </a>
                     </div>
-                    <div class="symptom-tag">
-                        <i class="fas fa-check-circle" aria-hidden="true"></i>
-                        <span><strong>الصفير وحريق الصدر:</strong> صوت صفير أو تزييق أثناء الشهيق والزفير.</span>
+
+                    <!-- 3. Prick Tests -->
+                    <div class="equipment-card">
+                        <div class="equip-badge">نتيجة خلال 15 دقيقة</div>
+                        <div class="equip-icon-wrap">
+                            <i class="fas fa-allergies" aria-hidden="true"></i>
+                        </div>
+                        <h3>اختبارات وخز الجلد للحساسية</h3>
+                        <span class="equip-fr">Prick Tests Allergologiques</span>
+                        <p>اختبارات جلدية سريعة ودقيقة لتحديد مسببات الحساسية التنفسية والغذائية والجلدية كخطوة أساسية لوضع خطة العلاج المناعي.</p>
+                        <a href="https://wa.me/213663755584?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D9%88%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%A7%D8%AE%D8%AA%D8%A8%D8%A7%D8%B1%D8%A7%D8%AA%20%D8%A7%D9%84%D8%AD%D8%B3%D8%A7%D8%B3%D9%8A%D8%A9%20Prick%20Tests" target="_blank" rel="noopener noreferrer" class="equip-btn">
+                            <i class="fab fa-whatsapp"></i> استفسار عن فحص الحساسية
+                        </a>
                     </div>
-                    <div class="symptom-tag">
-                        <i class="fas fa-check-circle" aria-hidden="true"></i>
-                        <span><strong>حساسية الأنف والعيون:</strong> العطاس، الحكة، وانسداد الأنف المتكرر (Rhinite).</span>
-                    </div>
-                    <div class="symptom-tag">
-                        <i class="fas fa-check-circle" aria-hidden="true"></i>
-                        <span><strong>الشخير وانقطاع النفس:</strong> الاستيقاظ بالاختناق والصداع والخمول اليومي.</span>
-                    </div>
-                    <div class="symptom-tag">
-                        <i class="fas fa-check-circle" aria-hidden="true"></i>
-                        <span><strong>فحص الرئة للمدخنين:</strong> مراقبة سنوية للرئتين والوقاية من التلف الرئوي.</span>
+
+                    <!-- 4. Polygraphie -->
+                    <div class="equipment-card">
+                        <div class="equip-badge">جهاز محمول للمنزل</div>
+                        <div class="equip-icon-wrap">
+                            <i class="fas fa-bed" aria-hidden="true"></i>
+                        </div>
+                        <h3>تسجيل وتخطيط النوم</h3>
+                        <span class="equip-fr">Polygraphie Ventilatoire Nocturne</span>
+                        <p>جهاز رقمي محمول يُسجل حركات التنفس ومستوى الأكسجين أثناء النوم في المنزل لتشخيص انقطاع التنفس والشخير بدقة وراحة تامة.</p>
+                        <a href="https://wa.me/213663755584?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D9%88%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D9%81%D8%AD%D8%B3%20%D8%AA%D8%AE%D8%B7%D9%8A%D8%B7%20%D8%A7%D9%84%D9%86%D9%88%D9%85%20(Polygraphie)" target="_blank" rel="noopener noreferrer" class="equip-btn">
+                            <i class="fab fa-whatsapp"></i> استفسار عن تخطيط النوم
+                        </a>
                     </div>
                 </div>
             </section>
@@ -479,7 +691,7 @@
                         <h3>الاتصال الهاتفي</h3>
                         <p dir="ltr">0796 22 25 97</p>
                     </a>
-                    <a href="https://wa.me/213663755584" target="_blank" rel="noopener noreferrer" class="contact-card touch-card whatsapp-card">
+                    <a href="https://wa.me/213663755584?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%20%D8%B9%D9%8A%D8%A7%D8%AF%D8%A9%20%D8%AF.%20%D8%A8%D8%AE%D8%A9%D8%8C%20%D8%A3%D9%88%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AD%D8%AC%D8%B2%20%D9%85%D9%88%D8%B9%D8%AF" target="_blank" rel="noopener noreferrer" class="contact-card touch-card whatsapp-card">
                         <i class="fab fa-whatsapp" aria-hidden="true"></i>
                         <h3>مراسلة واتساب</h3>
                         <p dir="ltr">0663 75 55 84</p>
@@ -545,7 +757,7 @@
                 <i class="fas fa-phone-alt" aria-hidden="true"></i>
                 <span>اتصال</span>
             </a>
-            <a href="https://wa.me/213663755584" target="_blank" rel="noopener noreferrer" class="mobile-action-btn wa-btn">
+            <a href="https://wa.me/213663755584?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%20%D8%B9%D9%8A%D8%A7%D8%AF%D8%A9%20%D8%AF.%20%D8%A8%D8%AE%D8%A9%D8%8C%20%D8%A3%D9%88%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%AD%D8%AC%D8%B2%20%D9%85%D9%88%D8%B9%D8%AF" target="_blank" rel="noopener noreferrer" class="mobile-action-btn wa-btn">
                 <i class="fab fa-whatsapp" aria-hidden="true"></i>
                 <span>واتساب</span>
             </a>
