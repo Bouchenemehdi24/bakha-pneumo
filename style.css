@@ -613,6 +613,162 @@ main {
 }
 
 /* ==========================================================================
+   Geographic Coverage Section
+   ========================================================================== */
+.seo-coverage-section {
+  margin: 36px 0;
+}
+.coverage-box {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 28px 20px;
+  box-shadow: var(--shadow-sm);
+}
+@media (min-width: 768px) {
+  .coverage-box {
+    padding: 36px 30px;
+  }
+}
+.coverage-header {
+  text-align: center;
+  margin-bottom: 26px;
+}
+.coverage-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--primary);
+  background: rgba(var(--primary-rgb), 0.1);
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  margin-bottom: 12px;
+}
+.coverage-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 10px;
+  line-height: 1.35;
+}
+@media (min-width: 768px) {
+  .coverage-title { font-size: 1.65rem; }
+}
+.coverage-desc {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.65;
+}
+
+.coverage-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+@media (min-width: 768px) {
+  .coverage-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.coverage-card {
+  background: var(--bg-body);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 22px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.coverage-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+.coverage-card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 2px solid rgba(var(--primary-rgb), 0.15);
+  padding-bottom: 10px;
+}
+.coverage-card-header i {
+  color: var(--primary);
+  font-size: 1.3rem;
+}
+.coverage-card-header h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin: 0;
+}
+
+.coverage-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.coverage-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 14px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-full);
+  color: var(--text-main);
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+}
+.coverage-pill:hover {
+  background: rgba(var(--primary-rgb), 0.08);
+  border-color: var(--primary);
+  transform: translateY(-1px);
+}
+
+.neighbor-card {
+  border-color: rgba(var(--accent-rgb), 0.4);
+  background: linear-gradient(180deg, var(--bg-body), rgba(var(--accent-rgb), 0.04));
+}
+.neighbor-card .coverage-card-header {
+  border-bottom-color: rgba(var(--accent-rgb), 0.3);
+}
+.neighbor-card .coverage-card-header i {
+  color: var(--accent-hover);
+}
+.neighbor-pill {
+  background: rgba(var(--accent-rgb), 0.1);
+  border-color: rgba(var(--accent-rgb), 0.3);
+  color: var(--text-main);
+}
+.neighbor-pill:hover {
+  background: rgba(var(--accent-rgb), 0.2);
+  border-color: var(--accent);
+}
+
+.coverage-note {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  background: var(--bg-surface);
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+}
+.coverage-note i {
+  color: var(--accent);
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
    About Section
    ========================================================================== */
 .about-card {
