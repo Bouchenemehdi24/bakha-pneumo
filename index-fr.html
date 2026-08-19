@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+    <meta name="theme-color" content="#1e3a8a" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0b1120" media="(prefers-color-scheme: dark)">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Instant Theme Loader (Zero Flash) -->
+    <script>
+        (function() {
+            try {
+                var savedTheme = localStorage.getItem('bakha_theme');
+                var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+                var theme = savedTheme ? savedTheme : (prefersDark ? 'dark' : 'light');
+                document.documentElement.setAttribute('data-theme', theme);
+            } catch (e) {}
+        })();
+    </script>
+
+    <!-- SEO & Metadata -->
+    <title>Pneumologue Allergologue Guelma | Cabinet Dr Bakha S. - Pneumologie & Allergologie</title>
+    <meta name="description" content="Cabinet du Dr Bakha S., médecin spécialiste en pneumologie et allergologie à Guelma. Radiographie thoracique numérique (Radio Thorax), explorations fonctionnelles respiratoires (EFR), traitement de l'asthme, des allergies et de l'apnée du sommeil.">
+    <meta name="keywords" content="Pneumologue Guelma, Allergologue Guelma, Pneumologue Allergologue Guelma, Médecin pneumologue Guelma, Radio Thorax Guelma, EFR Guelma, Cabinet Dr Bakha, Asthme Guelma, Allergie Guelma, Apnée du sommeil Guelma, Guelaat Bou Sbaa, Belkheir, Bouchegouf, Oued Zenati, Héliopolis, Hammam Debagh, Ain Makhlouf, Nechmaya, Bouati Mahmoud, Khezaras, Hammam N'Bail, Tamlouka, Sedrata, Souk Ahras, Annaba">
+    <meta name="author" content="Cabinet Médical Dr Bakha S.">
+    <link rel="canonical" href="https://bakha-pneumo.netlify.app/index-fr.html">
+    <link rel="alternate" hreflang="ar" href="https://bakha-pneumo.netlify.app/">
+    <link rel="alternate" hreflang="fr" href="https://bakha-pneumo.netlify.app/index-fr.html">
+    <link rel="alternate" hreflang="x-default" href="https://bakha-pneumo.netlify.app/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_DZ">
+    <meta property="og:locale:alternate" content="ar_DZ">
+    <meta property="og:url" content="https://bakha-pneumo.netlify.app/index-fr.html">
+    <meta property="og:title" content="Cabinet de Pneumologie et Allergologie Dr Bakha S - Guelma">
+    <meta property="og:description" content="Cabinet spécialisé en maladies respiratoires, asthme, allergologie, radiographie thoracique numérique et enregistrement du sommeil à Guelma.">
+    <meta property="og:image" content="https://bakha-pneumo.netlify.app/cabinet.png">
+
+    <!-- Favicon -->
+    <link rel="icon" href="cabinet-logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="cabinet-logo.png">
+
+    <!-- Performance: Preconnect & Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Non-blocking FontAwesome -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"></noscript>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" media="(min-width: 768px)">
+
+    <!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BCT8GP6LZT"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-BCT8GP6LZT');
+    </script>
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalClinic",
+      "@id": "https://bakha-pneumo.netlify.app/#clinic",
+      "name": "Cabinet de Pneumologie et Allergologie Dr Bakha S.",
+      "alternateName": [
+        "Cabinet Médical Dr. Bakha S. - Pneumologue Allergologue",
+        "Dr Bakha S. Pneumologue Guelma"
+      ],
+      "description": "Cabinet médical spécialisé dans le diagnostic et traitement des maladies respiratoires, de l'asthme, des allergies respiratoires et cutanées, de la radiographie numérique du thorax et des explorations fonctionnelles respiratoires (EFR) à Guelma.",
+      "url": "https://bakha-pneumo.netlify.app/index-fr.html",
+      "telephone": "+213663755584",
+      "priceRange": "DZD",
+      "currenciesAccepted": "DZD",
+      "medicalSpecialty": ["Pulmonary", "Allergy", "RespiratoryTherapy"],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Cité 19 Juin, derrière l'hôpital Hakim Okbi",
+        "addressLocality": "Guelma",
+        "addressRegion": "Wilaya de Guelma",
+        "postalCode": "24000",
+        "addressCountry": "DZ"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 36.455176,
+        "longitude": 7.434448
+      },
+      "areaServed": [
+        { "@type": "AdministrativeArea", "name": "Guelma" },
+        { "@type": "AdministrativeArea", "name": "Guelaat Bou Sbaa" },
+        { "@type": "AdministrativeArea", "name": "Belkheir" },
+        { "@type": "AdministrativeArea", "name": "Bouchegouf" },
+        { "@type": "AdministrativeArea", "name": "Oued Zenati" },
+        { "@type": "AdministrativeArea", "name": "Héliopolis" },
+        { "@type": "AdministrativeArea", "name": "Hammam Debagh" },
+        { "@type": "AdministrativeArea", "name": "Nechmaya" },
+        { "@type": "AdministrativeArea", "name": "Bouati Mahmoud" },
+        { "@type": "AdministrativeArea", "name": "Ain Ben Beida" },
+        { "@type": "AdministrativeArea", "name": "Boumahra Ahmed" },
+        { "@type": "AdministrativeArea", "name": "El Fedjoudj" },
+        { "@type": "AdministrativeArea", "name": "Ain Makhlouf" },
+        { "@type": "AdministrativeArea", "name": "Tamlouka" },
+        { "@type": "AdministrativeArea", "name": "Medjez Amar" },
+        { "@type": "AdministrativeArea", "name": "Roknia" },
+        { "@type": "AdministrativeArea", "name": "Khezaras" },
+        { "@type": "AdministrativeArea", "name": "Hammam N'Bail" },
+        { "@type": "AdministrativeArea", "name": "Oued Cheham" },
+        { "@type": "AdministrativeArea", "name": "Sedrata" },
+        { "@type": "AdministrativeArea", "name": "Souk Ahras" },
+        { "@type": "AdministrativeArea", "name": "Annaba" },
+        { "@type": "AdministrativeArea", "name": "Drean" }
+      ],
+      "openingHoursSpecification": [{
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"],
+        "opens": "08:00",
+        "closes": "16:00"
+      }]
+    }
+    </script>
+</head>
+<body>
+
+    <!-- Mobile Drawer Overlay -->
+    <div class="menu-overlay" id="menuOverlay" aria-hidden="true"></div>
+
+    <div id="page-wrapper">
+
+        <!-- Live Clinic Status Bar -->
+        <aside class="datetime-bar" aria-label="Horaires et statut du cabinet">
+            <div class="datetime-container">
+                <span id="arabic-time" class="current-time">--:--</span>
+                <div id="clinic-status" class="clinic-status">
+                    <span class="status-indicator">
+                        <i class="fas fa-circle" aria-hidden="true"></i>
+                        <span id="status-message">Vérification en cours...</span>
+                    </span>
+                    <span id="next-opening" class="next-opening"></span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Header -->
+        <header class="main-header">
+            <div class="header-inner">
+                <a href="#hero" class="clinic-brand" aria-label="Accueil">
+                    <div class="logo-container">
+                        <img
+                            src="cabinet-logo.png"
+                            width="44"
+                            height="44"
+                            alt="Logo Cabinet Dr. Bakha S."
+                            class="clinic-logo"
+                            decoding="async">
+                    </div>
+                    <div class="clinic-title">
+                        <h1>Cabinet Dr Bakha S.</h1>
+                        <p class="clinic-subtitle">Pneumologie & Allergologie - Guelma</p>
+                    </div>
+                </a>
+
+                <!-- Header Actions -->
+                <div class="header-actions">
+                    <div class="lang-switch-container">
+                        <a href="index.html" class="lang-switch-btn" title="Version Arabe">العربية</a>
+                        <span class="lang-switch-active">FR</span>
+                    </div>
+
+                    <div id="google_translate_element" class="lang-selector-wrap"></div>
+
+                    <button id="theme-toggle" aria-label="Changer de thème" class="control-btn" type="button">
+                        <i class="fas fa-moon" aria-hidden="true"></i>
+                    </button>
+
+                    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Ouvrir le menu principal" aria-expanded="false" type="button">
+                        <i class="fas fa-bars" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation Drawer -->
+        <nav class="main-nav" id="mainNav" aria-label="Navigation principale">
+            <div class="nav-container">
+                <div class="nav-drawer-header">
+                    <span class="drawer-title">Menu & Spécialités</span>
+                    <button class="close-drawer-btn" id="closeDrawerBtn" aria-label="Fermer le menu" type="button">
+                        <i class="fas fa-times" aria-hidden="true"></i>
+                    </button>
+                </div>
+
+                <ul id="main-menu">
+                    <li class="nav-item">
+                        <a href="#hero" class="nav-link"><i class="fas fa-home" aria-hidden="true"></i> <span>Accueil</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <button class="dropdown-toggle" aria-expanded="false" type="button">
+                            <span><i class="fas fa-lungs" aria-hidden="true"></i> Pneumologie</span>
+                            <i class="fas fa-chevron-down caret-icon" aria-hidden="true"></i>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="asthma.html">Asthme</a></li>
+                            <li><a href="copd.html">BPCO (Bronchopneumopathie)</a></li>
+                            <li><a href="lung-cancer.html">Cancer du Poumon</a></li>
+                            <li><a href="pulmonary-fibrosis.html">Fibrose Pulmonaire</a></li>
+                            <li><a href="bronchitis.html">Bronchite Chronique</a></li>
+                            <li><a href="pneumonia.html">Pneumonie</a></li>
+                            <li><a href="tuberculosis.html">Tuberculose</a></li>
+                            <li><a href="covid-19.html">COVID-19</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <button class="dropdown-toggle" aria-expanded="false" type="button">
+                            <span><i class="fas fa-allergies" aria-hidden="true"></i> Allergologie</span>
+                            <i class="fas fa-chevron-down caret-icon" aria-hidden="true"></i>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="allergic-rhinitis.html">Rhinite Allergique</a></li>
+                            <li><a href="allergic-asthma.html">Asthme Allergique</a></li>
+                            <li><a href="allergic-bronchitis.html">Bronchite Allergique</a></li>
+                            <li><a href="urticaria.html">Urticaire</a></li>
+                            <li><a href="food-allergy.html">Allergie Alimentaire</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="sleep-apnea.html" class="nav-link"><i class="fas fa-bed" aria-hidden="true"></i> <span>Apnée du Sommeil</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <button class="dropdown-toggle" aria-expanded="false" type="button">
+                            <span><i class="fas fa-calculator" aria-hidden="true"></i> Calculateurs Santé</span>
+                            <i class="fas fa-chevron-down caret-icon" aria-hidden="true"></i>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="bmi-calculator.html">Indice de Masse Corporelle (IMC)</a></li>
+                            <li><a href="calorie-calculator.html">Calculateur de Calories</a></li>
+                            <li><a href="smoking-cost-calculator.html">Coût du Tabagisme</a></li>
+                            <li><a href="lung-age-calculator.html">Âge Pulmonaire</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a href="#services" class="nav-link"><i class="fas fa-stethoscope" aria-hidden="true"></i> <span>Services</span></a></li>
+                    <li class="nav-item"><a href="#coverage" class="nav-link"><i class="fas fa-map-marked-alt" aria-hidden="true"></i> <span>Zones Desservies</span></a></li>
+                    <li class="nav-item"><a href="#faq" class="nav-link"><i class="fas fa-question-circle" aria-hidden="true"></i> <span>FAQ</span></a></li>
+                    <li class="nav-item"><a href="#apropos" class="nav-link"><i class="fas fa-user-md" aria-hidden="true"></i> <span>Le Docteur</span></a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> <span>Contact & Accès</span></a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main id="main-content">
+
+            <!-- Hero Section -->
+            <section id="hero" class="hero-section">
+                <div class="hero-content">
+                    <span class="hero-badge"><i class="fas fa-shield-alt" aria-hidden="true"></i> Soins Médicaux Spécialisés à Guelma</span>
+                    <h2>Pneumologie, Allergologie & Radiographie Thoracique Numérique</h2>
+                    <p class="hero-desc">Diagnostic immédiat par radio thorax numérique, bilan de la fonction respiratoire EFR, et équipements de pointe pour le traitement de l'asthme et des allergies chez l'adulte et l'enfant.</p>
+                    <div class="hero-actions">
+                        <a href="#appointment" class="cta-button primary-cta">
+                            <i class="fas fa-calendar-check" aria-hidden="true"></i> Demander un Rendez-vous
+                        </a>
+                        <a href="https://wa.me/213663755584?text=Bonjour%20Cabinet%20Dr.%20Bakha%2C%20je%20souhaite%20me%20renseigner%20sur%20la%20prise%20de%20rendez-vous" target="_blank" rel="noopener noreferrer" class="cta-button wa-hero-cta">
+                            <i class="fab fa-whatsapp" aria-hidden="true"></i> Réservation via WhatsApp
+                        </a>
+                        <a href="tel:+213663755584" class="cta-button secondary-cta">
+                            <i class="fas fa-phone-alt" aria-hidden="true"></i> Appel Direct
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Services Section -->
+            <section id="services" class="services-section">
+                <h2 class="section-title">Nos Services Médicaux Spécialisés</h2>
+                <div class="services-grid">
+                    <article class="service-card">
+                        <div class="service-icon-box"><i class="fas fa-lungs" aria-hidden="true"></i></div>
+                        <h3>Pneumologie & Maladies Respiratoires</h3>
+                        <p>Prise en charge de l'asthme, de la BPCO, de la tuberculose, de la fibrose et des affections pleuro-pulmonaires.</p>
+                    </article>
+
+                    <article class="service-card featured-service">
+                        <div class="service-icon-box"><i class="fas fa-x-ray" aria-hidden="true"></i></div>
+                        <span class="card-tag">Sur place</span>
+                        <h3>Radiographie Thoracique Numérique (Radio Thorax)</h3>
+                        <p>Imagerie médicale numérique haute définition (CR/DR) pour un diagnostic immédiat des poumons et du thorax.</p>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="service-icon-box"><i class="fas fa-chart-line" aria-hidden="true"></i></div>
+                        <h3>Exploration Fonctionnelle Respiratoire (EFR / Spirométrie)</h3>
+                        <p>Mesure précise des volumes et débits respiratoires pour l'évaluation du souffle, de l'asthme et du profil fumeur.</p>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="service-icon-box"><i class="fas fa-allergies" aria-hidden="true"></i></div>
+                        <h3>Tests Cutanés Allergologiques (Prick Tests)</h3>
+                        <p>Identification rapide des allergènes respiratoires (acariens, pollens, poils) et alimentaires en 15 minutes.</p>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="service-icon-box"><i class="fas fa-bed" aria-hidden="true"></i></div>
+                        <h3>Enregistrement du Sommeil (Polygraphie Ventilatoire)</h3>
+                        <p>Bilan à domicile par polygraphie ventilatoire pour le diagnostic du ronflement et du syndrome d'apnée du sommeil.</p>
+                    </article>
+
+                    <article class="service-card">
+                        <div class="service-icon-box"><i class="fas fa-child" aria-hidden="true"></i></div>
+                        <h3>Pneumo-Allergologie Pédiatrique</h3>
+                        <p>Consultations et examens adaptés aux enfants souffrant de toux répétitives, d'asthme et de rhinite allergique.</p>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Equipment & Technology Showcase Section -->
+            <section id="technology" class="equipment-section">
+                <div class="equipment-header">
+                    <span class="section-badge"><i class="fas fa-microchip" aria-hidden="true"></i> Équipements Médicaux</span>
+                    <h2 class="section-title">Plateau Technique & Diagnostics Numériques Intégrés</h2>
+                    <p class="section-subtitle">Le cabinet dispose d'un matériel diagnostic moderne permettant une prise en charge rapide et complète en une seule visite :</p>
+                </div>
+
+                <div class="equipment-grid">
+                    <!-- 1. Radio Thorax -->
+                    <div class="equipment-card">
+                        <div class="equip-badge">Résultat Immédiat</div>
+                        <div class="equip-icon-wrap">
+                            <i class="fas fa-x-ray" aria-hidden="true"></i>
+                        </div>
+                        <h3>Radiographie Thoracique Numérique</h3>
+                        <span class="equip-fr">Radio Thorax Numérique</span>
+                        <p>Radiographie pulmonaire numérique à haute résolution permettant de détecter immédiatement pneumonies, tuberculose, épanchements et lésions thoraciques.</p>
+                        <a href="https://wa.me/213663755584?text=Bonjour%2C%20je%20souhaite%20m%27informer%20sur%20la%20radiographie%20thoracique%20(Radio%20Thorax)" target="_blank" rel="noopener noreferrer" class="equip-btn">
+                            <i class="fab fa-whatsapp"></i> Renseignements Radio Thorax
+                        </a>
+                    </div>
+
+                    <!-- 2. Spirométrie / EFR -->
+                    <div class="equipment-card">
+                        <div class="equip-badge">Bilan Électronique Précis</div>
+                        <div class="equip-icon-wrap">
+                            <i class="fas fa-lungs" aria-hidden="true"></i>
+                        </div>
+                        <h3>Exploration Fonctionnelle Respiratoire</h3>
+                        <span class="equip-fr">Spirométrie / EFR</span>
+                        <p>Spiromètre électronique mesurant la capacité pulmonaire et les débits d'air pour confirmer l'asthme, la BPCO et évaluer l'impact du tabac.</p>
+                        <a href="https://wa.me/213663755584?text=Bonjour%2C%20je%20souhaite%20m%27informer%20sur%20le%20test%20de%20spirom%C3%A9trie%20EFR" target="_blank" rel="noopener noreferrer" class="equip-btn">
+                            <i class="fab fa-whatsapp"></i> Renseignements Bilan EFR
+                        </a>
+                    </div>
+
+                    <!-- 3. Prick Tests -->
+                    <div class="equipment-card">
+                        <div class="equip-badge">Résultat en 15 minutes</div>
+                        <div class="equip-icon-wrap">
+                            <i class="fas fa-allergies" aria-hidden="true"></i>
+                        </div>
+                        <h3>Tests Allergologiques (Prick Tests)</h3>
+                        <span class="equip-fr">Tests Cutanés Allergie</span>
+                        <p>Tests cutanés indolores et sécurisés pour identifier l'origine exacte des allergies respiratoires ou alimentaires et guider la désensibilisation.</p>
+                        <a href="https://wa.me/213663755584?text=Bonjour%2C%20je%20souhaite%20m%27informer%20sur%20les%20tests%20cutan%C3%A9s%20d%27allergie%20(Prick%20Tests)" target="_blank" rel="noopener noreferrer" class="equip-btn">
+                            <i class="fab fa-whatsapp"></i> Renseignements Tests Allergie
+                        </a>
+                    </div>
+
+                    <!-- 4. Polygraphie -->
+                    <div class="equipment-card">
+                        <div class="equip-badge">Appareil Portable à Domicile</div>
+                        <div class="equip-icon-wrap">
+                            <i class="fas fa-bed" aria-hidden="true"></i>
+                        </div>
+                        <h3>Polygraphie Ventilatoire du Sommeil</h3>
+                        <span class="equip-fr">Enregistrement Nocturne</span>
+                        <p>Dispositif numérique portatif enregistrant la respiration et la saturation en oxygène pendant la nuit à domicile pour diagnostiquer l'apnée du sommeil.</p>
+                        <a href="https://wa.me/213663755584?text=Bonjour%2C%20je%20souhaite%20m%27informer%20sur%20l%27examen%20de%20polygraphie%20du%20sommeil" target="_blank" rel="noopener noreferrer" class="equip-btn">
+                            <i class="fab fa-whatsapp"></i> Renseignements Polygraphie
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Interactive Symptom Navigator Widget -->
+            <section id="symptom-navigator" class="symptom-navigator-section">
+                <div class="navigator-card">
+                    <div class="navigator-header">
+                        <span class="navigator-badge"><i class="fas fa-stethoscope" aria-hidden="true"></i> Orientation Médicale Rapide</span>
+                        <h2 class="section-title">Que ressentez-vous ? Guide des examens recommandés</h2>
+                        <p class="navigator-subtitle">Sélectionnez votre symptôme principal pour connaître l'examen adapté et la marche à suivre :</p>
+                    </div>
+
+                    <!-- Symptom Selection Tabs -->
+                    <div class="symptom-tabs" role="tablist" aria-label="Symptômes">
+                        <button class="symptom-tab active" role="tab" aria-selected="true" aria-controls="symptom-panel-breath" id="tab-breath">
+                            <i class="fas fa-lungs" aria-hidden="true"></i>
+                            <span>Essoufflement / Gêne respiratoire</span>
+                        </button>
+                        <button class="symptom-tab" role="tab" aria-selected="false" aria-controls="symptom-panel-cough" id="tab-cough">
+                            <i class="fas fa-head-side-cough" aria-hidden="true"></i>
+                            <span>Toux chronique ou persistante</span>
+                        </button>
+                        <button class="symptom-tab" role="tab" aria-selected="false" aria-controls="symptom-panel-allergy" id="tab-allergy">
+                            <i class="fas fa-allergies" aria-hidden="true"></i>
+                            <span>Allergies nasales ou cutanées</span>
+                        </button>
+                        <button class="symptom-tab" role="tab" aria-selected="false" aria-controls="symptom-panel-sleep" id="tab-sleep">
+                            <i class="fas fa-bed" aria-hidden="true"></i>
+                            <span>Ronflement & Apnée du sommeil</span>
+                        </button>
+                        <button class="symptom-tab" role="tab" aria-selected="false" aria-controls="symptom-panel-smoker" id="tab-smoker">
+                            <i class="fas fa-smoking" aria-hidden="true"></i>
+                            <span>Bilan respiratoire du fumeur</span>
+                        </button>
+                    </div>
+
+                    <!-- Dynamic Result Panels -->
+                    <div class="symptom-panels">
+
+                        <!-- 1. Essoufflement -->
+                        <div class="symptom-panel active" id="symptom-panel-breath" role="tabpanel" aria-labelledby="tab-breath">
+                            <div class="panel-header">
+                                <div class="panel-title-wrap">
+                                    <span class="panel-tag"><i class="fas fa-info-circle"></i> Orientations Possibles</span>
+                                    <h3>Dyspnée & Essoufflement (Essoufflement à l'effort ou au repos)</h3>
+                                </div>
+                                <span class="urgency-badge"><i class="fas fa-heartbeat"></i> Examen spécialisé recommandé</span>
+                            </div>
+                            <p class="panel-desc">Une difficulté à inspirer ou à expirer, associée parfois à un sifflement dans la poitrine, peut être le signe d'un <strong>Asthme</strong>, d'une <strong>BPCO</strong> ou d'un syndrome obstructif bronchique.</p>
+                            <div class="panel-tests">
+                                <h4><i class="fas fa-clipboard-check"></i> Examens disponibles au cabinet :</h4>
+                                <div class="test-badges">
+                                    <span class="test-badge"><i class="fas fa-check"></i> Exploration Fonctionnelle Respiratoire (EFR / Spirométrie)</span>
+                                    <span class="test-badge"><i class="fas fa-check"></i> Radiographie Thoracique Numérique (Radio Thorax)</span>
+                                </div>
+                            </div>
+                            <div class="panel-actions">
+                                <a href="https://wa.me/213663755584?text=Bonjour%20Cabinet%20Dr.%20Bakha%2C%20je%20souffre%20d%27essoufflement%20et%20souhaite%20prendre%20un%20rendez-vous%20EFR" target="_blank" rel="noopener noreferrer" class="cta-button primary-cta">
+                                    <i class="fab fa-whatsapp"></i> Rendez-vous Bilan Respiratoire via WhatsApp
+                                </a>
+                                <a href="asthma.html" class="cta-button secondary-cta">
+                                    <i class="fas fa-book-medical"></i> Guide complet de l'Asthme
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- 2. Toux chroniques -->
+                        <div class="symptom-panel" id="symptom-panel-cough" role="tabpanel" aria-labelledby="tab-cough" hidden>
+                            <div class="panel-header">
+                                <div class="panel-title-wrap">
+                                    <span class="panel-tag"><i class="fas fa-info-circle"></i> Orientations Possibles</span>
+                                    <h3>Toux persistant plus de 3 semaines (Toux Chronique)</h3>
+                                </div>
+                                <span class="urgency-badge"><i class="fas fa-clock"></i> Consultation conseillée</span>
+                            </div>
+                            <p class="panel-desc">Sèche ou accompagnée de crachats, une toux traînante nécessite une évaluation clinique et radiologique pour éliminer une bronchite chronique, une tuberculose ou une hyperréactivité bronchique.</p>
+                            <div class="panel-tests">
+                                <h4><i class="fas fa-clipboard-check"></i> Examens disponibles au cabinet :</h4>
+                                <div class="test-badges">
+                                    <span class="test-badge"><i class="fas fa-check"></i> Radiographie Thoracique Numérique sur place</span>
+                                    <span class="test-badge"><i class="fas fa-check"></i> Bilan du souffle et des bronches (Spirométrie)</span>
+                                </div>
+                            </div>
+                            <div class="panel-actions">
+                                <a href="https://wa.me/213663755584?text=Bonjour%2C%20je%20souhaite%20un%20rendez-vous%20pour%20une%20toux%20persistante%20et%20une%20radio%20du%20thorax" target="_blank" rel="noopener noreferrer" class="cta-button primary-cta">
+                                    <i class="fab fa-whatsapp"></i> Rendez-vous Radio Thorax & Toux
+                                </a>
+                                <a href="bronchitis.html" class="cta-button secondary-cta">
+                                    <i class="fas fa-book-medical"></i> Guide de la Bronchite Chronique
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- 3. Allergies -->
+                        <div class="symptom-panel" id="symptom-panel-allergy" role="tabpanel" aria-labelledby="tab-allergy" hidden>
+                            <div class="panel-header">
+                                <div class="panel-title-wrap">
+                                    <span class="panel-tag"><i class="fas fa-info-circle"></i> Orientations Possibles</span>
+                                    <h3>Eternuements, Nez Bouché & Démangeaisons (Rhinite & Allergies)</h3>
+                                </div>
+                                <span class="urgency-badge"><i class="fas fa-allergies"></i> Bilan allergologique</span>
+                            </div>
+                            <p class="panel-desc">Éternuements en salves, écoulement nasal clair, yeux rouges ou éruptions cutanées traduisent souvent une sensibilisation aux acariens, pollens ou poils d'animaux.</p>
+                            <div class="panel-tests">
+                                <h4><i class="fas fa-clipboard-check"></i> Examens disponibles au cabinet :</h4>
+                                <div class="test-badges">
+                                    <span class="test-badge"><i class="fas fa-check"></i> Tests Cutanés Ciblés (Prick Tests) - Résultat en 15 mn</span>
+                                    <span class="test-badge"><i class="fas fa-check"></i> Stratégie de désensibilisation et traitement ciblés</span>
+                                </div>
+                            </div>
+                            <div class="panel-actions">
+                                <a href="https://wa.me/213663755584?text=Bonjour%2C%20je%20souhaite%20m%27informer%20et%20prendre%20rendez-vous%20pour%20des%20tests%20d%27allergie%20(Prick%20Test)" target="_blank" rel="noopener noreferrer" class="cta-button primary-cta">
+                                    <i class="fab fa-whatsapp"></i> Prendre RDV Bilan Allergie (Prick Test)
+                                </a>
+                                <a href="allergic-rhinitis.html" class="cta-button secondary-cta">
+                                    <i class="fas fa-book-medical"></i> Guide Rhinite Allergique
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- 4. Apnée du sommeil -->
+                        <div class="symptom-panel" id="symptom-panel-sleep" role="tabpanel" aria-labelledby="tab-sleep" hidden>
+                            <div class="panel-header">
+                                <div class="panel-title-wrap">
+                                    <span class="panel-tag"><i class="fas fa-info-circle"></i> Orientations Possibles</span>
+                                    <h3>Ronflements, Sommeil Non Réparateur & Fatigabilité (Apnée)</h3>
+                                </div>
+                                <span class="urgency-badge"><i class="fas fa-bed"></i> Diagnostic nocturne</span>
+                            </div>
+                            <p class="panel-desc">Des ronflements intenses, des pauses respiratoires constatées par le conjoint et une somnolence diurne sont évocateurs du syndrome d'apnée obstructive du sommeil (SAOS).</p>
+                            <div class="panel-tests">
+                                <h4><i class="fas fa-clipboard-check"></i> Examens disponibles au cabinet :</h4>
+                                <div class="test-badges">
+                                    <span class="test-badge"><i class="fas fa-check"></i> Polygraphie Ventilatoire Nocturne à Domicile</span>
+                                    <span class="test-badge"><i class="fas fa-check"></i> Mesure continue de l'oxymétrie et du flux respiratoire</span>
+                                </div>
+                            </div>
+                            <div class="panel-actions">
+                                <a href="https://wa.me/213663755584?text=Bonjour%2C%20je%20souhaite%20des%20renseignements%20sur%20l%27examen%20d%27apn%C3%A9e%20du%20sommeil%20(Polygraphie)" target="_blank" rel="noopener noreferrer" class="cta-button primary-cta">
+                                    <i class="fab fa-whatsapp"></i> RDV Polygraphie du Sommeil
+                                </a>
+                                <a href="sleep-apnea.html" class="cta-button secondary-cta">
+                                    <i class="fas fa-book-medical"></i> Guide Apnée du Sommeil
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- 5. Bilan Fumeur -->
+                        <div class="symptom-panel" id="symptom-panel-smoker" role="tabpanel" aria-labelledby="tab-smoker" hidden>
+                            <div class="panel-header">
+                                <div class="panel-title-wrap">
+                                    <span class="panel-tag"><i class="fas fa-info-circle"></i> Bilan Préventif</span>
+                                    <h3>Contrôle Pulmonaire Systématique pour Fumeurs & Ex-fumeurs</h3>
+                                </div>
+                                <span class="urgency-badge"><i class="fas fa-shield-alt"></i> Dépistage précoce</span>
+                            </div>
+                            <p class="panel-desc">Le tabagisme altère progressivement les alvéoles et bronches. Un bilan périodique permet de dépister la BPCO et d'autres anomalies bronchiques avant le stade des complications.</p>
+                            <div class="panel-tests">
+                                <h4><i class="fas fa-clipboard-check"></i> Examens disponibles au cabinet :</h4>
+                                <div class="test-badges">
+                                    <span class="test-badge"><i class="fas fa-check"></i> Radiographie Thoracique Numérique</span>
+                                    <span class="test-badge"><i class="fas fa-check"></i> Exploration Fonctionnelle Respiratoire (EFR / Spirométrie)</span>
+                                </div>
+                            </div>
+                            <div class="panel-actions">
+                                <a href="https://wa.me/213663755584?text=Bonjour%2C%20je%20souhaite%20réserver%20un%20bilan%20respiratoire%20complet%20pour%20fumeur" target="_blank" rel="noopener noreferrer" class="cta-button primary-cta">
+                                    <i class="fab fa-whatsapp"></i> Réserver un Bilan Respiratoire Fumeur
+                                </a>
+                                <a href="lung-age-calculator.html" class="cta-button secondary-cta">
+                                    <i class="fas fa-calculator"></i> Calculer votre Âge Pulmonaire
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- Geographic Coverage Section -->
+            <section id="coverage" class="seo-coverage-section">
+                <div class="coverage-box">
+                    <div class="coverage-header">
+                        <span class="coverage-badge"><i class="fas fa-map-marked-alt" aria-hidden="true"></i> Zones Desservies</span>
+                        <h2 class="coverage-title">Consultations pour les patients de Guelma et des Wilayas voisines</h2>
+                        <p class="coverage-desc">
+                            Situé au centre-ville de <strong>Guelma (Cité 19 Juin, juste derrière l'hôpital Hakim Okbi)</strong>, notre cabinet spécialisé reçoit chaque jour les patients issus de l'ensemble des communes et daïras de Guelma ainsi que des wilayas limitrophes :
+                        </p>
+                    </div>
+
+                    <div class="coverage-grid">
+                        <!-- Daïras de Guelma -->
+                        <div class="coverage-card">
+                            <div class="coverage-card-header">
+                                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                                <h3>Communes & Daïras de Guelma</h3>
+                            </div>
+                            <div class="coverage-pills" role="list">
+                                <span class="coverage-pill" role="listitem">Guelma</span>
+                                <span class="coverage-pill" role="listitem">Guelaat Bou Sbaa</span>
+                                <span class="coverage-pill" role="listitem">Oued Zenati</span>
+                                <span class="coverage-pill" role="listitem">Bouchegouf</span>
+                                <span class="coverage-pill" role="listitem">Hammam Debagh</span>
+                                <span class="coverage-pill" role="listitem">Khezaras</span>
+                                <span class="coverage-pill" role="listitem">Héliopolis</span>
+                                <span class="coverage-pill" role="listitem">Ain Makhlouf</span>
+                                <span class="coverage-pill" role="listitem">Hammam N'Bail</span>
+                                <span class="coverage-pill" role="listitem">Medjez Amar</span>
+                            </div>
+                        </div>
+
+                        <!-- Wilayas voisines -->
+                        <div class="coverage-card neighbor-card">
+                            <div class="coverage-card-header">
+                                <i class="fas fa-route" aria-hidden="true"></i>
+                                <h3>Wilayas & Villes Voisines</h3>
+                            </div>
+                            <div class="coverage-pills neighbor-pills" role="list">
+                                <span class="coverage-pill neighbor-pill" role="listitem"><strong>Souk Ahras</strong></span>
+                                <span class="coverage-pill neighbor-pill" role="listitem"><strong>Sedrata</strong></span>
+                                <span class="coverage-pill neighbor-pill" role="listitem"><strong>Annaba</strong></span>
+                                <span class="coverage-pill neighbor-pill" role="listitem"><strong>Skikda</strong></span>
+                                <span class="coverage-pill neighbor-pill" role="listitem"><strong>Azzaba</strong></span>
+                                <span class="coverage-pill neighbor-pill" role="listitem"><strong>El Tarf</strong></span>
+                            </div>
+                            <div class="coverage-note">
+                                <i class="fas fa-x-ray" aria-hidden="true"></i>
+                                <span>Radio Thorax numérique et bilan respiratoire EFR réalisés le jour même pour les patients en déplacement.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ Section -->
+            <section id="faq" class="faq-section">
+                <h2 class="section-title">Foire Aux Questions (FAQ)</h2>
+                <div class="faq-grid">
+                    <details class="faq-accordion" open>
+                        <summary><i class="fas fa-credit-card" aria-hidden="true"></i> Le cabinet accepte-t-il la carte Chifa ?</summary>
+                        <div class="faq-answer">Oui, le cabinet est conventionné et équipé du système Chifa pour faciliter vos actes médicaux et ordonnances.</div>
+                    </details>
+                    <details class="faq-accordion">
+                        <summary><i class="fas fa-x-ray" aria-hidden="true"></i> La radiographie thoracique (Radio Thorax) est-elle effectuée sur place ?</summary>
+                        <div class="faq-answer">Oui, le cabinet dispose de son propre équipement de radiographie numérique. Vous n'avez pas besoin de vous déplacer dans un centre d'imagerie externe.</div>
+                    </details>
+                    <details class="faq-accordion">
+                        <summary><i class="fas fa-clock" aria-hidden="true"></i> Est-il possible de consulter sans rendez-vous préalable ?</summary>
+                        <div class="faq-answer">Oui, le cabinet reçoit les consultations directes du Samedi au Jeudi de 08h00 à 16h00.</div>
+                    </details>
+                    <details class="faq-accordion">
+                        <summary><i class="fas fa-map-pin" aria-hidden="true"></i> Quelle est l'adresse exacte du cabinet ?</summary>
+                        <div class="faq-answer">Wilaya de Guelma, Cité 19 Juin, directement derrière l'hôpital Hakim Okbi, en face de la pharmacie.</div>
+                    </details>
+                </div>
+            </section>
+
+            <!-- Appointment Form Section -->
+            <section id="appointment" class="appointment-section">
+                <div class="appointment-content">
+                    <h2 class="section-title text-light">Demander un Rendez-vous au Cabinet</h2>
+                    <p class="appointment-intro">Saisissez vos informations ci-dessous. Notre secrétariat vous recontactera pour valider l'horaire de votre consultation :</p>
+
+                    <form id="appointmentForm-fr" action="https://formspree.io/f/mblowkoo" method="POST" class="mobile-form" novalidate>
+                        <input type="text" name="_gotcha" style="display:none !important;" tabindex="-1" autocomplete="off">
+
+                        <div class="form-group">
+                            <label for="name-fr">Nom & Prénom <span class="req">*</span></label>
+                            <input type="text" id="name-fr" name="name" autocomplete="name" enterkeyhint="next" required placeholder="Ex : Belkacem Mohamed">
+                            <span class="field-error" id="name-error-fr"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="sex-fr">Sexe <span class="req">*</span></label>
+                            <select id="sex-fr" name="sex" required>
+                                <option value="">-- Sélectionner le sexe --</option>
+                                <option value="Homme">Homme</option>
+                                <option value="Femme">Femme</option>
+                            </select>
+                            <span class="field-error" id="sex-error-fr"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone-fr">Numéro de Téléphone <span class="req">*</span></label>
+                            <input type="tel" id="phone-fr" name="phone" autocomplete="tel" inputmode="numeric" enterkeyhint="next" placeholder="06XXXXXXXX ou 07XXXXXXXX" required>
+                            <span class="field-error" id="phone-error-fr"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="appointmentDate-fr">Date Souhaitée <span class="req">*</span></label>
+                            <input type="date" id="appointmentDate-fr" name="appointment_date" enterkeyhint="done" required>
+                            <span class="field-error" id="date-error-fr"></span>
+                        </div>
+
+                        <button type="submit" class="submit-button" id="submitApptBtn-fr">
+                            <i class="fas fa-paper-plane" aria-hidden="true"></i> Confirmer la Demande
+                        </button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Contact & Map -->
+            <section id="contact" class="contact-section">
+                <h2 class="section-title">Contact & Localisation</h2>
+                <div class="contact-cards-container">
+                    <a href="tel:+213663755584" class="contact-card touch-card">
+                        <i class="fas fa-phone-alt" aria-hidden="true"></i>
+                        <h3>Téléphone</h3>
+                        <p dir="ltr">0663 75 55 84</p>
+                    </a>
+                    <a href="https://wa.me/213663755584?text=Bonjour%20Cabinet%20Dr.%20Bakha%2C%20je%20souhaite%20me%20renseigner%20sur%20les%20consultations" target="_blank" rel="noopener noreferrer" class="contact-card touch-card whatsapp-card">
+                        <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                        <h3>WhatsApp Direct</h3>
+                        <p dir="ltr">0663 75 55 84</p>
+                    </a>
+                    <div class="contact-card">
+                        <i class="fas fa-door-open" aria-hidden="true"></i>
+                        <h3>Horaires d'Ouverture</h3>
+                        <p>Du Samedi au Jeudi : 08h00 - 16h00</p>
+                    </div>
+                </div>
+
+                <!-- Touch-friendly Map Wrapper -->
+                <div class="map-wrapper" id="mapWrapper">
+                    <iframe
+                        id="googleMapIframe"
+                        title="Localisation du Cabinet Dr Bakha S. sur Google Maps"
+                        src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3209.1007271838494!2d7.436598084719768!3d36.455121980020934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1scabinet%20de%20pneumologie%20allergologie%20Dr.%20Bakha%20S!5e0!3m2!1sfr!2sdz!4v1735734049065!5m2!1sfr!2sdz"
+                        width="100%"
+                        height="300"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                    <div class="map-overlay" id="mapOverlay">
+                        <a href="https://maps.google.com/?q=36.45512,7.43659" target="_blank" rel="noopener noreferrer" class="cta-button primary-cta map-direct-btn">
+                            <i class="fas fa-directions" aria-hidden="true"></i> Ouvrir via l'application GPS
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Doctor -->
+            <section id="apropos" class="about-section">
+                <div class="about-card">
+                    <div class="about-header">
+                        <img src="cabinet-medium.png" width="70" height="70" alt="Dr. Bakha S." class="about-emblem" loading="lazy" decoding="async">
+                        <div>
+                            <h3>Dr. Bakha S.</h3>
+                            <p class="about-badge">Médecin Spécialiste en Pneumologie & Allergologie</p>
+                        </div>
+                    </div>
+                    <ul class="about-list">
+                        <li><i class="fas fa-check-circle" aria-hidden="true"></i> Diplômée de la Faculté de Médecine et du CHU / Hôpital Militaire de Constantine.</li>
+                        <li><i class="fas fa-check-circle" aria-hidden="true"></i> Bilan diagnostic intégré : Radiographie thoracique, Explorations Fonctionnelles Respiratoires (EFR), et enregistrement du sommeil.</li>
+                        <li><i class="fas fa-check-circle" aria-hidden="true"></i> Prise en charge personnalisée des adultes et des enfants selon les recommandations internationales récentes.</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="main-footer">
+            <div class="footer-inner">
+                <p>© 2025 Cabinet Dr Bakha S. - Pneumologie & Allergologie Guelma</p>
+                <p class="footer-address"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Cité 19 Juin, derrière l'hôpital Hakim Okbi, Guelma</p>
+            </div>
+        </footer>
+
+        <!-- Mobile Sticky Fast-Action Bar -->
+        <aside class="mobile-action-bar" aria-label="Barre d'actions rapides">
+            <a href="tel:+213663755584" class="mobile-action-btn call-btn">
+                <i class="fas fa-phone-alt" aria-hidden="true"></i>
+                <span>Appeler</span>
+            </a>
+            <a href="https://wa.me/213663755584?text=Bonjour%20Cabinet%20Dr.%20Bakha%2C%20je%20souhaite%20des%20informations" target="_blank" rel="noopener noreferrer" class="mobile-action-btn wa-btn">
+                <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                <span>WhatsApp</span>
+            </a>
+            <a href="#appointment" class="mobile-action-btn appt-btn">
+                <i class="fas fa-calendar-check" aria-hidden="true"></i>
+                <span>Rendez-vous</span>
+            </a>
+            <a href="https://maps.google.com/?q=36.45512,7.43659" target="_blank" rel="noopener noreferrer" class="mobile-action-btn map-btn">
+                <i class="fas fa-directions" aria-hidden="true"></i>
+                <span>Itinéraire</span>
+            </a>
+        </aside>
+
+        <!-- Booking Success Modal -->
+        <div id="appointmentSuccessPopupOverlay" class="popup-overlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <div class="popup-content">
+                <button class="close-popup" id="modalCloseBtn" aria-label="Fermer la fenêtre" type="button">×</button>
+                <div class="popup-icon"><i class="fas fa-check-circle" aria-hidden="true"></i></div>
+                <h2 id="modalTitle">Demande enregistrée avec succès</h2>
+                <div class="appointment-confirmation-details">
+                    <p>Merci <strong id="popup-appt-name"></strong> !</p>
+                    <p>L'équipe du cabinet vous contactera au (<span id="popup-appt-phone" dir="ltr"></span>) pour confirmer l'heure de votre visite prévue le <strong id="popup-appt-date"></strong>.</p>
+                </div>
+                <button type="button" class="cta-button primary-cta modal-ok-btn" id="modalOkBtn">D'accord</button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" defer></script>
+    <script src="app.js" defer></script>
+</body>
+</html>
