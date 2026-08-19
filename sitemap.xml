@@ -1,13 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset
       xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xhtml="http://www.w3.org/1999/xhtml"
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
-<!-- Main Page -->
+<!-- Main Pages -->
 <url>
   <loc>https://bakha-pneumo.netlify.app/</loc>
+  <xhtml:link rel="alternate" hreflang="ar" href="https://bakha-pneumo.netlify.app/"/>
+  <xhtml:link rel="alternate" hreflang="fr" href="https://bakha-pneumo.netlify.app/index-fr.html"/>
+  <lastmod>2025-05-23T10:00:00+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://bakha-pneumo.netlify.app/index-fr.html</loc>
+  <xhtml:link rel="alternate" hreflang="ar" href="https://bakha-pneumo.netlify.app/"/>
+  <xhtml:link rel="alternate" hreflang="fr" href="https://bakha-pneumo.netlify.app/index-fr.html"/>
   <lastmod>2025-05-23T10:00:00+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>1.00</priority>
@@ -122,53 +133,6 @@
   <changefreq>monthly</changefreq>
   <priority>0.85</priority>
 </url>
-<<<<<<< HEAD
-=======
-
-<!-- Health Calculators -->
-<url>
-  <loc>https://bakha-pneumo.netlify.app/bmi-calculator.html</loc>
-  <lastmod>2025-05-23T10:00:00+00:00</lastmod>
-  <changefreq>yearly</changefreq>
-  <priority>0.75</priority>
-</url>
-<url>
-  <loc>https://bakha-pneumo.netlify.app/bmr-calculator.html</loc>
-  <lastmod>2025-05-23T10:00:00+00:00</lastmod>
-  <changefreq>yearly</changefreq>
-  <priority>0.75</priority>
-</url>
-<url>
-  <loc>https://bakha-pneumo.netlify.app/calorie-calculator.html</loc>
-  <lastmod>2025-05-23T10:00:00+00:00</lastmod>
-  <changefreq>yearly</changefreq>
-  <priority>0.75</priority>
-</url>
-<url>
-  <loc>https://bakha-pneumo.netlify.app/whr-calculator.html</loc>
-  <lastmod>2025-05-23T10:00:00+00:00</lastmod>
-  <changefreq>yearly</changefreq>
-  <priority>0.75</priority>
-</url>
-<url>
-  <loc>https://bakha-pneumo.netlify.app/smoking-cost-calculator.html</loc>
-  <lastmod>2025-05-23T10:00:00+00:00</lastmod>
-  <changefreq>yearly</changefreq>
-  <priority>0.75</priority>
-</url>
-<url>
-  <loc>https://bakha-pneumo.netlify.app/lung-age-calculator.html</loc>
-  <lastmod>2025-05-23T10:00:00+00:00</lastmod>
-  <changefreq>yearly</changefreq>
-  <priority>0.75</priority>
-</url>
-<url>
-  <loc>https://bakha-pneumo.netlify.app/hydration-calculator.html</loc>
-  <lastmod>2025-05-23T10:00:00+00:00</lastmod>
-  <changefreq>yearly</changefreq>
-  <priority>0.75</priority>
-</url>
->>>>>>> 784e01969a930e523fb348ec193cdb3fa97af115
 
 <!-- Health Calculators -->
 <url>
