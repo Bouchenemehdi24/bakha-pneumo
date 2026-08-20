@@ -392,6 +392,50 @@
                 </div>
             </section>
 
+            <!-- Appointment Form Section -->
+            <section id="appointment" class="appointment-section">
+                <div class="appointment-content">
+                    <h2 class="section-title text-light">Demander un Rendez-vous au Cabinet</h2>
+                    <p class="appointment-intro">Saisissez vos informations ci-dessous. Notre secrétariat vous recontactera pour valider l'horaire de votre consultation :</p>
+
+                    <form id="appointmentForm-fr" action="https://formspree.io/f/mblowkoo" method="POST" class="mobile-form" novalidate>
+                        <input type="text" name="_gotcha" style="display:none !important;" tabindex="-1" autocomplete="off">
+
+                        <div class="form-group">
+                            <label for="name-fr">Nom & Prénom <span class="req">*</span></label>
+                            <input type="text" id="name-fr" name="name" autocomplete="name" enterkeyhint="next" required placeholder="Ex : Belkacem Mohamed">
+                            <span class="field-error" id="name-error-fr"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="sex-fr">Sexe <span class="req">*</span></label>
+                            <select id="sex-fr" name="sex" required>
+                                <option value="">-- Sélectionner le sexe --</option>
+                                <option value="Homme">Homme</option>
+                                <option value="Femme">Femme</option>
+                            </select>
+                            <span class="field-error" id="sex-error-fr"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone-fr">Numéro de Téléphone <span class="req">*</span></label>
+                            <input type="tel" id="phone-fr" name="phone" autocomplete="tel" inputmode="numeric" enterkeyhint="next" placeholder="06XXXXXXXX ou 07XXXXXXXX" required>
+                            <span class="field-error" id="phone-error-fr"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="appointmentDate-fr">Date Souhaitée <span class="req">*</span></label>
+                            <input type="date" id="appointmentDate-fr" name="appointment_date" enterkeyhint="done" required>
+                            <span class="field-error" id="date-error-fr"></span>
+                        </div>
+
+                        <button type="submit" class="submit-button" id="submitApptBtn-fr">
+                            <i class="fas fa-paper-plane" aria-hidden="true"></i> Confirmer la Demande
+                        </button>
+                    </form>
+                </div>
+            </section>
+
             <!-- Interactive Symptom Navigator Widget -->
             <section id="symptom-navigator" class="symptom-navigator-section">
                 <div class="navigator-card">
@@ -642,50 +686,6 @@
                         <summary><i class="fas fa-map-pin" aria-hidden="true"></i> Quelle est l'adresse exacte du cabinet ?</summary>
                         <div class="faq-answer">Wilaya de Guelma, Cité 19 Juin, directement derrière l'hôpital Hakim Okbi, en face de la pharmacie.</div>
                     </details>
-                </div>
-            </section>
-
-            <!-- Appointment Form Section -->
-            <section id="appointment" class="appointment-section">
-                <div class="appointment-content">
-                    <h2 class="section-title text-light">Demander un Rendez-vous au Cabinet</h2>
-                    <p class="appointment-intro">Saisissez vos informations ci-dessous. Notre secrétariat vous recontactera pour valider l'horaire de votre consultation :</p>
-
-                    <form id="appointmentForm-fr" action="https://formspree.io/f/mblowkoo" method="POST" class="mobile-form" novalidate>
-                        <input type="text" name="_gotcha" style="display:none !important;" tabindex="-1" autocomplete="off">
-
-                        <div class="form-group">
-                            <label for="name-fr">Nom & Prénom <span class="req">*</span></label>
-                            <input type="text" id="name-fr" name="name" autocomplete="name" enterkeyhint="next" required placeholder="Ex : Belkacem Mohamed">
-                            <span class="field-error" id="name-error-fr"></span>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="sex-fr">Sexe <span class="req">*</span></label>
-                            <select id="sex-fr" name="sex" required>
-                                <option value="">-- Sélectionner le sexe --</option>
-                                <option value="Homme">Homme</option>
-                                <option value="Femme">Femme</option>
-                            </select>
-                            <span class="field-error" id="sex-error-fr"></span>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="phone-fr">Numéro de Téléphone <span class="req">*</span></label>
-                            <input type="tel" id="phone-fr" name="phone" autocomplete="tel" inputmode="numeric" enterkeyhint="next" placeholder="06XXXXXXXX ou 07XXXXXXXX" required>
-                            <span class="field-error" id="phone-error-fr"></span>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="appointmentDate-fr">Date Souhaitée <span class="req">*</span></label>
-                            <input type="date" id="appointmentDate-fr" name="appointment_date" enterkeyhint="done" required>
-                            <span class="field-error" id="date-error-fr"></span>
-                        </div>
-
-                        <button type="submit" class="submit-button" id="submitApptBtn-fr">
-                            <i class="fas fa-paper-plane" aria-hidden="true"></i> Confirmer la Demande
-                        </button>
-                    </form>
                 </div>
             </section>
 
