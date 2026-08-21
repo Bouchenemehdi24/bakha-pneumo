@@ -1,146 +1,123 @@
 {
   "@context": "https://schema.org",
-  "@type": "MedicalClinic",
-  "@id": "https://bakha-pneumo.netlify.app/#clinic",
-  "name": "عيادة الدكتورة بخة س للأمراض الصدرية والحساسية",
-  "alternateName": [
-    "Cabinet Médical Dr. Bakha S. - Pneumologue Allergologue",
-    "Cabinet de Pneumologie et Allergologie Dr Bakha S",
-    "عيادة أمراض الصدر والحساسية قالمة"
-  ],
-  "description": "عيادة متخصصة في تشخيص وعلاج أمراض الجهاز التنفسي، الربو، الحساسية الصدرية والجلدية، فحص وظائف الرئة (EFR)، وتسجيل اضطرابات النوم في ولاية ڨالمة. Cabinet médical spécialisé à Guelma : Asthme, Allergies, Spirométrie, et Apnée du Sommeil.",
-  "url": "https://bakha-pneumo.netlify.app/",
-  "logo": "https://bakha-pneumo.netlify.app/cabinet-logo.png",
-  "image": "https://bakha-pneumo.netlify.app/cabinet-large.png",
-  "telephone": "+213663755584",
-  "priceRange": "DZD",
-  "currenciesAccepted": "DZD",
-  "paymentAccepted": "Cash, Chifa",
-  "medicalSpecialty": [
-    "Pulmonary",
-    "Allergy",
-    "RespiratoryTherapy"
-  ],
-  "hasMap": "https://maps.google.com/?q=36.455176,7.434448",
-  "sameAs": [
-    "https://www.facebook.com/profile.php?id=61560422818675",
-    "https://maps.app.goo.gl/CUUGiOIOMg-BEAE"
-  ],
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "حي 19 جوان، خلف مستشفى الحكيم عقبي",
-    "addressLocality": "ڨالمة",
-    "addressRegion": "ولاية قالمة",
-    "postalCode": "24000",
-    "addressCountry": "DZ"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 36.455176,
-    "longitude": 7.434448
-  },
-  "areaServed": [
+  "@graph": [
     {
-      "@type": "AdministrativeArea",
-      "name": "ڨالمة - Guelma"
-    },
-    {
-      "@type": "AdministrativeArea",
-      "name": "بوشقوف - Bouchegouf"
-    },
-    {
-      "@type": "AdministrativeArea",
-      "name": "وادي الزناتي - Oued Zenati"
-    },
-    {
-      "@type": "AdministrativeArea",
-      "name": "هيليوبوليس - Héliopolis"
-    },
-    {
-      "@type": "AdministrativeArea",
-      "name": "حمام دباغ - Hammam Debagh"
-    },
-    {
-      "@type": "AdministrativeArea",
-      "name": "سوق أهراس - Souk Ahras"
-    },
-    {
-      "@type": "AdministrativeArea",
-      "name": "عنابة - Annaba"
-    }
-  ],
-  "openingHoursSpecification": [
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Saturday",
-        "Sunday",
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday"
+      "@type": "MedicalClinic",
+      "@id": "https://bakha-pneumo.netlify.app/#clinic",
+      "name": "عيادة الدكتورة بخة س للأمراض الصدرية والحساسية",
+      "alternateName": [
+        "Cabinet Médical Dr. Bakha S. - Pneumologue Allergologue",
+        "Cabinet de Pneumologie et Allergologie Dr Bakha S",
+        "عيادة أمراض الصدر والحساسية قالمة",
+        "Pneumologue Guelma Dr Bakha"
       ],
-      "opens": "08:00",
-      "closes": "16:00"
-    }
-  ],
-  "founder": {
-    "@type": "Physician",
-    "@id": "https://bakha-pneumo.netlify.app/#doctor",
-    "name": "الدكتورة بخة س",
-    "alternateName": "Dr. Bakha S.",
-    "jobTitle": "طبيبة أخصائية في الأمراض الصدرية، الحساسية واضطرابات النوم (Pneumologue-Allergologue)",
-    "url": "https://bakha-pneumo.netlify.app/#apropos",
-    "knowsLanguage": ["ar", "fr"],
-    "alumniOf": {
-      "@type": "EducationalOrganization",
-      "name": "كلية الطب والمستشفى الجامعي والعسكري بقسنطينة (Faculté de Médecine / CHU Constantine)"
-    }
-  },
-  "availableService": [
-    {
-      "@type": "MedicalTest",
-      "name": "قياس الوظائف التنفسية (Spirométrie / EFR)",
-      "alternateName": "Exploration Fonctionnelle Respiratoire",
-      "description": "فحص دقيق لكفاءة الرئتين وتشخيص ومتابعة حالات الربو والانسداد الرئوي المزمن."
-    },
-    {
-      "@type": "MedicalTest",
-      "name": "اختبارات الحساسية الجلدية (Tests Cutanés d'Allergie / Prick Tests)",
-      "alternateName": "Tests d'allergie",
-      "description": "تحديد مسببات الحساسية الصدرية، الأنفية، والغذائية بنتائج سريعة ودقيقة."
-    },
-    {
-      "@type": "MedicalProcedure",
-      "name": "تسجيل النوم والتنفس (Polygraphie Ventilatoire du Sommeil)",
-      "alternateName": "تشخيص انقطاع التنفس النومي (Apnée du sommeil)",
-      "description": "فحص وتشخيص متلازمة انقطاع التنفس والشخير أثناء النوم وتحديد خطة العلاج المناسبة."
-    },
-    {
-      "@type": "MedicalProcedure",
-      "name": "تشخيص وعلاج أمراض الصدر والربو (Prise en charge de l'Asthme et BPCO)",
-      "description": "متابعة شاملة لمرضى الربو، الحساسية الصدرية، والتهابات الشعب الهوائية للأطفال والبالغين."
-    },
-    {
-      "@type": "MedicalProcedure",
-      "name": "المساعدة على الإقلاع عن التدخين (Sevrage Tabagique)",
-      "description": "مرافقة طبية وبرامج علاجية لمساعدة المدخنين على التوقف عن التدخين وحماية الرئتين."
-    }
-  ],
-  "contactPoint": [
-    {
-      "@type": "ContactPoint",
+      "description": "عيادة متخصصة في تشخيص وعلاج أمراض الجهاز التنفسي، الربو، الحساسية الصدرية والجلدية، راديو الصدر الرقمي (Radio Thorax)، فحص وظائف الرئة (EFR)، وتسجيل اضطرابات النوم في ولاية ڨالمة. Cabinet médical spécialisé à Guelma : Radio Thorax, Asthme, Allergies, Spirométrie (EFR), et Apnée du Sommeil.",
+      "url": "https://bakha-pneumo.netlify.app/",
+      "logo": "https://bakha-pneumo.netlify.app/cabinet-logo.png",
+      "image": "https://bakha-pneumo.netlify.app/cabinet-large.png",
       "telephone": "+213663755584",
-      "contactType": "reservations",
-      "availableLanguage": ["Arabic", "French"],
-      "areaServed": "DZ"
-    },
-    {
-      "@type": "ContactPoint",
-      "telephone": "+213663755584",
-      "contactType": "customer support",
-      "availableLanguage": ["Arabic", "French"],
-      "areaServed": "DZ"
+      "priceRange": "DZD",
+      "currenciesAccepted": "DZD",
+      "paymentAccepted": "Cash, Chifa",
+      "medicalSpecialty": [
+        "Pulmonary",
+        "Allergy",
+        "RespiratoryTherapy"
+      ],
+      "hasMap": "https://maps.google.com/?q=36.455176,7.434448",
+      "sameAs": [
+        "https://www.facebook.com/profile.php?id=61560422818675",
+        "https://maps.app.goo.gl/CUUGiOIOMg-BEAE"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "حي 19 جوان، خلف مستشفى الحكيم عقبي / Cité 19 Juin, derrière l'hôpital Hakim Okbi",
+        "addressLocality": "ڨالمة / Guelma",
+        "addressRegion": "ولاية قالمة / Wilaya de Guelma",
+        "postalCode": "24000",
+        "addressCountry": "DZ"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 36.455176,
+        "longitude": 7.434448
+      },
+      "areaServed": [
+        { "@type": "AdministrativeArea", "name": "ڨالمة - Guelma" },
+        { "@type": "AdministrativeArea", "name": "قلعة بوصبع - Guelaat Bou Sbaa" },
+        { "@type": "AdministrativeArea", "name": "بلخير - Belkheir" },
+        { "@type": "AdministrativeArea", "name": "بوشقوف - Bouchegouf" },
+        { "@type": "AdministrativeArea", "name": "وادي الزناتي - Oued Zenati" },
+        { "@type": "AdministrativeArea", "name": "هيليوبوليس - Héliopolis" },
+        { "@type": "AdministrativeArea", "name": "حمام دباغ - Hammam Debagh" },
+        { "@type": "AdministrativeArea", "name": "سوق أهراس - Souk Ahras" },
+        { "@type": "AdministrativeArea", "name": "عنابة - Annaba" },
+        { "@type": "AdministrativeArea", "name": "سدراتة - Sedrata" },
+        { "@type": "AdministrativeArea", "name": "سكيكدة - Skikda" }
+      ],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Saturday",
+            "Sunday",
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday"
+          ],
+          "opens": "08:00",
+          "closes": "16:00"
+        }
+      ],
+      "founder": {
+        "@type": "Physician",
+        "@id": "https://bakha-pneumo.netlify.app/#doctor",
+        "name": "الدكتورة بخة س",
+        "alternateName": "Dr. Bakha S.",
+        "jobTitle": "طبيبة أخصائية في الأمراض الصدرية، الحساسية واضطرابات النوم (Pneumologue-Allergologue)",
+        "url": "https://bakha-pneumo.netlify.app/#apropos",
+        "knowsLanguage": ["ar", "fr", "ar-DZ"],
+        "alumniOf": {
+          "@type": "EducationalOrganization",
+          "name": "كلية الطب والمستشفى الجامعي والعسكري بقسنطينة (Faculté de Médecine / CHU Constantine)"
+        }
+      },
+      "availableService": [
+        {
+          "@type": "MedicalProcedure",
+          "name": "أشعة الصدر الرقمية الفورية (Radiographie Thoracique Numérique / Radio Thorax)",
+          "alternateName": "Radio Thorax Guelma",
+          "description": "تصوير إشعاعي رقمي عالي الدقة للقفص الصدري والرئتين يُمكّن من كشف الالتهابات والسل وأورام الصدر فوراً بالعيادة."
+        },
+        {
+          "@type": "MedicalTest",
+          "name": "قياس الوظائف التنفسية (Spirométrie / EFR)",
+          "alternateName": "Exploration Fonctionnelle Respiratoire",
+          "description": "فحص دقيق لكفاءة الرئتين وتشخيص ومتابعة حالات الربو والانسداد الرئوي المزمن."
+        },
+        {
+          "@type": "MedicalTest",
+          "name": "اختبارات الحساسية الجلدية (Tests Cutanés d'Allergie / Prick Tests)",
+          "alternateName": "Tests d'allergie",
+          "description": "تحديد مسببات الحساسية الصدرية، الأنفية، والغذائية بنتائج سريعة ودقيقة."
+        },
+        {
+          "@type": "MedicalProcedure",
+          "name": "تسجيل النوم والتنفس (Polygraphie Ventilatoire du Sommeil)",
+          "alternateName": "تشخيص انقطاع التنفس النومي (Apnée du sommeil)",
+          "description": "فحص وتشخيص متلازمة انقطاع التنفس والشخير أثناء النوم وتحديد خطة العلاج المناسبة."
+        }
+      ],
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+213663755584",
+          "contactType": "reservations",
+          "availableLanguage": ["Arabic", "French", "Algerian Arabic"],
+          "areaServed": "DZ"
+        }
+      ]
     }
   ]
 }
