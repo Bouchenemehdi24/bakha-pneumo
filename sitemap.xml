@@ -178,4 +178,151 @@
   <priority>0.75</priority>
 </url>
 
+
+<!-- French Versions of Medical Pages and Calculators -->
+<url>
+  <loc>https://bakha-pneumo.netlify.app/asthma-fr.html</loc>
+  <xhtml:link rel="alternate" hreflang="ar" href="https://bakha-pneumo.netlify.app/asthma.html"/>
+  <xhtml:link rel="alternate" hreflang="fr" href="https://bakha-pneumo.netlify.app/asthma-fr.html"/>
+  <lastmod>2025-05-23T10:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://bakha-pneumo.netlify.app/copd-fr.html</loc>
+  <xhtml:link rel="alternate" hreflang="ar" href="https://bakha-pneumo.netlify.app/copd.html"/>
+  <xhtml:link rel="alternate" hreflang="fr" href="https://bakha-pneumo.netlify.app/copd-fr.html"/>
+  <lastmod>2025-05-23T10:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://bakha-pneumo.netlify.app/lung-cancer-fr.html</loc>
+  <xhtml:link rel="alternate" hreflang="ar" href="https://bakha-pneumo.netlify.app/lung-cancer.html"/>
+  <xhtml:link rel="alternate" hreflang="fr" href="https://bakha-pneumo.netlify.app/lung-cancer-fr.html"/>
+  <lastmod>2025-05-23T10:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.85</priority>
+</url>
+<url>
+  <loc>https://bakha-pneumo.netlify.app/pulmonary-fibrosis-fr.html</loc>
+  <xhtml:link rel="alternate" hreflang="ar" href="https://bakha-pneumo.netlify.app/pulmonary-fibrosis.html"/>
+  <xhtml:link rel="alternate" hreflang="fr" href="https://bakha-pneumo.netlify.app/pulmonary-fibrosis-fr.html"/>
+  <lastmod>2025-05-23T10:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.85</priority>
+</url>
+<url>
+  <loc>https://bakha-pneumo.netlify.app/bronchitis-fr.html</loc>
+  <xhtml:link rel="alternate" hreflang="ar" href="https://bakha-pneumo.netlify.app/bronchitis.html"/>
+  <xhtml:link rel="alternate" hreflang="fr" href="https://bakha-pneumo.netlify.app/bronchitis-fr.html"/>
+  <lastmod>2025-05-23T10:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.85</priority>
+</url>
+<url>
+  <loc>https://bakha-pneumo.netlify.app/pneumonia-fr.html</loc>
+  <xhtml:link rel="alternate" hreflang="ar" href="https://bakha-pneumo.netlify.app/pneumonia.html"/>
+  <xhtml:link rel="alternate" hreflang="fr" href="https://bakha-pneumo.netlify.app/pneumonia-fr.html"/>
+  <lastmod>2025-05-23T10:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.85</priority>
+</url>
+<url>
+  <loc>https://bakha-pneumo.netlify.app/tuberculosis-fr.html</loc>
+  <xhtml:link rel="alternate" hreflang="ar" href="https://bakha-pneumo.netlify.app/tuberculosis.html"/>
+  <xhtml:link rel="alternate" hreflang="fr" href="https://bakha-pneumo.netlify.app/tuberculosis-fr.html"/>
+  <lastmod>2025-05-23T10:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.85</priority>
+</url>
+<url>
+  <loc>https://bakha-pneumo.netlify.app/covid-19-fr.html</loc>
+  <xhtml:link rel="alternate" hreflang="ar" href="https://bakha-pneumo.netlify.app/covid-19.html"/>
+  <xhtml:link rel="alternate" hreflang="fr" href="https://bakha-pneumo.netlify.app/covid-19-fr.html"/>
+  <lastmod>2025-05-23T10:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.85</priority>
+</url>
+<url>
+  <loc>https://bakha-pneumo.netlify.app/allergic-rhinitis-fr.html</loc>
+  <xhtml:link rel="alternate" hreflang="ar" href="https://bakha-pneumo.netlify.app/allergic-rhinitis.html"/>
+  <xhtml:link rel="alternate" hreflang="fr" href="https://bakha-pneumo.netlify.app/allergic-rhinitis-fr.html"/>
+  <lastmod>2025-05-23T10:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.85</priority>
+</url>
+<url>
+  <loc>https://bakha-pneumo.netlify.app/allergic-asthma-fr.html</loc>
+  <xhtml:link rel="alternate" hreflang="ar" href="https://bakha-pneumo.netlify.app/allergic-asthma.html"/>
+  <xhtml:link rel="alternate" hreflang="fr" href="https://bakha-pneumo.netlify.app/allergic-asthma-fr.html"/>
+  <lastmod>2025-05-23T10:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://bakha-pneumo.netlify.app/allergic-bronchitis-fr.html</loc>
+  <xhtml:link rel="alternate" hreflang="ar" href="https://bakha-pneumo.netlify.app/allergic-bronchitis.html"/>
+  <xhtml:link rel="alternate" hreflang="fr" href="https://bakha-pneumo.netlify.app/allergic-bronchitis-fr.html"/>
+  <lastmod>2025-05-23T10:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.85</priority>
+</url>
+<url>
+  <loc>https://bakha-pneumo.netlify.app/urticaria-fr.html</loc>
+  <xhtml:link rel="alternate" hreflang="ar" href="https://bakha-pneumo.netlify.app/urticaria.html"/>
+  <xhtml:link rel="alternate" hreflang="fr" href="https://bakha-pneumo.netlify.app/urticaria-fr.html"/>
+  <lastmod>2025-05-23T10:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.85</priority>
+</url>
+<url>
+  <loc>https://bakha-pneumo.netlify.app/food-allergy-fr.html</loc>
+  <xhtml:link rel="alternate" hreflang="ar" href="https://bakha-pneumo.netlify.app/food-allergy.html"/>
+  <xhtml:link rel="alternate" hreflang="fr" href="https://bakha-pneumo.netlify.app/food-allergy-fr.html"/>
+  <lastmod>2025-05-23T10:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.85</priority>
+</url>
+<url>
+  <loc>https://bakha-pneumo.netlify.app/sleep-apnea-fr.html</loc>
+  <xhtml:link rel="alternate" hreflang="ar" href="https://bakha-pneumo.netlify.app/sleep-apnea.html"/>
+  <xhtml:link rel="alternate" hreflang="fr" href="https://bakha-pneumo.netlify.app/sleep-apnea-fr.html"/>
+  <lastmod>2025-05-23T10:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.85</priority>
+</url>
+<url>
+  <loc>https://bakha-pneumo.netlify.app/bmi-calculator-fr.html</loc>
+  <xhtml:link rel="alternate" hreflang="ar" href="https://bakha-pneumo.netlify.app/bmi-calculator.html"/>
+  <xhtml:link rel="alternate" hreflang="fr" href="https://bakha-pneumo.netlify.app/bmi-calculator-fr.html"/>
+  <lastmod>2025-05-23T10:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.75</priority>
+</url>
+<url>
+  <loc>https://bakha-pneumo.netlify.app/calorie-calculator-fr.html</loc>
+  <xhtml:link rel="alternate" hreflang="ar" href="https://bakha-pneumo.netlify.app/calorie-calculator.html"/>
+  <xhtml:link rel="alternate" hreflang="fr" href="https://bakha-pneumo.netlify.app/calorie-calculator-fr.html"/>
+  <lastmod>2025-05-23T10:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.75</priority>
+</url>
+<url>
+  <loc>https://bakha-pneumo.netlify.app/smoking-cost-calculator-fr.html</loc>
+  <xhtml:link rel="alternate" hreflang="ar" href="https://bakha-pneumo.netlify.app/smoking-cost-calculator.html"/>
+  <xhtml:link rel="alternate" hreflang="fr" href="https://bakha-pneumo.netlify.app/smoking-cost-calculator-fr.html"/>
+  <lastmod>2025-05-23T10:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.75</priority>
+</url>
+<url>
+  <loc>https://bakha-pneumo.netlify.app/lung-age-calculator-fr.html</loc>
+  <xhtml:link rel="alternate" hreflang="ar" href="https://bakha-pneumo.netlify.app/lung-age-calculator.html"/>
+  <xhtml:link rel="alternate" hreflang="fr" href="https://bakha-pneumo.netlify.app/lung-age-calculator-fr.html"/>
+  <lastmod>2025-05-23T10:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.75</priority>
+</url>
+
 </urlset>

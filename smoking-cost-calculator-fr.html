@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-P6BNCWVR');</script>
+<!-- End Google Tag Manager -->
+
+    <!-- Instant Theme Loader (Zero Flash) -->
+    <script>
+        (function() {
+            try {
+                var savedTheme = localStorage.getItem('bakha_theme');
+                var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+                var theme = savedTheme ? savedTheme : (prefersDark ? 'dark' : 'light');
+                document.documentElement.setAttribute('data-theme', theme);
+            } catch (e) {}
+        })();
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BCT8GP6LZT"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-BCT8GP6LZT');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+    <meta name="keywords" content="Coût du tabac Algérie, calcul dépense cigarettes, économiser en arrêtant de fumer, santé poumon Guelma, Dr Bakha">
+    <meta name="description" content="Calculez l'argent dépensé en cigarettes par mois, an et sur plusieurs années en Dinars Algériens (DZD). Prenez conscience de l'impact financier et sur votre santé.">
+    <meta name="author" content="Cabinet Dr Bakha S. - Pneumologue Allergologue Guelma">
+    <meta http-equiv="Content-Language" content="fr, ar">
+    <title>Calculateur du Coût Financier du Tabagisme - Dr Bakha Guelma</title>
+    <link rel="icon" href="cabinet-logo.png" type="image/png">
+    <link rel="canonical" href="https://bakha-pneumo.netlify.app/smoking-cost-calculator-fr.html">
+    <link rel="alternate" hreflang="ar" href="https://bakha-pneumo.netlify.app/smoking-cost-calculator.html">
+    <link rel="alternate" hreflang="fr" href="https://bakha-pneumo.netlify.app/smoking-cost-calculator-fr.html">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Calculateur du Coût du Tabagisme",
+        "description": "Calculez l'argent dépensé en cigarettes par mois, an et sur plusieurs années en Dinars Algériens (DZD). Prenez conscience de l'impact financier et sur votre santé.",
+        "applicationCategory": "HealthApplication",
+        "operatingSystem": "All",
+        "url": "https://bakha-pneumo.netlify.app/smoking-cost-calculator-fr.html"
+    }
+    </script>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P6BNCWVR"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+    <!-- Mobile Drawer Overlay -->
+    <div class="menu-overlay" id="menuOverlay" aria-hidden="true"></div>
+
+    <div id="page-wrapper">
+
+        <!-- Live Clinic Status Bar -->
+        <aside class="datetime-bar" aria-label="Horaires et statut du cabinet">
+            <div class="datetime-container">
+                <span id="arabic-time" class="current-time">--:--</span>
+                <div id="clinic-status" class="clinic-status">
+                    <span class="status-indicator">
+                        <i class="fas fa-circle" aria-hidden="true"></i>
+                        <span id="status-message">Vérification en cours...</span>
+                    </span>
+                    <span id="next-opening" class="next-opening"></span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Header -->
+        <header class="main-header">
+            <div class="header-inner">
+                <a href="index-fr.html" class="clinic-brand" aria-label="Accueil Cabinet Dr Bakha">
+                    <div class="logo-container">
+                        <img
+                            src="cabinet-logo.png"
+                            width="44"
+                            height="44"
+                            alt="Logo Cabinet Dr Bakha"
+                            class="clinic-logo"
+                            decoding="async">
+                    </div>
+                    <div class="clinic-title">
+                        <h1>Cabinet Dr Bakha S.</h1>
+                        <p class="clinic-subtitle">Pneumologie & Allergologie - Guelma</p>
+                    </div>
+                </a>
+
+                <!-- Header Actions -->
+                <div class="header-actions">
+                    <div class="lang-switch-container">
+                        <a href="smoking-cost-calculator.html" class="lang-switch-btn" title="Version Arabe">العربية</a>
+                        <span class="lang-switch-active">FR</span>
+                    </div>
+
+                    <div id="google_translate_element" class="lang-selector-wrap"></div>
+
+                    <button id="theme-toggle" aria-label="Changer de thème" class="control-btn" type="button">
+                        <i class="fas fa-moon" aria-hidden="true"></i>
+                    </button>
+
+                    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Ouvrir le menu principal" aria-expanded="false" type="button">
+                        <i class="fas fa-bars" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation Drawer -->
+        <nav class="main-nav" id="mainNav" aria-label="Menu principal">
+            <div class="nav-container">
+                <div class="nav-drawer-header">
+                    <span class="drawer-title">Menu & Spécialités</span>
+                    <button class="close-drawer-btn" id="closeDrawerBtn" aria-label="Fermer le menu" type="button">
+                        <i class="fas fa-times" aria-hidden="true"></i>
+                    </button>
+                </div>
+
+                <ul id="main-menu">
+                    <li class="nav-item">
+                        <a href="index-fr.html" class="nav-link"><i class="fas fa-home" aria-hidden="true"></i> <span>Accueil</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <button class="dropdown-toggle" aria-expanded="false" type="button">
+                            <span><i class="fas fa-lungs" aria-hidden="true"></i> Pneumologie</span>
+                            <i class="fas fa-chevron-down caret-icon" aria-hidden="true"></i>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="asthma-fr.html">Asthme</a></li>
+                            <li><a href="copd-fr.html">BPCO (Bronchopneumopathie)</a></li>
+                            <li><a href="lung-cancer-fr.html">Cancer du Poumon</a></li>
+                            <li><a href="pulmonary-fibrosis-fr.html">Fibrose Pulmonaire</a></li>
+                            <li><a href="bronchitis-fr.html">Bronchite Chronique</a></li>
+                            <li><a href="pneumonia-fr.html">Pneumonie</a></li>
+                            <li><a href="tuberculosis-fr.html">Tuberculose</a></li>
+                            <li><a href="covid-19-fr.html">COVID-19</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <button class="dropdown-toggle" aria-expanded="false" type="button">
+                            <span><i class="fas fa-allergies" aria-hidden="true"></i> Allergologie</span>
+                            <i class="fas fa-chevron-down caret-icon" aria-hidden="true"></i>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="allergic-rhinitis-fr.html">Rhinite Allergique</a></li>
+                            <li><a href="allergic-asthma-fr.html">Asthme Allergique</a></li>
+                            <li><a href="allergic-bronchitis-fr.html">Bronchite Allergique</a></li>
+                            <li><a href="urticaria-fr.html">Urticaire</a></li>
+                            <li><a href="food-allergy-fr.html">Allergie Alimentaire</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="sleep-apnea-fr.html" class="nav-link"><i class="fas fa-bed" aria-hidden="true"></i> <span>Apnée du Sommeil</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <button class="dropdown-toggle" aria-expanded="false" type="button">
+                            <span><i class="fas fa-calculator" aria-hidden="true"></i> Calculateurs Santé</span>
+                            <i class="fas fa-chevron-down caret-icon" aria-hidden="true"></i>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="bmi-calculator-fr.html">Indice de Masse Corporelle (IMC)</a></li>
+                            <li><a href="calorie-calculator-fr.html">Calculateur de Calories</a></li>
+                            <li><a href="smoking-cost-calculator-fr.html">Coût du Tabagisme</a></li>
+                            <li><a href="lung-age-calculator-fr.html">Âge Pulmonaire</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a href="index-fr.html#services" class="nav-link"><i class="fas fa-stethoscope" aria-hidden="true"></i> <span>Services</span></a></li>
+                    <li class="nav-item"><a href="index-fr.html#coverage" class="nav-link"><i class="fas fa-map-marked-alt" aria-hidden="true"></i> <span>Zones Desservies</span></a></li>
+                    <li class="nav-item"><a href="index-fr.html#faq" class="nav-link"><i class="fas fa-question-circle" aria-hidden="true"></i> <span>FAQ</span></a></li>
+                    <li class="nav-item"><a href="index-fr.html#apropos" class="nav-link"><i class="fas fa-user-md" aria-hidden="true"></i> <span>Le Docteur</span></a></li>
+                    <li class="nav-item"><a href="index-fr.html#contact" class="nav-link"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> <span>Contact & Accès</span></a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <main role="main">
+            <div class="main-content calculator-page">
+
+                <header class="calculator-header" data-aos="fade-down">
+                    <h1><i class="fas fa-smoking-ban icon-before"></i> Calculateur du Coût du Tabagisme</h1>
+                    <p class="page-subtitle">Découvrez les sommes colossales que vous pouvez économiser en arrêtant de fumer dès aujourd'hui.</p>
+                </header>
+
+                <div class="calculator-container" data-aos="fade-up">
+
+            <form id="smoking-cost-form" onsubmit="event.preventDefault(); calculateSmokingCost();" class="calc-form">
+                <div class="form-group">
+                    <label for="cost-per-pack"><i class="fas fa-money-bill-wave"></i> Prix moyen d'un paquet de cigarettes (DZD) :</label>
+                    <input type="number" id="cost-per-pack" step="10" min="50" max="2000" required placeholder="Ex : 350">
+                </div>
+                <div class="form-group">
+                    <label for="packs-per-day"><i class="fas fa-smoking"></i> Nombre de paquets fumés par jour :</label>
+                    <input type="number" id="packs-per-day" step="0.25" min="0.1" max="10" required placeholder="Ex : 1">
+                </div>
+                <div class="form-group">
+                    <label for="smoking-years"><i class="fas fa-history"></i> Nombre d'années de tabagisme :</label>
+                    <input type="number" id="smoking-years" step="1" min="1" max="70" required placeholder="Ex : 10">
+                </div>
+                <button type="submit" class="cta-button primary-cta" style="width:100%;">
+                    <i class="fas fa-calculator"></i> Calculer mes dépenses en tabac
+                </button>
+            </form>
+            <div id="smoking-cost-result" class="calc-result" aria-live="polite"></div>
+
+                </div>
+
+                <div class="article-body" data-aos="fade-up">
+
+            <section class="info-section">
+                <h2>Le Tabagisme : Un Coût Financier et Sanitaire Inestimable</h2>
+                <p>En plus de drainer votre budget chaque mois, le tabagisme est le premier responsable de la <strong>BPCO</strong>, du <strong>cancer bronchique</strong> et de l'essoufflement précoce. Arrêter de fumer restaure votre souffle et protège votre entourage du tabagisme passif.</p>
+            </section>
+
+                </div>
+
+                <!-- Doctor Card -->
+                <section class="clinic-contact-card" data-aos="fade-up">
+                    <div class="contact-info">
+                        <h3><i class="fas fa-stethoscope icon-before"></i> Besoin d'une évaluation médicale personnalisée ?</h3>
+                        <p>Ces calculateurs sont des outils indicatifs. Pour un bilan complet de votre souffle ou de votre poids, consultez le Dr Bakha S. à Guelma.</p>
+                        <div class="contact-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <div>
+                                <h4>Téléphone & WhatsApp</h4>
+                                <p><a href="tel:+213663755584">0663 75 55 84</a></p>
+                                <p><a href="https://wa.me/213663755584?text=Bonjour%2C%20je%20souhaite%20prendre%20rendez-vous" target="_blank" rel="noopener noreferrer" class="whatsapp-link">
+                                    <i class="fab fa-whatsapp"></i> 0663 75 55 84 (WhatsApp)</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="cta-section" data-aos="fade-up">
+                    <h2><i class="fas fa-calendar-check icon-before"></i> Prenez rendez-vous au cabinet</h2>
+                    <p>Bénéficiez d'un diagnostic médical complet adapté à votre profil de santé.</p>
+                    <a href="index-fr.html#appointment" class="cta-button">Demander un rendez-vous</a>
+                </section>
+
+            </div>
+        </main>
+
+        <!-- Main Footer -->
+        <footer class="main-footer">
+            <div class="footer-inner">
+                <p>© <span id="currentYear"></span> Cabinet Dr Bakha S. - Pneumologie & Allergologie Guelma</p>
+                <p class="footer-address">Cité 19 Juin, derrière l'hôpital Hakim Okbi, Guelma, Algérie</p>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Mobile Sticky Bar -->
+    <nav class="mobile-action-bar" aria-label="Actions rapides">
+        <a href="tel:+213663755584" class="mobile-action-btn call-btn">
+            <i class="fas fa-phone-alt"></i><span>Appeler</span>
+        </a>
+        <a href="https://wa.me/213663755584?text=Bonjour%20Cabinet%20Dr.%20Bakha" target="_blank" rel="noopener noreferrer" class="mobile-action-btn wa-btn">
+            <i class="fab fa-whatsapp"></i><span>WhatsApp</span>
+        </a>
+        <a href="https://maps.google.com/?q=36.45512,7.43659" target="_blank" rel="noopener noreferrer" class="mobile-action-btn">
+            <i class="fas fa-map-marker-alt"></i><span>Accès</span>
+        </a>
+        <a href="index-fr.html#appointment" class="mobile-action-btn appt-btn">
+            <i class="fas fa-calendar-plus"></i><span>RDV</span>
+        </a>
+    </nav>
+
+    <!-- Scripts -->
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" defer></script>
+    <script src="app.js" defer></script>
+    <script>
+        const yearEl = document.getElementById('currentYear');
+        if (yearEl) yearEl.textContent = new Date().getFullYear();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+
+        <script>
+        function calculateSmokingCost() {
+            const costPerPack = parseFloat(document.getElementById('cost-per-pack').value);
+            const packsPerDay = parseFloat(document.getElementById('packs-per-day').value);
+            const years = parseFloat(document.getElementById('smoking-years').value);
+            const resultDiv = document.getElementById('smoking-cost-result');
+
+            if (isNaN(costPerPack) || isNaN(packsPerDay) || isNaN(years) || costPerPack <= 0 || packsPerDay <= 0 || years <= 0) {
+                resultDiv.innerHTML = '<p style="color:red;">Veuillez saisir des valeurs valides.</p>';
+                return;
+            }
+
+            const dailyCost = costPerPack * packsPerDay;
+            const monthlyCost = Math.round(dailyCost * 30);
+            const yearlyCost = Math.round(dailyCost * 365);
+            const totalPastCost = Math.round(yearlyCost * years);
+            const futureTenYearsCost = Math.round(yearlyCost * 10);
+
+            resultDiv.innerHTML = `
+                <div style="background:var(--card-bg, #f7fafc); padding:20px; border-radius:10px; border:2px solid #e53e3e; margin-top:20px;">
+                    <p style="font-size:1.1em; margin-bottom:8px;">Dépense mensuelle en cigarettes : <strong style="color:#e53e3e; font-size:1.3em;">${monthlyCost.toLocaleString()} DZD</strong>.</p>
+                    <p style="font-size:1.1em; margin-bottom:8px;">Dépense annuelle : <strong style="color:#c53030; font-size:1.4em;">${yearlyCost.toLocaleString()} DZD</strong>.</p>
+                    <p style="font-size:1.15em; margin-bottom:12px;">Total dépensé sur ${years} an(s) : <strong style="color:#9b2c2c; font-size:1.5em;">${totalPastCost.toLocaleString()} DZD</strong>.</p>
+                    <hr style="margin:12px 0; border:0; border-top:1px solid #cbd5e0;">
+                    <p style="font-size:1.05em; color:#2b6cb0;">En arrêtant aujourd'hui, vous économiserez <strong style="font-size:1.3em;">${futureTenYearsCost.toLocaleString()} DZD</strong> sur les 10 prochaines années, tout en offrant une seconde jeunesse à vos poumons !</p>
+                </div>
+            `;
+        }
+        </script>
+
+</body>
+</html>
