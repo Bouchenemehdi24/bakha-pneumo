@@ -4,14 +4,15 @@
     {
       "@type": "MedicalClinic",
       "@id": "https://bakha-pneumo.netlify.app/#clinic",
-      "name": "عيادة الدكتورة بخة س للأمراض الصدرية والحساسية",
+      "name": "عيادة الدكتورة بخة س للأمراض الصدرية والحساسية وطب النوم",
       "alternateName": [
-        "Cabinet Médical Dr. Bakha S. - Pneumologue Allergologue",
-        "Cabinet de Pneumologie et Allergologie Dr Bakha S",
-        "عيادة أمراض الصدر والحساسية قالمة",
-        "Pneumologue Guelma Dr Bakha"
+        "Cabinet Médical Dr. Bakha S. - Pneumologue Allergologue Somnologue",
+        "Cabinet de Pneumologie, Allergologie et Médecine du Sommeil Dr Bakha S",
+        "عيادة أمراض الصدر والحساسية واضطرابات النوم قالمة",
+        "Pneumologue Allergologue Somnologue Guelma Dr Bakha",
+        "طبيب صدرية وحساسية ونوم قالمة"
       ],
-      "description": "عيادة متخصصة في تشخيص وعلاج أمراض الجهاز التنفسي، الربو، الحساسية الصدرية والجلدية، راديو الصدر الرقمي (Radio Thorax)، فحص وظائف الرئة (EFR)، وتسجيل اضطرابات النوم في ولاية ڨالمة. Cabinet médical spécialisé à Guelma : Radio Thorax, Asthme, Allergies, Spirométrie (EFR), et Apnée du Sommeil.",
+      "description": "عيادة متخصصة في أمراض الجهاز التنفسي، الربو، الحساسية، واضطرابات وانقطاع التنفس النومي (SAOS)، مجهزة بأشعة الصدر الرقمية الفورية (Radio Thorax)، فحص وظائف الرئة (EFR)، تسجيل النوم المنزلي (Polygraphie)، واختبارات الحساسية بقالمة. Cabinet médical spécialisé à Guelma : Pneumologie, Allergologie, Somnologie, Radio Thorax, Spirométrie et Polygraphie du Sommeil.",
       "url": "https://bakha-pneumo.netlify.app/",
       "logo": "https://bakha-pneumo.netlify.app/cabinet-logo.png",
       "image": "https://bakha-pneumo.netlify.app/cabinet-large.png",
@@ -22,7 +23,8 @@
       "medicalSpecialty": [
         "Pulmonary",
         "Allergy",
-        "RespiratoryTherapy"
+        "RespiratoryTherapy",
+        "https://schema.org/SleepSpecialty"
       ],
       "hasMap": "https://maps.google.com/?q=36.455176,7.434448",
       "sameAs": [
@@ -50,10 +52,19 @@
         { "@type": "AdministrativeArea", "name": "وادي الزناتي - Oued Zenati" },
         { "@type": "AdministrativeArea", "name": "هيليوبوليس - Héliopolis" },
         { "@type": "AdministrativeArea", "name": "حمام دباغ - Hammam Debagh" },
+        { "@type": "AdministrativeArea", "name": "عين مخلوف - Ain Makhlouf" },
+        { "@type": "AdministrativeArea", "name": "نشماية - Nechmaya" },
+        { "@type": "AdministrativeArea", "name": "خزارة - Khezaras" },
+        { "@type": "AdministrativeArea", "name": "مجاز عمار - Medjez Amar" },
+        { "@type": "AdministrativeArea", "name": "حمام النبايل - Hammam N'Bail" },
+        { "@type": "AdministrativeArea", "name": "تاملوكة - Tamlouka" },
+        { "@type": "AdministrativeArea", "name": "بوعاتي محمود - Bouati Mahmoud" },
         { "@type": "AdministrativeArea", "name": "سوق أهراس - Souk Ahras" },
-        { "@type": "AdministrativeArea", "name": "عنابة - Annaba" },
         { "@type": "AdministrativeArea", "name": "سدراتة - Sedrata" },
-        { "@type": "AdministrativeArea", "name": "سكيكدة - Skikda" }
+        { "@type": "AdministrativeArea", "name": "عنابة - Annaba" },
+        { "@type": "AdministrativeArea", "name": "سكيكدة - Skikda" },
+        { "@type": "AdministrativeArea", "name": "عزابة - Azzaba" },
+        { "@type": "AdministrativeArea", "name": "الطارف - El Tarf" }
       ],
       "openingHoursSpecification": [
         {
@@ -75,7 +86,12 @@
         "@id": "https://bakha-pneumo.netlify.app/#doctor",
         "name": "الدكتورة بخة س",
         "alternateName": "Dr. Bakha S.",
-        "jobTitle": "طبيبة أخصائية في الأمراض الصدرية، الحساسية واضطرابات النوم (Pneumologue-Allergologue)",
+        "jobTitle": "طبيبة أخصائية في أمراض الصدر، الحساسية وطب النوم (Pneumologue, Allergologue & Somnologue)",
+        "medicalSpecialty": [
+          "Pulmonary",
+          "Allergy",
+          "https://schema.org/SleepSpecialty"
+        ],
         "url": "https://bakha-pneumo.netlify.app/#apropos",
         "knowsLanguage": ["ar", "fr", "ar-DZ"],
         "alumniOf": {
@@ -99,14 +115,20 @@
         {
           "@type": "MedicalTest",
           "name": "اختبارات الحساسية الجلدية (Tests Cutanés d'Allergie / Prick Tests)",
-          "alternateName": "Tests d'allergie",
-          "description": "تحديد مسببات الحساسية الصدرية، الأنفية، والغذائية بنتائج سريعة ودقيقة."
+          "alternateName": "Tests d'allergie Guelma",
+          "description": "تحديد مسببات الحساسية الصدرية، الأنفية، والغذائية بنتائج سريعة ودقيقة في 15 دقيقة."
         },
         {
           "@type": "MedicalProcedure",
-          "name": "تسجيل النوم والتنفس (Polygraphie Ventilatoire du Sommeil)",
-          "alternateName": "تشخيص انقطاع التنفس النومي (Apnée du sommeil)",
-          "description": "فحص وتشخيص متلازمة انقطاع التنفس والشخير أثناء النوم وتحديد خطة العلاج المناسبة."
+          "name": "تسجيل النوم والتنفس المنزلي (Polygraphie Ventilatoire du Sommeil)",
+          "alternateName": "تشخيص انقطاع التنفس النومي والشخير (Somnologie & Apnée du sommeil)",
+          "description": "فحص وتشخيص متلازمة انقطاع التنفس والشخير أثناء النوم بجهاز محمول بالمنزل مع علاج وتوجيه أجهزة الضغط الإيجابي المستمر (CPAP/PPC)."
+        },
+        {
+          "@type": "MedicalTherapy",
+          "name": "علاج الربو والحساسية التنفسية (Traitement de l'Asthme et des Allergies)",
+          "alternateName": "Prise en charge de l'asthme et désensibilisation",
+          "description": "برامج علاجية ومتابعة مستمرة لحالات الربو والأمراض الصدرية والحساسية للأطفال والبالغين."
         }
       ],
       "contactPoint": [
